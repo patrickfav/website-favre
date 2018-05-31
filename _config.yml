@@ -1,0 +1,31 @@
+# Site settings
+title: Patrick Favre-Bulle
+description: Coding Page
+email: patrick.favrebulle@gmail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://favre.at" # the base hostname & protocol for your site
+timezone: Europe/Vienna
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-analytics
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: UAtodo      # Required - replace with your tracking id
+    anonymizeIp: true       # Optional - Default: false - set to true for anonymized tracking
+
+# Exclude files when building the site
+exclude: ["backup", "vendor", "Gemfile", "README.md", "firebase.json",".idea", "page_demo.html"]
+
+compress_html:
+  clippings: [div, p, ul, td, h1, h2]
+  comments: ["<!-- ", " -->"]
+  endings: [p, li, td]
+  profile: false
