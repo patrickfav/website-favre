@@ -18,7 +18,7 @@ sass:
 
 jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
-    id: UAtodo      # Required - replace with your tracking id
+    id: UA-120180593-1      # Required - replace with your tracking id
     anonymizeIp: true       # Optional - Default: false - set to true for anonymized tracking
 
 # Exclude files when building the site
