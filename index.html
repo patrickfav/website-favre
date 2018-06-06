@@ -96,6 +96,10 @@ layout: default
     </div>
 </section>
 
+{% for item in site.cv_entries %}
+<p><a href="{{ item.url }}">{{ item.title }}</a></p>
+{% endfor %}
+
 <section class="features-1 text-center">
     <div class="container">
         <h2>Features</h2>

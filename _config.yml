@@ -6,6 +6,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://favre.at" # the base hostname & protocol for your site
 timezone: Europe/Vienna
 
+collections:
+  cv_entries:
+    output: true
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
