@@ -1,0 +1,28 @@
+{
+  "name": "@patrickfav/codedoc-github-dl",
+  "version": "1.0.0",
+  "description": "A Script that prepares your github readmes for CodeDoc",
+  "main": "src/index.js",
+  "bin": {
+    "@patrickfav/codedoc-github-dl": "bin/codedoc-github-dl",
+    "codedoc-gdl": "bin/codedoc-github-dl"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "cg-dl"
+  ],
+  "author": "Patrick Favre-Bulle",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "got": "^11.0.3",
+    "request": "^2.88.2",
+    "scramjet": "^4.28.7"
+  }
+}
