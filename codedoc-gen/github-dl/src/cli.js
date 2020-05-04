@@ -81,8 +81,8 @@ export function cli(args) {
             console.log("Downloading Readme from " + project);
 
             const name = project.replace('patrickfav/', '');
-            const fileName = project.replace('/', '-')
-            const fileNameExt = fileName + ".md"
+            const fileName = name;
+            const fileNameExt = fileName + ".md";
 
             tocEntriesGithub.push('> [' + name + '](/' + relOutDir + fileName + ')')
 
@@ -98,6 +98,7 @@ export function cli(args) {
                     line
                         .replace(/\]\(doc\//g, '](' + url + 'doc/')
                         .replace(/\]\(misc\//g, '](' + url + 'misc/')
+                        .replace(/\]\(src\/main\/resources\/img\//g, '](' + url + 'src/main/resources/img/')
                 )
                 .pipe(fs.createWriteStream(rootDirMd + relOutDir + fileNameExt));
         }
@@ -117,7 +118,7 @@ export function cli(args) {
             await mediumExporterApi(article.url)
                 .then(json => markdowndl.render(json))
                 .then(content => {
-                    let fileName = article.title.replace(/ /g, '-');
+                    let fileName = encodeURI(article.title.replace(/ /g, '-').replace(/:/g, '_'));
                     tocEntriesArticles.push('> [' + article.title + '](/' + relOutDirArticles + fileName + ')')
                     return StringStream.from(content).pipe(fs.createWriteStream(rootDirMd + relOutDirArticles + fileName + ".md"));
                 });

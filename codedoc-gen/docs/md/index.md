@@ -1,6 +1,6 @@
-# Patrick Favre-Bulle
+# Portfolio
 
-Work In Progress Website of all my Projects.
+This is a collection of most of my open source projects and articles I wrote the last couple of years.
 
 
 > :ToCPrevNext

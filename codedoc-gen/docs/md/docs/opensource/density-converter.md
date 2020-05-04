@@ -1,4 +1,4 @@
-# ![logo](src/main/resources/img/density_converter_icon_24.png) Density Image Converter Tool for Android, iOS, Windows and CSS
+# ![logo](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/density_converter_icon_24.png) Density Image Converter Tool for Android, iOS, Windows and CSS
 
 This is a powerful little tool that helps **converting single or batches of images** to **Android**, **iOS**, **Windows** and **CSS** specific formats and density
 versions given the source scale factor or target width/height in [dp](http://developer.android.com/guide/practices/screens_support.html#density-independence).
@@ -48,7 +48,7 @@ java -jar ./dconvert.jar
 provides the same features as the command line tool so see the help page of command line or tooltips. Additionally the UI
 will save its settings persistently making it easier for power users.
 
-![gui-screenshot](src/main/resources/img/screenshot1.jpg)
+![gui-screenshot](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/screenshot1.jpg)
 
 ## Command Line
 
@@ -217,15 +217,15 @@ The tool provides 3 quality profiles:
 
 In most cases `Lanczos3` creates best results, although in some cases progressive bilinear scaling may be superior for very sharp edges of e.g. simple icons where the former creates some softness. Here are some example to see the difference yourself. The icons are down-scaled from 96x96 to 72x72 and 48x48, the photos from different source from 500 to 2000 px.
 
-![comparison](src/main/resources/img/comparison_icons_72.png)
-![comparison](src/main/resources/img/comparison_icons_48.png)
+![comparison](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/comparison_icons_72.png)
+![comparison](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/comparison_icons_48.png)
 
-![comparison](src/main/resources/img/comparison_photo_144.png)
-![comparison](src/main/resources/img/comparison_photo_72.png)
+![comparison](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/comparison_photo_144.png)
+![comparison](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/comparison_photo_72.png)
 
 As reference, here are the results of other methods:
 
-![comparison-ldpi](src/main/resources/img/mdpi_comparison.png)
+![comparison-ldpi](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/mdpi_comparison.png)
 
 1. Thumbnailator with default settings (_progressive bilinear_)
 2. Photoshop CS5 with bicubic algorithm
