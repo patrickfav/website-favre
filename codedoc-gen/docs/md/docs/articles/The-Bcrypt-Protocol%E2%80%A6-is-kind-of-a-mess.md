@@ -84,3 +84,5 @@ Stay tuned for part 2 where I propose a KDF based on bcrypt and an improved pass
 A small plug: most of the issues explained can be overcome with my Java implementation of bcrypt (using the *Eksblowfish* algorithm from jBcrypt). The main goal of this lib is to be as straight forward as possible to make it hard for people not familiar with bcrypt to get it wrong, but still allowing as much flexibility as possible. Check it out, you maybe find it useful (it’s Apache v2):
 [**patrickfav/bcrypt**
 *This is an implementation of the OpenBSD Blowfish password hashing algorithm, as described in " A Future-Adaptable…*github.com](https://github.com/patrickfav/bcrypt)
+
+> :ToCPrevNext

@@ -153,3 +153,5 @@ We’ve created a separate Maven project to put a global Checkstyle configuratio
 *Thanks for contributing an answer to Stack Overflow! Please be sure to answer the question. Provide details and share…*stackoverflow.com](https://stackoverflow.com/a/53707024/774398)
 [**how to externalise the checkstyle config for maven-checkstyle-plugin**
 *Thanks for contributing an answer to Stack Overflow! Please be sure to answer the question. Provide details and share…*stackoverflow.com](https://stackoverflow.com/questions/19682455/how-to-externalise-the-checkstyle-config-for-maven-checkstyle-plugin/19690484#19690484)
+
+> :ToCPrevNext

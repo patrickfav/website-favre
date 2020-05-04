@@ -198,3 +198,5 @@ We centralized our logging with **Timber **for Android modules and **SLF4J **wit
 *Make your APK file smaller and more secure by shrinking your code and resources.*developer.android.com](https://developer.android.com/studio/build/shrink-code.html)
 
 <iframe src="https://medium.com/media/87c27c6bd6c8dea21c9726d9564b27d6" frameborder=0></iframe>
+
+> :ToCPrevNext

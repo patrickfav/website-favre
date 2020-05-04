@@ -125,6 +125,8 @@ for various target areas is depicted.
 # License
 
 Currently proprietary
+> :GithubBtn repo=indoor-positioning, user=patrickfav
+
 
 
 > :ToCPrevNext

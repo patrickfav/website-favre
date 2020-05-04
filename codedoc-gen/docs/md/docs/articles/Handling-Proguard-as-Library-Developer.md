@@ -54,3 +54,5 @@ This is not the most sophisticated workaround, but once the Android DSL will sup
 * Be as defensive as possible with those rules, since the consumer most likely cannot override them.
 
 * Currently there is no direct support for modular configurations with Java modules
+
+> :ToCPrevNext

@@ -77,3 +77,5 @@ One of the main benefits of using interfaces is the better testability. By using
 ## Conclusion
 
 By abstracting and creating contracts with interfaces we can create better software. Unfortunately in some cases using interfaces can be unnecessary overhead. The proposed concise interface implementation pattern mitigates this issue by defining the name and location of the implementation without removing the flexibility of later using multiple implementations or as an standalone API.
+
+> :ToCPrevNext

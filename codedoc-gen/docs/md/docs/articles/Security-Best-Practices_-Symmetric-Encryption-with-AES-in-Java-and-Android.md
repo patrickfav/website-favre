@@ -177,3 +177,5 @@ AES with Galois/Counter Mode (GCM) block mode provides all those properties and 
 *A shared preference implementation for secret data providing confidentiality, integrity and authenticity . Per default…*github.com](https://github.com/patrickfav/armadillo)
 [**patrickfav/bytes-java**
 *Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java…*github.com](https://github.com/patrickfav/bytes-java)
+
+> :ToCPrevNext

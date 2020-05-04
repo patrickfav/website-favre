@@ -1,7 +1,8 @@
 
-import { configuration } from '@codedoc/core';
+import {configuration, DefaultMarkdownCustomComponents} from '@codedoc/core';
 
 import { theme } from './theme';
+import {GithubBtn} from './components/github-btn';
 
 
 export const config = /*#__PURE__*/configuration({
@@ -21,5 +22,11 @@ export const config = /*#__PURE__*/configuration({
     namespace: '',                       // --> project namespace
   },
   misc: {
-  }
+  },
+  markdown: {                                  // --> update markdown config
+    customComponents: {                        // --> add to custom components
+      ...DefaultMarkdownCustomComponents,      // --> make sure to add default markdown components. otherwise the default components will not work!
+      GithubBtn,                                    // --> add our own component
+    }
+  },
 });

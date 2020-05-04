@@ -80,7 +80,9 @@ export function cli(args) {
         for (const project of github_projects) {
             console.log("Downloading Readme from " + project);
 
-            const name = project.replace('patrickfav/', '');
+            const parts = project.split('/');
+            const user = parts[0];
+            const name = parts[1];
             const fileName = name;
             const fileNameExt = fileName + ".md";
 
@@ -93,6 +95,7 @@ export function cli(args) {
             const url = 'https://github.com/' + project + '/raw/master/';
 
             await StringStream.from(got.stream(url + 'README.md'))
+                .endWith('> :GithubBtn repo='+name+', user='+user+'\n\n')
                 .endWith("\n\n> :ToCPrevNext\n")
                 .map(line =>
                     line
@@ -117,6 +120,9 @@ export function cli(args) {
 
             await mediumExporterApi(article.url)
                 .then(json => markdowndl.render(json))
+                .then(content => content + "\n\n> :ToCPrevNext\n")
+                //.then(content => content +
+                //    "\n> :MetaOverride target=description\n>\n>" + json.payload.value.content.metaDescription + "\n\n"
                 .then(content => {
                     let fileName = encodeURI(article.title.replace(/ /g, '-').replace(/:/g, '_'));
                     tocEntriesArticles.push('> [' + article.title + '](/' + relOutDirArticles + fileName + ')')

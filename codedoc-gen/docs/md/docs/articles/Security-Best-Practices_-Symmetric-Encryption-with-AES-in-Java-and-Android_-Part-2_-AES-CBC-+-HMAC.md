@@ -216,3 +216,5 @@ As can be seen, the protocol is a bit more involved as just using GCM. However t
 ### Further Reading
 [**Security Best Practices: Symmetric Encryption with AES in Java and Android**
 *What to consider when encrypting your data and how to correctly implement it with AES-GCM.*proandroiddev.com](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9)
+
+> :ToCPrevNext

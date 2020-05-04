@@ -128,3 +128,5 @@ By forcing a different mapping each build, bugs like these will immediately surf
 * Randomized name obfuscation also has the advantage of *acting as a fail-fast* so common ProGuard configuration issues will
 [**ProGuard manual | Usage**
 *Obfuscation options Specifies not to obfuscate the input class files. By default, obfuscation is applied; classes and…*www.guardsquare.com](https://www.guardsquare.com/en/proguard/manual/usage#obfuscationoptions)
+
+> :ToCPrevNext
