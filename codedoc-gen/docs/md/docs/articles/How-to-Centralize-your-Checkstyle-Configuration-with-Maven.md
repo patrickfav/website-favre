@@ -1,4 +1,14 @@
 
+
+> :MetaOverride target=subject
+>
+> How to Centralize your Checkstyle Configuration with Maven
+
+
+> :MetaOverride target=keywords
+>
+> Checkstyle, Maven, Java, Static Code Analysis, Configuration Management
+
 # How to Centralize your Checkstyle Configuration with Maven
 
 How to Centralize your Checkstyle Configuration with Maven
@@ -155,3 +165,6 @@ We’ve created a separate Maven project to put a global Checkstyle configuratio
 *Thanks for contributing an answer to Stack Overflow! Please be sure to answer the question. Provide details and share…*stackoverflow.com](https://stackoverflow.com/questions/19682455/how-to-externalise-the-checkstyle-config-for-maven-checkstyle-plugin/19690484#19690484)
 
 > :ToCPrevNext
+
+
+<small>_This article was released 4/19/2020 on [medium.com](https://codeburst.io/how-to-centralize-your-checkstyle-configuration-with-maven-7575eacd7295)._</small>

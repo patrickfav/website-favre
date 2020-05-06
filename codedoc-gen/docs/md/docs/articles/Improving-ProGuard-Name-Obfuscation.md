@@ -1,4 +1,14 @@
 
+
+> :MetaOverride target=subject
+>
+> Improving ProGuard Name Obfuscation
+
+
+> :MetaOverride target=keywords
+>
+> Android, Proguard, Security, AndroidDev, Android App Development
+
 # Improving ProGuard Name Obfuscation
 
 Improving ProGuard Name Obfuscation
@@ -130,3 +140,6 @@ By forcing a different mapping each build, bugs like these will immediately surf
 *Obfuscation options Specifies not to obfuscate the input class files. By default, obfuscation is applied; classes and…*www.guardsquare.com](https://www.guardsquare.com/en/proguard/manual/usage#obfuscationoptions)
 
 > :ToCPrevNext
+
+
+<small>_This article was released 2/1/2020 on [medium.com](https://proandroiddev.com/improving-proguard-name-obfuscation-83b27b34c52a)._</small>

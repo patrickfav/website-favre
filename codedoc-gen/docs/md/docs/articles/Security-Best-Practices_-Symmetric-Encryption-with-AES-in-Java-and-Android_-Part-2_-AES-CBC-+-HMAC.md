@@ -1,4 +1,14 @@
 
+
+> :MetaOverride target=subject
+>
+> Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2
+
+
+> :MetaOverride target=keywords
+>
+> Security, Android, Crypto, Encryption, AndroidDev
+
 # Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2
 
 Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2: AES-CBC + HMAC
@@ -218,3 +228,6 @@ As can be seen, the protocol is a bit more involved as just using GCM. However t
 *What to consider when encrypting your data and how to correctly implement it with AES-GCM.*proandroiddev.com](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9)
 
 > :ToCPrevNext
+
+
+<small>_This article was released 4/18/2020 on [medium.com](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2-b3b80e99ad36)._</small>

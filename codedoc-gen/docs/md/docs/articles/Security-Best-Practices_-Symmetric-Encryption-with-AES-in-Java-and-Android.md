@@ -1,4 +1,19 @@
 
+
+> :MetaOverride target=description
+>
+> This article explains the Advanced Encryption Standard (AES), common block modes, why you need padding and initialization vectors and how to protect your data against modification.
+
+
+> :MetaOverride target=subject
+>
+> Security Best Practices: Symmetric Encryption with AES in Java and Android
+
+
+> :MetaOverride target=keywords
+>
+> Security, Encryption, Java, AndroidDev, Android App Development
+
 # Security Best Practices: Symmetric Encryption with AES in Java and Android
 
 In this article I will bring you up to speed on the Advanced Encryption Standard (AES), common block modes, why you need padding and initialization vectors and how to protect your data against modification. Finally I will show you how to easily implement this with Java avoiding most security issues.
@@ -179,3 +194,6 @@ AES with Galois/Counter Mode (GCM) block mode provides all those properties and 
 *Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java…*github.com](https://github.com/patrickfav/bytes-java)
 
 > :ToCPrevNext
+
+
+<small>_This article was released 4/19/2020 on [medium.com](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9)._</small>

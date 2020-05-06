@@ -1,4 +1,14 @@
 
+
+> :MetaOverride target=subject
+>
+> The Bcrypt Protocol… is kind of a mess
+
+
+> :MetaOverride target=keywords
+>
+> Security, Bcrypt, Crypto, Passwords, Bcrypt Protocol
+
 # The Bcrypt Protocol… is kind of a mess
 
 The Bcrypt Protocol… is kind of a mess
@@ -86,3 +96,6 @@ A small plug: most of the issues explained can be overcome with my Java implemen
 *This is an implementation of the OpenBSD Blowfish password hashing algorithm, as described in " A Future-Adaptable…*github.com](https://github.com/patrickfav/bcrypt)
 
 > :ToCPrevNext
+
+
+<small>_This article was released 4/18/2020 on [medium.com](https://medium.com/hackernoon/the-bcrypt-protocol-is-kind-of-a-mess-4aace5eb31bd)._</small>

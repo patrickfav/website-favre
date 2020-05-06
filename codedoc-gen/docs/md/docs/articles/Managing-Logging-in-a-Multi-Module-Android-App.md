@@ -1,4 +1,14 @@
 
+
+> :MetaOverride target=subject
+>
+> Managing Logging in a Multi-Module Android Application
+
+
+> :MetaOverride target=keywords
+>
+> Android, Android App Development, Logging, Timber, Slf4j
+
 # Managing Logging in a Multi-Module Android Application
 
 Managing Logging in a Multi-Module Android Application
@@ -200,3 +210,6 @@ We centralized our logging with **Timber **for Android modules and **SLF4J **wit
 <iframe src="https://medium.com/media/87c27c6bd6c8dea21c9726d9564b27d6" frameborder=0></iframe>
 
 > :ToCPrevNext
+
+
+<small>_This article was released 4/18/2020 on [medium.com](https://proandroiddev.com/managing-logging-in-a-multi-module-android-application-eb966fb7fedc)._</small>

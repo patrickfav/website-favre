@@ -1,4 +1,14 @@
 
+
+> :MetaOverride target=subject
+>
+> Handling Proguard as Library Developer or in a Multi-Module Android Application
+
+
+> :MetaOverride target=keywords
+>
+> Android, Proguard, Java
+
 # Handling Proguard as Library Developer or in a Multi-Module Android Application
 
 Handling Proguard as Library Developer or in a Multi-Module Android Application
@@ -56,3 +66,6 @@ This is not the most sophisticated workaround, but once the Android DSL will sup
 * Currently there is no direct support for modular configurations with Java modules
 
 > :ToCPrevNext
+
+
+<small>_This article was released 4/18/2020 on [medium.com](https://proandroiddev.com/handling-proguard-as-library-developer-or-in-a-multi-module-android-application-2d738c37890)._</small>

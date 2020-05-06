@@ -95,7 +95,7 @@ export function cli(args) {
             const url = 'https://github.com/' + project + '/raw/master/';
 
             await StringStream.from(got.stream(url + 'README.md'))
-                .endWith('> :GithubBtn repo='+name+', user='+user+'\n\n')
+                .endWith('> :GithubBtn repo=' + name + ', user=' + user + '\n\n')
                 .endWith("\n\n> :ToCPrevNext\n")
                 .map(line =>
                     line
@@ -117,17 +117,24 @@ export function cli(args) {
 
         for (const article of medium_links) {
             console.log("Downloading Article '" + article.title + "'");
+            let metaJson = await mediumExporterApi(article.url);
+            let content = await markdowndl.render(metaJson);
 
-            await mediumExporterApi(article.url)
-                .then(json => markdowndl.render(json))
-                .then(content => content + "\n\n> :ToCPrevNext\n")
-                //.then(content => content +
-                //    "\n> :MetaOverride target=description\n>\n>" + json.payload.value.content.metaDescription + "\n\n"
-                .then(content => {
-                    let fileName = encodeURI(article.title.replace(/ /g, '-').replace(/:/g, '_'));
-                    tocEntriesArticles.push('> [' + article.title + '](/' + relOutDirArticles + fileName + ')')
-                    return StringStream.from(content).pipe(fs.createWriteStream(rootDirMd + relOutDirArticles + fileName + ".md"));
-                });
+            let meta = '';
+
+            if (metaJson.payload.value.content.metaDescription) {
+                meta += "\n\n> :MetaOverride target=description\n>\n> " + metaJson.payload.value.content.metaDescription + "\n"
+            }
+            meta += "\n\n> :MetaOverride target=subject\n>\n> " + metaJson.payload.value.title + "\n"
+            meta += "\n\n> :MetaOverride target=keywords\n>\n> " + metaJson.payload.value.virtuals.tags.map(m => m.name).join(", ") + "\n"
+
+            let footnote = "\n\n<small>_This article was released " + new Date(metaJson.payload.value.latestPublishedAt).toLocaleDateString("en-US") + " on [medium.com](" + article.url + ')._</small>';
+
+            content = meta + content + "\n\n> :ToCPrevNext\n" + footnote
+
+            let fileName = encodeURI(article.title.replace(/ /g, '-').replace(/:/g, '_'));
+            tocEntriesArticles.push('> [' + article.title + '](/' + relOutDirArticles + fileName + ')')
+            await StringStream.from(content).pipe(fs.createWriteStream(rootDirMd + relOutDirArticles + fileName + ".md"));
         }
 
         tocEntriesArticles.sort();

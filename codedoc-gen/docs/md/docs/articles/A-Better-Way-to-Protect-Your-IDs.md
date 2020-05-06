@@ -1,4 +1,19 @@
 
+
+> :MetaOverride target=description
+>
+> There are many reasons why you may want to protect your internal IDs, either because they leak business intelligence, allow for brute forcing and may leak context of personal information.
+
+
+> :MetaOverride target=subject
+>
+> A Better Way to Protect Your Database IDs
+
+
+> :MetaOverride target=keywords
+>
+> Security, Id, Java, Hashids, Database
+
 # A Better Way to Protect Your Database IDs
 
 A Better Way to Protect Your IDs
@@ -136,3 +151,6 @@ There are many reasons why you may want to protect your internal IDs, either bec
 *IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their…*github.com](https://github.com/patrickfav/id-mask)
 
 > :ToCPrevNext
+
+
+<small>_This article was released 4/18/2020 on [medium.com](https://medium.com/@patrickfav/a-better-way-to-protect-your-database-ids-a33fa9867552)._</small>

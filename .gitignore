@@ -8,3 +8,4 @@ vendor
 .bundle
 _compress_images_cache.yml
 .firebase
+.DS_Store
