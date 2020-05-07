@@ -29,7 +29,7 @@
 > [Managing Logging in a Multi-Module Android App](/docs/articles/Managing-Logging-in-a-Multi-Module-Android-App)
 > [Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2: AES-CBC + HMAC](/docs/articles/Security-Best-Practices_-Symmetric-Encryption-with-AES-in-Java-and-Android_-Part-2_-AES-CBC-+-HMAC)
 > [Security Best Practices: Symmetric Encryption with AES in Java and Android](/docs/articles/Security-Best-Practices_-Symmetric-Encryption-with-AES-in-Java-and-Android)
-> [The Bcrypt Protocol… is kind of a mess](/docs/articles/The-Bcrypt-Protocol%E2%80%A6-is-kind-of-a-mess)
+> [The Bcrypt Protocol… is kind of a mess](/docs/articles/The-Bcrypt-Protocol_-is-kind-of-a-mess)
 > [The Concise Interface Implementation Pattern](/docs/articles/The-Concise-Interface-Implementation-Pattern)
 
 <br><br>

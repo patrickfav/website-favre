@@ -7,7 +7,7 @@
 
 > :MetaOverride target=subject
 >
-> Security Best Practices: Symmetric Encryption with AES in Java and Android
+> What to consider when encrypting your data and how to correctly implement it with AES-GCM.
 
 
 > :MetaOverride target=keywords

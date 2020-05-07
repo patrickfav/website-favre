@@ -2,7 +2,7 @@
 
 > :MetaOverride target=subject
 >
-> Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2
+> If you can’t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC.
 
 
 > :MetaOverride target=keywords

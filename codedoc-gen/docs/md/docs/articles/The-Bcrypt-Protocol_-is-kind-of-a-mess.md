@@ -2,7 +2,7 @@
 
 > :MetaOverride target=subject
 >
-> The Bcrypt Protocol… is kind of a mess
+> While writing my own bcrypt library, I discovered a lot of odd things surrounding the bcrypt protocol.
 
 
 > :MetaOverride target=keywords

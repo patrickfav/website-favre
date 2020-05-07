@@ -7,7 +7,7 @@
 
 > :MetaOverride target=subject
 >
-> A Better Way to Protect Your Database IDs
+> A new approach on protecting your internal IDs with a strong cryptographic schema and many other useful features. Inspired by HashIds.
 
 
 > :MetaOverride target=keywords

@@ -2,7 +2,7 @@
 
 > :MetaOverride target=subject
 >
-> How to Centralize your Checkstyle Configuration with Maven
+> Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.
 
 
 > :MetaOverride target=keywords

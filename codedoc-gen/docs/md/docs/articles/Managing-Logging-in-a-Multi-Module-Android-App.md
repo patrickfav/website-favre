@@ -2,7 +2,7 @@
 
 > :MetaOverride target=subject
 >
-> Managing Logging in a Multi-Module Android Application
+> In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go…
 
 
 > :MetaOverride target=keywords

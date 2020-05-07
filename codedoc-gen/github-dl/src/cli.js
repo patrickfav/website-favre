@@ -48,7 +48,10 @@ const medium_links = [
         url: 'https://medium.com/@patrickfav/the-concise-interface-implementation-pattern-9b15f35a806b',
         title: 'The Concise Interface Implementation Pattern'
     },
-    {url: 'https://proandroiddev.com/improving-proguard-name-obfuscation-83b27b34c52a', title: 'Improving ProGuard Name Obfuscation'},
+    {
+        url: 'https://proandroiddev.com/improving-proguard-name-obfuscation-83b27b34c52a',
+        title: 'Improving ProGuard Name Obfuscation'
+    },
     {
         url: 'https://proandroiddev.com/handling-proguard-as-library-developer-or-in-a-multi-module-android-application-2d738c37890',
         title: 'Handling Proguard as Library Developer'
@@ -125,14 +128,14 @@ export function cli(args) {
             if (metaJson.payload.value.content.metaDescription) {
                 meta += "\n\n> :MetaOverride target=description\n>\n> " + metaJson.payload.value.content.metaDescription + "\n"
             }
-            meta += "\n\n> :MetaOverride target=subject\n>\n> " + metaJson.payload.value.title + "\n"
+            meta += "\n\n> :MetaOverride target=subject\n>\n> " + metaJson.payload.value.content.subtitle + "\n"
             meta += "\n\n> :MetaOverride target=keywords\n>\n> " + metaJson.payload.value.virtuals.tags.map(m => m.name).join(", ") + "\n"
 
             let footnote = "\n\n<small>_This article was released " + new Date(metaJson.payload.value.latestPublishedAt).toLocaleDateString("en-US") + " on [medium.com](" + article.url + ')._</small>';
 
             content = meta + content + "\n\n> :ToCPrevNext\n" + footnote
 
-            let fileName = encodeURI(article.title.replace(/ /g, '-').replace(/:/g, '_'));
+            let fileName = encodeURI(article.title.replace(/ /g, '-').replace(/:/g, '_').replace(/…/g, '_'));
             tocEntriesArticles.push('> [' + article.title + '](/' + relOutDirArticles + fileName + ')')
             await StringStream.from(content).pipe(fs.createWriteStream(rootDirMd + relOutDirArticles + fileName + ".md"));
         }

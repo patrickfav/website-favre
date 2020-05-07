@@ -2,7 +2,7 @@
 
 > :MetaOverride target=subject
 >
-> Handling Proguard as Library Developer or in a Multi-Module Android Application
+> When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning…
 
 
 > :MetaOverride target=keywords

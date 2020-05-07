@@ -2,7 +2,7 @@
 
 > :MetaOverride target=subject
 >
-> The Concise Interface Implementation Pattern
+> A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small
 
 
 > :MetaOverride target=keywords

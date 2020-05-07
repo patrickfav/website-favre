@@ -2,7 +2,7 @@
 
 > :MetaOverride target=subject
 >
-> Improving ProGuard Name Obfuscation
+> In this article I will show you how to strengthen ProGuard’s name obfuscation, making it harder for an attacker the reverse engineer your…
 
 
 > :MetaOverride target=keywords
