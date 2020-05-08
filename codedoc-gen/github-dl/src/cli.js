@@ -69,8 +69,8 @@ export function cli(args) {
     const templateDir = rootDir + 'template/'
     const tocFileTemplate = templateDir + '_toc.md'
     const tocFile = rootDirMd + '_toc.md'
-    const relOutDir = 'docs/opensource/';
-    const relOutDirArticles = 'docs/articles/';
+    const relOutDir = 'opensource/';
+    const relOutDirArticles = 'articles/';
 
     const writeFile = promisify(fs.writeFile);
     const readFile = promisify(fs.readFile);
@@ -121,7 +121,9 @@ export function cli(args) {
         for (const article of medium_links) {
             console.log("Downloading Article '" + article.title + "'");
             let metaJson = await mediumExporterApi(article.url);
+
             let content = await markdowndl.render(metaJson);
+            content = content.replace(/```\n```/g, '');
 
             let meta = '';
 
@@ -131,7 +133,7 @@ export function cli(args) {
             meta += "\n\n> :MetaOverride target=subject\n>\n> " + metaJson.payload.value.content.subtitle + "\n"
             meta += "\n\n> :MetaOverride target=keywords\n>\n> " + metaJson.payload.value.virtuals.tags.map(m => m.name).join(", ") + "\n"
 
-            let footnote = "\n\n<small>_This article was released " + new Date(metaJson.payload.value.latestPublishedAt).toLocaleDateString("en-US") + " on [medium.com](" + article.url + ')._</small>';
+            let footnote = "\n\n<small>_This article was published on " + new Date(metaJson.payload.value.latestPublishedAt).toLocaleDateString("en-US") + " on [medium.com](" + article.url + ')._</small>';
 
             content = meta + content + "\n\n> :ToCPrevNext\n" + footnote
 

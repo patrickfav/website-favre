@@ -15,7 +15,7 @@ The Concise Interface Implementation Pattern
 
 ### A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small
 
-*This article recaps why using abstraction is better then concrete implementation and how to minimize the burden of overhead for using it. This is aimed at Java, but is valid in many statically typed languages which support OOP and the concept of contracts and inner classes.*
+_This article recaps why using abstraction is better then concrete implementation and how to minimize the burden of overhead for using it. This is aimed at Java, but is valid in many statically typed languages which support OOP and the concept of contracts and inner classes._
 
 Interfaces are great. They expose a clear API, enhance encapsulation and make clean polymorphism possible. Interfaces encourage you to think about responsibility and therefore the required methods and their signature, as well as nearly invite you to properly document them. Interfaces create the basic blocks of abstraction for a clean architecture.
 
@@ -34,47 +34,50 @@ Use this pattern if
 The goal is to keep the implementation concise, that means the interface and default implementation can be at the exact same location creating a kind of “mini” module. The implementation doesn’t even need it’s own unique name.
 
 The template looks like this (Java 7+):
+```
+public interface MyInterface {
 
-    public interface MyInterface {
+    void interfaceMethod1();
 
-        void interfaceMethod1();
-    
-        void interfaceMethod2();
+    void interfaceMethod2();
 
-        final class Default implements MyInterface{
+    final class Default implements MyInterface{
 
-            @Override
-            public void interfaceMethod1() {
-                //impl
-            }
-
-            @Override
-            public void interfaceMethod2() {
-                //impl
-            }
-
+        @Override
+        public void interfaceMethod1() {
+            //impl
         }
-    }
 
-You would define your interface, like any other. Then you add a inner final static (implied) class called Default representing your default implementation. Static inner classes do not have any reference to their outer class, so it behaves just like a normal class defined as top-level class.
+        @Override
+        public void interfaceMethod2() {
+            //impl
+        }
+
+    }
+}
+```
+
+You would define your interface, like any other. Then you add a inner `final static` (implied) class called `Default` representing your default implementation. Static inner classes do not have any reference to their outer class, so it behaves just like a normal class defined as top-level class.
 
 And you would use it like this:
+```
+MyInterface m = new MyInterface.Default();
+```
 
-    MyInterface m = new MyInterface.Default();
-
-As you can see, the intend and usage is very clear: you instantiate the default implementation of MyInterface.
+As you can see, the intend and usage is very clear: you instantiate the default implementation of `MyInterface`.
 
 I believe seeing such a construct also conveys the exact properties described above: single implementation and module private; so developers can treat it accordingly.
 
 ### Future-proof
 
-If in any point in time you wish to have multiple implementation or expose this interface as an API you just move the Default implementation to it’s own class and give it a proper name ([IntelliJ can do this for you](https://www.jetbrains.com/help/idea/move-inner-to-upper-level-dialog-for-java.html)). The interface and implementation are not tied to each other, they are just defined in the same location in the source code.
+If in any point in time you wish to have multiple implementation or expose this interface as an API you just move the `Default` implementation to it’s own class and give it a proper name ([IntelliJ can do this for you](https://www.jetbrains.com/help/idea/move-inner-to-upper-level-dialog-for-java.html)). The interface and implementation are not tied to each other, they are just defined in the same location in the source code.
 
 ### Avoid unnecessary Naming
 
 [Naming is hard](https://martinfowler.com/bliki/TwoHardThings.html). With this concept we avoid having to invent a synthetic name for the default implementation of a simple interface. Oftentimes if developers get the naming wrong, it can get very confusing and hard to read, like this example:
-
-    TextTransformer t = new StringManager();
+```
+TextTransformer t = new StringManager();
+```
 
 ### Avoid Codebase Clutter
 
@@ -91,4 +94,4 @@ By abstracting and creating contracts with interfaces we can create better softw
 > :ToCPrevNext
 
 
-<small>_This article was released 4/11/2018 on [medium.com](https://medium.com/@patrickfav/the-concise-interface-implementation-pattern-9b15f35a806b)._</small>
+<small>_This article was published on 4/11/2018 on [medium.com](https://medium.com/@patrickfav/the-concise-interface-implementation-pattern-9b15f35a806b)._</small>

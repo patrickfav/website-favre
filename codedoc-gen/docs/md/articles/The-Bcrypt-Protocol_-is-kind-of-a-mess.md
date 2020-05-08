@@ -13,23 +13,25 @@
 
 The Bcrypt Protocol… is kind of a mess
 
-*While writing my own bcrypt library, being unsatisfied with the current Java de-facto standard implementation jBcrypt, I discovered a lot of odd things surrounding the bcrypt protocol (mind you: not the underlying cryptographic primitive ‘Eksblowfish’).*
+_While writing my own bcrypt library, being unsatisfied with the current Java de-facto standard implementation jBcrypt, I discovered a lot of odd things surrounding the bcrypt protocol (mind you: not the underlying cryptographic primitive ‘Eksblowfish’)._
 
 Bcrypt is a password hashing function [designed by Niels Provos and David Mazières](http://www.usenix.org/events/usenix99/provos/provos_html/node1.html) in 1999 which became popular as the default password hash algorithm for OpenBSD[¹](https://en.wikipedia.org/wiki/Bcrypt). In comparison to simple [cryptographic hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function) (like SHA-256), the main benefit of using bcrypt is that a developer can set how expensive it is to calculate the hash. This is called [key stretching](https://en.wikipedia.org/wiki/Key_stretching) and should be used with any (usually weak) user provided password to protect against brute force attacks (i.e. simple guessing).
 
 ### Introduction to Bcrypt
 
 So how does it work? First you need a password and set the iteration count as a logarithmic work factor between 4–31, doubling the required computation every increment. So for example it could look like this:
-
-    bcrypt("secretPassword", 8)
+```
+bcrypt("secretPassword", 8)
+```
 
 which may output
 
-![$2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma](https://cdn-images-1.medium.com/max/4316/1*wFASmAwFFZot0rTrJv1W1Q.png)*$2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma*
+![$2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma](https://cdn-images-1.medium.com/max/4316/1*wFASmAwFFZot0rTrJv1W1Q.png)
+<small>_$2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma_</small>
 
-This is the [modular crypt format](https://passlib.readthedocs.io/en/stable/modular_crypt_format.html) defined and used by OpenBSD. The first part $2a$ is the protocol version identifier. Historically bcrypt used to be $2$ but since nobody back then thought about Unicode handling, a new version had to be defined. The next part 08$ is the work factor as passed to the function. The next 22 ASCII characters (16 byte raw) 0SN/h83Gt1jZMR6924.Kd. represent the encoded salt. Most implementations automatically create a salt for the caller, which is nice. This measure protects against rainbow tables, i.e. using a list of pre-calculated hashes of commonly used passwords.
+This is the [modular crypt format](https://passlib.readthedocs.io/en/stable/modular_crypt_format.html) defined and used by OpenBSD. The first part `$2a$` is the protocol version identifier. Historically bcrypt used to be `$2$` but since nobody back then thought about Unicode handling, a new version had to be defined. The next part `08$` is the work factor as passed to the function. The next 22 ASCII characters (16 byte raw) `0SN/h83Gt1jZMR6924.Kd.` represent the encoded salt. Most implementations automatically create a salt for the caller, which is nice. This measure protects against rainbow tables, i.e. using a list of pre-calculated hashes of commonly used passwords.
 
-And finally the last 23 byte or encoded 31 ASCII characters are the actual bcrypt hash: HaK3MyTDt/W8FCjUOtbY3Pmres5rsma. This format is especially convenient for storing password hashes, since all the parameters apart from the actual password are included.
+And finally the last 23 byte or encoded 31 ASCII characters are the actual bcrypt hash: `HaK3MyTDt/W8FCjUOtbY3Pmres5rsma`. This format is especially convenient for storing password hashes, since all the parameters apart from the actual password are included.
 
 ### Issue 1: Non-Standard encoding
 
@@ -57,15 +59,16 @@ The confusion about the actual limitation and the lack of specification on what 
 
 ### Issue 5: Many Non-Standard Versions
 
-As stated earlier, bcrypt startet out with version $2$ which lacked definition on how to handle non-ASCII characters, so the most prevalent version is $2a$ which fixed that. But of course other implementations have had issues too, so there is a $2x$ and $2y$ for the PHP version and there is [talk to bump the version output](http://undeadly.org/cgi?action=article&sid=20140224132743) of the original to $2b$. Most of these version changes address bugs in specific implementation and may not apply to others. This however makes it harder to achieve interoperability between different systems (most often databases which are used by PHP and other systems, e.g. [this](https://stackoverflow.com/questions/49878948/hashing-password-with-2y-identifier))
+As stated earlier, bcrypt startet out with version `$2$` which lacked definition on how to handle non-ASCII characters, so the most prevalent version is `$2a$` which fixed that. But of course other implementations have had issues too, so there is a `$2x$` and `$2y$` for the PHP version and there is [talk to bump the version output](http://undeadly.org/cgi?action=article&sid=20140224132743) of the original to `$2b$`. Most of these version changes address bugs in specific implementation and may not apply to others. This however makes it harder to achieve interoperability between different systems (most often databases which are used by PHP and other systems, e.g. [this](https://stackoverflow.com/questions/49878948/hashing-password-with-2y-identifier))
 
 ### Issue 6: Slightly Inefficient Format
 
 The output format
+```
+$2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma
+```
 
-    $2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma
-
-is clearly optimized to be user readable. It is also slightly inefficient to parse: first the whole string has to be read in as ASCII, then it has to be parsed character to character until the last $. After that the next 22 and 32 characters are decoded separately. Using a more compact message format and encoded only once, for example:
+is clearly optimized to be user readable. It is also slightly inefficient to parse: first the whole string has to be read in as ASCII, then it has to be parsed character to character until the last `$`. After that the next 22 and 32 characters are decoded separately. Using a more compact message format and encoded only once, for example:
 
 ![](https://cdn-images-1.medium.com/max/5336/1*vUs9KREMBXKziDZFXL0H2w.png)
 
@@ -87,15 +90,15 @@ The lack of a strong specification by an authority, age and various quirks and b
 
 Security is hard to get right. So even if some of the issues seem nit-picky (and maybe they are), there is no reason to strive for the most simple, straight forward implementation and API resulting in a reviewed specification which can be used as a base for an implementation. Trust me, [I’ve been there](https://github.com/patrickfav/armadillo/issues/16).
 
-***Just to reiterate***: I do not challenge the security strength of the underlying “Eksblowfish” (“expensive key schedule Blowfish”), those [analysis](https://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage) should be left to the cryptographic experts. I would summarize however that bcrypt is still in the realm of recommended password hashing functions.
+**_Just to reiterate**_: I do not challenge the security strength of the underlying “Eksblowfish” (“expensive key schedule Blowfish”), those [analysis](https://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage) should be left to the cryptographic experts. I would summarize however that bcrypt is still in the realm of recommended password hashing functions.
 
 Stay tuned for part 2 where I propose a KDF based on bcrypt and an improved password hashing protocol.
 
-A small plug: most of the issues explained can be overcome with my Java implementation of bcrypt (using the *Eksblowfish* algorithm from jBcrypt). The main goal of this lib is to be as straight forward as possible to make it hard for people not familiar with bcrypt to get it wrong, but still allowing as much flexibility as possible. Check it out, you maybe find it useful (it’s Apache v2):
-[**patrickfav/bcrypt**
-*This is an implementation of the OpenBSD Blowfish password hashing algorithm, as described in " A Future-Adaptable…*github.com](https://github.com/patrickfav/bcrypt)
+A small plug: most of the issues explained can be overcome with my Java implementation of bcrypt (using the_ Eksblowfish_ algorithm from jBcrypt). The main goal of this lib is to be as straight forward as possible to make it hard for people not familiar with bcrypt to get it wrong, but still allowing as much flexibility as possible. Check it out, you maybe find it useful (it’s Apache v2):
+
+[**patrickfav/bcrypt**_ This is an implementation of the OpenBSD Blowfish password hashing algorithm, as described in " A Future-Adaptable…_github.com](https://github.com/patrickfav/bcrypt)
 
 > :ToCPrevNext
 
 
-<small>_This article was released 4/18/2020 on [medium.com](https://medium.com/hackernoon/the-bcrypt-protocol-is-kind-of-a-mess-4aace5eb31bd)._</small>
+<small>_This article was published on 4/18/2020 on [medium.com](https://medium.com/hackernoon/the-bcrypt-protocol-is-kind-of-a-mess-4aace5eb31bd)._</small>
