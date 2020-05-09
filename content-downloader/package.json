@@ -1,11 +1,11 @@
 {
-  "name": "@patrickfav/codedoc-github-dl",
+  "name": "@patrickfav/codedoc-content-downloader",
   "version": "1.0.0",
-  "description": "A Script that prepares your github readmes for CodeDoc",
+  "description": "A Script that prepares your github readmes and medium posts for CodeDoc",
   "main": "src/index.js",
   "bin": {
-    "@patrickfav/codedoc-github-dl": "bin/codedoc-github-dl",
-    "codedoc-gdl": "bin/codedoc-github-dl"
+    "@patrickfav/codedoc-content-downloader": "bin/codedoc-content-downloader",
+    "codedoc-content-downloader": "bin/codedoc-content-downloader"
   },
   "publishConfig": {
     "access": "public"
@@ -19,6 +19,10 @@
   ],
   "author": "Patrick Favre-Bulle",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrickfav/website-favre.git"
+  },
   "dependencies": {
     "esm": "^3.2.25",
     "got": "^11.0.3",

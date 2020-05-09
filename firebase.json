@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "_site",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -21,6 +21,7 @@
       "headers" : [{
         "key" : "Cache-Control",
         "value" : "max-age=3600"}]
-    }]
+    }],
+    "cleanUrls": true
   }
 }
