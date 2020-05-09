@@ -1,6 +1,6 @@
 import fs from 'fs';
 import {promisify} from 'util';
-import {github_projects, medium_projects} from "./confg";
+import {github_projects_user, github_projects, medium_projects} from "./confg";
 import {downloadGithubReadme} from "./downloader/github";
 import {downloadMediumArticles} from "./downloader/medium";
 
@@ -21,10 +21,11 @@ export function cli(args) {
     let tocEntriesArticles;
 
     cleanDirs(rootDirMd, relOutDirGithub, relOutDirArticles)
-        .then(() => downloadMediumArticles(medium_projects, rootDirMd, relOutDirArticles))
+
+    downloadMediumArticles(medium_projects, rootDirMd, relOutDirArticles)
         .then((te) => {
             tocEntriesArticles = te;
-            return downloadGithubReadme(github_projects, rootDirMd, relOutDirGithub)
+            return downloadGithubReadme(github_projects_user, github_projects, rootDirMd, relOutDirGithub)
         })
         .then((te) => {
             tocEntriesGithub = te;
@@ -37,9 +38,9 @@ export function cli(args) {
         .then(() => console.log("Waiting to finish"));
 }
 
-async function cleanDirs(rootDirMd, relOutDirGithub, relOutDirArticles) {
+function cleanDirs(rootDirMd, relOutDirGithub, relOutDirArticles) {
     const rmdirSync = promisify(fs.rmdirSync);
 
-    await rmdirSync(rootDirMd + relOutDirGithub, {recursive: true});
-    await rmdirSync(rootDirMd + relOutDirArticles, {recursive: true});
+    rmdirSync(rootDirMd + relOutDirGithub, {recursive: true});
+    rmdirSync(rootDirMd + relOutDirArticles, {recursive: true});
 }

@@ -2,28 +2,25 @@ import fs from "fs";
 import {StringStream} from "scramjet";
 import got from "got";
 
-export async function downloadGithubReadme(github_projects, rootDirMd, relOutDir) {
+export async function downloadGithubReadme(github_user, github_projects, rootDirMd, relOutDir) {
     let tocEntriesGithub = [];
 
-    for (const project of github_projects) {
-        console.log("Downloading Readme from " + project);
+    for (const projectName of github_projects) {
+        console.log("Downloading Readme from " + projectName);
 
-        const parts = project.split('/');
-        const user = parts[0];
-        const name = parts[1];
-        const fileName = name;
+        const fileName = projectName;
         const fileNameExt = fileName + ".md";
 
-        tocEntriesGithub.push('> [' + name + '](/' + relOutDir + fileName + ')')
+        tocEntriesGithub.push('> [' + projectName + '](/' + relOutDir + fileName + ')')
 
         if (!fs.existsSync(rootDirMd + relOutDir)) {
             fs.mkdirSync(rootDirMd + relOutDir);
         }
 
-        const url = 'https://github.com/' + project + '/raw/master/';
+        const url = 'https://github.com/' + github_user + '/' + projectName + '/raw/master/';
 
         await StringStream.from(got.stream(url + 'README.md'))
-            .endWith('> :GithubBtn repo=' + name + ', user=' + user + '\n\n')
+            .endWith('> :GithubBtn repo=' + projectName + ', user=' + github_user + '\n\n')
             .endWith("\n\n> :ToCPrevNext\n")
             .map(line =>
                 line

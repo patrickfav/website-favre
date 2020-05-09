@@ -1,20 +1,22 @@
+export const github_projects_user = 'patrickfav';
+
 export const github_projects = [
-    'patrickfav/bcrypt',
-    'patrickfav/Dali',
-    'patrickfav/under-the-hood',
-    'patrickfav/density-converter',
-    'patrickfav/uber-apk-signer',
-    'patrickfav/armadillo',
-    'patrickfav/BlurTestAndroid',
-    'patrickfav/uber-adb-tools',
-    'patrickfav/bytes-java',
-    'patrickfav/indoor-positioning',
-    'patrickfav/hkdf',
-    'patrickfav/slf4j-timber',
-    'patrickfav/id-mask',
-    'patrickfav/dice',
-    'patrickfav/singlestep-kdf',
-    'patrickfav/bkdf',
+    'bcrypt',
+    'Dali',
+    'under-the-hood',
+    'density-converter',
+    'uber-apk-signer',
+    'armadillo',
+    'BlurTestAndroid',
+    'uber-adb-tools',
+    'bytes-java',
+    'indoor-positioning',
+    'hkdf',
+    'slf4j-timber',
+    'id-mask',
+    'dice',
+    'singlestep-kdf',
+    'bkdf',
 ]
 
 
