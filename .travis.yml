@@ -1,35 +1,20 @@
 sudo: false # route your build to the container-based infrastructure for a faster build
-language: ruby
-rvm:
-  - 2.4.1
+language: node_js
+node_js:
+  - lts/*
 
-env:
-  global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+before_install:
+  - npm i -g @codedoc/cli
+  - codedoc install
 
 # Assume bundler is being used, therefore the `install` step will run `bundle install` by default.
-
 script:
-  - JEKYLL_ENV=production
-    bundle exec jekyll build -t
-  - bundle exec htmlproofer ./_site
-    --allow-missing-href
-    --allow-hash-href
-    --check-favicon
-    --check-html
+  - cd content-downloader
+  - npm install
+  - npm link
+  - codedoc-content-downloader
+  - codedoc build
+  - cp favicon.ico dist
 
-cache: bundler
+cache: npm
 
-deploy:
-  provider: firebase
-  message: "travis ci build #$TRAVIS_BUILD_NUMBER tagged deployment for $TRAVIS_TAG ($TRAVIS_COMMIT)"
-  token:
-    secure: "iYWfNti00AaViTyUc8KWmuiKKHiKWu6t9mBEFhgs1MfjiA/k7RA6jXo8aRcDRXBOcyXRsaq125V+lzReCM45wKf3/KmU51vxSXEW8Mkss6jSZUNv429Zk90P1F46MSB71uEAhmOdTiBqifw545hb4jXswKSX+4eyid7bp4knOBntE1x+dtPklK/CMU0Hz9in8KYVUcZj0FvlkdE80j4Apw3jbnppoizXQ1is+8jNQmg1GYoJr8mDkmSxPJCRY7xKccN0HVHhKffja7aRtvbSDZ04KlYa9gZalHVAk8esFniEuMowaWtP4vetk27ES6xie4JOCSROGDeQ2h3hfW/7ESOHi1AsgODJn8rEuaDRh1NezWQgepcl4kVE1lhj+xQnzhJl4GUJqgSt7JuOZIjKHoMW+QmDBDgABw7pKao1sC4wWYUOxyzEG+Bs6uCcC9iy0gL6ArLFMnOu6aHKI0tcuwshZOUpz0ratbup0VJzC6PrTTYqffAlFgXgWjf9H0R2fCAUOaHKoCcMLFGPllVsADEXVNULnmWoKdjLtZ7QHm/jjbTt/ImVhTPixXk/GMs1gQOb6DGoQMkiAovFVgfJ5mmIKfaCJ8llFxHIfvVlFkJmm/pwp5Gmfrp8KsaFgOeeRTrDQGG0Ta7iqNsOuIl/viatwNFXHD1gMcr3eY42ME0="
-  on:
-    tags: true
-  skip_cleanup: true # otherwise Travis CI will delete all the files created during the build
-
-notifications:
-  slack:
-    secure: "DFOovqCHqy0mvBhtJZE8Zh+YACLNzcTcE2Z3yz9RQuyRMXNZVYt3yMdWKDL19U7nepY4h1VTn7zp2LxMd8IdNGnAfWoC6HnJOQFGdPCM+GJNfHnu/5GmzQvH6tgNgK2XLzAnE3ZhF5TthrmGLHEdFWkSdaJO5EY3zrGFZJIiE2X83AJHLnP+locWu3LwznCzE+jooCMeDaVGdW6qjlkRrwqX7TzFWKeoit7m3/FDMuSQaTTquI4EPJJugIEgBzsTKl2U8ciS54nwBAkiwRuYvYLxqRI0htJylmLGl+0P/mM/HXc/+2kBCKwNTgPeCzkMxKKyg5XEGXOqmXZoco951SLh7WZlJNJ6SIgsAVuECrWoroU5l6Npr7SoNqFzI8EYa9LsV7/FN6x9AqKhn47TMXyTVZ0bJu6AQYgETM23HlZ8TFuKcFi44xjozpRKDYZszBzdkngvZU5CBb8rr9NVXkIvYsoWbh+Ny/kAwrzV4CQjljTNAv90caNfaAPabqCO9XHDDCmaUzsQhXa+gOYcD4YTa83QttJhaOMwa4LK4/7hPubIq6mpyZeofN69VWfXTpCYolhFvRsc26YGPJNqBxB+B/ez0RRS7IjkRaXYFX9EuRAWbmB1gVch26LDgW2cSgqJKV1gebwxFKQV9VTGpjqIRj5c8HWr/b+1zkJiZNQ="
-  email: false
