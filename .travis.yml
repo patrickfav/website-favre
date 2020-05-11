@@ -13,8 +13,8 @@ script:
   - npm install
   - npm link
   - codedoc-content-downloader
-  - codedoc build
   - cd ..
+  - codedoc build
   - cp favicon.ico dist
 
 cache: npm
