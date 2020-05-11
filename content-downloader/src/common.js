@@ -38,18 +38,17 @@ export function createGithubMetaListMd(title, metaOutputList) {
     let table = metaOutputList
         .map(m =>
             '| [' + m.name + '](/' + m.relLink + ')'+
-            '| ' + m.language + ' |' +
-            '| ' + m.forks + ' |' +
-            '| ' + m.stars + ' |' +
-            '| ' + m.watchers + ' |' +
-            '| ' + m.license + ' |' +
+            '| ' + m.language +
+            '| ' + m.forks +
+            '| ' + m.stars +
+            '| ' + m.license +
             '| ' + dtf.format(m.createDate) + ' |'
         )
         .join('\n');
 
     return '# ' + title + "\n\n"
-        + "|Title|Language|Forks|Stars|Watchers|License|Published|\n" +
-        "|:---|---|---|---|---|---|---:|\n"
+        + "|Title|Language|Forks|Stars|License|Published|\n" +
+        "|:---|---|---|---|---|---:|\n"
         + table;
 }
 

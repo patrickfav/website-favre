@@ -41,7 +41,7 @@ export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirA
         await StringStream.from(content).pipe(fs.createWriteStream(rootDirMd + relOutDirArticles + fileName + ".md"));
     }
 
-    metaOutputList.sort((a, b) => a.createDate - b.createDate);
+    metaOutputList.sort((a, b) => b.createDate - a.createDate);
 
     return metaOutputList;
 }

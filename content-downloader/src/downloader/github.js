@@ -53,7 +53,7 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
             .pipe(fs.createWriteStream(rootDirMd + relOutDir + fileNameExt));
     }
 
-    metaOutputList.sort((a, b) => a.createDate - b.createDate);
+    metaOutputList.sort((a, b) => b.createDate - a.createDate);
 
     return metaOutputList;
 }
