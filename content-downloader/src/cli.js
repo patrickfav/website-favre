@@ -3,7 +3,7 @@ import {promisify} from 'util';
 import {github_projects, github_projects_user, medium_projects} from "./confg";
 import {downloadGithubReadme} from "./downloader/github";
 import {downloadMediumArticles} from "./downloader/medium";
-import {createMetaListMd, createPage, createTocMd} from "./common";
+import {createMetaListMd, createGithubMetaListMd, createPage, createTocMd} from "./common";
 
 export function cli(args) {
 
@@ -36,8 +36,8 @@ export function cli(args) {
             .replace('{{PLACEHOLDER_GITHUB_TOC}}', createTocMd(metaDataGithub))
             .replace('{{PLACEHOLDER_ARTICLE_TOC}}', createTocMd(metaDataMedium)))
         .then(data => writeFile(tocFile, data))
-        .then(() => createPage(rootDirMd + relOutDirGithub +'index.md', createMetaListMd("Open Source", metaDataGithub)))
-        .then(() => createPage(rootDirMd + relOutDirArticles +'index.md', createMetaListMd("Articles", metaDataMedium)))
+        .then(() => createPage(rootDirMd + relOutDirGithub + 'index.md', createGithubMetaListMd("Open Source", metaDataGithub)))
+        .then(() => createPage(rootDirMd + relOutDirArticles + 'index.md', createMetaListMd("Articles", metaDataMedium)))
         .then(() => console.log("Waiting to finish"));
 }
 

@@ -2,22 +2,22 @@
 
 > :Collapse label=OpenSource
 >
-> [bcrypt](/opensource/bcrypt)
-> [Dali](/opensource/Dali)
-> [under-the-hood](/opensource/under-the-hood)
-> [density-converter](/opensource/density-converter)
-> [uber-apk-signer](/opensource/uber-apk-signer)
-> [armadillo](/opensource/armadillo)
 > [BlurTestAndroid](/opensource/BlurTestAndroid)
-> [uber-adb-tools](/opensource/uber-adb-tools)
-> [bytes-java](/opensource/bytes-java)
+> [Dali](/opensource/Dali)
+> [density-converter](/opensource/density-converter)
 > [indoor-positioning](/opensource/indoor-positioning)
-> [hkdf](/opensource/hkdf)
-> [slf4j-timber](/opensource/slf4j-timber)
-> [id-mask](/opensource/id-mask)
+> [uber-adb-tools](/opensource/uber-adb-tools)
+> [uber-apk-signer](/opensource/uber-apk-signer)
+> [under-the-hood](/opensource/under-the-hood)
 > [dice](/opensource/dice)
+> [hkdf](/opensource/hkdf)
+> [bytes-java](/opensource/bytes-java)
+> [armadillo](/opensource/armadillo)
+> [slf4j-timber](/opensource/slf4j-timber)
+> [bcrypt](/opensource/bcrypt)
 > [singlestep-kdf](/opensource/singlestep-kdf)
 > [bkdf](/opensource/bkdf)
+> [id-mask](/opensource/id-mask)
 
 
 > :Collapse label=Articles
