@@ -9,11 +9,12 @@ before_install:
 
 # Assume bundler is being used, therefore the `install` step will run `bundle install` by default.
 script:
-  - cd content-downloader
+  - cd $TRAVIS_BUILD_DIR/content-downloader
   - npm install
   - npm link
   - codedoc-content-downloader
   - codedoc build
+  - cd ..
   - cp favicon.ico dist
 
 cache: npm
