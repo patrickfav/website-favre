@@ -18,9 +18,8 @@ npm link
 
 optinally update the content with
 
-
 ````bash
-codedoc-gdl
+codedoc-content-downloader
 ````
 
 ## Serve
