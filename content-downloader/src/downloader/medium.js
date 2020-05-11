@@ -6,14 +6,17 @@ import {StringStream} from "scramjet";
 
 export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirArticles) {
     const mediumExporterApi = promisify(medium_utils.loadMediumPost);
-    let tocEntriesArticles = [];
+    let metaOutputList = [];
 
     if (!fs.existsSync(rootDirMd + relOutDirArticles)) {
         fs.mkdirSync(rootDirMd + relOutDirArticles);
     }
 
     for (const article of medium_links) {
+        let metaOutput = {};
+
         console.log("Downloading Article '" + article.title + "'");
+
         let metaJson = await mediumExporterApi(article.url);
 
         let content = await medium_utils.render(metaJson);
@@ -24,13 +27,20 @@ export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirA
             createFootNote(metaJson, article)
 
         let fileName = encodeURI(article.title.replace(/ /g, '-').replace(/:/g, '_').replace(/…/g, '_'));
-        tocEntriesArticles.push('> [' + article.title + '](/' + relOutDirArticles + fileName + ')')
+
+        metaOutput.name = article.title;
+        metaOutput.description = metaJson.payload.value.content.subtitle;
+        metaOutput.relLink = relOutDirArticles + fileName
+        metaOutput.updateDate = new Date(metaJson.payload.value.latestPublishedAt);
+        metaOutput.createDate = new Date(metaJson.payload.value.firstPublishedAt);
+
+        metaOutputList.push(metaOutput);
         await StringStream.from(content).pipe(fs.createWriteStream(rootDirMd + relOutDirArticles + fileName + ".md"));
     }
 
-    tocEntriesArticles.sort();
+    metaOutputList.sort((a, b) => a.createDate - b.createDate);
 
-    return tocEntriesArticles;
+    return metaOutputList;
 }
 
 function createPageMeta(metaJson) {

@@ -1,8 +1,9 @@
 import fs from 'fs';
 import {promisify} from 'util';
-import {github_projects_user, github_projects, medium_projects} from "./confg";
+import {github_projects, github_projects_user, medium_projects} from "./confg";
 import {downloadGithubReadme} from "./downloader/github";
 import {downloadMediumArticles} from "./downloader/medium";
+import {createMetaListMd, createPage, createTocMd} from "./common";
 
 export function cli(args) {
 
@@ -17,24 +18,26 @@ export function cli(args) {
     const writeFile = promisify(fs.writeFile);
     const readFile = promisify(fs.readFile);
 
-    let tocEntriesGithub;
-    let tocEntriesArticles;
+    let metaDataGithub;
+    let metaDataMedium;
 
     cleanDirs(rootDirMd, relOutDirGithub, relOutDirArticles)
 
     downloadMediumArticles(medium_projects, rootDirMd, relOutDirArticles)
         .then((te) => {
-            tocEntriesArticles = te;
+            metaDataMedium = te;
             return downloadGithubReadme(github_projects_user, github_projects, rootDirMd, relOutDirGithub)
         })
         .then((te) => {
-            tocEntriesGithub = te;
+            metaDataGithub = te;
             return readFile(tocFileTemplate);
         })
         .then(data => data.toString()
-            .replace('{{PLACEHOLDER_GITHUB_TOC}}', tocEntriesGithub.join('\n'))
-            .replace('{{PLACEHOLDER_ARTICLE_TOC}}', tocEntriesArticles.join('\n')))
+            .replace('{{PLACEHOLDER_GITHUB_TOC}}', createTocMd(metaDataGithub))
+            .replace('{{PLACEHOLDER_ARTICLE_TOC}}', createTocMd(metaDataMedium)))
         .then(data => writeFile(tocFile, data))
+        .then(() => createPage(rootDirMd + relOutDirGithub +'index.md', createMetaListMd("Open Source", metaDataGithub)))
+        .then(() => createPage(rootDirMd + relOutDirArticles +'index.md', createMetaListMd("Articles", metaDataMedium)))
         .then(() => console.log("Waiting to finish"));
 }
 

@@ -2,6 +2,10 @@
 
 This is a collection of most of my open source projects and articles I wrote the last couple of years.
 
+* [Open Source Projects](opensource)
+* [Articles](articles)
+
+
 ## Find me
 
 * [Github](https://github.com/patrickfav)

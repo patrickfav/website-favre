@@ -3,19 +3,27 @@ import {StringStream} from "scramjet";
 import got from "got";
 
 export async function downloadGithubReadme(github_user, github_projects, rootDirMd, relOutDir) {
-    let tocEntriesGithub = [];
+    let metaOutputList = [];
 
     for (const projectName of github_projects) {
+        let metaOutput = {};
+
         console.log("Downloading Readme from " + projectName);
 
         const fileName = projectName;
         const fileNameExt = fileName + ".md";
 
-        tocEntriesGithub.push('> [' + projectName + '](/' + relOutDir + fileName + ')')
-
         if (!fs.existsSync(rootDirMd + relOutDir)) {
             fs.mkdirSync(rootDirMd + relOutDir);
         }
+
+        metaOutput.name = projectName;
+        metaOutput.description = '';
+        metaOutput.relLink = relOutDir + fileName;
+        metaOutput.updateDate = new Date(0);
+        metaOutput.createDate = new Date(0);
+
+        metaOutputList.push(metaOutput);
 
         const url = 'https://github.com/' + github_user + '/' + projectName + '/raw/master/';
 
@@ -30,7 +38,8 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
             )
             .pipe(fs.createWriteStream(rootDirMd + relOutDir + fileNameExt));
     }
-    tocEntriesGithub.sort();
 
-    return tocEntriesGithub;
+    metaOutputList.sort((a, b) => a.createDate - b.createDate);
+
+    return metaOutputList;
 }
