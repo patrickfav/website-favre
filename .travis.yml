@@ -21,7 +21,7 @@ cache: npm
 
 deploy:
   provider: firebase
-  message: "travis ci build #$TRAVIS_BUILD_NUMBER tagged deployment for $TRAVIS_TAG ($TRAVIS_COMMIT)"
+  message: "travis ci build #$TRAVIS_BUILD_NUMBER tagged deployment for $TRAVIS_COMMIT"
   token:
     secure: "jS+fVrx+IsRyJ3IIMWdbpiPxQYOM1GmfVUZsZiN+X2N5JFl5aZKYq03LWyr/zWgelwmkJ5N7WqFNzfzpPq0k77f8LSJB4rOe5dFsDhsU/f+selHGtupW4Ecca45+hG8G4AHjooPgJ/kvGxRcErSesQmTGk5AvMCUaJ1XlmO8ycONbbnDHFbfA5Uo25dsUl0rOl8EAfNsPKOMhOL3bwJHizio3sSFTyrZmh8ikzBmlRAgtapGQ8rYpAzWD2MkRQtdjT3ljwQnO1mSlELbnRJ2vyP9UY2erhMJ6s+xm0sVk2vR5I9oxHrjZgt4Eg8sncgrZTD61p6jaNmb49DszSZEqhPFnnCmvSSBI+h+R5kr1djob9vN9VlBB0uFJk1mzG/y6CKFOhaE+RYtucLhWWB7ZYBYcO2OEbS2mvrlOc4doNk3SqkncI2rtcu7r0Q0AVv+nyI2R/i+x5PZlGcd5I4T8JondbQHF3+aZazuRTztROkm5fcWiZ1S0Pr6CF5LJM615BROSkiMq3nbGkUV8tAjMZcdAvy079ZnJ3bwVv387aokv2gjZbux8xSKaXHyRKPKblf2Dw30FxSEPP2NNuXsXUXhj0NgKTQmtfM0JqrgxFusykqm+xiK78TOUqmQ8TYR4q+Zx28LpiATPr7JfYnT81x7hKu7LGn5W0NlY7ncvXY="
   on:

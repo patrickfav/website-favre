@@ -19,6 +19,9 @@ export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirA
 
         let metaJson = await mediumExporterApi(article.url);
 
+        console.log("\tLast Updated: " + new Date(metaJson.payload.value.latestPublishedAt).toISOString());
+
+
         let content = await medium_utils.render(metaJson);
         content = fixCommonPageRenderIssues(content);
 
