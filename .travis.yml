@@ -17,4 +17,3 @@ script:
   - cp favicon.ico dist
 
 cache: npm
-
