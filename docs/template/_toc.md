@@ -2,11 +2,13 @@
 
 > :Collapse label=OpenSource
 >
+> [Overview](/opensource/)
 {{PLACEHOLDER_GITHUB_TOC}}
 
 
 > :Collapse label=Articles
 >
+> [Overview](/articles/)
 {{PLACEHOLDER_ARTICLE_TOC}}
 
 <br><br>

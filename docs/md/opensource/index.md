@@ -1,20 +1,20 @@
 # Open Source
 
-|Title|Language|Forks|Stars|License|Published|
-|:---|---|---|---|---|---:|
-| [id-mask](/opensource/id-mask)| Java| 0| 6| Apache License 2.0| Mar 30, 2019 |
-| [bkdf](/opensource/bkdf)| Java| 1| 1| Apache License 2.0| Dec 08, 2018 |
-| [singlestep-kdf](/opensource/singlestep-kdf)| Java| 0| 2| Apache License 2.0| Nov 18, 2018 |
-| [bcrypt](/opensource/bcrypt)| Java| 18| 127| Apache License 2.0| Jul 05, 2018 |
-| [slf4j-timber](/opensource/slf4j-timber)| Java| 3| 10| Apache License 2.0| Dec 31, 2017 |
-| [armadillo](/opensource/armadillo)| Java| 38| 198| Apache License 2.0| Dec 19, 2017 |
-| [bytes-java](/opensource/bytes-java)| Java| 13| 59| Apache License 2.0| Oct 31, 2017 |
-| [hkdf](/opensource/hkdf)| Java| 8| 31| Apache License 2.0| Sep 30, 2017 |
-| [dice](/opensource/dice)| Java| 2| 5| Apache License 2.0| Aug 14, 2017 |
-| [under-the-hood](/opensource/under-the-hood)| Java| 16| 213| Apache License 2.0| Nov 27, 2016 |
-| [uber-apk-signer](/opensource/uber-apk-signer)| Java| 65| 436| Apache License 2.0| Oct 10, 2016 |
-| [uber-adb-tools](/opensource/uber-adb-tools)| Java| 14| 93| Apache License 2.0| Sep 11, 2016 |
-| [indoor-positioning](/opensource/indoor-positioning)| Java| 17| 31| | Aug 07, 2016 |
-| [density-converter](/opensource/density-converter)| Java| 28| 221| Apache License 2.0| Feb 26, 2016 |
-| [Dali](/opensource/Dali)| Java| 93| 983| Apache License 2.0| May 26, 2014 |
-| [BlurTestAndroid](/opensource/BlurTestAndroid)| Java| 73| 378| Apache License 2.0| Apr 07, 2014 |
+|Title|Description|
+|:---|:---|
+| [id-mask](/opensource/id-mask)| _IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger. This library bases its security on strong cryptographic primitives._ (2019)
+| [bkdf](/opensource/bkdf)| _BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation_ (2018)
+| [singlestep-kdf](/opensource/singlestep-kdf)| _Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC._ (2018)
+| [bcrypt](/opensource/bcrypt)| _A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool._ (2018)
+| [slf4j-timber](/opensource/slf4j-timber)| _SLF4J binding for Timber - a logger with a small, extensible API which provides utility on top of Android's normal Log class._ (2017)
+| [armadillo](/opensource/armadillo)| _A shared preference implementation for confidential data. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of Fingerprinting combined with optional user provided passwords._ (2017)
+| [bytes-java](/opensource/bytes-java)| _Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance._ (2017)
+| [hkdf](/opensource/hkdf)| _A standalone Java 7 implementation of HMAC-based key derivation function (HKDF) defined in RFC 5869 first described by Hugo Krawczyk. HKDF follows the "extract-then-expand" paradigm which is compatible to NIST 800-56C Rev. 1 two step KDF_ (2017)
+| [dice](/opensource/dice)| _A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services._ (2017)
+| [under-the-hood](/opensource/under-the-hood)| _Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in._ (2016)
+| [uber-apk-signer](/opensource/uber-apk-signer)| _A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing._ (2016)
+| [uber-adb-tools](/opensource/uber-adb-tools)| _A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform._ (2016)
+| [indoor-positioning](/opensource/indoor-positioning)| _A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture._ (2016)
+| [density-converter](/opensource/density-converter)| _A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush._ (2016)
+| [Dali](/opensource/Dali)| _Dali is an image blur library for Android. It contains several modules for static blurring, live blurring and animations._ (2014)
+| [BlurTestAndroid](/opensource/BlurTestAndroid)| _This is a simple App to test some blur algorithms on their visual quality and performance._ (2014)

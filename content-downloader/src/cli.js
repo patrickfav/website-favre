@@ -1,9 +1,9 @@
 import fs from 'fs';
 import {promisify} from 'util';
 import {github_projects, github_projects_user, medium_projects} from "./confg";
-import {downloadGithubReadme} from "./downloader/github";
+import {createGithubMetaListMd, downloadGithubReadme} from "./downloader/github";
 import {downloadMediumArticles} from "./downloader/medium";
-import {createMetaListMd, createGithubMetaListMd, createPage, createTocMd} from "./common";
+import {createMetaListMd, createPage, createTocMd} from "./common";
 
 export function cli(args) {
 
