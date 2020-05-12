@@ -10,6 +10,7 @@ Install [CodeDoc](https://github.com/CONNECT-platform/codedoc/):
 
 ```bash
 npm i -g @codedoc/cli
+codedoc install
 ```
 
 then install everything in the local script and link the cli:
@@ -38,7 +39,13 @@ or
 
 ````bash
 codedoc build
-```` 
+````
+
+## Update Codedoc
+
+```bash
+codedoc update
+```
 
 # License
 
