@@ -1,4 +1,4 @@
-# My Private Website
+# Static Site Gen Repo for my Personal Website
 
 A simple website with a list of all of my open source projects and articles I wrote. Can be found on [favr.dev](https://favr.dev). Currently uses [CodeDoc](https://github.com/CONNECT-platform/codedoc/) as static code generator.
 
