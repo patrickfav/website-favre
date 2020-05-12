@@ -16,7 +16,7 @@ codedoc install
 then install everything in the local script and link the cli:
 
 ```bash
-cd github-dl
+cd content-downloader
 npm install
 npm link 
 ```
