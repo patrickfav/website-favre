@@ -4,7 +4,6 @@
   "description": "A Script that prepares your github readmes and medium posts for CodeDoc",
   "main": "src/index.js",
   "bin": {
-    "@patrickfav/codedoc-content-downloader": "bin/codedoc-content-downloader",
     "codedoc-content-downloader": "bin/codedoc-content-downloader"
   },
   "publishConfig": {
