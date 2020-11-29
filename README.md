@@ -2,7 +2,7 @@
 
 A simple website with a list of all of my open source projects and articles I wrote. Can be found on [favr.dev](https://favr.dev). Currently uses [CodeDoc](https://github.com/CONNECT-platform/codedoc/) as static code generator.
 
-[![Build Status](https://travis-ci.org/patrickfav/website-favre.svg?branch=master)](https://travis-ci.org/patrickfav/website-favre)
+[![Build Status](https://travis-ci.com/patrickfav/website-favre.svg?branch=master)](https://travis-ci.com/patrickfav/website-favre)
 
 ## Prepare
 
