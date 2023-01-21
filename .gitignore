@@ -107,4 +107,10 @@ dist
 # TernJS port file
 .tern-port
 
+# Firebase Hosting
 .firebase
+firebase-debug.log
+
+public
+
+resources/_gen

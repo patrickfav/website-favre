@@ -1,0 +1,27 @@
+languageCode = "en-at"
+languageName = "English (Austria)"
+displayName = ":flag-au:"
+isoCode = "en-AT"
+weight = 1
+rtl = false
+
+title = "Patrick Personal Website"
+description = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
+copyright = "&copy; 2023 Patrick Favre"
+
+dateFormat = "2 January 2006"
+
+[params]
+  mainSections = ["samples"]
+
+[author]
+  name = "Patrick Favre"
+  image = "img/author.jpg"
+  headline = "Not your ordinary theme!"
+  bio = "Software Engineer currently working as architect, backend dev, cloud engineer, it ops rookie. Cryptography and security are my passions."
+  links = [
+    { github = "https://github.com/patrickfav" },
+    { stack-overflow = "https://stackoverflow.com/users/774398" },
+    { linkedin = "https://www.linkedin.com/in/pfb/" },
+    { twitter = "https://twitter.com/patrickfav" },
+  ]
