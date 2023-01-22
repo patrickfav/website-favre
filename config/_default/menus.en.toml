@@ -20,17 +20,12 @@ weight = 30
 [[main]]
   name = "Open Source"
   pageRef = "opensource"
-  weight = 31
-
-[[main]]
-  name = "Users"
-  pageRef = "users"
-  weight = 40
+  weight = 50
 
 [[main]]
   name = "GitHub"
-  url = "https://github.com/jpanther/congo"
-  weight = 50
+  url = "https://github.com/patrickfav"
+  weight = 80
   [main.params]
     icon = "github"
     showName = false

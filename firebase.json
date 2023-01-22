@@ -1,27 +1,58 @@
 {
   "hosting": {
-    "public": "dist",
+    "site": "website-favre-portfolio",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "headers": [{
-      "source" : "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
-      "headers" : [{
-        "key" : "Access-Control-Allow-Origin",
-        "value" : "*"}]
-    }, {
-      "source" : "**/*.@(jpg|jpeg|gif|png|svg)",
-      "headers" : [{
-        "key" : "Cache-Control",
-        "value" : "max-age=7200"}]
-    }, {
-      "source" : "**/*.@(css|js)",
-      "headers" : [{
-        "key" : "Cache-Control",
-        "value" : "max-age=3600"}]
-    }],
-    "cleanUrls": true
+    "headers": [
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=15550000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7776000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(htm|html)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=60"
+          }
+        ]
+      },
+      {
+        "source": "**/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=60"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7776000"
+          }
+        ]
+      }
+    ]
   }
 }

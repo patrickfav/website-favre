@@ -18,7 +18,7 @@ A simple website with a list of all of my open source projects and articles I wr
 This project uses a git submodule for including the theme. To correctly clone it you need to do
 
 ```bash
-git clone https://github.com/patrickfav/website-favre-wedding.git
+git clone https://github.com/patrickfav/website-favre.git
 git submodule init
 git submodule update
 ```

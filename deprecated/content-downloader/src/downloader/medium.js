@@ -89,6 +89,7 @@ async function downloadAndRenderContent(articleId, mediumUserName) {
 
     console.log("\tDownloading markdown content");
     let parser = new Parser();
+    // https://medium.com/feed/@patrickfav
     const rssContent = await axios.request({
         method: 'GET',
         url: 'https://medium.com/feed/' + mediumUserName
