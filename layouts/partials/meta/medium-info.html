@@ -1,0 +1,10 @@
+<span>
+ <a href="{{ .Params.originalContentLink }}">{{ partial "icon.html" "medium" }} Medium</a>
+</span>
+{{ if and (.Params.mediumClaps | default false) (gt .Params.mediumClaps 0 ) }}
+  <span class="px-2 text-primary-500">&middot;</span>
+  <span>
+    <a href="{{ .Params.originalContentLink }}">{{ partial "icon.html" "hands-clapping-solid" }} {{ .Params.mediumClaps }}</a>
+  </span>
+{{ end }}
+{{- /* Trim EOF */ -}}

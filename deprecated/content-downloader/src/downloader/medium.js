@@ -1,45 +1,61 @@
-import {promisify} from "util";
-import medium_utils from "../util/medium-utils";
 import fs from "fs";
 import {StringStream} from "scramjet";
-
+import axios from "axios";
+import got from "got";
 
 export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirArticles) {
-    const mediumExporterApi = promisify(medium_utils.loadMediumPost);
+    console.log("Start Processing medium articles");
+
     let metaOutputList = [];
 
-    if (!fs.existsSync(rootDirMd + relOutDirArticles)) {
-        fs.mkdirSync(rootDirMd + relOutDirArticles);
-    }
+    const targetRootDir = rootDirMd + relOutDirArticles
 
-    for (const article of medium_links) {
-        let metaOutput = {};
+    // see here: https://rapidapi.com/nishujain199719-vgIfuFHZxVZ/api/medium2
 
-        console.log("Downloading Article '" + article.title + "'");
+    const userId = 'f5582e224131' //@patrickfav
+    const rapidApiKey = '3ab9f2cf40msh51a29d3c484dee6p178c32jsne0839fcf35f1'
+    const rapidApiHost = 'medium2.p.rapidapi.com'
 
-        let metaJson = await mediumExporterApi(article.url);
+    const allArticleIds = await axios.request({
+        method: 'GET',
+        url: 'https://medium2.p.rapidapi.com/user/' + userId + '/articles',
+        headers: {'X-RapidAPI-Key': rapidApiKey, 'X-RapidAPI-Host': rapidApiHost}
+    }).then(articleIds => articleIds.data.associated_articles);
 
-        console.log("\tLast Updated: " + new Date(metaJson.payload.value.latestPublishedAt).toISOString());
+    for (const index in allArticleIds) {
+        const articleId = allArticleIds[index]
+        console.log("Processing medium article " + articleId);
 
+        const articleInfo = await axios.request({
+            method: 'GET',
+            url: 'https://medium2.p.rapidapi.com/article/' + articleId,
+            headers: {'X-RapidAPI-Key': rapidApiKey, 'X-RapidAPI-Host': rapidApiHost}
+        }).then(response => response.data);
 
-        let content = await medium_utils.render(metaJson);
-        content = fixCommonPageRenderIssues(content);
+        const title = articleInfo.title;
+        let safeArticleTitle = encodeURI(title.replace(/ /g, '-').replace(/:/g, '_').replace(/…/g, '_'));
+        console.log("\tFound article " + title + "(" + safeArticleTitle + ") updated at " + new Date(articleInfo.last_modified_at).toISOString());
 
-        let fileName = encodeURI(article.title.replace(/ /g, '-').replace(/:/g, '_').replace(/…/g, '_'));
+        const targetProjectDir = targetRootDir + "/" + safeArticleTitle;
 
-        content = createPageMeta(metaJson, article, fileName) +
-            content  +
-            createFootNote(metaJson, article) +
-            "\n---\n";
+        if (!fs.existsSync(targetProjectDir)) {
+            fs.mkdirSync(targetProjectDir, {recursive: true});
+        }
 
-        metaOutput.name = article.title;
-        metaOutput.description = metaJson.payload.value.content.subtitle;
-        metaOutput.relLink = relOutDirArticles + fileName
-        metaOutput.updateDate = new Date(metaJson.payload.value.latestPublishedAt);
-        metaOutput.createDate = new Date(metaJson.payload.value.firstPublishedAt);
+        await downloadProjectImage(articleInfo.image_url, safeArticleTitle, targetProjectDir)
 
-        metaOutputList.push(metaOutput);
-        await StringStream.from(content).pipe(fs.createWriteStream(rootDirMd + relOutDirArticles + fileName + ".md"));
+        console.log("\tDownloading markdown content");
+        const markdownContent = await axios.request({
+            method: 'GET',
+            url: 'https://medium2.p.rapidapi.com/article/' + articleId + "/markdown",
+            headers: {'X-RapidAPI-Key': rapidApiKey, 'X-RapidAPI-Host': rapidApiHost}
+        }).then(response => response.data.markdown);
+
+        const targetProjectFile = targetProjectDir + "/index.md";
+
+        const frontMatter = createFrontMatter(articleInfo, safeArticleTitle);
+        await StringStream.from(frontMatter+markdownContent+"\n---\n")
+            .pipe(fs.createWriteStream(targetProjectFile));
     }
 
     metaOutputList.sort((a, b) => b.createDate - a.createDate);
@@ -47,17 +63,38 @@ export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirA
     return metaOutputList;
 }
 
-function createPageMeta(metaJson, article, fileName) {
-    let meta = '---\n';
-    if (metaJson.payload.value.content.metaDescription) {
-        meta += "summary: '" + metaJson.payload.value.content.metaDescription + "'\n"
+async function downloadProjectImage(imageUrl, safeArticleTitle, targetProjectDir) {
+    const imageFileName = "thumb_" + safeArticleTitle + ".png";
+
+    if (imageUrl) {
+        console.log("\tDownloading medium image: " + imageUrl);
+        await got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + "/" + imageFileName))
     }
-    meta += "title: '" + article.title + "'\n"
-    meta += "date: " + new Date(metaJson.payload.value.latestPublishedAt).toISOString().split("T")[0] + "\n"
+}
+
+function createFrontMatter(articleInfo, safeArticleTitle) {
+    let meta = '---\n';
+    meta += "title: '" + articleInfo.title.replace(/'/g, "`") + "'\n"
+    meta += "date: " + new Date(articleInfo.published_at).toISOString().split("T")[0] + "\n"
+    meta += "lastmod: " + new Date(articleInfo.last_modified_at).toISOString().split("T")[0] + "\n"
     meta += "draft: false\n"
-    meta += "description: '" + metaJson.payload.value.content.subtitle + "'\n"
-    meta += "slug: " + fileName + "\n"
-    meta += "tags: [" + metaJson.payload.value.virtuals.tags.map(m => '"'+m.name+'"').join(", ") + "]\n"
+    meta += "summary: '" + articleInfo.subtitle.replace(/'/g, "`") + "'\n"
+    meta += "description: '" + articleInfo.subtitle.replace(/'/g, "`") + "'\n"
+    meta += "slug: " + safeArticleTitle.toLowerCase() + "\n"
+    if(articleInfo.topics && articleInfo.topics.map) {
+        meta += "tags: [" + articleInfo.topics.map(m => '"' + m + '"').join(", ") + "]\n"
+    }
+    meta += "keywords: [" + articleInfo.tags.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "showDate: true\n"
+    meta += "showReadingTime: true\n"
+    meta += "showTaxonomies: true\n"
+    meta += "showWordCount: true\n"
+    meta += "showEdit: false\n"
+    meta += "originalContentLink: " + articleInfo.url + "\n"
+    meta += "originalContentType: medium\n"
+    meta += "mediumClaps: " + articleInfo.claps + "\n"
+    meta += "mediumVoters: " + articleInfo.voters + "\n"
+    meta += "mediumArticleId: " + articleInfo.id + "\n"
     meta += "---\n"
     return meta;
 }

@@ -10,8 +10,9 @@ tags: ["android", "android-signing-scheme", "apk", "apksigner", "cli", "keystore
 keywords: ["android", "android-signing-scheme", "apk", "apksigner", "cli", "keystore", "signature", "signing", "verify", "zipalign"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/uber-apk-signer
 editAppendPath: false
 cover: 'thumb*'

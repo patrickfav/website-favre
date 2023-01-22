@@ -10,8 +10,9 @@ tags: ["cli", "csv", "export", "java11", "rocket-chat", "slack", "tool"]
 keywords: ["cli", "csv", "export", "java11", "rocket-chat", "slack", "tool"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/rocketchat-exporter
 editAppendPath: false
 cover: 'thumb*'

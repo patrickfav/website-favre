@@ -10,8 +10,9 @@ tags: []
 keywords: []
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/indoor-positioning
 editAppendPath: false
 cover: 'thumb*'

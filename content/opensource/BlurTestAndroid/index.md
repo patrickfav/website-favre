@@ -10,8 +10,9 @@ tags: ["algorithm", "android-application", "benchmark", "blur", "renderscript"]
 keywords: ["algorithm", "android-application", "benchmark", "blur", "renderscript"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/BlurTestAndroid
 editAppendPath: false
 cover: 'thumb*'

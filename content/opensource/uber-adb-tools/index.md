@@ -10,8 +10,9 @@ tags: ["adb", "adb-commands", "android", "android-debug-bridge", "apk", "bugrepo
 keywords: ["adb", "adb-commands", "android", "android-debug-bridge", "apk", "bugreport", "cli", "uninstall", "wildcard"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/uber-adb-tools
 editAppendPath: false
 cover: 'thumb*'

@@ -10,8 +10,9 @@ tags: ["aes-encryption", "aes-gcm", "android", "authenticated-encryption", "bcry
 keywords: ["aes-encryption", "aes-gcm", "android", "authenticated-encryption", "bcrypt", "crypto", "cryptography", "hkdf", "security", "sharedpreferences"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/armadillo
 editAppendPath: false
 cover: 'thumb*'

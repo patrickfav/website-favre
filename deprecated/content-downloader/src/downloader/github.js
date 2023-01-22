@@ -1,5 +1,5 @@
 import fs from "fs";
-import {DataStream, MultiStream, StringStream} from "scramjet";
+import {MultiStream, StringStream} from "scramjet";
 import got from "got";
 import * as cheerio from "cheerio";
 
@@ -57,7 +57,7 @@ async function downloadParseAndSaveReadme(github_user, projectName, frontMatter,
 
     const url = 'https://github.com/' + github_user + '/' + projectName + '/raw/master/';
 
-    const targetProjectArticleFile = targetProjectDir + "/" + fileNameExt;
+    const targetProjectFile = targetProjectDir + "/" + fileNameExt;
 
     console.log("\tDownloading Readme from " + url + 'README.md');
 
@@ -69,7 +69,7 @@ async function downloadParseAndSaveReadme(github_user, projectName, frontMatter,
                 .replace(/\]\(misc\//g, '](' + url + 'misc/')
                 .replace(/\]\(src\/main\/resources\/img\//g, '](' + url + 'src/main/resources/img/')
         )
-        .pipe(fs.createWriteStream(targetProjectArticleFile));
+        .pipe(fs.createWriteStream(targetProjectFile));
 }
 
 function createGithubFrontMatter(projectName, githubMeta) {
@@ -85,8 +85,9 @@ function createGithubFrontMatter(projectName, githubMeta) {
     meta += "keywords: [" + githubMeta.topics.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "showDate: false\n"
     meta += "showReadingTime: false\n"
+    meta += "showReadingTime: false\n"
     meta += "showTaxonomies: true\n"
-    meta += "showEdit: true\n"
+    meta += "showEdit: false\n"
     meta += "editURL: " + githubMeta.html_url + "\n"
     meta += "editAppendPath: false\n"
     meta += "cover: 'thumb*'\n"

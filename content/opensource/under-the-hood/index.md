@@ -10,8 +10,9 @@ tags: ["android", "android-debug", "android-library", "noop", "shake-detection"]
 keywords: ["android", "android-debug", "android-library", "noop", "shake-detection"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/under-the-hood
 editAppendPath: false
 cover: 'thumb*'

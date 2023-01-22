@@ -10,8 +10,9 @@ tags: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-sourc
 keywords: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-source", "hex", "hmac-drbg", "hotbits", "java", "nist", "octal", "prng", "random-number-generators", "seed", "sp800-90a", "text-encodings"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/dice
 editAppendPath: false
 cover: 'thumb*'

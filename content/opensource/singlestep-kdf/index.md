@@ -10,8 +10,9 @@ tags: ["cryptography", "hmac", "java", "kdf", "key-agreement", "key-derivation",
 keywords: ["cryptography", "hmac", "java", "kdf", "key-agreement", "key-derivation", "key-derivation-function", "message-digest", "nist", "nist800-56", "secretkey", "security", "singlestep-kdf"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/singlestep-kdf
 editAppendPath: false
 cover: 'thumb*'

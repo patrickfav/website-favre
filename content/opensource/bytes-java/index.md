@@ -10,8 +10,9 @@ tags: ["biginteger", "byte-array", "bytebuffer", "bytes", "bytes-java", "checksu
 keywords: ["biginteger", "byte-array", "bytebuffer", "bytes", "bytes-java", "checksum", "encoding", "endianness", "gzip", "hash", "java", "utility-library"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/bytes-java
 editAppendPath: false
 cover: 'thumb*'

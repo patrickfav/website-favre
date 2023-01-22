@@ -10,8 +10,9 @@ tags: ["android", "cli", "converter", "density", "dpi", "drawable", "gui", "ios"
 keywords: ["android", "cli", "converter", "density", "dpi", "drawable", "gui", "ios", "jpeg", "mozjpeg", "nine-patch", "png", "pngcrush", "post-processor", "psd", "resized-images", "svg"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/density-converter
 editAppendPath: false
 cover: 'thumb*'

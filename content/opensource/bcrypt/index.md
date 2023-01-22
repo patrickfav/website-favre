@@ -10,8 +10,9 @@ tags: ["bcrypt", "bcrypt-library", "bycrypt-password", "cli", "crypto", "hash", 
 keywords: ["bcrypt", "bcrypt-library", "bycrypt-password", "cli", "crypto", "hash", "java", "java-library", "kdf", "password-hash", "security"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/bcrypt
 editAppendPath: false
 cover: 'thumb*'

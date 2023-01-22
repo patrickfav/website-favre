@@ -10,8 +10,9 @@ tags: ["800-56c", "android-compatibility", "cryptography", "hash", "hkdf", "hmac
 keywords: ["800-56c", "android-compatibility", "cryptography", "hash", "hkdf", "hmac", "hmac-sha1", "hmac-sha256", "hmac-sha512", "java", "java7", "jdk7", "kdf", "key-derivation-function", "nist", "rfc5869", "two-step-key-derivation"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/hkdf
 editAppendPath: false
 cover: 'thumb*'

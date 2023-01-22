@@ -10,8 +10,9 @@ tags: ["android", "android-library", "animation", "blur", "image-manipulation", 
 keywords: ["android", "android-library", "animation", "blur", "image-manipulation", "live-blurring", "renderscript"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/Dali
 editAppendPath: false
 cover: 'thumb*'

@@ -10,8 +10,9 @@ tags: ["bcrypt", "cryptography", "hkdf", "java", "kdf", "password", "security"]
 keywords: ["bcrypt", "cryptography", "hkdf", "java", "kdf", "password", "security"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/bkdf
 editAppendPath: false
 cover: 'thumb*'

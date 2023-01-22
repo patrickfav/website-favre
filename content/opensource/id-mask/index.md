@@ -10,8 +10,9 @@ tags: ["64bit", "aes-encryption", "biginteger", "byte-array", "database-ids", "h
 keywords: ["64bit", "aes-encryption", "biginteger", "byte-array", "database-ids", "hashid", "hashids", "hkdf", "hmac", "id", "integer", "jackson", "jax-rs", "long", "obfuscation", "paramconverter", "serializer", "uuid"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/id-mask
 editAppendPath: false
 cover: 'thumb*'

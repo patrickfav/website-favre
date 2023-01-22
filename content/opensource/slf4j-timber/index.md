@@ -10,8 +10,9 @@ tags: ["android", "logcat", "logging", "slf4j", "slf4j-binding", "timber"]
 keywords: ["android", "logcat", "logging", "slf4j", "slf4j-binding", "timber"]
 showDate: false
 showReadingTime: false
+showReadingTime: false
 showTaxonomies: true
-showEdit: true
+showEdit: false
 editURL: https://github.com/patrickfav/slf4j-timber
 editAppendPath: false
 cover: 'thumb*'

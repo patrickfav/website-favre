@@ -1,9 +1,8 @@
 import fs from 'fs';
 import {promisify} from 'util';
 import {github_projects, github_projects_user, medium_projects} from "./confg";
-import {createGithubMetaListMd, downloadGithubReadme} from "./downloader/github";
+import {downloadGithubReadme} from "./downloader/github";
 import {downloadMediumArticles} from "./downloader/medium";
-import {createMetaListMd, createPage, createTocMd} from "./common";
 
 export function cli(args) {
 
@@ -27,14 +26,11 @@ export function cli(args) {
 
     cleanDirs(rootDirMd, relOutDirGithub, relOutDirArticles)
 
-    downloadGithubReadme(github_projects_user, github_projects, rootDirMd, relOutDirGithub)
-        .then(() => console.log("Waiting to finish"));
-
-    // downloadMediumArticles(medium_projects, rootDirMd, relOutDirArticles)
-    //     .then((te) => {
-    //         metaDataMedium = te;
-    //         return downloadGithubReadme(github_projects_user, github_projects, rootDirMd, relOutDirGithub)
-    //     })
+    downloadMediumArticles(medium_projects, rootDirMd, relOutDirArticles)
+        .then((te) => {
+            // metaDataMedium = te;
+            return downloadGithubReadme(github_projects_user, github_projects, rootDirMd, relOutDirGithub)
+        })
         // .then((te) => {
         //     metaDataGithub = te;
         //     return readFile(tocFileTemplate);
@@ -45,7 +41,7 @@ export function cli(args) {
         // .then(data => writeFile(tocFile, data))
         // .then(() => createPage(rootDirMd + relOutDirGithub + '_index.md', createGithubMetaListMd("Open Source", metaDataGithub)))
         // .then(() => createPage(rootDirMd + relOutDirArticles + '_index.md', createMetaListMd("Articles", metaDataMedium)))
-        // .then(() => console.log("Waiting to finish"));
+        .then(() => console.log("Waiting to finish"));
 }
 
 function cleanDirs(rootDirMd, relOutDirGithub, relOutDirArticles) {
