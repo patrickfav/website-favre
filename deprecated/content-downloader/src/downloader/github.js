@@ -4,11 +4,9 @@ import got from "got";
 import * as cheerio from "cheerio";
 
 export async function downloadGithubReadme(github_user, github_projects, rootDirMd, relOutDir) {
-    let metaOutputList = [];
-
     const targetRootDir = rootDirMd + relOutDir
 
-    //download all repositieries meta data from github api
+    //download all repositories meta data from github api
     let githubMetaData = await got.get('https://api.github.com/users/' + github_user + '/repos?sort=updated&direction=desc')
         .then((res) => JSON.parse(res.body));
 
@@ -25,15 +23,10 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
         await downloadProjectImage(projectName, github_user, targetProjectDir);
 
         let githubMetaForProject = githubMetaData.find(p => p.name === projectName);
-        metaOutputList.push(extractMetaData(githubMetaForProject, projectName, relOutDir, projectName));
 
         const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject);
         await downloadParseAndSaveReadme(github_user, projectName, frontMatter, targetProjectDir);
     }
-
-    metaOutputList.sort((a, b) => b.createDate - a.createDate);
-
-    return metaOutputList;
 }
 
 async function downloadProjectImage(projectName, github_user, targetProjectDir) {
@@ -101,40 +94,4 @@ function createGithubFrontMatter(projectName, githubMeta) {
     }
     meta += "---\n"
     return meta;
-}
-
-function extractMetaData(githubMeta, projectName, relOutDir, fileName) {
-    let metaOutput = {};
-    metaOutput.name = projectName;
-    metaOutput.description = githubMeta.description;
-    metaOutput.relLink = relOutDir + fileName;
-    metaOutput.updateDate = new Date(githubMeta.updated_at);
-    metaOutput.createDate = new Date(githubMeta.created_at);
-    metaOutput.stars = githubMeta.stargazers_count;
-    metaOutput.forks = githubMeta.forks;
-    metaOutput.watchers = githubMeta.watchers;
-    metaOutput.language = githubMeta.language;
-    metaOutput.license = githubMeta.license ? githubMeta.license.name : '';
-    metaOutput.issues = githubMeta.open_issues_count;
-    metaOutput.cloneUrl = githubMeta.clone_url;
-
-    console.log("\tLast Updated " + metaOutput.updateDate.toISOString());
-
-    return metaOutput;
-}
-
-export function createGithubMetaListMd(title, metaOutputList) {
-    const dtf = new Intl.DateTimeFormat('en', {year: 'numeric', month: 'short', day: '2-digit'})
-
-    let table = metaOutputList
-        .map(m =>
-            '| [' + m.name + '](/' + m.relLink + ')' +
-            '| _' + m.description + '_ (' + m.createDate.getFullYear() + ')'
-        )
-        .join('\n');
-
-    return '# ' + title + "\n\n"
-        + "|Title|Description|\n" +
-        "|:---|:---|\n"
-        + table;
 }

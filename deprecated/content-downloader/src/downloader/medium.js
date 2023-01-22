@@ -2,18 +2,18 @@ import fs from "fs";
 import {StringStream} from "scramjet";
 import axios from "axios";
 import got from "got";
+import Parser from "rss-parser";
+import TurndownService from "turndown";
 
-export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirArticles) {
+export async function downloadMediumArticles(rootDirMd, relOutDirArticles, rapidApiKey) {
     console.log("Start Processing medium articles");
-
-    let metaOutputList = [];
 
     const targetRootDir = rootDirMd + relOutDirArticles
 
     // see here: https://rapidapi.com/nishujain199719-vgIfuFHZxVZ/api/medium2
 
     const userId = 'f5582e224131' //@patrickfav
-    const rapidApiKey = '3ab9f2cf40msh51a29d3c484dee6p178c32jsne0839fcf35f1'
+    const userName = '@patrickfav'
     const rapidApiHost = 'medium2.p.rapidapi.com'
 
     const allArticleIds = await axios.request({
@@ -33,10 +33,12 @@ export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirA
         }).then(response => response.data);
 
         const title = articleInfo.title;
-        let safeArticleTitle = encodeURI(title.replace(/ /g, '-').replace(/:/g, '_').replace(/…/g, '_'));
-        console.log("\tFound article " + title + "(" + safeArticleTitle + ") updated at " + new Date(articleInfo.last_modified_at).toISOString());
+        let safeArticleTitle = encodeURI(title.replace(/ /g, '-').replace(/:/g, '_').replace(/…/g, '_')).toLowerCase();
+        let safeArticleTitleWithDate = new Date(articleInfo.published_at).toISOString().split("T")[0] + "-" + safeArticleTitle;
 
-        const targetProjectDir = targetRootDir + "/" + safeArticleTitle;
+        console.log("\tFound article " + title + "(" + safeArticleTitleWithDate + ") updated at " + new Date(articleInfo.last_modified_at).toISOString());
+
+        const targetProjectDir = targetRootDir + "/" + safeArticleTitleWithDate;
 
         if (!fs.existsSync(targetProjectDir)) {
             fs.mkdirSync(targetProjectDir, {recursive: true});
@@ -44,23 +46,13 @@ export async function downloadMediumArticles(medium_links, rootDirMd, relOutDirA
 
         await downloadProjectImage(articleInfo.image_url, safeArticleTitle, targetProjectDir)
 
-        console.log("\tDownloading markdown content");
-        const markdownContent = await axios.request({
-            method: 'GET',
-            url: 'https://medium2.p.rapidapi.com/article/' + articleId + "/markdown",
-            headers: {'X-RapidAPI-Key': rapidApiKey, 'X-RapidAPI-Host': rapidApiHost}
-        }).then(response => response.data.markdown);
+        const markdownContent = await downloadAndRenderContent(articleId, userName);
 
         const targetProjectFile = targetProjectDir + "/index.md";
-
-        const frontMatter = createFrontMatter(articleInfo, safeArticleTitle);
-        await StringStream.from(frontMatter+markdownContent+"\n---\n")
+        const frontMatter = createFrontMatter(articleInfo, safeArticleTitleWithDate);
+        await StringStream.from(frontMatter + markdownContent + "\n---\n")
             .pipe(fs.createWriteStream(targetProjectFile));
     }
-
-    metaOutputList.sort((a, b) => b.createDate - a.createDate);
-
-    return metaOutputList;
 }
 
 async function downloadProjectImage(imageUrl, safeArticleTitle, targetProjectDir) {
@@ -72,16 +64,71 @@ async function downloadProjectImage(imageUrl, safeArticleTitle, targetProjectDir
     }
 }
 
+async function downloadAndRenderContent(articleId, mediumUserName) {
+    function deEscape(content) {
+        const escapes = [
+            [/\\`/g, '`'],
+            [/\\\[/g, '['],
+            [/\\]/g, ']'],
+            [/\\>/g, '>'],
+            [/\\_/g, '_']
+        ];
+
+        for (let escapeRuleArrayIndex in escapes) {
+            content = content.replace(escapes[escapeRuleArrayIndex][0], escapes[escapeRuleArrayIndex][1])
+        }
+        return content;
+    }
+
+    function removeMediumDisclaimer(markdown) {
+        if (markdown.includes("on Medium, where people are continuing the conversation by highlighting and responding to this story.")) {
+            return markdown.substring(0, markdown.lastIndexOf('* * *\n'))
+        }
+        return markdown;
+    }
+
+    console.log("\tDownloading markdown content");
+    let parser = new Parser();
+    const rssContent = await axios.request({
+        method: 'GET',
+        url: 'https://medium.com/feed/' + mediumUserName
+    }).then(response => parser.parseString(response.data));
+
+    const rssElement = rssContent.items.find(e => e.guid && e.guid.endsWith(articleId));
+    const htmlContent = rssElement['content:encoded'];
+
+    let turndownService = new TurndownService({preformattedCode: false})
+
+    turndownService.addRule('codeBlockFormat', {
+        filter: ['pre'],
+        replacement: function (content) {
+            return '\n```\n' + deEscape(content) + '\n```\n'
+        }
+    }).addRule('codeFormat', {
+        filter: ['code'],
+        replacement: function (content) {
+            return ' `' + content + '` '
+        }
+    })
+
+    return removeMediumDisclaimer(
+        turndownService
+            .turndown(htmlContent)
+            .replace(/```\n```/g, '')
+    );
+}
+
 function createFrontMatter(articleInfo, safeArticleTitle) {
+    const dateIso8601 = new Date(articleInfo.published_at).toISOString().split("T")[0];
     let meta = '---\n';
     meta += "title: '" + articleInfo.title.replace(/'/g, "`") + "'\n"
-    meta += "date: " + new Date(articleInfo.published_at).toISOString().split("T")[0] + "\n"
+    meta += "date: " + dateIso8601 + "\n"
     meta += "lastmod: " + new Date(articleInfo.last_modified_at).toISOString().split("T")[0] + "\n"
     meta += "draft: false\n"
     meta += "summary: '" + articleInfo.subtitle.replace(/'/g, "`") + "'\n"
     meta += "description: '" + articleInfo.subtitle.replace(/'/g, "`") + "'\n"
-    meta += "slug: " + safeArticleTitle.toLowerCase() + "\n"
-    if(articleInfo.topics && articleInfo.topics.map) {
+    meta += "slug: " + safeArticleTitle + "\n"
+    if (articleInfo.topics && articleInfo.topics.map) {
         meta += "tags: [" + articleInfo.topics.map(m => '"' + m + '"').join(", ") + "]\n"
     }
     meta += "keywords: [" + articleInfo.tags.map(m => '"' + m + '"').join(", ") + "]\n"
@@ -99,10 +146,19 @@ function createFrontMatter(articleInfo, safeArticleTitle) {
     return meta;
 }
 
-function fixCommonPageRenderIssues(content) {
-    return content.replace(/```\n```/g, '');
-}
-
 function createFootNote(metaJson, article) {
     return "\n\n<small>_This article was published on " + new Date(metaJson.payload.value.latestPublishedAt).toLocaleDateString("en-US") + " on [medium.com](" + article.url + ')._</small>';
 }
+
+
+/*
+final Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+//use first 12 bytes for iv
+AlgorithmParameterSpec gcmIv = new GCMParameterSpec(128, cipherMessage, 0, 12);
+cipher.init(Cipher.DECRYPT_MODE, secretKey, gcmIv);
+if (associatedData != null) {
+    cipher.updateAAD(associatedData);
+}
+//use everything from 12 bytes on as ciphertext
+byte[] plainText = cipher.doFinal(cipherMessage, 12, cipherMessage.length - 12);
+ */
