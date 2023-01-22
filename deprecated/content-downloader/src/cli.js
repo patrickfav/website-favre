@@ -7,11 +7,11 @@ import {createMetaListMd, createPage, createTocMd} from "./common";
 
 export function cli(args) {
 
-    const rootDir = '../docs/'
-    const rootDirMd = rootDir + 'md/'
-    const templateDir = rootDir + 'template/'
-    const tocFileTemplate = templateDir + '_toc.md'
-    const tocFile = rootDirMd + '_toc.md'
+    const rootDir = '../content/';
+    const rootDirMd = rootDir;
+    const templateDir = rootDir + 'template/';
+    const tocFileTemplate = templateDir + '_toc.md';
+    const tocFile = rootDirMd + '_toc.md';
     const relOutDirGithub = 'opensource/';
     const relOutDirArticles = 'articles/';
 

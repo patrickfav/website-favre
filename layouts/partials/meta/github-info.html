@@ -1,0 +1,34 @@
+<span>
+ <a href="{{ .Params.originalContentLink }}">{{ partial "icon.html" "github" }}</a>
+</span>
+<span class="px-2 text-primary-500">&middot;</span>
+<time datetime="{{ . }}">
+   {{ .Params.date | time.Format "2006" }}
+</time>
+<span class="px-2 text-primary-500">&middot;</span>
+<span>
+  {{ .Params.githubLanguage }}
+</span>
+
+{{ if and (.Params.githubStars | default false) (gt .Params.githubStars 0 ) }}
+  <span class="px-2 text-primary-500">&middot;</span>
+  <span>
+    <a href="{{ .Params.originalContentLink }}/stargazers">{{ partial "icon.html" "star-regular" }} Stars {{ .Params.githubStars }}</a>
+  </span>
+{{ end }}
+
+{{ if and (.Params.githubForks | default false) (gt .Params.githubForks 0 ) }}
+  <span class="px-2 text-primary-500">&middot;</span>
+  <span>
+    <a href="{{ .Params.originalContentLink }}/forks">{{ partial "icon.html" "code-fork-solid" }} Forks {{ .Params.githubForks }}</a>
+  </span>
+{{ end }}
+
+{{ if (.Params.githubLicense | default false)}}
+  <span class="px-2 text-primary-500">&middot;</span>
+  <span>
+    {{ partial "icon.html" "scale-balanced-solid" }} {{ .Params.githubLicense }}
+  </span>
+{{ end }}
+
+{{- /* Trim EOF */ -}}

@@ -32,12 +32,8 @@
     {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
   {{ end }}
 
-  {{ if and (.Params.githubStars | default false) (gt .Params.githubStars 0 ) }}
-    {{ $meta.Add "partials" (slice (partial "meta/github-stars.html" .)) }}
-  {{ end }}
-
-  {{ if and (.Params.githubForks | default false) (gt .Params.githubForks 0 ) }}
-    {{ $meta.Add "partials" (slice (partial "meta/github-forks.html" .)) }}
+  {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "github" ) }}
+    {{ $meta.Add "partials" (slice (partial "meta/github-info.html" .)) }}
   {{ end }}
 
   <div class="flex flex-row flex-wrap items-center">
