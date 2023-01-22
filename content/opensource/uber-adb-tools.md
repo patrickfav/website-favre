@@ -1,9 +1,18 @@
 ---
 title: 'uber-adb-tools'
 date: 2016-09-11
+lastmod: 2022-11-25
 draft: false
 description: 'A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform.'
+summary: 'A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform.'
 slug: uber-adb-tools
+tags: ["adb", "adb-commands", "android", "android-debug-bridge", "apk", "bugreport", "cli", "uninstall", "wildcard"]
+keywords: ["adb", "adb-commands", "android", "android-debug-bridge", "apk", "bugreport", "cli", "uninstall", "wildcard"]
+showReadingTime: false
+githubStars: 128
+githubForks: 24
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 # Uber Adb Tools for Android
 A simple tool that makes it more convenient to **install, uninstall and creating bug reports and more for multiple apps on multiple devices** with one command. Additionally uninstalling allows to use **wildcards as package name**. This is basically a front-end for the [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb.html) which is required to run.

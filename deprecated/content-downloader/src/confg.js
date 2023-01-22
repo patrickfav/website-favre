@@ -17,6 +17,7 @@ export const github_projects = [
     'dice',
     'singlestep-kdf',
     'bkdf',
+    'rocketchat-exporter',
 ]
 
 

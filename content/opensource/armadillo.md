@@ -1,9 +1,18 @@
 ---
 title: 'armadillo'
 date: 2017-12-19
+lastmod: 2023-01-16
 draft: false
 description: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
+summary: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
 slug: armadillo
+tags: ["aes-encryption", "aes-gcm", "android", "authenticated-encryption", "bcrypt", "crypto", "cryptography", "hkdf", "security", "sharedpreferences"]
+keywords: ["aes-encryption", "aes-gcm", "android", "authenticated-encryption", "bcrypt", "crypto", "cryptography", "hkdf", "security", "sharedpreferences"]
+showReadingTime: false
+githubStars: 263
+githubForks: 50
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 # Armadillo - Encrypted Shared Preference
 

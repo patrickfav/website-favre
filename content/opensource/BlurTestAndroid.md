@@ -1,9 +1,18 @@
 ---
 title: 'BlurTestAndroid'
 date: 2014-04-07
+lastmod: 2022-11-11
 draft: false
 description: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
+summary: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 slug: BlurTestAndroid
+tags: ["algorithm", "android-application", "benchmark", "blur", "renderscript"]
+keywords: ["algorithm", "android-application", "benchmark", "blur", "renderscript"]
+showReadingTime: false
+githubStars: 414
+githubForks: 68
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 
 # Blur Benchmark & Showcase for Android

@@ -1,9 +1,18 @@
 ---
 title: 'uber-apk-signer'
 date: 2016-10-10
+lastmod: 2023-01-21
 draft: false
 description: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
+summary: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 slug: uber-apk-signer
+tags: ["android", "android-signing-scheme", "apk", "apksigner", "cli", "keystore", "signature", "signing", "verify", "zipalign"]
+keywords: ["android", "android-signing-scheme", "apk", "apksigner", "cli", "keystore", "signature", "signing", "verify", "zipalign"]
+showReadingTime: false
+githubStars: 1239
+githubForks: 149
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 # Uber Apk Signer
 A tool that helps signing, [zip aligning](https://developer.android.com/studio/command-line/zipalign.html) and verifying multiple Android application packages (APKs) with either debug or provided release certificates (or multiple). It supports [v1, v2](https://developer.android.com/about/versions/nougat/android-7.0.html#apk_signature_v2) and [v3 Android signing scheme](https://source.android.com/security/apksigning/v3). Easy and convenient debug signing with embedded debug keystore. Automatically verifies signature and zipalign after every signing.

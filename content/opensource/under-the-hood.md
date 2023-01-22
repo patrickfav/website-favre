@@ -1,9 +1,18 @@
 ---
 title: 'under-the-hood'
 date: 2016-11-27
+lastmod: 2022-11-25
 draft: false
 description: 'Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in.'
+summary: 'Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in.'
 slug: under-the-hood
+tags: ["android", "android-debug", "android-library", "noop", "shake-detection"]
+keywords: ["android", "android-debug", "android-library", "noop", "shake-detection"]
+showReadingTime: false
+githubStars: 217
+githubForks: 22
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 # Under the Hood - Android App Debug View Library
 

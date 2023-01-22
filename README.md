@@ -6,14 +6,26 @@ A simple website with a list of all of my open source projects and articles I wr
 
 ## Prepare
 
-Install [CodeDoc](https://github.com/CONNECT-platform/codedoc/):
+## Build & Run
+
+### Install Hugo
+
+* Windows `choco install hugo-extended`
+* Mac `brew install hugo`
+
+### Cloning Project with Submodule
+
+This project uses a git submodule for including the theme. To correctly clone it you need to do
 
 ```bash
-npm i -g @codedoc/cli
-codedoc install
+git clone https://github.com/patrickfav/website-favre-wedding.git
+git submodule init
+git submodule update
 ```
 
-then install everything in the local script and link the cli:
+### Prepare Content
+
+Install everything in the local script and link the cli:
 
 ```bash
 cd content-downloader
@@ -23,28 +35,8 @@ npm link
 
 optinally update the content with
 
-````bash
-codedoc-content-downloader
-````
-
-## Serve
-
-In the root dir do
-
-````bash
-codedoc serve
-````
-
-or
-
-````bash
-codedoc build
-````
-
-## Update Codedoc
-
 ```bash
-codedoc update
+codedoc-content-downloader
 ```
 
 # License

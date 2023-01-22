@@ -1,9 +1,18 @@
 ---
 title: 'bcrypt'
 date: 2018-07-05
+lastmod: 2023-01-05
 draft: false
 description: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
+summary: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 slug: bcrypt
+tags: ["bcrypt", "bcrypt-library", "bycrypt-password", "cli", "crypto", "hash", "java", "java-library", "kdf", "password-hash", "security"]
+keywords: ["bcrypt", "bcrypt-library", "bycrypt-password", "cli", "crypto", "hash", "java", "java-library", "kdf", "password-hash", "security"]
+showReadingTime: false
+githubStars: 329
+githubForks: 40
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 # Bcrypt Java Library and CLI Tool
 

@@ -22,7 +22,7 @@ export function cli(args) {
     let metaDataMedium;
 
     if (!fs.existsSync(rootDirMd)) {
-        fs.mkdirSync(rootDirMd);
+        fs.mkdirSync(rootDirMd, { recursive: true });
     }
 
     cleanDirs(rootDirMd, relOutDirGithub, relOutDirArticles)

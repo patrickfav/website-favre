@@ -1,9 +1,18 @@
 ---
 title: 'bkdf'
 date: 2018-12-08
+lastmod: 2021-04-28
 draft: false
 description: 'BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation'
+summary: 'BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation'
 slug: bkdf
+tags: ["bcrypt", "cryptography", "hkdf", "java", "kdf", "password", "security"]
+keywords: ["bcrypt", "cryptography", "hkdf", "java", "kdf", "password", "security"]
+showReadingTime: false
+githubStars: 2
+githubForks: 1
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 # BCrypt based Key Derivation Function (BKDF)
 

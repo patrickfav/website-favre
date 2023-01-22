@@ -1,10 +1,10 @@
 import fs from "fs";
-import {StringStream} from "scramjet";
+import {DataStream, MultiStream, StringStream} from "scramjet";
 import got from "got";
 
 export async function downloadGithubReadme(github_user, github_projects, rootDirMd, relOutDir) {
     let metaOutputList = [];
-    let githubMetaData = await got.get('https://api.github.com/users/'+github_user+'/repos?sort=updated&direction=desc')
+    let githubMetaData = await got.get('https://api.github.com/users/' + github_user + '/repos?sort=updated&direction=desc')
         .then((res) => JSON.parse(res.body));
 
     for (const projectName of github_projects) {
@@ -41,10 +41,13 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
 
         const url = 'https://github.com/' + github_user + '/' + projectName + '/raw/master/';
 
-        const frontmatter = createGithubFrontMatter(projectName, githubMeta)
+        const frontMatter = createGithubFrontMatter(projectName, githubMeta);
 
-        await StringStream.fromString(frontmatter, "UTF-8")
-            .concat(StringStream.from(got.stream(url + 'README.md')))
+        await StringStream.from(frontMatter)
+            .pipe(fs.createWriteStream(rootDirMd + relOutDir + fileNameExt));
+
+
+        await MultiStream.from([StringStream.from(frontMatter), StringStream.from(got.stream(url + 'README.md'))]).mux()
             .endWith("\n---\n")
             .map(line =>
                 line
@@ -62,15 +65,23 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
 
 function createGithubFrontMatter(projectName, githubMeta) {
     let meta = '---\n';
-    // if (metaJson.payload.value.content.metaDescription) {
-    //     meta += "summary: '" + metaJson.payload.value.content.metaDescription + "'\n"
-    // }
     meta += "title: '" + projectName + "'\n"
     meta += "date: " + new Date(githubMeta.created_at).toISOString().split("T")[0] + "\n"
+    meta += "lastmod: " + new Date(githubMeta.updated_at).toISOString().split("T")[0] + "\n"
     meta += "draft: false\n"
-    meta += "description: '" +githubMeta.description + "'\n"
+    meta += "description: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
+    meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
     meta += "slug: " + projectName + "\n"
-    // meta += "tags: [" + metaJson.payload.value.virtuals.tags.map(m => '"'+m.name+'"').join(", ") + "]\n"
+    meta += "tags: [" + githubMeta.topics.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "keywords: [" + githubMeta.topics.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "showReadingTime: false\n"
+    meta += "githubStars: " + githubMeta.stargazers_count + "\n"
+    meta += "githubForks: " + githubMeta.forks_count + "\n"
+    meta += "githubLanguage: " + githubMeta.language + "\n"
+    meta += "githubRepoLink: " + githubMeta.html_url + "\n"
+    if(githubMeta.license) {
+        meta += "githubLicense: " + githubMeta.license.name + "\n"
+    }
     meta += "---\n"
     return meta;
 }
@@ -94,8 +105,8 @@ export function createGithubMetaListMd(title, metaOutputList) {
 
     let table = metaOutputList
         .map(m =>
-            '| [' + m.name + '](/' + m.relLink + ')'+
-            '| _' + m.description + '_ ('+m.createDate.getFullYear()+')'
+            '| [' + m.name + '](/' + m.relLink + ')' +
+            '| _' + m.description + '_ (' + m.createDate.getFullYear() + ')'
         )
         .join('\n');
 

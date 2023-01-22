@@ -1,9 +1,18 @@
 ---
 title: 'dice'
 date: 2017-08-14
+lastmod: 2022-06-09
 draft: false
 description: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
+summary: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 slug: dice
+tags: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-source", "hex", "hmac-drbg", "hotbits", "java", "nist", "octal", "prng", "random-number-generators", "seed", "sp800-90a", "text-encodings"]
+keywords: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-source", "hex", "hmac-drbg", "hotbits", "java", "nist", "octal", "prng", "random-number-generators", "seed", "sp800-90a", "text-encodings"]
+showReadingTime: false
+githubStars: 9
+githubForks: 6
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 # Dice
 

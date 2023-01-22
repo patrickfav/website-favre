@@ -1,9 +1,18 @@
 ---
 title: 'singlestep-kdf'
 date: 2018-11-18
+lastmod: 2022-09-10
 draft: false
 description: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
+summary: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 slug: singlestep-kdf
+tags: ["cryptography", "hmac", "java", "kdf", "key-agreement", "key-derivation", "key-derivation-function", "message-digest", "nist", "nist800-56", "secretkey", "security", "singlestep-kdf"]
+keywords: ["cryptography", "hmac", "java", "kdf", "key-agreement", "key-derivation", "key-derivation-function", "message-digest", "nist", "nist800-56", "secretkey", "security", "singlestep-kdf"]
+showReadingTime: false
+githubStars: 8
+githubForks: 1
+githubLanguage: Java
+githubLicense: Apache License 2.0
 ---
 # Single Step KDF (NIST SP 800-56C)
 
