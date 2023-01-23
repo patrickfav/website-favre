@@ -45,3 +45,8 @@ weight = 30
    name = "Tags"
    pageRef = "tags"
    weight = 10
+
+ [[footer]]
+   name = "CV"
+   pageRef = "cv"
+   weight = 60

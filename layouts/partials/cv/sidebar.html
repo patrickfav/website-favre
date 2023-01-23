@@ -1,0 +1,25 @@
+
+                        <aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+
+
+                            {{ if .Site.Params.education.enable }}
+                            {{ partial "cv/education.html" . }}
+                            {{ end }}
+
+                            {{ if .Site.Params.awards.enable }}
+                            {{ partial "cv/awards.html" . }}
+                            {{ end }}
+
+                            {{ if .Site.Params.skills.enable }}
+                            {{ partial "cv/skills.html" . }}
+                            {{ end }}
+
+                            {{ if .Site.Params.languages.enable }}
+                            {{ partial "cv/languages.html" . }}
+                            {{ end }}
+
+                            {{ if .Site.Params.interests.enable }}
+                            {{ partial "cv/interests.html" . }}
+                            {{ end }}
+
+                        </aside><!--//resume-aside-->

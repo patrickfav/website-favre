@@ -1,0 +1,28 @@
+<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+
+    <div class="resume-body">
+
+        <div class="row">
+
+            <div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
+
+                {{ if .Site.Params.experience.enable }}
+                {{ partial "cv/experience.html" . }}
+                {{ end }}
+
+                {{ if .Site.Params.projects.enable }}
+                {{ partial "cv/projects.html" . }}
+                {{ end }}
+
+                {{ if .Site.Params.information.enable }}
+                {{ partial "cv/information.html" . }}
+                {{ end }}
+
+            </div><!--//resume-main-->
+
+        </div><!--//row-->
+
+    </div><!--//resume-body-->
+
+    <hr>
+</article>

@@ -36,7 +36,7 @@ npm link
 optinally update the content with
 
 ```bash
-codedoc-content-downloader
+hugo-content-downloader
 ```
 
 # License
