@@ -3,10 +3,10 @@ title: 'Managing Logging in a Multi-Module Android Application'
 date: 2018-01-14
 lastmod: 2022-08-20
 draft: false
-summary: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go…'
-description: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go…'
+summary: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
+description: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
 slug: 2018-01-14-managing-logging-in-a-multi-module-android-application
-tags: ["programming"]
+tags: ["Programming"]
 keywords: ["android", "android-app-development", "logging", "timber", "slf4j"]
 showDate: true
 showReadingTime: true

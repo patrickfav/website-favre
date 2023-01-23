@@ -3,10 +3,10 @@ title: 'Improving ProGuard Name Obfuscation'
 date: 2018-04-01
 lastmod: 2020-02-01
 draft: false
-summary: 'In this article I will show you how to strengthen ProGuard’s name obfuscation, making it harder for an attacker the reverse engineer your…'
-description: 'In this article I will show you how to strengthen ProGuard’s name obfuscation, making it harder for an attacker the reverse engineer your…'
+summary: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
+description: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 slug: 2018-04-01-improving-proguard-name-obfuscation
-tags: ["programming"]
+tags: ["Programming"]
 keywords: ["android", "proguard", "security", "androiddev", "android-app-development"]
 showDate: true
 showReadingTime: true

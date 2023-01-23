@@ -6,7 +6,7 @@ draft: false
 summary: 'Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.'
 description: 'Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.'
 slug: 2020-04-14-how-to-centralize-your-checkstyle-configuration-with-maven
-tags: ["programming"]
+tags: ["Programming"]
 keywords: ["checkstyle", "maven", "java", "static-code-analysis", "configuration-management"]
 showDate: true
 showReadingTime: true

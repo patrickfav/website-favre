@@ -4,39 +4,28 @@ import axios from "axios";
 import got from "got";
 import Parser from "rss-parser";
 import TurndownService from "turndown";
+import * as cheerio from "cheerio";
 
-export async function downloadMediumArticles(rootDirMd, relOutDirArticles, rapidApiKey) {
+export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
     console.log("Start Processing medium articles");
 
     const targetRootDir = rootDirMd + relOutDirArticles
 
-    // see here: https://rapidapi.com/nishujain199719-vgIfuFHZxVZ/api/medium2
-
-    const userId = 'f5582e224131' //@patrickfav
     const userName = '@patrickfav'
-    const rapidApiHost = 'medium2.p.rapidapi.com'
 
-    const allArticleIds = await axios.request({
-        method: 'GET',
-        url: 'https://medium2.p.rapidapi.com/user/' + userId + '/articles',
-        headers: {'X-RapidAPI-Key': rapidApiKey, 'X-RapidAPI-Host': rapidApiHost}
-    }).then(articleIds => articleIds.data.associated_articles);
+    const postInfoArray = await getAllArticles(userName);
 
-    for (const index in allArticleIds) {
-        const articleId = allArticleIds[index]
-        console.log("Processing medium article " + articleId);
+    for (const index in postInfoArray) {
+        const post = postInfoArray[index]
+        console.log("Processing medium article " + post.url);
 
-        const articleInfo = await axios.request({
-            method: 'GET',
-            url: 'https://medium2.p.rapidapi.com/article/' + articleId,
-            headers: {'X-RapidAPI-Key': rapidApiKey, 'X-RapidAPI-Host': rapidApiHost}
-        }).then(response => response.data);
+        const articleInfo = await getArticleInfo(post);
 
         const title = articleInfo.title;
         let safeArticleTitle = encodeURI(title.replace(/ /g, '-').replace(/:/g, '_').replace(/…/g, '_')).toLowerCase();
-        let safeArticleTitleWithDate = new Date(articleInfo.published_at).toISOString().split("T")[0] + "-" + safeArticleTitle;
+        let safeArticleTitleWithDate = new Date(articleInfo.firstPublishedAt).toISOString().split("T")[0] + "-" + safeArticleTitle;
 
-        console.log("\tFound article " + title + "(" + safeArticleTitleWithDate + ") updated at " + new Date(articleInfo.last_modified_at).toISOString());
+        console.log("\tFound article " + title + "(" + safeArticleTitleWithDate + ") updated at " + new Date(articleInfo.latestPublishedAt).toISOString());
 
         const targetProjectDir = targetRootDir + "/" + safeArticleTitleWithDate;
 
@@ -44,18 +33,17 @@ export async function downloadMediumArticles(rootDirMd, relOutDirArticles, rapid
             fs.mkdirSync(targetProjectDir, {recursive: true});
         }
 
-        await downloadProjectImage(articleInfo.image_url, safeArticleTitle, targetProjectDir)
-
-        const markdownContent = await downloadAndRenderContent(articleId, userName);
+        await downloadProjectImage(articleInfo, safeArticleTitle, targetProjectDir)
 
         const targetProjectFile = targetProjectDir + "/index.md";
         const frontMatter = createFrontMatter(articleInfo, safeArticleTitleWithDate);
-        await StringStream.from(frontMatter + markdownContent + "\n---\n")
+        await StringStream.from(frontMatter + post.markdown + "\n---\n")
             .pipe(fs.createWriteStream(targetProjectFile));
     }
 }
 
-async function downloadProjectImage(imageUrl, safeArticleTitle, targetProjectDir) {
+async function downloadProjectImage(articleInfo, safeArticleTitle, targetProjectDir) {
+    const imageUrl = "https://cdn-images-1.medium.com/max/1024/" + articleInfo.previewImage['__ref'].replace(/ImageMetadata:/g, "")
     const imageFileName = "thumb_" + safeArticleTitle + ".png";
 
     if (imageUrl) {
@@ -64,7 +52,7 @@ async function downloadProjectImage(imageUrl, safeArticleTitle, targetProjectDir
     }
 }
 
-async function downloadAndRenderContent(articleId, mediumUserName) {
+async function getAllArticles(mediumUserName) {
     function deEscape(content) {
         const escapes = [
             [/\\`/g, '`'],
@@ -87,7 +75,30 @@ async function downloadAndRenderContent(articleId, mediumUserName) {
         return markdown;
     }
 
-    console.log("\tDownloading markdown content");
+    function parseAsMarkdown(rssElement) {
+        const htmlContent = rssElement['content:encoded'];
+        let turndownService = new TurndownService({preformattedCode: false})
+
+        turndownService.addRule('codeBlockFormat', {
+            filter: ['pre'],
+            replacement: function (content) {
+                return '\n```\n' + deEscape(content) + '\n```\n'
+            }
+        }).addRule('codeFormat', {
+            filter: ['code'],
+            replacement: function (content) {
+                return ' `' + content + '` '
+            }
+        })
+
+        return removeMediumDisclaimer(
+            turndownService
+                .turndown(htmlContent)
+                .replace(/```\n```/g, '')
+        );
+    }
+
+    console.log("\tDownloading content from feed for " + mediumUserName);
     let parser = new Parser();
     // https://medium.com/feed/@patrickfav
     const rssContent = await axios.request({
@@ -95,71 +106,64 @@ async function downloadAndRenderContent(articleId, mediumUserName) {
         url: 'https://medium.com/feed/' + mediumUserName
     }).then(response => parser.parseString(response.data));
 
-    const rssElement = rssContent.items.find(e => e.guid && e.guid.endsWith(articleId));
-    const htmlContent = rssElement['content:encoded'];
+    let postInfo = []
+    for (const itemIndex in rssContent.items) {
+        postInfo.push({
+            markdown: parseAsMarkdown(rssContent.items[itemIndex]),
+            url: rssContent.items[itemIndex].guid,
+            articleId: rssContent.items[itemIndex].guid.split("/").at(-1)
+        })
+    }
 
-    let turndownService = new TurndownService({preformattedCode: false})
+    return postInfo;
+}
 
-    turndownService.addRule('codeBlockFormat', {
-        filter: ['pre'],
-        replacement: function (content) {
-            return '\n```\n' + deEscape(content) + '\n```\n'
-        }
-    }).addRule('codeFormat', {
-        filter: ['code'],
-        replacement: function (content) {
-            return ' `' + content + '` '
-        }
+async function getArticleInfo(post) {
+    const mediumArticleDom = await axios.request({
+        method: 'GET',
+        url: post.url
     })
+        .then(response => response.data)
+        .then(body => cheerio.load(body, {xmlMode: true}));
 
-    return removeMediumDisclaimer(
-        turndownService
-            .turndown(htmlContent)
-            .replace(/```\n```/g, '')
-    );
+    const json = mediumArticleDom("script")
+        .map((idx, el) => mediumArticleDom(el).html())
+        .toArray()
+        .find((element) => {
+            if (element.includes("window.__APOLLO_STATE__")) {
+                return true;
+            }
+        })
+        .replace("window.__APOLLO_STATE__ = ", "")
+        .replace(/&quot;/g, '"');
+
+    return JSON.parse(json)[`Post:${post.articleId}`];
 }
 
 function createFrontMatter(articleInfo, safeArticleTitle) {
-    const dateIso8601 = new Date(articleInfo.published_at).toISOString().split("T")[0];
+    const dateIso8601 = new Date(articleInfo.firstPublishedAt).toISOString().split("T")[0];
     let meta = '---\n';
     meta += "title: '" + articleInfo.title.replace(/'/g, "`") + "'\n"
     meta += "date: " + dateIso8601 + "\n"
-    meta += "lastmod: " + new Date(articleInfo.last_modified_at).toISOString().split("T")[0] + "\n"
+    meta += "lastmod: " + new Date(articleInfo.latestPublishedAt).toISOString().split("T")[0] + "\n"
     meta += "draft: false\n"
-    meta += "summary: '" + articleInfo.subtitle.replace(/'/g, "`") + "'\n"
-    meta += "description: '" + articleInfo.subtitle.replace(/'/g, "`") + "'\n"
+    meta += "summary: '" + articleInfo.previewContent.subtitle.replace(/'/g, "`") + "'\n"
+    meta += "description: '" + articleInfo.previewContent.subtitle.replace(/'/g, "`") + "'\n"
     meta += "slug: " + safeArticleTitle + "\n"
     if (articleInfo.topics && articleInfo.topics.map) {
-        meta += "tags: [" + articleInfo.topics.map(m => '"' + m + '"').join(", ") + "]\n"
+        meta += "tags: [" + articleInfo.topics.map(m => '"' + m.name + '"').join(", ") + "]\n"
     }
-    meta += "keywords: [" + articleInfo.tags.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "keywords: [" + articleInfo.tags.map(m => '"' + m['__ref'].replace(/Tag:/g, "") + '"').join(", ") + "]\n"
     meta += "showDate: true\n"
     meta += "showReadingTime: true\n"
     meta += "showTaxonomies: true\n"
     meta += "showWordCount: true\n"
     meta += "showEdit: false\n"
-    meta += "originalContentLink: " + articleInfo.url + "\n"
+    meta += "originalContentLink: " + articleInfo.mediumUrl + "\n"
     meta += "originalContentType: medium\n"
-    meta += "mediumClaps: " + articleInfo.claps + "\n"
-    meta += "mediumVoters: " + articleInfo.voters + "\n"
+    meta += "mediumClaps: " + articleInfo.clapCount + "\n"
+    meta += "mediumVoters: " + articleInfo.voterCount + "\n"
     meta += "mediumArticleId: " + articleInfo.id + "\n"
     meta += "---\n"
     return meta;
 }
-
-function createFootNote(metaJson, article) {
-    return "\n\n<small>_This article was published on " + new Date(metaJson.payload.value.latestPublishedAt).toLocaleDateString("en-US") + " on [medium.com](" + article.url + ')._</small>';
-}
-
-
-/*
-final Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-//use first 12 bytes for iv
-AlgorithmParameterSpec gcmIv = new GCMParameterSpec(128, cipherMessage, 0, 12);
-cipher.init(Cipher.DECRYPT_MODE, secretKey, gcmIv);
-if (associatedData != null) {
-    cipher.updateAAD(associatedData);
-}
-//use everything from 12 bytes on as ciphertext
-byte[] plainText = cipher.doFinal(cipherMessage, 12, cipherMessage.length - 12);
- */

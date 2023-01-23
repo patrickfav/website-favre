@@ -6,7 +6,7 @@ draft: false
 summary: 'What to consider when encrypting your data and how to correctly implement it with AES-GCM.'
 description: 'What to consider when encrypting your data and how to correctly implement it with AES-GCM.'
 slug: 2018-01-06-security-best-practices_-symmetric-encryption-with-aes-in-java-and-android
-tags: ["javascript", "android-development", "cybersecurity", "programming"]
+tags: ["Javascript", "Android Dev", "Cybersecurity", "Programming"]
 keywords: ["security", "encryption", "java", "androiddev", "android-app-development"]
 showDate: true
 showReadingTime: true

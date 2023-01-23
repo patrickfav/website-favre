@@ -6,6 +6,7 @@ draft: false
 summary: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 description: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 slug: 2018-04-11-the-concise-interface-implementation-pattern
+tags: []
 keywords: ["java", "interfaces", "patterns", "dependency-injection", "testing"]
 showDate: true
 showReadingTime: true
