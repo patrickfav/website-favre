@@ -25,10 +25,10 @@ githubLicense: Apache License 2.0
 ---
 # BCrypt based Key Derivation Function (BKDF)
 
-[![Download](https://api.bintray.com/packages/patrickfav/maven/bkdf/images/download.svg)](https://bintray.com/patrickfav/maven/bkdf/_latestVersion)
-[![Build Status](https://travis-ci.org/patrickfav/bkdf.svg?branch=master)](https://travis-ci.org/patrickfav/bkdf)
-[![Javadocs](https://www.javadoc.io/badge/at.favre.lib/bkdf.svg)](https://www.javadoc.io/doc/at.favre.lib/bkdf)
-[![Coverage Status](https://coveralls.io/repos/github/patrickfav/bkdf/badge.svg?branch=master)](https://coveralls.io/github/patrickfav/bkdf?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/fc50d911e4146a570d4e/maintainability)](https://codeclimate.com/github/patrickfav/bkdf/maintainability)
+[](https://bintray.com/patrickfav/maven/bkdf/_latestVersion)
+[](https://travis-ci.org/patrickfav/bkdf)
+[](https://www.javadoc.io/doc/at.favre.lib/bkdf)
+[](https://coveralls.io/github/patrickfav/bkdf?branch=master) [](https://codeclimate.com/github/patrickfav/bkdf/maintainability)
 
 The aim of this project is to improve on the cryptographic primitive [BCrypt](https://en.wikipedia.org/wiki/Bcrypt) with providing well defined modes of operation which includes:
 

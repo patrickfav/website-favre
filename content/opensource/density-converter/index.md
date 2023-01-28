@@ -23,7 +23,7 @@ githubForks: 32
 githubLanguage: Java
 githubLicense: Apache License 2.0
 ---
-# ![logo](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/density_converter_icon_24.png) Density Image Converter Tool for Android, iOS, Windows and CSS
+# ![logo](gh_f816c3710619d21cca34d763.png) Density Image Converter Tool for Android, iOS, Windows and CSS
 
 This is a powerful little tool that helps **converting single or batches of images** to **Android**, **iOS**, **Windows** and **CSS** specific formats and density
 versions given the source scale factor or target width/height in [dp](http://developer.android.com/guide/practices/screens_support.html#density-independence).
@@ -31,9 +31,9 @@ It has a **graphical** and **command line** interface and supports a wide array 
 including PNG, JPEG, SVG, PSD and Android 9-patches. Using sophisticated scaling algorithms, it is designed to make conversion of images easy and
 fast while keeping the image quality high (comparable to PS). To further optimize the output post processors like **pngcrush** and **mozJpeg** can be used (see section below).
 
-[![GitHub release](https://img.shields.io/github/release/patrickfav/density-converter.svg)](https://github.com/patrickfav/density-converter/releases/latest)
-[![Build Status](https://travis-ci.com/patrickfav/density-converter.svg?branch=master)](https://travis-ci.com/patrickfav/density-converter)
-[![Coverage Status](https://coveralls.io/repos/github/patrickfav/density-converter/badge.svg?branch=master)](https://coveralls.io/github/patrickfav/density-converter?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/8f570296f51810daf509/maintainability)](https://codeclimate.com/github/patrickfav/density-converter/maintainability)
+[](https://github.com/patrickfav/density-converter/releases/latest)
+[](https://travis-ci.com/patrickfav/density-converter)
+[](https://coveralls.io/github/patrickfav/density-converter?branch=master) [](https://codeclimate.com/github/patrickfav/density-converter/maintainability)
 
 Usage:
 
@@ -73,7 +73,7 @@ java -jar ./dconvert.jar
 provides the same features as the command line tool so see the help page of command line or tooltips. Additionally the UI
 will save its settings persistently making it easier for power users.
 
-![gui-screenshot](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/screenshot1.jpg)
+![gui-screenshot](gh_d1a4130e0e6118fbf1b6553d.jpg)
 
 ## Command Line
 
@@ -242,15 +242,15 @@ The tool provides 3 quality profiles:
 
 In most cases `Lanczos3` creates best results, although in some cases progressive bilinear scaling may be superior for very sharp edges of e.g. simple icons where the former creates some softness. Here are some example to see the difference yourself. The icons are down-scaled from 96x96 to 72x72 and 48x48, the photos from different source from 500 to 2000 px.
 
-![comparison](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/comparison_icons_72.png)
-![comparison](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/comparison_icons_48.png)
+![comparison](gh_519bd9a8abadfe176fa37369.png)
+![comparison](gh_ee5e9c1f6d77f98253fd5cf6.png)
 
-![comparison](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/comparison_photo_144.png)
-![comparison](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/comparison_photo_72.png)
+![comparison](gh_0035cdd0bf56584865c045d4.png)
+![comparison](gh_c8c302602ea923749a3fc6d2.png)
 
 As reference, here are the results of other methods:
 
-![comparison-ldpi](https://github.com/patrickfav/density-converter/raw/master/src/main/resources/img/mdpi_comparison.png)
+![comparison-ldpi](gh_da42b54c7905d3ec86d3669c.png)
 
 1. Thumbnailator with default settings (_progressive bilinear_)
 2. Photoshop CS5 with bicubic algorithm

@@ -26,11 +26,11 @@ githubLanguage: Java
 This is a full-featured indoor positioning system that was developed during my master thesis.
 Its server component uses servlets and an Angular JS front end, whereas the Router/AP service is written in Lua.
 
-[![Build Status](https://travis-ci.org/patrickfav/indoor-positioning.svg?branch=master)](https://travis-ci.org/patrickfav/indoor-positioning)
-[![Coverage Status](https://coveralls.io/repos/github/patrickfav/indoor-positioning/badge.svg?branch=master)](https://coveralls.io/github/patrickfav/indoor-positioning?branch=master) 
-[![Maintainability](https://api.codeclimate.com/v1/badges/43b7770f0ee00b85f92a/maintainability)](https://codeclimate.com/github/patrickfav/indoor-positioning/maintainability)
+[](https://travis-ci.org/patrickfav/indoor-positioning)
+[](https://coveralls.io/github/patrickfav/indoor-positioning?branch=master) 
+[](https://codeclimate.com/github/patrickfav/indoor-positioning/maintainability)
 
-![UI Overview](https://github.com/patrickfav/indoor-positioning/blob/master/misc/ui-overview.png?raw=true)
+![UI Overview](gh_2c05953d5893d74527f2779d.png)
 
 
 # Requirements
@@ -51,7 +51,7 @@ Its server component uses servlets and an Angular JS front end, whereas the Rout
 
 The underlying architecture can be observed in the diagram below.
 
-![Map Generation Procedure Diagram](https://github.com/patrickfav/indoor-positioning/blob/master/misc/map_generation_procedure_lowsat.jpg?raw=true)
+![Map Generation Procedure Diagram](gh_25d69010872996a2e1203d82.jpg)
 
 Overall procedure to map the target area:
 
@@ -69,7 +69,7 @@ With the adapted model, radio wave propagation can be simulated over
 a representation of the target area. Positioning works similar to the
 scene analysis approach using a modified nearest neighbor algorithm.
 
-![Phases Diagram](https://github.com/patrickfav/indoor-positioning/blob/master/misc/simple_phases_lowsat.jpg?raw=true)
+![Phases Diagram](gh_8a443fc7b7ed0cd0b59237c4.jpg)
 
 # Setup
 
@@ -108,13 +108,13 @@ positions of the Active Nodes again). Then press "Calculate" next to the "Extend
 of all APs/Routers in the vicinity. You may want to correct the positions you know of. Press "save". You now are ready
 to position.
 
-![Node Editor](https://github.com/patrickfav/indoor-positioning/blob/master/misc/ui-node-editor.jpg?raw=true)
+![Node Editor](gh_8cdfddb745856e824fc97d71.jpg)
 
 # Positioning
 
 You need a AP with the custom webservices installed, same as Active Nodes. This AP must be in your network.
 
-![Positioning](https://github.com/patrickfav/indoor-positioning/blob/master/misc/ui-positioning.png?raw=true)
+![Positioning](gh_3b1d89296533c134777a847b.png)
 
 Go to "Positioning". Input the IP of the client (AP) and press "Find". If multiple networks match for this position
 you have to select one, otherwise you will be shown a UI with the estimated position. You may press on a square in the grid
@@ -136,7 +136,7 @@ The results indicate that the position accuracy offers a performance comparable 
 a state-of-the-art solution. The following diagram shows the accumulated offsets
 in all test locations.
 
-![Accuracy Diagram](https://github.com/patrickfav/indoor-positioning/blob/master/misc/ac_diagram.png?raw=true)
+![Accuracy Diagram](gh_a7e4dcae9e91722ac33fca52.png)
 
 ## Scalability
 
@@ -144,7 +144,7 @@ Based on extrapolated data, the proposed system delivers superior performance in
 terms of maintainability and scalability. In the diagram below the required effort
 for various target areas is depicted.
 
-![Scalability Diagram](https://github.com/patrickfav/indoor-positioning/blob/master/misc/maintain_diagram.png?raw=true)
+![Scalability Diagram](gh_952241e49793226bb8424be7.png)
 
 # License
 

@@ -26,9 +26,9 @@ githubLicense: Apache License 2.0
 # Uber Adb Tools for Android
 A simple tool that makes it more convenient to **install, uninstall and creating bug reports and more for multiple apps on multiple devices** with one command. Additionally uninstalling allows to use **wildcards as package name**. This is basically a front-end for the [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb.html) which is required to run.
 
-[![GitHub release](https://img.shields.io/github/release/patrickfav/uber-adb-tools.svg)](https://github.com/patrickfav/uber-adb-tools/releases/latest)
-[![Build Status](https://travis-ci.com/patrickfav/uber-adb-tools.svg?branch=master)](https://travis-ci.com/patrickfav/uber-adb-tools)
-[![Coverage Status](https://coveralls.io/repos/github/patrickfav/uber-adb-tools/badge.svg?branch=master)](https://coveralls.io/github/patrickfav/uber-adb-tools?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/1e99a8a79dc8fddb54a4/maintainability)](https://codeclimate.com/github/patrickfav/uber-adb-tools/maintainability)
+[](https://github.com/patrickfav/uber-adb-tools/releases/latest)
+[](https://travis-ci.com/patrickfav/uber-adb-tools)
+[](https://coveralls.io/github/patrickfav/uber-adb-tools?branch=master) [](https://codeclimate.com/github/patrickfav/uber-adb-tools/maintainability)
 
 Main features:
 
@@ -64,7 +64,7 @@ This should run on any Windows, Mac or Linux machine,
 
 ### Using the *.exe Launcher
 
- ![logo](https://github.com/patrickfav/uber-adb-tools/raw/master/misc/icon_sm.png)
+ ![logo](gh_f77cff487d64008b557bdbbd.png)
 
  [Launch4J](http://launch4j.sourceforge.net/) is used to wrap the `.jar` into an Windows executable. It should automatically download the needed JRE if required. If a single argument will be passed (ie. a path) the tool will automatically install if it is an `.apk` (or folder with apks), so you can use it to drag an `.apk` over the `.exe` or use it to "Open with..." to automatically install an apk if double clicked.
 

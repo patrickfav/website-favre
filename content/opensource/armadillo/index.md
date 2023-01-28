@@ -32,11 +32,11 @@ githubLicense: Apache License 2.0
 A shared preference implementation for secret data providing confidentiality,
 integrity and authenticity. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives.
 
-[![Download](https://api.bintray.com/packages/patrickfav/maven/armadillo/images/download.svg)](https://bintray.com/patrickfav/maven/armadillo/_latestVersion)
-[![Build Status](https://travis-ci.com/patrickfav/armadillo.svg?branch=master)](https://travis-ci.com/patrickfav/armadillo)
-[![Javadocs](https://www.javadoc.io/badge/at.favre.lib/armadillo.svg)](https://www.javadoc.io/doc/at.favre.lib/armadillo)
-[![Coverage Status](https://coveralls.io/repos/github/patrickfav/armadillo/badge.svg?branch=master)](https://coveralls.io/github/patrickfav/armadillo?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/c3ac3cdd849ba47fd90a/maintainability)](https://codeclimate.com/github/patrickfav/armadillo/maintainability)
+[](https://bintray.com/patrickfav/maven/armadillo/_latestVersion)
+[](https://travis-ci.com/patrickfav/armadillo)
+[](https://www.javadoc.io/doc/at.favre.lib/armadillo)
+[](https://coveralls.io/github/patrickfav/armadillo?branch=master)
+[](https://codeclimate.com/github/patrickfav/armadillo/maintainability)
 
 **Important Notice:** If you migrate to v0.6.0 and use a user password and
 default key stretching function migration is needed due to a security issue.
@@ -238,7 +238,7 @@ own data. Here are some suggestions:
 The cryptographic key used to encrypt the data is composed of the following
 parts:
 
-![screenshot key derivation](https://github.com/patrickfav/armadillo/raw/master/doc/key_derivation.png)
+![screenshot key derivation](gh_d1cc8a9cbc3ceb4fcdefb955.png)
 
 * User password (optional): provided by the caller and stretched with e.g. Bcrypt
 * Encryption Fingerprint (see section above)
@@ -264,7 +264,7 @@ generate different hashes for the same keys.
 The diagram below illustrates the used data format. To disguise the format
 a little bit it will be obfuscated by a simple xor cipher.
 
-![screenshot gallery](https://github.com/patrickfav/armadillo/raw/master/doc/persistence_profile.png)
+![screenshot gallery](gh_77ef7df37bb7ef5fcef699a9.png)
 
 The resulting data will be encoded with [base64](https://en.wikipedia.org/wiki/Base64) and looks like this in the shared preferences xml:
 

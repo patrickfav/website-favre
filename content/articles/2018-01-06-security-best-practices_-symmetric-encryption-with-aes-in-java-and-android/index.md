@@ -21,7 +21,7 @@ mediumArticleId: 7616beaaade9
 ---
 In this article I will bring you up to speed on the Advanced Encryption Standard (AES), common block modes, why you need padding and initialization vectors and how to protect your data against modification. Finally I will show you how to easily implement this with Java avoiding common security issues.
 
-![](442fdb07567e13ed7d3091fa.png)
+![](article_442fdb07567e13ed7d3091fa.png)
 
 #### What every Software Engineer should know about AES
 
@@ -35,13 +35,13 @@ Every block goes through many cycles of transformation rounds. I will omit the d
 
 So AES will only encrypt 128 bit of data, but if we want to encrypt whole messages we need to choose a block mode with which multiple blocks can be encrypted to a single cipher text. The simplest block mode is [Electronic Codebook or ECB](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_(ECB)). It uses the same unaltered key on every block like this:
 
-![](2bdba9407fb0582cb374d754.png)
+![](article_2bdba9407fb0582cb374d754.png)
 
 Image from Wikpedia
 
 This is particularly bad since identical plaintext blocks are encrypted to identical ciphertext blocks.
 
-![](c785134b6c777e80ce47e172.png)
+![](article_c785134b6c777e80ce47e172.png)
 
 Image encrypted with ECB block mode reveals patterns of the original ([try yourself](https://gist.github.com/patrickfav/13b2f727eaf91e3a72d87ac427485cb1))
 
@@ -53,7 +53,7 @@ One case has to be handled with block modes though: what happens if the last blo
 
 So what alternatives to ECB are there? For one there is CBC which [XOR](https://en.wikipedia.org/wiki/Exclusive_or)s the current plaintext block with the previous ciphertext block. [This way, each ciphertext block depends on all plaintext blocks processed up to that point.](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_(CBC)) Using the same image as before the result would be noise not distinguishable from random data:
 
-![](d5b8703b9c6164715ba5af6e.png)
+![](article_d5b8703b9c6164715ba5af6e.png)
 
 Image encrypted with CBC block mode looks random
 
@@ -65,7 +65,7 @@ When transmitting or persisting the data it is common to just prepend the IV to 
 
 Another option is to use CTR mode. This block mode is interesting because it [turns a block cipher into a stream cipher](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_(CTR)) which means no padding is required. In its basic form all blocks are numbered from 0 to n. Every block will now be encrypted with the key, the IV (also called _nonce_ here) and the counter value.
 
-![](d4bad83526ba3af814e48d3e.png)
+![](article_d4bad83526ba3af814e48d3e.png)
 
 Image from Wikpedia
 
@@ -103,7 +103,7 @@ So basically 128 bit key is enough security for most of every use case with the 
 
 As a [very basic example](https://codahale.com/a-lesson-in-timing-attacks/): a simple algorithm that is prone to timing attacks is an equals() method that compares two secret byte arrays. If the equals() has a quick-return, meaning after the first pair of bytes that don’t match it ends the loop, an attacker can measure the time it takes for the equals() to complete and can guess byte for byte until all match.
 
-![](febadf906004af7b41f13bc4.png)
+![](article_febadf906004af7b41f13bc4.png)
 
 Code that may be vulnerable to timing attacks by using a quick return
 

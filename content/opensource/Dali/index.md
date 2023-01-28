@@ -31,13 +31,13 @@ It uses RenderScript internally (although different implementations can be chose
 cached to be fast and keeps small memory footprint. It features a lot of additional image filters and may be
 easily extended and pretty every configuration can be changed.
 
-[![Download](https://api.bintray.com/packages/patrickfav/maven/dali/images/download.svg) ](https://bintray.com/patrickfav/maven/dali/_latestVersion)
-[![Build Status](https://travis-ci.com/patrickfav/Dali.svg?branch=master)](https://travis-ci.com/patrickfav/Dali)
-[![Javadocs](https://www.javadoc.io/badge/at.favre.lib/dali.svg)](https://www.javadoc.io/doc/at.favre.lib/dali)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Dali-yellowgreen.svg?style=flat)](https://android-arsenal.com/details/1/5130)
-[![Maintainability](https://api.codeclimate.com/v1/badges/bc29814415f63a85c62d/maintainability)](https://codeclimate.com/github/patrickfav/Dali/maintainability)
+[ ](https://bintray.com/patrickfav/maven/dali/_latestVersion)
+[](https://travis-ci.com/patrickfav/Dali)
+[](https://www.javadoc.io/doc/at.favre.lib/dali)
+[](https://android-arsenal.com/details/1/5130)
+[](https://codeclimate.com/github/patrickfav/Dali/maintainability)
 
-![Gallery](https://github.com/patrickfav/Dali/blob/master/misc/gallery1.png?raw=true)
+![Gallery](gh_9d2900f8ac393bfc79ee5eb1.png)
 
 
 *Note: This library is in prototype state and not ready for prime time. It is mostly feature complete (except for the animation module) although bugs are to be expected.*
@@ -68,7 +68,7 @@ The quickest way to discover possible features, is to see what builder methods `
 
 ## Download Test App
 
-[![Get it on Google Play](https://github.com/patrickfav/Dali/raw/master/misc/playstore_badge_new.png)](https://play.google.com/store/apps/details?id=at.favre.app.dalitest&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
+[![Get it on Google Play](gh_6874339d6105e51a08ed40d5.png)](https://play.google.com/store/apps/details?id=at.favre.app.dalitest&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
 
 The test app is in the Playstore, you can get it here [Dali Test App](https://play.google.com/store/apps/details?id=at.favre.app.dalitest).
 
@@ -124,7 +124,7 @@ If you want to utilize Dali's features, without blurring the image you could do:
 Live blur refers to an effect where it a portion of the view blurs what's behind it. It can be used with e.g.
 a `ViewPager`, `Scrollview`, `RecyclerView`, etc.
 
-![Live Blur Animation](https://github.com/patrickfav/Dali/blob/master/misc/viewpager_anim.gif?raw=true)
+![Live Blur Animation](gh_5b4e52da2f743fa303f06203.gif)
 
 A very simple example with a ViewPager would be:
 ```java
@@ -150,7 +150,7 @@ for some views (see package `at.favre.lib.dali.view.Observable*`)
 
 A specialized version of live blur is blurring the background of a `NavigationDrawer`:
 
-![Blur Nav Animation](https://github.com/patrickfav/Dali/blob/master/misc/blur_nav.gif?raw=true)
+![Blur Nav Animation](gh_8bb0f51467c4470c2a92c636.gif)
 ```java
     protected void onCreate(Bundle savedInstanceState) {
         ...
@@ -209,7 +209,7 @@ then an `ImageView` can be animated:
     BlurKeyFrameTransitionAnimation animation = new BlurKeyFrameTransitionAnimation(getActivity(),man);
     animation.start(imageView);
 ```
-![Blur Animation](https://github.com/patrickfav/Dali/blob/master/misc/blur_anim.gif?raw=true)
+![Blur Animation](gh_ed500192cbca983a0c713b65.gif)
 
 A full example can be found in the test app's `SimpleAnimationFragment.java`
 

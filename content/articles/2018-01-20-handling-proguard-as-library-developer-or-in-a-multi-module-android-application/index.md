@@ -19,7 +19,7 @@ mediumClaps: 348
 mediumVoters: 84
 mediumArticleId: 2d738c37890
 ---
-![](b74101ae90a953f37b8db58e.jpeg)
+![](article_b74101ae90a953f37b8db58e.jpeg)
 
 When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning or just simple apps, but gets unmaintainable when expanding to multiple modules.
 
@@ -31,7 +31,7 @@ Even with local modules, push the rules to the respective module to keep Proguar
 
 Each dependency or module may package it’s own proguard.txt in the top level of it’s AAR package wich will be appended to the main configuration.
 
-![](a0c9f8f6633eaa9bd39f2b74.png)
+![](article_a0c9f8f6633eaa9bd39f2b74.png)
 
 Example of the file layout of an .aar file containing proguard.txt
 

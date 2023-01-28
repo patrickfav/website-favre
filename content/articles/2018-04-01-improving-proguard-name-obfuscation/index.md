@@ -19,7 +19,7 @@ mediumClaps: 781
 mediumVoters: 153
 mediumArticleId: 83b27b34c52a
 ---
-![](72242cd1f965fa2406c740e6.png)
+![](article_72242cd1f965fa2406c740e6.png)
 
 Inspired by [www.obfuscationworkshop.io](http://www.obfuscationworkshop.io)
 
@@ -33,11 +33,11 @@ ProGuard uses dictionaries to define to what to rename a package, class or metho
 
 Let’s consider the following code with this lonely class:
 
-![](12ef699b4705aca380952d16.png)
+![](article_12ef699b4705aca380952d16.png)
 
 When optimizing with ProGuard, it will start by processing Foo.class. ProGuard will check it’s dictionary, the first entry being the letter a. There is no class with that name in this package, so this will result in Foo.class being renamed to a.class. Next the methods will be renamed: bar1() will turn into a() and bar2() into b() using the same strategy. A Java syntax representation of the resulting class would look like this:
 
-![](b0b40dbefa9343b028f087d6.png)
+![](article_b0b40dbefa9343b028f087d6.png)
 
 Obfuscated version of class Foo
 

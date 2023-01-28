@@ -19,7 +19,7 @@ mediumClaps: 43
 mediumVoters: 8
 mediumArticleId: a33fa9867552
 ---
-![](d4b06b3696c3b89ed5660df1.png)
+![](article_d4b06b3696c3b89ed5660df1.png)
 
 ### **A Better Way to Protect Your IDs**
 
@@ -55,7 +55,7 @@ Sometimes you are required to share your user IDs with a statistics tool or othe
 
 A simple solution which tackles most of the issues is to not use _a_ sequence in a _small numeric range_ (i.e. a 64-bit integer) but to use a random value of a _big numeric range_. An implementation of such a concept is the universally unique identifier or [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). Version 4 is based on random numbers and the one you want to use. Due to having some metadata it cannot use all of the 128-bit data, but is limited to 122-bit (which does not make a big difference in real world applications). There is no standardized text representation, but it is usually formatted as something like this:
 
-![](936093448905bd648017a611.png)
+![](article_936093448905bd648017a611.png)
 
 Example UUID
 
@@ -129,11 +129,11 @@ The reference implementation supports a wide array of encodings which may be cho
 
 Example using a 64-bit IDs:
 
-![](29976eabfae3fd5af311193c.png)
+![](article_29976eabfae3fd5af311193c.png)
 
 with optional formatting for better readability:
 
-![](d02278051527b42be46b36f9.png)
+![](article_d02278051527b42be46b36f9.png)
 
 Formatted ID
 
@@ -145,7 +145,7 @@ https://www.myportfolio.com/p?id=SH4RTM4N
 
 a Base32 dialect was added with a custom alphabet containing **no vowels** and **other problematic letters** and numbers. For example these could look like this:
 
-![](38ab40b9f9372d4fab375789.png)
+![](article_38ab40b9f9372d4fab375789.png)
 
 Encoding optimized to not contain words
 

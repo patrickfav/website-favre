@@ -37,13 +37,13 @@ activity with a lot of convenience features. The lib has also a null-safe
 [no-op](https://en.wikipedia.org/wiki/NOP) flavor indented to be used in release builds, disabling all debug features
 without error-prone if-debug chains.
 
-[![Download](https://api.bintray.com/packages/patrickfav/maven/hood/images/download.svg) ](https://bintray.com/patrickfav/maven/hood/_latestVersion)
-[![Build Status](https://travis-ci.com/patrickfav/under-the-hood.svg?branch=master)](https://travis-ci.com/patrickfav/under-the-hood)
-[![Maintainability](https://api.codeclimate.com/v1/badges/f18559eddd85f814944f/maintainability)](https://codeclimate.com/github/patrickfav/under-the-hood/maintainability)
-[![Javadocs](https://www.javadoc.io/badge/at.favre.lib.hood/hood-core.svg)](https://www.javadoc.io/doc/at.favre.lib.hood/hood-core)
-[![API 14+](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=14)
-[![Method Cound](https://img.shields.io/badge/Methods%20and%20size-core:%201128%20%7C%20167%20KB-e91e63.svg)](http://www.methodscount.com/?lib=at.favre.lib.hood%3Ahood-core%3A%2B)
-[![play store banner](https://github.com/patrickfav/under-the-hood/raw/master/doc/playstore_badge_new_sm.png)](https://play.google.com/store/apps/details?id=at.favre.app.hood.demo)
+[ ](https://bintray.com/patrickfav/maven/hood/_latestVersion)
+[](https://travis-ci.com/patrickfav/under-the-hood)
+[](https://codeclimate.com/github/patrickfav/under-the-hood/maintainability)
+[](https://www.javadoc.io/doc/at.favre.lib.hood/hood-core)
+[](https://android-arsenal.com/api?level=14)
+[](http://www.methodscount.com/?lib=at.favre.lib.hood%3Ahood-core%3A%2B)
+[](https://play.google.com/store/apps/details?id=at.favre.app.hood.demo)
 
 To check it out, [download the demo app from the Playstore](https://play.google.com/store/apps/details?id=at.favre.app.hood.demo) . Lib and demo app require SDK 14+.
 
@@ -57,7 +57,7 @@ To check it out, [download the demo app from the Playstore](https://play.google.
 * [No-op](https://en.wikipedia.org/wiki/NOP) flavor of the lib for your release build
 * Shake listener and Multi Click Listener
 
-![screenshot gallery](https://github.com/patrickfav/under-the-hood/raw/master/doc/screenshot_gallery.png)
+![screenshot gallery](gh_83d0a79f10e3196d8d4400e5.png)
 
 ## Quick Start
 
@@ -143,7 +143,7 @@ debugView.setPageData(pages);
 
 ### Showcase Demo App
 
-![animation of ui](https://github.com/patrickfav/under-the-hood/raw/master/doc/showcase.gif)
+![animation of ui](gh_fc7e80818b5e1250f684f754.gif)
 
 
 ## The HoodAPI
@@ -218,7 +218,7 @@ and contains the main config
 * `PageEntry` is a row displaying content in a `Page`. PageEntry is
 responsible for how its data is rendered in the UI.
 
-![adiagram showing how the template works](https://github.com/patrickfav/under-the-hood/raw/master/doc/template_system.png)
+![adiagram showing how the template works](gh_9237593996a60cb3d2a40aa4.png)
 
 Additionally there is an element that groups a bunch of `PageEntry` entries
 with additional convenience logic, like displaying an optional error message.
@@ -250,7 +250,7 @@ Creating a simple page is easy:
 
 #### Property Entry
 
-![example in the ui](https://github.com/patrickfav/under-the-hood/raw/master/doc/example_property.png)
+![example in the ui](gh_a293b8d3bf9a733ad0a415b0.png)
 
 Create with:
 
@@ -284,7 +284,7 @@ see `DefaultProperties.*` and `PackageInfoAssembler`
 
 #### ActionEntry
 
-![example in the ui](https://github.com/patrickfav/under-the-hood/raw/master/doc/example_buttons.png)
+![example in the ui](gh_6b0506b256cdb4333825d0ab.png)
 
 Will be rendered as a simple button starting a custom action on click.
 Supports single and double column actions (ie. having two buttons in the same row)
@@ -318,7 +318,7 @@ this example:
             getPreferences(MODE_PRIVATE),
             "SHARED_PREF_KEY", "Enable debug feat#1", false));
 ```
-![example in the ui](https://github.com/patrickfav/under-the-hood/raw/master/doc/example_switch.png)
+![example in the ui](gh_2ab6a46eff79b9fae0e17626.png)
 
 
 This code will create a simple backend switcher:
@@ -333,7 +333,7 @@ This code will create a simple backend switcher:
        //return your backends
     }
 ```
-![example in the ui](https://github.com/patrickfav/under-the-hood/raw/master/doc/example_spinner.png)
+![example in the ui](gh_02b5418693408c9158763719.png)
 
 There is a standard implementation for `ConfigBoolEntry` in `DefaultConfigActions`
  backed by shared preferences.
@@ -345,7 +345,7 @@ Group your entries with a header
 ```java
     Hood.get().createHeaderEntry("App Version")
 ```
-![example in the ui](https://github.com/patrickfav/under-the-hood/raw/master/doc/example_header.png)
+![example in the ui](gh_6efe74ad747d816e1395c94e.png)
 
 To display a simple message use the following:
 
@@ -395,7 +395,7 @@ The `PopHoodActivity` will also respect the no-op switch and just finish.
 
 Here is a example of a noop view being rendered
 
-![example image](https://github.com/patrickfav/under-the-hood/raw/master/doc/noop_example.png)
+![example image](gh_a2851aedcbc808c125fc652a.png)
 
 ### Module `hood-extended`
 
