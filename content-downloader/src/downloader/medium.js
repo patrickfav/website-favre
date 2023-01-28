@@ -2,6 +2,7 @@ import fs from "fs";
 import {StringStream} from "scramjet";
 import axios from "axios";
 import got from "got";
+import crypto from "crypto";
 import Parser from "rss-parser";
 import TurndownService from "turndown";
 import * as cheerio from "cheerio";
@@ -22,7 +23,7 @@ export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
         const articleInfo = await getArticleInfo(post);
 
         const title = articleInfo.title;
-        let safeArticleTitle = encodeURI(title.replace(/ /g, '-').replace(/:/g, '_').replace(/…/g, '_')).toLowerCase();
+        let safeArticleTitle = encodeURI(title.replace(/ /g, '-').replace(/:/g, '_').replace(/&#x2026;/g, '_').replace(/…/g, '_')).toLowerCase();
         let safeArticleTitleWithDate = new Date(articleInfo.firstPublishedAt).toISOString().split("T")[0] + "-" + safeArticleTitle;
 
         console.log("\tFound article " + title + "(" + safeArticleTitleWithDate + ") updated at " + new Date(articleInfo.latestPublishedAt).toISOString());
@@ -37,7 +38,8 @@ export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
 
         const targetProjectFile = targetProjectDir + "/index.md";
         const frontMatter = createFrontMatter(articleInfo, safeArticleTitleWithDate);
-        await StringStream.from(frontMatter + post.markdown + "\n---\n")
+        const markdown = await fetchAndReplaceImages(post.markdown, targetProjectDir)
+        await StringStream.from(frontMatter + markdown + "\n---\n")
             .pipe(fs.createWriteStream(targetProjectFile));
     }
 }
@@ -166,4 +168,37 @@ function createFrontMatter(articleInfo, safeArticleTitle) {
     meta += "mediumArticleId: " + articleInfo.id + "\n"
     meta += "---\n"
     return meta;
+}
+
+async function fetchAndReplaceImages(markdownContent, targetProjectDir) {
+
+    function getExtension(imageUrl) {
+        return imageUrl.split('.').pop();
+    }
+
+    function regExpQuote(str) {
+        return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+    }
+
+    const matches = [...markdownContent.matchAll(/!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>\".*\")?\)/g)];
+
+    for (const i in matches) {
+        const imageUrl = matches[i][1];
+
+        if (imageUrl.startsWith("https://medium.com/_/stat")) {
+            markdownContent = markdownContent.replace(new RegExp(regExpQuote(matches[i][0]), "g"), "\n")
+            continue; //only the stats tracker from medium, just remove
+        }
+
+        const imageFileName = crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 24) + "." + getExtension(imageUrl);
+
+
+        console.log("\tDownloading article image: " + imageUrl + " to " + imageFileName);
+
+        await got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + "/" + imageFileName))
+
+        markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), "g"), imageFileName)
+    }
+
+    return markdownContent;
 }
