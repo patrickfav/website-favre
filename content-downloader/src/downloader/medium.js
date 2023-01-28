@@ -49,7 +49,7 @@ async function downloadProjectImage(articleInfo, safeArticleTitle, targetProject
     const imageFileName = "thumb_" + safeArticleTitle + ".png";
 
     if (imageUrl) {
-        console.log("\tDownloading medium image: " + imageUrl);
+        console.log("\tDownloading social preview image: " + imageUrl);
         await got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + "/" + imageFileName))
     }
 }
@@ -190,8 +190,7 @@ async function fetchAndReplaceImages(markdownContent, targetProjectDir) {
             continue; //only the stats tracker from medium, just remove
         }
 
-        const imageFileName = crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 24) + "." + getExtension(imageUrl);
-
+        const imageFileName = "article_" + crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 24) + "." + getExtension(imageUrl);
 
         console.log("\tDownloading article image: " + imageUrl + " to " + imageFileName);
 

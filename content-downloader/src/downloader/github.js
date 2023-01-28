@@ -1,7 +1,10 @@
 import fs from "fs";
-import {MultiStream, StringStream} from "scramjet";
+import {StringStream} from "scramjet";
 import got from "got";
 import * as cheerio from "cheerio";
+import crypto from "crypto";
+
+const mainGithubBranch = "master"
 
 export async function downloadGithubReadme(github_user, github_projects, rootDirMd, relOutDir) {
     const targetRootDir = rootDirMd + relOutDir
@@ -48,21 +51,66 @@ async function downloadProjectImage(projectName, github_user, targetProjectDir) 
 async function downloadParseAndSaveReadme(github_user, projectName, frontMatter, targetProjectDir) {
     const fileNameExt = "index.md";
 
-    const url = 'https://github.com/' + github_user + '/' + projectName + '/raw/master/';
+    const url = `https://github.com/${github_user}/${projectName}/raw/${mainGithubBranch}/`;
 
     const targetProjectFile = targetProjectDir + "/" + fileNameExt;
 
     console.log("\tDownloading Readme from " + url + 'README.md');
 
-    await MultiStream.from([StringStream.from(frontMatter), StringStream.from(got.stream(url + 'README.md'))]).mux()
-        .endWith("\n---\n")
-        .map(line =>
-            line
-                .replace(/\]\(doc\//g, '](' + url + 'doc/')
-                .replace(/\]\(misc\//g, '](' + url + 'misc/')
-                .replace(/\]\(src\/main\/resources\/img\//g, '](' + url + 'src/main/resources/img/')
-        )
+    const markdown = await got.get(url + 'README.md').then(response => removeBadgesAndDownloadImages(response.body, github_user, projectName, targetProjectDir));
+
+    await StringStream.from(frontMatter + markdown + "\n---\n")
         .pipe(fs.createWriteStream(targetProjectFile));
+}
+
+async function removeBadgesAndDownloadImages(markdownContent, github_user, projectName, targetProjectDir) {
+
+    function getExtension(imageUrl) {
+        return imageUrl.split('.').pop().replace(/\?raw=true/g,"");
+    }
+
+    function regExpQuote(str) {
+        return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+    }
+
+    const matches = [...markdownContent.matchAll(/!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>\".*\")?\)/g)];
+
+    for (const i in matches) {
+        const baseGithubUrl = `https://github.com/${github_user}/${projectName}/raw/${mainGithubBranch}/`;
+        const markdownImage = matches[i][0];
+        const imageUrl = matches[i][1];
+
+        if (
+            imageUrl.startsWith("https://api.bintray.com/packages/patrickfav") ||
+            imageUrl.startsWith("https://travis-ci.com/patrickfav") ||
+            imageUrl.startsWith("https://travis-ci.org/patrickfav") ||
+            imageUrl.startsWith("https://www.javadoc.io/badge") ||
+            imageUrl.startsWith("https://coveralls.io/repos/github") ||
+            imageUrl.startsWith("https://img.shields.io/github/") ||
+            imageUrl.startsWith("https://img.shields.io/badge/") ||
+            imageUrl.startsWith("https://api.codeclimate.com/v1/badges") ||
+            imageUrl.startsWith("doc/playstore_badge")
+        ) {
+            markdownContent = markdownContent.replace(new RegExp(regExpQuote(markdownImage), "g"), "")
+            continue;
+        }
+
+        if (
+            !imageUrl.startsWith("https://") || imageUrl.startsWith("https://github.com/patrickfav/")
+        ) {
+            const fullyQualifiedUrl = imageUrl.startsWith("https://") ? imageUrl : baseGithubUrl + imageUrl;
+            const imageFileName = "gh_" + crypto.createHash('sha256').update(fullyQualifiedUrl).digest('hex').substring(0, 24) + "." + getExtension(imageUrl);
+
+            console.log("\tDownloading github image: " + fullyQualifiedUrl + " to " + imageFileName);
+
+            await got.stream(fullyQualifiedUrl).pipe(fs.createWriteStream(targetProjectDir + "/" + imageFileName))
+
+            markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), "g"), imageFileName);
+            continue;
+        }
+    }
+
+    return markdownContent;
 }
 
 function createGithubFrontMatter(projectName, githubMeta) {
