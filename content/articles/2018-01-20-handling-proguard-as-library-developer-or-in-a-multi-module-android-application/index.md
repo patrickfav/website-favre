@@ -19,7 +19,7 @@ mediumClaps: 348
 mediumVoters: 84
 mediumArticleId: 2d738c37890
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*pIPLwP3QApfqsq3fJ5n_VQ.jpeg)
+![](b74101ae90a953f37b8db58e.jpeg)
 
 When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning or just simple apps, but gets unmaintainable when expanding to multiple modules.
 
@@ -31,7 +31,7 @@ Even with local modules, push the rules to the respective module to keep Proguar
 
 Each dependency or module may package it’s own proguard.txt in the top level of it’s AAR package wich will be appended to the main configuration.
 
-![](https://cdn-images-1.medium.com/max/597/1*Rv3I8L5fkr3NFT-gbfXbSg.png)
+![](a0c9f8f6633eaa9bd39f2b74.png)
 
 Example of the file layout of an .aar file containing proguard.txt
 
@@ -79,7 +79,8 @@ This is not the most sophisticated workaround, but once the Android DSL will sup
 *   Be as defensive as possible with those rules, since the consumer most likely cannot override them.
 *   Currently there is no direct support for modular configurations with Java modules
 
-![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=2d738c37890)
+
+
 
 
 ---

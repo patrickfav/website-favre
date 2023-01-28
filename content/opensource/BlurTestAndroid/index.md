@@ -1,7 +1,7 @@
 ---
 title: 'BlurTestAndroid'
 date: 2014-04-07
-lastmod: 2022-11-11
+lastmod: 2023-01-25
 draft: false
 description: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 summary: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
@@ -18,7 +18,7 @@ editAppendPath: false
 cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/BlurTestAndroid
 originalContentType: github
-githubStars: 414
+githubStars: 415
 githubForks: 68
 githubLanguage: Java
 githubLicense: Apache License 2.0

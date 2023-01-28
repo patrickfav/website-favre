@@ -5,7 +5,7 @@ lastmod: 2020-04-18
 draft: false
 summary: 'While writing my own bcrypt library, I discovered a lot of odd things surrounding the bcrypt protocol.'
 description: 'While writing my own bcrypt library, I discovered a lot of odd things surrounding the bcrypt protocol.'
-slug: 2018-11-07-the-bcrypt-protocol&#x2026;-is-kind-of-a-mess
+slug: 2018-11-07-the-bcrypt-protocol_-is-kind-of-a-mess
 tags: ["Cybersecurity", "Programming"]
 keywords: ["security", "bcrypt", "crypto", "passwords", "bcrypt-protocol"]
 showDate: true
@@ -19,7 +19,7 @@ mediumClaps: 72
 mediumVoters: 14
 mediumArticleId: 4aace5eb31bd
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*0nnp9MK5uVf5e2ncH6aftw.jpeg)
+![](1400cdb98347fb2c4bc9dbb6.jpeg)
 
 _While writing my own bcrypt library, being unsatisfied with the current Java de-facto standard implementation jBcrypt, I discovered a lot of odd things surrounding the bcrypt protocol (mind you: not the underlying cryptographic primitive ‘Eksblowfish’)._
 
@@ -35,7 +35,7 @@ bcrypt("secretPassword", 8)
 
 which may output
 
-![](https://cdn-images-1.medium.com/max/1024/1*wFASmAwFFZot0rTrJv1W1Q.png)
+![](6afe0ad4a41b74338c6ed0dd.png)
 
 $2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma
 
@@ -83,7 +83,7 @@ $2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma
 
 is clearly optimized to be user readable. It is also slightly inefficient to parse: first the whole string has to be read in as ASCII, then it has to be parsed character to character until the last $. After that the next 22 and 32 characters are decoded separately. Using a more compact message format and encoded only once, for example:
 
-![](https://cdn-images-1.medium.com/max/1024/1*vUs9KREMBXKziDZFXL0H2w.png)
+![](6b2e7ac66255fae9433f3283.png)
 
 the storage demand is reduced from 60 byte to ~56 byte (Base64 encoded). This is irrelevant in most use cases, but in the grant scale when storing millions or billions of password hashes this can make a difference slightly reducing storage demand and parsing computational time.
 
@@ -111,7 +111,8 @@ A small plug: most of the issues explained can be overcome with my Java implemen
 
 [patrickfav/bcrypt](https://github.com/patrickfav/bcrypt)
 
-![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=4aace5eb31bd)
+
+
 
 
 ---

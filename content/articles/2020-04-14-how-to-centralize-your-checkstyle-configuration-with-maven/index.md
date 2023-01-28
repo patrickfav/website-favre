@@ -19,11 +19,11 @@ mediumClaps: 11
 mediumVoters: 6
 mediumArticleId: 7575eacd7295
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*c8_tUoRsb2N2LJ4mZ-Y4LQ.jpeg)
+![](6b235e313cdf3f991002e9b8.jpeg)
 
 Checkstyle, loved by those who set it up, hated by those who didn’t, is Javas most popular tool to force your code style flavor onto others. Whatever your feelings about this static analyzer may be, if you have to manage it in your project(s) this article is for you.
 
-![Screenshot of the IntelliJ Checkstyle Plugin showing some issues](https://cdn-images-1.medium.com/max/1024/1*XdkFokFbY9QXsq0Kal_0Kw.png)
+![Screenshot of the IntelliJ Checkstyle Plugin showing some issues](e59d31038ea2183912f82f43.png)
 
 A familiar sight for Checkstyle users
 
@@ -43,7 +43,7 @@ Done!
 
 Create a new project with your [preferred method](http://maven.apache.org/archetypes/maven-archetype-simple/). We name our configuration file checkstyle.xml and put it into /src/main/resource.
 
-![](https://cdn-images-1.medium.com/max/888/1*Clg9ncxuFap1xMCg4gPJEA.png)
+![](8f8aac1071b2eb368747d58b.png)
 
 As test configuration I used this unbearable annoying line length restriction (which helps to see if it works later):
 
@@ -154,7 +154,7 @@ A full example, deployed to Maven Central, can be found here
 
 While it is possible to also package a checkstyle-suppression.xml in the same way as described above, I do not think a global suppression file makes a whole lot of sense.
 
-![](https://cdn-images-1.medium.com/max/1024/1*M0RDHsE9W9keSGFPT2GeGQ.png)
+![](b13c2fda654a51a9463348ac.png)
 
 It is, however, possible to set one locally, in basically the same way you would normally. Create your suppression config in your project and reference it in your Checkstyle plugin configuration. In this example we name the file checkstyle-suppression.xml and put it into the project’s root folder. Then we add the reference in the POM:
 
@@ -176,7 +176,7 @@ An example using suppressions with a global _checkstyle-config_ can be found [he
 
 If you use the excellent [Checkstyle IntelliJ plugin](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea) (or a similar tool), you may wonder where the local configuration can be found. After you mvn install it will be located at /target/checkstyle-checker.xml.
 
-![](https://cdn-images-1.medium.com/max/1024/1*c-kOGSr6Knb_gH6AJ1zQhg.png)
+![](e79d13d20d7d296e4b503504.png)
 
 ### Summary
 
@@ -187,7 +187,8 @@ We’ve created a separate Maven project to put a global Checkstyle configuratio
 *   [How to upload an artifact to Maven Central with an empty javadoc jar (or empty sources jar), because of no Java code nor resources?](https://stackoverflow.com/a/53707024/774398)
 *   [how to externalise the checkstyle config for maven-checkstyle-plugin](https://stackoverflow.com/questions/19682455/how-to-externalise-the-checkstyle-config-for-maven-checkstyle-plugin/19690484#19690484)
 
-![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=7575eacd7295)
+
+
 
 
 ---

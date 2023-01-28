@@ -19,7 +19,7 @@ mediumClaps: 232
 mediumVoters: 53
 mediumArticleId: eb966fb7fedc
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*f-KtBrTFGLj4TDlz8uu6Ug.jpeg)
+![](a175d4373ca65a0d6b72593b.jpeg)
 
 In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go through the issues we had with the current setup and in the second part, what steps we took to improve them.
 
@@ -83,7 +83,7 @@ The advantage is that this will safe you 3 allocations in the memory constraint 
 
 And two, it supports a lot of very convenient lint checks. For example it warns you if you, like explained above, use string concatenation instead of string formatting or just that the android logger is used. Most of the rules have quick-fix options making migration a charm:
 
-![](https://cdn-images-1.medium.com/max/744/1*fhLdnqnB7NOXUwb9WQAyRQ.png)
+![](12e2f9dd880575173282228e.png)
 
 Timber custom lint warning
 
@@ -223,7 +223,8 @@ We centralized our logging with **Timber** for Android modules and **SLF4J** wit
 *   [SLF4J Manual](https://www.slf4j.org/manual.html)
 *   [Shrink Your Code and Resources | Android Studio](https://developer.android.com/studio/build/shrink-code.html)
 
-<a href="https://medium.com/media/87c27c6bd6c8dea21c9726d9564b27d6/href">https://medium.com/media/87c27c6bd6c8dea21c9726d9564b27d6/href</a>![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=eb966fb7fedc)
+<a href="https://medium.com/media/87c27c6bd6c8dea21c9726d9564b27d6/href">https://medium.com/media/87c27c6bd6c8dea21c9726d9564b27d6/href</a>
+
 
 
 ---

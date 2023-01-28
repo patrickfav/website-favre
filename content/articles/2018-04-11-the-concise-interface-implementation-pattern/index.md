@@ -19,7 +19,7 @@ mediumClaps: 0
 mediumVoters: 0
 mediumArticleId: 9b15f35a806b
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*lKIhln05G2WR5Lpi8trfvw.jpeg)
+![](19e386ffa7c7e9d1c5267b3a.jpeg)
 
 #### A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small
 
@@ -100,5 +100,6 @@ One of the main benefits of using interfaces is the better testability. By using
 
 By abstracting and creating contracts with interfaces we can create better software. Unfortunately in some cases using interfaces can be unnecessary overhead. The proposed concise interface implementation pattern mitigates this issue by defining the name and location of the implementation without removing the flexibility of later using multiple implementations or as an standalone API.
 
-![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=9b15f35a806b)
+
+
 ---

@@ -19,7 +19,7 @@ mediumClaps: 289
 mediumVoters: 50
 mediumArticleId: b3b80e99ad36
 ---
-![](https://cdn-images-1.medium.com/max/1024/1*D-bhytqsx7isYbv7I9s_uQ.png)
+![](358901567f119524779535be.png)
 
 ### Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2: AES-CBC + HMAC
 
@@ -51,7 +51,7 @@ So what is the right way to apply this MAC? According to security researcher [Hu
 
 Every option has it’s own properties and I’ll encourage you to read a full argument of [either option in this post](https://crypto.stackexchange.com/a/205/44838). To summarize, [most](https://crypto.stackexchange.com/a/224/44838) [researchers](https://moxie.org/blog/the-cryptographic-doom-principle/) [recommend](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.5488&rep=rep1&type=pdf) [Encrypt-then-MAC (EtM)](https://tools.ietf.org/html/rfc7366). It protects against chosen cipher-text attacks, since the MAC can prevent decryption of incorrect messages. Additionally the MAC can’t leak information about the plain-text since it operates on the cipher-text. On the downside, it is slightly harder to implement since the IV and a possible protocol /algorithm version or type must be included in the tag. The important thing is to never do any cryptographic operation before verifying the MAC, otherwise you can be vulnerable to a [padding-oracle attack](https://en.wikipedia.org/wiki/Padding_oracle_attack) ([Moxie](https://en.wikipedia.org/wiki/Moxie_Marlinspike) calls this the [Doom Principle](https://moxie.org/blog/the-cryptographic-doom-principle/)).
 
-![](https://cdn-images-1.medium.com/max/1024/1*X3g7xKlAWuOfPwbsEhQkmQ.png)
+![](ff631ace705b5c5c5de6d52b.png)
 
 Encrypt-then-Mac schema
 
@@ -66,7 +66,7 @@ On the downside it only allows 96 bit initial vector (vs. 128 bit) and HMAC is t
 
 The last issue we have to solve: where do we get the secret key for the MAC calculation? There seems to be [no known problem](https://crypto.stackexchange.com/a/8086/44838) when using the same key as for the encryption (when using HMAC) if the used secret key is strong (ie. sufficiently random and securely exchanged). However best practice is to use a key derivation function (KDF) to derive 2 sub-keys just to be on the “safe” side if any problems may be found in the future. This can be as simple as calculating a SHA256 on the main secret key and splitting it to two 16 byte blocks. However I rather much prefer standardized protocols like the [HMAC-based Extract-and-Expand Key Derivation Function](https://tools.ietf.org/html/rfc5869) (HKDF) which directly support such use cases without byte fiddling.
 
-![](https://cdn-images-1.medium.com/max/1024/1*i1dsvrKy7SH8PE4l-eJJug.png)
+![](7f764e0d12674682bc13f29a.png)
 
 Key derivation of the two sub-keys
 
@@ -257,7 +257,8 @@ As can be seen, the protocol is a bit more involved as just using GCM. However t
 
 [Security Best Practices: Symmetric Encryption with AES in Java and Android](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9)
 
-![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=b3b80e99ad36)
+
+
 
 
 ---
