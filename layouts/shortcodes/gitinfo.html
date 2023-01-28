@@ -1,0 +1,8 @@
+{{ $date := now }}
+{{ if .GitInfo }}
+{{ $date = .GitInfo.AuthorDate }}
+{{ end }}
+
+<div class="date">
+  {{- $date.Format "January 02, 2006" -}}
+</div>
