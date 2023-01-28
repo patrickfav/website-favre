@@ -47,6 +47,11 @@ weight = 30
    weight = 10
 
  [[footer]]
-   name = "CV"
-   pageRef = "cv"
-   weight = 60
+   name = "About"
+   pageRef = "about"
+   weight = 70
+
+ [[footer]]
+   name = "Data Privacy"
+   pageRef = "data-privacy"
+   weight = 80
