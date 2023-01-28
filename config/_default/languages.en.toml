@@ -5,9 +5,9 @@ isoCode = "en-AT"
 weight = 1
 rtl = false
 
-title = "Patrick Favre | Portfolio"
+title = "favr.dev | Portfolio"
 description = "Patrick Favre's Portfolio Website"
-copyright = "&copy; 2023 Patrick Favre"
+copyright = "&copy; 2023"
 
 dateFormat = "2 January 2006"
 

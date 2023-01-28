@@ -10,5 +10,5 @@ COPY package.json ./
 COPY package-lock.json ./
 
 RUN npm i && npm link && ls
-RUN ./bin/hugo-content-downloader
+RUN ./hugo-content-downloader
 
