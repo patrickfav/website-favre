@@ -1,0 +1,5 @@
+{{ with site.Params.git.last_commit }}
+<a href="https://github.com/patrickfav/website-favre/actions/runs/{{ .id }}">#{{ .number }}</a>
+{{ else }}
+local build
+{{ end }}

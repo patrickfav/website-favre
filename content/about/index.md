@@ -19,4 +19,4 @@ is hosted on [Github](https://github.com/patrickfav/website-favre) and continuou
 
 ### Version
 
-This version is based on commit 
+This version is based on commit {{< gitinfo >}} and build with ci job {{< buildinfo >}}.

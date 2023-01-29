@@ -1,0 +1,5 @@
+{{ with site.Params.git.last_build }}
+<a href="https://github.com/patrickfav/website-favre/commit/{{ .hash }}">{{ substr .hash 0 8 }}</a> updated at {{ .date }}
+{{ else }}
+local build
+{{ end }}
