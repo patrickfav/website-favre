@@ -22,11 +22,11 @@ jobs:
           extended: true
 
       - name: Build site
+        env:
+          HUGOxPARAMSxGITxLAST_COMMITxHASH: ${{ vars.GITHUB_SHA }}
+          HUGOxPARAMSxGITxLAST_BUILDxID: ${{ vars.GITHUB_RUN_ID }}
+          HUGOxPARAMSxGITxLAST_BUILDxNUMBER: ${{ vars.GITHUB_RUN_NUMBER }}
         run: |
-          export HUGOxPARAMSxGITxLAST_COMMITxDATE=$(git log -1 --format=%cI)  && \
-          export HUGOxPARAMSxGITxLAST_COMMITxHASH=$(git log -1 --format=%H)  && \
-          export HUGOxPARAMSxGITxLAST_BUILDxID=$GITHUB_RUN_ID  && \
-          export HUGOxPARAMSxGITxLAST_BUILDxNUMBER=$GITHUB_RUN_NUMBER  && \
           hugo --minify
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
