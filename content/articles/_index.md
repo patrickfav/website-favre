@@ -11,7 +11,8 @@ cascade:
     showTaxonomies: true
     showWordCount: false
     editAppendPath: false
-    feature: none
+    feature: 'none'
+    thumbnail: 'feature_*'
 ---
 
 {{< lead >}}
