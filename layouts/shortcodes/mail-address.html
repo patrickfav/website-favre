@@ -1,0 +1,15 @@
+{{ $mail := printf "%s" (.Get "mailto" )  }}
+{{ $seed := now.Unix  }}
+{{ $randomId := mod (add (mul 13 $seed) 97) 4000000 | md5 }}
+{{ $randomPosition := index (shuffle (seq (sub (len $mail) 1))) 0 }}
+{{ $mailLabel := print (substr $mail 0 $randomPosition ) "<span id=\"mo_" $randomId "\">null</span>" (substr $mail $randomPosition (sub (len $mail) 1) ) | base64Encode }}
+{{ $base64Mail := $mail | base64Encode }}
+
+
+<style>span#mo_{{ $randomId }} { display:none; }</style>
+<a href='#'
+   data-contact='{{ $base64Mail }}'
+   target='_blank' rel="nofollow"
+   onfocus='this.href = "mailto:" + atob(this.dataset.contact)' >
+    <script type="text/javascript">document.write(atob("{{ $mailLabel }}"));</script>
+</a>

@@ -9,10 +9,10 @@ title = "favr.dev | Portfolio"
 description = "Patrick Favre's Portfolio Website"
 copyright = "&copy; 2023"
 
-dateFormat = "2 January 2006"
+dateFormat = "02.01.2006"
 
 [params]
-  mainSections = ["articles"]
+  mainSections = ["articles", "opensource"]
 
 [author]
   name = "Patrick Favre"
