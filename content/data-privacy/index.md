@@ -90,7 +90,7 @@ The `favr.dev` website contains links to other websites. Our privacy policy appl
 
 If you have any questions about `favr.dev`'s privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us.
 
-Email us at: {{< mail-address mailto="dataprivacy@favr.dev" >}}
+Email us at: {{< mail-address mailto="privacy@favr.dev" >}}
 
 ## How to contact the appropriate authority
 

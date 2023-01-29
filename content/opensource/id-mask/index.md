@@ -2,20 +2,14 @@
 title: 'id-mask'
 date: 2019-03-29
 lastmod: 2022-12-07
-draft: false
 description: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger. This library bases its security on strong cryptographic primitives.'
 summary: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger. This library bases its security on strong cryptographic primitives.'
 slug: id-mask
-tags: ["64bit", "aes-encryption", "biginteger", "byte-array", "database-ids", "hashid", "hashids", "hkdf", "hmac", "id", "integer", "jackson", "jax-rs", "long", "obfuscation", "paramconverter", "serializer", "uuid"]
+tags: ["64bit", "aes-encryption", "biginteger", "byte-array"]
 keywords: ["64bit", "aes-encryption", "biginteger", "byte-array", "database-ids", "hashid", "hashids", "hkdf", "hmac", "id", "integer", "jackson", "jax-rs", "long", "obfuscation", "paramconverter", "serializer", "uuid"]
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["64bit", "aes-encryption", "biginteger", "byte-array", "database-ids", "hashid", "hashids", "hkdf", "hmac", "id", "integer", "jackson", "jax-rs", "long", "obfuscation", "paramconverter", "serializer", "uuid", "github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/id-mask
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/id-mask
 originalContentType: github
 githubStars: 41
@@ -812,5 +806,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
----

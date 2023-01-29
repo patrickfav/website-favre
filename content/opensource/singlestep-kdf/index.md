@@ -2,20 +2,14 @@
 title: 'singlestep-kdf'
 date: 2018-11-18
 lastmod: 2022-09-10
-draft: false
 description: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 summary: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 slug: singlestep-kdf
-tags: ["cryptography", "hmac", "java", "kdf", "key-agreement", "key-derivation", "key-derivation-function", "message-digest", "nist", "nist800-56", "secretkey", "security", "singlestep-kdf"]
+tags: ["cryptography", "hmac", "java", "kdf"]
 keywords: ["cryptography", "hmac", "java", "kdf", "key-agreement", "key-derivation", "key-derivation-function", "message-digest", "nist", "nist800-56", "secretkey", "security", "singlestep-kdf"]
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["cryptography", "hmac", "java", "kdf", "key-agreement", "key-derivation", "key-derivation-function", "message-digest", "nist", "nist800-56", "secretkey", "security", "singlestep-kdf", "github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/singlestep-kdf
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/singlestep-kdf
 originalContentType: github
 githubStars: 8
@@ -239,5 +233,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
----

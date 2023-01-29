@@ -3,10 +3,17 @@ title: "Articles"
 description: "Articles I wrote"
 
 cascade:
+    draft: false
     showEdit: false
     showSummary: true
+    showDate: true
+    showReadingTime: true
+    showTaxonomies: true
+    showWordCount: false
+    editAppendPath: false
+    feature: none
 ---
 
 {{< lead >}}
-Some articles I wrote in the past. May also be published on different other platforms.
+Tech articles I wrote in recent years. Most of them are imported from different publisher platforms like Medium.
 {{< /lead >}}

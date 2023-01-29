@@ -2,20 +2,14 @@
 title: 'bytes-java'
 date: 2017-10-31
 lastmod: 2023-01-17
-draft: false
 description: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 summary: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 slug: bytes-java
-tags: ["biginteger", "byte-array", "bytebuffer", "bytes", "bytes-java", "checksum", "encoding", "endianness", "gzip", "hash", "java", "utility-library"]
+tags: ["biginteger", "byte-array", "bytebuffer", "bytes"]
 keywords: ["biginteger", "byte-array", "bytebuffer", "bytes", "bytes-java", "checksum", "encoding", "endianness", "gzip", "hash", "java", "utility-library"]
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["biginteger", "byte-array", "bytebuffer", "bytes", "bytes-java", "checksum", "encoding", "endianness", "gzip", "hash", "java", "utility-library", "github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/bytes-java
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/bytes-java
 originalContentType: github
 githubStars: 127
@@ -748,5 +742,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
----

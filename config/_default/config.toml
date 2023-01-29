@@ -3,7 +3,7 @@
 # https://jpanther.github.io/congo/docs/getting-started/
 
 baseURL = 'https://favr.dev/'
-languageCode = 'en-us'
+languageCode = 'en-at'
 
 theme = "congo"
 defaultContentLanguage = "en"
@@ -17,16 +17,18 @@ enableGitInfo = true
   home = ["HTML", "RSS", "JSON"]
 
 
+
+
+
+
+
+
+
 [params.profile]
 enable = true
 name = "Simon Doe"
 tagline = "Senior Software Engineer"
 avatar = "avatar.png"
-
-
-
-
-
 
 
 [params.contact]

@@ -2,20 +2,14 @@
 title: 'BlurTestAndroid'
 date: 2014-04-07
 lastmod: 2023-01-25
-draft: false
 description: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 summary: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 slug: BlurTestAndroid
 tags: ["algorithm", "android-application", "benchmark", "blur", "renderscript"]
 keywords: ["algorithm", "android-application", "benchmark", "blur", "renderscript"]
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["algorithm", "android-application", "benchmark", "blur", "renderscript", "github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/BlurTestAndroid
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/BlurTestAndroid
 originalContentType: github
 githubStars: 415
@@ -126,5 +120,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
----

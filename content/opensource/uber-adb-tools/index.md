@@ -2,20 +2,14 @@
 title: 'uber-adb-tools'
 date: 2016-09-11
 lastmod: 2022-11-25
-draft: false
 description: 'A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform.'
 summary: 'A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform.'
 slug: uber-adb-tools
-tags: ["adb", "adb-commands", "android", "android-debug-bridge", "apk", "bugreport", "cli", "uninstall", "wildcard"]
+tags: ["adb", "adb-commands", "android", "android-debug-bridge"]
 keywords: ["adb", "adb-commands", "android", "android-debug-bridge", "apk", "bugreport", "cli", "uninstall", "wildcard"]
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["adb", "adb-commands", "android", "android-debug-bridge", "apk", "bugreport", "cli", "uninstall", "wildcard", "github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/uber-adb-tools
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/uber-adb-tools
 originalContentType: github
 githubStars: 128
@@ -387,5 +381,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
----

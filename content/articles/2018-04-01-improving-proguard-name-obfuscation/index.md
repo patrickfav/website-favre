@@ -2,17 +2,13 @@
 title: 'Improving ProGuard Name Obfuscation'
 date: 2018-04-01
 lastmod: 2020-02-01
-draft: false
 summary: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 description: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 slug: 2018-04-01-improving-proguard-name-obfuscation
 tags: ["Programming"]
 keywords: ["android", "proguard", "security", "androiddev", "android-app-development"]
-showDate: true
-showReadingTime: true
-showTaxonomies: true
-showWordCount: true
-showEdit: false
+alltags: ["android", "proguard", "security", "androiddev", "android-app-development", "Programming", "medium"]
+categories: ["article", "medium"]
 originalContentLink: https://proandroiddev.com/improving-proguard-name-obfuscation-83b27b34c52a
 originalContentType: medium
 mediumClaps: 781
@@ -160,5 +156,3 @@ By forcing a different mapping each build, bugs like these will immediately surf
 
 
 
-
----

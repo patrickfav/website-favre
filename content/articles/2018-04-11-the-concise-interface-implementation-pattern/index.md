@@ -2,17 +2,13 @@
 title: 'The Concise Interface Implementation Pattern'
 date: 2018-04-11
 lastmod: 2023-01-22
-draft: false
 summary: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 description: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 slug: 2018-04-11-the-concise-interface-implementation-pattern
 tags: []
 keywords: ["java", "interfaces", "patterns", "dependency-injection", "testing"]
-showDate: true
-showReadingTime: true
-showTaxonomies: true
-showWordCount: true
-showEdit: false
+alltags: ["java", "interfaces", "patterns", "dependency-injection", "testing", "medium"]
+categories: ["article", "medium"]
 originalContentLink: https://medium.com/@patrickfav/the-concise-interface-implementation-pattern-9b15f35a806b
 originalContentType: medium
 mediumClaps: 0
@@ -101,5 +97,3 @@ One of the main benefits of using interfaces is the better testability. By using
 By abstracting and creating contracts with interfaces we can create better software. Unfortunately in some cases using interfaces can be unnecessary overhead. The proposed concise interface implementation pattern mitigates this issue by defining the name and location of the implementation without removing the flexibility of later using multiple implementations or as an standalone API.
 
 
-
----

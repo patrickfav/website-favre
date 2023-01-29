@@ -2,20 +2,14 @@
 title: 'dice'
 date: 2017-08-14
 lastmod: 2022-06-09
-draft: false
 description: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 summary: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 slug: dice
-tags: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-source", "hex", "hmac-drbg", "hotbits", "java", "nist", "octal", "prng", "random-number-generators", "seed", "sp800-90a", "text-encodings"]
+tags: ["base32", "base36", "base64", "base85"]
 keywords: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-source", "hex", "hmac-drbg", "hotbits", "java", "nist", "octal", "prng", "random-number-generators", "seed", "sp800-90a", "text-encodings"]
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-source", "hex", "hmac-drbg", "hotbits", "java", "nist", "octal", "prng", "random-number-generators", "seed", "sp800-90a", "text-encodings", "github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/dice
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/dice
 originalContentType: github
 githubStars: 9
@@ -388,5 +382,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
----

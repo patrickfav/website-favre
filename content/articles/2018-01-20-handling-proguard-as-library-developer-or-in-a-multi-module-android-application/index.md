@@ -2,17 +2,13 @@
 title: 'Handling Proguard as Library Developer or in a Multi-Module Android Application'
 date: 2018-01-20
 lastmod: 2020-04-18
-draft: false
 summary: 'When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning&#x2026;'
 description: 'When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning&#x2026;'
 slug: 2018-01-20-handling-proguard-as-library-developer-or-in-a-multi-module-android-application
 tags: ["Programming"]
 keywords: ["android", "proguard", "java"]
-showDate: true
-showReadingTime: true
-showTaxonomies: true
-showWordCount: true
-showEdit: false
+alltags: ["android", "proguard", "java", "Programming", "medium"]
+categories: ["article", "medium"]
 originalContentLink: https://proandroiddev.com/handling-proguard-as-library-developer-or-in-a-multi-module-android-application-2d738c37890
 originalContentType: medium
 mediumClaps: 348
@@ -82,5 +78,3 @@ This is not the most sophisticated workaround, but once the Android DSL will sup
 
 
 
-
----

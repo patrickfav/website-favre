@@ -2,20 +2,14 @@
 title: 'indoor-positioning'
 date: 2016-08-07
 lastmod: 2022-05-19
-draft: false
 description: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 summary: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 slug: indoor-positioning
 tags: []
 keywords: []
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/indoor-positioning
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/indoor-positioning
 originalContentType: github
 githubStars: 39
@@ -149,5 +143,3 @@ for various target areas is depicted.
 # License
 
 Currently proprietary
-
----

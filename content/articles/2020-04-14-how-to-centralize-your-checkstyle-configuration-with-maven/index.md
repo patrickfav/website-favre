@@ -2,17 +2,13 @@
 title: 'How to Centralize your Checkstyle Configuration with Maven'
 date: 2020-04-14
 lastmod: 2020-04-19
-draft: false
 summary: 'Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.'
 description: 'Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.'
 slug: 2020-04-14-how-to-centralize-your-checkstyle-configuration-with-maven
 tags: ["Programming"]
 keywords: ["checkstyle", "maven", "java", "static-code-analysis", "configuration-management"]
-showDate: true
-showReadingTime: true
-showTaxonomies: true
-showWordCount: true
-showEdit: false
+alltags: ["checkstyle", "maven", "java", "static-code-analysis", "configuration-management", "Programming", "medium"]
+categories: ["article", "medium"]
 originalContentLink: https://codeburst.io/how-to-centralize-your-checkstyle-configuration-with-maven-7575eacd7295
 originalContentType: medium
 mediumClaps: 11
@@ -190,5 +186,3 @@ We’ve created a separate Maven project to put a global Checkstyle configuratio
 
 
 
-
----

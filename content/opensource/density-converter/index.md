@@ -2,20 +2,14 @@
 title: 'density-converter'
 date: 2016-02-25
 lastmod: 2023-01-08
-draft: false
 description: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 summary: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 slug: density-converter
-tags: ["android", "cli", "converter", "density", "dpi", "drawable", "gui", "ios", "jpeg", "mozjpeg", "nine-patch", "png", "pngcrush", "post-processor", "psd", "resized-images", "svg"]
+tags: ["android", "cli", "converter", "density"]
 keywords: ["android", "cli", "converter", "density", "dpi", "drawable", "gui", "ios", "jpeg", "mozjpeg", "nine-patch", "png", "pngcrush", "post-processor", "psd", "resized-images", "svg"]
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["android", "cli", "converter", "density", "dpi", "drawable", "gui", "ios", "jpeg", "mozjpeg", "nine-patch", "png", "pngcrush", "post-processor", "psd", "resized-images", "svg", "github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/density-converter
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/density-converter
 originalContentType: github
 githubStars: 234
@@ -348,5 +342,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
----

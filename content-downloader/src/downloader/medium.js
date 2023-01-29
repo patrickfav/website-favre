@@ -39,14 +39,14 @@ export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
         const targetProjectFile = targetProjectDir + "/index.md";
         const frontMatter = createFrontMatter(articleInfo, safeArticleTitleWithDate);
         const markdown = await fetchAndReplaceImages(post.markdown, targetProjectDir)
-        await StringStream.from(frontMatter + markdown + "\n---\n")
+        await StringStream.from(frontMatter + markdown)
             .pipe(fs.createWriteStream(targetProjectFile));
     }
 }
 
 async function downloadProjectImage(articleInfo, safeArticleTitle, targetProjectDir) {
     const imageUrl = "https://cdn-images-1.medium.com/max/1024/" + articleInfo.previewImage['__ref'].replace(/ImageMetadata:/g, "")
-    const imageFileName = "thumb_" + safeArticleTitle + ".png";
+    const imageFileName = "feature_" + safeArticleTitle + ".png";
 
     if (imageUrl) {
         console.log("\tDownloading social preview image: " + imageUrl);
@@ -144,23 +144,22 @@ async function getArticleInfo(post) {
 
 function createFrontMatter(articleInfo, safeArticleTitle) {
     const dateIso8601 = new Date(articleInfo.firstPublishedAt).toISOString().split("T")[0];
+
+    let articleTags = articleInfo.tags.map(m => m['__ref'].replace(/Tag:/g, "")).slice();
+    let articleTopics = articleInfo.topics ? articleInfo.topics.map(m => m.name).slice() : [];
+    let allTags = articleTags.concat(articleTopics).concat(["medium"]);
+
     let meta = '---\n';
     meta += "title: '" + articleInfo.title.replace(/'/g, "`") + "'\n"
     meta += "date: " + dateIso8601 + "\n"
     meta += "lastmod: " + new Date(articleInfo.latestPublishedAt).toISOString().split("T")[0] + "\n"
-    meta += "draft: false\n"
     meta += "summary: '" + articleInfo.previewContent.subtitle.replace(/'/g, "`") + "'\n"
     meta += "description: '" + articleInfo.previewContent.subtitle.replace(/'/g, "`") + "'\n"
     meta += "slug: " + safeArticleTitle + "\n"
-    if (articleInfo.topics && articleInfo.topics.map) {
-        meta += "tags: [" + articleInfo.topics.map(m => '"' + m.name + '"').join(", ") + "]\n"
-    }
-    meta += "keywords: [" + articleInfo.tags.map(m => '"' + m['__ref'].replace(/Tag:/g, "") + '"').join(", ") + "]\n"
-    meta += "showDate: true\n"
-    meta += "showReadingTime: true\n"
-    meta += "showTaxonomies: true\n"
-    meta += "showWordCount: true\n"
-    meta += "showEdit: false\n"
+    meta += "tags: [" + articleTopics.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "keywords: [" + articleTags.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "alltags: [" + allTags.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "categories: [\"article\", \"medium\"]\n"
     meta += "originalContentLink: " + articleInfo.mediumUrl + "\n"
     meta += "originalContentType: medium\n"
     meta += "mediumClaps: " + articleInfo.clapCount + "\n"

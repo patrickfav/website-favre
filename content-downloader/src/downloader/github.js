@@ -40,7 +40,7 @@ async function downloadProjectImage(projectName, github_user, targetProjectDir) 
             return cheerio.load(html)('meta[property="og:image"]').attr('content')
         })
 
-    const imageFileName = "thumb_" + projectName + ".png";
+    const imageFileName = "feature_" + projectName + ".png";
 
     if (socialPreviewImageUrl) {
         console.log("\tDownloading github social preview image: " + socialPreviewImageUrl);
@@ -59,14 +59,14 @@ async function downloadParseAndSaveReadme(github_user, projectName, frontMatter,
 
     const markdown = await got.get(url + 'README.md').then(response => removeBadgesAndDownloadImages(response.body, github_user, projectName, targetProjectDir));
 
-    await StringStream.from(frontMatter + markdown + "\n---\n")
+    await StringStream.from(frontMatter + markdown)
         .pipe(fs.createWriteStream(targetProjectFile));
 }
 
 async function removeBadgesAndDownloadImages(markdownContent, github_user, projectName, targetProjectDir) {
 
     function getExtension(imageUrl) {
-        return imageUrl.split('.').pop().replace(/\?raw=true/g,"");
+        return imageUrl.split('.').pop().replace(/\?raw=true/g, "");
     }
 
     function regExpQuote(str) {
@@ -114,24 +114,22 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
 }
 
 function createGithubFrontMatter(projectName, githubMeta) {
+    let githubTags = githubMeta.topics.slice();
+    let allTags = githubTags.concat(["github", githubMeta.language]);
+    let reducedTags = githubTags.length > 5 ? githubTags.slice(0, 4) : githubTags.slice();
+
     let meta = '---\n';
     meta += "title: '" + projectName + "'\n"
     meta += "date: " + new Date(githubMeta.created_at).toISOString().split("T")[0] + "\n"
     meta += "lastmod: " + new Date(githubMeta.updated_at).toISOString().split("T")[0] + "\n"
-    meta += "draft: false\n"
     meta += "description: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
     meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
     meta += "slug: " + projectName + "\n"
-    meta += "tags: [" + githubMeta.topics.map(m => '"' + m + '"').join(", ") + "]\n"
-    meta += "keywords: [" + githubMeta.topics.map(m => '"' + m + '"').join(", ") + "]\n"
-    meta += "showDate: false\n"
-    meta += "showReadingTime: false\n"
-    meta += "showReadingTime: false\n"
-    meta += "showTaxonomies: true\n"
-    meta += "showEdit: false\n"
+    meta += "tags: [" + reducedTags.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "keywords: [" + githubTags.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "alltags: [" + allTags.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "categories: [\"opensource\"]\n"
     meta += "editURL: " + githubMeta.html_url + "\n"
-    meta += "editAppendPath: false\n"
-    meta += "cover: 'thumb*'\n"
     meta += "originalContentLink: " + githubMeta.html_url + "\n"
     meta += "originalContentType: github\n"
     meta += "githubStars: " + githubMeta.stargazers_count + "\n"

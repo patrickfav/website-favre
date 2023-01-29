@@ -1,24 +1,18 @@
 ---
 title: 'uber-apk-signer'
 date: 2016-10-10
-lastmod: 2023-01-27
-draft: false
+lastmod: 2023-01-29
 description: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 summary: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 slug: uber-apk-signer
-tags: ["android", "android-signing-scheme", "apk", "apksigner", "cli", "keystore", "signature", "signing", "verify", "zipalign"]
+tags: ["android", "android-signing-scheme", "apk", "apksigner"]
 keywords: ["android", "android-signing-scheme", "apk", "apksigner", "cli", "keystore", "signature", "signing", "verify", "zipalign"]
-showDate: false
-showReadingTime: false
-showReadingTime: false
-showTaxonomies: true
-showEdit: false
+alltags: ["android", "android-signing-scheme", "apk", "apksigner", "cli", "keystore", "signature", "signing", "verify", "zipalign", "github", "Java"]
+categories: ["opensource"]
 editURL: https://github.com/patrickfav/uber-apk-signer
-editAppendPath: false
-cover: 'thumb*'
 originalContentLink: https://github.com/patrickfav/uber-apk-signer
 originalContentType: github
-githubStars: 1244
+githubStars: 1247
 githubForks: 149
 githubLanguage: Java
 githubLicense: Apache License 2.0
@@ -227,5 +221,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
----

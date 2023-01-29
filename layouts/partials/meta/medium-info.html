@@ -1,5 +1,5 @@
 <span>
- <a href="{{ .Params.originalContentLink }}">{{ partial "icon.html" "medium" }} Medium</a>
+ <a href="{{ .Params.originalContentLink }}">{{ partial "icon.html" "medium" }}</a>
 </span>
 {{ if and (.Params.mediumClaps | default false) (gt .Params.mediumClaps 0 ) }}
   <span class="px-2 text-primary-500">&middot;</span>

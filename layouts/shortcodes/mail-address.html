@@ -10,6 +10,6 @@
 <a href='#'
    data-contact='{{ $base64Mail }}'
    target='_blank' rel="nofollow"
-   onfocus='this.href = "mailto:" + atob(this.dataset.contact)' >
+   onfocusin='this.href = "mailto:" + atob(this.dataset.contact)'>
     <script type="text/javascript">document.write(atob("{{ $mailLabel }}"));</script>
 </a>
