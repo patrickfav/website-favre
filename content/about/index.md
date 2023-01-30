@@ -7,6 +7,7 @@ showReadingTime: false
 showReadingTime: false
 showTaxonomies: false
 showAuthor: false
+showPagination: false
 ---
 
 ## Technical Stuff

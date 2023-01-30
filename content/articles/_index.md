@@ -16,5 +16,5 @@ cascade:
 ---
 
 {{< lead >}}
-Tech articles I wrote in recent years. Most of them are imported from different publisher platforms like Medium.
+Tech articles I wrote in recent years. Most of them were originally published on different platforms, like Medium, first.
 {{< /lead >}}

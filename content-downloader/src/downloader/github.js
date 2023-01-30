@@ -4,17 +4,17 @@ import got from "got";
 import * as cheerio from "cheerio";
 import crypto from "crypto";
 
-const mainGithubBranch = "master"
-
 export async function downloadGithubReadme(github_user, github_projects, rootDirMd, relOutDir) {
     const targetRootDir = rootDirMd + relOutDir
 
     //download all repositories meta data from github api
-    let githubMetaData = await got.get('https://api.github.com/users/' + github_user + '/repos?sort=updated&direction=desc')
+    let githubMetaData = await got.get('https://api.github.com/users/' + github_user + '/repos?sort=updated&direction=desc&per_page=100')
         .then((res) => JSON.parse(res.body));
 
+    for (const projectsIndex of github_projects) {
+        const projectName = projectsIndex.repo;
+        const mainBranch = projectsIndex.branch;
 
-    for (const projectName of github_projects) {
         console.log("Processing github project " + projectName);
 
         const targetProjectDir = targetRootDir + "/" + projectName;
@@ -28,7 +28,7 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
         let githubMetaForProject = githubMetaData.find(p => p.name === projectName);
 
         const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject);
-        await downloadParseAndSaveReadme(github_user, projectName, frontMatter, targetProjectDir);
+        await downloadParseAndSaveReadme(github_user, projectName, mainBranch, frontMatter, targetProjectDir);
     }
 }
 
@@ -48,22 +48,22 @@ async function downloadProjectImage(projectName, github_user, targetProjectDir) 
     }
 }
 
-async function downloadParseAndSaveReadme(github_user, projectName, frontMatter, targetProjectDir) {
+async function downloadParseAndSaveReadme(github_user, projectName, mainBranch, frontMatter, targetProjectDir) {
     const fileNameExt = "index.md";
 
-    const url = `https://github.com/${github_user}/${projectName}/raw/${mainGithubBranch}/`;
+    const url = `https://github.com/${github_user}/${projectName}/raw/${mainBranch}/`;
 
     const targetProjectFile = targetProjectDir + "/" + fileNameExt;
 
     console.log("\tDownloading Readme from " + url + 'README.md');
 
-    const markdown = await got.get(url + 'README.md').then(response => removeBadgesAndDownloadImages(response.body, github_user, projectName, targetProjectDir));
+    const markdown = await got.get(url + 'README.md').then(response => removeBadgesAndDownloadImages(response.body, github_user, projectName, mainBranch, targetProjectDir));
 
     await StringStream.from(frontMatter + markdown)
         .pipe(fs.createWriteStream(targetProjectFile));
 }
 
-async function removeBadgesAndDownloadImages(markdownContent, github_user, projectName, targetProjectDir) {
+async function removeBadgesAndDownloadImages(markdownContent, github_user, projectName, mainBranch, targetProjectDir) {
 
     function getExtension(imageUrl) {
         return imageUrl.split('.').pop().replace(/\?raw=true/g, "");
@@ -76,12 +76,12 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
     const matches = [...markdownContent.matchAll(/!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>\".*\")?\)/g)];
 
     for (const i in matches) {
-        const baseGithubUrl = `https://github.com/${github_user}/${projectName}/raw/${mainGithubBranch}/`;
+        const baseGithubUrl = `https://github.com/${github_user}/${projectName}/raw/${mainBranch}/`;
         const markdownImage = matches[i][0];
         const imageUrl = matches[i][1];
 
         if (
-            imageUrl.startsWith("https://api.bintray.com/packages/patrickfav") ||
+            imageUrl.startsWith("https://api.bintray.com/packages/") ||
             imageUrl.startsWith("https://travis-ci.com/patrickfav") ||
             imageUrl.startsWith("https://travis-ci.org/patrickfav") ||
             imageUrl.startsWith("https://www.javadoc.io/badge") ||
@@ -114,7 +114,7 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
 }
 
 function createGithubFrontMatter(projectName, githubMeta) {
-    let githubTags = githubMeta.topics.slice();
+    let githubTags = githubMeta.topics ? githubMeta.topics.slice() : [];
     let allTags = githubTags.concat(["github", githubMeta.language]);
     let reducedTags = githubTags.length > 5 ? githubTags.slice(0, 4) : githubTags.slice();
 

@@ -1,9 +1,9 @@
 ---
 title: 'id-mask'
 date: 2019-03-29
-lastmod: 2022-12-07
-description: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger. This library bases its security on strong cryptographic primitives.'
-summary: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger. This library bases its security on strong cryptographic primitives.'
+lastmod: 2023-01-30
+description: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger.'
+summary: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger.'
 slug: id-mask
 tags: ["64bit", "aes-encryption", "biginteger", "byte-array"]
 keywords: ["64bit", "aes-encryption", "biginteger", "byte-array", "database-ids", "hashid", "hashids", "hkdf", "hmac", "id", "integer", "jackson", "jax-rs", "long", "obfuscation", "paramconverter", "serializer", "uuid"]

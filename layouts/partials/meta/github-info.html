@@ -5,10 +5,12 @@
 <time datetime="{{ . }}">
    {{ .Params.date | time.Format "2006" }}
 </time>
+{{ if (.Params.githubLanguage | default false) }}
 <span class="px-2 text-primary-500">&middot;</span>
 <span>
-  {{ .Params.githubLanguage }}
+  {{ partial "icon.html" (print "tech-" (lower .Params.githubLanguage)) }} {{ .Params.githubLanguage }}
 </span>
+{{ end }}
 
 {{ if and (.Params.githubStars | default false) (gt .Params.githubStars 0 ) }}
   <span class="px-2 text-primary-500">&middot;</span>
