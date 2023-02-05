@@ -34,7 +34,7 @@ jobs:
         run: |
           hugo version \
           hugo config \
-          hugo --verbose --printPathWarnings --minify
+          hugo --verbose --minify
 
       - name: Deploy to Firebase Hosting
         id: firebase-deploy-prod
