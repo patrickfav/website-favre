@@ -2,7 +2,7 @@
 title: 'Improving ProGuard Name Obfuscation'
 date: 2018-04-01
 lastmod: 2020-02-01
-lastfetch: 2023-02-05T10:48:51.125Z
+lastfetch: 2023-02-05T22:21:37.748Z
 summary: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 description: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 slug: 2018-04-01-improving-proguard-name-obfuscation

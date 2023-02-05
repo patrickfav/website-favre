@@ -2,7 +2,7 @@
 title: 'website-favre'
 date: 2018-05-31
 lastmod: 2023-01-30
-lastfetch: 2023-02-05T10:49:29.356Z
+lastfetch: 2023-02-05T22:22:06.983Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 slug: website-favre
@@ -20,9 +20,9 @@ githubLicense: MIT License
 ---
 # Static Site Gen Repo for my Personal Website
 
-A simple website with a list of all of my open source projects and articles I wrote. Can be found on [favr.dev](https://favr.dev). Currently uses [CodeDoc](https://github.com/CONNECT-platform/codedoc/) as static code generator.
+A simple website with a list of all of my open source projects and articles I wrote. Can be found on [favr.dev](https://favr.dev). Uses [Hugo](https://gohugo.io/) as static site generator.
 
-[](https://travis-ci.com/patrickfav/website-favre)
+[](https://github.com/patrickfav/website-favre/actions)
 
 ## Prepare
 
@@ -53,7 +53,7 @@ npm install
 npm link 
 ```
 
-optinally update the content with
+optionally update the content with
 
 ```bash
 hugo-content-downloader

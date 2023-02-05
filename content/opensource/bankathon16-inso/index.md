@@ -2,7 +2,7 @@
 title: 'bankathon16-inso'
 date: 2016-08-08
 lastmod: 2023-01-30
-lastfetch: 2023-02-05T10:49:27.596Z
+lastfetch: 2023-02-05T22:22:05.708Z
 description: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 summary: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 slug: bankathon16-inso

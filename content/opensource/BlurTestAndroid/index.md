@@ -2,7 +2,7 @@
 title: 'BlurTestAndroid'
 date: 2014-04-07
 lastmod: 2023-01-25
-lastfetch: 2023-02-05T10:49:14.996Z
+lastfetch: 2023-02-05T22:21:54.168Z
 description: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 summary: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 slug: BlurTestAndroid
