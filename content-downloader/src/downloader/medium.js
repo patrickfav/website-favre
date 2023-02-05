@@ -153,6 +153,7 @@ function createFrontMatter(articleInfo, safeArticleTitle) {
     meta += "title: '" + articleInfo.title.replace(/'/g, "`") + "'\n"
     meta += "date: " + dateIso8601 + "\n"
     meta += "lastmod: " + new Date(articleInfo.latestPublishedAt).toISOString().split("T")[0] + "\n"
+    meta += "lastfetch: " + new Date().toISOString() + "\n"
     meta += "summary: '" + articleInfo.previewContent.subtitle.replace(/'/g, "`") + "'\n"
     meta += "description: '" + articleInfo.previewContent.subtitle.replace(/'/g, "`") + "'\n"
     meta += "slug: " + safeArticleTitle + "\n"

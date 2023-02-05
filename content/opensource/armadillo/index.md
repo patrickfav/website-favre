@@ -2,6 +2,7 @@
 title: 'armadillo'
 date: 2017-12-19
 lastmod: 2023-01-16
+lastfetch: 2023-02-05T10:49:04.074Z
 description: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
 summary: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
 slug: armadillo

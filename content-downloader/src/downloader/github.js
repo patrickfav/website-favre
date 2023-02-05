@@ -122,6 +122,7 @@ function createGithubFrontMatter(projectName, githubMeta) {
     meta += "title: '" + projectName + "'\n"
     meta += "date: " + new Date(githubMeta.created_at).toISOString().split("T")[0] + "\n"
     meta += "lastmod: " + new Date(githubMeta.updated_at).toISOString().split("T")[0] + "\n"
+    meta += "lastfetch: " + new Date().toISOString() + "\n"
     meta += "description: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
     meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
     meta += "slug: " + projectName + "\n"

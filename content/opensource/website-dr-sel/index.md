@@ -2,6 +2,7 @@
 title: 'website-dr-sel'
 date: 2018-05-28
 lastmod: 2023-01-30
+lastfetch: 2023-02-05T10:49:28.486Z
 description: 'A simple static website created with jekyll'
 summary: 'A simple static website created with jekyll'
 slug: website-dr-sel

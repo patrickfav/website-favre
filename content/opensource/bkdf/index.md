@@ -2,6 +2,7 @@
 title: 'bkdf'
 date: 2018-12-08
 lastmod: 2021-04-28
+lastfetch: 2023-02-05T10:49:23.368Z
 description: 'BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation'
 summary: 'BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation'
 slug: bkdf
