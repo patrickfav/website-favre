@@ -5,9 +5,13 @@ on:
     branches:
       - main
   pull_request: {}
+  schedule:
+    - cron: '42 2 * * *' # run 2:42 am every day
 
 env:
   FIREBASE_PROJECT_ID: favre-base-project
+  NODE_VERSION: 18.14.0
+  WORKING_DIR: './content-downloader'
 
 jobs:
   build_and_deploy:
@@ -20,12 +24,23 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
+      - name: Prepare Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: NPM Install Content Downloader
+        run: npm ci && npm link
+        working-directory: ${{ env.WORKING_DIR }}
+      - name: Update Content
+        if: github.event_name == 'schedule'
+        run: ./bin/hugo-content-downloader
+        working-directory: ${{ env.WORKING_DIR }}
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.109.0'
           extended: true
-
       - name: Build Site with Hugo
         env:
           HUGOxPARAMSxGITxLAST_COMMITxHASH: ${{ vars.GITHUB_SHA }}
@@ -45,7 +60,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FAVRE_BASE_PROJECT }}'
           channelId: live
           projectId: ${{ env.FIREBASE_PROJECT_ID }}
-
       - name: Deploy to Firebase Hosting (dev preview channel)
         id: firebase-deploy-preview
         if: github.event_name == 'pull_request'
