@@ -3,6 +3,7 @@ title: "Articles"
 description: "Articles I wrote"
 
 cascade:
+    type: articles
     draft: false
     showEdit: false
     showSummary: true
