@@ -1,8 +1,8 @@
 # Static Site Gen Repo for my Personal Website
 
-A simple website with a list of all of my open source projects and articles I wrote. Can be found on [favr.dev](https://favr.dev). Currently uses [CodeDoc](https://github.com/CONNECT-platform/codedoc/) as static code generator.
+A simple website with a list of all of my open source projects and articles I wrote. Can be found on [favr.dev](https://favr.dev). Uses [Hugo](https://gohugo.io/) as static site generator.
 
-[![Build Status](https://travis-ci.com/patrickfav/website-favre.svg?branch=master)](https://travis-ci.com/patrickfav/website-favre)
+[![Build Status](https://github.com/patfav/website-favre/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/patrickfav/website-favre/actions)
 
 ## Prepare
 
@@ -33,7 +33,7 @@ npm install
 npm link 
 ```
 
-optinally update the content with
+optionally update the content with
 
 ```bash
 hugo-content-downloader
