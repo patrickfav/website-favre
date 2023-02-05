@@ -23,5 +23,5 @@ export const github_projects = [
     {repo: 'checkstyle-config', branch: 'master'},
     {repo: 'bankathon16-inso', branch: 'master'},
     {repo: 'website-dr-sel', branch: 'master'},
-    {repo: 'website-favre', branch: 'master'},
+    {repo: 'website-favre', branch: 'main'},
 ]
