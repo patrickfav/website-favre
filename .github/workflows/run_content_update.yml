@@ -25,5 +25,5 @@ jobs:
         run: npm ci && npm link
         working-directory: ${{ env.WORKING_DIR }}
       - name: Run Node Script
-        run: ./hugo-content-downloader
+        run: ./bin/hugo-content-downloader
         working-directory: ${{ env.WORKING_DIR }}
