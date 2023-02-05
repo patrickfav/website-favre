@@ -89,7 +89,8 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
             imageUrl.startsWith("https://img.shields.io/github/") ||
             imageUrl.startsWith("https://img.shields.io/badge/") ||
             imageUrl.startsWith("https://api.codeclimate.com/v1/badges") ||
-            imageUrl.startsWith("doc/playstore_badge")
+            imageUrl.startsWith("doc/playstore_badge") ||
+            (imageUrl.startsWith("https://github.com") && imageUrl.endsWith("/badge.svg"))
         ) {
             markdownContent = markdownContent.replace(new RegExp(regExpQuote(markdownImage), "g"), "")
             continue;
