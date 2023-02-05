@@ -52,6 +52,6 @@
    weight = 70
 
  [[footer]]
-   name = "Data Privacy"
+   name = "Privacy Policy"
    pageRef = "data-privacy"
    weight = 80
