@@ -34,12 +34,11 @@ jobs:
       - name: Update Content
         uses: nick-fields/retry@v2
         if: github.event_name == 'schedule'
-        working-directory: ${{ env.WORKING_DIR }}
         with:
           timeout_minutes: 5
           retry_wait_seconds: 60
           max_attempts: 3
-          command: ./bin/hugo-content-downloader
+          command: ${{ env.WORKING_DIR }}/bin/hugo-content-downloader
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
