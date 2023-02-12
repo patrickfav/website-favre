@@ -2,7 +2,7 @@
 title: 'bcrypt'
 date: 2018-07-05
 lastmod: 2023-02-09
-lastfetch: 2023-02-12T07:59:50.906Z
+lastfetch: 2023-02-12T21:36:14.750Z
 description: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 summary: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 slug: bcrypt
@@ -16,16 +16,19 @@ originalContentType: github
 githubStars: 332
 githubForks: 42
 githubLanguage: Java
+githubLatestVersion: v0.10.2
+githubLatestVersionDate: 2023-02-12T20:32:15Z
+githubLatestVersionUrl: https://github.com/patrickfav/bcrypt/releases/tag/v0.10.2
 githubLicense: Apache License 2.0
 ---
 # Bcrypt Java Library and CLI Tool
 
 This is an implementation of the OpenBSD Blowfish password hashing algorithm, as described in "[A Future-Adaptable Password Scheme](http://www.openbsd.org/papers/bcrypt-paper.ps)" by Niels Provos and David Mazieres. It's core is based on [jBcrypt](https://github.com/djmdjm/jBCrypt), but  heavily refactored, modernized and with a lot of updates and enhancements. It supports all common [versions](https://en.wikipedia.org/wiki/Bcrypt#Versioning_history), has a security sensitive API and is fully tested against a range of test vectors and reference implementations.
 
-[![Maven Central](https://img.shields.io/maven-central/v/at.favre.lib/bcrypt)](https://mvnrepository.com/artifact/at.favre.lib/bcrypt)
+[](https://mvnrepository.com/artifact/at.favre.lib/bcrypt)
 [](https://github.com/patrickfav/bcrypt/actions)
 [](https://www.javadoc.io/doc/at.favre.lib/bcrypt)
-[![codecov](https://codecov.io/gh/patrickfav/bcrypt/branch/master/graph/badge.svg?token=HP8FL3ZJG7)](https://codecov.io/gh/patrickfav/bcrypt)
+[](https://codecov.io/gh/patrickfav/bcrypt)
 [](https://codeclimate.com/github/patrickfav/bcrypt/maintainability)
 
 The code is compiled with target [Java 7](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7) to be compatible with most [_Android_](https://www.android.com/) versions as well as normal Java applications.

@@ -2,7 +2,7 @@
 title: 'id-mask'
 date: 2019-03-29
 lastmod: 2023-01-30
-lastfetch: 2023-02-12T08:00:04.572Z
+lastfetch: 2023-02-12T21:37:11.813Z
 description: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger.'
 summary: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger.'
 slug: id-mask
@@ -16,6 +16,9 @@ originalContentType: github
 githubStars: 41
 githubForks: 2
 githubLanguage: Java
+githubLatestVersion: v0.5.0
+githubLatestVersionDate: 2019-04-25T20:55:49Z
+githubLatestVersionUrl: https://github.com/patrickfav/id-mask/releases/tag/v0.5.0
 githubLicense: Apache License 2.0
 ---
 

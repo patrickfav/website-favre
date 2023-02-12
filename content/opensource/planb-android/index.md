@@ -2,7 +2,7 @@
 title: 'planb-android'
 date: 2016-09-21
 lastmod: 2022-07-17
-lastfetch: 2023-02-12T08:00:11.044Z
+lastfetch: 2023-02-12T21:37:30.814Z
 description: 'A crash recovery library for Android. It allows tracking and handling crashes with different rules for debugging and production.'
 summary: 'A crash recovery library for Android. It allows tracking and handling crashes with different rules for debugging and production.'
 slug: planb-android

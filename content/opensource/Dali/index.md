@@ -1,8 +1,8 @@
 ---
 title: 'Dali'
 date: 2014-05-26
-lastmod: 2023-01-08
-lastfetch: 2023-02-12T07:59:51.834Z
+lastmod: 2023-02-12
+lastfetch: 2023-02-12T21:36:19.594Z
 description: 'Dali is an image blur library for Android. It contains several modules for static blurring, live blurring and animations.'
 summary: 'Dali is an image blur library for Android. It contains several modules for static blurring, live blurring and animations.'
 slug: Dali
@@ -16,6 +16,9 @@ originalContentType: github
 githubStars: 1045
 githubForks: 95
 githubLanguage: Java
+githubLatestVersion: v0.4.0
+githubLatestVersionDate: 2020-06-13T21:20:39Z
+githubLatestVersionUrl: https://github.com/patrickfav/Dali/releases/tag/v0.4.0
 githubLicense: Apache License 2.0
 ---
 # Dali
@@ -26,13 +29,13 @@ It uses RenderScript internally (although different implementations can be chose
 cached to be fast and keeps small memory footprint. It features a lot of additional image filters and may be
 easily extended and pretty every configuration can be changed.
 
-[ ](https://bintray.com/patrickfav/maven/dali/_latestVersion)
+[](https://mvnrepository.com/artifact/at.favre.lib/dali)
 [](https://travis-ci.com/patrickfav/Dali)
 [](https://www.javadoc.io/doc/at.favre.lib/dali)
 [](https://android-arsenal.com/details/1/5130)
 [](https://codeclimate.com/github/patrickfav/Dali/maintainability)
 
-![Gallery](gh_9d2900f8ac393bfc79ee5eb1.png)
+![Gallery](gh_a52bd4682cb8112ee8db2d66.png)
 
 
 *Note: This library is in prototype state and not ready for prime time. It is mostly feature complete (except for the animation module) although bugs are to be expected.*
@@ -63,7 +66,7 @@ The quickest way to discover possible features, is to see what builder methods `
 
 ## Download Test App
 
-[![Get it on Google Play](gh_6874339d6105e51a08ed40d5.png)](https://play.google.com/store/apps/details?id=at.favre.app.dalitest&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
+[![Get it on Google Play](gh_e8a7fd7acc1fb2ebab9c9375.png)](https://play.google.com/store/apps/details?id=at.favre.app.dalitest&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
 
 The test app is in the Playstore, you can get it here [Dali Test App](https://play.google.com/store/apps/details?id=at.favre.app.dalitest).
 
@@ -119,7 +122,7 @@ If you want to utilize Dali's features, without blurring the image you could do:
 Live blur refers to an effect where it a portion of the view blurs what's behind it. It can be used with e.g.
 a `ViewPager`, `Scrollview`, `RecyclerView`, etc.
 
-![Live Blur Animation](gh_5b4e52da2f743fa303f06203.gif)
+![Live Blur Animation](gh_446422b71bc844df723a5530.gif)
 
 A very simple example with a ViewPager would be:
 ```java
@@ -145,7 +148,7 @@ for some views (see package `at.favre.lib.dali.view.Observable*`)
 
 A specialized version of live blur is blurring the background of a `NavigationDrawer`:
 
-![Blur Nav Animation](gh_8bb0f51467c4470c2a92c636.gif)
+![Blur Nav Animation](gh_3fdaa1cf976742601959bc2b.gif)
 ```java
     protected void onCreate(Bundle savedInstanceState) {
         ...
@@ -204,7 +207,7 @@ then an `ImageView` can be animated:
     BlurKeyFrameTransitionAnimation animation = new BlurKeyFrameTransitionAnimation(getActivity(),man);
     animation.start(imageView);
 ```
-![Blur Animation](gh_ed500192cbca983a0c713b65.gif)
+![Blur Animation](gh_4234d9abc83f69ae5ff8da4e.gif)
 
 A full example can be found in the test app's `SimpleAnimationFragment.java`
 

@@ -2,7 +2,7 @@
 title: 'density-converter'
 date: 2016-02-25
 lastmod: 2023-01-08
-lastfetch: 2023-02-12T07:59:53.802Z
+lastfetch: 2023-02-12T21:36:32.938Z
 description: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 summary: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 slug: density-converter
@@ -16,9 +16,12 @@ originalContentType: github
 githubStars: 234
 githubForks: 32
 githubLanguage: Java
+githubLatestVersion: v1.0.0-alpha7
+githubLatestVersionDate: 2020-04-12T11:32:13Z
+githubLatestVersionUrl: https://github.com/patrickfav/density-converter/releases/tag/v1.0.0-alpha7
 githubLicense: Apache License 2.0
 ---
-# ![logo](gh_f816c3710619d21cca34d763.png) Density Image Converter Tool for Android, iOS, Windows and CSS
+# ![logo](gh_9b9668ba895a89b964b7a55a.png) Density Image Converter Tool for Android, iOS, Windows and CSS
 
 This is a powerful little tool that helps **converting single or batches of images** to **Android**, **iOS**, **Windows** and **CSS** specific formats and density
 versions given the source scale factor or target width/height in [dp](http://developer.android.com/guide/practices/screens_support.html#density-independence).
@@ -68,7 +71,7 @@ java -jar ./dconvert.jar
 provides the same features as the command line tool so see the help page of command line or tooltips. Additionally the UI
 will save its settings persistently making it easier for power users.
 
-![gui-screenshot](gh_d1a4130e0e6118fbf1b6553d.jpg)
+![gui-screenshot](gh_cdb106ed25ad42a0995dfd2a.jpg)
 
 ## Command Line
 
@@ -214,7 +217,7 @@ This tool can read & write the following file types:
 * TIFF - read and write support
 * BMP - read and write support
 
-Details on the [supported features of each format see here](https://github.com/haraldk/TwelveMonkeys/blob/master/README.md).
+Details on the [supported features of each format see here](https://github.com/haraldk/TwelveMonkeys/blob/main/README.md).
 
 Out-compression has the following modes:
 
@@ -237,15 +240,15 @@ The tool provides 3 quality profiles:
 
 In most cases `Lanczos3` creates best results, although in some cases progressive bilinear scaling may be superior for very sharp edges of e.g. simple icons where the former creates some softness. Here are some example to see the difference yourself. The icons are down-scaled from 96x96 to 72x72 and 48x48, the photos from different source from 500 to 2000 px.
 
-![comparison](gh_519bd9a8abadfe176fa37369.png)
-![comparison](gh_ee5e9c1f6d77f98253fd5cf6.png)
+![comparison](gh_e9643f3b518d9b044add42e2.png)
+![comparison](gh_2a23038b82b7443026cceffb.png)
 
-![comparison](gh_0035cdd0bf56584865c045d4.png)
-![comparison](gh_c8c302602ea923749a3fc6d2.png)
+![comparison](gh_05943bd136a9fd61c918dad1.png)
+![comparison](gh_9eeb19f525e1f95b711a7e11.png)
 
 As reference, here are the results of other methods:
 
-![comparison-ldpi](gh_da42b54c7905d3ec86d3669c.png)
+![comparison-ldpi](gh_73cf0f91e68541548306b06e.png)
 
 1. Thumbnailator with default settings (_progressive bilinear_)
 2. Photoshop CS5 with bicubic algorithm

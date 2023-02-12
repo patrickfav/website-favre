@@ -2,7 +2,7 @@
 title: 'website-dr-sel'
 date: 2018-05-28
 lastmod: 2023-01-30
-lastfetch: 2023-02-12T08:00:14.105Z
+lastfetch: 2023-02-12T21:37:40.329Z
 description: 'A simple static website created with jekyll'
 summary: 'A simple static website created with jekyll'
 slug: website-dr-sel
@@ -16,6 +16,9 @@ originalContentType: github
 githubStars: 0
 githubForks: 0
 githubLanguage: SCSS
+githubLatestVersion: v5.4
+githubLatestVersionDate: 2022-11-09T02:19:49Z
+githubLatestVersionUrl: https://github.com/patrickfav/website-dr-sel/releases/tag/v5.4
 ---
 # Jekyll Static Website Source for Doctor's Landing Page
 
