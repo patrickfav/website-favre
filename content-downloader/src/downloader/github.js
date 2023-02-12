@@ -13,7 +13,6 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
 
     for (const projectsIndex of github_projects) {
         const projectName = projectsIndex.repo;
-        const mainBranch = projectsIndex.branch;
 
         console.log("Processing github project " + projectName);
 
@@ -28,7 +27,7 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
         let githubMetaForProject = githubMetaData.find(p => p.name === projectName);
 
         const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject);
-        await downloadParseAndSaveReadme(github_user, projectName, mainBranch, frontMatter, targetProjectDir);
+        await downloadParseAndSaveReadme(github_user, projectName, githubMetaForProject.default_branch, frontMatter, targetProjectDir);
     }
 }
 
