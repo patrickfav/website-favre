@@ -6,8 +6,14 @@ import crypto from "crypto";
 import Parser from "rss-parser";
 import TurndownService from "turndown";
 import * as cheerio from "cheerio";
+import {mediumDownloaderEnabled} from "../confg";
 
 export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
+    if(mediumDownloaderEnabled === false) {
+        console.log("Medium Downloader disabled");
+        return;
+    }
+
     console.log("Start Processing medium articles");
 
     const targetRootDir = rootDirMd + relOutDirArticles

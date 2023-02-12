@@ -10,6 +10,6 @@ export function cli(args) {
     const relOutDirArticles = 'articles/';
 
     downloadMediumArticles(rootDirMd, relOutDirArticles)
-        .then((te) =>  downloadGithubReadme(github_projects_user, github_projects, rootDirMd, relOutDirGithub))
+        .then(() =>  downloadGithubReadme(github_projects_user, github_projects, rootDirMd, relOutDirGithub))
         .then(() => console.log("Waiting to finish"));
 }

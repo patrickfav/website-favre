@@ -1,3 +1,7 @@
+export const githubDownloaderEnabled = true;
+
+export const mediumDownloaderEnabled = true;
+
 export const github_projects_user = 'patrickfav';
 
 export const github_projects = [
@@ -24,4 +28,5 @@ export const github_projects = [
     {repo: 'bankathon16-inso'},
     {repo: 'website-dr-sel'},
     {repo: 'website-favre'},
-]
+    {repo: 'mvn-common-parent'},
+];

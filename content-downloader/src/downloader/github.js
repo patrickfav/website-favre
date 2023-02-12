@@ -3,8 +3,14 @@ import {StringStream} from "scramjet";
 import got from "got";
 import * as cheerio from "cheerio";
 import crypto from "crypto";
+import {githubDownloaderEnabled} from "../confg";
 
 export async function downloadGithubReadme(github_user, github_projects, rootDirMd, relOutDir) {
+    if(githubDownloaderEnabled === false) {
+        console.log("Github Downloader disabled");
+        return;
+    }
+
     const targetRootDir = rootDirMd + relOutDir
 
     //download all repositories meta data from github api
@@ -26,7 +32,9 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
 
         let githubMetaForProject = githubMetaData.find(p => p.name === projectName);
 
-        const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject);
+        const releaseMeta = await downloadReleases(projectName, github_user)
+
+        const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject, releaseMeta);
         await downloadParseAndSaveReadme(github_user, projectName, githubMetaForProject.default_branch, frontMatter, targetProjectDir);
     }
 }
@@ -45,6 +53,24 @@ async function downloadProjectImage(projectName, github_user, targetProjectDir) 
         console.log("\tDownloading github social preview image: " + socialPreviewImageUrl);
         await got.stream(socialPreviewImageUrl).pipe(fs.createWriteStream(targetProjectDir + "/" + imageFileName))
     }
+}
+
+async function downloadReleases(projectName, github_user) {
+    const releaseUrl = `https://api.github.com/repos/${github_user}/${projectName}/releases`;
+    console.log("\tDownloading releases info "+releaseUrl);
+
+    let releases = await got.get(releaseUrl)
+        .then(result => JSON.parse(result.body));
+
+    if(releases && releases.length > 0) {
+        return releases
+            .filter(element => element.draft !== true && element.prerelease !== true)
+            .sort((a,b) => { b.published_at.localeCompare(a.published_at); })
+            .reverse()
+            .pop();
+    }
+
+    return undefined;
 }
 
 async function downloadParseAndSaveReadme(github_user, projectName, mainBranch, frontMatter, targetProjectDir) {
@@ -87,7 +113,9 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
             imageUrl.startsWith("https://coveralls.io/repos/github") ||
             imageUrl.startsWith("https://img.shields.io/github/") ||
             imageUrl.startsWith("https://img.shields.io/badge/") ||
+            imageUrl.startsWith("https://img.shields.io/maven-central/") ||
             imageUrl.startsWith("https://api.codeclimate.com/v1/badges") ||
+            imageUrl.startsWith("https://codecov.io/gh/patrickfav/") ||
             imageUrl.startsWith("doc/playstore_badge") ||
             (imageUrl.startsWith("https://github.com") && imageUrl.endsWith("/badge.svg"))
         ) {
@@ -113,7 +141,7 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
     return markdownContent;
 }
 
-function createGithubFrontMatter(projectName, githubMeta) {
+function createGithubFrontMatter(projectName, githubMeta, releaseMeta) {
     let githubTags = githubMeta.topics ? githubMeta.topics.slice() : [];
     let allTags = githubTags.concat(["github", githubMeta.language]);
     let reducedTags = githubTags.length > 5 ? githubTags.slice(0, 4) : githubTags.slice();
@@ -136,6 +164,12 @@ function createGithubFrontMatter(projectName, githubMeta) {
     meta += "githubStars: " + githubMeta.stargazers_count + "\n"
     meta += "githubForks: " + githubMeta.forks_count + "\n"
     meta += "githubLanguage: " + githubMeta.language + "\n"
+    if(releaseMeta) {
+        meta += "githubLatestVersion: " + releaseMeta.tag_name + "\n"
+        meta += "githubLatestVersionDate: " + releaseMeta.published_at + "\n"
+        meta += "githubLatestVersionUrl: " + releaseMeta.html_url + "\n"
+
+    }
     if (githubMeta.license) {
         meta += "githubLicense: " + githubMeta.license.name + "\n"
     }
