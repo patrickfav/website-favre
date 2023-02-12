@@ -1,5 +1,5 @@
 <span>
- <a href="{{ .Params.originalContentLink }}">{{ partial "icon.html" "github" }}</a>
+ <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "github" }}</a>
 </span>
 <span class="px-2 text-primary-500">&middot;</span>
 <time datetime="{{ . }}">
@@ -15,7 +15,7 @@
 {{ if and (.Params.githubStars | default false) (gt .Params.githubStars 0 ) }}
   <span class="px-2 text-primary-500">&middot;</span>
   <span>
-    <a href="{{ .Params.originalContentLink }}/stargazers">{{ partial "icon.html" "star-regular" }} Stars {{ .Params.githubStars }}</a>
+    <a href="{{ .Params.originalContentLink }}/stargazers" rel="noopener">{{ partial "icon.html" "star-regular" }} Stars {{ .Params.githubStars }}</a>
   </span>
 {{ end }}
 
@@ -23,6 +23,13 @@
   <span class="px-2 text-primary-500">&middot;</span>
   <span>
     <a href="{{ .Params.originalContentLink }}/forks">{{ partial "icon.html" "code-fork-solid" }} Forks {{ .Params.githubForks }}</a>
+  </span>
+{{ end }}
+
+{{ if (.Params.githubLatestVersion | default false)}}
+  <span class="px-2 text-primary-500">&middot;</span>
+  <span>
+    <a href="{{ .Params.githubLatestVersionUrl }}" rel="noopener">{{ partial "icon.html" "tag-solid" }} {{ .Params.githubLatestVersion }}</a>
   </span>
 {{ end }}
 
