@@ -20,4 +20,6 @@ is hosted on [Github](https://github.com/patrickfav/website-favre) and continuou
 
 ### Version
 
+[![Build Status](https://github.com/patrickfav/website-favre/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/patrickfav/website-favre/actions)
+
 This version is based on commit {{< gitinfo >}} and build with ci job {{< buildinfo >}}.
