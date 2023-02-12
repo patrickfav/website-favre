@@ -2,7 +2,7 @@
 title: 'website-favre'
 date: 2018-05-31
 lastmod: 2023-01-30
-lastfetch: 2023-02-05T22:22:06.983Z
+lastfetch: 2023-02-12T08:00:15.046Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 slug: website-favre

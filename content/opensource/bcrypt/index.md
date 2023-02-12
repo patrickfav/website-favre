@@ -1,8 +1,8 @@
 ---
 title: 'bcrypt'
 date: 2018-07-05
-lastmod: 2023-02-03
-lastfetch: 2023-02-05T22:21:49.066Z
+lastmod: 2023-02-09
+lastfetch: 2023-02-12T07:59:50.906Z
 description: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 summary: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 slug: bcrypt
@@ -14,7 +14,7 @@ editURL: https://github.com/patrickfav/bcrypt
 originalContentLink: https://github.com/patrickfav/bcrypt
 originalContentType: github
 githubStars: 332
-githubForks: 41
+githubForks: 42
 githubLanguage: Java
 githubLicense: Apache License 2.0
 ---
@@ -22,10 +22,10 @@ githubLicense: Apache License 2.0
 
 This is an implementation of the OpenBSD Blowfish password hashing algorithm, as described in "[A Future-Adaptable Password Scheme](http://www.openbsd.org/papers/bcrypt-paper.ps)" by Niels Provos and David Mazieres. It's core is based on [jBcrypt](https://github.com/djmdjm/jBCrypt), but  heavily refactored, modernized and with a lot of updates and enhancements. It supports all common [versions](https://en.wikipedia.org/wiki/Bcrypt#Versioning_history), has a security sensitive API and is fully tested against a range of test vectors and reference implementations.
 
-[](https://bintray.com/patrickfav/maven/bcrypt/_latestVersion)
-[](https://travis-ci.com/patrickfav/bcrypt)
+[![Maven Central](https://img.shields.io/maven-central/v/at.favre.lib/bcrypt)](https://mvnrepository.com/artifact/at.favre.lib/bcrypt)
+[](https://github.com/patrickfav/bcrypt/actions)
 [](https://www.javadoc.io/doc/at.favre.lib/bcrypt)
-[](https://coveralls.io/github/patrickfav/bcrypt?branch=master)
+[![codecov](https://codecov.io/gh/patrickfav/bcrypt/branch/master/graph/badge.svg?token=HP8FL3ZJG7)](https://codecov.io/gh/patrickfav/bcrypt)
 [](https://codeclimate.com/github/patrickfav/bcrypt/maintainability)
 
 The code is compiled with target [Java 7](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7) to be compatible with most [_Android_](https://www.android.com/) versions as well as normal Java applications.
@@ -200,7 +200,7 @@ The full API can be read in the doc by passing `-h`
 
 ## Download
 
-The artifacts are deployed to [jcenter](https://bintray.com/bintray/jcenter) and [Maven Central](https://search.maven.org/).
+The artifacts are deployed to [Maven Central](https://search.maven.org/).
 
 ### Maven
 

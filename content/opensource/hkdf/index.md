@@ -1,8 +1,8 @@
 ---
 title: 'hkdf'
 date: 2017-09-30
-lastmod: 2022-12-13
-lastfetch: 2023-02-05T22:21:57.783Z
+lastmod: 2023-02-11
+lastfetch: 2023-02-12T08:00:02.066Z
 description: 'A standalone Java 7 implementation of HMAC-based key derivation function (HKDF) defined in RFC 5869 first described by Hugo Krawczyk. HKDF follows the "extract-then-expand" paradigm which is compatible to NIST 800-56C Rev. 1 two step KDF'
 summary: 'A standalone Java 7 implementation of HMAC-based key derivation function (HKDF) defined in RFC 5869 first described by Hugo Krawczyk. HKDF follows the "extract-then-expand" paradigm which is compatible to NIST 800-56C Rev. 1 two step KDF'
 slug: hkdf
@@ -13,21 +13,34 @@ categories: ["opensource"]
 editURL: https://github.com/patrickfav/hkdf
 originalContentLink: https://github.com/patrickfav/hkdf
 originalContentType: github
-githubStars: 49
+githubStars: 50
 githubForks: 11
 githubLanguage: Java
 githubLicense: Apache License 2.0
 ---
 # HMAC-based Key Derivation Function (HKDF) RFC 5869
 
-[Hashed Message Authentication Code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) (HMAC)-based key derivation function ([HKDF](https://en.wikipedia.org/wiki/HKDF)), can be used as a building block in various protocols and applications.  The [key derivation function](https://en.wikipedia.org/wiki/Key_derivation_function) (KDF) is intended to support a wide range of applications and requirements, and is conservative in its use of [cryptographic hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function). It is likely to have [better security properties](https://crypto.stackexchange.com/questions/13232/how-is-hkdf-expand-better-than-a-simple-hash) than KDF's based on just a hash functions alone. See [RFC 5869](https://tools.ietf.org/html/rfc5869) for full detail. HKDF specifies a version of the [NIST Special Publication 800-56C](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Cr1.pdf) "Two-Step Key Derivation" scheme.
+[Hashed Message Authentication Code](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) (HMAC)-based
+key derivation function ([HKDF](https://en.wikipedia.org/wiki/HKDF)), can be used as a building block in various
+protocols and applications. The [key derivation function](https://en.wikipedia.org/wiki/Key_derivation_function) (KDF)
+is intended to support a wide range of applications and requirements, and is conservative in its use
+of [cryptographic hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function). It is likely to
+have [better security properties](https://crypto.stackexchange.com/questions/13232/how-is-hkdf-expand-better-than-a-simple-hash)
+than KDF's based on just a hash functions alone. See [RFC 5869](https://tools.ietf.org/html/rfc5869) for full detail.
+HKDF specifies a version of
+the [NIST Special Publication 800-56C](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Cr1.pdf) "
+Two-Step Key Derivation" scheme.
 
-[](https://bintray.com/patrickfav/maven/hkdf/_latestVersion)
-[](https://travis-ci.com/patrickfav/hkdf)
+[![Maven Central](https://img.shields.io/maven-central/v/at.favre.lib/hkdf)](https://mvnrepository.com/artifact/at.favre.lib/hkdf)
+[](https://github.com/patrickfav/hkdf/actions)
 [](https://www.javadoc.io/doc/at.favre.lib/hkdf)
-[](https://coveralls.io/github/patrickfav/hkdf?branch=master) [](https://codeclimate.com/github/patrickfav/hkdf/maintainability)
+[![codecov](https://codecov.io/gh/patrickfav/hkdf/branch/master/graph/badge.svg?token=eH5ui0ctsT)](https://codecov.io/gh/patrickfav/hkdf)
+[](https://codeclimate.com/github/patrickfav/hkdf/maintainability)
 
-This is a standalone, lightweight, simple to use, fully tested and stable implementation in Java. The code is compiled with target [Java 7](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7) to be compatible with most [_Android_](https://www.android.com/) versions as well as normal Java applications. It passes all test vectors from [RFC 5869 Appendix A.](https://tools.ietf.org/html/rfc5869#appendix-A)
+This is a standalone, lightweight, simple to use, fully tested and stable implementation in Java. The code is compiled
+with target [Java 7](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7) to be compatible with most [
+_Android_](https://www.android.com/) versions as well as normal Java applications. It passes all test vectors
+from [RFC 5869 Appendix A.](https://tools.ietf.org/html/rfc5869#appendix-A)
 
 ## Quickstart
 

@@ -2,7 +2,7 @@
 title: 'The Bcrypt Protocol&#x2026; is kind of a mess'
 date: 2018-11-07
 lastmod: 2020-04-18
-lastfetch: 2023-02-05T22:21:34.520Z
+lastfetch: 2023-02-12T07:59:38.520Z
 summary: 'While writing my own bcrypt library, I discovered a lot of odd things surrounding the bcrypt protocol.'
 description: 'While writing my own bcrypt library, I discovered a lot of odd things surrounding the bcrypt protocol.'
 slug: 2018-11-07-the-bcrypt-protocol_-is-kind-of-a-mess

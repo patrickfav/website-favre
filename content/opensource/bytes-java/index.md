@@ -1,8 +1,8 @@
 ---
 title: 'bytes-java'
 date: 2017-10-31
-lastmod: 2023-01-17
-lastfetch: 2023-02-05T22:21:55.671Z
+lastmod: 2023-02-10
+lastfetch: 2023-02-12T07:59:59.912Z
 description: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 summary: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 slug: bytes-java
@@ -13,8 +13,8 @@ categories: ["opensource"]
 editURL: https://github.com/patrickfav/bytes-java
 originalContentLink: https://github.com/patrickfav/bytes-java
 originalContentType: github
-githubStars: 127
-githubForks: 26
+githubStars: 128
+githubForks: 27
 githubLanguage: Java
 githubLicense: Apache License 2.0
 ---
@@ -47,10 +47,10 @@ to blindly paste code snippets from
 [o](https://stackoverflow.com/a/9670279/774398)
 [m](https://stackoverflow.com/questions/1519736/random-shuffling-of-an-array)
 
-[](https://bintray.com/patrickfav/maven/bytes-java/_latestVersion)
-[](https://travis-ci.com/patrickfav/bytes-java)
+[![Maven Central](https://img.shields.io/maven-central/v/at.favre.lib/bytes)](https://mvnrepository.com/artifact/at.favre.lib/bytes)
+[](https://github.com/patrickfav/bytes-java/actions)
 [](https://www.javadoc.io/doc/at.favre.lib/bytes)
-[](https://coveralls.io/github/patrickfav/bytes-java?branch=master) 
+[![codecov](https://codecov.io/gh/patrickfav/bytes-java/branch/master/graph/badge.svg?token=YiSRwBApvz)](https://codecov.io/gh/patrickfav/bytes-java)
 [](https://codeclimate.com/github/patrickfav/bytes-java/maintainability)
 
 It's main features include:
