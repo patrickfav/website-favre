@@ -1,4 +1,4 @@
-<span>
+<span class="gh-info">
  <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "github" }}</a>
 </span>
 <span class="px-2 text-primary-500">&middot;</span>
@@ -7,35 +7,35 @@
 </time>
 {{ if (.Params.githubLanguage | default false) }}
 <span class="px-2 text-primary-500">&middot;</span>
-<span>
+<span class="gh-info">
   {{ partial "icon.html" (print "tech-" (lower .Params.githubLanguage)) }} {{ .Params.githubLanguage }}
 </span>
 {{ end }}
 
 {{ if and (.Params.githubStars | default false) (gt .Params.githubStars 0 ) }}
   <span class="px-2 text-primary-500">&middot;</span>
-  <span>
-    <a href="{{ .Params.originalContentLink }}/stargazers" rel="noopener">{{ partial "icon.html" "star-regular" }} Stars {{ .Params.githubStars }}</a>
+  <span class="gh-info">
+    <a href="{{ .Params.originalContentLink }}/stargazers" rel="noopener">{{ partial "icon.html" "star-regular" }} {{ .Params.githubStars }}</a>
   </span>
 {{ end }}
 
-{{ if and (.Params.githubForks | default false) (gt .Params.githubForks 0 ) }}
+{{ if and (.Params.githubForks | default false) (gt .Params.githubForks 9999999 ) }}
   <span class="px-2 text-primary-500">&middot;</span>
-  <span>
+  <span class="gh-info">
     <a href="{{ .Params.originalContentLink }}/forks">{{ partial "icon.html" "code-fork-solid" }} Forks {{ .Params.githubForks }}</a>
   </span>
 {{ end }}
 
 {{ if (.Params.githubLatestVersion | default false)}}
   <span class="px-2 text-primary-500">&middot;</span>
-  <span>
+  <span class="gh-info">
     <a href="{{ .Params.githubLatestVersionUrl }}" rel="noopener">{{ partial "icon.html" "tag-solid" }} {{ .Params.githubLatestVersion }}</a>
   </span>
 {{ end }}
 
 {{ if (.Params.githubLicense | default false)}}
   <span class="px-2 text-primary-500">&middot;</span>
-  <span>
+  <span class="gh-info">
     {{ partial "icon.html" "scale-balanced-solid" }} {{ .Params.githubLicense }}
   </span>
 {{ end }}
