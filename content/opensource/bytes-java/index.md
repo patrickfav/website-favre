@@ -2,7 +2,7 @@
 title: 'bytes-java'
 date: 2017-10-31
 lastmod: 2023-02-10
-lastfetch: 2023-02-12T21:36:48.401Z
+lastfetch: 2023-02-18T17:52:55.030Z
 description: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 summary: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 slug: bytes-java
@@ -16,9 +16,9 @@ originalContentType: github
 githubStars: 128
 githubForks: 27
 githubLanguage: Java
-githubLatestVersion: v1.6.0
-githubLatestVersionDate: 2023-02-11T22:12:08Z
-githubLatestVersionUrl: https://github.com/patrickfav/bytes-java/releases/tag/v1.6.0
+githubLatestVersion: v1.6.1
+githubLatestVersionDate: 2023-02-15T18:54:23Z
+githubLatestVersionUrl: https://github.com/patrickfav/bytes-java/releases/tag/v1.6.1
 githubLicense: Apache License 2.0
 ---
 # Bytes Utility Library for Java
@@ -53,10 +53,11 @@ to blindly paste code snippets from
 [](https://mvnrepository.com/artifact/at.favre.lib/bytes)
 [](https://github.com/patrickfav/bytes-java/actions)
 [](https://www.javadoc.io/doc/at.favre.lib/bytes)
-[](https://codecov.io/gh/patrickfav/bytes-java)
-[](https://codeclimate.com/github/patrickfav/bytes-java/maintainability)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_bytes-java)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_bytes-java)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_bytes-java)
 
-It's main features include:
+Its main features include:
 
 * **Creation** from a wide variety of sources: multiple arrays, integers, [streams](https://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html), random, strings, files, uuid, ...
 * **Transformation** with many built-in: append, [xor](https://en.wikipedia.org/wiki/Exclusive_or), [and](https://en.wikipedia.org/wiki/Logical_conjunction), [hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function), [shifts](https://en.wikipedia.org/wiki/Bitwise_operation#Bit_shifts), shuffle, reverse, [checksum](https://en.wikipedia.org/wiki/Checksum), ...
@@ -722,8 +723,8 @@ the plugin versions as well as providing the checkstyle config rules. Specifical
 
 ## Tech Stack
 
-* Java 7 (+ [errorprone](https://github.com/google/error-prone) static analyzer)
-* Maven
+* Java 7 Source, JDK 11 required to build (not yet JDK17 compatible)
+* Maven 3
 
 # Credits
 

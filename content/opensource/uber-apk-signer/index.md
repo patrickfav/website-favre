@@ -1,8 +1,8 @@
 ---
 title: 'uber-apk-signer'
 date: 2016-10-10
-lastmod: 2023-02-12
-lastfetch: 2023-02-12T21:36:35.879Z
+lastmod: 2023-02-17
+lastfetch: 2023-02-18T17:52:49.960Z
 description: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 summary: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 slug: uber-apk-signer
@@ -13,27 +13,32 @@ categories: ["opensource"]
 editURL: https://github.com/patrickfav/uber-apk-signer
 originalContentLink: https://github.com/patrickfav/uber-apk-signer
 originalContentType: github
-githubStars: 1257
+githubStars: 1263
 githubForks: 149
 githubLanguage: Java
-githubLatestVersion: v1.2.1
-githubLatestVersionDate: 2020-11-29T18:49:11Z
-githubLatestVersionUrl: https://github.com/patrickfav/uber-apk-signer/releases/tag/v1.2.1
+githubLatestVersion: v1.3.0
+githubLatestVersionDate: 2023-02-16T20:45:12Z
+githubLatestVersionUrl: https://github.com/patrickfav/uber-apk-signer/releases/tag/v1.3.0
 githubLicense: Apache License 2.0
 ---
 # Uber Apk Signer
-A tool that helps signing, [zip aligning](https://developer.android.com/studio/command-line/zipalign.html) and verifying multiple Android application packages (APKs) with either debug or provided release certificates (or multiple). It supports [v1, v2](https://developer.android.com/about/versions/nougat/android-7.0.html#apk_signature_v2) and [v3 Android signing scheme](https://source.android.com/security/apksigning/v3). Easy and convenient debug signing with embedded debug keystore. Automatically verifies signature and zipalign after every signing.
+A tool that helps to sign, [zip aligning](https://developer.android.com/studio/command-line/zipalign.html) and verifying
+multiple Android application packages (APKs) with either debug or provided release certificates (or multiple). It
+supports [v1, v2](https://developer.android.com/about/versions/nougat/android-7.0.html#apk_signature_v2), [v3 Android signing scheme](https://source.android.com/security/apksigning/v3)
+and  [v4 Android signing scheme](https://source.android.com/security/apksigning/v4). Easy and convenient debug signing
+with embedded debug keystore. Automatically verifies signature and zipalign after every signing.
 
 [](https://github.com/patrickfav/uber-apk-signer/releases/latest)
-[](https://travis-ci.com/patrickfav/uber-apk-signer)
-[](https://coveralls.io/github/patrickfav/uber-apk-signer?branch=master) [](https://codeclimate.com/github/patrickfav/uber-apk-signer/maintainability)
+[](https://github.com/patrickfav/uber-apk-signer/actions)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_uber-apk-signer)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_uber-apk-signer)
 
 Main features:
 
 * zipalign, (re)signing and verifying of multiple APKs in one step
 * verify signature (with hash check) and zipalign of multiple APKs in one step
 * built-in zipalign & debug keystore for convenient usage
-* supports v1, v2 and v3 android apk singing scheme
+* supports v1, v2, v3 and v4 android apk singing scheme
 * support for multiple signatures for one APK
 * crypto/signing code relied upon official implementation
 
@@ -41,7 +46,7 @@ Basic usage:
 
     java -jar uber-apk-signer.jar --apks /path/to/apks
 
-This should run on any Windows, Mac or Linux machine where Java8+ is installed. 
+This should run on any Windows, Mac or Linux machine where JDK8 is installed. 
 
 ### Requirements
 
@@ -50,7 +55,7 @@ This should run on any Windows, Mac or Linux machine where Java8+ is installed.
 
 ## Download
 
-[Grab jar from latest Release](https://github.com/patrickfav/uber-apk-signer/releases/latest)
+[Grab jar from the latest Release](https://github.com/patrickfav/uber-apk-signer/releases/latest)
 
 ## Demo
 
@@ -145,7 +150,7 @@ Provide your sha256 hash to check against the signature:
 
 ### Process Return Value
 
-This application will return `0` if every signing/verifing was successful, `1` if an error happens (e.g. wrong arguments) and `2` if at least 1 sign/verify process was not successful.
+This application will return `0` if every signing/verifying was successful, `1` if an error happens (e.g. wrong arguments) and `2` if at least 1 sign/verify process was not successful.
 
 ### Debug Signing Mode
 
@@ -160,7 +165,7 @@ A log message will indicate which one was chosen.
 
 ### Zipalign Executable
 
-[`Zipalign`](https://developer.android.com/studio/command-line/zipalign.html) is a tool developed by Google to optimize zips (apks). It is needed if you want to upload it to the Playstore otherwise it is optional. By default this tool will try to zipalign the apk, therefore it will need the location of the executable. If the path isn't passed in the command line interface, the tool checks if it is in `PATH` environment variable, otherwise it will try to use an embedded version of zipalign. 
+[`Zipalign`](https://developer.android.com/studio/command-line/zipalign.html) is a tool developed by Google to optimize zips (apks). It is needed if you want to upload it to the Playstore otherwise it is optional. By default, this tool will try to zipalign the apk, therefore it will need the location of the executable. If the path isn't passed in the command line interface, the tool checks if it is in `PATH` environment variable, otherwise it will try to use an embedded version of zipalign. 
 
 If `--skipZipAlign` is passed no executable is needed.
 
@@ -184,7 +189,7 @@ This tool does not directly support the creation of lineage files as it is consi
 
 ## Signed Release Jar
 
-The provided JARs in the Github release page are signed with my private key:
+The provided JARs in the GitHub release page are signed with my private key:
 
     CN=Patrick Favre-Bulle, OU=Private, O=PF Github Open Source, L=Vienna, ST=Vienna, C=AT
     Validity: Thu Sep 07 16:40:57 SGT 2017 to: Fri Feb 10 16:40:57 SGT 2034
@@ -202,10 +207,10 @@ Use the Maven wrapper to create a jar including all dependencies
 ### Checkstyle Config File
 
 This project uses my [`common-parent`](https://github.com/patrickfav/mvn-common-parent) which centralized a lot of
-the plugin versions aswell as providing the checkstyle config rules. Specifically they are maintained in [`checkstyle-config`](https://github.com/patrickfav/checkstyle-config). Locally the files will be copied after you `mvnw install` into your `target` folder and is called
+the plugin versions as well as providing the checkstyle config rules. Specifically they are maintained in [`checkstyle-config`](https://github.com/patrickfav/checkstyle-config). Locally the files will be copied after you `mvnw install` into your `target` folder and is called
 `target/checkstyle-checker.xml`. So if you use a plugin for your IDE, use this file as your local configuration.
 
-## Tech Stack
+## Tech-Stack
 
 * Java 8
 * Maven

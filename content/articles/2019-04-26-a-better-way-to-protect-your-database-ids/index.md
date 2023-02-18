@@ -2,7 +2,7 @@
 title: 'A Better Way to Protect Your Database IDs'
 date: 2019-04-26
 lastmod: 2020-04-18
-lastfetch: 2023-02-12T07:59:34.854Z
+lastfetch: 2023-02-18T17:52:27.481Z
 summary: 'A new approach on protecting your internal IDs with a strong cryptographic schema and many other useful features. Inspired by HashIds.'
 description: 'A new approach on protecting your internal IDs with a strong cryptographic schema and many other useful features. Inspired by HashIds.'
 slug: 2019-04-26-a-better-way-to-protect-your-database-ids

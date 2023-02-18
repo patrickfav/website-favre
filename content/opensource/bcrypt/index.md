@@ -1,8 +1,8 @@
 ---
 title: 'bcrypt'
 date: 2018-07-05
-lastmod: 2023-02-09
-lastfetch: 2023-02-12T21:36:14.750Z
+lastmod: 2023-02-18
+lastfetch: 2023-02-18T17:52:43.608Z
 description: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 summary: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 slug: bcrypt
@@ -13,8 +13,8 @@ categories: ["opensource"]
 editURL: https://github.com/patrickfav/bcrypt
 originalContentLink: https://github.com/patrickfav/bcrypt
 originalContentType: github
-githubStars: 332
-githubForks: 42
+githubStars: 335
+githubForks: 43
 githubLanguage: Java
 githubLatestVersion: v0.10.2
 githubLatestVersionDate: 2023-02-12T20:32:15Z
@@ -28,8 +28,9 @@ This is an implementation of the OpenBSD Blowfish password hashing algorithm, as
 [](https://mvnrepository.com/artifact/at.favre.lib/bcrypt)
 [](https://github.com/patrickfav/bcrypt/actions)
 [](https://www.javadoc.io/doc/at.favre.lib/bcrypt)
-[](https://codecov.io/gh/patrickfav/bcrypt)
-[](https://codeclimate.com/github/patrickfav/bcrypt/maintainability)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_bcrypt)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_bcrypt)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_bcrypt)
 
 The code is compiled with target [Java 7](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7) to be compatible with most [_Android_](https://www.android.com/) versions as well as normal Java applications.
 
@@ -119,7 +120,7 @@ BCrypt.Result resultStrict = BCrypt.verifyer(BCrypt.Version.VERSION_2A).verifySt
 ### Handling for Overlong passwords
 
 Due to the limitation in the Blowfish cipher, the maximum password length is 72 bytes (note that UTF-8 encoded, a 
-character can be as much as 4 bytes). Including the null-terminator byte, this will be reduced to 71 bytes. Per 
+character can be as much as 4 bytes). Per 
 default, the `hash()` method will throw an exception if the provided password is too long. 
 
 The API supports passing a custom handling in that case, to mimic the behaviour of some popular implementations to just
@@ -136,8 +137,10 @@ Don't forget to use the same strategy when verifying:
 BCrypt.verifyer(LongPasswordStrategies.truncate(Version.VERSION_2A)).verify(pw, hash);
 ```
 
-The password will only be transformed if it is longer than 71 bytes. *It is important to note, however, that using any
+The password will only be transformed if it is longer than 72 bytes. *It is important to note, however, that using any
 of these techniques will essentially create a custom flavor of Bcrypt, possibly not compatible with other implementations.*
+
+However, you can also disable this warning by using the `LongPasswordStrategies.none` strategy. It will pass the raw data to the internal cryptographic primitive (which in turn will ignore anything longer than 72 bytes). This is the standard behaviour of BCrypt.
 
 ### Custom Salt or SecureRandom
  
@@ -426,8 +429,8 @@ the plugin versions aswell as providing the checkstyle config rules. Specificall
 
 ## Tech Stack
 
-* Java 7 (+ [errorprone](https://github.com/google/error-prone) static analyzer)
-* Maven
+* Java 7 Source, JDK 11 required to build (not yet JDK17 compatible)
+* Maven 3
 
 ## Libraries & Credits
 

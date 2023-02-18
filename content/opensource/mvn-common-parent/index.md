@@ -2,7 +2,7 @@
 title: 'mvn-common-parent'
 date: 2019-03-16
 lastmod: 2023-02-11
-lastfetch: 2023-02-12T21:37:45.925Z
+lastfetch: 2023-02-18T17:53:13.985Z
 description: 'A maven configuration which can be used as a commons config parent for POM files'
 summary: 'A maven configuration which can be used as a commons config parent for POM files'
 slug: mvn-common-parent
@@ -16,9 +16,9 @@ originalContentType: github
 githubStars: 2
 githubForks: 2
 githubLanguage: null
-githubLatestVersion: v18.1
-githubLatestVersionDate: 2023-02-12T08:32:01Z
-githubLatestVersionUrl: https://github.com/patrickfav/mvn-common-parent/releases/tag/v18.1
+githubLatestVersion: v19
+githubLatestVersionDate: 2023-02-15T20:33:03Z
+githubLatestVersionUrl: https://github.com/patrickfav/mvn-common-parent/releases/tag/v19
 githubLicense: Apache License 2.0
 ---
 # Maven Common Configuration
@@ -115,7 +115,9 @@ Currently possible values:
 * `jdk8_w_errorprone`
 * `jdk11`
 * `jdk11_w_errorprone`
-* `jdk14`
+* `jdk17`
+* `jdk17_w_errorprone`
+
 
 You can check if the correct profile is set with
 
@@ -135,12 +137,12 @@ You may disable the check by setting `commonConfig.jacoco.check.disable` to `tru
 
 ### Reference to Project Root
 
-If you need to use e.g. a file that lives within your project (e.g. the keystore file for jar-siging) make sure you
+If you need to use e.g. a file that lives within your project (e.g. the keystore file for jar-signing) make sure you
 use the correct base path. There are two useful variables to help you:
 
 * `${project.basedir}` is the path of your current module
 * `${session.executionRootDirectory}` is the root path of your projects (and all your modules) - can be used in
-  sub-modules
+  submodules
 
 ### Deploy
 
@@ -174,7 +176,7 @@ You may check for updates of any plugins or dependencies with
 ./mvnw versions:display-dependency-updates
 ```
 
-### Versions Plugin
+### Versions-Plugin
 
 Check for possible dependency updates
 

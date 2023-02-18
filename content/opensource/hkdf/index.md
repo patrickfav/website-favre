@@ -1,8 +1,8 @@
 ---
 title: 'hkdf'
 date: 2017-09-30
-lastmod: 2023-02-11
-lastfetch: 2023-02-12T21:37:01.197Z
+lastmod: 2023-02-13
+lastfetch: 2023-02-18T17:52:57.577Z
 description: 'A standalone Java 7 implementation of HMAC-based key derivation function (HKDF) defined in RFC 5869 first described by Hugo Krawczyk. HKDF follows the "extract-then-expand" paradigm which is compatible to NIST 800-56C Rev. 1 two step KDF'
 summary: 'A standalone Java 7 implementation of HMAC-based key derivation function (HKDF) defined in RFC 5869 first described by Hugo Krawczyk. HKDF follows the "extract-then-expand" paradigm which is compatible to NIST 800-56C Rev. 1 two step KDF'
 slug: hkdf
@@ -13,7 +13,7 @@ categories: ["opensource"]
 editURL: https://github.com/patrickfav/hkdf
 originalContentLink: https://github.com/patrickfav/hkdf
 originalContentType: github
-githubStars: 50
+githubStars: 51
 githubForks: 11
 githubLanguage: Java
 githubLatestVersion: v2.0.0
@@ -37,8 +37,9 @@ Two-Step Key Derivation" scheme.
 [](https://mvnrepository.com/artifact/at.favre.lib/hkdf)
 [](https://github.com/patrickfav/hkdf/actions)
 [](https://www.javadoc.io/doc/at.favre.lib/hkdf)
-[](https://codecov.io/gh/patrickfav/hkdf)
-[](https://codeclimate.com/github/patrickfav/hkdf/maintainability)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_hkdf)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_hkdf)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_hkdf)
 
 This is a standalone, lightweight, simple to use, fully tested and stable implementation in Java. The code is compiled
 with target [Java 7](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7) to be compatible with most [

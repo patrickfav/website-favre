@@ -2,7 +2,7 @@
 title: 'checkstyle-config'
 date: 2019-04-14
 lastmod: 2023-01-30
-lastfetch: 2023-02-12T21:37:34.684Z
+lastfetch: 2023-02-18T17:53:09.013Z
 description: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 summary: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 slug: checkstyle-config
@@ -28,7 +28,7 @@ githubLicense: Apache License 2.0
 
 Externalized checkstyle configuration which can be used in other Maven projects.
 
-[](https://bintray.com/patrickfav/maven/checkstyle-config/_latestVersion)
+[](https://mvnrepository.com/artifact/at.favre.lib/checkstyle-config)
 [](https://travis-ci.com/patrickfav/checkstyle-config)
 
 ## Description

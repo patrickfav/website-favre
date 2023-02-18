@@ -1,8 +1,8 @@
 ---
 title: 'singlestep-kdf'
 date: 2018-11-18
-lastmod: 2022-09-10
-lastfetch: 2023-02-12T21:37:18.053Z
+lastmod: 2023-02-12
+lastfetch: 2023-02-18T17:53:03.258Z
 description: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 summary: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 slug: singlestep-kdf
@@ -22,7 +22,8 @@ githubLicense: Apache License 2.0
 
 This is an implementation of the single-step key derivation function as described in [NIST SP 800-56C revision 1, chapter 4](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Cr1.pdf). It is an unopinionated approach towards the subject, allowing all 3 options (message digest, hmac and kmac) as H function and leaving open the exact format of the `fixedInfo` parameter.
 
-[](https://bintray.com/patrickfav/maven/singlestep-kdf/_latestVersion)
+
+[](https://mvnrepository.com/artifact/at.favre.lib/singlestep-kdf)
 [](https://travis-ci.com/patrickfav/singlestep-kdf)
 [](https://www.javadoc.io/doc/at.favre.lib/singlestep-kdf)
 [](https://coveralls.io/github/patrickfav/singlestep-kdf?branch=master)
