@@ -13,8 +13,10 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
 
     const targetRootDir = rootDirMd + relOutDir
 
+    const gotHeaders = createGotHttpHeaders();
+
     //download all repositories meta data from github api
-    let githubMetaData = await got.get('https://api.github.com/users/' + github_user + '/repos?sort=updated&direction=desc&per_page=100')
+    let githubMetaData = await got.get('https://api.github.com/users/' + github_user + '/repos?sort=updated&direction=desc&per_page=100', gotHeaders)
         .then((res) => JSON.parse(res.body));
 
     for (const projectsIndex of github_projects) {
@@ -32,14 +34,27 @@ export async function downloadGithubReadme(github_user, github_projects, rootDir
 
         let githubMetaForProject = githubMetaData.find(p => p.name === projectName);
 
-        const releaseMeta = await downloadReleases(projectName, github_user)
+        const releaseMeta = await downloadReleases(projectName, github_user, gotHeaders)
 
         const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject, releaseMeta);
         await downloadParseAndSaveReadme(github_user, projectName, githubMetaForProject.default_branch, frontMatter, targetProjectDir);
     }
 }
 
-async function downloadProjectImage(projectName, github_user, targetProjectDir) {
+function createGotHttpHeaders() {
+    const githubToken = process.env.GITHUB_TOKEN || undefined;
+
+    if(githubToken) {
+        return {
+            headers: {
+                'User-Agent': 'my-app/1.0.0'
+            }
+        };
+    }
+    return {};
+}
+
+async function downloadProjectImage(projectName, github_user, targetProjectDir, gotHeaders) {
     //parse social preview from html content
     let socialPreviewImageUrl = await got.get('https://github.com/' + github_user + '/' + projectName)
         .then(result => result.body)
@@ -55,11 +70,11 @@ async function downloadProjectImage(projectName, github_user, targetProjectDir) 
     }
 }
 
-async function downloadReleases(projectName, github_user) {
+async function downloadReleases(projectName, github_user, gotHeaders) {
     const releaseUrl = `https://api.github.com/repos/${github_user}/${projectName}/releases`;
     console.log("\tDownloading releases info "+releaseUrl);
 
-    let releases = await got.get(releaseUrl)
+    let releases = await got.get(releaseUrl, gotHeaders)
         .then(result => JSON.parse(result.body));
 
     if(releases && releases.length > 0) {
@@ -116,6 +131,7 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
             imageUrl.startsWith("https://img.shields.io/maven-central/") ||
             imageUrl.startsWith("https://api.codeclimate.com/v1/badges") ||
             imageUrl.startsWith("https://codecov.io/gh/patrickfav/") ||
+            imageUrl.startsWith("https://sonarcloud.io/api/project_badges/") ||
             imageUrl.startsWith("doc/playstore_badge") ||
             (imageUrl.startsWith("https://github.com") && imageUrl.endsWith("/badge.svg"))
         ) {
@@ -134,7 +150,6 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
             await got.stream(fullyQualifiedUrl).pipe(fs.createWriteStream(targetProjectDir + "/" + imageFileName))
 
             markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), "g"), imageFileName);
-            continue;
         }
     }
 
