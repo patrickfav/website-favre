@@ -38,7 +38,7 @@
 
 span.gh-info span.icon {
     padding-bottom: 2px;
-    padding-right: 0;
+    padding-right: 2px;
 }
 
 span.gh-info span.icon svg {
@@ -48,7 +48,7 @@ span.gh-info span.icon svg {
 
 span.medium-info span.icon {
     padding-bottom: 2px;
-    padding-right: 0;
+    padding-right: 2px;
 }
 
 span.medium-info span.icon svg {

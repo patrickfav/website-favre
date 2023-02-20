@@ -8,7 +8,7 @@
 {{ if (.Params.githubLanguage | default false) }}
 <span class="px-2 text-primary-500">&middot;</span>
 <span class="gh-info">
-  {{ partial "icon.html" (print "tech-" (lower .Params.githubLanguage)) }} {{ .Params.githubLanguage }}
+  <a href="{{ .Params.originalContentLink }}/search?l={{ .Params.githubLanguage }}" rel="noopener">{{ partial "icon.html" (print "tech-" (lower .Params.githubLanguage)) }} {{ .Params.githubLanguage }}</a>
 </span>
 {{ end }}
 
