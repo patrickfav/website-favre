@@ -39,6 +39,17 @@ optionally update the content with
 hugo-content-downloader
 ```
 
+### Using the build & run Docker Image
+
+A docker image that builds everything, updates the content and then can be used to locally serve the website with nginx can be created by doing:
+
+```bash
+docker build --no-cache --progress=plain -t websitefavre:latest .
+docker run -p 8080:80 websitefavre:latest
+```
+
+and then you can access the page with `http://localhost:8080`
+
 # License
 
-Proprietary: Patrick Favre-Bulle 2020
+Proprietary: Patrick Favre-Bulle 2023
