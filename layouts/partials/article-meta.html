@@ -40,6 +40,10 @@
     {{ $meta.Add "partials" (slice (partial "meta/medium-info.html" .)) }}
   {{ end }}
 
+  {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "stackoverflow" ) }}
+    {{ $meta.Add "partials" (slice (partial "meta/stackoverflow-info.html" .)) }}
+  {{ end }}
+
   <div class="flex flex-row flex-wrap items-center">
     {{/* Output partials */}}
     {{ with ($meta.Get "partials") }}

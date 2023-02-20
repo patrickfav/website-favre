@@ -97,7 +97,7 @@ async function getAllArticles(mediumUserName) {
             replacement: function (content) {
                 return ' `' + content + '` '
             }
-        })
+        });
 
         return removeMediumDisclaimer(
             turndownService

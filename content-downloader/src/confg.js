@@ -2,6 +2,10 @@ export const githubDownloaderEnabled = true;
 
 export const mediumDownloaderEnabled = true;
 
+export const stackoverflowEnabled = true;
+
+export const stackoverflowUserId = 774398;
+
 export const github_projects_user = 'patrickfav';
 
 export const github_projects = [

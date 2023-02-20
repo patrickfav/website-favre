@@ -1,0 +1,16 @@
+<span class="so-info">
+ <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "stack-overflow" }}</a>
+</span>
+
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="so-info">
+  {{ partial "icon.html" "caret-up-solid"}} {{ .Params.soScore }}
+</span>
+
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="so-info">
+  {{ partial "icon.html" "eye-solid" }} {{ .Params.soViews }}
+</span>
+
+
+{{- /* Trim EOF */ -}}

@@ -1,0 +1,38 @@
+{
+    "items": [
+        {
+            "tags": [
+                "java",
+                "encryption",
+                "aes"
+            ],
+            "owner": {
+                "account_id": 73100,
+                "reputation": 3515,
+                "user_id": 210713,
+                "user_type": "registered",
+                "accept_rate": 78,
+                "profile_image": "https://www.gravatar.com/avatar/9bd21dc1cd6c769d5cc249e662a1b8fa?s=256&d=identicon&r=PG",
+                "display_name": "TedTrippin",
+                "link": "https://stackoverflow.com/users/210713/tedtrippin"
+            },
+            "is_answered": true,
+            "view_count": 484295,
+            "protected_date": 1427496739,
+            "accepted_answer_id": 22445878,
+            "answer_count": 10,
+            "score": 118,
+            "last_activity_date": 1590864421,
+            "creation_date": 1363887111,
+            "last_edit_date": 1557179132,
+            "question_id": 15554296,
+            "content_license": "CC BY-SA 4.0",
+            "link": "https://stackoverflow.com/questions/15554296/initial-bytes-incorrect-after-java-aes-cbc-decryption",
+            "title": "Initial bytes incorrect after Java AES/CBC decryption",
+            "body": "<p>What's wrong with the following example?</p>\n\n<p>The problem is that the first part of the decrypted string is nonsense. However, the rest is fine, I get...</p>\n\n<blockquote>\n<pre><code>Result: `£eB6O�geS��i are you? Have a nice day.\n</code></pre>\n</blockquote>\n\n<pre><code>@Test\npublic void testEncrypt() {\n  try {\n    String s = \"Hello there. How are you? Have a nice day.\";\n\n    // Generate key\n    KeyGenerator kgen = KeyGenerator.getInstance(\"AES\");\n    kgen.init(128);\n    SecretKey aesKey = kgen.generateKey();\n\n    // Encrypt cipher\n    Cipher encryptCipher = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");\n    encryptCipher.init(Cipher.ENCRYPT_MODE, aesKey);\n\n    // Encrypt\n    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();\n    CipherOutputStream cipherOutputStream = new CipherOutputStream(outputStream, encryptCipher);\n    cipherOutputStream.write(s.getBytes());\n    cipherOutputStream.flush();\n    cipherOutputStream.close();\n    byte[] encryptedBytes = outputStream.toByteArray();\n\n    // Decrypt cipher\n    Cipher decryptCipher = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");\n    IvParameterSpec ivParameterSpec = new IvParameterSpec(aesKey.getEncoded());\n    decryptCipher.init(Cipher.DECRYPT_MODE, aesKey, ivParameterSpec);\n\n    // Decrypt\n    outputStream = new ByteArrayOutputStream();\n    ByteArrayInputStream inStream = new ByteArrayInputStream(encryptedBytes);\n    CipherInputStream cipherInputStream = new CipherInputStream(inStream, decryptCipher);\n    byte[] buf = new byte[1024];\n    int bytesRead;\n    while ((bytesRead = cipherInputStream.read(buf)) &gt;= 0) {\n        outputStream.write(buf, 0, bytesRead);\n    }\n\n    System.out.println(\"Result: \" + new String(outputStream.toByteArray()));\n\n  } \n  catch (Exception ex) {\n    ex.printStackTrace();\n  }\n}\n</code></pre>\n"
+        }
+    ],
+    "has_more": false,
+    "quota_max": 300,
+    "quota_remaining": 299
+}

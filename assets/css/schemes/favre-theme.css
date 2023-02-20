@@ -55,3 +55,13 @@ span.medium-info span.icon svg {
     height: 0.9em;
     width: 0.9em;
 }
+
+span.so-info span.icon {
+    padding-bottom: 2px;
+    padding-right: 2px;
+}
+
+span.so-info span.icon svg {
+    height: 0.9em;
+    width: 0.9em;
+}

@@ -2,7 +2,7 @@
 title: 'Security Best Practices: Symmetric Encryption with AES in Java and Android'
 date: 2018-01-06
 lastmod: 2023-01-22
-lastfetch: 2023-02-18T17:52:41.639Z
+lastfetch: 2023-02-20T22:01:40.106Z
 summary: 'What to consider when encrypting your data and how to correctly implement it with AES-GCM.'
 description: 'What to consider when encrypting your data and how to correctly implement it with AES-GCM.'
 slug: 2018-01-06-security-best-practices_-symmetric-encryption-with-aes-in-java-and-android
