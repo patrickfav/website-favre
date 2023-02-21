@@ -1,8 +1,8 @@
 ---
 title: 'rocketchat-exporter'
 date: 2019-09-24
-lastmod: 2023-01-08
-lastfetch: 2023-02-18T17:53:05.692Z
+lastmod: 2023-02-21
+lastfetch: 2023-02-21T18:42:37.473Z
 description: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 summary: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 slug: rocketchat-exporter
@@ -13,7 +13,7 @@ categories: ["opensource"]
 editURL: https://github.com/patrickfav/rocketchat-exporter
 originalContentLink: https://github.com/patrickfav/rocketchat-exporter
 originalContentType: github
-githubStars: 12
+githubStars: 13
 githubForks: 10
 githubLanguage: Java
 githubLatestVersion: v1.1.1

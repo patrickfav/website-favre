@@ -2,7 +2,7 @@
 title: 'mvn-common-parent'
 date: 2019-03-16
 lastmod: 2023-02-11
-lastfetch: 2023-02-18T17:53:13.985Z
+lastfetch: 2023-02-21T18:42:48.888Z
 description: 'A maven configuration which can be used as a commons config parent for POM files'
 summary: 'A maven configuration which can be used as a commons config parent for POM files'
 slug: mvn-common-parent

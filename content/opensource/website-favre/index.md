@@ -2,7 +2,7 @@
 title: 'website-favre'
 date: 2018-05-31
 lastmod: 2023-01-30
-lastfetch: 2023-02-18T17:53:12.668Z
+lastfetch: 2023-02-21T18:42:46.762Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 slug: website-favre
@@ -16,7 +16,6 @@ originalContentType: github
 githubStars: 0
 githubForks: 2
 githubLanguage: HTML
-githubLicense: MIT License
 ---
 # Static Site Gen Repo for my Personal Website
 
@@ -59,6 +58,17 @@ optionally update the content with
 hugo-content-downloader
 ```
 
+### Using the build & run Docker Image
+
+A docker image that builds everything, updates the content and then can be used to locally serve the website with nginx can be created by doing:
+
+```bash
+docker build --no-cache --progress=plain -t websitefavre:latest .
+docker run -p 8080:80 websitefavre:latest
+```
+
+and then you can access the page with `http://localhost:8080`
+
 # License
 
-Proprietary: Patrick Favre-Bulle 2020
+Proprietary: Patrick Favre-Bulle 2023
