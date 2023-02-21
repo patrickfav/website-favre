@@ -2,7 +2,7 @@
 title: 'Android Studio 3.0 Error. Migrate dependency configurations for local modules'
 date: 2017-06-19
 lastmod: 2017-11-02
-lastfetch: 2023-02-21T18:41:44.697Z
+lastfetch: 2023-02-21T19:07:42.779Z
 slug: 2017-06-19-android-studio-3.0-error.-migrate-dependency-configurations-for-local-modules
 tags: ["android", "android-studio", "gradle", "android-studio-3.0"]
 keywords: ["android", "android-studio", "gradle", "android-studio-3.0"]

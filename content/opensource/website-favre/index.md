@@ -1,21 +1,21 @@
 ---
 title: 'website-favre'
 date: 2018-05-31
-lastmod: 2023-01-30
-lastfetch: 2023-02-21T18:42:46.762Z
+lastmod: 2023-02-21
+lastfetch: 2023-02-21T19:08:40.584Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 slug: website-favre
 tags: ["congo", "hugo", "portfolio-website", "static-site-generator"]
 keywords: ["congo", "hugo", "portfolio-website", "static-site-generator", "tailwindcss", "website-performance"]
-alltags: ["congo", "hugo", "portfolio-website", "static-site-generator", "tailwindcss", "website-performance", "github", "HTML"]
+alltags: ["congo", "hugo", "portfolio-website", "static-site-generator", "tailwindcss", "website-performance", "github", "JavaScript"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/website-favre
 originalContentLink: https://github.com/patrickfav/website-favre
 originalContentType: github
 githubStars: 0
 githubForks: 2
-githubLanguage: HTML
+githubLanguage: JavaScript
 ---
 # Static Site Gen Repo for my Personal Website
 

@@ -2,7 +2,7 @@
 title: 'How to sign an android apk file'
 date: 2016-10-15
 lastmod: 2017-05-23
-lastfetch: 2023-02-21T18:41:42.676Z
+lastfetch: 2023-02-21T19:07:40.702Z
 slug: 2016-10-15-how-to-sign-an-android-apk-file
 tags: ["android", "apk", "signing"]
 keywords: ["android", "apk", "signing"]

@@ -2,8 +2,8 @@
 title: 'java.io.IOException : No authentication challenges found'
 date: 2014-02-03
 lastmod: 2017-05-23
-lastfetch: 2023-02-21T18:41:41.676Z
-slug: 2014-02-03-java.io.ioexception-_-no-authentication-challenges-found
+lastfetch: 2023-02-21T19:07:39.664Z
+slug: 2014-02-03-java.io.ioexception--no-authentication-challenges-found
 tags: ["java", "android", "authentication", "httpurlconnection", "ioexception"]
 keywords: ["java", "android", "authentication", "httpurlconnection", "ioexception"]
 alltags: ["java", "android", "authentication", "httpurlconnection", "ioexception"]

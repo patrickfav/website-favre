@@ -2,7 +2,7 @@
 title: 'singlestep-kdf'
 date: 2018-11-18
 lastmod: 2023-02-12
-lastfetch: 2023-02-21T18:42:34.139Z
+lastfetch: 2023-02-21T19:08:28.850Z
 description: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 summary: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 slug: singlestep-kdf

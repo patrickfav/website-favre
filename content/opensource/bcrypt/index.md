@@ -2,7 +2,7 @@
 title: 'bcrypt'
 date: 2018-07-05
 lastmod: 2023-02-18
-lastfetch: 2023-02-21T18:42:09.810Z
+lastfetch: 2023-02-21T19:08:07.885Z
 description: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 summary: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 slug: bcrypt

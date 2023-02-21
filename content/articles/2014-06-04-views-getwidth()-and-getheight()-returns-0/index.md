@@ -2,7 +2,7 @@
 title: 'View&#39;s getWidth() and getHeight() returns 0'
 date: 2014-06-04
 lastmod: 2020-06-23
-lastfetch: 2023-02-21T18:41:37.652Z
+lastfetch: 2023-02-21T19:07:35.249Z
 slug: 2014-06-04-views-getwidth()-and-getheight()-returns-0
 tags: ["java", "android", "android-layout", "getter"]
 keywords: ["java", "android", "android-layout", "getter"]
@@ -15,7 +15,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-and-getheight-returns-0
 originalContentType: stackoverflow
 soScore: 962
-soViews: 398286
+soViews: 398287
 soIsAccepted: false
 soQuestionId: 3591784
 soAnswerId: 24035591

@@ -2,8 +2,8 @@
 title: 'Unable to execute dex: method ID not in [0, 0xffff]: 65536'
 date: 2015-02-19
 lastmod: 2017-05-23
-lastfetch: 2023-02-21T18:41:40.364Z
-slug: 2015-02-19-unable-to-execute-dex_-method-id-not-in-%5b0,-0xffff%5d_-65536
+lastfetch: 2023-02-21T19:07:38.229Z
+slug: 2015-02-19-unable-to-execute-dex-method-id-not-in-0-0xffff-65536
 tags: ["android", "dex"]
 keywords: ["android", "dex"]
 alltags: ["android", "dex"]

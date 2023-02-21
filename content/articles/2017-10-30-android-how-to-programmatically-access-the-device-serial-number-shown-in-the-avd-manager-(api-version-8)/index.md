@@ -2,8 +2,8 @@
 title: 'Android: How to programmatically access the device serial number shown in the AVD manager (API Version 8)'
 date: 2017-10-30
 lastmod: 2019-03-19
-lastfetch: 2023-02-21T18:41:40.696Z
-slug: 2017-10-30-android_-how-to-programmatically-access-the-device-serial-number-shown-in-the-avd-manager-(api-version-8)
+lastfetch: 2023-02-21T19:07:38.582Z
+slug: 2017-10-30-android-how-to-programmatically-access-the-device-serial-number-shown-in-the-avd-manager-(api-version-8)
 tags: ["android", "serial-number"]
 keywords: ["android", "serial-number"]
 alltags: ["android", "serial-number"]

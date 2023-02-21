@@ -2,7 +2,7 @@
 title: 'Spring webFlux differrences when Netty vs Tomcat is used under the hood'
 date: 2019-06-28
 lastmod: 2019-06-28
-lastfetch: 2023-02-21T18:41:41.343Z
+lastfetch: 2023-02-21T19:07:39.295Z
 slug: 2019-06-28-spring-webflux-differrences-when-netty-vs-tomcat-is-used-under-the-hood
 tags: ["java", "tomcat", "netty", "spring-webflux", "nonblocking"]
 keywords: ["java", "tomcat", "netty", "spring-webflux", "nonblocking"]
@@ -15,7 +15,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/56794263/spring-webflux-differrences-when-netty-vs-tomcat-is-used-under-the-hood
 originalContentType: stackoverflow
 soScore: 52
-soViews: 30984
+soViews: 30986
 soIsAccepted: false
 soQuestionId: 56794263
 soAnswerId: 56806022

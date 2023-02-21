@@ -10,7 +10,21 @@ export function escapeForFileName(name, date) {
             .replace(/…/g, '_')
             .replace(/\[/g, '_')
             .replace(/]/g, '_')
+            .replace(/\?/g, '')
+            .replace(/#/g, '_')
+            .replace(/%/g, '_')
+            .replace(/&/g, '_')
+            .replace(/\*/g, '')
+            .replace(/!/g, '')
+            .replace(/\$/g, '')
+            .replace(/,/g, '')
+            .replace(/;/g, '')
+            .replace(/___/g, '_')
             .replace(/__/g, '_')
+            .replace(/---/g, '-')
+            .replace(/--/g, '-')
+            .replace(/_-/g, '-')
+            .replace(/-_/g, '-')
     ).toLowerCase();
     return {
         safeName: escaped,

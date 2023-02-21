@@ -2,7 +2,7 @@
 title: 'Fast Bitmap Blur For Android SDK'
 date: 2014-04-16
 lastmod: 2019-09-15
-lastfetch: 2023-02-21T18:41:38.032Z
+lastfetch: 2023-02-21T19:07:35.669Z
 slug: 2014-04-16-fast-bitmap-blur-for-android-sdk
 tags: ["java", "android", "image-processing", "renderscript"]
 keywords: ["java", "android", "image-processing", "renderscript"]
@@ -15,7 +15,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/2067955/fast-bitmap-blur-for-android-sdk
 originalContentType: stackoverflow
 soScore: 268
-soViews: 154457
+soViews: 154458
 soIsAccepted: false
 soQuestionId: 2067955
 soAnswerId: 23119957

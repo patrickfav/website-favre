@@ -34,11 +34,6 @@ export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
         const escaped = escapeForFileName(question.title, new Date(answer.creation_date * 1000))
 
         const targetProjectDir = targetRootDir + "/" + escaped.safeNameWithDate;
-
-        if (!fs.existsSync(targetProjectDir)) {
-            fs.mkdirSync(targetProjectDir, {recursive: true});
-        }
-
         const frontMatter = createStackOverflowFrontMatter(answer, question, escaped.safeNameWithDate);
         const markdown = createMarkdown(answer.body);
 
@@ -46,6 +41,10 @@ export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
         if(wordCount <= 200) {
             console.log(`\tskipping due to low word count ${wordCount}`);
             continue;
+        }
+
+        if (!fs.existsSync(targetProjectDir)) {
+            fs.mkdirSync(targetProjectDir, {recursive: true});
         }
 
         const targetProjectFile = targetProjectDir + "/index.md";

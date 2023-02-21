@@ -2,7 +2,7 @@
 title: 'under-the-hood'
 date: 2016-11-27
 lastmod: 2023-02-16
-lastfetch: 2023-02-21T18:42:13.572Z
+lastfetch: 2023-02-21T19:08:10.842Z
 description: 'Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in.'
 summary: 'Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in.'
 slug: under-the-hood
