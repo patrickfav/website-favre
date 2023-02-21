@@ -12,7 +12,7 @@
 
 
 [[main]]
-  name = "Articles"
+  name = "Articles & Posts"
   pageRef = "articles"
   weight = 30
 
@@ -21,11 +21,6 @@
   name = "Open Source"
   pageRef = "opensource"
   weight = 50
-
-[[main]]
-  name = "Stack Overflow"
-  pageRef = "stackoverflow"
-  weight = 60
 
 [[main]]
   name = "GitHub"

@@ -12,7 +12,7 @@ copyright = "&copy; 2023"
 dateFormat = "02.01.2006"
 
 [params]
-  mainSections = ["articles", "opensource"]
+  mainSections = ["articles", "stackoverflow", "opensource"]
 
 [author]
   name = "Patrick Favre"

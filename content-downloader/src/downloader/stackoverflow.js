@@ -3,9 +3,13 @@ import {stackoverflowEnabled} from "../confg";
 import fs from "fs";
 import {StringStream} from "scramjet";
 import TurndownService from "turndown";
+import {escapeForFileName} from "../util";
+import wordsCount from "words-count";
+
+
 
 export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
-    if(stackoverflowEnabled === false) {
+    if (stackoverflowEnabled === false) {
         console.log("Stack Overflow Downloader disabled");
         return;
     }
@@ -20,21 +24,35 @@ export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
     for (const answer of soAnswers.items) {
         const question = await getQuestion(answer.question_id);
 
-        console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id})`);
+        console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes`);
 
-        const safeTitle = encodeURI(question.title.replace(/ /g, '-').replace(/:/g, '_').replace(/&#x2026;/g, '_').replace(/…/g, '_')).toLowerCase();
-        let safeTitleWithDate = new Date(answer.creation_date * 1000).toISOString().split("T")[0] + "-" + safeTitle;
+        if(answer.score <= 10) {
+            console.log(`\tskipping due to low score`);
+            continue;
+        }
 
-        const targetProjectDir = targetRootDir + "/" + safeTitleWithDate;
+        const escaped = escapeForFileName(question.title, new Date(answer.creation_date * 1000))
+
+        const targetProjectDir = targetRootDir + "/" + escaped.safeNameWithDate;
 
         if (!fs.existsSync(targetProjectDir)) {
             fs.mkdirSync(targetProjectDir, {recursive: true});
         }
 
-        const frontMatter = createStackOverflowFrontMatter(answer, question, safeTitleWithDate);
+        const frontMatter = createStackOverflowFrontMatter(answer, question, escaped.safeNameWithDate);
         const markdown = createMarkdown(answer.body);
 
+        const wordCount = wordsCount(markdown);
+        if(wordCount <= 200) {
+            console.log(`\tskipping due to low word count ${wordCount}`);
+            continue;
+        }
+
         const targetProjectFile = targetProjectDir + "/index.md";
+        const targetProjectFileBanner = targetProjectDir + "/sobanner.png";
+
+        copyBannerImage("src/data/sobanner.png", targetProjectFileBanner);
+
         await StringStream.from(frontMatter + markdown)
             .pipe(fs.createWriteStream(targetProjectFile));
     }
@@ -44,6 +62,22 @@ async function getQuestion(questionId) {
     let soQuestion = await got.get(`https://api.stackexchange.com/2.3/questions/${questionId}?order=desc&sort=activity&site=stackoverflow&filter=withbody`)
         .then((res) => JSON.parse(res.body));
     return soQuestion.items[0];
+}
+
+function copyBannerImage(inputFile, targetProjectFileBanner) {
+    fs.readFile(inputFile, (err, data) => {
+        if (err) {
+            console.error(`Error reading file: ${err}`);
+            throw err;
+        }
+
+        fs.writeFile(targetProjectFileBanner, data, (err) => {
+            if (err) {
+                console.error(`Error writing file: ${err}`);
+                throw err;
+            }
+        });
+    });
 }
 
 function createMarkdown(body) {
@@ -62,6 +96,10 @@ function createMarkdown(body) {
         return content;
     }
 
+    function correctHtml(body) {
+        return body.replace(/<pre[^>]*>\s*<code>/g, '<pre>').replace(/<\/code>\s*<\/pre>/g, '</pre>');
+    }
+
     let turndownService = new TurndownService({preformattedCode: false})
 
     turndownService.addRule('codeBlockFormat', {
@@ -76,6 +114,7 @@ function createMarkdown(body) {
         }
     });
 
+    body = correctHtml(body);
     return turndownService.turndown(body);
 }
 
@@ -84,7 +123,7 @@ function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle) {
     meta += "title: '" + soQuestion.title + "'\n"
     meta += "date: " + new Date(soAnswers.creation_date * 1000).toISOString().split("T")[0] + "\n"
 
-    if(soAnswers.last_edit_date) {
+    if (soAnswers.last_edit_date) {
         meta += "lastmod: " + new Date(soAnswers.last_edit_date * 1000).toISOString().split("T")[0] + "\n"
     } else {
         meta += "lastmod: " + new Date(soAnswers.creation_date * 1000).toISOString().split("T")[0] + "\n"
@@ -96,8 +135,12 @@ function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle) {
     meta += "slug: " + safeTitle + "\n"
     meta += "tags: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"
-    //meta += "alltags: [" + allTags.map(m => '"' + m + '"').join(", ") + "]\n"
+    meta += "alltags: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "categories: [\"stackoverflow\"]\n"
+    meta += "showEdit: false \n"
+    meta += "showSummary: false \n"
+    meta += "type: stackoverflow \n"
+    meta += "thumbnail: 'sobanner*' \n"
     meta += "originalContentLink: " + soQuestion.link + "\n"
     meta += "originalContentType: stackoverflow\n"
     meta += "soScore: " + soAnswers.score + "\n"

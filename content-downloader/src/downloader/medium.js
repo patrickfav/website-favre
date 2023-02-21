@@ -7,6 +7,7 @@ import Parser from "rss-parser";
 import TurndownService from "turndown";
 import * as cheerio from "cheerio";
 import {mediumDownloaderEnabled} from "../confg";
+import {escapeForFileName} from "../util";
 
 export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
     if(mediumDownloaderEnabled === false) {
@@ -29,21 +30,20 @@ export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
         const articleInfo = await getArticleInfo(post);
 
         const title = articleInfo.title;
-        let safeArticleTitle = encodeURI(title.replace(/ /g, '-').replace(/:/g, '_').replace(/&#x2026;/g, '_').replace(/…/g, '_')).toLowerCase();
-        let safeArticleTitleWithDate = new Date(articleInfo.firstPublishedAt).toISOString().split("T")[0] + "-" + safeArticleTitle;
+        let escaped = escapeForFileName(title, new Date(articleInfo.firstPublishedAt))
 
-        console.log("\tFound article " + title + "(" + safeArticleTitleWithDate + ") updated at " + new Date(articleInfo.latestPublishedAt).toISOString());
+        console.log("\tFound article " + title + "(" + escaped.safeNameWithDate + ") updated at " + new Date(articleInfo.latestPublishedAt).toISOString());
 
-        const targetProjectDir = targetRootDir + "/" + safeArticleTitleWithDate;
+        const targetProjectDir = targetRootDir + "/" + escaped.safeNameWithDate;
 
         if (!fs.existsSync(targetProjectDir)) {
             fs.mkdirSync(targetProjectDir, {recursive: true});
         }
 
-        await downloadProjectImage(articleInfo, safeArticleTitle, targetProjectDir)
+        await downloadProjectImage(articleInfo, escaped.safeName, targetProjectDir)
 
         const targetProjectFile = targetProjectDir + "/index.md";
-        const frontMatter = createFrontMatter(articleInfo, safeArticleTitleWithDate);
+        const frontMatter = createFrontMatter(articleInfo, escaped.safeNameWithDate);
         const markdown = await fetchAndReplaceImages(post.markdown, targetProjectDir)
         await StringStream.from(frontMatter + markdown)
             .pipe(fs.createWriteStream(targetProjectFile));

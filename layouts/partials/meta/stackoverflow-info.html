@@ -4,13 +4,12 @@
 
 <span class="px-2 text-primary-500">&middot;</span>
 <span class="so-info">
-  {{ partial "icon.html" "caret-up-solid"}} {{ .Params.soScore }}
+  {{ partial "icon.html" "caret-up-solid"}} {{ .Params.soScore }} Upvotes
 </span>
 
 <span class="px-2 text-primary-500">&middot;</span>
 <span class="so-info">
-  {{ partial "icon.html" "eye-solid" }} {{ .Params.soViews }}
+  {{ partial "icon.html" "eye-solid" }} {{ div .Params.soViews 1000}}k Views
 </span>
-
 
 {{- /* Trim EOF */ -}}

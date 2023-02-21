@@ -23,13 +23,15 @@
     "url": "https://github.com/patrickfav/website-favre.git"
   },
   "dependencies": {
+    "axios": "0.27.2",
+    "cheerio": "1.0.0-rc.12",
     "esm": "^3.2.25",
     "got": "^11.1.2",
     "request": "^2.88.2",
-    "scramjet": "^4.29.0",
-    "cheerio": "1.0.0-rc.12",
-    "axios": "0.27.2",
     "rss-parser": "3.12.0",
-    "turndown": "v7.1.1"
+    "scramjet": "^4.29.0",
+    "turndown": "v7.1.1",
+    "turndown-plugin-gfm": "^1.0.2",
+    "words-count": "^2.0.2"
   }
 }

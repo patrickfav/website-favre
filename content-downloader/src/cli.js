@@ -11,7 +11,7 @@ export function cli(args) {
     const relOutDirGithub = 'opensource/';
     const relOutDirArticles = 'articles/';
 
-    downloadStackOverflow(stackoverflowUserId, rootDirMd, relOutDirStackOverflow)
+    downloadStackOverflow(stackoverflowUserId, rootDirMd, relOutDirArticles)
         .then(()=> downloadMediumArticles(rootDirMd, relOutDirArticles))
         .then(() =>  downloadGithubReadme(github_projects_user, github_projects, rootDirMd, relOutDirGithub))
         .then(() => console.log("Waiting to finish"));
