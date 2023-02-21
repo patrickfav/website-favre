@@ -2,7 +2,7 @@
 title: 'uber-apk-signer'
 date: 2016-10-10
 lastmod: 2023-02-20
-lastfetch: 2023-02-21T19:08:13.851Z
+lastfetch: 2023-02-21T22:28:19.643Z
 description: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 summary: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 slug: uber-apk-signer

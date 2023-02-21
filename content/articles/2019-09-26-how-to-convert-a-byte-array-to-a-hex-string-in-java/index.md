@@ -1,8 +1,9 @@
 ---
 title: 'How to convert a byte array to a hex string in Java?'
 date: 2019-09-26
-lastmod: 2022-10-25
-lastfetch: 2023-02-21T19:07:36.376Z
+lastmod: 2023-02-21
+lastfetch: 2023-02-21T22:38:44.634Z
+description: 'How to convert a byte array to a hex string in Java?'
 slug: 2019-09-26-how-to-convert-a-byte-array-to-a-hex-string-in-java
 tags: ["java", "arrays", "hex"]
 keywords: ["java", "arrays", "hex"]
@@ -15,12 +16,16 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
 originalContentType: stackoverflow
 soScore: 152
-soViews: 957340
+soViews: 957378
 soIsAccepted: false
 soQuestionId: 9655181
 soAnswerId: 58118078
 soAnswerLicense: CC BY-SA 4.0
+soAnswerLink: https://stackoverflow.com/a/58118078/774398
 ---
+
+{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/58118078/774398) to this [question](https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java)  on stackoverflow.com{{< /alert >}}
+
 Here are some common options ordered from simple (one-liner) to complex (huge library). If you are interested in performance, see the micro benchmarks below.
 
 Option 1: Code snippet - Simple (only using JDK/Android)
@@ -209,14 +214,15 @@ Specs: JDK 8u202, i7-7700K, Win10, 24GB Ram. See the full benchmark [here](https
 Benchmark Update 2022
 ---------------------
 
-Here are results with current JMH 1.35, Java 17 and a higher end computer
+Here are results with current JMH 1.36, Java 17 and a higher end computer
 
 ```
 | Name (ops/s)         |    16 byte |    32 byte |  128 byte | 0.95 MB |
 |----------------------|-----------:|-----------:|----------:|--------:|
-| Opt1: BigInteger     |  2,941,403 |  1,389,448 |   242,096 |       5 |
+| Opt1a: BigInteger    |  2,941,403 |  1,389,448 |   242,096 |       5 |
+| Opt1d: HexFormat     | 32,635,184 | 20,262,332 | 7,388,135 |     922 |
 | Opt2/3: Bytes Lib    | 31,724,981 | 22,786,906 | 6,197,028 |     930 |
 
 ```
 
-Specs: JDK temurin 17.0.4, Ryzen 5900X, Win11, 24GB DDR4 Ram
+Specs: JDK temurin 17.0.6, Ryzen 5900X, Win11, 24GB DDR4 Ram

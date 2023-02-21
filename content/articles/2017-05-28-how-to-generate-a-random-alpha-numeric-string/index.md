@@ -2,7 +2,8 @@
 title: 'How to generate a random alpha-numeric string'
 date: 2017-05-28
 lastmod: 2020-11-12
-lastfetch: 2023-02-21T19:07:37.470Z
+lastfetch: 2023-02-21T22:38:44.648Z
+description: 'How to generate a random alpha-numeric string'
 slug: 2017-05-28-how-to-generate-a-random-alpha-numeric-string
 tags: ["java", "string", "random", "alphanumeric"]
 keywords: ["java", "string", "random", "alphanumeric"]
@@ -15,12 +16,16 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string
 originalContentType: stackoverflow
 soScore: 89
-soViews: 1621522
+soViews: 1621539
 soIsAccepted: false
 soQuestionId: 41107
 soAnswerId: 44227131
 soAnswerLicense: CC BY-SA 4.0
+soAnswerLink: https://stackoverflow.com/a/44227131/774398
 ---
+
+{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/44227131/774398) to this [question](https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string)  on stackoverflow.com{{< /alert >}}
+
 This is easily achievable without any external libraries.
 
 1\. Cryptographic Pseudo Random Data Generation (PRNG)
@@ -44,7 +49,7 @@ Next you have to decide "how unique" your token needs to be. The whole and only 
 
 Unique identifiers such as random [ `UUID` ](https://en.wikipedia.org/wiki/Universally_unique_identifier) have 122 bit of entropy (i.e., 2^122 = 5.3x10^36) - the chance of collision is "\*(...) for there to be a one in a billion chance of duplication, 103 trillion version 4 UUIDs must be generated[2](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions)". **We will choose 128 bits since it fits exactly into 16 bytes** and is seen as [highly sufficient](https://security.stackexchange.com/questions/6141/amount-of-simple-operations-that-is-safely-out-of-reach-for-all-humanity/6149#6149) for being unique for basically every, but the most extreme, use cases and you don't have to think about duplicates. Here is a simple comparison table of entropy including simple analysis of the [birthday problem](https://en.wikipedia.org/wiki/Birthday_problem).
 
-[![Comparison of token sizes](https://i.stack.imgur.com/LoLpJ.png)](https://i.stack.imgur.com/LoLpJ.png)
+[![Comparison of token sizes](so_46efbd1d00c67dd990ca12d4.png)](so_46efbd1d00c67dd990ca12d4.png)
 
 For simple requirements, 8 or 12 byte length might suffice, but with 16 bytes you are on the "safe side".
 

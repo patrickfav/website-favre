@@ -2,7 +2,8 @@
 title: 'Spring webFlux differrences when Netty vs Tomcat is used under the hood'
 date: 2019-06-28
 lastmod: 2019-06-28
-lastfetch: 2023-02-21T19:07:39.295Z
+lastfetch: 2023-02-21T22:38:44.663Z
+description: 'Spring webFlux differrences when Netty vs Tomcat is used under the hood'
 slug: 2019-06-28-spring-webflux-differrences-when-netty-vs-tomcat-is-used-under-the-hood
 tags: ["java", "tomcat", "netty", "spring-webflux", "nonblocking"]
 keywords: ["java", "tomcat", "netty", "spring-webflux", "nonblocking"]
@@ -15,12 +16,16 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/56794263/spring-webflux-differrences-when-netty-vs-tomcat-is-used-under-the-hood
 originalContentType: stackoverflow
 soScore: 52
-soViews: 30986
+soViews: 30992
 soIsAccepted: false
 soQuestionId: 56794263
 soAnswerId: 56806022
 soAnswerLicense: CC BY-SA 4.0
+soAnswerLink: https://stackoverflow.com/a/56806022/774398
 ---
+
+{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/56806022/774398) to this [question](https://stackoverflow.com/questions/56794263/spring-webflux-differrences-when-netty-vs-tomcat-is-used-under-the-hood)  on stackoverflow.com{{< /alert >}}
+
 Currently there are 2 basic concepts to handle parallel access to a web-server with various advantages and disadvantages:
 
 1.  **Blocking**

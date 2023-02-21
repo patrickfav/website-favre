@@ -2,7 +2,8 @@
 title: 'Fast Bitmap Blur For Android SDK'
 date: 2014-04-16
 lastmod: 2019-09-15
-lastfetch: 2023-02-21T19:07:35.669Z
+lastfetch: 2023-02-21T22:38:44.623Z
+description: 'Fast Bitmap Blur For Android SDK'
 slug: 2014-04-16-fast-bitmap-blur-for-android-sdk
 tags: ["java", "android", "image-processing", "renderscript"]
 keywords: ["java", "android", "image-processing", "renderscript"]
@@ -20,7 +21,11 @@ soIsAccepted: false
 soQuestionId: 2067955
 soAnswerId: 23119957
 soAnswerLicense: CC BY-SA 4.0
+soAnswerLink: https://stackoverflow.com/a/23119957/774398
 ---
+
+{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/23119957/774398) to this [question](https://stackoverflow.com/questions/2067955/fast-bitmap-blur-for-android-sdk)  on stackoverflow.com{{< /alert >}}
+
 Android Blur Guide 2016
 -----------------------
 
@@ -81,13 +86,13 @@ android {
 
 Simple benchmark on a Nexus 5 - comparing RenderScript with different other java and Renderscript implementations:
 
-![The average runtime per blur on different pic sizes](https://i.stack.imgur.com/pO3LN.png) The average runtime per blur on different pic sizes
+![The average runtime per blur on different pic sizes](so_b2e0b30479865cfe2a857591.png) The average runtime per blur on different pic sizes
 
-![Megapixels per sec that can be blurred](https://i.stack.imgur.com/EjRgJ.png) Megapixels per sec that can be blurred
+![Megapixels per sec that can be blurred](so_705a00afc6d47ab214018be9.png) Megapixels per sec that can be blurred
 
 Each value is the avg of 250 rounds.  `RS_GAUSS_FAST`  is  `ScriptIntrinsicBlur`  (and nearly always the fastest), others that start with  `RS_`  are mostly convolve implementations with simple kernels. [The details of the algorithms can be found here](https://github.com/patrickfav/BlurTestAndroid). This is not purely blurring, since a good portion is garbage collection that is measured. This can be seen in this here ( `ScriptIntrinsicBlur`  on a 100x100 image with about 500 rounds)
 
-![enter image description here](https://i.stack.imgur.com/AdFr0.png)
+![enter image description here](so_51d0c52ac6f3eb3daa4fab9b.png)
 
 The spikes are gc.
 
@@ -107,4 +112,4 @@ The simple and naive method is just to use 2  `ImageViews` , one blurred, and al
 
 Basically he explains that he pre-blurs some frames with different blur extents and uses them as keyframes in an animation that looks really smooth.
 
-![Diagram where Nurik exaplains his approach](https://i.stack.imgur.com/GosOl.png)
+![Diagram where Nurik exaplains his approach](so_9eae5ef2fbbbd2a69ca29d6d.png)

@@ -2,7 +2,8 @@
 title: 'Security with SharedPreferences'
 date: 2014-09-27
 lastmod: 2020-06-20
-lastfetch: 2023-02-21T19:07:42.417Z
+lastfetch: 2023-02-21T22:38:44.674Z
+description: 'Security with SharedPreferences'
 slug: 2014-09-27-security-with-sharedpreferences
 tags: ["android", "sharedpreferences"]
 keywords: ["android", "sharedpreferences"]
@@ -20,7 +21,11 @@ soIsAccepted: true
 soQuestionId: 26076292
 soAnswerId: 26077852
 soAnswerLicense: CC BY-SA 4.0
+soAnswerLink: https://stackoverflow.com/a/26077852/774398
 ---
+
+{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/26077852/774398) to this [question](https://stackoverflow.com/questions/26076292/security-with-sharedpreferences)  on stackoverflow.com{{< /alert >}}
+
 _If you are interested in state of the art implementation, check out my project here [https://github.com/patrickfav/armadillo](https://github.com/patrickfav/armadillo) which may have some interesseting design principles relevant to this discussion._
 
 * * *

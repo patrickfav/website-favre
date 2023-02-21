@@ -2,8 +2,9 @@
 title: 'Java - resize image without losing quality'
 date: 2016-04-02
 lastmod: 2018-02-03
-lastfetch: 2023-02-21T19:07:37.106Z
-slug: 2016-04-02-java--resize-image-without-losing-quality
+lastfetch: 2023-02-21T22:38:44.642Z
+description: 'Java - resize image without losing quality'
+slug: 2016-04-02-java-resize-image-without-losing-quality
 tags: ["java", "image", "image-processing", "bufferedimage"]
 keywords: ["java", "image", "image-processing", "bufferedimage"]
 alltags: ["java", "image", "image-processing", "bufferedimage"]
@@ -15,12 +16,16 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/24745147/java-resize-image-without-losing-quality
 originalContentType: stackoverflow
 soScore: 95
-soViews: 89654
+soViews: 89657
 soIsAccepted: false
 soQuestionId: 24745147
 soAnswerId: 36367652
 soAnswerLicense: CC BY-SA 3.0
+soAnswerLink: https://stackoverflow.com/a/36367652/774398
 ---
+
+{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/36367652/774398) to this [question](https://stackoverflow.com/questions/24745147/java-resize-image-without-losing-quality)  on stackoverflow.com{{< /alert >}}
+
 Unfortunately, there is no recommended out-of-the-box scaling in Java that provides visually good results. Among others, here are the methods I recommend for scaling:
 
 *   Lanczos3 Resampling (usually visually better, but slower)
@@ -34,9 +39,9 @@ Visual Comparison
 
 Here is your image scaled to  `96x140`  with different methods/libs. Click on the image to get the full size:
 
-[![comparison](https://i.stack.imgur.com/sH1tO.png)](https://i.stack.imgur.com/sH1tO.png)
+[![comparison](so_88f7582f7c8daf58d03df108.png)](so_88f7582f7c8daf58d03df108.png)
 
-[![comparison zoom](https://i.stack.imgur.com/JhRQT.png)](https://i.stack.imgur.com/JhRQT.png)
+[![comparison zoom](so_8421b1333f5a2a54f4893b62.png)](so_8421b1333f5a2a54f4893b62.png)
 
 1.  Morten Nobel's lib Lanczos3
 2.  Thumbnailator Bilinear Progressive Scaling
@@ -70,7 +75,7 @@ Mentioned in [Chris Campbell's blog about scaling](https://community.oracle.com/
 
 Here is a simple example on how it works:
 
-[![progressive scaling](https://i.stack.imgur.com/xGtdc.png)](https://i.stack.imgur.com/xGtdc.png)
+[![progressive scaling](so_1b4fccc08d1d51f681a8dc71.png)](so_1b4fccc08d1d51f681a8dc71.png)
 
 The following libs incorporate forms of progressive scaling based on  `Graphics2d` :
 
