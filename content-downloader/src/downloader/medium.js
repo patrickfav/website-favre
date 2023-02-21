@@ -7,7 +7,8 @@ import Parser from "rss-parser";
 import TurndownService from "turndown";
 import * as cheerio from "cheerio";
 import {mediumDownloaderEnabled} from "../confg";
-import {escapeForFileName} from "../util";
+import {customTurnDownPlugin, escapeForFileName} from "../util";
+import {strikethrough, tables, taskListItems} from "turndown-plugin-gfm";
 
 export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
     if(mediumDownloaderEnabled === false) {
@@ -61,20 +62,6 @@ async function downloadProjectImage(articleInfo, safeArticleTitle, targetProject
 }
 
 async function getAllArticles(mediumUserName) {
-    function deEscape(content) {
-        const escapes = [
-            [/\\`/g, '`'],
-            [/\\\[/g, '['],
-            [/\\]/g, ']'],
-            [/\\>/g, '>'],
-            [/\\_/g, '_']
-        ];
-
-        for (let escapeRuleArrayIndex in escapes) {
-            content = content.replace(escapes[escapeRuleArrayIndex][0], escapes[escapeRuleArrayIndex][1])
-        }
-        return content;
-    }
 
     function removeMediumDisclaimer(markdown) {
         if (markdown.includes("on Medium, where people are continuing the conversation by highlighting and responding to this story.")) {
@@ -86,18 +73,11 @@ async function getAllArticles(mediumUserName) {
     function parseAsMarkdown(rssElement) {
         const htmlContent = rssElement['content:encoded'];
         let turndownService = new TurndownService({preformattedCode: false})
+        turndownService.use(strikethrough)
+        turndownService.use(tables)
+        turndownService.use(taskListItems)
+        turndownService.use(customTurnDownPlugin);
 
-        turndownService.addRule('codeBlockFormat', {
-            filter: ['pre'],
-            replacement: function (content) {
-                return '\n```\n' + deEscape(content) + '\n```\n'
-            }
-        }).addRule('codeFormat', {
-            filter: ['code'],
-            replacement: function (content) {
-                return ' `' + content + '` '
-            }
-        });
 
         return removeMediumDisclaimer(
             turndownService
@@ -144,6 +124,9 @@ async function getArticleInfo(post) {
         })
         .replace("window.__APOLLO_STATE__ = ", "")
         .replace(/&quot;/g, '"');
+
+    //throttle
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     return JSON.parse(json)[`Post:${post.articleId}`];
 }

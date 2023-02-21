@@ -36,32 +36,12 @@
     --color-secondary-900: 6, 78, 59;
 }
 
-span.gh-info span.icon {
+span.custom-info span.icon {
     padding-bottom: 2px;
     padding-right: 2px;
 }
 
-span.gh-info span.icon svg {
-    height: 0.9em;
-    width: 0.9em;
-}
-
-span.medium-info span.icon {
-    padding-bottom: 2px;
-    padding-right: 2px;
-}
-
-span.medium-info span.icon svg {
-    height: 0.9em;
-    width: 0.9em;
-}
-
-span.so-info span.icon {
-    padding-bottom: 2px;
-    padding-right: 2px;
-}
-
-span.so-info span.icon svg {
+span.custom-info span.icon svg {
     height: 0.9em;
     width: 0.9em;
 }

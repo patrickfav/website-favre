@@ -1,12 +1,12 @@
 import got from "got";
-import {stackoverflowEnabled} from "../confg";
+import {stackoverflowEnabled, stackoverflowUserId} from "../confg";
 import fs from "fs";
 import {StringStream} from "scramjet";
 import TurndownService from "turndown";
-import {escapeForFileName} from "../util";
+import {strikethrough, tables, taskListItems} from "turndown-plugin-gfm";
+import {customTurnDownPlugin, escapeForFileName} from "../util";
 import wordsCount from "words-count";
-
-
+import crypto from "crypto";
 
 export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
     if (stackoverflowEnabled === false) {
@@ -18,27 +18,28 @@ export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
 
     console.log("Start Processing Stack Overflow posts");
 
-    let soAnswers = await got.get(`https://api.stackexchange.com/2.3/users/${soUser}/answers?order=desc&sort=votes&site=stackoverflow&filter=withbody`)
-        .then((res) => JSON.parse(res.body));
+    const soAnswers = await fetchAllSoAnswers(soUser);
+    const soQuestions = await fetchAllQuestions(soAnswers);
 
-    for (const answer of soAnswers.items) {
-        const question = await getQuestion(answer.question_id);
+    for (const answer of soAnswers) {
+        const question = soQuestions[answer.question_id];
 
         console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes`);
 
-        if(answer.score <= 10) {
+        if (answer.score <= 10) {
             console.log(`\tskipping due to low score`);
             continue;
         }
 
         const escaped = escapeForFileName(question.title, new Date(answer.creation_date * 1000))
-
+        const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
         const targetProjectDir = targetRootDir + "/" + escaped.safeNameWithDate;
-        const frontMatter = createStackOverflowFrontMatter(answer, question, escaped.safeNameWithDate);
+        const frontMatter = createStackOverflowFrontMatter(answer, question, escaped.safeNameWithDate, answerLink);
+        const bannerText = createBannerText(answerLink, question.link);
         const markdown = createMarkdown(answer.body);
 
         const wordCount = wordsCount(markdown);
-        if(wordCount <= 200) {
+        if (wordCount <= 200) {
             console.log(`\tskipping due to low word count ${wordCount}`);
             continue;
         }
@@ -52,15 +53,72 @@ export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
 
         copyBannerImage("src/data/sobanner.png", targetProjectFileBanner);
 
-        await StringStream.from(frontMatter + markdown)
+        const finalMarkdown = await fetchAndReplaceImages(markdown, targetProjectDir)
+
+        await StringStream.from(frontMatter + bannerText + finalMarkdown)
             .pipe(fs.createWriteStream(targetProjectFile));
     }
 }
 
-async function getQuestion(questionId) {
-    let soQuestion = await got.get(`https://api.stackexchange.com/2.3/questions/${questionId}?order=desc&sort=activity&site=stackoverflow&filter=withbody`)
-        .then((res) => JSON.parse(res.body));
-    return soQuestion.items[0];
+async function fetchAllSoAnswers(soUser) {
+    let hasMore = true
+    let page = 1;
+    let allAnswers = [];
+
+    while (hasMore) {
+        const soAnswers = await got.get(`https://api.stackexchange.com/2.3/users/${soUser}/answers?page=${page}&pagesize=100&order=desc&sort=votes&site=stackoverflow&filter=withbody`)
+            .then((res) => JSON.parse(res.body))
+            .catch(err => {
+                console.log("Error " + JSON.stringify(err));
+                throw err;
+            });
+
+        //throttling for api
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+        for (const item of soAnswers.items) {
+            allAnswers.push(item);
+        }
+
+        hasMore = soAnswers.has_more;
+        page++;
+    }
+
+    return allAnswers;
+}
+
+async function fetchAllQuestions(soAnswers) {
+
+    const chunkSize = 25;
+    const questionIds = [];
+    let allQuestions = [];
+
+    for (const answer of soAnswers) {
+        questionIds.push(answer.question_id);
+    }
+
+    for (let i = 0; i < questionIds.length; i += chunkSize) {
+        const chunk = questionIds.slice(i, i + chunkSize);
+        let soQuestion = await got.get(`https://api.stackexchange.com/2.3/questions/${chunk.join(';')}?order=desc&sort=activity&site=stackoverflow&filter=withbody`)
+            .then((res) => JSON.parse(res.body))
+            .catch(err => {
+                console.log("Error " + err);
+                throw err;
+            });
+
+        //throttling for api
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        for (const item of soQuestion.items) {
+            allQuestions.push(item)
+        }
+    }
+
+    return allQuestions.reduce((acc, obj) => {
+        acc[obj.question_id] = obj;
+        return acc;
+    }, {});
 }
 
 function copyBannerImage(inputFile, targetProjectFileBanner) {
@@ -80,44 +138,21 @@ function copyBannerImage(inputFile, targetProjectFileBanner) {
 }
 
 function createMarkdown(body) {
-    function deEscape(content) {
-        const escapes = [
-            [/\\`/g, '`'],
-            [/\\\[/g, '['],
-            [/\\]/g, ']'],
-            [/\\>/g, '>'],
-            [/\\_/g, '_']
-        ];
-
-        for (let escapeRuleArrayIndex in escapes) {
-            content = content.replace(escapes[escapeRuleArrayIndex][0], escapes[escapeRuleArrayIndex][1])
-        }
-        return content;
-    }
-
     function correctHtml(body) {
         return body.replace(/<pre[^>]*>\s*<code>/g, '<pre>').replace(/<\/code>\s*<\/pre>/g, '</pre>');
     }
 
     let turndownService = new TurndownService({preformattedCode: false})
-
-    turndownService.addRule('codeBlockFormat', {
-        filter: ['pre'],
-        replacement: function (content) {
-            return '\n```\n' + deEscape(content) + '\n```\n'
-        }
-    }).addRule('codeFormat', {
-        filter: ['code'],
-        replacement: function (content) {
-            return ' `' + content + '` '
-        }
-    });
+    turndownService.use(strikethrough)
+    turndownService.use(tables)
+    turndownService.use(taskListItems)
+    turndownService.use(customTurnDownPlugin);
 
     body = correctHtml(body);
     return turndownService.turndown(body);
 }
 
-function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle) {
+function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle, answerLink) {
     let meta = '---\n';
     meta += "title: '" + soQuestion.title + "'\n"
     meta += "date: " + new Date(soAnswers.creation_date * 1000).toISOString().split("T")[0] + "\n"
@@ -129,7 +164,7 @@ function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle) {
     }
 
     meta += "lastfetch: " + new Date().toISOString() + "\n"
-    //meta += "description: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
+    meta += "description: '" + soQuestion.title + "'\n"
     //meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
     meta += "slug: " + safeTitle + "\n"
     meta += "tags: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"
@@ -148,6 +183,38 @@ function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle) {
     meta += "soQuestionId: " + soAnswers.question_id + "\n"
     meta += "soAnswerId: " + soAnswers.answer_id + "\n"
     meta += "soAnswerLicense: " + soAnswers.content_license + "\n"
+    meta += "soAnswerLink: " + answerLink + "\n"
     meta += "---\n"
     return meta;
+}
+
+function createBannerText(answerLink, questionLink) {
+    return `\n{{< alert "stack-overflow" >}} This was originally posted as an [answer](${answerLink}) to this [question](${questionLink})  on stackoverflow.com{{< /alert >}}\n\n`;
+}
+
+async function fetchAndReplaceImages(markdownContent, targetProjectDir) {
+
+    function getExtension(imageUrl) {
+        return imageUrl.split('.').pop();
+    }
+
+    function regExpQuote(str) {
+        return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+    }
+
+    const matches = [...markdownContent.matchAll(/!\[[^\]]*\]\((?<filename>.*?)(?=\"|\))(?<optionalpart>\".*\")?\)/g)];
+
+    for (const i in matches) {
+        const imageUrl = matches[i][1];
+
+        const imageFileName = "so_" + crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 24) + "." + getExtension(imageUrl);
+
+        console.log("\tDownloading post image: " + imageUrl + " to " + imageFileName);
+
+        await got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + "/" + imageFileName))
+
+        markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), "g"), imageFileName)
+    }
+
+    return markdownContent;
 }

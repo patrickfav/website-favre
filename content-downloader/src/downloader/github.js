@@ -77,6 +77,9 @@ async function downloadReleases(projectName, github_user, gotHeaders) {
     let releases = await got.get(releaseUrl, gotHeaders)
         .then(result => JSON.parse(result.body));
 
+    //throttling for api
+    await new Promise(resolve => setTimeout(resolve, 500));
+
     if(releases && releases.length > 0) {
         return releases
             .filter(element => element.draft !== true && element.prerelease !== true)

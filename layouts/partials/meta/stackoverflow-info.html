@@ -1,14 +1,14 @@
-<span class="so-info">
+<span class="custom-info">
  <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "stack-overflow" }}</a>
 </span>
 
 <span class="px-2 text-primary-500">&middot;</span>
-<span class="so-info">
-  {{ partial "icon.html" "caret-up-solid"}} {{ .Params.soScore }} Upvotes
+<span class="custom-info">
+  <a href="{{ .Params.soAnswerLink }}" rel="noopener"> {{ partial "icon.html" "caret-up-solid"}} {{ .Params.soScore }} Upvotes</a>
 </span>
 
 <span class="px-2 text-primary-500">&middot;</span>
-<span class="so-info">
+<span class="custom-info">
   {{ partial "icon.html" "eye-solid" }} {{ div .Params.soViews 1000}}k Views
 </span>
 
