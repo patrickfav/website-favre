@@ -8,6 +8,7 @@ showReadingTime: false
 showTaxonomies: false
 showAuthor: false
 showPagination: false
+feature: 'banner*'
 ---
 
 This privacy policy will explain how `favr.dev` uses the personal data we collect from you when you use our website.
