@@ -39,7 +39,12 @@ jobs:
           retry_wait_seconds: 60
           max_attempts: 3
           command: ${{ env.WORKING_DIR }}/bin/hugo-content-downloader
-
+      - uses: actions/cache@v3
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
