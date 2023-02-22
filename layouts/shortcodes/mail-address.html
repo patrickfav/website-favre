@@ -1,10 +1,17 @@
 {{ $mail := printf "%s" (.Get "mailto" )  }}
+
 {{ $seed := now.Unix  }}
 {{ $randomId := mod (add (mul 13 $seed) 97) 4000000 | md5 }}
 {{ $randomPosition := index (shuffle (seq (sub (len $mail) 1))) 0 }}
-{{ $mailLabel := print (substr $mail 0 $randomPosition ) "<span id=\"mo_" $randomId "\">null</span>" (substr $mail $randomPosition (sub (len $mail) 1) ) | base64Encode }}
-{{ $base64Mail := $mail | base64Encode }}
 
+{{ $randomWords := slice "f" "g" "h" "i" "j" "k" "l" "m" "we" "me" "us" "up" "so" "by" "if" "it" "at" "am" "an" "be" "do" "bag" "bat" "bit" "bet" "bun" "bus" "but" "dot" "duh" "dip" "dig" "dim" "den" "did" "fit" "fan" "fun" "fin" }}
+{{ $randomWordsShuffle := shuffle $randomWords }}
+{{ $randomWord1 := index $randomWordsShuffle 0 }}
+{{ $randomWord2 := index $randomWordsShuffle 1 }}
+{{ $randomWord3 := index $randomWordsShuffle 2 }}
+
+{{ $mailLabel := print (substr $mail 0 $randomPosition ) "<span id=\"mo_" $randomId "\">" $randomWord1 "" $randomWord2 "" $randomWord3 "</span>" (substr $mail $randomPosition (sub (len $mail) 1) ) | base64Encode }}
+{{ $base64Mail := $mail | base64Encode }}
 
 <style>span#mo_{{ $randomId }} { display:none; }</style>
 <a href='#'
