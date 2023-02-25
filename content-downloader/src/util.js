@@ -1,40 +1,44 @@
-import {highlightedCodeBlock, strikethrough, tables} from "turndown-plugin-gfm";
+import crypto from "crypto";
 
 export function escapeFrontMatterText(title) {
     return title.replace(/'/g, "`").replace(/\n/g, " ").replace(/\r/g, "");
 }
-export function escapeForFileName(name, date) {
+export function escapeForFileName(name, date, stableId) {
     const escaped = encodeURI(
         name
-            .replace(/\s+/g, '-')
-            .replace(/\//g, '_')
-            .replace(/:/g, '_')
-            .replace(/&#39;/g, '') //Apostroph
-            .replace(/'/g, '')
             .replace(/&#x2026;/g, '_') //Horizontal Ellipsis
-            .replace(/\./g, '')
-            .replace(/…/g, '_')
-            .replace(/\[/g, '_')
-            .replace(/]/g, '_')
-            .replace(/\?/g, '')
-            .replace(/#/g, '_')
-            .replace(/%/g, '_')
-            .replace(/&/g, '_')
-            .replace(/\*/g, '')
+            .replace(/&#39;/g, '') //Apostroph
             .replace(/!/g, '')
             .replace(/\$/g, '')
             .replace(/,/g, '')
             .replace(/;/g, '')
-            .replace(/-+/g, '_')
-            .replace(/-+/g, '-')
+            .replace(/\*/g, '')
+            .replace(/'/g, '')
+            .replace(/\./g, '')
+            .replace(/\?/g, '')
+            .replace(/\//g, '_')
+            .replace(/:/g, '_')
+            .replace(/…/g, '_')
+            .replace(/\[/g, '_')
+            .replace(/]/g, '_')
+            .replace(/#/g, '_')
+            .replace(/%/g, '_')
+            .replace(/&/g, '_')
+            .replace(/_+/g, '_')
+            .replace(/\s+/g, '-')
+            .replace(/\+/g, '-')
             .replace(/_-/g, '-')
             .replace(/-_/g, '-')
+            .replace(/-+/g, '-')
     ).toLowerCase();
     return {
         safeName: escaped,
         safeNameWithDate: date.toISOString().split("T")[0] + "-" + escaped,
         yearSlashSafeName: date.getFullYear()+"/"+escaped,
-        year: date.getFullYear()
+        permalink: "/l/"+crypto.createHash('sha256')
+            .update(date.toISOString()+"_"+stableId)
+            .digest('hex')
+            .substring(0,12)
     }
 }
 

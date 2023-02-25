@@ -30,7 +30,7 @@ export async function downloadGists(github_user, gistIds, rootDirMd, relOutDir) 
     for (const gistId of gistIds) {
         const gistMeta = gistMetaData.find(p => p.id === gistId);
         const title = shortenToTitle(gistMeta.description);
-        const slug = escapeForFileName(title, new Date(gistMeta.created_at));
+        const slug = escapeForFileName(title, new Date(gistMeta.created_at), gistId);
         console.log(`\tProcessing gist ${title} (${gistMeta.created_at}, ${gistId})`);
 
         const frontMatter = createGistFrontMatter(gistId, gistMeta, title, slug);
@@ -106,6 +106,7 @@ function createGistFrontMatter(gistId, gistMeta, title, slug) {
     meta += "lastfetch: " + new Date().toISOString() + "\n";
     meta += "description: '" + escapeFrontMatterText(gistMeta.description) + "'\n";
     meta += "summary: '" + escapeFrontMatterText(gistMeta.description) + "'\n";
+    meta += "aliases: ["+ slug.permalink +"]\n";
     meta += "slug: " + slug.yearSlashSafeName +"\n";
     meta += "tags: [" + tags.map(m => '"' + m + '"').join(", ") + "]\n";
     meta += "keywords: [" + tags.map(m => '"' + m + '"').join(", ") + "]\n";

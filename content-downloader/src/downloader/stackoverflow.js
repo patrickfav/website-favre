@@ -32,7 +32,7 @@ export async function downloadStackOverflowPosts(soUser, rootDirMd, relOutDir) {
             continue;
         }
 
-        const slug = escapeForFileName(question.title, new Date(answer.creation_date * 1000))
+        const slug = escapeForFileName(question.title, new Date(answer.creation_date * 1000), answer.answer_id)
         const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
         const targetProjectDir = targetRootDir + "/" + slug.safeNameWithDate;
         const frontMatter = createStackOverflowFrontMatter(answer, question, slug, answerLink);
@@ -160,6 +160,7 @@ function createStackOverflowFrontMatter(soAnswers, soQuestion, slug, answerLink)
     meta += "lastfetch: " + new Date().toISOString() + "\n"
     meta += "description: '" + escapeFrontMatterText(soQuestion.title) + "'\n"
     //meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
+    meta += "aliases: ["+ slug.permalink +"]\n";
     meta += "slug: " + slug.yearSlashSafeName + "\n"
     meta += "tags: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"

@@ -7,7 +7,7 @@ import {githubDownloaderEnabled} from "../confg";
 import {escapeForFileName, escapeFrontMatterText} from "../util";
 
 export async function downloadGithubProjects(github_user, github_projects, rootDirMd, relOutDir) {
-    if(githubDownloaderEnabled === false) {
+    if (githubDownloaderEnabled === false) {
         console.log("Github Downloader disabled");
         return;
     }
@@ -26,7 +26,7 @@ export async function downloadGithubProjects(github_user, github_projects, rootD
         console.log("Processing github project " + projectName);
 
         let githubMetaForProject = githubMetaData.find(p => p.name === projectName);
-        const slug = escapeForFileName(projectName, new Date(githubMetaForProject.created_at));
+        const slug = escapeForFileName(projectName, new Date(githubMetaForProject.created_at), githubMetaForProject.id);
 
         const targetProjectDir = targetRootDir + "/" + slug.safeNameWithDate;
         if (!fs.existsSync(targetProjectDir)) {
@@ -44,7 +44,7 @@ export async function downloadGithubProjects(github_user, github_projects, rootD
 function createGotHttpHeaders() {
     const githubToken = process.env.GITHUB_TOKEN || undefined;
 
-    if(githubToken) {
+    if (githubToken) {
         return {
             headers: {
                 'User-Agent': 'my-app/1.0.0'
@@ -54,7 +54,7 @@ function createGotHttpHeaders() {
     return {};
 }
 
-async function downloadProjectImage(projectName, github_user, targetProjectDir, gotHeaders) {
+async function downloadProjectImage(projectName, github_user, targetProjectDir) {
     //parse social preview from html content
     let socialPreviewImageUrl = await got.get('https://github.com/' + github_user + '/' + projectName)
         .then(result => result.body)
@@ -72,7 +72,7 @@ async function downloadProjectImage(projectName, github_user, targetProjectDir, 
 
 async function downloadReleases(projectName, github_user, gotHeaders) {
     const releaseUrl = `https://api.github.com/repos/${github_user}/${projectName}/releases`;
-    console.log("\tDownloading releases info "+releaseUrl);
+    console.log("\tDownloading releases info " + releaseUrl);
 
     let releases = await got.get(releaseUrl, gotHeaders)
         .then(result => JSON.parse(result.body));
@@ -80,10 +80,12 @@ async function downloadReleases(projectName, github_user, gotHeaders) {
     //throttling for api
     await new Promise(resolve => setTimeout(resolve, 500));
 
-    if(releases && releases.length > 0) {
+    if (releases && releases.length > 0) {
         return releases
             .filter(element => element.draft !== true && element.prerelease !== true)
-            .sort((a,b) => { b.published_at.localeCompare(a.published_at); })
+            .sort((a, b) => {
+                b.published_at.localeCompare(a.published_at);
+            })
             .reverse()
             .pop();
     }
@@ -172,6 +174,7 @@ function createGithubFrontMatter(projectName, githubMeta, releaseMeta, slug) {
     meta += "lastfetch: " + new Date().toISOString() + "\n"
     meta += "description: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
     meta += "summary: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
+    meta += "aliases: ["+ slug.permalink +"]\n";
     meta += "slug: " + slug.yearSlashSafeName + "\n"
     meta += "tags: [" + reducedTags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + githubTags.map(m => '"' + m + '"').join(", ") + "]\n"
@@ -183,7 +186,7 @@ function createGithubFrontMatter(projectName, githubMeta, releaseMeta, slug) {
     meta += "githubStars: " + githubMeta.stargazers_count + "\n"
     meta += "githubForks: " + githubMeta.forks_count + "\n"
     meta += "githubLanguage: " + githubMeta.language + "\n"
-    if(releaseMeta) {
+    if (releaseMeta) {
         meta += "githubLatestVersion: " + releaseMeta.tag_name + "\n"
         meta += "githubLatestVersionDate: " + releaseMeta.published_at + "\n"
         meta += "githubLatestVersionUrl: " + releaseMeta.html_url + "\n"

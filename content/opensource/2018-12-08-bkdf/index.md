@@ -2,9 +2,10 @@
 title: 'bkdf'
 date: 2018-12-08
 lastmod: 2023-02-12
-lastfetch: 2023-02-25T13:32:31.558Z
+lastfetch: 2023-02-25T14:25:33.699Z
 description: 'BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation'
 summary: 'BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation'
+aliases: [/l/34bc865a6898]
 slug: 2018/bkdf
 tags: ["bcrypt", "cryptography", "hkdf", "java"]
 keywords: ["bcrypt", "cryptography", "hkdf", "java", "kdf", "password", "security"]

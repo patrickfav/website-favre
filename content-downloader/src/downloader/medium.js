@@ -11,7 +11,7 @@ import {customTurnDownPlugin, escapeForFileName, escapeFrontMatterText} from "..
 import {strikethrough, tables, taskListItems} from "turndown-plugin-gfm";
 
 export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
-    if(mediumDownloaderEnabled === false) {
+    if (mediumDownloaderEnabled === false) {
         console.log("Medium Downloader disabled");
         return;
     }
@@ -31,7 +31,7 @@ export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
         const articleInfo = await getArticleInfo(post);
 
         const title = articleInfo.title;
-        const slug = escapeForFileName(title, new Date(articleInfo.firstPublishedAt))
+        const slug = escapeForFileName(title, new Date(articleInfo.firstPublishedAt), articleInfo.id)
 
         console.log("\tFound article " + title + "(" + slug.safeNameWithDate + ") updated at " + new Date(articleInfo.latestPublishedAt).toISOString());
 
@@ -145,6 +145,7 @@ function createFrontMatter(articleInfo, slug) {
     meta += "lastfetch: " + new Date().toISOString() + "\n"
     meta += "summary: '" + escapeFrontMatterText(articleInfo.previewContent.subtitle) + "'\n"
     meta += "description: '" + escapeFrontMatterText(articleInfo.previewContent.subtitle) + "'\n"
+    meta += "aliases: ["+ slug.permalink +"]\n";
     meta += "slug: " + slug.yearSlashSafeName + "\n"
     meta += "tags: [" + articleTopics.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + articleTags.map(m => '"' + m + '"').join(", ") + "]\n"
