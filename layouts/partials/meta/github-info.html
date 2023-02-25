@@ -2,9 +2,10 @@
  <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "github" }}</a>
 </span>
 <span class="px-2 text-primary-500">&middot;</span>
-<time datetime="{{ . }}">
+<time datetime='{{ .Params.date | time.Format "2006-01-02" }}'>
    {{ .Params.date | time.Format "2006" }}
 </time>
+
 {{ if (.Params.githubLanguage | default false) }}
 <span class="px-2 text-primary-500">&middot;</span>
 <span class="custom-info">
