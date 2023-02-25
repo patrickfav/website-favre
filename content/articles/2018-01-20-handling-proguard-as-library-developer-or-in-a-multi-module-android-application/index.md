@@ -2,7 +2,7 @@
 title: 'Handling Proguard as Library Developer or in a Multi-Module Android Application'
 date: 2018-01-20
 lastmod: 2020-04-18
-lastfetch: 2023-02-25T14:25:00.770Z
+lastfetch: 2023-02-25T15:16:11.232Z
 summary: 'When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning&#x2026;'
 description: 'When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning&#x2026;'
 aliases: [/l/dcde047403ea]

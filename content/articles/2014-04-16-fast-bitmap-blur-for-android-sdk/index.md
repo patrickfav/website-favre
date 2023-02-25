@@ -2,7 +2,7 @@
 title: 'Fast Bitmap Blur For Android SDK'
 date: 2014-04-16
 lastmod: 2019-09-15
-lastfetch: 2023-02-25T14:24:44.023Z
+lastfetch: 2023-02-25T15:15:53.426Z
 description: 'Fast Bitmap Blur For Android SDK'
 aliases: [/l/72ccc89dd238]
 slug: 2014/fast-bitmap-blur-for-android-sdk

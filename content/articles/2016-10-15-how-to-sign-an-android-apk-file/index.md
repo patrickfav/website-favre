@@ -2,7 +2,7 @@
 title: 'How to sign an android apk file'
 date: 2016-10-15
 lastmod: 2017-05-23
-lastfetch: 2023-02-25T14:24:44.084Z
+lastfetch: 2023-02-25T15:15:53.465Z
 description: 'How to sign an android apk file'
 aliases: [/l/489cf26e57da]
 slug: 2016/how-to-sign-an-android-apk-file
@@ -17,7 +17,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/4853011/how-to-sign-an-android-apk-file
 originalContentType: stackoverflow
 soScore: 43
-soViews: 204147
+soViews: 204148
 soIsAccepted: false
 soQuestionId: 4853011
 soAnswerId: 40064199

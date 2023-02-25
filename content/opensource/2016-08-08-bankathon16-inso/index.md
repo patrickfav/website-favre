@@ -2,7 +2,7 @@
 title: 'bankathon16-inso'
 date: 2016-08-08
 lastmod: 2023-01-30
-lastfetch: 2023-02-25T14:25:41.595Z
+lastfetch: 2023-02-25T15:16:56.298Z
 description: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 summary: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 aliases: [/l/6433d7907cd1]

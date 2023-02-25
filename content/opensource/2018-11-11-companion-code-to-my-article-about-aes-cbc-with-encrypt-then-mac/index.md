@@ -2,11 +2,11 @@
 title: 'Snippet: Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 date: 2018-11-11
 lastmod: 2023-02-25
-lastfetch: 2023-02-25T14:24:28.926Z
+lastfetch: 2023-02-25T15:15:37.748Z
 description: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 summary: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 aliases: [/l/4bca1bf56af6]
-slug: 2018/companion-code-to-my-article-about-aes+cbc-with-encrypt-then-mac
+slug: 2018/companion-code-to-my-article-about-aes-cbc-with-encrypt-then-mac
 tags: ["Java"]
 keywords: ["Java"]
 alltags: ["Java"]

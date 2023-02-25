@@ -2,7 +2,7 @@
 title: 'Quality of Image after resize very low -- Java'
 date: 2016-03-30
 lastmod: 2017-05-23
-lastfetch: 2023-02-25T14:24:44.111Z
+lastfetch: 2023-02-25T15:15:53.486Z
 description: 'Quality of Image after resize very low -- Java'
 aliases: [/l/50bf3eedf80d]
 slug: 2016/quality-of-image-after-resize-very-low-java

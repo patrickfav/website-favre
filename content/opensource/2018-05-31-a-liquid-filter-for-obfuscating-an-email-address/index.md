@@ -2,7 +2,7 @@
 title: 'Snippet: A Liquid Filter for obfuscating an Email Address'
 date: 2018-05-31
 lastmod: 2023-02-25
-lastfetch: 2023-02-25T14:24:28.985Z
+lastfetch: 2023-02-25T15:15:37.808Z
 description: 'A Liquid Filter for obfuscating an Email Address (can be used with Jekyll aswell).'
 summary: 'A Liquid Filter for obfuscating an Email Address (can be used with Jekyll aswell).'
 aliases: [/l/432f03be0c0a]

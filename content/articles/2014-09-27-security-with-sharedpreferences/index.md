@@ -2,7 +2,7 @@
 title: 'Security with SharedPreferences'
 date: 2014-09-27
 lastmod: 2020-06-20
-lastfetch: 2023-02-25T14:24:44.091Z
+lastfetch: 2023-02-25T15:15:53.471Z
 description: 'Security with SharedPreferences'
 aliases: [/l/48e50c1319e0]
 slug: 2014/security-with-sharedpreferences
