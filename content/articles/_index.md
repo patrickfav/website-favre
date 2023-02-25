@@ -1,6 +1,6 @@
 ---
 title: "Articles"
-description: "Articles I wrote"
+description: "Tech articles I wrote in recent years. Most of them were originally published on different platforms, like Medium or StackOverflow."
 
 cascade:
     type: articles
@@ -12,6 +12,7 @@ cascade:
     showTaxonomies: true
     showWordCount: false
     editAppendPath: false
+    lang: en
     feature: 'none'
     thumbnail: 'feature_*'
 ---
