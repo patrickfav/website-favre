@@ -9,7 +9,7 @@ cascade:
     showSummary: true
     showDate: false
     showReadingTime: false
-    showTaxonomies: true
+    showTaxonomies: false
     editAppendPath: false
     showPagination: false
     lang: en
