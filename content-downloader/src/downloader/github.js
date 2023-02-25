@@ -4,7 +4,7 @@ import got from "got";
 import * as cheerio from "cheerio";
 import crypto from "crypto";
 import {githubDownloaderEnabled} from "../confg";
-import {escapeFrontMatterText} from "../util";
+import {escapeForFileName, escapeFrontMatterText} from "../util";
 
 export async function downloadGithubProjects(github_user, github_projects, rootDirMd, relOutDir) {
     if(githubDownloaderEnabled === false) {
@@ -25,19 +25,18 @@ export async function downloadGithubProjects(github_user, github_projects, rootD
 
         console.log("Processing github project " + projectName);
 
-        const targetProjectDir = targetRootDir + "/" + projectName;
+        let githubMetaForProject = githubMetaData.find(p => p.name === projectName);
+        const slug = escapeForFileName(projectName, new Date(githubMetaForProject.created_at));
 
+        const targetProjectDir = targetRootDir + "/" + slug.safeNameWithDate;
         if (!fs.existsSync(targetProjectDir)) {
             fs.mkdirSync(targetProjectDir, {recursive: true});
         }
 
         await downloadProjectImage(projectName, github_user, targetProjectDir);
-
-        let githubMetaForProject = githubMetaData.find(p => p.name === projectName);
-
         const releaseMeta = await downloadReleases(projectName, github_user, gotHeaders)
+        const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject, releaseMeta, slug);
 
-        const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject, releaseMeta);
         await downloadParseAndSaveReadme(github_user, projectName, githubMetaForProject.default_branch, frontMatter, targetProjectDir);
     }
 }
@@ -128,6 +127,7 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
             imageUrl.startsWith("https://api.bintray.com/packages/") ||
             imageUrl.startsWith("https://travis-ci.com/patrickfav") ||
             imageUrl.startsWith("https://travis-ci.org/patrickfav") ||
+            imageUrl.startsWith("https://app.travis-ci.com/patrickfav/") ||
             imageUrl.startsWith("https://www.javadoc.io/badge") ||
             imageUrl.startsWith("https://coveralls.io/repos/github") ||
             imageUrl.startsWith("https://img.shields.io/github/") ||
@@ -160,7 +160,7 @@ async function removeBadgesAndDownloadImages(markdownContent, github_user, proje
     return markdownContent;
 }
 
-function createGithubFrontMatter(projectName, githubMeta, releaseMeta) {
+function createGithubFrontMatter(projectName, githubMeta, releaseMeta, slug) {
     let githubTags = githubMeta.topics ? githubMeta.topics.slice() : [];
     let allTags = githubTags.concat(["github", githubMeta.language]);
     let reducedTags = githubTags.length > 5 ? githubTags.slice(0, 4) : githubTags.slice();
@@ -172,7 +172,7 @@ function createGithubFrontMatter(projectName, githubMeta, releaseMeta) {
     meta += "lastfetch: " + new Date().toISOString() + "\n"
     meta += "description: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
     meta += "summary: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
-    meta += "slug: " + projectName + "\n"
+    meta += "slug: " + slug.yearSlashSafeName + "\n"
     meta += "tags: [" + reducedTags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + githubTags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "alltags: [" + allTags.map(m => '"' + m + '"').join(", ") + "]\n"

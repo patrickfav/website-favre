@@ -2,10 +2,10 @@
 title: 'Snippet: Simple Sigma.js AngularJs Directive'
 date: 2014-10-02
 lastmod: 2023-02-25
-lastfetch: 2023-02-25T13:15:23.613Z
+lastfetch: 2023-02-25T13:31:20.862Z
 description: 'Simple Sigma.js AngularJs Directive: Since I did not find any angularjs directive for angularjs I created a little simple of my own. This is by no means a ready-for-all solutions, but all the features I needed at the time; it is easily extended to your needs and maybe sometimes somebody will do a full-blown directive for sigma.js  Tested: angularjs 1.2.25, sigma.js 1.0.3 (should work with angularjs 1.3).'
 summary: 'Simple Sigma.js AngularJs Directive: Since I did not find any angularjs directive for angularjs I created a little simple of my own. This is by no means a ready-for-all solutions, but all the features I needed at the time; it is easily extended to your needs and maybe sometimes somebody will do a full-blown directive for sigma.js  Tested: angularjs 1.2.25, sigma.js 1.0.3 (should work with angularjs 1.3).'
-slug: 2014-10-02-simple_sigmajs_angularjs_directive
+slug: 2014/simple_sigmajs_angularjs_directive
 tags: ["JavaScript", "HTML"]
 keywords: ["JavaScript", "HTML"]
 alltags: ["JavaScript", "HTML"]

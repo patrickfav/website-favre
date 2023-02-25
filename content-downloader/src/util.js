@@ -32,7 +32,9 @@ export function escapeForFileName(name, date) {
     ).toLowerCase();
     return {
         safeName: escaped,
-        safeNameWithDate: date.toISOString().split("T")[0] + "-" + escaped
+        safeNameWithDate: date.toISOString().split("T")[0] + "-" + escaped,
+        yearSlashSafeName: date.getFullYear()+"/"+escaped,
+        year: date.getFullYear()
     }
 }
 

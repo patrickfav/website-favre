@@ -7,12 +7,13 @@ import {escapeForFileName, escapeFrontMatterText, shortenToTitle} from "../util"
 import {gistbannerSvg} from "../svg";
 
 
-
 export async function downloadGists(github_user, gistIds, rootDirMd, relOutDir) {
     if (gistDownloaderEnabled === false) {
         console.log("Gist Downloader disabled");
         return;
     }
+
+    console.log("Start Processing Gists");
 
     const targetRootDir = rootDirMd + relOutDir
 
@@ -105,7 +106,7 @@ function createGistFrontMatter(gistId, gistMeta, title, slug) {
     meta += "lastfetch: " + new Date().toISOString() + "\n";
     meta += "description: '" + escapeFrontMatterText(gistMeta.description) + "'\n";
     meta += "summary: '" + escapeFrontMatterText(gistMeta.description) + "'\n";
-    meta += "slug: " + slug.safeNameWithDate + "\n";
+    meta += "slug: " + slug.yearSlashSafeName +"\n";
     meta += "tags: [" + tags.map(m => '"' + m + '"').join(", ") + "]\n";
     meta += "keywords: [" + tags.map(m => '"' + m + '"').join(", ") + "]\n";
     meta += "alltags: [" + tags.map(m => '"' + m + '"').join(", ") + "]\n";

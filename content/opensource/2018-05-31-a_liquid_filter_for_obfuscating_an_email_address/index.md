@@ -2,10 +2,10 @@
 title: 'Snippet: A Liquid Filter for obfuscating an Email Address'
 date: 2018-05-31
 lastmod: 2023-02-25
-lastfetch: 2023-02-25T13:15:23.536Z
+lastfetch: 2023-02-25T13:31:20.788Z
 description: 'A Liquid Filter for obfuscating an Email Address (can be used with Jekyll aswell).'
 summary: 'A Liquid Filter for obfuscating an Email Address (can be used with Jekyll aswell).'
-slug: 2018-05-31-a_liquid_filter_for_obfuscating_an_email_address
+slug: 2018/a_liquid_filter_for_obfuscating_an_email_address
 tags: ["Markdown", "Ruby"]
 keywords: ["Markdown", "Ruby"]
 alltags: ["Markdown", "Ruby"]

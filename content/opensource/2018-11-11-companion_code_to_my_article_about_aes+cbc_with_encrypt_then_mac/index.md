@@ -2,10 +2,10 @@
 title: 'Snippet: Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 date: 2018-11-11
 lastmod: 2023-02-25
-lastfetch: 2023-02-25T13:15:23.467Z
+lastfetch: 2023-02-25T13:31:20.718Z
 description: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 summary: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
-slug: 2018-11-11-companion_code_to_my_article_about_aes+cbc_with_encrypt_then_mac
+slug: 2018/companion_code_to_my_article_about_aes+cbc_with_encrypt_then_mac
 tags: ["Java"]
 keywords: ["Java"]
 alltags: ["Java"]

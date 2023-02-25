@@ -2,10 +2,10 @@
 title: 'Snippet: Java Authenticated Encryption with AES and GCM.'
 date: 2020-04-19
 lastmod: 2023-02-25
-lastfetch: 2023-02-25T13:15:23.424Z
+lastfetch: 2023-02-25T13:31:20.680Z
 description: 'Java Authenticated Encryption with AES and GCM.'
 summary: 'Java Authenticated Encryption with AES and GCM.'
-slug: 2020-04-19-java_authenticated_encryption_with_aes_and_gcm
+slug: 2020/java_authenticated_encryption_with_aes_and_gcm
 tags: ["Java"]
 keywords: ["Java"]
 alltags: ["Java"]

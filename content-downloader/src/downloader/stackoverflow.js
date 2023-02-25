@@ -7,6 +7,7 @@ import {strikethrough, tables, taskListItems} from "turndown-plugin-gfm";
 import {customTurnDownPlugin, escapeForFileName, escapeFrontMatterText} from "../util";
 import wordsCount from "words-count";
 import crypto from "crypto";
+import {sobannerSvg} from "../svg";
 
 export async function downloadStackOverflowPosts(soUser, rootDirMd, relOutDir) {
     if (stackoverflowEnabled === false) {
@@ -31,10 +32,10 @@ export async function downloadStackOverflowPosts(soUser, rootDirMd, relOutDir) {
             continue;
         }
 
-        const escaped = escapeForFileName(question.title, new Date(answer.creation_date * 1000))
+        const slug = escapeForFileName(question.title, new Date(answer.creation_date * 1000))
         const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
-        const targetProjectDir = targetRootDir + "/" + escaped.safeNameWithDate;
-        const frontMatter = createStackOverflowFrontMatter(answer, question, escaped.safeNameWithDate, answerLink);
+        const targetProjectDir = targetRootDir + "/" + slug.safeNameWithDate;
+        const frontMatter = createStackOverflowFrontMatter(answer, question, slug, answerLink);
         const bannerText = createBannerText(answerLink, question.link);
         const markdown = createMarkdown(answer.body);
 
@@ -145,7 +146,7 @@ function createMarkdown(body) {
     return turndownService.turndown(body);
 }
 
-function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle, answerLink) {
+function createStackOverflowFrontMatter(soAnswers, soQuestion, slug, answerLink) {
     let meta = '---\n';
     meta += "title: '" + escapeFrontMatterText(soQuestion.title) + "'\n"
     meta += "date: " + new Date(soAnswers.creation_date * 1000).toISOString().split("T")[0] + "\n"
@@ -159,7 +160,7 @@ function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle, answer
     meta += "lastfetch: " + new Date().toISOString() + "\n"
     meta += "description: '" + escapeFrontMatterText(soQuestion.title) + "'\n"
     //meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
-    meta += "slug: " + safeTitle + "\n"
+    meta += "slug: " + slug.yearSlashSafeName + "\n"
     meta += "tags: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "alltags: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"

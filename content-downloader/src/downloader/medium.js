@@ -31,20 +31,20 @@ export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
         const articleInfo = await getArticleInfo(post);
 
         const title = articleInfo.title;
-        let escaped = escapeForFileName(title, new Date(articleInfo.firstPublishedAt))
+        const slug = escapeForFileName(title, new Date(articleInfo.firstPublishedAt))
 
-        console.log("\tFound article " + title + "(" + escaped.safeNameWithDate + ") updated at " + new Date(articleInfo.latestPublishedAt).toISOString());
+        console.log("\tFound article " + title + "(" + slug.safeNameWithDate + ") updated at " + new Date(articleInfo.latestPublishedAt).toISOString());
 
-        const targetProjectDir = targetRootDir + "/" + escaped.safeNameWithDate;
+        const targetProjectDir = targetRootDir + "/" + slug.safeNameWithDate;
 
         if (!fs.existsSync(targetProjectDir)) {
             fs.mkdirSync(targetProjectDir, {recursive: true});
         }
 
-        await downloadProjectImage(articleInfo, escaped.safeName, targetProjectDir)
+        await downloadProjectImage(articleInfo, slug.safeName, targetProjectDir)
 
         const targetProjectFile = targetProjectDir + "/index.md";
-        const frontMatter = createFrontMatter(articleInfo, escaped.safeNameWithDate);
+        const frontMatter = createFrontMatter(articleInfo, slug);
         const markdown = await fetchAndReplaceImages(post.markdown, targetProjectDir)
         await StringStream.from(frontMatter + markdown)
             .pipe(fs.createWriteStream(targetProjectFile));
@@ -131,7 +131,7 @@ async function getArticleInfo(post) {
     return JSON.parse(json)[`Post:${post.articleId}`];
 }
 
-function createFrontMatter(articleInfo, safeArticleTitle) {
+function createFrontMatter(articleInfo, slug) {
     const dateIso8601 = new Date(articleInfo.firstPublishedAt).toISOString().split("T")[0];
 
     let articleTags = articleInfo.tags.map(m => m['__ref'].replace(/Tag:/g, "")).slice();
@@ -145,7 +145,7 @@ function createFrontMatter(articleInfo, safeArticleTitle) {
     meta += "lastfetch: " + new Date().toISOString() + "\n"
     meta += "summary: '" + escapeFrontMatterText(articleInfo.previewContent.subtitle) + "'\n"
     meta += "description: '" + escapeFrontMatterText(articleInfo.previewContent.subtitle) + "'\n"
-    meta += "slug: " + safeArticleTitle + "\n"
+    meta += "slug: " + slug.yearSlashSafeName + "\n"
     meta += "tags: [" + articleTopics.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + articleTags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "alltags: [" + allTags.map(m => '"' + m + '"').join(", ") + "]\n"
