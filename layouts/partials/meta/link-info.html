@@ -1,5 +1,4 @@
 {{ $url := urls.Parse (print .Params.externalUrl) }}
-<span class="px-2 text-primary-500">&middot;</span>
 <span class="custom-info">
   <a href="{{ $url.Scheme }}://{{ $url.Host }}" rel="noopener">{{ $url.Host }}</a>
 </span>
