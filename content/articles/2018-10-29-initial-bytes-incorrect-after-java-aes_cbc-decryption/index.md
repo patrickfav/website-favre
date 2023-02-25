@@ -2,7 +2,7 @@
 title: 'Initial bytes incorrect after Java AES/CBC decryption'
 date: 2018-10-29
 lastmod: 2020-04-19
-lastfetch: 2023-02-21T22:38:44.653Z
+lastfetch: 2023-02-25T10:30:39.785Z
 description: 'Initial bytes incorrect after Java AES/CBC decryption'
 slug: 2018-10-29-initial-bytes-incorrect-after-java-aes_cbc-decryption
 tags: ["java", "encryption", "aes"]
@@ -16,7 +16,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/15554296/initial-bytes-incorrect-after-java-aes-cbc-decryption
 originalContentType: stackoverflow
 soScore: 83
-soViews: 484308
+soViews: 484332
 soIsAccepted: false
 soQuestionId: 15554296
 soAnswerId: 53051612

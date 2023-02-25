@@ -2,7 +2,7 @@
 title: 'Security with SharedPreferences'
 date: 2014-09-27
 lastmod: 2020-06-20
-lastfetch: 2023-02-21T22:38:44.674Z
+lastfetch: 2023-02-25T10:30:39.803Z
 description: 'Security with SharedPreferences'
 slug: 2014-09-27-security-with-sharedpreferences
 tags: ["android", "sharedpreferences"]
@@ -16,7 +16,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/26076292/security-with-sharedpreferences
 originalContentType: stackoverflow
 soScore: 33
-soViews: 10074
+soViews: 10081
 soIsAccepted: true
 soQuestionId: 26076292
 soAnswerId: 26077852

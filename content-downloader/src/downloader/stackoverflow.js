@@ -4,11 +4,11 @@ import fs from "fs";
 import {StringStream} from "scramjet";
 import TurndownService from "turndown";
 import {strikethrough, tables, taskListItems} from "turndown-plugin-gfm";
-import {customTurnDownPlugin, escapeForFileName} from "../util";
+import {customTurnDownPlugin, escapeForFileName, escapeFrontMatterText} from "../util";
 import wordsCount from "words-count";
 import crypto from "crypto";
 
-export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
+export async function downloadStackOverflowPosts(soUser, rootDirMd, relOutDir) {
     if (stackoverflowEnabled === false) {
         console.log("Stack Overflow Downloader disabled");
         return;
@@ -49,9 +49,9 @@ export async function downloadStackOverflow(soUser, rootDirMd, relOutDir) {
         }
 
         const targetProjectFile = targetProjectDir + "/index.md";
-        const targetProjectFileBanner = targetProjectDir + "/sobanner.png";
+        const targetProjectFileBanner = targetProjectDir + "/sobanner.svg";
 
-        copyBannerImage("src/data/sobanner.png", targetProjectFileBanner);
+        copyBannerImage(sobannerSvg, targetProjectFileBanner);
 
         const finalMarkdown = await fetchAndReplaceImages(markdown, targetProjectDir)
 
@@ -121,19 +121,12 @@ async function fetchAllQuestions(soAnswers) {
     }, {});
 }
 
-function copyBannerImage(inputFile, targetProjectFileBanner) {
-    fs.readFile(inputFile, (err, data) => {
+function copyBannerImage(svg, targetProjectFileBanner) {
+    fs.writeFile(targetProjectFileBanner, svg, (err) => {
         if (err) {
-            console.error(`Error reading file: ${err}`);
+            console.error(`Error writing file: ${err}`);
             throw err;
         }
-
-        fs.writeFile(targetProjectFileBanner, data, (err) => {
-            if (err) {
-                console.error(`Error writing file: ${err}`);
-                throw err;
-            }
-        });
     });
 }
 
@@ -154,7 +147,7 @@ function createMarkdown(body) {
 
 function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle, answerLink) {
     let meta = '---\n';
-    meta += "title: '" + soQuestion.title + "'\n"
+    meta += "title: '" + escapeFrontMatterText(soQuestion.title) + "'\n"
     meta += "date: " + new Date(soAnswers.creation_date * 1000).toISOString().split("T")[0] + "\n"
 
     if (soAnswers.last_edit_date) {
@@ -164,7 +157,7 @@ function createStackOverflowFrontMatter(soAnswers, soQuestion, safeTitle, answer
     }
 
     meta += "lastfetch: " + new Date().toISOString() + "\n"
-    meta += "description: '" + soQuestion.title + "'\n"
+    meta += "description: '" + escapeFrontMatterText(soQuestion.title) + "'\n"
     //meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
     meta += "slug: " + safeTitle + "\n"
     meta += "tags: [" + soQuestion.tags.map(m => '"' + m + '"').join(", ") + "]\n"

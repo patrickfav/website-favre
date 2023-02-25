@@ -1,0 +1,30 @@
+<span class="custom-info">
+ <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "github" }}</a>
+</span>
+<span class="px-2 text-primary-500">&middot;</span>
+<time datetime="{{ . }}">
+   {{ .Params.date | time.Format "2006" }}
+</time>
+
+{{ if (.Params.gistLanguage | default false) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+  <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" (print "tech-" (lower .Params.gistLanguage)) }} {{ .Params.gistLanguage }}</a>
+</span>
+{{ end }}
+
+{{ if and (.Params.gistComments | default false) (gt .Params.gistComments 0 ) }}
+  <span class="px-2 text-primary-500">&middot;</span>
+  <span class="custom-info">
+    <a href="{{ .Params.gistCommentsUrl }}" rel="noopener">{{ partial "icon.html" "comments-regular" }} {{ .Params.gistComments }} Comments</a>
+  </span>
+{{ end }}
+
+{{ if and (.Params.gistFileCount | default false) (gt .Params.gistFileCount 0 ) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+    {{ partial "icon.html" "file-regular" }} {{ .Params.gistFileCount }} Files
+  </span>
+{{ end }}
+
+{{- /* Trim EOF */ -}}

@@ -7,7 +7,7 @@ import Parser from "rss-parser";
 import TurndownService from "turndown";
 import * as cheerio from "cheerio";
 import {mediumDownloaderEnabled} from "../confg";
-import {customTurnDownPlugin, escapeForFileName} from "../util";
+import {customTurnDownPlugin, escapeForFileName, escapeFrontMatterText} from "../util";
 import {strikethrough, tables, taskListItems} from "turndown-plugin-gfm";
 
 export async function downloadMediumArticles(rootDirMd, relOutDirArticles) {
@@ -139,12 +139,12 @@ function createFrontMatter(articleInfo, safeArticleTitle) {
     let allTags = articleTags.concat(articleTopics).concat(["medium"]);
 
     let meta = '---\n';
-    meta += "title: '" + articleInfo.title.replace(/'/g, "`") + "'\n"
+    meta += "title: '" + escapeFrontMatterText(articleInfo.title) + "'\n"
     meta += "date: " + dateIso8601 + "\n"
     meta += "lastmod: " + new Date(articleInfo.latestPublishedAt).toISOString().split("T")[0] + "\n"
     meta += "lastfetch: " + new Date().toISOString() + "\n"
-    meta += "summary: '" + articleInfo.previewContent.subtitle.replace(/'/g, "`") + "'\n"
-    meta += "description: '" + articleInfo.previewContent.subtitle.replace(/'/g, "`") + "'\n"
+    meta += "summary: '" + escapeFrontMatterText(articleInfo.previewContent.subtitle) + "'\n"
+    meta += "description: '" + escapeFrontMatterText(articleInfo.previewContent.subtitle) + "'\n"
     meta += "slug: " + safeArticleTitle + "\n"
     meta += "tags: [" + articleTopics.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + articleTags.map(m => '"' + m + '"').join(", ") + "]\n"

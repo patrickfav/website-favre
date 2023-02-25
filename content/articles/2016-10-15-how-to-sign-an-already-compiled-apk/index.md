@@ -2,7 +2,7 @@
 title: 'How to Sign an Already Compiled Apk'
 date: 2016-10-15
 lastmod: 2021-12-01
-lastfetch: 2023-02-21T22:38:44.639Z
+lastfetch: 2023-02-25T10:30:39.774Z
 description: 'How to Sign an Already Compiled Apk'
 slug: 2016-10-15-how-to-sign-an-already-compiled-apk
 tags: ["android", "android-install-apk", "apk"]
@@ -16,7 +16,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/10930331/how-to-sign-an-already-compiled-apk
 originalContentType: stackoverflow
 soScore: 121
-soViews: 260977
+soViews: 261282
 soIsAccepted: false
 soQuestionId: 10930331
 soAnswerId: 40064149

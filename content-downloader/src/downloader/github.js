@@ -4,8 +4,9 @@ import got from "got";
 import * as cheerio from "cheerio";
 import crypto from "crypto";
 import {githubDownloaderEnabled} from "../confg";
+import {escapeFrontMatterText} from "../util";
 
-export async function downloadGithubReadme(github_user, github_projects, rootDirMd, relOutDir) {
+export async function downloadGithubProjects(github_user, github_projects, rootDirMd, relOutDir) {
     if(githubDownloaderEnabled === false) {
         console.log("Github Downloader disabled");
         return;
@@ -165,12 +166,12 @@ function createGithubFrontMatter(projectName, githubMeta, releaseMeta) {
     let reducedTags = githubTags.length > 5 ? githubTags.slice(0, 4) : githubTags.slice();
 
     let meta = '---\n';
-    meta += "title: '" + projectName + "'\n"
+    meta += "title: '" + escapeFrontMatterText(projectName) + "'\n"
     meta += "date: " + new Date(githubMeta.created_at).toISOString().split("T")[0] + "\n"
     meta += "lastmod: " + new Date(githubMeta.updated_at).toISOString().split("T")[0] + "\n"
     meta += "lastfetch: " + new Date().toISOString() + "\n"
-    meta += "description: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
-    meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
+    meta += "description: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
+    meta += "summary: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
     meta += "slug: " + projectName + "\n"
     meta += "tags: [" + reducedTags.map(m => '"' + m + '"').join(", ") + "]\n"
     meta += "keywords: [" + githubTags.map(m => '"' + m + '"').join(", ") + "]\n"

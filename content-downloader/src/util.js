@@ -1,14 +1,18 @@
 import {highlightedCodeBlock, strikethrough, tables} from "turndown-plugin-gfm";
 
+export function escapeFrontMatterText(title) {
+    return title.replace(/'/g, "`").replace(/\n/g, " ").replace(/\r/g, "");
+}
 export function escapeForFileName(name, date) {
     const escaped = encodeURI(
         name
-            .replace(/ /g, '-')
+            .replace(/\s+/g, '-')
             .replace(/\//g, '_')
             .replace(/:/g, '_')
             .replace(/&#39;/g, '') //Apostroph
             .replace(/'/g, '')
             .replace(/&#x2026;/g, '_') //Horizontal Ellipsis
+            .replace(/\./g, '')
             .replace(/…/g, '_')
             .replace(/\[/g, '_')
             .replace(/]/g, '_')
@@ -21,10 +25,8 @@ export function escapeForFileName(name, date) {
             .replace(/\$/g, '')
             .replace(/,/g, '')
             .replace(/;/g, '')
-            .replace(/___/g, '_')
-            .replace(/__/g, '_')
-            .replace(/---/g, '-')
-            .replace(/--/g, '-')
+            .replace(/-+/g, '_')
+            .replace(/-+/g, '-')
             .replace(/_-/g, '-')
             .replace(/-_/g, '-')
     ).toLowerCase();
@@ -94,5 +96,29 @@ function deEscape(content) {
         content = content.replace(escapes[escapeRuleArrayIndex][0], escapes[escapeRuleArrayIndex][1])
     }
     return content;
+}
+
+export function shortenToTitle(description) {
+    const maxLength = 80;
+
+    if(description.length <= maxLength) {
+        return description;
+    }
+
+    const indexCut = [
+        description.indexOf(": "),
+        description.indexOf(". "),
+        description.indexOf("; "),
+        description.indexOf(" ("),
+        description.indexOf(" - ")
+    ]
+        .filter(foundIndex => foundIndex > 0)
+        .reduce((a, b) => Math.min(a, b), maxLength+1);
+
+    if(indexCut <= maxLength){
+        return description.substring(0, indexCut);
+    } else {
+        return description.substring(0, maxLength)+"...";
+    }
 }
 

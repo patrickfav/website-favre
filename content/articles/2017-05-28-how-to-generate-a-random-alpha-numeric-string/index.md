@@ -2,7 +2,7 @@
 title: 'How to generate a random alpha-numeric string'
 date: 2017-05-28
 lastmod: 2020-11-12
-lastfetch: 2023-02-21T22:38:44.648Z
+lastfetch: 2023-02-25T10:30:39.781Z
 description: 'How to generate a random alpha-numeric string'
 slug: 2017-05-28-how-to-generate-a-random-alpha-numeric-string
 tags: ["java", "string", "random", "alphanumeric"]
@@ -16,7 +16,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string
 originalContentType: stackoverflow
 soScore: 89
-soViews: 1621539
+soViews: 1621972
 soIsAccepted: false
 soQuestionId: 41107
 soAnswerId: 44227131
