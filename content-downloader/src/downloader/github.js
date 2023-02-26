@@ -12,6 +12,8 @@ export async function downloadGithubProjects (githubUser, githubProjects, rootDi
     return
   }
 
+  console.log('Start Processing GitHub')
+
   const targetRootDir = rootDirMd + relOutDir
 
   const gotHeaders = createGotHttpHeaders()
@@ -35,7 +37,7 @@ export async function downloadGithubProjects (githubUser, githubProjects, rootDi
 
     await downloadProjectImage(projectName, githubUser, targetProjectDir)
     const releaseMeta = await downloadReleases(projectName, githubUser, gotHeaders)
-    const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject, releaseMeta, slug)
+    const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject, releaseMeta, relOutDir, slug)
 
     await downloadParseAndSaveReadme(githubUser, projectName, githubMetaForProject.default_branch, frontMatter, targetProjectDir)
   }
@@ -45,9 +47,10 @@ function createGotHttpHeaders () {
   const githubToken = process.env.GITHUB_TOKEN || undefined
 
   if (githubToken) {
+    console.log('\tUsing Authenticated APIs, token is provided')
     return {
       headers: {
-        'User-Agent': 'my-app/1.0.0'
+        Authentication: `Bearer ${githubToken}`
       }
     }
   }
@@ -159,7 +162,7 @@ async function removeBadgesAndDownloadImages (markdownContent, githubUser, proje
   return markdownContent
 }
 
-function createGithubFrontMatter (projectName, githubMeta, releaseMeta, slug) {
+function createGithubFrontMatter (projectName, githubMeta, releaseMeta, relOutDir, slug) {
   const githubTags = githubMeta.topics ? githubMeta.topics.slice() : []
   const allTags = githubTags.concat(['github', githubMeta.language])
   const reducedTags = githubTags.length > 5 ? githubTags.slice(0, 4) : githubTags.slice()
@@ -171,7 +174,7 @@ function createGithubFrontMatter (projectName, githubMeta, releaseMeta, slug) {
   meta += 'lastfetch: ' + new Date().toISOString() + '\n'
   meta += "description: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
   meta += "summary: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
-  meta += 'aliases: [' + slug.permalink + ']\n'
+  meta += `aliases: ['${slug.permalink}','/${relOutDir}${slug.safeName}']\n`
   meta += 'slug: ' + slug.yearSlashSafeName + '\n'
   meta += 'tags: [' + reducedTags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'keywords: [' + githubTags.map(m => '"' + m + '"').join(', ') + ']\n'

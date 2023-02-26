@@ -53,6 +53,7 @@ function createGotHttpHeaders () {
   const githubToken = process.env.GITHUB_TOKEN || undefined
 
   if (githubToken) {
+    console.log('\tUsing Authenticated APIs, token is provided')
     return {
       headers: {
         Authentication: `Bearer ${githubToken}`

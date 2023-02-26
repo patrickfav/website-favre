@@ -10,8 +10,8 @@ export function cli () {
   const relOutDirArticles = 'articles/'
 
   downloadGists(githubProjectsUser, gistIds, rootDirMd, relOutDirGithub)
+    .then(() => downloadGithubProjects(githubProjectsUser, githubProjects, rootDirMd, relOutDirGithub))
     .then(() => downloadStackOverflowPosts(stackoverflowUserId, rootDirMd, relOutDirArticles))
     .then(() => downloadMediumArticles(rootDirMd, relOutDirArticles))
-    .then(() => downloadGithubProjects(githubProjectsUser, githubProjects, rootDirMd, relOutDirGithub))
     .then(() => console.log('Waiting to finish'))
 }
