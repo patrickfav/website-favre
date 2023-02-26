@@ -7,6 +7,7 @@ import { strikethrough, tables, taskListItems } from 'turndown-plugin-gfm'
 import { customTurnDownPlugin, escapeForFileName, escapeFrontMatterText } from '../util'
 import wordsCount from 'words-count'
 import crypto from 'crypto'
+import summarize from 'text-summarization'
 import { sobannerSvg } from '../svg'
 
 export async function downloadStackOverflowPosts (soUser, rootDirMd, relOutDir) {
@@ -35,7 +36,8 @@ export async function downloadStackOverflowPosts (soUser, rootDirMd, relOutDir) 
     const slug = escapeForFileName(question.title, new Date(answer.creation_date * 1000), answer.answer_id)
     const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
     const targetProjectDir = targetRootDir + '/' + slug.safeNameWithDate
-    const frontMatter = createStackOverflowFrontMatter(answer, question, slug, answerLink)
+    const summary = await createSummary(answer, question)
+    const frontMatter = createStackOverflowFrontMatter(answer, question, summary, slug, answerLink)
     const bannerText = createBannerText(answerLink, question.link)
     const markdown = createMarkdown(answer.body)
 
@@ -144,9 +146,23 @@ function createMarkdown (body) {
   return turndownService.turndown(body)
 }
 
-function createStackOverflowFrontMatter (soAnswers, soQuestion, slug, answerLink) {
+async function createSummary (answer, question) {
+  const summaryQuestion = await summarize({ html: question.body })
+
+  // console.log('Q: ' + JSON.stringify(summaryQuestion, null, 2))
+
+  let summary = ''
+
+  if (summaryQuestion.extractive && summaryQuestion.extractive.length > 0) {
+    summary += 'Question: ' + summaryQuestion.extractive[0]
+  }
+
+  return summary
+}
+
+function createStackOverflowFrontMatter (soAnswers, soQuestion, summary, slug, answerLink) {
   let meta = '---\n'
-  meta += "title: '" + escapeFrontMatterText(soQuestion.title) + "'\n"
+  meta += 'title: \'Q: ' + escapeFrontMatterText(soQuestion.title) + '\'\n'
   meta += 'date: ' + new Date(soAnswers.creation_date * 1000).toISOString().split('T')[0] + '\n'
 
   if (soAnswers.last_edit_date) {
@@ -156,18 +172,18 @@ function createStackOverflowFrontMatter (soAnswers, soQuestion, slug, answerLink
   }
 
   meta += 'lastfetch: ' + new Date().toISOString() + '\n'
-  meta += "description: '" + escapeFrontMatterText(soQuestion.title) + "'\n"
-  // meta += "summary: '" + githubMeta.description.replace(/'/g, "`") + "'\n"
+  meta += 'description: \'' + escapeFrontMatterText(soQuestion.title) + '\'\n'
+  meta += 'summary: \'' + escapeFrontMatterText(summary) + '\'\n'
   meta += 'aliases: [' + slug.permalink + ']\n'
   meta += 'slug: ' + slug.yearSlashSafeName + '\n'
   meta += 'tags: [' + soQuestion.tags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'keywords: [' + soQuestion.tags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'alltags: [' + soQuestion.tags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'categories: ["stackoverflow"]\n'
-  meta += 'showEdit: false \n'
-  meta += 'showSummary: false \n'
-  meta += 'type: stackoverflow \n'
-  meta += "thumbnail: 'sobanner*' \n"
+  meta += 'showEdit: false\n'
+  meta += 'showSummary: true\n'
+  meta += 'type: stackoverflow\n'
+  meta += 'thumbnail: \'sobanner*\' \n'
   meta += 'deeplink: ' + slug.permalink + '\n'
   meta += 'originalContentLink: ' + soQuestion.link + '\n'
   meta += 'originalContentType: stackoverflow\n'
