@@ -25,10 +25,9 @@
     "url": "https://github.com/patrickfav/website-favre.git"
   },
   "dependencies": {
-    "axios": "0.27.2",
     "cheerio": "1.0.0-rc.12",
     "esm": "^3.2.25",
-    "got": "^11.1.2",
+    "got": "^11.8.6",
     "request": "^2.88.2",
     "rss-parser": "3.12.0",
     "scramjet": "^4.29.0",

@@ -1,6 +1,5 @@
 import fs from 'fs'
 import { StringStream } from 'scramjet'
-import axios from 'axios'
 import got from 'got'
 import crypto from 'crypto'
 import Parser from 'rss-parser'
@@ -87,10 +86,8 @@ async function getAllArticles (mediumUserName) {
   console.log('\tDownloading content from feed for ' + mediumUserName)
   const parser = new Parser()
   // https://medium.com/feed/@patrickfav
-  const rssContent = await axios.request({
-    method: 'GET',
-    url: 'https://medium.com/feed/' + mediumUserName
-  }).then(response => parser.parseString(response.data))
+  const rssContent = await got('https://medium.com/feed/' + mediumUserName)
+    .then(response => parser.parseString(response.body))
 
   const postInfo = []
   for (const itemIndex in rssContent.items) {
@@ -105,11 +102,8 @@ async function getAllArticles (mediumUserName) {
 }
 
 async function getArticleInfo (post) {
-  const mediumArticleDom = await axios.request({
-    method: 'GET',
-    url: post.url
-  })
-    .then(response => response.data)
+  const mediumArticleDom = await got(post.url)
+    .then(response => response.body)
     .then(body => cheerio.load(body, { xmlMode: true }))
 
   const json = mediumArticleDom('script')

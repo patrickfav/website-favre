@@ -2,11 +2,8 @@ export const githubDownloaderEnabled = true
 export const gistDownloaderEnabled = true
 
 export const mediumDownloaderEnabled = true
-
 export const stackoverflowEnabled = true
-
 export const stackoverflowUserId = 774398
-
 export const githubProjectsUser = 'patrickfav'
 
 export const gistIds = [
