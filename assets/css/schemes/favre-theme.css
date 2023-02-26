@@ -51,6 +51,6 @@ span.custom-info a:hover {
 }
 
 /* max width of content */
-.max-w-prose, article.max-w-prose, header.max-w-prose, div.max-w-prose, section.max-w-prose {
+.max-w-prose, article.max-w-prose, header.max-w-prose, div.max-w-prose, section.max-w-prose, div.prose {
     max-width: 80ch;
 }
