@@ -1,24 +1,25 @@
 ---
-title: 'Fast Bitmap Blur For Android SDK'
+title: 'Q: Fast Bitmap Blur For Android SDK'
 date: 2014-04-16
 lastmod: 2019-09-15
-lastfetch: 2023-02-26T14:35:33.929Z
+lastfetch: 2023-02-26T18:53:40.307Z
 description: 'Fast Bitmap Blur For Android SDK'
+summary: 'Question: Currently in an Android application that I`m developing I`m looping through the pixels of an image to blur it. - Android Blur Guide 2016...'
 aliases: [/link/fk797xgv]
 slug: 2014/fast-bitmap-blur-for-android-sdk
 tags: ["java", "android", "image-processing", "renderscript"]
 keywords: ["java", "android", "image-processing", "renderscript"]
 alltags: ["java", "android", "image-processing", "renderscript"]
 categories: ["stackoverflow"]
-showEdit: false 
-showSummary: false 
-type: stackoverflow 
+showEdit: false
+showSummary: true
+type: stackoverflow
 thumbnail: 'sobanner*' 
 deeplink: /link/fk797xgv
 originalContentLink: https://stackoverflow.com/questions/2067955/fast-bitmap-blur-for-android-sdk
 originalContentType: stackoverflow
 soScore: 268
-soViews: 154523
+soViews: 154526
 soIsAccepted: false
 soQuestionId: 2067955
 soAnswerId: 23119957

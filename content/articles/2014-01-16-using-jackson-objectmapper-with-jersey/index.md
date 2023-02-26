@@ -1,24 +1,25 @@
 ---
-title: 'Using Jackson ObjectMapper with Jersey'
+title: 'Q: Using Jackson ObjectMapper with Jersey'
 date: 2014-01-16
 lastmod: 2017-09-16
-lastfetch: 2023-02-26T14:35:33.996Z
+lastfetch: 2023-02-26T18:53:41.197Z
 description: 'Using Jackson ObjectMapper with Jersey'
+summary: 'Question: public class MainResource { - EDIT: Don`t use the old approach below as it produces bugs (at least with with android device, see EDIT2 for more details)....'
 aliases: [/link/cjaczjy2]
 slug: 2014/using-jackson-objectmapper-with-jersey
 tags: ["java", "json", "spring", "rest", "jersey-2.0"]
 keywords: ["java", "json", "spring", "rest", "jersey-2.0"]
 alltags: ["java", "json", "spring", "rest", "jersey-2.0"]
 categories: ["stackoverflow"]
-showEdit: false 
-showSummary: false 
-type: stackoverflow 
+showEdit: false
+showSummary: true
+type: stackoverflow
 thumbnail: 'sobanner*' 
 deeplink: /link/cjaczjy2
 originalContentLink: https://stackoverflow.com/questions/20563640/using-jackson-objectmapper-with-jersey
 originalContentType: stackoverflow
 soScore: 13
-soViews: 44111
+soViews: 44113
 soIsAccepted: false
 soQuestionId: 20563640
 soAnswerId: 21167382

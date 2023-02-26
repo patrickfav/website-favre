@@ -1,24 +1,25 @@
 ---
-title: 'How to generate a random alpha-numeric string'
+title: 'Q: How to generate a random alpha-numeric string'
 date: 2017-05-28
 lastmod: 2020-11-12
-lastfetch: 2023-02-26T14:35:33.952Z
+lastfetch: 2023-02-26T18:53:40.540Z
 description: 'How to generate a random alpha-numeric string'
+summary: 'Question: I`ve been looking for a simple Java algorithm to generate a pseudo-random alpha-numeric string. - Cryptographic Pseudo Random Data Generation (PRNG)...'
 aliases: [/link/cs76uv87]
 slug: 2017/how-to-generate-a-random-alpha-numeric-string
 tags: ["java", "string", "random", "alphanumeric"]
 keywords: ["java", "string", "random", "alphanumeric"]
 alltags: ["java", "string", "random", "alphanumeric"]
 categories: ["stackoverflow"]
-showEdit: false 
-showSummary: false 
-type: stackoverflow 
+showEdit: false
+showSummary: true
+type: stackoverflow
 thumbnail: 'sobanner*' 
 deeplink: /link/cs76uv87
 originalContentLink: https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string
 originalContentType: stackoverflow
 soScore: 89
-soViews: 1622038
+soViews: 1622046
 soIsAccepted: false
 soQuestionId: 41107
 soAnswerId: 44227131

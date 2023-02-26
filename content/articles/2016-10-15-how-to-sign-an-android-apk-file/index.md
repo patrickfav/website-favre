@@ -1,24 +1,25 @@
 ---
-title: 'How to sign an android apk file'
+title: 'Q: How to sign an android apk file'
 date: 2016-10-15
 lastmod: 2017-05-23
-lastfetch: 2023-02-26T14:35:33.975Z
+lastfetch: 2023-02-26T18:53:40.799Z
 description: 'How to sign an android apk file'
+summary: 'Question: I am trying to sign my apk file. - Automated Process:...'
 aliases: [/link/8ten84uq]
 slug: 2016/how-to-sign-an-android-apk-file
 tags: ["android", "apk", "signing"]
 keywords: ["android", "apk", "signing"]
 alltags: ["android", "apk", "signing"]
 categories: ["stackoverflow"]
-showEdit: false 
-showSummary: false 
-type: stackoverflow 
+showEdit: false
+showSummary: true
+type: stackoverflow
 thumbnail: 'sobanner*' 
 deeplink: /link/8ten84uq
 originalContentLink: https://stackoverflow.com/questions/4853011/how-to-sign-an-android-apk-file
 originalContentType: stackoverflow
 soScore: 43
-soViews: 204164
+soViews: 204168
 soIsAccepted: false
 soQuestionId: 4853011
 soAnswerId: 40064199

@@ -1,24 +1,25 @@
 ---
-title: 'Security with SharedPreferences'
+title: 'Q: Security with SharedPreferences'
 date: 2014-09-27
 lastmod: 2020-06-20
-lastfetch: 2023-02-26T14:35:33.980Z
+lastfetch: 2023-02-26T18:53:40.896Z
 description: 'Security with SharedPreferences'
+summary: 'Question: I got to know from this source that if a device is rooted then accessing SharedPreferences and modifying it is a cakewalk. - Discussion 1: The Attacker is Another App...'
 aliases: [/link/cbfeh9ja]
 slug: 2014/security-with-sharedpreferences
 tags: ["android", "sharedpreferences"]
 keywords: ["android", "sharedpreferences"]
 alltags: ["android", "sharedpreferences"]
 categories: ["stackoverflow"]
-showEdit: false 
-showSummary: false 
-type: stackoverflow 
+showEdit: false
+showSummary: true
+type: stackoverflow
 thumbnail: 'sobanner*' 
 deeplink: /link/cbfeh9ja
 originalContentLink: https://stackoverflow.com/questions/26076292/security-with-sharedpreferences
 originalContentType: stackoverflow
 soScore: 33
-soViews: 10082
+soViews: 10083
 soIsAccepted: true
 soQuestionId: 26076292
 soAnswerId: 26077852
