@@ -50,7 +50,7 @@ export async function downloadGists (githubUser, gistIds, rootDirMd, relOutDir) 
 }
 
 function createGotHttpHeaders () {
-  const githubToken = process.env.GITHUB_TOKEN || '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'
+  const githubToken = process.env.GITHUB_TOKEN || undefined
 
   if (githubToken) {
     console.log('\tUsing Authenticated APIs, token is provided')
