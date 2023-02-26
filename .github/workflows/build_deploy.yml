@@ -65,6 +65,12 @@ jobs:
           hugo version && \
           hugo config && \
           hugo --verbose --printPathWarnings --minify
+      - name: Validate generated HTML (validator.nu backend)
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          format: text
+          css: true
+          root: public/
 
       - name: Deploy to Firebase Hosting
         id: firebase-deploy-prod
