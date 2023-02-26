@@ -1,6 +1,12 @@
+
 <span class="custom-info">
  <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "stack-overflow" }}</a>
 </span>
+
+<span class="px-2 text-primary-500">&middot;</span>
+<time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+    {{ .Params.date | time.Format "2006-01-02" }}
+</time>
 
 <span class="px-2 text-primary-500">&middot;</span>
 <span class="custom-info">

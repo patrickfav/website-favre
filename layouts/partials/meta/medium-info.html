@@ -2,6 +2,11 @@
  <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "medium" }}</a>
 </span>
 
+<span class="px-2 text-primary-500">&middot;</span>
+<time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+    {{ .Params.date | time.Format "2006-01-02" }}
+</time>
+
 {{ if and (.Params.mediumClaps | default false) (gt .Params.mediumClaps 0 ) }}
   <span class="px-2 text-primary-500">&middot;</span>
   <span class="custom-info">
