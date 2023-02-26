@@ -31,6 +31,9 @@ jobs:
       - name: NPM Install Content Downloader
         run: npm ci && npm link
         working-directory: ${{ env.WORKING_DIR }}
+      - name: Run ESLint
+        run: npm run lint
+        working-directory: ${{ env.WORKING_DIR }}
       - name: Update Content
         uses: nick-fields/retry@v2
         if: github.event_name == 'schedule'

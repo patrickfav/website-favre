@@ -2,7 +2,7 @@
 title: 'BlurTestAndroid'
 date: 2014-04-07
 lastmod: 2023-02-24
-lastfetch: 2023-02-25T15:16:30.937Z
+lastfetch: 2023-02-26T09:47:38.937Z
 description: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 summary: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 aliases: [/l/af01b569d753]

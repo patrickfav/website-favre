@@ -2,7 +2,7 @@
 title: 'website-favre'
 date: 2018-05-31
 lastmod: 2023-02-21
-lastfetch: 2023-02-25T15:16:59.590Z
+lastfetch: 2023-02-26T09:48:06.878Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 aliases: [/l/d3dd1538b5eb]

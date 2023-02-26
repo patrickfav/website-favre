@@ -2,7 +2,7 @@
 title: 'How to generate a random alpha-numeric string'
 date: 2017-05-28
 lastmod: 2020-11-12
-lastfetch: 2023-02-25T15:15:53.448Z
+lastfetch: 2023-02-26T09:47:04.427Z
 description: 'How to generate a random alpha-numeric string'
 aliases: [/l/910fbd2d82c4]
 slug: 2017/how-to-generate-a-random-alpha-numeric-string
@@ -17,7 +17,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string
 originalContentType: stackoverflow
 soScore: 89
-soViews: 1621986
+soViews: 1622022
 soIsAccepted: false
 soQuestionId: 41107
 soAnswerId: 44227131
