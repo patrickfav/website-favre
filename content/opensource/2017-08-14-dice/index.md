@@ -2,16 +2,17 @@
 title: 'dice'
 date: 2017-08-14
 lastmod: 2022-06-09
-lastfetch: 2023-02-26T09:47:51.616Z
+lastfetch: 2023-02-26T11:56:21.739Z
 description: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 summary: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
-aliases: [/l/2a7dd342e362]
+aliases: ['/l/2a7dd342e362','/opensource/dice']
 slug: 2017/dice
 tags: ["base32", "base36", "base64", "base85"]
 keywords: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-source", "hex", "hmac-drbg", "hotbits", "java", "nist", "octal", "prng", "random-number-generators", "seed", "sp800-90a", "text-encodings"]
 alltags: ["base32", "base36", "base64", "base85", "cli", "encoding", "entropy-source", "hex", "hmac-drbg", "hotbits", "java", "nist", "octal", "prng", "random-number-generators", "seed", "sp800-90a", "text-encodings", "github", "Java"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/dice
+deeplink: /l/2a7dd342e362
 originalContentLink: https://github.com/patrickfav/dice
 originalContentType: github
 githubStars: 9

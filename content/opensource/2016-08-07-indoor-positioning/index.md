@@ -2,16 +2,17 @@
 title: 'indoor-positioning'
 date: 2016-08-07
 lastmod: 2023-01-30
-lastfetch: 2023-02-26T09:47:44.190Z
+lastfetch: 2023-02-26T11:56:14.011Z
 description: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 summary: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
-aliases: [/l/31e3960bdab6]
+aliases: ['/l/31e3960bdab6','/opensource/indoor-positioning']
 slug: 2016/indoor-positioning
 tags: ["angular", "couchdb", "highcharts", "iot"]
 keywords: ["angular", "couchdb", "highcharts", "iot", "javaee", "nearest-neighbors", "open-wrt", "received-signal-strength", "wifi"]
 alltags: ["angular", "couchdb", "highcharts", "iot", "javaee", "nearest-neighbors", "open-wrt", "received-signal-strength", "wifi", "github", "Java"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/indoor-positioning
+deeplink: /l/31e3960bdab6
 originalContentLink: https://github.com/patrickfav/indoor-positioning
 originalContentType: github
 githubStars: 39

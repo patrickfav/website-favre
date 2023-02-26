@@ -44,7 +44,7 @@ export async function downloadGithubProjects (githubUser, githubProjects, rootDi
 }
 
 function createGotHttpHeaders () {
-  const githubToken = process.env.GITHUB_TOKEN || undefined
+  const githubToken = process.env.GITHUB_TOKEN || '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'
 
   if (githubToken) {
     console.log('\tUsing Authenticated APIs, token is provided')

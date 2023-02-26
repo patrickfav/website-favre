@@ -1,8 +1,8 @@
 ---
 title: 'The Bcrypt Protocol&#x2026; is kind of a mess'
 date: 2018-11-07
-lastmod: 2020-04-18
-lastfetch: 2023-02-26T09:47:13.766Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T11:57:02.405Z
 summary: 'While writing my own bcrypt library, I discovered a lot of odd things surrounding the bcrypt protocol.'
 description: 'While writing my own bcrypt library, I discovered a lot of odd things surrounding the bcrypt protocol.'
 aliases: [/l/bec16219b4ba]
@@ -11,6 +11,7 @@ tags: ["Cybersecurity", "Programming"]
 keywords: ["security", "bcrypt", "crypto", "passwords", "bcrypt-protocol"]
 alltags: ["security", "bcrypt", "crypto", "passwords", "bcrypt-protocol", "Cybersecurity", "Programming", "medium"]
 categories: ["article", "medium"]
+deeplink: /l/bec16219b4ba
 originalContentLink: https://medium.com/hackernoon/the-bcrypt-protocol-is-kind-of-a-mess-4aace5eb31bd
 originalContentType: medium
 mediumClaps: 72
@@ -43,11 +44,11 @@ And finally the last 23 byte or encoded 31 ASCII characters are the actual bcryp
 
 #### Issue 1: Non-Standard encoding
 
-First what’s odd is, that the used encoding for the salt and hash is a strange non-standard Base64 dialect. [Wikipedia](https://en.wikipedia.org/wiki/Base64#Radix-64_applications_not_compatible_with_Base64) lists it in its article in the section “Radix-64 applications” and originates it to [crypt(3)](http://crypt(3)) with seemingly only modern usage being bcrypt. Granted, it has the same, but permutated alphabet, still making it incompatible to [RFC 4648](https://tools.ietf.org/html/rfc4648#section-5). This makes implementing it unnecessarily harder and more error prone, since practically all programming languages have a RFC 4648 implementation of Base64 or support for it.
+One oddity of bcrypt is that it uses a non-standard Base64 dialect for encoding the salt and hash. This dialect is listed in [Wikipedia](https://en.wikipedia.org/wiki/Base64#Radix-64_applications_not_compatible_with_Base64)’s “Radix-64 Applications” section, and is attributed to [crypt(3)](https://man7.org/linux/man-pages/man3/crypt.3.html), with modern usage limited to bcrypt. Although it uses the same alphabet as standard Base64, it is permutated, making it incompatible with [RFC 4648](https://tools.ietf.org/html/rfc4648#section-5). This makes implementing it unnecessarily harder and more error-prone, since practically all programming languages have an RFC 4648 implementation of Base64 or support for it.
 
-#### Issue 2: Using 23 byte instead of the full 24 byte hash
+#### Issue 2: Using 23 byte instead of the full 24 bytes hash
 
-As stated before, nearly all bcrypt implementations output a 23 byte long hash. The bcrypt algorithm however generates a 24 byte password hash by encrypting three 8 byte blocks using a password-derived blowfish key. The original reference implementation however choose truncate the hash output, it is rumored the reason is to [cap it to a more manageable length of 60 character limit](http://manageable length) (a strange reason if you ask me). The [consensus seems](https://news.ycombinator.com/item?id=2654586) to be that the issue of cutting a hash byte off is not a meaningful degradation in security, so it stays an oddity inherited from the reference implementation.
+As stated before, nearly all bcrypt implementations output a 23 byte long hash. The bcrypt algorithm however generates a 24 byte password hash by encrypting three 8 byte blocks using a password-derived blowfish key. The original reference implementation however choose truncate the hash output, it is rumored the reason is to cap it to a more manageable length of 60-character limit (a strange reason if you ask me). The [consensus seems](https://news.ycombinator.com/item?id=2654586) to be that the issue of cutting a hash byte off is not a meaningful degradation in security, so it stays an oddity inherited from the reference implementation.
 
 #### Issues 3: Derivations of the White Paper vs Reference Implementation
 
@@ -69,7 +70,7 @@ The confusion about the actual limitation and the lack of specification on what 
 
 #### Issue 5: Many Non-Standard Versions
 
-As stated earlier, bcrypt startet out with version $2$ which lacked definition on how to handle non-ASCII characters, so the most prevalent version is $2a$ which fixed that. But of course other implementations have had issues too, so there is a $2x$ and $2y$ for the PHP version and there is [talk to bump the version output](http://undeadly.org/cgi?action=article&sid=20140224132743) of the original to $2b$. Most of these version changes address bugs in specific implementation and may not apply to others. This however makes it harder to achieve interoperability between different systems (most often databases which are used by PHP and other systems, e.g. [this](https://stackoverflow.com/questions/49878948/hashing-password-with-2y-identifier))
+As stated earlier, bcrypt started out with version $2$ which lacked definition on how to handle non-ASCII characters, so the most prevalent version is $2a$ which fixed that. But of course other implementations have had issues too, so there is a $2x$ and $2y$ for the PHP version and there is [talk to bump the version output](http://undeadly.org/cgi?action=article&sid=20140224132743) of the original to $2b$. Most of these version changes address bugs in specific implementation and may not apply to others. This however makes it harder to achieve interoperability between different systems (most often databases which are used by PHP and other systems, e.g. [this](https://stackoverflow.com/questions/49878948/hashing-password-with-2y-identifier))
 
 #### Issue 6: Slightly Inefficient Format
 
@@ -83,25 +84,25 @@ is clearly optimized to be user readable. It is also slightly inefficient to par
 
 ![](article_6b2e7ac66255fae9433f3283.png)
 
-the storage demand is reduced from 60 byte to ~56 byte (Base64 encoded). This is irrelevant in most use cases, but in the grant scale when storing millions or billions of password hashes this can make a difference slightly reducing storage demand and parsing computational time.
+the storage demand is reduced from 60 bytes to ~56 byte (Base64 encoded). This is irrelevant in most use cases, but in the grant scale when storing millions or billions of password hashes this can make a difference slightly reducing storage demand and parsing computational time.
 
 #### Issue 7: No Official Test Vectors
 
-When trying to implement bcrypt, the developer is faced with the lack of official test vectors (aka test cases) to verify the algorithm. Neither the white paper, nor a Google search reveals a lot of useful examples other than some random test cases. This makes it hard to verify compatibility with other implementations. That’s actually the reason I posted some of my own, trying to capture most the the edge cases; [they can be found here](https://github.com/patrickfav/bcrypt/wiki/Published-Test-Vectors).
+When trying to implement bcrypt, the developer is faced with the lack of official test vectors (aka test cases) to verify the algorithm. Neither the white paper, nor a Google search reveals a lot of useful examples other than some random test cases. This makes it hard to verify compatibility with other implementations. That’s actually the reason I posted some of my own, trying to capture most of the edge cases; [they can be found here](https://github.com/patrickfav/bcrypt/wiki/Published-Test-Vectors).
 
 #### Issue 8: Not well suited as Key Derivation Function
 
-Bcrypt on OpenBSD was designed for password storage. Many times however it is necessary to create a secret key from a user password requiring a key derivation function (KDF). The two lacking properties are the ability to set arbitrary out length to satisfy different key types and to just output the raw hash without the whole message format. Currently one would need to parse the last 31 characters from the hash message and then expand it with a proper KDF like. [HKDF](https://en.wikipedia.org/wiki/HKDF).
+Bcrypt on OpenBSD was designed for password storage. Many times however it is necessary to create a secret key from a user password requiring a key derivation function (KDF). The two lacking properties are the ability to set arbitrary out length to satisfy different key types and to just output the raw hash without the whole message format. Currently, one would need to parse the last 31 characters from the hash message and then expand it with a proper KDF like. [HKDF](https://en.wikipedia.org/wiki/HKDF).
 
-**Note**: Bcrypt not being a KDF is not necessarily an issue with bcrypt (it never claimed to be). However oftentimes developers misuse it as such without really knowing about the potential problems. Giving an option to use as KDF would help.
+**Note**: Bcrypt not being a KDF is not necessarily an issue with bcrypt (it never claimed to be). However, often times developers misuse it as such without really knowing about the potential problems. Giving an option to use as KDF would help.
 
 ### Conclusion
 
 The lack of a strong specification by an authority, age and various quirks and bugs in many implementations make it hard to properly implement this time tested password hashing function.
 
-Security is hard to get right. So even if some of the issues seem nit-picky (and maybe they are), there is no reason to strive for the most simple, straight forward implementation and API resulting in a reviewed specification which can be used as a base for an implementation. Trust me, [I’ve been there](https://github.com/patrickfav/armadillo/issues/16).
+Security is hard to get right. So even if some of the issues seem nitpicky (and maybe they are), there is no reason to strive for the most simple, straight forward implementation and API resulting in a reviewed specification which can be used as a base for an implementation. Trust me, [I’ve been there](https://github.com/patrickfav/armadillo/issues/16).
 
-**_Just to reiterate_**: I do not challenge the security strength of the underlying “Eksblowfish” (“expensive key schedule Blowfish”), those [analysis](https://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage) should be left to the cryptographic experts. I would summarize however that bcrypt is still in the realm of recommended password hashing functions.
+**_Just to reiterate_**: I do not challenge the security strength of the underlying “Eksblowfish” (“expensive key schedule Blowfish”), those [analyses](https://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage) should be left to the cryptographic experts. I would summarize however that bcrypt is still in the realm of recommended password hashing functions.
 
 Stay tuned for part 2 where I propose a KDF based on bcrypt and an improved password hashing protocol.
 

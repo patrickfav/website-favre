@@ -1,8 +1,8 @@
 ---
 title: 'Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2'
 date: 2018-11-12
-lastmod: 2020-04-18
-lastfetch: 2023-02-26T09:47:11.956Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T11:57:00.644Z
 summary: 'If you can&#x2019;t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC.'
 description: 'If you can&#x2019;t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC.'
 aliases: [/l/006e91385b44]
@@ -11,6 +11,7 @@ tags: ["Cybersecurity"]
 keywords: ["security", "android", "crypto", "encryption", "androiddev"]
 alltags: ["security", "android", "crypto", "encryption", "androiddev", "Cybersecurity", "medium"]
 categories: ["article", "medium"]
+deeplink: /l/006e91385b44
 originalContentLink: https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2-b3b80e99ad36
 originalContentType: medium
 mediumClaps: 289
@@ -21,7 +22,7 @@ mediumArticleId: b3b80e99ad36
 
 ### Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2: AES-CBC + HMAC
 
-_This is the follow up to my previous article: “_[_Symmetric Encryption with AES in Java and Android_](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9)_” where I summarize the most important facts about AES and show how to put it to use with AES-GCM. I highly recommend reading it before this one, because it explains the most important basics, before diving right into the next topic._
+_This is the follow-up to my previous article: “_[_Symmetric Encryption with AES in Java and Android_](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9)_” where I summarize the most important facts about AES and show how to put it to use with AES-GCM. I highly recommend reading it before this one, because it explains the most important basics, before diving right into the next topic._
 
 This article discusses the following scenario: what if you can’t use the [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) with authenticated encryption mode like the [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode)? Either it is not supported on your currently used platform or you have to incorporate a legacy or third party protocol? [Whatever reason](https://security.stackexchange.com/questions/184305/why-would-i-ever-use-aes-256-cbc-if-aes-256-gcm-is-more-secure) you may have ditching GCM, you should not ditch the security properties it comes with:
 
@@ -33,7 +34,7 @@ Choosing a non-authenticated encryption, like the block mode [cipher block chain
 
 #### Message Authentication Code (MAC)
 
-So what is a MAC and why do we need it? A MAC is similar to a hash function, meaning it takes a message as input and generates a short so-called _tag_. To make sure not everybody can create a tag for any arbitrary message, the MAC function requires a secret key for its calculation. In contrast to a signature used with asymmetric encryption, a MAC has the same key for both generation and authentication.
+So what is a MAC, and why do we need it? A MAC is similar to a hash function, meaning it takes a message as input and generates a short so-called _tag_. To make sure not everybody can create a tag for any arbitrary message, the MAC function requires a secret key for its calculation. In contrast to a signature used with asymmetric encryption, a MAC has the same key for both generation and authentication.
 
 For example if two parties securely exchanged MAC keys, and every message has an authentication tag attached, they both can check if the message was created by the other party and that it wasn’t changed during transmission. An attacker would need the secret MAC key to forge the authentication tag.
 
@@ -47,7 +48,7 @@ So what is the right way to apply this MAC? According to security researcher [Hu
 *   **Encrypt-then-MAC**: MAC the cipher-text and initial vector then append it to the cipher-text (used in [IPsec](http://tools.ietf.org/html/rfc4303#section-3.3.2.1))
 *   **Encrypt-and-MAC**: MAC the plain-text, encrypt and then append it to the cipher-text (used in [SSH](http://tools.ietf.org/html/rfc4253#section-6.4))
 
-Every option has it’s own properties and I’ll encourage you to read a full argument of [either option in this post](https://crypto.stackexchange.com/a/205/44838). To summarize, [most](https://crypto.stackexchange.com/a/224/44838) [researchers](https://moxie.org/blog/the-cryptographic-doom-principle/) [recommend](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.5488&rep=rep1&type=pdf) [Encrypt-then-MAC (EtM)](https://tools.ietf.org/html/rfc7366). It protects against chosen cipher-text attacks, since the MAC can prevent decryption of incorrect messages. Additionally the MAC can’t leak information about the plain-text since it operates on the cipher-text. On the downside, it is slightly harder to implement since the IV and a possible protocol /algorithm version or type must be included in the tag. The important thing is to never do any cryptographic operation before verifying the MAC, otherwise you can be vulnerable to a [padding-oracle attack](https://en.wikipedia.org/wiki/Padding_oracle_attack) ([Moxie](https://en.wikipedia.org/wiki/Moxie_Marlinspike) calls this the [Doom Principle](https://moxie.org/blog/the-cryptographic-doom-principle/)).
+Every option has its own properties, and I’ll encourage you to read a full argument of [either option in this post](https://crypto.stackexchange.com/a/205/44838). To summarize, [most](https://crypto.stackexchange.com/a/224/44838) [researchers](https://moxie.org/blog/the-cryptographic-doom-principle/) [recommend](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.5488&rep=rep1&type=pdf) [Encrypt-then-MAC (EtM)](https://tools.ietf.org/html/rfc7366). It protects against chosen cipher-text attacks, since the MAC can prevent decryption of incorrect messages. Additionally, the MAC can’t leak information about the plain-text since it operates on the cipher-text. On the downside, it is slightly harder to implement since the IV and a possible protocol /algorithm version or type must be included in the tag. The important thing is to never do any cryptographic operation before verifying the MAC, otherwise you can be vulnerable to a [padding-oracle attack](https://en.wikipedia.org/wiki/Padding_oracle_attack) ([Moxie](https://en.wikipedia.org/wiki/Moxie_Marlinspike) calls this the [Doom Principle](https://moxie.org/blog/the-cryptographic-doom-principle/)).
 
 ![](article_ff631ace705b5c5c5de6d52b.png)
 
@@ -62,7 +63,7 @@ On the downside it only allows 96 bit initial vector (vs. 128 bit) and HMAC is t
 
 #### Using a MAC with Encryption: Authentication Key
 
-The last issue we have to solve: where do we get the secret key for the MAC calculation? There seems to be [no known problem](https://crypto.stackexchange.com/a/8086/44838) when using the same key as for the encryption (when using HMAC) if the used secret key is strong (ie. sufficiently random and securely exchanged). However best practice is to use a key derivation function (KDF) to derive 2 sub-keys just to be on the “safe” side if any problems may be found in the future. This can be as simple as calculating a SHA256 on the main secret key and splitting it to two 16 byte blocks. However I rather much prefer standardized protocols like the [HMAC-based Extract-and-Expand Key Derivation Function](https://tools.ietf.org/html/rfc5869) (HKDF) which directly support such use cases without byte fiddling.
+The last issue we have to solve: where do we get the secret key for the MAC calculation? There seems to be [no known problem](https://crypto.stackexchange.com/a/8086/44838) when using the same key as for the encryption (when using HMAC) if the used secret key is strong (i.e. sufficiently random and securely exchanged). However, best practice is to use a key derivation function (KDF) to derive 2 sub-keys just to be on the “safe” side if any problems may be found in the future. This can be as simple as calculating a SHA256 on the main secret key and splitting it to two 16 byte blocks. However, I rather much prefer standardized protocols like the [HMAC-based Extract-and-Expand Key Derivation Function](https://tools.ietf.org/html/rfc5869) (HKDF) which directly support such use cases without byte fiddling.
 
 ![](article_7f764e0d12674682bc13f29a.png)
 
@@ -74,7 +75,7 @@ Enough theory, let’s code! In the following examples I will use AES-CBC, a see
 
 #### Encryption
 
-To keep it simple, we use a randomly generated 128 bit key. Java will automatically choose the correct mode when you pass a key with 128, 192 or 256 bit length. Note however, 256 bit encryption usually requires the [JCE Unlimited Strength Jurisdiction Policy](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) installed in your JRE (OpenJDK & Android is fine). If you are not sure what key size to use, read the passage about this topic in my [previous article](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9).
+To keep it simple, we use a randomly generated 128-bit key. Java will automatically choose the correct mode when you pass a key with 128, 192 or 256 bit length. Note however, 256-bit encryption usually requires the [JCE Unlimited Strength Jurisdiction Policy](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) installed in your JRE (OpenJDK & Android is fine). If you are not sure what key size to use, read the passage about this topic in my [previous article](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9).
 
 ```
 SecureRandom secureRandom = new SecureRandom();  
@@ -102,7 +103,7 @@ byte[] authKey = HKDF.fromHmacSha256().expand(key, "authKey".getBytes(StandardCh
 
 Next we will initialize the cipher and encrypt our plain-text. Since CBC is and behaves like a block mode we need a padding mode for messages which do not exactly fit the 16 byte block size. Since there seems to be [no security implication](https://crypto.stackexchange.com/questions/1486/how-to-choose-a-padding-mode-with-aes/1488#1488) regarding the used padding scheme, we chose the most widely supported: [PKCS#7](https://en.wikipedia.org/wiki/Padding_(cryptography)#PKCS%235_and_PKCS%237).
 
-**_Note:_** due to [legacy reasons](https://crypto.stackexchange.com/questions/9043/what-is-the-difference-between-pkcs5-padding-and-pkcs7-padding), we have to set our cipher suite to PKCS5. Both are practically the same but defined for different block sizes; normally PKCS#5 would not be compatible with AES, but since the definitions date back to 3DES where 8 byte blocks were used, we are stuck with it. If your JCE provider accepts AES/CBC/PKCS7Padding its better to use this definition so your code is easier to understand.
+**_Note:_** due to [legacy reasons](https://crypto.stackexchange.com/questions/9043/what-is-the-difference-between-pkcs5-padding-and-pkcs7-padding), we have to set our cipher suite to PKCS5. Both are practically the same but defined for different block sizes; normally PKCS#5 would not be compatible with AES, but since the definitions date back to 3DES where 8 byte blocks were used, we are stuck with it. If your JCE provider accepts AES/CBC/PKCS7Padding it's better to use this definition, so your code is easier to understand.
 
 ```
 final Cipher cipher = Cipher._getInstance_("AES/CBC/PKCS5Padding"); //actually uses PKCS#7  
@@ -120,7 +121,7 @@ hmac.update(iv);
 hmac.update(cipherText);
 ```
 
-If you want to authenticate additional meta data, like the protocol version, you could also add it to the mac generation. This is the same concept as adding associated data to an [authenticated encryption algorithm](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_Encryption_with_Associated_Data).
+If you want to authenticate additional metadata, like the protocol version, you could also add it to the mac generation. This is the same concept as adding associated data to an [authenticated encryption algorithm](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_Encryption_with_Associated_Data).
 
 ```
 if (associatedData != null) {  
@@ -134,7 +135,7 @@ Then calculate the mac.
 byte[] mac = hmac.doFinal();
 ```
 
-Finally serialize all of it to a single message.
+Finally, serialize all of it to a single message.
 
 ```
 ByteBuffer byteBuffer = ByteBuffer._allocate_(1 + iv.length + 1 + mac.length + cipherText.length);  
@@ -227,7 +228,7 @@ cipher.init(Cipher._DECRYPT_MODE_, new SecretKeySpec(encKey, "AES"), new IvParam
 byte[] plainText = cipher.doFinal(cipherText);
 ```
 
-That’s it! If you like to see a full example check out my [Github project Armadillo](https://github.com/patrickfav/armadillo?utm_source=android-arsenal.com&utm_medium=referral&utm_campaign=6636) where [I use AES-CBC](https://github.com/patrickfav/armadillo/blob/master/armadillo/src/main/java/at/favre/lib/armadillo/AesCbcEncryption.java). You can also find this exact [example as Gist](https://gist.github.com/patrickfav/b323f0d9cbd81d5fa9cc4c971b732c77) if you have trouble following the snippets.
+That’s it! If you like to see a full example check out my [GitHub project Armadillo](https://github.com/patrickfav/armadillo?utm_source=android-arsenal.com&utm_medium=referral&utm_campaign=6636) where [I use AES-CBC](https://github.com/patrickfav/armadillo/blob/master/armadillo/src/main/java/at/favre/lib/armadillo/AesCbcEncryption.java). You can also find this exact [example as Gist](https://gist.github.com/patrickfav/b323f0d9cbd81d5fa9cc4c971b732c77) if you have trouble following the snippets.
 
 ### Summary
 
@@ -235,7 +236,7 @@ We showed that the usage of AES with cipher block chaining (CBC) and Encrypt-the
 
 > **Confidentiality, integrity and authenticity**
 
-As can be seen, the protocol is a bit more involved as just using GCM. However these primitives are generally available in all Java/Android environments so it may be the only option you have. Just consider the following:
+As can be seen, the protocol is a bit more involved as just using GCM. However, these primitives are generally available in all Java/Android environments, so it may be the only option you have. Just consider the following:
 
 *   Use a 16 byte random initialization vector (use a strong [PRNG](https://en.wikipedia.org/wiki/Pseudorandom_number_generator))
 *   Use 128+ bit MAC length (HMAC-SHA256 outputs 256 bit)
@@ -243,7 +244,7 @@ As can be seen, the protocol is a bit more involved as just using GCM. However t
 *   Use a KDF to derive the 2 Sub-Keys
 *   Verify before decryption ([Doom Principle](https://moxie.org/blog/the-cryptographic-doom-principle/))
 *   Prevent timing attacks by using constant time equals implementations
-*   Use 128 bit encryption key length (you will be fine!)
+*   Use 128-bit encryption key length (you will be fine!)
 *   Pack everything together into a single message
 
 #### References

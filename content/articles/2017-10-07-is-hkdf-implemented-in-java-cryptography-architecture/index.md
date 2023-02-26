@@ -2,7 +2,7 @@
 title: 'Is HKDF implemented in Java Cryptography Architecture?'
 date: 2017-10-07
 lastmod: 2021-10-07
-lastfetch: 2023-02-26T09:47:04.467Z
+lastfetch: 2023-02-26T11:56:53.333Z
 description: 'Is HKDF implemented in Java Cryptography Architecture?'
 aliases: [/l/0f37431ee12f]
 slug: 2017/is-hkdf-implemented-in-java-cryptography-architecture
@@ -14,6 +14,7 @@ showEdit: false
 showSummary: false 
 type: stackoverflow 
 thumbnail: 'sobanner*' 
+deeplink: /l/0f37431ee12f
 originalContentLink: https://stackoverflow.com/questions/45985661/is-hkdf-implemented-in-java-cryptography-architecture
 originalContentType: stackoverflow
 soScore: 14

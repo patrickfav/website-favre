@@ -1,8 +1,8 @@
 ---
 title: 'Handling Proguard as Library Developer or in a Multi-Module Android Application'
 date: 2018-01-20
-lastmod: 2020-04-18
-lastfetch: 2023-02-26T09:47:20.204Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T11:57:08.358Z
 summary: 'When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning&#x2026;'
 description: 'When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning&#x2026;'
 aliases: [/l/dcde047403ea]
@@ -11,6 +11,7 @@ tags: ["Programming"]
 keywords: ["android", "proguard", "java"]
 alltags: ["android", "proguard", "java", "Programming", "medium"]
 categories: ["article", "medium"]
+deeplink: /l/dcde047403ea
 originalContentLink: https://proandroiddev.com/handling-proguard-as-library-developer-or-in-a-multi-module-android-application-2d738c37890
 originalContentType: medium
 mediumClaps: 348
@@ -27,7 +28,7 @@ Noticed that in current Android libraries you do not have to add any Proguard ru
 
 Even with local modules, push the rules to the respective module to keep Proguard contained, descriptive and maintainable. This has the main advantage that the configuration lifecycle follows the one of the module itself (e.g. when the module gets deleted all Proguard rules with it etc.)
 
-Each dependency or module may package it’s own proguard.txt in the top level of it’s AAR package wich will be appended to the main configuration.
+Each dependency or module may package its own proguard.txt in the top level of it’s AAR package which will be appended to the main configuration.
 
 ![](article_a0c9f8f6633eaa9bd39f2b74.png)
 
@@ -50,13 +51,13 @@ where the proguard-rules.pro files contain the rules specific to that module. If
 **\-printconfiguration** proguard-merged-config.txt
 ```
 
-Note however, to **use the most defensive rules possible**, leaving the main module the fine tuning. For instance if a library adds the -dontoptimze flag in it’s configuration file, there is no way for the app to enable optimization again. The merging strategy does not seem to be as sophisticated as the e.g. [resource merger](https://developer.android.com/studio/write/add-resources.html#resource_merging), meaning you have no way to force certain rules over others.
+Note however, to **use the most defensive rules possible**, leaving the main module the fine-tuning. For instance if a library adds the -dontoptimze flag in its configuration file, there is no way for the app to enable optimization again. The merging strategy does not seem to be as sophisticated as the e.g. [resource merger](https://developer.android.com/studio/write/add-resources.html#resource_merging), meaning you have no way to force certain rules over others.
 
 #### Supporting Modular Proguard Config with Java Modules
 
-Unfortunately the the current Android Gradle plugin (_v3_) does not support consumer Proguard files. This is due to the AarTransformer reading the proguard.txt from the archive but the JarTransformer does not. Hopefully the Android build team will add this in the future.
+Unfortunately the current Android Gradle plugin (_v3_) does not support consumer Proguard files. This is due to the AarTransformer reading the proguard.txt from the archive but the JarTransformer does not. Hopefully the Android build team will add this in the future.
 
-In the meantime you could use the following workaround for your _local java modules:_
+In the meantime you could use the following workaround for your _local Java modules:_
 
 Let’s say your module is called myJavaModule: Create a proguard-rules.pro file in the root as you would normally. Then just create a static link to it in your Proguard config in the app module:
 
@@ -73,9 +74,9 @@ This is not the most sophisticated workaround, but once the Android DSL will sup
 
 ### Summary
 
-*   Use consumerProguardFiles property in the Android Gradle DSL to set module specific Proguard rules (especially as an library developer)
+*   Use consumerProguardFiles property in the Android Gradle DSL to set module specific Proguard rules (especially as a library developer)
 *   Be as defensive as possible with those rules, since the consumer most likely cannot override them.
-*   Currently there is no direct support for modular configurations with Java modules
+*   Currently, there is no direct support for modular configurations with Java modules
 
 
 

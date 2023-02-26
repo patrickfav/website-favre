@@ -2,7 +2,7 @@
 title: 'Unable to execute dex: method ID not in [0, 0xffff]: 65536'
 date: 2015-02-19
 lastmod: 2017-05-23
-lastfetch: 2023-02-26T09:47:04.436Z
+lastfetch: 2023-02-26T11:56:53.304Z
 description: 'Unable to execute dex: method ID not in [0, 0xffff]: 65536'
 aliases: [/l/59453ccb431e]
 slug: 2015/unable-to-execute-dex-method-id-not-in-0-0xffff-65536
@@ -14,6 +14,7 @@ showEdit: false
 showSummary: false 
 type: stackoverflow 
 thumbnail: 'sobanner*' 
+deeplink: /l/59453ccb431e
 originalContentLink: https://stackoverflow.com/questions/15209831/unable-to-execute-dex-method-id-not-in-0-0xffff-65536
 originalContentType: stackoverflow
 soScore: 78

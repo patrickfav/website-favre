@@ -1,8 +1,8 @@
 ---
 title: 'How to Centralize your Checkstyle Configuration with Maven'
 date: 2020-04-14
-lastmod: 2020-04-19
-lastfetch: 2023-02-26T09:47:07.985Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T11:56:56.516Z
 summary: 'Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.'
 description: 'Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.'
 aliases: [/l/d0400c6e04e4]
@@ -11,6 +11,7 @@ tags: ["Programming"]
 keywords: ["checkstyle", "maven", "java", "static-code-analysis", "configuration-management"]
 alltags: ["checkstyle", "maven", "java", "static-code-analysis", "configuration-management", "Programming", "medium"]
 categories: ["article", "medium"]
+deeplink: /l/d0400c6e04e4
 originalContentLink: https://codeburst.io/how-to-centralize-your-checkstyle-configuration-with-maven-7575eacd7295
 originalContentType: medium
 mediumClaps: 11
@@ -19,13 +20,13 @@ mediumArticleId: 7575eacd7295
 ---
 ![](article_6b235e313cdf3f991002e9b8.jpeg)
 
-Checkstyle, loved by those who set it up, hated by those who didn’t, is Javas most popular tool to force your code style flavor onto others. Whatever your feelings about this static analyzer may be, if you have to manage it in your project(s) this article is for you.
+Checkstyle, loved by those who set it up, hated by those who didn’t, is Java's most popular tool to force your code style flavor onto others. Whatever your feelings about this static analyzer may be, if you have to manage it in your project(s) this article is for you.
 
 ![Screenshot of the IntelliJ Checkstyle Plugin showing some issues](article_e59d31038ea2183912f82f43.png)
 
 A familiar sight for Checkstyle users
 
-The default setup is quite easy. Create your checkstyle.xml add the rules you prefer and reference it in your Checkstyle Maven plugin. This may be fine for a single project, managing more would require copying the configuration file over and manually syncing them. Since most developers nowadays can’t escape the ubiquitous micro-services style architecture, where the myriads of services are managed either in a [monorepo](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) or in multiple individual ones, the latter needs a better solution for this problem.
+The default setup is quite easy. Create your checkstyle.xml add the rules you prefer and reference it in your Checkstyle Maven plugin. This may be fine for a single project, managing more would require copying the configuration file over and manually syncing them. Since most developers nowadays can’t escape the ubiquitous microservices style architecture, where the myriads of services are managed either in a [monorepo](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) or in multiple individual ones, the latter needs a better solution for this problem.
 
 ### Maven to the Rescue
 
@@ -33,7 +34,7 @@ Of course there is a direct solution for this in your favorite build management 
 
 1.  Create a new Maven project only containing your checkstyle.xml
 2.  Reference it in the Checkstyle Maven plugin of your consumer project
-3.  Make your project deployable to publish it to your maven repo
+3.  Make your project deployable to publish it to your Maven repo
 
 Done!
 
@@ -99,7 +100,7 @@ it should use the config from your config project.
 
 #### 3\. Make your Config Project Deployable
 
-Some Maven repositories, like [Maven Central](https://search.maven.org/), require a sources and javadoc -jar if you want to deploy them there. Since there is neither source code, nor javadoc we have to create placeholders. In our _checkstyle-config_ project add the plugin config for the source code:
+Some Maven repositories, like [Maven Central](https://search.maven.org/), require a sources and javadoc -jar if you want to deploy them there. Since there is neither source code nor javadoc we have to create placeholders. In our _checkstyle-config_ project add the plugin config for the source code:
 
 ```
 <plugin>  
@@ -150,7 +151,7 @@ A full example, deployed to Maven Central, can be found here
 
 ### How to use Suppressions
 
-While it is possible to also package a checkstyle-suppression.xml in the same way as described above, I do not think a global suppression file makes a whole lot of sense.
+While it is possible to also package a checkstyle-suppression.xml in the same way as described above, I do not think a global suppression file makes a lot of sense.
 
 ![](article_b13c2fda654a51a9463348ac.png)
 

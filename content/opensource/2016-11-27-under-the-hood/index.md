@@ -2,16 +2,17 @@
 title: 'under-the-hood'
 date: 2016-11-27
 lastmod: 2023-02-16
-lastfetch: 2023-02-26T09:47:31.503Z
+lastfetch: 2023-02-26T11:56:01.500Z
 description: 'Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in.'
 summary: 'Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in.'
-aliases: [/l/8ab12ab122c3]
+aliases: ['/l/8ab12ab122c3','/opensource/under-the-hood']
 slug: 2016/under-the-hood
 tags: ["android", "android-debug", "android-library", "noop", "shake-detection"]
 keywords: ["android", "android-debug", "android-library", "noop", "shake-detection"]
 alltags: ["android", "android-debug", "android-library", "noop", "shake-detection", "github", "Java"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/under-the-hood
+deeplink: /l/8ab12ab122c3
 originalContentLink: https://github.com/patrickfav/under-the-hood
 originalContentType: github
 githubStars: 217

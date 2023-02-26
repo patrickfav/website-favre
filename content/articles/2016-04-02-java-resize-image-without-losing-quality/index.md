@@ -2,7 +2,7 @@
 title: 'Java - resize image without losing quality'
 date: 2016-04-02
 lastmod: 2018-02-03
-lastfetch: 2023-02-26T09:47:04.421Z
+lastfetch: 2023-02-26T11:56:53.290Z
 description: 'Java - resize image without losing quality'
 aliases: [/l/c843c9911d19]
 slug: 2016/java-resize-image-without-losing-quality
@@ -14,10 +14,11 @@ showEdit: false
 showSummary: false 
 type: stackoverflow 
 thumbnail: 'sobanner*' 
+deeplink: /l/c843c9911d19
 originalContentLink: https://stackoverflow.com/questions/24745147/java-resize-image-without-losing-quality
 originalContentType: stackoverflow
 soScore: 95
-soViews: 89725
+soViews: 89727
 soIsAccepted: false
 soQuestionId: 24745147
 soAnswerId: 36367652

@@ -2,16 +2,17 @@
 title: 'armadillo'
 date: 2017-12-19
 lastmod: 2023-01-16
-lastfetch: 2023-02-26T09:47:37.192Z
+lastfetch: 2023-02-26T11:56:06.801Z
 description: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
 summary: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
-aliases: [/l/01afec411a69]
+aliases: ['/l/01afec411a69','/opensource/armadillo']
 slug: 2017/armadillo
 tags: ["aes-encryption", "aes-gcm", "android", "authenticated-encryption"]
 keywords: ["aes-encryption", "aes-gcm", "android", "authenticated-encryption", "bcrypt", "crypto", "cryptography", "hkdf", "security", "sharedpreferences"]
 alltags: ["aes-encryption", "aes-gcm", "android", "authenticated-encryption", "bcrypt", "crypto", "cryptography", "hkdf", "security", "sharedpreferences", "github", "Java"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/armadillo
+deeplink: /l/01afec411a69
 originalContentLink: https://github.com/patrickfav/armadillo
 originalContentType: github
 githubStars: 263

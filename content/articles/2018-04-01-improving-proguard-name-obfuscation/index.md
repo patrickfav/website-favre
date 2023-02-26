@@ -1,8 +1,8 @@
 ---
 title: 'Improving ProGuard Name Obfuscation'
 date: 2018-04-01
-lastmod: 2020-02-01
-lastfetch: 2023-02-26T09:47:17.811Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T11:57:06.194Z
 summary: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 description: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 aliases: [/l/4f5333b7c728]
@@ -11,6 +11,7 @@ tags: ["Programming"]
 keywords: ["android", "proguard", "security", "androiddev", "android-app-development"]
 alltags: ["android", "proguard", "security", "androiddev", "android-app-development", "Programming", "medium"]
 categories: ["article", "medium"]
+deeplink: /l/4f5333b7c728
 originalContentLink: https://proandroiddev.com/improving-proguard-name-obfuscation-83b27b34c52a
 originalContentType: medium
 mediumClaps: 781
@@ -23,7 +24,7 @@ Inspired by [www.obfuscationworkshop.io](http://www.obfuscationworkshop.io)
 
 _In this article I will show you how to strengthen ProGuard’s name obfuscation, making it harder for an attacker the reverse engineer your code and how this will help prevent many bugs created by incorrect obfuscation_
 
-I‘ll tell you a secret: ProGuard is actually a code optimizer. One of the optimization’s side-effects just happen to add some name obfuscation to the resulting byte code, namely the shorting and reusing of class and method-names. The actually benefit being, that the resulting binary is smaller and better compressible (smaller binaries can be loaded faster into the heap, ie. reduce latency).
+I’ll tell you a secret: ProGuard is actually a code optimizer. One of the optimization’s side effects just happen to add some name obfuscation to the resulting byte code, namely the shorting and reusing of class and method-names. The actually benefit being, that the resulting binary is smaller and better compressible (smaller binaries can be loaded faster into the heap, ie. reduce latency).
 
 #### How does ProGuard’s Name Obfuscation work
 
@@ -33,13 +34,13 @@ Let’s consider the following code with this lonely class:
 
 ![](article_12ef699b4705aca380952d16.png)
 
-When optimizing with ProGuard, it will start by processing Foo.class. ProGuard will check it’s dictionary, the first entry being the letter a. There is no class with that name in this package, so this will result in Foo.class being renamed to a.class. Next the methods will be renamed: bar1() will turn into a() and bar2() into b() using the same strategy. A Java syntax representation of the resulting class would look like this:
+When optimizing with ProGuard, it will start by processing Foo.class. ProGuard will check its dictionary, the first entry being the letter a. There is no class with that name in this package, so this will result in Foo.class being renamed to a.class. Next the methods will be renamed: bar1() will turn into a() and bar2() into b() using the same strategy. A Java syntax representation of the resulting class would look like this:
 
 ![](article_b0b40dbefa9343b028f087d6.png)
 
 Obfuscated version of class Foo
 
-Now if you would add a new class Foobar.class it would be renamed to b.class and so on. If there are more then 26 classes in a package, the name gets longer: aa.class, ab.class, etc.
+Now if you would add a new class Foobar.class it would be renamed to b.class and so on. If there are more than 26 classes in a package, the name gets longer: aa.class, ab.class, etc.
 
 ### Preventing Deterministic Name Obfuscation
 
@@ -69,7 +70,7 @@ lpt2
 com5
 ```
 
-It is possible to have a little fun with these files. For instance, in the [ProGuard distribution](https://sourceforge.net/projects/proguard/), there are some examples of alternative dictionaries. [This file contains names](https://github.com/facebook/proguard/blob/master/examples/dictionaries/windows.txt) which will make it impossible to extract the classes from the package (e.g .jar) in Windows because it would create illegal file names. Another version is optimized to enable the [best possible compression](https://github.com/facebook/proguard/blob/master/examples/dictionaries/compact.txt) by using common small keywords in the byte code format. Another option is to use [Java keywords as class and method names](https://github.com/facebook/proguard/blob/master/examples/dictionaries/keywords.txt) which is allowed in the byte code format creating very confusing stack traces.
+It is possible to have a little fun with these files. For instance, in the [ProGuard distribution](https://sourceforge.net/projects/proguard/), there are some examples of alternative dictionaries. [This file contains names](https://github.com/facebook/proguard/blob/master/examples/dictionaries/windows.txt) which will make it impossible to extract the classes from the package (e.g .jar) on Windows because it would create illegal file names. Another version is optimized to enable the [best possible compression](https://github.com/facebook/proguard/blob/master/examples/dictionaries/compact.txt) by using common small keywords in the byte code format. Another option is to use [Java keywords as class and method names](https://github.com/facebook/proguard/blob/master/examples/dictionaries/keywords.txt) which is allowed in the byte code format creating very confusing stack traces.
 
 Either way, this somewhat improves name obfuscation, but we still have the problem of it being fully deterministic.
 
@@ -129,7 +130,7 @@ For easier debugging you can print out the assembled ProGuard config (when using
 
 Be aware that each build variation _will have a practically unique obfuscation mapping_. So in an Android build, each [build variant](https://developer.android.com/studio/build/build-variants.html) (flavor or build type) will create very different stack traces. So be careful to _keep all the mappings_ for every version, flavor and build-type in Gradle and all [classifiers](https://maven.apache.org/pom.html#Dependencies) in Maven.
 
-This isn’t a disadvantage though. One bug which many Android developers experience at least once: _persisting of obfuscated names which makes migration impossible_. This usually happens when a [Json databinding serializer](https://github.com/FasterXML/jackson-databind) is used, which reads class and method names through reflection and converts them, or by using \*.getClass().getName() is used with either SharedPreferences or Databases. The worst part is: this usually doesn’t get noticed because the name obfuscation mapping could stay the same for next couple of releases. So you are stuck with e.g.
+This isn’t a disadvantage though. One bug which many Android developers experience at least once: _persisting of obfuscated names which makes migration impossible_. This usually happens when a [JSON databinding serializer](https://github.com/FasterXML/jackson-databind) is used, which reads class and method names through reflection and converts them, or by using \*.getClass().getName() is used with either SharedPreferences or Databases. The worst part is: this usually doesn’t get noticed because the name obfuscation mapping could stay the same for next couple of releases. So you are stuck with e.g.
 
 ```
 {  
@@ -150,7 +151,7 @@ By forcing a different mapping each build, bugs like these will immediately surf
 ### Summary
 
 *   ProGuard’s name obfuscation is _deterministic_, therefore when the code only changes a little the _mappings mostly stay the same_ over multiple releases
-*   It is possible create _randomized dictionary_ for the obfuscation and tell ProGuard to use them, so every build will have a _unique mapping_, making it harder for an attacker to reverse engineer your code
+*   It is possible to create _randomized dictionary_ for the obfuscation and tell ProGuard to use them, so every build will have a _unique mapping_, making it harder for an attacker to reverse engineer your code
 *   Randomized name obfuscation also has the advantage of _acting as a fail-fast_ so common ProGuard configuration issues will
 
 [ProGuard manual | Usage](https://www.guardsquare.com/en/proguard/manual/usage#obfuscationoptions)

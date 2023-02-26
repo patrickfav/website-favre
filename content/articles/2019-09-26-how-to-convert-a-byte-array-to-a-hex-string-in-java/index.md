@@ -1,8 +1,8 @@
 ---
 title: 'How to convert a byte array to a hex string in Java?'
 date: 2019-09-26
-lastmod: 2023-02-21
-lastfetch: 2023-02-26T09:47:04.414Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T11:56:53.282Z
 description: 'How to convert a byte array to a hex string in Java?'
 aliases: [/l/619375f8efb9]
 slug: 2019/how-to-convert-a-byte-array-to-a-hex-string-in-java
@@ -14,10 +14,11 @@ showEdit: false
 showSummary: false 
 type: stackoverflow 
 thumbnail: 'sobanner*' 
+deeplink: /l/619375f8efb9
 originalContentLink: https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
 originalContentType: stackoverflow
 soScore: 152
-soViews: 958420
+soViews: 958433
 soIsAccepted: false
 soQuestionId: 9655181
 soAnswerId: 58118078
@@ -70,7 +71,7 @@ Long.toHexString(ByteBuffer.wrap(eightByteArray).getLong());
 
 ### Option 1d: JDK17+ HexFormat
 
-Finally JDK 17 offers first-level support of straight forward hex encoding with [ `HexFormat` ](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HexFormat.html):
+Finally, JDK 17 offers first-level support of straight forward hex encoding with [ `HexFormat` ](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HexFormat.html):
 
 ```
 HexFormat hex = HexFormat.of();
@@ -81,7 +82,7 @@ hex.formatHex(someByteArray)
 Option 2: Code snippet - Advanced
 ---------------------------------
 
-Here is a full featured, copy & pasteable code snippet supporting **upper/lowercase** and [**endianness**](https://en.wikipedia.org/wiki/Endianness). It is optimized to minimize memory complexity and maximize performance and should be compatible with all modern Java versions (5+).
+Here is a full-featured, copy & pasteable code snippet supporting **upper/lowercase** and [**endianness**](https://en.wikipedia.org/wiki/Endianness). It is optimized to minimize memory complexity and maximize performance and should be compatible with all modern Java versions (5+).
 
 ```
 private static final char[] LOOKUP_TABLE_LOWER = new char[]{0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66};
@@ -128,12 +129,12 @@ Bytes.wrap(someByteArray).encodeHex()
 
 ```
 
-You can check it out on [Github: bytes-java](https://github.com/patrickfav/bytes-java).
+You can check it out on [GitHub: bytes-java](https://github.com/patrickfav/bytes-java).
 
 Option 4: Apache Commons Codec
 ------------------------------
 
-Of course there is the good 'ol [commons codecs](https://commons.apache.org/proper/commons-codec/). (**_warning opinion ahead_**) _While working on the project outlined above I analyzed the code and was quite disappointed; a lot of duplicate unorganized code, obsolete and exotic codecs probably only useful for very few and quite over engineered and slow implementations of popular codecs (specifically Base64). I therefore would make an informed decision if you want to use it or an alternative._ Anyways, if you still want to use it, here is a code snippet:
+Of course there is the good 'ol [commons codecs](https://commons.apache.org/proper/commons-codec/). (**_warning opinion ahead_**) _While working on the project outlined above I analyzed the code and was quite disappointed; a lot of duplicate unorganized code, obsolete and exotic codecs probably only useful for very few and quite overengineered and slow implementations of popular codecs (specifically Base64). I therefore would make an informed decision if you want to use it or an alternative._ Anyways, if you still want to use it, here is a code snippet:
 
 ```
 import org.apache.commons.codec.binary.Hex;
@@ -181,7 +182,7 @@ Hex.toHexString(someByteArray);
 Not Really Option 8: Java 9+ Compatibility or 'Do Not Use JAXBs javax/xml/bind/DatatypeConverter'
 -------------------------------------------------------------------------------------------------
 
-In previous Java (8 and below) versions the Java code for JAXB was included as runtime dependency. Since Java 9 and [Jigsaw modularisation](http://openjdk.java.net/projects/jigsaw/doc/jdk-modularization-tips) your code cannot access other code outside of it's module without explicit declaration. So be aware if you get an exception like:
+In previous Java (8 and below) versions the Java code for JAXB was included as runtime dependency. Since Java 9 and [Jigsaw modularisation](http://openjdk.java.net/projects/jigsaw/doc/jdk-modularization-tips) your code cannot access other code outside of its module without explicit declaration. So be aware if you get an exception like:
 
 ```
 java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
@@ -210,7 +211,7 @@ Here are results from a simple [JMH](https://openjdk.java.net/projects/code-tool
 
 ```
 
-Specs: JDK 8u202, i7-7700K, Win10, 24GB Ram. See the full benchmark [here](https://github.com/patrickfav/bytes-java/blob/master/src/test/java/at/favre/lib/bytes/EncodingHexJmhBenchmark.java).
+Specs: JDK 8u202, i7-7700K, Win10, 24 GB Ram. See the full benchmark [here](https://github.com/patrickfav/bytes-java/blob/master/src/test/java/at/favre/lib/bytes/EncodingHexJmhBenchmark.java).
 
 Benchmark Update 2022
 ---------------------
@@ -226,4 +227,4 @@ Here are results with current JMH 1.36, Java 17 and a higher end computer
 
 ```
 
-Specs: JDK temurin 17.0.6, Ryzen 5900X, Win11, 24GB DDR4 Ram
+Specs: JDK temurin 17.0.6, Ryzen 5900X, Win11, 24 GB DDR4 Ram

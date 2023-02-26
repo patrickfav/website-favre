@@ -2,16 +2,17 @@
 title: 'website-dr-sel'
 date: 2018-05-28
 lastmod: 2023-01-30
-lastfetch: 2023-02-26T09:48:05.096Z
+lastfetch: 2023-02-26T11:56:35.092Z
 description: 'A simple static website created with jekyll'
 summary: 'A simple static website created with jekyll'
-aliases: [/l/4336ac4564c9]
+aliases: ['/l/4336ac4564c9','/opensource/website-dr-sel']
 slug: 2018/website-dr-sel
 tags: ["jekyll", "jekyll-site", "spectral", "static-site-generator"]
 keywords: ["jekyll", "jekyll-site", "spectral", "static-site-generator", "website", "website-performance"]
 alltags: ["jekyll", "jekyll-site", "spectral", "static-site-generator", "website", "website-performance", "github", "SCSS"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/website-dr-sel
+deeplink: /l/4336ac4564c9
 originalContentLink: https://github.com/patrickfav/website-dr-sel
 originalContentType: github
 githubStars: 0

@@ -1,21 +1,22 @@
 ---
 title: 'Snippet: A hugo shortcode that obfuscates email addresses to make it more difficult for b...'
 date: 2023-02-25
-lastmod: 2023-02-25
-lastfetch: 2023-02-26T09:46:49.495Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T11:55:55.838Z
 description: 'A hugo shortcode that obfuscates email addresses to make it more difficult for bots to crawl it from your website. Add the html file to your "layouts/shortcodes/" folder then you can use it in your content.'
 summary: 'A hugo shortcode that obfuscates email addresses to make it more difficult for bots to crawl it from your website. Add the html file to your "layouts/shortcodes/" folder then you can use it in your content.'
 aliases: [/l/5801259898ca]
 slug: 2023/a-hugo-shortcode-that-obfuscates-email-addresses-to-make-it-more-difficult-for-b
-tags: ["HTML", "Markdown"]
-keywords: ["HTML", "Markdown"]
-alltags: ["HTML", "Markdown"]
+tags: ["HTML", "Text"]
+keywords: ["HTML", "Text"]
+alltags: ["HTML", "Text"]
 categories: ["opensource"]
 type: gist
 showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
 editURL: https://gist.github.com/649dcd1283c25f16b8b3aa6f3a05bd96
+deeplink: /l/5801259898ca
 originalContentLink: https://gist.github.com/649dcd1283c25f16b8b3aa6f3a05bd96
 originalContentType: gist
 gistLanguage: HTML
@@ -27,10 +28,9 @@ gistCommentsUrl: https://api.github.com/gists/649dcd1283c25f16b8b3aa6f3a05bd96/c
 {{< info >}} A hugo shortcode that obfuscates email addresses to make it more difficult for bots to crawl it from your website. Add the html file to your "layouts/shortcodes/" folder then you can use it in your content. The [original Gist](https://gist.github.com/649dcd1283c25f16b8b3aa6f3a05bd96) can be found on Github.{{< /info >}}
 
 
-### index.md
+### index.md.txt
 
-```Markdown
-```
+```Text
 ---
 title: ...
 ...
@@ -40,7 +40,6 @@ title: ...
 
 My Email address is {{< mail-address mailto="example@example.com" >}}
 
-```
 ```
 
 ### mail-address.html

@@ -2,7 +2,7 @@
 title: 'Snippet: Simple Sigma.js AngularJs Directive'
 date: 2014-10-02
 lastmod: 2023-02-25
-lastfetch: 2023-02-26T09:46:48.919Z
+lastfetch: 2023-02-26T11:55:55.322Z
 description: 'Simple Sigma.js AngularJs Directive: Since I did not find any angularjs directive for angularjs I created a little simple of my own. This is by no means a ready-for-all solutions, but all the features I needed at the time; it is easily extended to your needs and maybe sometimes somebody will do a full-blown directive for sigma.js  Tested: angularjs 1.2.25, sigma.js 1.0.3 (should work with angularjs 1.3).'
 summary: 'Simple Sigma.js AngularJs Directive: Since I did not find any angularjs directive for angularjs I created a little simple of my own. This is by no means a ready-for-all solutions, but all the features I needed at the time; it is easily extended to your needs and maybe sometimes somebody will do a full-blown directive for sigma.js  Tested: angularjs 1.2.25, sigma.js 1.0.3 (should work with angularjs 1.3).'
 aliases: [/l/45528e7135dd]
@@ -16,6 +16,7 @@ showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
 editURL: https://gist.github.com/cd20939b383b9c284511
+deeplink: /l/45528e7135dd
 originalContentLink: https://gist.github.com/cd20939b383b9c284511
 originalContentType: gist
 gistLanguage: JavaScript

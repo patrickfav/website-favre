@@ -1,8 +1,8 @@
 ---
 title: 'The Concise Interface Implementation Pattern'
 date: 2018-04-11
-lastmod: 2023-01-22
-lastfetch: 2023-02-26T09:47:15.228Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T11:57:03.872Z
 summary: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 description: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 aliases: [/l/8736c1c1e916]
@@ -11,6 +11,7 @@ tags: []
 keywords: ["java", "interfaces", "patterns", "dependency-injection", "testing"]
 alltags: ["java", "interfaces", "patterns", "dependency-injection", "testing", "medium"]
 categories: ["article", "medium"]
+deeplink: /l/8736c1c1e916
 originalContentLink: https://medium.com/@patrickfav/the-concise-interface-implementation-pattern-9b15f35a806b
 originalContentType: medium
 mediumClaps: 0
@@ -76,7 +77,7 @@ I believe seeing such a construct also conveys the exact properties described ab
 
 #### Future-proof
 
-If in any point in time you wish to have multiple implementation or expose this interface as an API you just move the Default implementation to it’s own class and give it a proper name ([IntelliJ can do this for you](https://www.jetbrains.com/help/idea/move-inner-to-upper-level-dialog-for-java.html)). The interface and implementation are not tied to each other, they are just defined in the same location in the source code.
+If in any point in time you wish to have multiple implementation or expose this interface as an API you just move the Default implementation to its own class and give it a proper name ([IntelliJ can do this for you](https://www.jetbrains.com/help/idea/move-inner-to-upper-level-dialog-for-java.html)). The interface and implementation are not tied to each other, they are just defined in the same location in the source code.
 
 #### Avoid unnecessary Naming
 
@@ -96,6 +97,6 @@ One of the main benefits of using interfaces is the better testability. By using
 
 ### Conclusion
 
-By abstracting and creating contracts with interfaces we can create better software. Unfortunately in some cases using interfaces can be unnecessary overhead. The proposed concise interface implementation pattern mitigates this issue by defining the name and location of the implementation without removing the flexibility of later using multiple implementations or as an standalone API.
+By abstracting and creating contracts with interfaces we can create better software. Unfortunately in some cases using interfaces can be unnecessary overhead. The proposed concise interface implementation pattern mitigates this issue by defining the name and location of the implementation without removing the flexibility of later using multiple implementations or as a standalone API.
 
 

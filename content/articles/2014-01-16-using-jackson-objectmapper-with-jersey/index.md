@@ -2,7 +2,7 @@
 title: 'Using Jackson ObjectMapper with Jersey'
 date: 2014-01-16
 lastmod: 2017-09-16
-lastfetch: 2023-02-26T09:47:04.469Z
+lastfetch: 2023-02-26T11:56:53.335Z
 description: 'Using Jackson ObjectMapper with Jersey'
 aliases: [/l/95882ee09148]
 slug: 2014/using-jackson-objectmapper-with-jersey
@@ -14,6 +14,7 @@ showEdit: false
 showSummary: false 
 type: stackoverflow 
 thumbnail: 'sobanner*' 
+deeplink: /l/95882ee09148
 originalContentLink: https://stackoverflow.com/questions/20563640/using-jackson-objectmapper-with-jersey
 originalContentType: stackoverflow
 soScore: 13
