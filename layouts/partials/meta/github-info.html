@@ -34,11 +34,18 @@
   </span>
 {{ end }}
 
-{{ if (.Params.githubLicense | default false)}}
-  <span class="px-2 text-primary-500">&middot;</span>
-  <span class="custom-info">
-    {{ partial "icon.html" "scale-balanced-solid" }} {{ .Params.githubLicense }}
-  </span>
+<!--{{ if (.Params.githubLicense | default false)}}-->
+<!--  <span class="px-2 text-primary-500">&middot;</span>-->
+<!--  <span class="custom-info">-->
+<!--    {{ partial "icon.html" "scale-balanced-solid" }} {{ .Params.githubLicense }}-->
+<!--  </span>-->
+<!--{{ end }}-->
+
+{{ if and (.Params.deeplink | default false) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+    <a href="{{ .Params.deeplink }}">{{ partial "icon.html" "link-solid" }}</a>
+</span>
 {{ end }}
 
 {{- /* Trim EOF */ -}}

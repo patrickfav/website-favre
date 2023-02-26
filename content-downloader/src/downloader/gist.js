@@ -116,6 +116,7 @@ function createGistFrontMatter (gistId, gistMeta, title, slug) {
   meta += 'showTaxonomies: false\n'
   meta += "thumbnail: 'gistbanner*'\n"
   meta += 'editURL: ' + gistMeta.html_url + '\n'
+  meta += 'deeplink: ' + slug.permalink + '\n'
   meta += 'originalContentLink: ' + gistMeta.html_url + '\n'
   meta += 'originalContentType: gist\n'
   meta += 'gistLanguage: ' + mainLanguage + '\n'

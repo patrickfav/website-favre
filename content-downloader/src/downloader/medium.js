@@ -139,6 +139,7 @@ function createFrontMatter (articleInfo, slug) {
   meta += 'keywords: [' + articleTags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'alltags: [' + allTags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'categories: ["article", "medium"]\n'
+  meta += 'deeplink: ' + slug.permalink + '\n'
   meta += 'originalContentLink: ' + articleInfo.mediumUrl + '\n'
   meta += 'originalContentType: medium\n'
   meta += 'mediumClaps: ' + articleInfo.clapCount + '\n'

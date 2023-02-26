@@ -12,4 +12,11 @@
   {{ partial "icon.html" "eye-solid" }} {{ div .Params.soViews 1000}}k Views
 </span>
 
+{{ if and (.Params.deeplink | default false) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+    <a href="{{ .Params.deeplink }}">{{ partial "icon.html" "link-solid" }}</a>
+</span>
+{{ end }}
+
 {{- /* Trim EOF */ -}}

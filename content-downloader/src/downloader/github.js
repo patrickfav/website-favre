@@ -181,6 +181,7 @@ function createGithubFrontMatter (projectName, githubMeta, releaseMeta, relOutDi
   meta += 'alltags: [' + allTags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'categories: ["opensource"]\n'
   meta += 'editURL: ' + githubMeta.html_url + '\n'
+  meta += 'deeplink: ' + slug.permalink + '\n'
   meta += 'originalContentLink: ' + githubMeta.html_url + '\n'
   meta += 'originalContentType: github\n'
   meta += 'githubStars: ' + githubMeta.stargazers_count + '\n'

@@ -24,7 +24,14 @@
 <span class="px-2 text-primary-500">&middot;</span>
 <span class="custom-info">
     {{ partial "icon.html" "file-regular" }} {{ .Params.gistFileCount }} Files
-  </span>
+</span>
+{{ end }}
+
+{{ if and (.Params.deeplink | default false) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+    <a href="{{ .Params.deeplink }}">{{ partial "icon.html" "link-solid" }}</a>
+</span>
 {{ end }}
 
 {{- /* Trim EOF */ -}}

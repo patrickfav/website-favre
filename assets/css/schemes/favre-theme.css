@@ -45,3 +45,7 @@ span.custom-info span.icon svg {
     height: 0.9em;
     width: 0.9em;
 }
+
+span.custom-info a:hover {
+    opacity: 0.75;
+}

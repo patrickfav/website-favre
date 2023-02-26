@@ -168,6 +168,7 @@ function createStackOverflowFrontMatter (soAnswers, soQuestion, slug, answerLink
   meta += 'showSummary: false \n'
   meta += 'type: stackoverflow \n'
   meta += "thumbnail: 'sobanner*' \n"
+  meta += 'deeplink: ' + slug.permalink + '\n'
   meta += 'originalContentLink: ' + soQuestion.link + '\n'
   meta += 'originalContentType: stackoverflow\n'
   meta += 'soScore: ' + soAnswers.score + '\n'
