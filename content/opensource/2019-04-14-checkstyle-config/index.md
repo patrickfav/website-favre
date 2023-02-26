@@ -2,7 +2,7 @@
 title: 'checkstyle-config'
 date: 2019-04-14
 lastmod: 2023-01-30
-lastfetch: 2023-02-25T15:16:54.636Z
+lastfetch: 2023-02-26T09:48:01.846Z
 description: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 summary: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 aliases: [/l/b63945479272]

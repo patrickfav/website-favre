@@ -2,7 +2,7 @@
 title: 'Security with SharedPreferences'
 date: 2014-09-27
 lastmod: 2020-06-20
-lastfetch: 2023-02-25T15:15:53.471Z
+lastfetch: 2023-02-26T09:47:04.454Z
 description: 'Security with SharedPreferences'
 aliases: [/l/48e50c1319e0]
 slug: 2014/security-with-sharedpreferences
@@ -17,7 +17,7 @@ thumbnail: 'sobanner*'
 originalContentLink: https://stackoverflow.com/questions/26076292/security-with-sharedpreferences
 originalContentType: stackoverflow
 soScore: 33
-soViews: 10081
+soViews: 10082
 soIsAccepted: true
 soQuestionId: 26076292
 soAnswerId: 26077852
