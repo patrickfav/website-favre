@@ -2,17 +2,17 @@
 title: 'checkstyle-config'
 date: 2019-04-14
 lastmod: 2023-01-30
-lastfetch: 2023-02-26T11:56:31.935Z
+lastfetch: 2023-02-26T14:35:12.464Z
 description: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 summary: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
-aliases: ['/l/b63945479272','/opensource/checkstyle-config']
+aliases: ['/link/y2ys6x9i','/opensource/checkstyle-config']
 slug: 2019/checkstyle-config
 tags: ["checkstyle", "checkstyle-plugin", "configuration", "java", "maven"]
 keywords: ["checkstyle", "checkstyle-plugin", "configuration", "java", "maven"]
 alltags: ["checkstyle", "checkstyle-plugin", "configuration", "java", "maven", "github", "null"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/checkstyle-config
-deeplink: /l/b63945479272
+deeplink: /link/y2ys6x9i
 originalContentLink: https://github.com/patrickfav/checkstyle-config
 originalContentType: github
 githubStars: 3

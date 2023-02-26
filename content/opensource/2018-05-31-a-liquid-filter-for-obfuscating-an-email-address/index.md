@@ -2,10 +2,10 @@
 title: 'Snippet: A Liquid Filter for obfuscating an Email Address'
 date: 2018-05-31
 lastmod: 2023-02-25
-lastfetch: 2023-02-26T11:55:55.269Z
+lastfetch: 2023-02-26T14:36:04.288Z
 description: 'A Liquid Filter for obfuscating an Email Address (can be used with Jekyll aswell).'
 summary: 'A Liquid Filter for obfuscating an Email Address (can be used with Jekyll aswell).'
-aliases: [/l/432f03be0c0a]
+aliases: [/link/4auzrc32]
 slug: 2018/a-liquid-filter-for-obfuscating-an-email-address
 tags: ["Markdown", "Ruby"]
 keywords: ["Markdown", "Ruby"]
@@ -16,7 +16,7 @@ showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
 editURL: https://gist.github.com/3f9127e25dd6538f0d682b89cbfaefd9
-deeplink: /l/432f03be0c0a
+deeplink: /link/4auzrc32
 originalContentLink: https://gist.github.com/3f9127e25dd6538f0d682b89cbfaefd9
 originalContentType: gist
 gistLanguage: Markdown

@@ -2,16 +2,16 @@
 title: 'Managing Logging in a Multi-Module Android Application'
 date: 2018-01-14
 lastmod: 2023-02-26
-lastfetch: 2023-02-26T11:57:11.132Z
+lastfetch: 2023-02-26T14:35:52.668Z
 summary: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
 description: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
-aliases: [/l/ec5a41edab75]
+aliases: [/link/gvz8gdrb]
 slug: 2018/managing-logging-in-a-multi-module-android-application
-tags: ["Programming"]
+tags: ["Android Dev", "Programming"]
 keywords: ["android", "android-app-development", "logging", "timber", "slf4j"]
-alltags: ["android", "android-app-development", "logging", "timber", "slf4j", "Programming", "medium"]
+alltags: ["android", "android-app-development", "logging", "timber", "slf4j", "Android Dev", "Programming", "medium"]
 categories: ["article", "medium"]
-deeplink: /l/ec5a41edab75
+deeplink: /link/gvz8gdrb
 originalContentLink: https://proandroiddev.com/managing-logging-in-a-multi-module-android-application-eb966fb7fedc
 originalContentType: medium
 mediumClaps: 232

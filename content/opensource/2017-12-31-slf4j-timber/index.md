@@ -2,17 +2,17 @@
 title: 'slf4j-timber'
 date: 2017-12-31
 lastmod: 2022-11-18
-lastfetch: 2023-02-26T11:56:18.321Z
+lastfetch: 2023-02-26T14:34:57.749Z
 description: 'SLF4J binding for Timber - a logger with a small, extensible API which provides utility on top of Android`s normal Log class.'
 summary: 'SLF4J binding for Timber - a logger with a small, extensible API which provides utility on top of Android`s normal Log class.'
-aliases: ['/l/fcae0868a425','/opensource/slf4j-timber']
+aliases: ['/link/694tx24x','/opensource/slf4j-timber']
 slug: 2017/slf4j-timber
 tags: ["android", "logcat", "logging", "slf4j"]
 keywords: ["android", "logcat", "logging", "slf4j", "slf4j-binding", "timber"]
 alltags: ["android", "logcat", "logging", "slf4j", "slf4j-binding", "timber", "github", "Java"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/slf4j-timber
-deeplink: /l/fcae0868a425
+deeplink: /link/694tx24x
 originalContentLink: https://github.com/patrickfav/slf4j-timber
 originalContentType: github
 githubStars: 20

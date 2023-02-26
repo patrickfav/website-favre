@@ -2,9 +2,9 @@
 title: 'Security with SharedPreferences'
 date: 2014-09-27
 lastmod: 2020-06-20
-lastfetch: 2023-02-26T11:56:53.321Z
+lastfetch: 2023-02-26T14:35:33.980Z
 description: 'Security with SharedPreferences'
-aliases: [/l/48e50c1319e0]
+aliases: [/link/cbfeh9ja]
 slug: 2014/security-with-sharedpreferences
 tags: ["android", "sharedpreferences"]
 keywords: ["android", "sharedpreferences"]
@@ -14,7 +14,7 @@ showEdit: false
 showSummary: false 
 type: stackoverflow 
 thumbnail: 'sobanner*' 
-deeplink: /l/48e50c1319e0
+deeplink: /link/cbfeh9ja
 originalContentLink: https://stackoverflow.com/questions/26076292/security-with-sharedpreferences
 originalContentType: stackoverflow
 soScore: 33

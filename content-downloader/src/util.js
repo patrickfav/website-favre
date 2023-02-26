@@ -1,8 +1,12 @@
 import crypto from 'crypto'
+import base32 from 'base32-encoding'
 
 export function escapeFrontMatterText (title) {
   return title.replace(/'/g, '`').replace(/\n/g, ' ').replace(/\r/g, '')
 }
+
+const shortLinkPath = 'link'
+
 export function escapeForFileName (name, date, stableId) {
   const escaped = encodeURI(
     name
@@ -35,10 +39,11 @@ export function escapeForFileName (name, date, stableId) {
     safeName: escaped,
     safeNameWithDate: date.toISOString().split('T')[0] + '-' + escaped,
     yearSlashSafeName: date.getFullYear() + '/' + escaped,
-    permalink: '/l/' + crypto.createHash('sha256')
-      .update(date.toISOString() + '_' + stableId)
-      .digest('hex')
-      .substring(0, 12)
+    permalink: `/${shortLinkPath}/${base32.stringify(
+      crypto.createHash('sha512')
+        .update(date.toISOString() + '_' + stableId)
+        .digest()
+    ).substring(0, 8)}`
   }
 }
 
@@ -71,9 +76,9 @@ function stackOverflowHighlightedCodeBlock (turndownService) {
       const firstChild = node.firstChild
       return (
         node.nodeName === 'PRE' &&
-                highlightRegExp.test(node.className) &&
-                firstChild &&
-                firstChild.nodeName === 'CODE'
+        highlightRegExp.test(node.className) &&
+        firstChild &&
+        firstChild.nodeName === 'CODE'
       )
     },
     replacement: function (content, node, options) {
@@ -82,8 +87,8 @@ function stackOverflowHighlightedCodeBlock (turndownService) {
 
       return (
         '\n\n' + options.fence + language + '\n' +
-                deEscape(node.firstChild.textContent) +
-                '\n' + options.fence + '\n\n'
+        deEscape(node.firstChild.textContent) +
+        '\n' + options.fence + '\n\n'
       )
     }
   })

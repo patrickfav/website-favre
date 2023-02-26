@@ -2,10 +2,10 @@
 title: 'Snippet: Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 date: 2018-11-11
 lastmod: 2023-02-25
-lastfetch: 2023-02-26T11:55:55.202Z
+lastfetch: 2023-02-26T14:36:04.233Z
 description: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 summary: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
-aliases: [/l/4bca1bf56af6]
+aliases: [/link/zer36gia]
 slug: 2018/companion-code-to-my-article-about-aes-cbc-with-encrypt-then-mac
 tags: ["Java"]
 keywords: ["Java"]
@@ -16,7 +16,7 @@ showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
 editURL: https://gist.github.com/b323f0d9cbd81d5fa9cc4c971b732c77
-deeplink: /l/4bca1bf56af6
+deeplink: /link/zer36gia
 originalContentLink: https://gist.github.com/b323f0d9cbd81d5fa9cc4c971b732c77
 originalContentType: gist
 gistLanguage: Java

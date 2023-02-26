@@ -2,10 +2,10 @@
 title: 'Snippet: Java Authenticated Encryption with AES and GCM.'
 date: 2020-04-19
 lastmod: 2023-02-25
-lastfetch: 2023-02-26T11:55:55.166Z
+lastfetch: 2023-02-26T14:36:04.210Z
 description: 'Java Authenticated Encryption with AES and GCM.'
 summary: 'Java Authenticated Encryption with AES and GCM.'
-aliases: [/l/b63b2397802f]
+aliases: [/link/s8k5pqm4]
 slug: 2020/java-authenticated-encryption-with-aes-and-gcm
 tags: ["Java"]
 keywords: ["Java"]
@@ -16,7 +16,7 @@ showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
 editURL: https://gist.github.com/7e28d4eb4bf500f7ee8012c4a0cf7bbf
-deeplink: /l/b63b2397802f
+deeplink: /link/s8k5pqm4
 originalContentLink: https://gist.github.com/7e28d4eb4bf500f7ee8012c4a0cf7bbf
 originalContentType: gist
 gistLanguage: Java

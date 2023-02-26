@@ -1,21 +1,21 @@
 ---
 title: 'density-converter'
 date: 2016-02-25
-lastmod: 2023-02-13
-lastfetch: 2023-02-26T11:56:03.393Z
+lastmod: 2023-02-26
+lastfetch: 2023-02-26T14:34:43.663Z
 description: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 summary: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
-aliases: ['/l/f5eaf52b1fb1','/opensource/density-converter']
+aliases: ['/link/g2fpwxg2','/opensource/density-converter']
 slug: 2016/density-converter
 tags: ["android", "cli", "converter", "density"]
 keywords: ["android", "cli", "converter", "density", "dpi", "drawable", "gui", "ios", "jpeg", "mozjpeg", "nine-patch", "png", "pngcrush", "post-processor", "psd", "resized-images", "svg"]
 alltags: ["android", "cli", "converter", "density", "dpi", "drawable", "gui", "ios", "jpeg", "mozjpeg", "nine-patch", "png", "pngcrush", "post-processor", "psd", "resized-images", "svg", "github", "Java"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/density-converter
-deeplink: /l/f5eaf52b1fb1
+deeplink: /link/g2fpwxg2
 originalContentLink: https://github.com/patrickfav/density-converter
 originalContentType: github
-githubStars: 235
+githubStars: 236
 githubForks: 32
 githubLanguage: Java
 githubLatestVersion: v1.0.0-alpha7

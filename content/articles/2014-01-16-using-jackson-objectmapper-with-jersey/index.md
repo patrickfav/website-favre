@@ -2,9 +2,9 @@
 title: 'Using Jackson ObjectMapper with Jersey'
 date: 2014-01-16
 lastmod: 2017-09-16
-lastfetch: 2023-02-26T11:56:53.335Z
+lastfetch: 2023-02-26T14:35:33.996Z
 description: 'Using Jackson ObjectMapper with Jersey'
-aliases: [/l/95882ee09148]
+aliases: [/link/cjaczjy2]
 slug: 2014/using-jackson-objectmapper-with-jersey
 tags: ["java", "json", "spring", "rest", "jersey-2.0"]
 keywords: ["java", "json", "spring", "rest", "jersey-2.0"]
@@ -14,7 +14,7 @@ showEdit: false
 showSummary: false 
 type: stackoverflow 
 thumbnail: 'sobanner*' 
-deeplink: /l/95882ee09148
+deeplink: /link/cjaczjy2
 originalContentLink: https://stackoverflow.com/questions/20563640/using-jackson-objectmapper-with-jersey
 originalContentType: stackoverflow
 soScore: 13

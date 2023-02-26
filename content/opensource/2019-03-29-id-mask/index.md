@@ -2,17 +2,17 @@
 title: 'id-mask'
 date: 2019-03-29
 lastmod: 2023-01-30
-lastfetch: 2023-02-26T11:56:19.934Z
+lastfetch: 2023-02-26T14:34:59.508Z
 description: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger.'
 summary: 'IDMask is a Java library for masking internal ids (e.g. from your DB) when they need to be published to hide their actual value and to prevent forging. It has support optional randomisation has a wide support for various Java types including long, UUID and BigInteger.'
-aliases: ['/l/b62e312733af','/opensource/id-mask']
+aliases: ['/link/85mak4nt','/opensource/id-mask']
 slug: 2019/id-mask
 tags: ["64bit", "aes-encryption", "biginteger", "byte-array"]
 keywords: ["64bit", "aes-encryption", "biginteger", "byte-array", "database-ids", "hashid", "hashids", "hkdf", "hmac", "id", "integer", "jackson", "jax-rs", "long", "obfuscation", "paramconverter", "serializer", "uuid"]
 alltags: ["64bit", "aes-encryption", "biginteger", "byte-array", "database-ids", "hashid", "hashids", "hkdf", "hmac", "id", "integer", "jackson", "jax-rs", "long", "obfuscation", "paramconverter", "serializer", "uuid", "github", "Java"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/id-mask
-deeplink: /l/b62e312733af
+deeplink: /link/85mak4nt
 originalContentLink: https://github.com/patrickfav/id-mask
 originalContentType: github
 githubStars: 41

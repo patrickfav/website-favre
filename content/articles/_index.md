@@ -7,7 +7,7 @@ cascade:
     draft: false
     showEdit: false
     showSummary: true
-    showDate: true
+    showDate: false
     showReadingTime: true
     showTaxonomies: false
     showWordCount: false

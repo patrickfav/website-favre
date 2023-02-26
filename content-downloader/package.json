@@ -25,6 +25,7 @@
     "url": "https://github.com/patrickfav/website-favre.git"
   },
   "dependencies": {
+    "base32-encoding": "^1.0.0",
     "cheerio": "1.0.0-rc.12",
     "esm": "^3.2.25",
     "got": "^11.8.6",

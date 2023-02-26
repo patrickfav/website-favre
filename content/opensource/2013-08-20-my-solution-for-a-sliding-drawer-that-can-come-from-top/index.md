@@ -2,10 +2,10 @@
 title: 'Snippet: My solution for a Sliding Drawer that can come from Top'
 date: 2013-08-20
 lastmod: 2019-04-04
-lastfetch: 2023-02-26T11:55:55.886Z
+lastfetch: 2023-02-26T14:36:04.763Z
 description: 'My solution for a Sliding Drawer that can come from Top: I extracted SlidingTray from this lib http://aniqroid.sileria.com/doc/api/ (by Ahmed Shakil) and refactored it a bit since it had some quirks needed to be used within this lib. It consists of 1 class and you have to add atts in your attrs.xml. Other than that it has pretty much the same usage as SlidingDrawer with the additional "orientation" attribute. '
 summary: 'My solution for a Sliding Drawer that can come from Top: I extracted SlidingTray from this lib http://aniqroid.sileria.com/doc/api/ (by Ahmed Shakil) and refactored it a bit since it had some quirks needed to be used within this lib. It consists of 1 class and you have to add atts in your attrs.xml. Other than that it has pretty much the same usage as SlidingDrawer with the additional "orientation" attribute. '
-aliases: [/l/2ed86857f088]
+aliases: [/link/i9m7x48n]
 slug: 2013/my-solution-for-a-sliding-drawer-that-can-come-from-top
 tags: ["Java", "XML"]
 keywords: ["Java", "XML"]
@@ -16,7 +16,7 @@ showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
 editURL: https://gist.github.com/6284130
-deeplink: /l/2ed86857f088
+deeplink: /link/i9m7x48n
 originalContentLink: https://gist.github.com/6284130
 originalContentType: gist
 gistLanguage: Java
