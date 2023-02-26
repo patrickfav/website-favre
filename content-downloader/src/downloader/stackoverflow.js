@@ -7,7 +7,6 @@ import { strikethrough, tables, taskListItems } from 'turndown-plugin-gfm'
 import { customTurnDownPlugin, escapeForFileName, escapeFrontMatterText } from '../util'
 import wordsCount from 'words-count'
 import crypto from 'crypto'
-import summarize from 'text-summarization'
 import { sobannerSvg } from '../svg'
 
 export async function downloadStackOverflowPosts (soUser, rootDirMd, relOutDir) {
@@ -147,17 +146,7 @@ function createMarkdown (body) {
 }
 
 async function createSummary (answer, question) {
-  const summaryQuestion = await summarize({ html: question.body })
-
-  // console.log('Q: ' + JSON.stringify(summaryQuestion, null, 2))
-
-  let summary = ''
-
-  if (summaryQuestion.extractive && summaryQuestion.extractive.length > 0) {
-    summary += 'Question: ' + summaryQuestion.extractive[0]
-  }
-
-  return summary
+  return ''
 }
 
 function createStackOverflowFrontMatter (soAnswers, soQuestion, summary, slug, answerLink) {
