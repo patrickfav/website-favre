@@ -49,3 +49,8 @@ span.custom-info span.icon svg {
 span.custom-info a:hover {
     opacity: 0.75;
 }
+
+/* max width of content */
+.max-w-prose, article.max-w-prose, header.max-w-prose, div.max-w-prose, section.max-w-prose {
+    max-width: 80ch;
+}
