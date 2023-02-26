@@ -34,6 +34,9 @@ jobs:
       - name: Run ESLint
         run: npm run lint
         working-directory: ${{ env.WORKING_DIR }}
+      - name: Run NPM Audit
+        run: npm audit signatures && npm audit --audit-level=high
+        working-directory: ${{ env.WORKING_DIR }}
       - name: Update Content
         uses: nick-fields/retry@v2
         if: github.event_name == 'schedule'
