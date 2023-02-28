@@ -1,0 +1,23 @@
+name: Check Website
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+  schedule:
+    - cron: '27 3 * * *' # run 3:27 am every day
+
+env:
+  SITE_URL: https://favr.dev
+
+jobs:
+  build_and_deploy:
+    name: Check Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check links with linkcheck
+        uses: filiph/linkcheck@2.0.23
+        with:
+          arguments: ${{ env.SITE_URL }} -e
+
