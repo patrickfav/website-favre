@@ -1,0 +1,12 @@
+# dependabot.yml file with
+# customized npm configuration
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "content-downloader"
+    open-pull-requests-limit: 3
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
