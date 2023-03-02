@@ -1,6 +1,4 @@
-# dependabot.yml file with
-# customized npm configuration
-
+# dependabot analyzing npm dependencies
 version: 2
 updates:
   - package-ecosystem: "npm"
