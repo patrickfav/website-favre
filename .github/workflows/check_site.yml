@@ -1,0 +1,55 @@
+name: Check Website
+
+on:
+  pull_request: {}
+  schedule:
+    - cron: '24 3 * * MON' # run 3:24 every monday
+
+env:
+  SITE_URL: https://favr.dev
+
+jobs:
+  link_check:
+    name: Check Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check links with linkcheck
+        uses: filiph/linkcheck@2.0.23
+        with:
+          arguments: ${{ env.SITE_URL }} -e
+
+  html_check:
+    name: HTML5 Validator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code und Submodules
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      - uses: actions/cache@v3
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.109.0'
+          extended: true
+      - name: Build Site with Hugo
+        env:
+          HUGOxPARAMSxGITxLAST_COMMITxHASH: ${{ vars.GITHUB_SHA }}
+          HUGOxPARAMSxGITxLAST_BUILDxID: ${{ vars.GITHUB_RUN_ID }}
+          HUGOxPARAMSxGITxLAST_BUILDxNUMBER: ${{ vars.GITHUB_RUN_NUMBER }}
+        run: |
+          hugo version && \
+          hugo config && \
+          hugo --verbose --printPathWarnings --minify
+      - name: Validate generated HTML (validator.nu backend)
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          format: text
+          css: true
+          root: public/
