@@ -30,8 +30,13 @@ This site is generated with [hugo](https://gohugo.io/), a static site generator.
 is hosted on [Github](https://github.com/patrickfav/website-favre) and continuously deployed via 
 [Github Actions](https://github.com/patrickfav/website-favre/actions) to 
 [Firebase Hosting](https://firebase.google.com/docs/hosting) (a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network)).
+
+### Syncing Content 
+
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=patrickfav_website-favre&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
+
 The content is fetched via a simple [Node CLI](https://github.com/patrickfav/website-favre/tree/main/content-downloader) 
-that requests the content from e.g. Github, StackOverflow or Medium and converts it to markdown with a hugo-compatible 
+that requests the content from e.g. GitHub, StackOverflow or Medium and converts it to markdown with a hugo-compatible 
 [front matter](https://gohugo.io/content-management/front-matter/) and [directory structure](https://gohugo.io/content-management/organization/).
 
 ### Version
