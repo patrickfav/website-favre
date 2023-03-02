@@ -29,7 +29,7 @@
 
 [[main]]
   name = "GitHub"
-  url = "https://github.com/patrickfav"
+  url = "https://github.com/patrickfav/website-favre"
   weight = 98
   [main.params]
     icon = "github"

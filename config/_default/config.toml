@@ -9,20 +9,14 @@ theme = "congo"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
-paginate = 10
+paginate = 15
 summaryLength = 0
 enableGitInfo = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-
-
-
-
-
-
-
+# #########################################
 
 [params.profile]
 enable = true
