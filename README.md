@@ -12,8 +12,6 @@ A simple website with a list of all of my open source projects and articles I wr
 
 ## Prepare
 
-## Build & Run
-
 ### Install Hugo
 
 * Windows `choco install hugo-extended`
@@ -29,7 +27,9 @@ git submodule init
 git submodule update
 ```
 
-### Prepare Content
+## Build & Run
+
+### Prepare Content Sync
 
 Install everything in the local script and link the cli:
 
@@ -43,6 +43,16 @@ optionally update the content with
 
 ```bash
 hugo-content-downloader
+```
+which will populate the directories `content/opensource` and `content/articles`.
+
+### Linting
+
+This project uses [eslint](https://eslint.org/) to validate the code:
+
+```bash
+cd content-downloader
+npm runt lint
 ```
 
 ### Using the build & run Docker Image
