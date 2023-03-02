@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:js": "eslint src/**/*.js",
+    "lint:js": "eslint src/**/*.js -f json -o eslint_report.json",
     "lint": "npm run lint:js"
   },
   "keywords": [
@@ -19,7 +19,6 @@
     "cg-dl"
   ],
   "author": "Patrick Favre-Bulle",
-  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/patrickfav/website-favre.git"
@@ -41,6 +40,7 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1"
+    "eslint-plugin-promise": "^6.1.1",
+    "sonarqube-scanner": "^3.0.1"
   }
 }
