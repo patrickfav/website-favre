@@ -2,9 +2,9 @@
 title: 'Q: Android: fast bitmap blur?'
 date: 2014-04-27
 lastmod: 2017-05-23
-lastfetch: 2023-02-26T18:53:41.216Z
+lastfetch: 2023-03-05T20:14:22.038Z
 description: 'Android: fast bitmap blur?'
-summary: 'Question: I`ve been searching the past three days for a built-in, hardware-accelerated way of bluring a bitmap with android. - Use downscaled images:...'
+summary: ''
 aliases: [/link/vwuqat4a]
 slug: 2014/android-fast-bitmap-blur
 tags: ["android", "image-processing", "blur", "convolution"]
@@ -19,7 +19,7 @@ deeplink: /link/vwuqat4a
 originalContentLink: https://stackoverflow.com/questions/14988990/android-fast-bitmap-blur
 originalContentType: stackoverflow
 soScore: 13
-soViews: 28374
+soViews: 28386
 soIsAccepted: false
 soQuestionId: 14988990
 soAnswerId: 23329963

@@ -2,7 +2,7 @@
 title: 'mvn-common-parent'
 date: 2019-03-16
 lastmod: 2023-02-11
-lastfetch: 2023-02-26T14:35:19.113Z
+lastfetch: 2023-03-05T20:14:05.730Z
 description: 'A maven configuration which can be used as a commons config parent for POM files'
 summary: 'A maven configuration which can be used as a commons config parent for POM files'
 aliases: ['/link/fcpy79z9','/opensource/mvn-common-parent']
@@ -18,9 +18,9 @@ originalContentType: github
 githubStars: 2
 githubForks: 2
 githubLanguage: null
-githubLatestVersion: v19
-githubLatestVersionDate: 2023-02-15T20:33:03Z
-githubLatestVersionUrl: https://github.com/patrickfav/mvn-common-parent/releases/tag/v19
+githubLatestVersion: v20
+githubLatestVersionDate: 2023-03-05T19:30:47Z
+githubLatestVersionUrl: https://github.com/patrickfav/mvn-common-parent/releases/tag/v20
 githubLicense: Apache License 2.0
 ---
 # Maven Common Configuration

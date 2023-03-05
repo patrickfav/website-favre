@@ -2,7 +2,7 @@
 title: 'website-favre'
 date: 2018-05-31
 lastmod: 2023-02-21
-lastfetch: 2023-02-26T14:35:17.357Z
+lastfetch: 2023-03-05T20:14:03.943Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 aliases: ['/link/3xw5p9d9','/opensource/website-favre']
@@ -24,10 +24,14 @@ githubLanguage: JavaScript
 A simple website with a list of all of my open source projects and articles I wrote. Can be found on [favr.dev](https://favr.dev). Uses [Hugo](https://gohugo.io/) as static site generator.
 
 [](https://github.com/patrickfav/website-favre/actions)
+[](https://github.com/patrickfav/website-favre/actions)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
+
+![Screenshot Website](gh_c99eb45c362a1585934c8ef0.png)
 
 ## Prepare
-
-## Build & Run
 
 ### Install Hugo
 
@@ -44,7 +48,9 @@ git submodule init
 git submodule update
 ```
 
-### Prepare Content
+## Build & Run
+
+### Prepare Content Sync
 
 Install everything in the local script and link the cli:
 
@@ -58,6 +64,16 @@ optionally update the content with
 
 ```bash
 hugo-content-downloader
+```
+which will populate the directories `content/opensource` and `content/articles`.
+
+### Linting
+
+This project uses [eslint](https://eslint.org/) to validate the code:
+
+```bash
+cd content-downloader
+npm runt lint
 ```
 
 ### Using the build & run Docker Image

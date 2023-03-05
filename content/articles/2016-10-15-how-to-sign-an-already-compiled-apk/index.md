@@ -2,9 +2,9 @@
 title: 'Q: How to Sign an Already Compiled Apk'
 date: 2016-10-15
 lastmod: 2021-12-01
-lastfetch: 2023-02-26T18:53:40.426Z
+lastfetch: 2023-03-05T20:14:21.962Z
 description: 'How to Sign an Already Compiled Apk'
-summary: 'Question: I`ve decoded an APK with apktool (as the original source code was lost) so I could fix some issues with the layout xml files. - Automated Process:...'
+summary: ''
 aliases: [/link/8waxpai3]
 slug: 2016/how-to-sign-an-already-compiled-apk
 tags: ["android", "android-install-apk", "apk"]
@@ -19,7 +19,7 @@ deeplink: /link/8waxpai3
 originalContentLink: https://stackoverflow.com/questions/10930331/how-to-sign-an-already-compiled-apk
 originalContentType: stackoverflow
 soScore: 121
-soViews: 261357
+soViews: 261983
 soIsAccepted: false
 soQuestionId: 10930331
 soAnswerId: 40064149

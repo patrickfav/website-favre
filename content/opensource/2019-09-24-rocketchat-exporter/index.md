@@ -1,8 +1,8 @@
 ---
 title: 'rocketchat-exporter'
 date: 2019-09-24
-lastmod: 2023-02-21
-lastfetch: 2023-02-26T14:35:07.188Z
+lastmod: 2023-03-02
+lastfetch: 2023-03-05T20:13:52.921Z
 description: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 summary: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 aliases: ['/link/qf3fheqr','/opensource/rocketchat-exporter']
@@ -18,9 +18,9 @@ originalContentType: github
 githubStars: 13
 githubForks: 10
 githubLanguage: Java
-githubLatestVersion: v1.1.1
-githubLatestVersionDate: 2021-03-04T09:33:55Z
-githubLatestVersionUrl: https://github.com/patrickfav/rocketchat-exporter/releases/tag/v1.1.1
+githubLatestVersion: v1.1.2
+githubLatestVersionDate: 2023-03-02T20:32:10Z
+githubLatestVersionUrl: https://github.com/patrickfav/rocketchat-exporter/releases/tag/v1.1.2
 githubLicense: Apache License 2.0
 ---
 # Rocket Chat Exporter CLI
@@ -29,12 +29,14 @@ A simple Java CLI tool to export the messages from a [Rocket Chat](https://rocke
 
 This tool uses the [RocketChat API](https://rocket.chat/docs/developer-guides/rest-api/groups/) and is useful for situations where the user does not have administrative access to the server.
 
-[](https://github.com/patrickfav/rocketchat-exporter/releases/latest) [](https://travis-ci.com/patrickfav/rocketchat-exporter) [](https://coveralls.io/github/patrickfav/rocketchat-exporter?branch=master)
-
+[](https://github.com/patrickfav/rocketchat-exporter/releases/latest)
+[](https://travis-ci.com/patrickfav/rocketchat-exporter)
+[](https://github.com/patrickfav/rocketchat-exporter/actions)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_rocketchat-exporter)
 
 ## Quickstart
 
-Provide the tool with your host URL, output file and user name.
+Provide the tool with your host URL, output file and username.
 
     java -jar .\rocketchat-exporter.jar --host "http://my-rocket-chat.com" -o "./out" -u "fname.lastname@mail.com"
 
@@ -86,7 +88,7 @@ Successfully exported 122 channel messages to 'out\channel_channel-b_20190927013
 
 ## Download
 
-**[Grab jar from latest Release](https://github.com/patrickfav/rocketchat-exporter/releases/latest)**
+**[Grab jar from the latest Release](https://github.com/patrickfav/rocketchat-exporter/releases/latest)**
 
 ## Development
 

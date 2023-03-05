@@ -2,9 +2,9 @@
 title: 'Q: View&#39;s getWidth() and getHeight() returns 0'
 date: 2014-06-04
 lastmod: 2020-06-23
-lastfetch: 2023-02-26T18:53:40.233Z
+lastfetch: 2023-03-05T20:14:21.927Z
 description: 'View&#39;s getWidth() and getHeight() returns 0'
-summary: 'Question: import android.app.Activity - Listen to Draw/Layout Events: ViewTreeObserver...'
+summary: ''
 aliases: [/link/a4y7zf2h]
 slug: 2014/views-getwidth()-and-getheight()-returns-0
 tags: ["java", "android", "android-layout", "getter"]
@@ -18,8 +18,8 @@ thumbnail: 'sobanner*'
 deeplink: /link/a4y7zf2h
 originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-and-getheight-returns-0
 originalContentType: stackoverflow
-soScore: 963
-soViews: 398572
+soScore: 964
+soViews: 399043
 soIsAccepted: false
 soQuestionId: 3591784
 soAnswerId: 24035591

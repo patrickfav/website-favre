@@ -2,9 +2,9 @@
 title: 'Q: Quality of Image after resize very low -- Java'
 date: 2016-03-30
 lastmod: 2017-05-23
-lastfetch: 2023-02-26T18:53:41.299Z
+lastfetch: 2023-03-05T20:14:22.041Z
 description: 'Quality of Image after resize very low -- Java'
-summary: 'Question: BufferedImage origImage - B. imgscalr 4.2 with ULTRA_QUALTY setting...'
+summary: ''
 aliases: [/link/pk6vsacv]
 slug: 2016/quality-of-image-after-resize-very-low-java
 tags: ["java", "image", "image-resizing"]
@@ -19,7 +19,7 @@ deeplink: /link/pk6vsacv
 originalContentLink: https://stackoverflow.com/questions/14115950/quality-of-image-after-resize-very-low-java
 originalContentType: stackoverflow
 soScore: 12
-soViews: 21952
+soViews: 21972
 soIsAccepted: false
 soQuestionId: 14115950
 soAnswerId: 36320292

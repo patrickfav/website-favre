@@ -2,7 +2,7 @@
 title: 'Security Best Practices: Symmetric Encryption with AES in Java and Android'
 date: 2018-01-06
 lastmod: 2023-02-26
-lastfetch: 2023-02-26T14:35:55.876Z
+lastfetch: 2023-03-05T20:14:42.902Z
 summary: 'What to consider when encrypting your data and how to correctly implement it with AES-GCM.'
 description: 'What to consider when encrypting your data and how to correctly implement it with AES-GCM.'
 aliases: [/link/gjcews73]
@@ -14,8 +14,8 @@ categories: ["article", "medium"]
 deeplink: /link/gjcews73
 originalContentLink: https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9
 originalContentType: medium
-mediumClaps: 2795
-mediumVoters: 506
+mediumClaps: 2797
+mediumVoters: 507
 mediumArticleId: 7616beaaade9
 ---
 In this article I will bring you up to speed on the Advanced Encryption Standard (AES), common block modes, why you need padding and initialization vectors and how to protect your data against modification. Finally, I will show you how to easily implement this with Java avoiding common security issues.

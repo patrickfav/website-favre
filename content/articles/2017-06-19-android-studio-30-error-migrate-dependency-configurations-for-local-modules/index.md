@@ -2,9 +2,9 @@
 title: 'Q: Android Studio 3.0 Error. Migrate dependency configurations for local modules'
 date: 2017-06-19
 lastmod: 2017-11-02
-lastfetch: 2023-02-26T18:53:40.951Z
+lastfetch: 2023-03-05T20:14:22.006Z
 description: 'Android Studio 3.0 Error. Migrate dependency configurations for local modules'
-summary: 'Question: dependencies - For instance, it is not possible to make a `debug` variant consume a...'
+summary: ''
 aliases: [/link/dzwn7c4f]
 slug: 2017/android-studio-30-error-migrate-dependency-configurations-for-local-modules
 tags: ["android", "android-studio", "gradle", "android-studio-3.0"]
@@ -19,7 +19,7 @@ deeplink: /link/dzwn7c4f
 originalContentLink: https://stackoverflow.com/questions/44390590/android-studio-3-0-error-migrate-dependency-configurations-for-local-modules
 originalContentType: stackoverflow
 soScore: 33
-soViews: 27674
+soViews: 27683
 soIsAccepted: false
 soQuestionId: 44390590
 soAnswerId: 44640156

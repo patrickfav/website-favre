@@ -1,8 +1,8 @@
 ---
 title: 'dice'
 date: 2017-08-14
-lastmod: 2022-06-09
-lastfetch: 2023-02-26T14:35:01.421Z
+lastmod: 2023-03-01
+lastfetch: 2023-03-05T20:13:47.792Z
 description: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 summary: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 aliases: ['/link/jz4twu2m','/opensource/dice']
