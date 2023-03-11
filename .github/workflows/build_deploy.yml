@@ -44,7 +44,7 @@ jobs:
           timeout_minutes: 5
           retry_wait_seconds: 60
           max_attempts: 3
-          command: ${{ env.WORKING_DIR }}/bin/hugo-content-downloader
+          command: ${{ env.WORKING_DIR }}/bin/hugo-content-downloader ./content/
       - uses: actions/cache@v3
         with:
           path: /tmp/hugo_cache
