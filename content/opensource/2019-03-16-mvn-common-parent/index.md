@@ -2,7 +2,7 @@
 title: 'mvn-common-parent'
 date: 2019-03-16
 lastmod: 2023-02-11
-lastfetch: 2023-03-05T20:14:05.730Z
+lastfetch: 2023-03-11T13:22:28.709Z
 description: 'A maven configuration which can be used as a commons config parent for POM files'
 summary: 'A maven configuration which can be used as a commons config parent for POM files'
 aliases: ['/link/fcpy79z9','/opensource/mvn-common-parent']

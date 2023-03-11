@@ -2,7 +2,7 @@
 title: 'Snippet: A hugo shortcode that obfuscates email addresses'
 date: 2023-02-25
 lastmod: 2023-02-26
-lastfetch: 2023-03-05T20:13:20.690Z
+lastfetch: 2023-03-11T13:21:42.022Z
 description: 'A hugo shortcode that obfuscates email addresses; makes it more difficult for bots to crawl it from your website. Add the html file to your "layouts/shortcodes/" folder then you can use it in your content.'
 summary: 'A hugo shortcode that obfuscates email addresses; makes it more difficult for bots to crawl it from your website. Add the html file to your "layouts/shortcodes/" folder then you can use it in your content.'
 aliases: [/link/4sh8eqre]

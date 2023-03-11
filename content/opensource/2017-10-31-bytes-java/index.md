@@ -1,8 +1,8 @@
 ---
 title: 'bytes-java'
 date: 2017-10-31
-lastmod: 2023-03-01
-lastfetch: 2023-03-05T20:13:39.004Z
+lastmod: 2023-03-09
+lastfetch: 2023-03-11T13:22:01.423Z
 description: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 summary: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 aliases: ['/link/9yh74zae','/opensource/bytes-java']
@@ -15,7 +15,7 @@ editURL: https://github.com/patrickfav/bytes-java
 deeplink: /link/9yh74zae
 originalContentLink: https://github.com/patrickfav/bytes-java
 originalContentType: github
-githubStars: 130
+githubStars: 133
 githubForks: 28
 githubLanguage: Java
 githubLatestVersion: v1.6.1
