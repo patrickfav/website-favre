@@ -80,10 +80,6 @@ async function createAndDownloadContent (gistId, gistMeta) {
   return markdown
 }
 
-function createInfoText (gistMeta) {
-  return `\n{{< info >}} ${gistMeta.description} The [original Gist](${gistMeta.html_url}) can be found on Github.{{< /info >}}\n\n`
-}
-
 function copyBannerImage (svg, targetProjectFileBanner) {
   fs.writeFile(targetProjectFileBanner, svg, (err) => {
     if (err) {
