@@ -36,6 +36,10 @@
     --color-secondary-900: 6, 78, 59;
 }
 
+h5.group, h6.group {
+    font-weight: 600;
+}
+
 span.custom-info span.icon {
     padding-bottom: 2px;
     padding-right: 2px;
