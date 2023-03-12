@@ -7,7 +7,6 @@ import { downloadGists } from './downloader/gist'
 const defaultRootDir = '../content/'
 
 export function cli (args) {
-
   const rootDir = parseArguments(args)
 
   const relOutDirGithub = 'opensource/'
@@ -20,11 +19,10 @@ export function cli (args) {
     .then(() => console.log('Waiting to finish'))
 }
 
-function parseArguments(args) {
-
-  if(args && args.length && args.length >= 3) {
-    return args[2];
+function parseArguments (args) {
+  if (args && args.length && args.length >= 3) {
+    return args[2]
   }
 
-  return defaultRootDir;
+  return defaultRootDir
 }

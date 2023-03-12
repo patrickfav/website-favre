@@ -13,7 +13,7 @@ export const gistIds = [
   '649dcd1283c25f16b8b3aa6f3a05bd96',
   '6284130',
   '70a41a7ddf6e6efebf1756639fc86762', // KeyStoreHelper.java
-  '13b2f727eaf91e3a72d87ac427485cb1', // encrypt_img_ecb.sh
+  '13b2f727eaf91e3a72d87ac427485cb1' // encrypt_img_ecb.sh
   // 'e2c027fda3a62d484c804ea32f33ea63', // mac-rnd-sizes.md
   // '00ba65af3a0ba059fbf24a437d21a104' // encoding_info.txt
 ]
