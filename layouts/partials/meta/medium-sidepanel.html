@@ -1,0 +1,46 @@
+<div class="pb-4 text-neutral-400">
+    {{ .Params.summary }}
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "medium" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" rel="noopener">View on Medium</a></span>
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "clock-solid" }}</span>
+    <span class="pl-2">{{ partial "meta/reading-time.html" . }} reading</span>
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "calendar-solid" }}</span>
+    <span class="pl-2">
+        <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+            {{ .Params.date | time.Format "Jan 2006" }}
+        </time>
+    </span>
+</div>
+
+
+{{ if and (.Params.mediumClaps | default false) (gt .Params.mediumClaps 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "hands-clapping-solid" }}</span>
+    <span class="pl-2">{{ .Params.mediumClaps }} claps</span>
+</div>
+{{ end }}
+
+{{ if and (.Params.mediumVoters | default false) (gt .Params.mediumVoters 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "book-open-reader-solid" }}</span>
+    <span class="pl-2">{{ .Params.mediumVoters }} voters</span>
+</div>
+{{ end }}
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "calendar-solid" }}</span>
+    <span class="pl-2">
+        <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+            updated {{ .Params.lastmod | time.Format "Jan 2006" }}
+        </time>
+    </span>
+</div>

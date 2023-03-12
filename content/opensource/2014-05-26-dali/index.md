@@ -2,7 +2,7 @@
 title: 'Dali'
 date: 2014-05-26
 lastmod: 2023-03-01
-lastfetch: 2023-03-11T13:21:47.934Z
+lastfetch: 2023-03-12T21:57:41.921Z
 description: 'Dali is an image blur library for Android. It contains several modules for static blurring, live blurring and animations.'
 summary: 'Dali is an image blur library for Android. It contains several modules for static blurring, live blurring and animations.'
 aliases: ['/link/tv6atcjz','/opensource/dali']
@@ -17,7 +17,12 @@ originalContentLink: https://github.com/patrickfav/Dali
 originalContentType: github
 githubStars: 1046
 githubForks: 94
+githubWatchers: 1046
 githubLanguage: Java
+githubHomepage: https://favr.dev/opensource/dali
+githubDefaultBranch: main
+githubOpenIssues: 13
+githubIsFork: false
 githubLatestVersion: v0.4.0
 githubLatestVersionDate: 2020-06-13T21:20:39Z
 githubLatestVersionUrl: https://github.com/patrickfav/Dali/releases/tag/v0.4.0

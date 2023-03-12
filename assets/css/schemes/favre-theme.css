@@ -55,6 +55,23 @@ span.custom-info a:hover {
     max-width: 80ch;
 }
 
+/* sidepanel */
+
+div.sidepanel > div > span > a, div.sidepanel > a {
+    text-decoration: none;
+    color: var(--color-neutral-500);
+}
+
+div.sidepanel > div > span > a:hover {
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: 1024px) {
+    div.sidepanel {
+        display: none;
+    }
+}
+
 /* table of contents */
 nav#TableOfContents a {
     text-decoration: none;

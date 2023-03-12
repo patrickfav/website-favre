@@ -1,0 +1,30 @@
+
+{{/* Determine the correct context */}}
+{{/* This allows for different logic depending on where the partial is called */}}
+{{ $context := . }}
+
+{{ if (reflect.IsMap . ) }}
+    {{ $context = .context }}
+{{ end }}
+
+{{ with $context }}
+<div class="text-neutral-500 dark:border-neutral-700 pb mb-3 px-3 py-2 sidepanel">
+
+    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "github" ) }}
+        {{ partial "meta/github-sidepanel.html" . }}
+    {{ end }}
+
+    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "medium" ) }}
+        {{ partial "meta/medium-sidepanel.html" . }}
+    {{ end }}
+
+    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "stackoverflow" ) }}
+        {{ partial "meta/stackoverflow-sidepanel.html" . }}
+    {{ end }}
+
+    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "gist" ) }}
+        {{ partial "meta/gist-sidepanel.html" . }}
+    {{ end }}
+</div>
+{{ end }}
+

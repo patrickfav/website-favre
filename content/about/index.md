@@ -8,7 +8,7 @@ showReadingTime: false
 showTaxonomies: false
 showAuthor: false
 showPagination: false
-showTableOfContents: false
+showTableOfContents: true
 feature: 'banner*'
 ---
 

@@ -2,7 +2,7 @@
 title: 'Snippet: Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 date: 2018-11-11
 lastmod: 2023-02-25
-lastfetch: 2023-03-11T13:21:40.749Z
+lastfetch: 2023-03-12T21:57:35.221Z
 description: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 summary: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 aliases: [/link/zer36gia]
@@ -24,9 +24,6 @@ gistFileCount: 1
 gistComments: 1
 gistCommentsUrl: https://api.github.com/gists/b323f0d9cbd81d5fa9cc4c971b732c77/comments
 ---
-
-{{< info >}} Companion code to my article about AES+CBC with Encrypt-then-MAC. The [original Gist](https://gist.github.com/b323f0d9cbd81d5fa9cc4c971b732c77) can be found on Github.{{< /info >}}
-
 
 ### AesCbcExample.java
 

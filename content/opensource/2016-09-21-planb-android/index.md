@@ -2,7 +2,7 @@
 title: 'planb-android'
 date: 2016-09-21
 lastmod: 2023-03-02
-lastfetch: 2023-03-11T13:22:19.979Z
+lastfetch: 2023-03-12T21:58:12.349Z
 description: 'A crash recovery library for Android. It allows tracking and handling crashes with different rules for debugging and production.'
 summary: 'A crash recovery library for Android. It allows tracking and handling crashes with different rules for debugging and production.'
 aliases: ['/link/ip9vdpzs','/opensource/planb-android']
@@ -17,7 +17,12 @@ originalContentLink: https://github.com/patrickfav/planb-android
 originalContentType: github
 githubStars: 32
 githubForks: 2
+githubWatchers: 32
 githubLanguage: Java
+githubHomepage: https://favr.dev/opensource/planb-android
+githubDefaultBranch: master
+githubOpenIssues: 1
+githubIsFork: false
 githubLicense: Apache License 2.0
 ---
 # Plan-B Android Crash Recovery Lib

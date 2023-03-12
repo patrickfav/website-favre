@@ -1,0 +1,52 @@
+<div class="pb-4 text-neutral-400">
+    {{ .Params.summary }}
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "github" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" rel="noopener">View on GitHub</a></span>
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "calendar-solid" }}</span>
+    <span class="pl-2">
+        <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+            {{ .Params.date | time.Format "Jan 2006" }}
+        </time>
+    </span>
+</div>
+
+{{ if (.Params.githubLanguage | default false) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" (print "tech-" (lower .Params.githubLanguage)) }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}/search?l={{ .Params.githubLanguage }}" rel="noopener">{{ .Params.githubLanguage }}</a></span>
+</div>
+{{ end }}
+
+{{ if and (.Params.githubStars | default false) (gt .Params.githubStars 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "star-regular" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}/stargazers" rel="noopener"><strong>{{ .Params.githubStars }}</strong> stars</a></span>
+</div>
+{{ end }}
+
+{{ if and (.Params.githubForks | default false) (gt .Params.githubForks 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "code-fork-solid" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}/forks"><strong>{{ .Params.githubForks }}</strong> forks</a></span>
+</div>
+{{ end }}
+
+{{ if (.Params.githubLatestVersion | default false)}}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "tag-solid" }}</span>
+    <span class="pl-2"><a href="{{ .Params.githubLatestVersionUrl }}" rel="noopener">{{ .Params.githubLatestVersion }}</a></span>
+</div>
+{{ end }}
+
+{{ if (.Params.githubLicense | default false)}}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "scale-balanced-solid" }}</span>
+    <span class="pl-2">{{ .Params.githubLicense }}</span>
+</div>
+{{ end }}

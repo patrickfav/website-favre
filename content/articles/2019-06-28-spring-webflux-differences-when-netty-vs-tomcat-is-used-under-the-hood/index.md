@@ -2,7 +2,7 @@
 title: 'Q: Spring WebFlux differences when Netty vs. Tomcat is used under the hood'
 date: 2019-06-28
 lastmod: 2019-06-28
-lastfetch: 2023-03-11T13:22:43.935Z
+lastfetch: 2023-03-12T21:58:35.743Z
 description: 'Spring WebFlux differences when Netty vs. Tomcat is used under the hood'
 summary: ''
 aliases: [/link/tjxcdi79]
@@ -19,7 +19,7 @@ deeplink: /link/tjxcdi79
 originalContentLink: https://stackoverflow.com/questions/56794263/spring-webflux-differences-when-netty-vs-tomcat-is-used-under-the-hood
 originalContentType: stackoverflow
 soScore: 52
-soViews: 31531
+soViews: 31558
 soIsAccepted: false
 soQuestionId: 56794263
 soAnswerId: 56806022

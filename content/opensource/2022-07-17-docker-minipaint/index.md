@@ -2,7 +2,7 @@
 title: 'docker-minipaint'
 date: 2022-07-17
 lastmod: 2023-01-30
-lastfetch: 2023-03-11T13:22:18.048Z
+lastfetch: 2023-03-12T21:58:10.741Z
 description: 'This is a dockerized version of the miniPaint project by viliusle, a web/node based paint tool to self host.'
 summary: 'This is a dockerized version of the miniPaint project by viliusle, a web/node based paint tool to self host.'
 aliases: ['/link/s5x6vwub','/opensource/docker-minipaint']
@@ -17,7 +17,12 @@ originalContentLink: https://github.com/patrickfav/docker-minipaint
 originalContentType: github
 githubStars: 0
 githubForks: 0
+githubWatchers: 0
 githubLanguage: Dockerfile
+githubHomepage: https://hub.docker.com/r/pfav/minipaint
+githubDefaultBranch: main
+githubOpenIssues: 0
+githubIsFork: true
 githubLatestVersion: v4.10.1
 githubLatestVersionDate: 2022-09-02T19:50:37Z
 githubLatestVersionUrl: https://github.com/patrickfav/docker-minipaint/releases/tag/v4.10.1

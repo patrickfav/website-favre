@@ -2,7 +2,7 @@
 title: 'rocketchat-exporter'
 date: 2019-09-24
 lastmod: 2023-03-02
-lastfetch: 2023-03-11T13:22:16.205Z
+lastfetch: 2023-03-12T21:58:08.976Z
 description: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 summary: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 aliases: ['/link/qf3fheqr','/opensource/rocketchat-exporter']
@@ -17,7 +17,12 @@ originalContentLink: https://github.com/patrickfav/rocketchat-exporter
 originalContentType: github
 githubStars: 13
 githubForks: 11
+githubWatchers: 13
 githubLanguage: Java
+githubHomepage: https://favr.dev/opensource/rocketchat-exporter
+githubDefaultBranch: main
+githubOpenIssues: 3
+githubIsFork: false
 githubLatestVersion: v1.1.2
 githubLatestVersionDate: 2023-03-02T20:32:10Z
 githubLatestVersionUrl: https://github.com/patrickfav/rocketchat-exporter/releases/tag/v1.1.2
@@ -101,7 +106,9 @@ Use the Maven wrapper to create a jar including all dependencies
 ### Checkstyle Config File
 
 This project uses my [`common-parent`](https://github.com/patrickfav/mvn-common-parent) which centralized a lot of
-the plugin versions aswell as providing the checkstyle config rules. Specifically they are maintained in [`checkstyle-config`](https://github.com/patrickfav/checkstyle-config). Locally the files will be copied after you `mvnw install` into your `target` folder and is called
+the plugin versions as well as providing the checkstyle config rules. Specifically they are maintained
+in [`checkstyle-config`](https://github.com/patrickfav/checkstyle-config). Locally the files will be copied after
+you `mvnw install` into your `target` folder and is called
 `target/checkstyle-checker.xml`. So if you use a plugin for your IDE, use this file as your local configuration.
 
 # License

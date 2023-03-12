@@ -2,7 +2,7 @@
 title: 'Q: Security with SharedPreferences'
 date: 2014-09-27
 lastmod: 2020-06-20
-lastfetch: 2023-03-11T13:22:43.942Z
+lastfetch: 2023-03-12T21:58:35.756Z
 description: 'Security with SharedPreferences'
 summary: ''
 aliases: [/link/cbfeh9ja]
@@ -19,7 +19,7 @@ deeplink: /link/cbfeh9ja
 originalContentLink: https://stackoverflow.com/questions/26076292/security-with-sharedpreferences
 originalContentType: stackoverflow
 soScore: 33
-soViews: 10120
+soViews: 10122
 soIsAccepted: true
 soQuestionId: 26076292
 soAnswerId: 26077852

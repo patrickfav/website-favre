@@ -1,0 +1,38 @@
+<div class="pb-4 text-neutral-400">
+    {{ .Params.summary }}
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "medium" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" rel="noopener">View on Gist</a></span>
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "calendar-solid" }}</span>
+    <span class="pl-2">
+        <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+            {{ .Params.date | time.Format "Jan 2006" }}
+        </time>
+    </span>
+</div>
+
+{{ if (.Params.gistLanguage | default false) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" (print "tech-" (lower .Params.gistLanguage)) }}</span>
+    <span class="pl-2">{{ .Params.gistLanguage }}</span>
+</div>
+{{ end }}
+
+{{ if and (.Params.gistFileCount | default false) (gt .Params.gistFileCount 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "file-regular" }}</span>
+    <span class="pl-2">{{ .Params.gistFileCount }} files</span>
+</div>
+{{ end }}
+
+{{ if and (.Params.gistComments | default false) (gt .Params.gistComments 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "comments-regular" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" rel="noopener">{{ .Params.gistComments }} comments</a></span>
+</div>
+{{ end }}

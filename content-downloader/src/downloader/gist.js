@@ -32,7 +32,7 @@ export async function downloadGists (githubUser, gistIds, rootDirMd, relOutDir) 
     console.log(`\tProcessing gist ${title} (${gistMeta.created_at}, ${gistId})`)
 
     const frontMatter = createGistFrontMatter(gistId, gistMeta, title, slug)
-    const infoText = createInfoText(gistMeta)
+    // const infoText = createInfoText(gistMeta)
     const markdown = await createAndDownloadContent(gistId, gistMeta)
 
     const targetProjectDir = targetRootDir + '/' + slug.safeNameWithDate
@@ -44,7 +44,7 @@ export async function downloadGists (githubUser, gistIds, rootDirMd, relOutDir) 
 
     copyBannerImage(gistbannerSvg, targetProjectFileBanner)
 
-    await StringStream.from(frontMatter + infoText + markdown)
+    await StringStream.from(frontMatter + markdown)
       .pipe(fs.createWriteStream(targetProjectDir + '/index.md'))
   }
 }

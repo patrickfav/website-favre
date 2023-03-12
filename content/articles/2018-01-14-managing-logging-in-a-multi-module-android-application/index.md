@@ -2,7 +2,7 @@
 title: 'Managing Logging in a Multi-Module Android Application'
 date: 2018-01-14
 lastmod: 2023-02-26
-lastfetch: 2023-03-11T13:23:03.107Z
+lastfetch: 2023-03-12T21:58:53.397Z
 summary: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
 description: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
 aliases: [/link/gvz8gdrb]

@@ -1,8 +1,8 @@
 ---
 title: 'website-dr-sel'
 date: 2018-05-28
-lastmod: 2023-01-30
-lastfetch: 2023-03-11T13:22:25.073Z
+lastmod: 2023-03-11
+lastfetch: 2023-03-12T21:58:17.226Z
 description: 'A simple static website created with jekyll'
 summary: 'A simple static website created with jekyll'
 aliases: ['/link/4m94wk3e','/opensource/website-dr-sel']
@@ -17,19 +17,24 @@ originalContentLink: https://github.com/patrickfav/website-dr-sel
 originalContentType: github
 githubStars: 0
 githubForks: 0
+githubWatchers: 0
 githubLanguage: SCSS
+githubHomepage: https://selwicka-wienerroither.com
+githubDefaultBranch: main
+githubOpenIssues: 0
+githubIsFork: false
 githubLatestVersion: v5.4
 githubLatestVersionDate: 2022-11-09T02:19:49Z
 githubLatestVersionUrl: https://github.com/patrickfav/website-dr-sel/releases/tag/v5.4
 ---
 # Jekyll Static Website Source for Doctor's Landing Page
 
-[](https://app.travis-ci.com/github/patrickfav/website-dr-sel)
+[](https://github.com/patrickfav/website-dr-sel/actions)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-dr-sel)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-dr-sel)
+[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-dr-sel)
 
 This is the source for the [Jekyll](https://jekyllrb.com) static website project for a very simple doctors landing page.
-
-A preview of the most recent commit on master can be seen on the
-[staging firebase project](https://beta.selwicka-wienerroither.com/).
 The production version can be found [here](https://selwicka-wienerroither.com/).
 
 
@@ -69,8 +74,8 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor | 
 
 then install the desired ruby version
 ```bash
-rbenv install 2.6.10
-rbenv global 2.6.10
+rbenv install 3.2.1
+rbenv global 3.2.1
 ruby -v
 ```
 

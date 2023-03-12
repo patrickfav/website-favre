@@ -2,7 +2,7 @@
 title: 'website-favre'
 date: 2018-05-31
 lastmod: 2023-02-21
-lastfetch: 2023-03-11T13:22:26.690Z
+lastfetch: 2023-03-12T21:58:18.850Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 aliases: ['/link/3xw5p9d9','/opensource/website-favre']
@@ -17,7 +17,12 @@ originalContentLink: https://github.com/patrickfav/website-favre
 originalContentType: github
 githubStars: 0
 githubForks: 2
+githubWatchers: 0
 githubLanguage: JavaScript
+githubHomepage: https://favr.dev
+githubDefaultBranch: main
+githubOpenIssues: 4
+githubIsFork: false
 ---
 # Static Site Gen Repo for my Personal Website
 

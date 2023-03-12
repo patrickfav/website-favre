@@ -2,7 +2,7 @@
 title: 'checkstyle-config'
 date: 2019-04-14
 lastmod: 2023-03-02
-lastfetch: 2023-03-11T13:22:21.763Z
+lastfetch: 2023-03-12T21:58:14.121Z
 description: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 summary: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 aliases: ['/link/y2ys6x9i','/opensource/checkstyle-config']
@@ -17,7 +17,12 @@ originalContentLink: https://github.com/patrickfav/checkstyle-config
 originalContentType: github
 githubStars: 3
 githubForks: 1
+githubWatchers: 3
 githubLanguage: null
+githubHomepage: https://favr.dev/opensource/checkstyle-config
+githubDefaultBranch: master
+githubOpenIssues: 0
+githubIsFork: false
 githubLatestVersion: v2
 githubLatestVersionDate: 2020-04-05T14:17:37Z
 githubLatestVersionUrl: https://github.com/patrickfav/checkstyle-config/releases/tag/v2

@@ -1,0 +1,32 @@
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "stack-overflow" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" rel="noopener">View on SO</a></span>
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "calendar-solid" }}</span>
+    <span class="pl-2">
+        <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+            {{ .Params.date | time.Format "Jan 2006" }}
+        </time>
+    </span>
+</div>
+
+{{ if and (.Params.soScore | default false) (gt .Params.soScore 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "caret-up-solid" }}</span>
+    <span class="pl-2">{{ .Params.soScore }} upvotes</span>
+</div>
+{{ end }}
+
+{{ if and (.Params.soViews | default false) (gt .Params.soViews 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "eye-solid" }}</span>
+    <span class="pl-2">{{ div .Params.soViews 1000}}k views</span>
+</div>
+{{ end }}
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "link" }}</span>
+    <span class="pl-2"><a href="{{ .Params.soAnswerLink }}" rel="noopener">Answer Link</a></span>
+</div>

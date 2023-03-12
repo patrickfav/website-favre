@@ -2,7 +2,7 @@
 title: 'Snippet: Using Android KeyStore to generate a password'
 date: 2016-09-21
 lastmod: 2016-09-21
-lastfetch: 2023-03-11T13:21:43.036Z
+lastfetch: 2023-03-12T21:57:37.366Z
 description: 'Using Android KeyStore to generate a password. The code create a public/private key pair and uses the base64 encoded form of the certificate to as the password. The code modified the KeystoreHelper class from AOSP demo projects.'
 summary: 'Using Android KeyStore to generate a password. The code create a public/private key pair and uses the base64 encoded form of the certificate to as the password. The code modified the KeystoreHelper class from AOSP demo projects.'
 aliases: [/link/fzcrqguf]
@@ -24,9 +24,6 @@ gistFileCount: 3
 gistComments: 0
 gistCommentsUrl: https://api.github.com/gists/70a41a7ddf6e6efebf1756639fc86762/comments
 ---
-
-{{< info >}} Using Android KeyStore to generate a password. The code create a public/private key pair and uses the base64 encoded form of the certificate to as the password. The code modified the KeystoreHelper class from AOSP demo projects. The [original Gist](https://gist.github.com/70a41a7ddf6e6efebf1756639fc86762) can be found on Github.{{< /info >}}
-
 
 ### KeyStoreHelper.java
 

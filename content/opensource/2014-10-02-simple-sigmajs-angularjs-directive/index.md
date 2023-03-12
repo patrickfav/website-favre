@@ -2,7 +2,7 @@
 title: 'Snippet: Simple Sigma.js AngularJs Directive'
 date: 2014-10-02
 lastmod: 2023-02-25
-lastfetch: 2023-03-11T13:21:41.377Z
+lastfetch: 2023-03-12T21:57:35.812Z
 description: 'Simple Sigma.js AngularJs Directive: Since I did not find any angularjs directive for angularjs I created a little simple of my own. This is by no means a ready-for-all solutions, but all the features I needed at the time; it is easily extended to your needs and maybe sometimes somebody will do a full-blown directive for sigma.js  Tested: angularjs 1.2.25, sigma.js 1.0.3 (should work with angularjs 1.3).'
 summary: 'Simple Sigma.js AngularJs Directive: Since I did not find any angularjs directive for angularjs I created a little simple of my own. This is by no means a ready-for-all solutions, but all the features I needed at the time; it is easily extended to your needs and maybe sometimes somebody will do a full-blown directive for sigma.js  Tested: angularjs 1.2.25, sigma.js 1.0.3 (should work with angularjs 1.3).'
 aliases: [/link/v9g7jtvm]
@@ -24,9 +24,6 @@ gistFileCount: 3
 gistComments: 4
 gistCommentsUrl: https://api.github.com/gists/cd20939b383b9c284511/comments
 ---
-
-{{< info >}} Simple Sigma.js AngularJs Directive: Since I did not find any angularjs directive for angularjs I created a little simple of my own. This is by no means a ready-for-all solutions, but all the features I needed at the time; it is easily extended to your needs and maybe sometimes somebody will do a full-blown directive for sigma.js  Tested: angularjs 1.2.25, sigma.js 1.0.3 (should work with angularjs 1.3). The [original Gist](https://gist.github.com/cd20939b383b9c284511) can be found on Github.{{< /info >}}
-
 
 ### sigma-js-angular-app.js
 

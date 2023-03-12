@@ -164,7 +164,7 @@ async function removeBadgesAndDownloadImages (markdownContent, githubUser, proje
 
 function createGithubFrontMatter (projectName, githubMeta, releaseMeta, relOutDir, slug) {
   const githubTags = githubMeta.topics ? githubMeta.topics.slice() : []
-  const allTags = githubTags.concat(['github', githubMeta.language])
+  const allTags = githubTags.concat(['github', githubMeta.language]).filter(x => !!x)
   const reducedTags = githubTags.length > 5 ? githubTags.slice(0, 4) : githubTags.slice()
 
   let meta = '---\n'
@@ -186,7 +186,12 @@ function createGithubFrontMatter (projectName, githubMeta, releaseMeta, relOutDi
   meta += 'originalContentType: github\n'
   meta += 'githubStars: ' + githubMeta.stargazers_count + '\n'
   meta += 'githubForks: ' + githubMeta.forks_count + '\n'
-  meta += 'githubLanguage: ' + githubMeta.language + '\n'
+  meta += 'githubWatchers: ' + githubMeta.watchers_count + '\n'
+  meta += `githubLanguage: ${githubMeta.language}\n`
+  meta += `githubHomepage: ${githubMeta.homepage}\n`
+  meta += `githubDefaultBranch: ${githubMeta.default_branch}\n`
+  meta += `githubOpenIssues: ${githubMeta.open_issues_count}\n`
+  meta += `githubIsFork: ${githubMeta.fork}\n`
   if (releaseMeta) {
     meta += 'githubLatestVersion: ' + releaseMeta.tag_name + '\n'
     meta += 'githubLatestVersionDate: ' + releaseMeta.published_at + '\n'

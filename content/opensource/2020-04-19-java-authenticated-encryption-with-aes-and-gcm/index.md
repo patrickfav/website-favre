@@ -12,7 +12,7 @@ keywords: ["Java"]
 alltags: ["Java"]
 categories: ["opensource"]
 type: gist
-showTableOfContents: false
+showTableOfContents: true
 showTaxonomies: false
 thumbnail: 'gistbanner*'
 editURL: https://gist.github.com/7e28d4eb4bf500f7ee8012c4a0cf7bbf

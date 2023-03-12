@@ -2,7 +2,7 @@
 title: 'bankathon16-inso'
 date: 2016-08-08
 lastmod: 2023-01-30
-lastfetch: 2023-03-11T13:22:23.388Z
+lastfetch: 2023-03-12T21:58:15.652Z
 description: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 summary: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 aliases: ['/link/haaspet2','/opensource/bankathon16-inso']
@@ -17,7 +17,12 @@ originalContentLink: https://github.com/patrickfav/bankathon16-inso
 originalContentType: github
 githubStars: 2
 githubForks: 1
+githubWatchers: 2
 githubLanguage: Java
+githubHomepage: https://cashtechthon.inso.tuwien.ac.at/
+githubDefaultBranch: master
+githubOpenIssues: 0
+githubIsFork: false
 ---
 
 # My First Wallet #Bankathon16

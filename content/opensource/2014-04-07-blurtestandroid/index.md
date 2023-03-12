@@ -2,7 +2,7 @@
 title: 'BlurTestAndroid'
 date: 2014-04-07
 lastmod: 2023-03-05
-lastfetch: 2023-03-11T13:21:57.468Z
+lastfetch: 2023-03-12T21:57:51.224Z
 description: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 summary: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 aliases: ['/link/wxmh9jxe','/opensource/blurtestandroid']
@@ -17,7 +17,12 @@ originalContentLink: https://github.com/patrickfav/BlurTestAndroid
 originalContentType: github
 githubStars: 415
 githubForks: 68
+githubWatchers: 415
 githubLanguage: Java
+githubHomepage: https://favr.dev/opensource/blurtestandroid/
+githubDefaultBranch: master
+githubOpenIssues: 1
+githubIsFork: false
 githubLatestVersion: v2.5.0
 githubLatestVersionDate: 2020-06-14T20:37:40Z
 githubLatestVersionUrl: https://github.com/patrickfav/BlurTestAndroid/releases/tag/v2.5.0
