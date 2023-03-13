@@ -66,6 +66,7 @@ jobs:
           hugo config && \
           hugo --verbose --printPathWarnings --minify
       - name: SonarCloud Scan
+        if: ${{ github.actor != 'dependabot[bot]' }}
         uses: SonarSource/sonarcloud-github-action@master
         with:
           projectBaseDir: content-downloader
