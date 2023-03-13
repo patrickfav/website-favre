@@ -2,10 +2,11 @@
 title: 'license'
 date: 2017-12-19
 lastmod: 2023-03-12
-lastfetch: 2023-03-13T14:22:24.648Z
+lastfetch: 2023-03-13T17:18:26.526Z
 url: opensource//armadillo/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
                                  Apache License
                            Version 2.0, January 2004

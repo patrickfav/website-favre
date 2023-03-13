@@ -2,10 +2,11 @@
 title: 'license'
 date: 2017-12-31
 lastmod: 2022-11-18
-lastfetch: 2023-03-13T14:22:47.910Z
+lastfetch: 2023-03-13T17:18:49.145Z
 url: opensource//slf4j-timber/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

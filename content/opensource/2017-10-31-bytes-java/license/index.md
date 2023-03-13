@@ -2,10 +2,11 @@
 title: 'license'
 date: 2017-10-31
 lastmod: 2023-03-13
-lastfetch: 2023-03-13T14:22:36.605Z
+lastfetch: 2023-03-13T17:18:38.216Z
 url: opensource//bytes-java/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

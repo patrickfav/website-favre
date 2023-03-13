@@ -2,10 +2,11 @@
 title: 'contributing'
 date: 2016-10-10
 lastmod: 2023-03-12
-lastfetch: 2023-03-13T14:22:21.256Z
+lastfetch: 2023-03-13T17:18:22.808Z
 url: opensource//uber-apk-signer/contributing
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 # Contributing
 

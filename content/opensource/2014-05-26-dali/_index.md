@@ -2,7 +2,7 @@
 title: 'Dali'
 date: 2014-05-26
 lastmod: 2023-03-01
-lastfetch: 2023-03-13T14:22:06.715Z
+lastfetch: 2023-03-13T17:18:08.347Z
 description: 'Dali is an image blur library for Android. It contains several modules for static blurring, live blurring and animations.'
 summary: 'Dali is an image blur library for Android. It contains several modules for static blurring, live blurring and animations.'
 aliases: ['/link/tv6atcjz','/opensource/2014/dali']

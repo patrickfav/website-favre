@@ -2,10 +2,11 @@
 title: 'license'
 date: 2016-10-10
 lastmod: 2023-03-12
-lastfetch: 2023-03-13T14:22:20.860Z
+lastfetch: 2023-03-13T17:18:22.388Z
 url: opensource//uber-apk-signer/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

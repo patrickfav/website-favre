@@ -2,10 +2,11 @@
 title: 'license'
 date: 2018-12-08
 lastmod: 2023-03-12
-lastfetch: 2023-03-13T14:23:04.384Z
+lastfetch: 2023-03-13T17:19:05.588Z
 url: opensource//bkdf/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

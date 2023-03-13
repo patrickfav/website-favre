@@ -2,7 +2,7 @@
 title: 'bytes-java'
 date: 2017-10-31
 lastmod: 2023-03-13
-lastfetch: 2023-03-13T14:22:35.439Z
+lastfetch: 2023-03-13T17:18:37.007Z
 description: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 summary: 'Bytes is a utility library that makes it easy to create, parse, transform, validate and convert byte arrays in Java. It supports endianness as well as immutability and mutability, so the caller may decide to favor performance.'
 aliases: ['/link/9yh74zae','/opensource/2017/bytes-java']

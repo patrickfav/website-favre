@@ -2,7 +2,7 @@
 title: 'dice'
 date: 2017-08-14
 lastmod: 2023-03-01
-lastfetch: 2023-03-13T14:22:54.851Z
+lastfetch: 2023-03-13T17:18:55.822Z
 description: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 summary: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 aliases: ['/link/jz4twu2m','/opensource/2017/dice']
@@ -22,7 +22,7 @@ githubWatchers: 9
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/dice
 githubDefaultBranch: main
-githubOpenIssues: 1
+githubOpenIssues: 2
 githubIsFork: false
 githubLatestVersion: v1.7.0
 githubLatestVersionDate: 2023-03-11T12:09:26Z

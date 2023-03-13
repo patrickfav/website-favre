@@ -2,10 +2,11 @@
 title: 'license'
 date: 2018-07-05
 lastmod: 2023-03-07
-lastfetch: 2023-03-13T14:22:04.154Z
+lastfetch: 2023-03-13T17:18:05.610Z
 url: opensource//bcrypt/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

@@ -2,10 +2,11 @@
 title: 'license'
 date: 2019-04-14
 lastmod: 2023-03-02
-lastfetch: 2023-03-13T14:23:19.652Z
+lastfetch: 2023-03-13T17:19:20.575Z
 url: opensource//checkstyle-config/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
                                  Apache License
                            Version 2.0, January 2004

@@ -2,10 +2,11 @@
 title: 'license'
 date: 2019-03-16
 lastmod: 2023-02-11
-lastfetch: 2023-03-13T14:23:34.654Z
+lastfetch: 2023-03-13T17:19:33.931Z
 url: opensource//mvn-common-parent/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
                                  Apache License
                            Version 2.0, January 2004

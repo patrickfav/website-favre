@@ -2,10 +2,11 @@
 title: 'license'
 date: 2014-04-07
 lastmod: 2023-03-05
-lastfetch: 2023-03-13T14:22:28.593Z
+lastfetch: 2023-03-13T17:18:30.577Z
 url: opensource//blurtestandroid/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

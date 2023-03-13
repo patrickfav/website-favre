@@ -2,10 +2,11 @@
 title: 'changelog'
 date: 2014-04-07
 lastmod: 2023-03-05
-lastfetch: 2023-03-13T14:22:27.913Z
+lastfetch: 2023-03-13T17:18:29.433Z
 url: opensource//blurtestandroid/changelog
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 # Releases
 

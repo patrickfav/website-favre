@@ -2,7 +2,7 @@
 title: 'indoor-positioning'
 date: 2016-08-07
 lastmod: 2023-02-27
-lastfetch: 2023-03-13T14:22:39.088Z
+lastfetch: 2023-03-13T17:18:40.730Z
 description: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 summary: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 aliases: ['/link/fzd79n2s','/opensource/2016/indoor-positioning']

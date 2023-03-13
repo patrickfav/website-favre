@@ -2,10 +2,11 @@
 title: 'changelog'
 date: 2017-10-31
 lastmod: 2023-03-13
-lastfetch: 2023-03-13T14:22:35.869Z
+lastfetch: 2023-03-13T17:18:37.442Z
 url: opensource//bytes-java/changelog
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 # Releases
 

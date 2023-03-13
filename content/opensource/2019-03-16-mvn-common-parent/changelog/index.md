@@ -2,10 +2,11 @@
 title: 'changelog'
 date: 2019-03-16
 lastmod: 2023-02-11
-lastfetch: 2023-03-13T14:23:33.886Z
+lastfetch: 2023-03-13T17:19:33.170Z
 url: opensource//mvn-common-parent/changelog
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 # Releases
 

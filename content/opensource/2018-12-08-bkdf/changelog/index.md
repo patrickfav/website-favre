@@ -2,10 +2,11 @@
 title: 'changelog'
 date: 2018-12-08
 lastmod: 2023-03-12
-lastfetch: 2023-03-13T14:23:03.532Z
+lastfetch: 2023-03-13T17:19:04.786Z
 url: opensource//bkdf/changelog
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 # Releases
 

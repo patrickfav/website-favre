@@ -2,10 +2,11 @@
 title: 'changelog'
 date: 2016-11-27
 lastmod: 2023-03-02
-lastfetch: 2023-03-13T14:22:12.067Z
+lastfetch: 2023-03-13T17:18:12.770Z
 url: opensource//under-the-hood/changelog
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 # Releases
 

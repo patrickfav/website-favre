@@ -2,10 +2,11 @@
 title: 'license'
 date: 2018-11-18
 lastmod: 2023-03-02
-lastfetch: 2023-03-13T14:23:00.416Z
+lastfetch: 2023-03-13T17:19:00.960Z
 url: opensource//singlestep-kdf/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

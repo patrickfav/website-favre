@@ -2,10 +2,11 @@
 title: 'license'
 date: 2019-03-29
 lastmod: 2023-03-11
-lastfetch: 2023-03-13T14:22:51.988Z
+lastfetch: 2023-03-13T17:18:53.209Z
 url: opensource//id-mask/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

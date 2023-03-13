@@ -2,10 +2,11 @@
 title: 'changelog'
 date: 2016-02-25
 lastmod: 2023-03-01
-lastfetch: 2023-03-13T14:22:16.217Z
+lastfetch: 2023-03-13T17:18:17.473Z
 url: opensource//density-converter/changelog
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 # Releases
 

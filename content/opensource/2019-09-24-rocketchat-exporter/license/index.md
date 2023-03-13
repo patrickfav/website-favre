@@ -2,10 +2,11 @@
 title: 'license'
 date: 2019-09-24
 lastmod: 2023-03-02
-lastfetch: 2023-03-13T14:23:08.214Z
+lastfetch: 2023-03-13T17:19:09.588Z
 url: opensource//rocketchat-exporter/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004
