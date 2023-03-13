@@ -6,6 +6,7 @@ lastfetch: 2023-03-13T14:23:12.178Z
 url: opensource//docker-minipaint/license
 showSummary: false
 showTableOfContents: false
+type: opensource-additional
 ---
 Apache License
                            Version 2.0, January 2004

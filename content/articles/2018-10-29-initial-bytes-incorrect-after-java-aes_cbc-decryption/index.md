@@ -2,9 +2,9 @@
 title: 'Q: Initial bytes incorrect after Java AES/CBC decryption'
 date: 2018-10-29
 lastmod: 2020-04-19
-lastfetch: 2023-03-13T14:23:50.372Z
+lastfetch: 2023-03-13T15:18:57.462Z
 description: 'Initial bytes incorrect after Java AES/CBC decryption'
-summary: ''
+summary: 'This was originally posted as an answer to the question "Initial bytes incorrect after Java AES/CBC decryption" on stackoverflow.com.'
 aliases: [/link/9mewu8mf]
 slug: 2018/initial-bytes-incorrect-after-java-aes_cbc-decryption
 tags: ["java", "encryption", "aes"]
@@ -26,9 +26,6 @@ soAnswerId: 53051612
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/53051612/774398
 ---
-
-{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/53051612/774398) to this [question](https://stackoverflow.com/questions/15554296/initial-bytes-incorrect-after-java-aes-cbc-decryption)  on stackoverflow.com{{< /alert >}}
-
 _In this answer I choose to approach the "Simple Java AES encrypt/decrypt example" main theme and not the specific debugging question because I think this will profit most readers._
 
 This is a simple summary of my [blog post about AES encryption in Java](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9) so I recommend reading through it before implementing anything. I will however still provide a simple example to use and give some pointers what to watch out for.

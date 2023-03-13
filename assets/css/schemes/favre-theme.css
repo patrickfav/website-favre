@@ -61,13 +61,15 @@ span.custom-info a:hover {
 
 /* sidepanel */
 
+div.sidepanel {
+}
+
 div.sidepanel > div > span > a, div.sidepanel > a {
     text-decoration: none;
-    color: var(--color-neutral-500);
 }
 
 div.sidepanel > div > span > a:hover {
-    opacity: 0.7;
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -77,6 +79,7 @@ div.sidepanel > div > span > a:hover {
 }
 
 /* table of contents */
+
 nav#TableOfContents a {
     text-decoration: none;
     font-size: 14px;
@@ -92,4 +95,23 @@ nav#TableOfContents > ul > li > ul > li > a {
 
 nav#TableOfContents > ul > li > ul > li > ul > li > a {
     opacity: 0.5;
+}
+
+/* tags */
+
+div > a.tag {
+    font-size: 0.75em;
+    display: inline-block;
+    border-radius: 2em;
+    padding: 0.15em 0.7em;
+    text-decoration: none;
+    background-color: rgba(var(--color-primary-800));
+    color: rgba(var(--color-neutral-200));
+    margin: 0;
+}
+
+div > a.tag:hover {
+    border-radius: 2em;
+    background-color: rgba(var(--color-primary-400));
+    color: rgba(var(--color-neutral-200));
 }

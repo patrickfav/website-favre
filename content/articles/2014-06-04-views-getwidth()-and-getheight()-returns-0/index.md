@@ -2,9 +2,9 @@
 title: 'Q: View&#39;s getWidth() and getHeight() returns 0'
 date: 2014-06-04
 lastmod: 2020-06-23
-lastfetch: 2023-03-13T14:23:50.328Z
+lastfetch: 2023-03-13T15:18:57.410Z
 description: 'View&#39;s getWidth() and getHeight() returns 0'
-summary: ''
+summary: 'This was originally posted as an answer to the question "View&#39;s getWidth() and getHeight() returns 0" on stackoverflow.com.'
 aliases: [/link/a4y7zf2h]
 slug: 2014/views-getwidth()-and-getheight()-returns-0
 tags: ["java", "android", "android-layout", "getter"]
@@ -19,16 +19,13 @@ deeplink: /link/a4y7zf2h
 originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-and-getheight-returns-0
 originalContentType: stackoverflow
 soScore: 966
-soViews: 399554
+soViews: 399556
 soIsAccepted: false
 soQuestionId: 3591784
 soAnswerId: 24035591
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/24035591/774398
 ---
-
-{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/24035591/774398) to this [question](https://stackoverflow.com/questions/3591784/views-getwidth-and-getheight-returns-0)  on stackoverflow.com{{< /alert >}}
-
 The basic problem is, that you have to wait for the drawing phase for the actual measurements (especially with dynamic values like  `wrap_content`  or  `match_parent` ), but usually this phase hasn't been finished up to  `onResume()` . So you need a workaround for waiting for this phase. There a are different possible solutions to this:
 
 1\. Listen to Draw/Layout Events: ViewTreeObserver

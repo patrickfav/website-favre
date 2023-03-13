@@ -2,9 +2,9 @@
 title: 'Q: Java - resize image without losing quality'
 date: 2016-04-02
 lastmod: 2018-02-03
-lastfetch: 2023-03-13T14:23:50.362Z
+lastfetch: 2023-03-13T15:18:57.449Z
 description: 'Java - resize image without losing quality'
-summary: ''
+summary: 'This was originally posted as an answer to the question "Java - resize image without losing quality" on stackoverflow.com.'
 aliases: [/link/b5v3y6b2]
 slug: 2016/java-resize-image-without-losing-quality
 tags: ["java", "image", "image-processing", "bufferedimage"]
@@ -19,16 +19,13 @@ deeplink: /link/b5v3y6b2
 originalContentLink: https://stackoverflow.com/questions/24745147/java-resize-image-without-losing-quality
 originalContentType: stackoverflow
 soScore: 95
-soViews: 89969
+soViews: 89971
 soIsAccepted: false
 soQuestionId: 24745147
 soAnswerId: 36367652
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/36367652/774398
 ---
-
-{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/36367652/774398) to this [question](https://stackoverflow.com/questions/24745147/java-resize-image-without-losing-quality)  on stackoverflow.com{{< /alert >}}
-
 Unfortunately, there is no recommended out-of-the-box scaling in Java that provides visually good results. Among others, here are the methods I recommend for scaling:
 
 *   Lanczos3 Resampling (usually visually better, but slower)

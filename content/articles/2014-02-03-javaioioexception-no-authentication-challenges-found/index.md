@@ -2,9 +2,9 @@
 title: 'Q: java.io.IOException : No authentication challenges found'
 date: 2014-02-03
 lastmod: 2017-05-23
-lastfetch: 2023-03-13T14:23:50.385Z
+lastfetch: 2023-03-13T15:18:57.475Z
 description: 'java.io.IOException : No authentication challenges found'
-summary: ''
+summary: 'This was originally posted as an answer to the question "java.io.IOException : No authentication challenges found" on stackoverflow.com.'
 aliases: [/link/ji5yg94p]
 slug: 2014/javaioioexception-no-authentication-challenges-found
 tags: ["java", "android", "authentication", "httpurlconnection", "ioexception"]
@@ -26,9 +26,6 @@ soAnswerId: 21534175
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/21534175/774398
 ---
-
-{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/21534175/774398) to this [question](https://stackoverflow.com/questions/17121213/java-io-ioexception-no-authentication-challenges-found)  on stackoverflow.com{{< /alert >}}
-
 This error happens because the server sends a 401 (Unauthorized) but does not give a [ `WWW-Authenticate` ](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Response_fields) header which is a hint to the client what to do next. The  `WWW-Authenticate`  header tells the client, which kind of authentication is needed (either [Basic](http://en.wikipedia.org/wiki/Basic_access_authentication) or [Digest](http://en.wikipedia.org/wiki/Digest_access_authentication)). This is probably not very useful in headless http clients, but that's how the [HTTP 1.1 RFC is defined](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2). The error occurs because the lib tries to parse the  `WWW-Authenticate`  header but can't.
 
 From the RFC:

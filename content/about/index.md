@@ -1,6 +1,7 @@
 ---
 title: About
 description: "This site is a summary of all of my relevant contributions in the form of open source software, articles or blog posts."
+type: nonContentSite
 showEdit: false
 showDate: false
 showReadingTime: false

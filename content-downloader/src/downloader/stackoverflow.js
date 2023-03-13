@@ -35,9 +35,8 @@ export async function downloadStackOverflowPosts (soUser, rootDirMd, relOutDir) 
     const slug = escapeForFileName(question.title, new Date(answer.creation_date * 1000), answer.answer_id)
     const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
     const targetProjectDir = targetRootDir + '/' + slug.safeNameWithDate
-    const summary = await createSummary(answer, question)
+    const summary = createSummary(answer, question)
     const frontMatter = createStackOverflowFrontMatter(answer, question, summary, slug, answerLink)
-    const bannerText = createBannerText(answerLink, question.link)
     const markdown = createMarkdown(answer.body)
 
     const wordCount = wordsCount(markdown)
@@ -57,7 +56,7 @@ export async function downloadStackOverflowPosts (soUser, rootDirMd, relOutDir) 
 
     const finalMarkdown = await fetchAndReplaceImages(markdown, targetProjectDir)
 
-    await StringStream.from(frontMatter + bannerText + finalMarkdown)
+    await StringStream.from(frontMatter + finalMarkdown)
       .pipe(fs.createWriteStream(targetProjectFile))
   }
 }
@@ -145,8 +144,8 @@ function createMarkdown (body) {
   return turndownService.turndown(body)
 }
 
-async function createSummary (answer, question) {
-  return ''
+function createSummary (answer, question) {
+  return `This was originally posted as ${answer.is_accepted ? 'the accepted' : 'an'} answer to the question "${question.title}" on stackoverflow.com.`
 }
 
 function createStackOverflowFrontMatter (soAnswers, soQuestion, summary, slug, answerLink) {
@@ -185,10 +184,6 @@ function createStackOverflowFrontMatter (soAnswers, soQuestion, summary, slug, a
   meta += 'soAnswerLink: ' + answerLink + '\n'
   meta += '---\n'
   return meta
-}
-
-function createBannerText (answerLink, questionLink) {
-  return `\n{{< alert "stack-overflow" >}} This was originally posted as an [answer](${answerLink}) to this [question](${questionLink})  on stackoverflow.com{{< /alert >}}\n\n`
 }
 
 async function fetchAndReplaceImages (markdownContent, targetProjectDir) {

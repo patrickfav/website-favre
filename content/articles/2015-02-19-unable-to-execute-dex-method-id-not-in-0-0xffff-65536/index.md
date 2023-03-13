@@ -2,9 +2,9 @@
 title: 'Q: Unable to execute dex: method ID not in [0, 0xffff]: 65536'
 date: 2015-02-19
 lastmod: 2017-05-23
-lastfetch: 2023-03-13T14:23:50.377Z
+lastfetch: 2023-03-13T15:18:57.466Z
 description: 'Unable to execute dex: method ID not in [0, 0xffff]: 65536'
-summary: ''
+summary: 'This was originally posted as an answer to the question "Unable to execute dex: method ID not in [0, 0xffff]: 65536" on stackoverflow.com.'
 aliases: [/link/fy578y5b]
 slug: 2015/unable-to-execute-dex-method-id-not-in-0-0xffff-65536
 tags: ["android", "dex"]
@@ -19,16 +19,13 @@ deeplink: /link/fy578y5b
 originalContentLink: https://stackoverflow.com/questions/15209831/unable-to-execute-dex-method-id-not-in-0-0xffff-65536
 originalContentType: stackoverflow
 soScore: 78
-soViews: 145839
+soViews: 145840
 soIsAccepted: false
 soQuestionId: 15209831
 soAnswerId: 28606782
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/28606782/774398
 ---
-
-{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/28606782/774398) to this [question](https://stackoverflow.com/questions/15209831/unable-to-execute-dex-method-id-not-in-0-0xffff-65536)  on stackoverflow.com{{< /alert >}}
-
 As already stated, you have too many methods (more than 65k) in your project and libs.
 
 Prevent the Problem: Reduce the number of methods with Play Services 6.5+ and support-v4 24.2+

@@ -2,9 +2,9 @@
 title: 'Q: Android: fast bitmap blur?'
 date: 2014-04-27
 lastmod: 2017-05-23
-lastfetch: 2023-03-13T14:23:50.411Z
+lastfetch: 2023-03-13T15:18:57.503Z
 description: 'Android: fast bitmap blur?'
-summary: ''
+summary: 'This was originally posted as an answer to the question "Android: fast bitmap blur?" on stackoverflow.com.'
 aliases: [/link/vwuqat4a]
 slug: 2014/android-fast-bitmap-blur
 tags: ["android", "image-processing", "blur", "convolution"]
@@ -26,9 +26,6 @@ soAnswerId: 23329963
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/23329963/774398
 ---
-
-{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/23329963/774398) to this [question](https://stackoverflow.com/questions/14988990/android-fast-bitmap-blur)  on stackoverflow.com{{< /alert >}}
-
 Probably the most demanding requirement is live blur, meaning you blur live as the view changes. In this situation a blur should not take longer than 10 or so ms (to have some playroom onto the 16ms/60fps) to look smooth. It is possible to achieve this effect with the right settings, even on not so high end devices (galaxy s3 and even slower).
 
 Here is how to improve performance in descending importance:

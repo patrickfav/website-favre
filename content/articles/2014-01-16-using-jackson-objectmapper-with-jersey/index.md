@@ -2,9 +2,9 @@
 title: 'Q: Using Jackson ObjectMapper with Jersey'
 date: 2014-01-16
 lastmod: 2017-09-16
-lastfetch: 2023-03-13T14:23:50.409Z
+lastfetch: 2023-03-13T15:18:57.502Z
 description: 'Using Jackson ObjectMapper with Jersey'
-summary: ''
+summary: 'This was originally posted as an answer to the question "Using Jackson ObjectMapper with Jersey" on stackoverflow.com.'
 aliases: [/link/cjaczjy2]
 slug: 2014/using-jackson-objectmapper-with-jersey
 tags: ["java", "json", "spring", "rest", "jersey-2.0"]
@@ -19,16 +19,13 @@ deeplink: /link/cjaczjy2
 originalContentLink: https://stackoverflow.com/questions/20563640/using-jackson-objectmapper-with-jersey
 originalContentType: stackoverflow
 soScore: 13
-soViews: 44185
+soViews: 44186
 soIsAccepted: false
 soQuestionId: 20563640
 soAnswerId: 21167382
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/21167382/774398
 ---
-
-{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/21167382/774398) to this [question](https://stackoverflow.com/questions/20563640/using-jackson-objectmapper-with-jersey)  on stackoverflow.com{{< /alert >}}
-
 **EDIT**: Don't use the _old approach below_ as it produces bugs (at least with with android device, see EDIT2 for more details). As of my tests, Jersey v2.6 seems to fix the problem with the  `@Provide` , which approach did not work. I was able to get it work with this simple provider:
 
 ```

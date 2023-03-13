@@ -201,6 +201,7 @@ function createGithubSubPageFrontMatter (projectName, githubMeta, relOutDir, slu
   meta += `url: ${relOutDir}/${slug.safeName}/${leafName}\n`
   meta += 'showSummary: false\n'
   meta += 'showTableOfContents: false\n'
+  meta += 'type: opensource-additional\n'
   meta += '---\n'
   return meta
 }

@@ -1,6 +1,7 @@
 ---
 title: "Articles"
 description: "Tech articles I wrote in recent years. Most of them were originally published on different platforms, like Medium or StackOverflow."
+type: list
 
 cascade:
     type: articles

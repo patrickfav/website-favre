@@ -2,9 +2,9 @@
 title: 'Q: Quality of Image after resize very low -- Java'
 date: 2016-03-30
 lastmod: 2017-05-23
-lastfetch: 2023-03-13T14:23:50.414Z
+lastfetch: 2023-03-13T15:18:57.506Z
 description: 'Quality of Image after resize very low -- Java'
-summary: ''
+summary: 'This was originally posted as an answer to the question "Quality of Image after resize very low -- Java" on stackoverflow.com.'
 aliases: [/link/pk6vsacv]
 slug: 2016/quality-of-image-after-resize-very-low-java
 tags: ["java", "image", "image-resizing"]
@@ -26,9 +26,6 @@ soAnswerId: 36320292
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/36320292/774398
 ---
-
-{{< alert "stack-overflow" >}} This was originally posted as an [answer](https://stackoverflow.com/a/36320292/774398) to this [question](https://stackoverflow.com/questions/14115950/quality-of-image-after-resize-very-low-java)  on stackoverflow.com{{< /alert >}}
-
 As already stated, Java's Graphics2D does not provide a very good algorithm for down-scaling. If you don't want to implement a sophisticated algorithm yourself you could try out the current open source libs specialized for this: [Thumbnailator](so_a2bd2e40d277da38e454ab52.png), [imgscalr](https://gist.github.com/patrickfav/a147ecd26a385ce4f6d8c373356454c4) and a Java interface for [ImageMagick](https://stackoverflow.com/a/36295066/774398).
 
 While researching for a private project I tried them out (except ImageMagick) and here are the visual results with Photoshop as reference:

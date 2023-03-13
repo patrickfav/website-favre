@@ -8,15 +8,12 @@
 
 {{ with $context }}
     {{/* Output taxonomies */}}
-    <div class="my-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400" style="padding-bottom: 4em">
+    <div>
         {{ range $taxonomy, $terms := .Site.Taxonomies }}
             {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
                 {{ if (eq $taxonomy "alltags") }}
                     {{ range $context.GetTerms $taxonomy }}
-                    <a
-                            href="{{ .RelPermalink }}"
-                            style="margin-right: 2px"
-                            class="rounded border border-neutral-200 px-1 hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400">
+                    <a href="{{ .RelPermalink }}" class="tag">
                         {{ .LinkTitle }}
                     </a>
                     {{ end }}

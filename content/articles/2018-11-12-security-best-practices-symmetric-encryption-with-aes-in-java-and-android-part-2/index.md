@@ -2,7 +2,7 @@
 title: 'Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2'
 date: 2018-11-12
 lastmod: 2023-02-26
-lastfetch: 2023-03-13T14:23:57.359Z
+lastfetch: 2023-03-13T15:19:04.532Z
 summary: 'If you can&#x2019;t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC.'
 description: 'If you can&#x2019;t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC.'
 aliases: [/link/h8ptfx5z]
