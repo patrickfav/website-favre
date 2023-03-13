@@ -11,18 +11,22 @@
 <div class="text-neutral-500 dark:text-neutral-400 mb-3 pl-2 sidepanel">
 
     {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "github" ) }}
+        {{ partial "meta/general-sidepanel.html" . }}
         {{ partial "meta/github-sidepanel.html" . }}
     {{ end }}
 
     {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "medium" ) }}
+        {{ partial "meta/general-sidepanel.html" . }}
         {{ partial "meta/medium-sidepanel.html" . }}
     {{ end }}
 
     {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "stackoverflow" ) }}
+        {{ partial "meta/general-sidepanel.html" . }}
         {{ partial "meta/stackoverflow-sidepanel.html" . }}
     {{ end }}
 
     {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "gist" ) }}
+        {{ partial "meta/general-sidepanel.html" . }}
         {{ partial "meta/gist-sidepanel.html" . }}
     {{ end }}
 </div>
