@@ -1,0 +1,23 @@
+---
+title: 'changelog'
+date: 2019-04-14
+lastmod: 2023-03-02
+lastfetch: 2023-03-13T14:23:18.873Z
+url: opensource//checkstyle-config/changelog
+showSummary: false
+showTableOfContents: false
+---
+# Releases
+
+## 3
+
+## 2
+
+* makes config compatible with Checkstyle 3.31
+
+## 1
+
+Initial release
+
+
+

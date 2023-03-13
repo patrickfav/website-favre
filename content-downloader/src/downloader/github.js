@@ -40,6 +40,9 @@ export async function downloadGithubProjects (githubUser, githubProjects, rootDi
     const frontMatter = createGithubFrontMatter(projectName, githubMetaForProject, releaseMeta, relOutDir, slug)
 
     await downloadParseAndSaveReadme(githubUser, projectName, githubMetaForProject.default_branch, frontMatter, targetProjectDir)
+    await downloadAdditionalContent(githubUser, projectName, githubMetaForProject.default_branch, ['CHANGELOG', 'CHANGELOG.md'], 'changelog', createGithubSubPageFrontMatter(projectName, githubMetaForProject, relOutDir, slug, 'changelog'), targetProjectDir)
+    await downloadAdditionalContent(githubUser, projectName, githubMetaForProject.default_branch, ['LICENSE'], 'license', createGithubSubPageFrontMatter(projectName, githubMetaForProject, relOutDir, slug, 'license'), targetProjectDir)
+    await downloadAdditionalContent(githubUser, projectName, githubMetaForProject.default_branch, ['CONTRIBUTING.md', 'CONTRIBUTING'], 'contributing', createGithubSubPageFrontMatter(projectName, githubMetaForProject, relOutDir, slug, 'contributing'), targetProjectDir)
   }
 }
 
@@ -94,12 +97,39 @@ async function downloadReleases (projectName, githubUser, gotHeaders) {
   return undefined
 }
 
+async function downloadAdditionalContent (githubUser, projectName, mainBranch, fileNames, leafName, frontMatter, targetProjectDir) {
+  const targetFolder = `${targetProjectDir}/${leafName}`
+  const targetProjectFile = `${targetFolder}/index.md`
+
+  for (const fileName of fileNames) {
+    const url = `https://github.com/${githubUser}/${projectName}/raw/${mainBranch}/${fileName}`
+    const markdown = await got.get(url)
+      .then(response => removeBadgesAndDownloadImages(response.body, githubUser, projectName, mainBranch, targetFolder))
+      .catch(err => {
+        if (err.response && err.response.statusCode === 404) {
+          // do nothing
+        } else {
+          throw err
+        }
+      })
+    if (!markdown) {
+      continue
+    }
+    console.log(`\tDownloading ${fileName} from ${url}`)
+    if (!fs.existsSync(targetFolder)) {
+      fs.mkdirSync(targetFolder, { recursive: true })
+    }
+    await StringStream.from(frontMatter + markdown)
+      .pipe(fs.createWriteStream(targetProjectFile))
+  }
+}
+
 async function downloadParseAndSaveReadme (githubUser, projectName, mainBranch, frontMatter, targetProjectDir) {
-  const fileNameExt = 'index.md'
+  const fileNameExt = '_index.md'
 
   const url = `https://github.com/${githubUser}/${projectName}/raw/${mainBranch}/`
 
-  const targetProjectFile = targetProjectDir + '/' + fileNameExt
+  const targetProjectFile = `${targetProjectDir}/${fileNameExt}`
 
   console.log('\tDownloading Readme from ' + url + 'README.md')
 
@@ -127,19 +157,19 @@ async function removeBadgesAndDownloadImages (markdownContent, githubUser, proje
 
     if (
       imageUrl.startsWith('https://api.bintray.com/packages/') ||
-            imageUrl.startsWith('https://travis-ci.com/patrickfav') ||
-            imageUrl.startsWith('https://travis-ci.org/patrickfav') ||
-            imageUrl.startsWith('https://app.travis-ci.com/patrickfav/') ||
-            imageUrl.startsWith('https://www.javadoc.io/badge') ||
-            imageUrl.startsWith('https://coveralls.io/repos/github') ||
-            imageUrl.startsWith('https://img.shields.io/github/') ||
-            imageUrl.startsWith('https://img.shields.io/badge/') ||
-            imageUrl.startsWith('https://img.shields.io/maven-central/') ||
-            imageUrl.startsWith('https://api.codeclimate.com/v1/badges') ||
-            imageUrl.startsWith('https://codecov.io/gh/patrickfav/') ||
-            imageUrl.startsWith('https://sonarcloud.io/api/project_badges/') ||
-            imageUrl.startsWith('doc/playstore_badge') ||
-            (imageUrl.startsWith('https://github.com') && imageUrl.endsWith('/badge.svg'))
+      imageUrl.startsWith('https://travis-ci.com/patrickfav') ||
+      imageUrl.startsWith('https://travis-ci.org/patrickfav') ||
+      imageUrl.startsWith('https://app.travis-ci.com/patrickfav/') ||
+      imageUrl.startsWith('https://www.javadoc.io/badge') ||
+      imageUrl.startsWith('https://coveralls.io/repos/github') ||
+      imageUrl.startsWith('https://img.shields.io/github/') ||
+      imageUrl.startsWith('https://img.shields.io/badge/') ||
+      imageUrl.startsWith('https://img.shields.io/maven-central/') ||
+      imageUrl.startsWith('https://api.codeclimate.com/v1/badges') ||
+      imageUrl.startsWith('https://codecov.io/gh/patrickfav/') ||
+      imageUrl.startsWith('https://sonarcloud.io/api/project_badges/') ||
+      imageUrl.startsWith('doc/playstore_badge') ||
+      (imageUrl.startsWith('https://github.com') && imageUrl.endsWith('/badge.svg'))
     ) {
       markdownContent = markdownContent.replace(new RegExp(regExpQuote(markdownImage), 'g'), '')
       continue
@@ -162,25 +192,39 @@ async function removeBadgesAndDownloadImages (markdownContent, githubUser, proje
   return markdownContent
 }
 
+function createGithubSubPageFrontMatter (projectName, githubMeta, relOutDir, slug, leafName) {
+  let meta = '---\n'
+  meta += `title: '${escapeFrontMatterText(leafName)}'\n`
+  meta += `date: ${new Date(githubMeta.created_at).toISOString().split('T')[0]}\n`
+  meta += `lastmod: ${new Date(githubMeta.updated_at).toISOString().split('T')[0]}\n`
+  meta += 'lastfetch: ' + new Date().toISOString() + '\n'
+  meta += `url: ${relOutDir}/${slug.safeName}/${leafName}\n`
+  meta += 'showSummary: false\n'
+  meta += 'showTableOfContents: false\n'
+  meta += '---\n'
+  return meta
+}
+
 function createGithubFrontMatter (projectName, githubMeta, releaseMeta, relOutDir, slug) {
   const githubTags = githubMeta.topics ? githubMeta.topics.slice() : []
   const allTags = githubTags.concat(['github', githubMeta.language]).filter(x => !!x)
   const reducedTags = githubTags.length > 5 ? githubTags.slice(0, 4) : githubTags.slice()
 
   let meta = '---\n'
-  meta += "title: '" + escapeFrontMatterText(projectName) + "'\n"
+  meta += 'title: \'' + escapeFrontMatterText(projectName) + '\'\n'
   meta += 'date: ' + new Date(githubMeta.created_at).toISOString().split('T')[0] + '\n'
   meta += 'lastmod: ' + new Date(githubMeta.updated_at).toISOString().split('T')[0] + '\n'
   meta += 'lastfetch: ' + new Date().toISOString() + '\n'
-  meta += "description: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
-  meta += "summary: '" + escapeFrontMatterText(githubMeta.description) + "'\n"
-  meta += `aliases: ['${slug.permalink}','/${relOutDir}${slug.safeName}']\n`
-  meta += 'slug: ' + slug.yearSlashSafeName + '\n'
+  meta += 'description: \'' + escapeFrontMatterText(githubMeta.description) + '\'\n'
+  meta += 'summary: \'' + escapeFrontMatterText(githubMeta.description) + '\'\n'
+  meta += `aliases: ['${slug.permalink}','/${relOutDir}${slug.yearSlashSafeName}']\n`
+  meta += `url: ${relOutDir}/${slug.safeName}\n`
   meta += 'tags: [' + reducedTags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'keywords: [' + githubTags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'alltags: [' + allTags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'categories: ["opensource"]\n'
   meta += 'editURL: ' + githubMeta.html_url + '\n'
+  meta += 'showAuthor: true\n'
   meta += 'deeplink: ' + slug.permalink + '\n'
   meta += 'originalContentLink: ' + githubMeta.html_url + '\n'
   meta += 'originalContentType: github\n'

@@ -2,7 +2,7 @@
 title: 'Q: Quality of Image after resize very low -- Java'
 date: 2016-03-30
 lastmod: 2017-05-23
-lastfetch: 2023-03-12T21:58:35.777Z
+lastfetch: 2023-03-13T14:23:50.414Z
 description: 'Quality of Image after resize very low -- Java'
 summary: ''
 aliases: [/link/pk6vsacv]

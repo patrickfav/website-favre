@@ -12,6 +12,7 @@ cascade:
     showTaxonomies: false
     editAppendPath: false
     showPagination: false
+    showAuthor: false
     lang: en
     cover: 'feature_*'
 ---

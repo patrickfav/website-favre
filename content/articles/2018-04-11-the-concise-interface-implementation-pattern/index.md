@@ -2,7 +2,7 @@
 title: 'The Concise Interface Implementation Pattern'
 date: 2018-04-11
 lastmod: 2023-02-26
-lastfetch: 2023-03-12T21:58:46.168Z
+lastfetch: 2023-03-13T14:24:00.370Z
 summary: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 description: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 aliases: [/link/pjmmxwy7]

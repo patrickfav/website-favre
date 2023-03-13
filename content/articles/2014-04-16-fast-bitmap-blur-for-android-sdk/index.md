@@ -2,7 +2,7 @@
 title: 'Q: Fast Bitmap Blur For Android SDK'
 date: 2014-04-16
 lastmod: 2019-09-15
-lastfetch: 2023-03-12T21:58:35.705Z
+lastfetch: 2023-03-13T14:23:50.346Z
 description: 'Fast Bitmap Blur For Android SDK'
 summary: ''
 aliases: [/link/fk797xgv]
@@ -19,7 +19,7 @@ deeplink: /link/fk797xgv
 originalContentLink: https://stackoverflow.com/questions/2067955/fast-bitmap-blur-for-android-sdk
 originalContentType: stackoverflow
 soScore: 268
-soViews: 154734
+soViews: 154746
 soIsAccepted: false
 soQuestionId: 2067955
 soAnswerId: 23119957
