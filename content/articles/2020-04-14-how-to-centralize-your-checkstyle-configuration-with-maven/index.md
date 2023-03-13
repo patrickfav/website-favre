@@ -2,7 +2,7 @@
 title: 'How to Centralize your Checkstyle Configuration with Maven'
 date: 2020-04-14
 lastmod: 2023-02-26
-lastfetch: 2023-03-13T15:19:00.690Z
+lastfetch: 2023-03-13T17:19:53.393Z
 summary: 'Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.'
 description: 'Maintaining Checkstyle configs in a multi-repo project can be a chore. Let maven help you to create a global one.'
 aliases: [/link/ufby4k5k]
