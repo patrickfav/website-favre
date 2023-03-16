@@ -2,11 +2,11 @@
 title: 'indoor-positioning'
 date: 2016-08-07
 lastmod: 2023-02-27
-lastfetch: 2023-03-13T17:18:40.730Z
+lastfetch: 2023-03-16T21:33:40.885Z
 description: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 summary: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 aliases: ['/link/fzd79n2s','/opensource/2016/indoor-positioning']
-url: opensource//indoor-positioning
+url: opensource/indoor-positioning
 tags: ["angular", "couchdb", "highcharts", "iot"]
 keywords: ["angular", "couchdb", "highcharts", "iot", "javaee", "nearest-neighbors", "open-wrt", "received-signal-strength", "wifi"]
 alltags: ["angular", "couchdb", "highcharts", "iot", "javaee", "nearest-neighbors", "open-wrt", "received-signal-strength", "wifi", "github", "Java"]
@@ -16,13 +16,14 @@ showAuthor: true
 deeplink: /link/fzd79n2s
 originalContentLink: https://github.com/patrickfav/indoor-positioning
 originalContentType: github
+githubCloneUrlHttp: https://github.com/patrickfav/indoor-positioning.git
 githubStars: 40
 githubForks: 24
 githubWatchers: 40
 githubLanguage: Java
 githubHomepage: https://repositum.tuwien.at/handle/20.500.12708/2080
 githubDefaultBranch: main
-githubOpenIssues: 0
+githubOpenIssues: 1
 githubIsFork: false
 githubLatestVersion: v1.2.0
 githubLatestVersionDate: 2023-03-11T13:11:24Z

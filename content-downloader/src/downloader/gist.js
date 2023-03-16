@@ -13,7 +13,7 @@ export async function downloadGists (githubUser, gistIds, rootDirMd, relOutDir) 
 
   console.log('Start Processing Gists')
 
-  const targetRootDir = rootDirMd + relOutDir
+  const targetRootDir = rootDirMd + relOutDir + '/'
 
   const gotHeaders = createGotHttpHeaders()
 

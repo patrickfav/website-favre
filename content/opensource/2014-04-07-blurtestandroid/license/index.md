@@ -1,9 +1,9 @@
 ---
 title: 'license'
 date: 2014-04-07
-lastmod: 2023-03-05
-lastfetch: 2023-03-13T17:18:30.577Z
-url: opensource//blurtestandroid/license
+lastmod: 2023-03-15
+lastfetch: 2023-03-16T21:33:31.343Z
+url: opensource/blurtestandroid/license
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

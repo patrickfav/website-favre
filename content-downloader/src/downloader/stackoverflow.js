@@ -15,7 +15,7 @@ export async function downloadStackOverflowPosts (soUser, rootDirMd, relOutDir) 
     return
   }
 
-  const targetRootDir = rootDirMd + relOutDir
+  const targetRootDir = rootDirMd + relOutDir + '/'
 
   console.log('Start Processing Stack Overflow posts')
 

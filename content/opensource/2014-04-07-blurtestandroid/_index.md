@@ -1,12 +1,12 @@
 ---
 title: 'BlurTestAndroid'
 date: 2014-04-07
-lastmod: 2023-03-05
-lastfetch: 2023-03-13T17:18:29.018Z
+lastmod: 2023-03-15
+lastfetch: 2023-03-16T21:33:30.187Z
 description: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 summary: 'This is a simple App to test some blur algorithms on their visual quality and performance.'
 aliases: ['/link/wxmh9jxe','/opensource/2014/blurtestandroid']
-url: opensource//blurtestandroid
+url: opensource/blurtestandroid
 tags: ["algorithm", "android-application", "benchmark", "blur", "renderscript"]
 keywords: ["algorithm", "android-application", "benchmark", "blur", "renderscript"]
 alltags: ["algorithm", "android-application", "benchmark", "blur", "renderscript", "github", "Java"]
@@ -16,6 +16,7 @@ showAuthor: true
 deeplink: /link/wxmh9jxe
 originalContentLink: https://github.com/patrickfav/BlurTestAndroid
 originalContentType: github
+githubCloneUrlHttp: https://github.com/patrickfav/BlurTestAndroid.git
 githubStars: 415
 githubForks: 68
 githubWatchers: 415

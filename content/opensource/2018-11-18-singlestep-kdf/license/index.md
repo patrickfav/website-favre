@@ -2,8 +2,8 @@
 title: 'license'
 date: 2018-11-18
 lastmod: 2023-03-02
-lastfetch: 2023-03-13T17:19:00.960Z
-url: opensource//singlestep-kdf/license
+lastfetch: 2023-03-16T21:33:59.765Z
+url: opensource/singlestep-kdf/license
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

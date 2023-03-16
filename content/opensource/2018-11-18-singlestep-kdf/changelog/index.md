@@ -2,8 +2,8 @@
 title: 'changelog'
 date: 2018-11-18
 lastmod: 2023-03-02
-lastfetch: 2023-03-13T17:19:00.208Z
-url: opensource//singlestep-kdf/changelog
+lastfetch: 2023-03-16T21:33:59.061Z
+url: opensource/singlestep-kdf/changelog
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

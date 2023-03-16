@@ -17,7 +17,7 @@ export async function downloadMediumArticles (rootDirMd, relOutDirArticles) {
 
   console.log('Start Processing medium articles')
 
-  const targetRootDir = rootDirMd + relOutDirArticles
+  const targetRootDir = rootDirMd + relOutDirArticles + '/'
 
   const userName = '@patrickfav'
 

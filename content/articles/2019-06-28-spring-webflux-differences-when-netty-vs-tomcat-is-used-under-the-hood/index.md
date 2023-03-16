@@ -1,8 +1,8 @@
 ---
 title: 'Q: Spring WebFlux differences when Netty vs. Tomcat is used under the hood'
 date: 2019-06-28
-lastmod: 2019-06-28
-lastfetch: 2023-03-13T17:19:49.641Z
+lastmod: 2023-03-14
+lastfetch: 2023-03-16T21:34:45.981Z
 description: 'Spring WebFlux differences when Netty vs. Tomcat is used under the hood'
 summary: 'This was originally posted as an answer to the question "Spring WebFlux differences when Netty vs. Tomcat is used under the hood" on stackoverflow.com.'
 aliases: [/link/tjxcdi79]
@@ -18,8 +18,8 @@ thumbnail: 'sobanner*'
 deeplink: /link/tjxcdi79
 originalContentLink: https://stackoverflow.com/questions/56794263/spring-webflux-differences-when-netty-vs-tomcat-is-used-under-the-hood
 originalContentType: stackoverflow
-soScore: 52
-soViews: 31585
+soScore: 53
+soViews: 31697
 soIsAccepted: false
 soQuestionId: 56794263
 soAnswerId: 56806022
@@ -39,6 +39,7 @@ The first concept of _blocking, multi-threaded_ server has a finite set amount o
 ### Summary
 
 *   (+) simpler code
+
 *   (-) hard limit of parallel clients
 *   (-) requires more memory
 *   (-) inefficient use of hardware for usual web-server work
@@ -51,16 +52,17 @@ Non-Blocking Web-Servers
 
 In contrast a non-blocking web-server can serve multiple clients with only a single thread. That is because it uses the _[non-blocking kernel I/O features](https://jameshfisher.com/2017/04/05/set_socket_nonblocking/)_. These are just kernel calls which immediately return and call back when something can be written or read, making the cpu free to do other work instead. Reusing our supermarket metaphor, this would be like, when a cashier needs his supervisor to solve a problem, he does not wait and block the whole lane, but starts to check out the next customer until the supervisor arrives and solves the problem of the first customer.
 
-This is often done in an event loop or higher abstractions as [green-threads](https://en.wikipedia.org/wiki/Green_threads) or [fibers](https://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html). In essence such servers can't really process anything _concurrently_ (of course you can have multiple non-blocking threads), but they are able to serve thousands of clients in parallel because the memory consumption will not scale as drastically as with the multi-thread concept (read: there is no hard limit on max parallel clients). Also there is no thread context-switching. The downside is, that non-blocking code is often more complex to read and write (e.g. [callback-hell](http://callbackhell.com/)) and doesn't prefrom well in situations where a request does a lot of cpu-expensive work.
+This is often done in an event loop or higher abstractions as [green-threads](https://en.wikipedia.org/wiki/Green_threads) or [fibers](https://cr.openjdk.java.net/%7Erpressler/loom/Loom-Proposal.html). In essence such servers can't really process anything _concurrently_ (of course you can have multiple non-blocking threads), but they are able to serve thousands of clients in parallel because the memory consumption will not scale as drastically as with the multi-thread concept (read: there is no hard limit on max parallel clients). Also there is no thread context-switching. The downside is, that non-blocking code is often more complex to read and write (e.g. [callback-hell](http://callbackhell.com/)) and doesn't prefrom well in situations where a request does a lot of cpu-expensive work.
 
 ### Summary
 
 *   (-) more complex code
 *   (-) performance worse with cpu intensive tasks
+
 *   (+) uses resources much more efficiently as web server
 *   (+) many more parallel clients with no hard-limit (except max memory)
 
-Most modern "fast" web-servers and framework facilitate non-blocking concepts: Netty, Vert.x, Webflux, nginx, servlet 3.1+, Node, Go Webservers.
+Most modern "fast" web-servers and framework facilitate non-blocking concepts: Netty, Vert.x, Webflux, nginx, servlet 3.1+, Node, Go, and ASP.NET kestrel web servers.
 
 As a side note, looking at this benchmark page you will see that most of the fastest web-servers are usually non-blocking ones: [https://www.techempower.com/benchmarks/](https://www.techempower.com/benchmarks/)
 

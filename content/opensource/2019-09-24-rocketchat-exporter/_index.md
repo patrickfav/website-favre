@@ -2,11 +2,11 @@
 title: 'rocketchat-exporter'
 date: 2019-09-24
 lastmod: 2023-03-02
-lastfetch: 2023-03-13T17:19:08.284Z
+lastfetch: 2023-03-16T21:34:05.857Z
 description: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 summary: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 aliases: ['/link/qf3fheqr','/opensource/2019/rocketchat-exporter']
-url: opensource//rocketchat-exporter
+url: opensource/rocketchat-exporter
 tags: ["cli", "csv", "export", "java11"]
 keywords: ["cli", "csv", "export", "java11", "rocket-chat", "slack", "tool"]
 alltags: ["cli", "csv", "export", "java11", "rocket-chat", "slack", "tool", "github", "Java"]
@@ -16,13 +16,14 @@ showAuthor: true
 deeplink: /link/qf3fheqr
 originalContentLink: https://github.com/patrickfav/rocketchat-exporter
 originalContentType: github
+githubCloneUrlHttp: https://github.com/patrickfav/rocketchat-exporter.git
 githubStars: 13
 githubForks: 11
 githubWatchers: 13
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/rocketchat-exporter
 githubDefaultBranch: main
-githubOpenIssues: 5
+githubOpenIssues: 4
 githubIsFork: false
 githubLatestVersion: v1.1.2
 githubLatestVersionDate: 2023-03-02T20:32:10Z

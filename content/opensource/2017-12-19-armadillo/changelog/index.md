@@ -2,8 +2,8 @@
 title: 'changelog'
 date: 2017-12-19
 lastmod: 2023-03-12
-lastfetch: 2023-03-13T17:18:25.538Z
-url: opensource//armadillo/changelog
+lastfetch: 2023-03-16T21:33:27.035Z
+url: opensource/armadillo/changelog
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

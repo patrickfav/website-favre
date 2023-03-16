@@ -2,8 +2,8 @@
 title: 'license'
 date: 2018-07-05
 lastmod: 2023-03-07
-lastfetch: 2023-03-13T17:18:05.610Z
-url: opensource//bcrypt/license
+lastfetch: 2023-03-16T21:33:09.426Z
+url: opensource/bcrypt/license
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

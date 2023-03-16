@@ -1,9 +1,9 @@
 ---
 title: 'changelog'
 date: 2016-10-10
-lastmod: 2023-03-12
-lastfetch: 2023-03-13T17:18:21.603Z
-url: opensource//uber-apk-signer/changelog
+lastmod: 2023-03-16
+lastfetch: 2023-03-16T21:33:23.392Z
+url: opensource/uber-apk-signer/changelog
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

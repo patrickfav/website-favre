@@ -2,8 +2,8 @@
 title: 'contributing'
 date: 2019-09-24
 lastmod: 2023-03-02
-lastfetch: 2023-03-13T17:19:10.025Z
-url: opensource//rocketchat-exporter/contributing
+lastfetch: 2023-03-16T21:34:07.397Z
+url: opensource/rocketchat-exporter/contributing
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

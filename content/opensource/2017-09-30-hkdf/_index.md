@@ -2,11 +2,11 @@
 title: 'hkdf'
 date: 2017-09-30
 lastmod: 2023-03-08
-lastfetch: 2023-03-13T17:18:44.204Z
+lastfetch: 2023-03-16T21:33:44.241Z
 description: 'A standalone Java 7 implementation of HMAC-based key derivation function (HKDF) defined in RFC 5869 first described by Hugo Krawczyk. HKDF follows the "extract-then-expand" paradigm which is compatible to NIST 800-56C Rev. 1 two step KDF'
 summary: 'A standalone Java 7 implementation of HMAC-based key derivation function (HKDF) defined in RFC 5869 first described by Hugo Krawczyk. HKDF follows the "extract-then-expand" paradigm which is compatible to NIST 800-56C Rev. 1 two step KDF'
 aliases: ['/link/but98ei8','/opensource/2017/hkdf']
-url: opensource//hkdf
+url: opensource/hkdf
 tags: ["800-56c", "android-compatibility", "cryptography", "hash"]
 keywords: ["800-56c", "android-compatibility", "cryptography", "hash", "hkdf", "hmac", "hmac-sha1", "hmac-sha256", "hmac-sha512", "java", "java7", "jdk7", "kdf", "key-derivation-function", "nist", "rfc5869", "two-step-key-derivation"]
 alltags: ["800-56c", "android-compatibility", "cryptography", "hash", "hkdf", "hmac", "hmac-sha1", "hmac-sha256", "hmac-sha512", "java", "java7", "jdk7", "kdf", "key-derivation-function", "nist", "rfc5869", "two-step-key-derivation", "github", "Java"]
@@ -16,6 +16,7 @@ showAuthor: true
 deeplink: /link/but98ei8
 originalContentLink: https://github.com/patrickfav/hkdf
 originalContentType: github
+githubCloneUrlHttp: https://github.com/patrickfav/hkdf.git
 githubStars: 52
 githubForks: 11
 githubWatchers: 52

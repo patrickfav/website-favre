@@ -1,0 +1,47 @@
+{{- $images := .Resources.ByType "image" }}
+{{- $cover := $images.GetMatch (.Params.cover | default "*cover*") }}
+{{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $cover }}
+{{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumbnail*") | default $feature }}
+
+
+{{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "medium" ) }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "description": "{{ .Page.Params.description }}",
+    "url": "{{ .Page.Permalink }}",
+    "name": "{{ .Page.Title }}",
+    "headline": "{{ .Page.Title }}",
+    "inLanguage": "{{ .Page.Language }}",
+    "author": "{{ $.Param "author.name" }}",
+    "keywords": [ {{ range $i, $e := .Page.Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ],
+    "datePublished": "{{ .Page.Params.date }}",
+    "dateModified": "{{ .Page.Params.lastmod }}",
+    "wordcount": "{{ .WordCount }}"
+    {{ with $thumbnail }}, "image": "{{ $thumbnail.Permalink }}"{{ end }}
+}
+</script>
+{{ end }}
+
+{{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "github" ) }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "description": "{{ .Page.Params.description }}",
+    "url": "{{ .Page.Permalink }}",
+    "name": "{{ .Page.Title }}",
+    "inLanguage": "{{ .Page.Language }}",
+    "author": "{{ $.Param "author.name" }}",
+    "keywords": [ {{ range $i, $e := .Page.Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ],
+    "datePublished": "{{ .Page.Params.date }}",
+    "dateModified": "{{ .Page.Params.lastmod }}",
+    {{ with $thumbnail }}, "image": "{{ $thumbnail.Permalink }}"{{ end }}
+    {{ if (.Params.githubCloneUrlHttp | default false) }},"codeRepository": "{{ .Params.githubCloneUrlHttp }}"{{ end }}
+    {{ if (.Params.githubLicense | default false) }},"license": "{{ .Params.githubLicense }}"{{ end }}
+    {{ if (.Params.githubLanguage | default false) }},"programmingLanguage": "{{ .Params.githubLanguage }}"{{ end }}
+}
+</script>
+{{ end }}
+

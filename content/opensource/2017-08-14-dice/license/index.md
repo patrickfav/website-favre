@@ -2,8 +2,8 @@
 title: 'license'
 date: 2017-08-14
 lastmod: 2023-03-01
-lastfetch: 2023-03-13T17:18:57.166Z
-url: opensource//dice/license
+lastfetch: 2023-03-16T21:33:56.203Z
+url: opensource/dice/license
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

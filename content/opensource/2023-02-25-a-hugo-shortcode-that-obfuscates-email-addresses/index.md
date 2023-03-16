@@ -1,8 +1,8 @@
 ---
 title: 'Snippet: A hugo shortcode that obfuscates email addresses'
 date: 2023-02-25
-lastmod: 2023-02-26
-lastfetch: 2023-03-13T17:17:59.453Z
+lastmod: 2023-03-15
+lastfetch: 2023-03-16T21:33:04.016Z
 description: 'A hugo shortcode that obfuscates email addresses; makes it more difficult for bots to crawl it from your website. Add the html file to your "layouts/shortcodes/" folder then you can use it in your content.'
 summary: 'A hugo shortcode that obfuscates email addresses; makes it more difficult for bots to crawl it from your website. Add the html file to your "layouts/shortcodes/" folder then you can use it in your content.'
 aliases: [/link/4sh8eqre]
@@ -48,7 +48,7 @@ My Email address is {{&#60; mail-address-obfuscate mailto="example@example.com" 
 {{ $randomId := mod (add (mul 13 $seed) 97) 4000000 | md5 }}
 {{ $randomPosition := index (shuffle (seq (sub (len $mail) 1))) 0 }}
 
-{{ $randomWords := slice "f" "g" "h" "i" "j" "k" "l" "m" "we" "me" "us" "up" "so" "by" "if" "it" "at" "am" "an" "be" "do" "bag" "bat" "bit" "bet" "bun" "bus" "but" "dot" "duh" "dip" "dig" "dim" "den" "did" "fit" "fan" "fun" "fin" }}
+{{ $randomWords := slice "d" "a" "y" "i" "j" "k" "l" "m" "we" "us" "hp" "so" "by" "if" "it" "at" "am" "an" "be" "do" "bag" "bat" "bit" "bet" "bun" "bus" "put" "dut" "duh" "dip" "dig" "dim" "den" "dil" "fit" "fan" "fun" "fin" }}
 {{ $randomWordsShuffle := shuffle $randomWords }}
 {{ $randomWord1 := index $randomWordsShuffle 0 }}
 {{ $randomWord2 := index $randomWordsShuffle 1 }}

@@ -2,8 +2,8 @@
 title: 'license'
 date: 2017-09-30
 lastmod: 2023-03-08
-lastfetch: 2023-03-13T17:18:45.435Z
-url: opensource//hkdf/license
+lastfetch: 2023-03-16T21:33:45.351Z
+url: opensource/hkdf/license
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

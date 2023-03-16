@@ -9,8 +9,8 @@ const defaultRootDir = '../content/'
 export function cli (args) {
   const rootDir = parseArguments(args)
 
-  const relOutDirGithub = 'opensource/'
-  const relOutDirArticles = 'articles/'
+  const relOutDirGithub = 'opensource'
+  const relOutDirArticles = 'articles'
 
   downloadGists(githubProjectsUser, gistIds, rootDir, relOutDirGithub)
     .then(() => downloadGithubProjects(githubProjectsUser, githubProjects, rootDir, relOutDirGithub))

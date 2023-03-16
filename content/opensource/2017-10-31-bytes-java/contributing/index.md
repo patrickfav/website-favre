@@ -1,9 +1,9 @@
 ---
 title: 'contributing'
 date: 2017-10-31
-lastmod: 2023-03-13
-lastfetch: 2023-03-13T17:18:38.646Z
-url: opensource//bytes-java/contributing
+lastmod: 2023-03-16
+lastfetch: 2023-03-16T21:33:38.899Z
+url: opensource/bytes-java/contributing
 showSummary: false
 showTableOfContents: false
 type: opensource-additional

@@ -2,11 +2,11 @@
 title: 'bankathon16-inso'
 date: 2016-08-08
 lastmod: 2023-01-30
-lastfetch: 2023-03-13T17:19:22.897Z
+lastfetch: 2023-03-16T21:34:19.660Z
 description: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 summary: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 aliases: ['/link/haaspet2','/opensource/2016/bankathon16-inso']
-url: opensource//bankathon16-inso
+url: opensource/bankathon16-inso
 tags: ["android", "financial", "hackathon", "nfc", "payment"]
 keywords: ["android", "financial", "hackathon", "nfc", "payment"]
 alltags: ["android", "financial", "hackathon", "nfc", "payment", "github", "Java"]
@@ -16,6 +16,7 @@ showAuthor: true
 deeplink: /link/haaspet2
 originalContentLink: https://github.com/patrickfav/bankathon16-inso
 originalContentType: github
+githubCloneUrlHttp: https://github.com/patrickfav/bankathon16-inso.git
 githubStars: 2
 githubForks: 1
 githubWatchers: 2

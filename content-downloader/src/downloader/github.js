@@ -14,7 +14,7 @@ export async function downloadGithubProjects (githubUser, githubProjects, rootDi
 
   console.log('Start Processing GitHub')
 
-  const targetRootDir = rootDirMd + relOutDir
+  const targetRootDir = rootDirMd + relOutDir + '/'
 
   const gotHeaders = createGotHttpHeaders()
 
@@ -218,7 +218,7 @@ function createGithubFrontMatter (projectName, githubMeta, releaseMeta, relOutDi
   meta += 'lastfetch: ' + new Date().toISOString() + '\n'
   meta += 'description: \'' + escapeFrontMatterText(githubMeta.description) + '\'\n'
   meta += 'summary: \'' + escapeFrontMatterText(githubMeta.description) + '\'\n'
-  meta += `aliases: ['${slug.permalink}','/${relOutDir}${slug.yearSlashSafeName}']\n`
+  meta += `aliases: ['${slug.permalink}','/${relOutDir}/${slug.yearSlashSafeName}']\n`
   meta += `url: ${relOutDir}/${slug.safeName}\n`
   meta += 'tags: [' + reducedTags.map(m => '"' + m + '"').join(', ') + ']\n'
   meta += 'keywords: [' + githubTags.map(m => '"' + m + '"').join(', ') + ']\n'
@@ -229,6 +229,7 @@ function createGithubFrontMatter (projectName, githubMeta, releaseMeta, relOutDi
   meta += 'deeplink: ' + slug.permalink + '\n'
   meta += 'originalContentLink: ' + githubMeta.html_url + '\n'
   meta += 'originalContentType: github\n'
+  meta += 'githubCloneUrlHttp: ' + githubMeta.clone_url + '\n'
   meta += 'githubStars: ' + githubMeta.stargazers_count + '\n'
   meta += 'githubForks: ' + githubMeta.forks_count + '\n'
   meta += 'githubWatchers: ' + githubMeta.watchers_count + '\n'
