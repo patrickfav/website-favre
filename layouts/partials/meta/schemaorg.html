@@ -36,7 +36,7 @@
     "author": "{{ $.Param "author.name" }}",
     "keywords": [ {{ range $i, $e := .Page.Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ],
     "datePublished": "{{ .Page.Params.date }}",
-    "dateModified": "{{ .Page.Params.lastmod }}",
+    "dateModified": "{{ .Page.Params.lastmod }}"
     {{ with $thumbnail }}, "image": "{{ $thumbnail.Permalink }}"{{ end }}
     {{ if (.Params.githubCloneUrlHttp | default false) }},"codeRepository": "{{ .Params.githubCloneUrlHttp }}"{{ end }}
     {{ if (.Params.githubLicense | default false) }},"license": "{{ .Params.githubLicense }}"{{ end }}
