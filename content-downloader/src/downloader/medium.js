@@ -30,11 +30,11 @@ export async function downloadMediumArticles (rootDirMd, relOutDirArticles) {
     const articleInfo = await getArticleInfo(post)
 
     const title = articleInfo.title
-    const slug = escapeForFileName(title, new Date(articleInfo.firstPublishedAt), articleInfo.id)
+    const slug = escapeForFileName(title, 'medium', new Date(articleInfo.firstPublishedAt), articleInfo.id)
 
     console.log('\tFound article ' + title + '(' + slug.safeNameWithDate + ') updated at ' + new Date(articleInfo.latestPublishedAt).toISOString())
 
-    const targetProjectDir = targetRootDir + '/' + slug.safeNameWithDate
+    const targetProjectDir = targetRootDir + '/' + slug.stableName
 
     if (!fs.existsSync(targetProjectDir)) {
       fs.mkdirSync(targetProjectDir, { recursive: true })

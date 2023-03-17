@@ -5,9 +5,7 @@ export function escapeFrontMatterText (title) {
   return title.replace(/'/g, '`').replace(/\n/g, ' ').replace(/\r/g, '')
 }
 
-const shortLinkPath = 'link'
-
-export function escapeForFileName (name, date, stableId) {
+export function escapeForFileName (name, type, date, stableId) {
   const escaped = encodeURI(
     name
       .replace(/&#x2026;/g, '_') // Horizontal Ellipsis
@@ -35,15 +33,25 @@ export function escapeForFileName (name, date, stableId) {
       .replace(/-_/g, '-')
       .replace(/-+/g, '-')
   ).toLowerCase()
+
+  const shortLinkPath = 'link'
+  const dayMonthYear = date.toISOString().split('T')[0]
+  const hash = base32.stringify(
+    crypto.createHash('sha512')
+      .update(date.toISOString() + '_' + stableId)
+      .digest()
+  )
+
+  const id = hash.substring(0, 16)
+  const shortId = hash.substring(0, 8)
+
   return {
+    id,
     safeName: escaped,
-    safeNameWithDate: date.toISOString().split('T')[0] + '-' + escaped,
-    yearSlashSafeName: date.getFullYear() + '/' + escaped,
-    permalink: `/${shortLinkPath}/${base32.stringify(
-      crypto.createHash('sha512')
-        .update(date.toISOString() + '_' + stableId)
-        .digest()
-    ).substring(0, 8)}`
+    safeNameWithDate: `${dayMonthYear}-${escaped}`,
+    stableName: `${dayMonthYear}-${type}-${id}`,
+    yearSlashSafeName: `${date.getFullYear()}/${escaped}`,
+    permalink: `/${shortLinkPath}/${shortId}`
   }
 }
 

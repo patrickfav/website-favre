@@ -28,9 +28,9 @@ export async function downloadGithubProjects (githubUser, githubProjects, rootDi
     console.log('Processing github project ' + projectName)
 
     const githubMetaForProject = githubMetaData.find(p => p.name === projectName)
-    const slug = escapeForFileName(projectName, new Date(githubMetaForProject.created_at), githubMetaForProject.id)
+    const slug = escapeForFileName(projectName, 'gh', new Date(githubMetaForProject.created_at), githubMetaForProject.id)
 
-    const targetProjectDir = targetRootDir + '/' + slug.safeNameWithDate
+    const targetProjectDir = targetRootDir + '/' + slug.stableName
     if (!fs.existsSync(targetProjectDir)) {
       fs.mkdirSync(targetProjectDir, { recursive: true })
     }

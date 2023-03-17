@@ -32,9 +32,9 @@ export async function downloadStackOverflowPosts (soUser, rootDirMd, relOutDir) 
       continue
     }
 
-    const slug = escapeForFileName(question.title, new Date(answer.creation_date * 1000), answer.answer_id)
+    const slug = escapeForFileName(question.title, 'so', new Date(answer.creation_date * 1000), answer.answer_id)
     const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
-    const targetProjectDir = targetRootDir + '/' + slug.safeNameWithDate
+    const targetProjectDir = targetRootDir + '/' + slug.stableName
     const summary = createSummary(answer, question)
     const frontMatter = createStackOverflowFrontMatter(answer, question, summary, slug, answerLink)
     const markdown = createMarkdown(answer.body)

@@ -28,14 +28,14 @@ export async function downloadGists (githubUser, gistIds, rootDirMd, relOutDir) 
   for (const gistId of gistIds) {
     const gistMeta = gistMetaData.find(p => p.id === gistId)
     const title = shortenToTitle(gistMeta.description)
-    const slug = escapeForFileName(title, new Date(gistMeta.created_at), gistId)
+    const slug = escapeForFileName(title, 'gist', new Date(gistMeta.created_at), gistId)
     console.log(`\tProcessing gist ${title} (${gistMeta.created_at}, ${gistId})`)
 
     const frontMatter = createGistFrontMatter(gistId, gistMeta, title, slug)
     // const infoText = createInfoText(gistMeta)
     const markdown = await createAndDownloadContent(gistId, gistMeta)
 
-    const targetProjectDir = targetRootDir + '/' + slug.safeNameWithDate
+    const targetProjectDir = targetRootDir + '/' + slug.stableName
     const targetProjectFileBanner = targetProjectDir + '/gistbanner.svg'
 
     if (!fs.existsSync(targetProjectDir)) {
