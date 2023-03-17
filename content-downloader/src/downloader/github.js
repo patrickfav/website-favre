@@ -4,7 +4,7 @@ import got from 'got'
 import * as cheerio from 'cheerio'
 import crypto from 'crypto'
 import { githubDownloaderEnabled } from '../confg'
-import { escapeForFileName, escapeFrontMatterText } from '../util'
+import { escapeForFileName, escapeFrontMatterText, prepareFolder } from '../util'
 
 export async function downloadGithubProjects (githubUser, githubProjects, rootDirMd, relOutDir) {
   if (githubDownloaderEnabled === false) {
@@ -31,9 +31,7 @@ export async function downloadGithubProjects (githubUser, githubProjects, rootDi
     const slug = escapeForFileName(projectName, 'gh', new Date(githubMetaForProject.created_at), githubMetaForProject.id)
 
     const targetProjectDir = targetRootDir + '/' + slug.stableName
-    if (!fs.existsSync(targetProjectDir)) {
-      fs.mkdirSync(targetProjectDir, { recursive: true })
-    }
+    prepareFolder(targetProjectDir)
 
     await downloadProjectImage(projectName, githubUser, targetProjectDir)
     const releaseMeta = await downloadReleases(projectName, githubUser, gotHeaders)

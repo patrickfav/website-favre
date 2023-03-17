@@ -4,7 +4,7 @@ import fs from 'fs'
 import { StringStream } from 'scramjet'
 import TurndownService from 'turndown'
 import { strikethrough, tables, taskListItems } from 'turndown-plugin-gfm'
-import { customTurnDownPlugin, escapeForFileName, escapeFrontMatterText } from '../util'
+import { customTurnDownPlugin, escapeForFileName, escapeFrontMatterText, prepareFolder } from '../util'
 import wordsCount from 'words-count'
 import crypto from 'crypto'
 import { sobannerSvg } from '../svg'
@@ -45,9 +45,7 @@ export async function downloadStackOverflowPosts (soUser, rootDirMd, relOutDir) 
       continue
     }
 
-    if (!fs.existsSync(targetProjectDir)) {
-      fs.mkdirSync(targetProjectDir, { recursive: true })
-    }
+    prepareFolder(targetProjectDir)
 
     const targetProjectFile = targetProjectDir + '/index.md'
     const targetProjectFileBanner = targetProjectDir + '/sobanner.svg'

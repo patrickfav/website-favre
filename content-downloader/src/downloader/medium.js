@@ -6,7 +6,7 @@ import Parser from 'rss-parser'
 import TurndownService from 'turndown'
 import * as cheerio from 'cheerio'
 import { mediumDownloaderEnabled } from '../confg'
-import { customTurnDownPlugin, escapeForFileName, escapeFrontMatterText } from '../util'
+import { customTurnDownPlugin, escapeForFileName, escapeFrontMatterText, prepareFolder } from '../util'
 import { strikethrough, tables, taskListItems } from 'turndown-plugin-gfm'
 
 export async function downloadMediumArticles (rootDirMd, relOutDirArticles) {
@@ -36,9 +36,7 @@ export async function downloadMediumArticles (rootDirMd, relOutDirArticles) {
 
     const targetProjectDir = targetRootDir + '/' + slug.stableName
 
-    if (!fs.existsSync(targetProjectDir)) {
-      fs.mkdirSync(targetProjectDir, { recursive: true })
-    }
+    prepareFolder(targetProjectDir)
 
     await downloadProjectImage(articleInfo, slug.safeName, targetProjectDir)
 

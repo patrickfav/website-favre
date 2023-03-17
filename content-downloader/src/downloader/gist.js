@@ -2,7 +2,7 @@ import fs from 'fs'
 import { StringStream } from 'scramjet'
 import got from 'got'
 import { gistDownloaderEnabled } from '../confg'
-import { escapeForFileName, escapeFrontMatterText, shortenToTitle } from '../util'
+import { escapeForFileName, escapeFrontMatterText, prepareFolder, shortenToTitle } from '../util'
 import { gistbannerSvg } from '../svg'
 
 export async function downloadGists (githubUser, gistIds, rootDirMd, relOutDir) {
@@ -38,9 +38,7 @@ export async function downloadGists (githubUser, gistIds, rootDirMd, relOutDir) 
     const targetProjectDir = targetRootDir + '/' + slug.stableName
     const targetProjectFileBanner = targetProjectDir + '/gistbanner.svg'
 
-    if (!fs.existsSync(targetProjectDir)) {
-      fs.mkdirSync(targetProjectDir, { recursive: true })
-    }
+    prepareFolder(targetProjectDir)
 
     copyBannerImage(gistbannerSvg, targetProjectFileBanner)
 

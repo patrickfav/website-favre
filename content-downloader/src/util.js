@@ -1,5 +1,6 @@
 import crypto from 'crypto'
 import base32 from 'base32-encoding'
+import fs from 'fs'
 
 export function escapeFrontMatterText (title) {
   return title.replace(/'/g, '`').replace(/\n/g, ' ').replace(/\r/g, '')
@@ -139,4 +140,15 @@ export function shortenToTitle (description) {
   } else {
     return description.substring(0, maxLength) + '...'
   }
+}
+
+export function prepareFolder (folderPath) {
+  if (fs.existsSync(folderPath)) {
+    fs.rmSync(folderPath, {
+      recursive: true,
+      force: true
+    })
+  }
+
+  fs.mkdirSync(folderPath, { recursive: true })
 }
