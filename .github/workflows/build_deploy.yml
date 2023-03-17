@@ -85,7 +85,7 @@ jobs:
           projectId: ${{ env.FIREBASE_PROJECT_ID }}
       - name: Deploy to Firebase Hosting (dev preview channel)
         id: firebase-deploy-preview
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
