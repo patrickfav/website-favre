@@ -2,17 +2,20 @@
   "name": "@patrickfav/hugo-content-downloader",
   "version": "1.0.0",
   "description": "A Script that prepares your github readmes and medium posts for Hugo",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "bin": {
-    "hugo-content-downloader": "bin/hugo-content-downloader"
+    "hugo-content-downloader": "./dist/index.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
+    "package": "npm i && npm run build && npm link",
+    "package:ci": "npm ci && npm run build && npm link",
+    "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:js": "eslint src/**/*.js -f json -o eslint_report.json",
-    "lint": "npm run lint:js"
+    "lint:ts": "eslint src/**/*.ts -f json -o eslint_report.json",
+    "lint": "npm run lint:ts"
   },
   "keywords": [
     "cli",
@@ -33,14 +36,24 @@
     "scramjet": "^4.29.0",
     "turndown": "v7.1.1",
     "turndown-plugin-gfm": "^1.0.2",
+    "typescript": "^5.0.2",
     "words-count": "^2.0.2"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.31",
+    "@types/esm": "^3.2.0",
+    "@types/got": "^9.6.12",
+    "@types/request": "^2.48.8",
+    "@types/turndown": "^5.0.1",
+    "@types/node": "^18.15.3",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
     "eslint": "^8.36.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
-    "sonarqube-scanner": "^3.0.1"
+    "sonarqube-scanner": "^3.0.1",
+    "ts-node": "^10.9.1"
   }
 }

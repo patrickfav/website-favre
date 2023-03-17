@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: NPM Install Content Downloader
-        run: npm ci && npm link
+        run: npm run package:ci
         working-directory: ${{ env.WORKING_DIR }}
       - name: Run ESLint
         run: npm run lint
@@ -44,7 +44,7 @@ jobs:
           timeout_minutes: 5
           retry_wait_seconds: 60
           max_attempts: 3
-          command: ${{ env.WORKING_DIR }}/bin/hugo-content-downloader ./content/
+          command: ${{ env.WORKING_DIR }}/dist/index.js ./content/
       - uses: actions/cache@v3
         with:
           path: /tmp/hugo_cache
