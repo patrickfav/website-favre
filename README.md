@@ -31,12 +31,11 @@ git submodule update
 
 ### Prepare Content Sync
 
-Install everything in the local script and link the cli:
+Install everything and build the js files from typescript with
 
 ```bash
 cd content-downloader
-npm install
-npm link 
+npm run package
 ```
 
 optionally update the content with
