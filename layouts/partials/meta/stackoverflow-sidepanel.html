@@ -27,6 +27,17 @@
 {{ end }}
 
 <div class="flex flex-row">
+    <span>{{ partial "icon.html" "clock-solid" }}</span>
+    <span class="pl-2">
+        <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+            updated {{ .Params.lastmod | time.Format "Jan 2006" }}
+        </time>
+    </span>
+</div>
+
+<div class="flex flex-row">
     <span>{{ partial "icon.html" "link" }}</span>
     <span class="pl-2"><a href="{{ .Params.soAnswerLink }}" class="text-neutral-500 dark:text-neutral-400" rel="noopener">Answer Link</a></span>
 </div>
+
+{{- /* Trim EOF */ -}}
