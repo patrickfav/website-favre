@@ -2,7 +2,7 @@
 title: 'website-favre'
 date: 2018-05-31
 lastmod: 2023-03-17
-lastfetch: 2023-03-18T10:01:06.176Z
+lastfetch: 2023-03-18T12:43:14.822Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 aliases: ['/link/3xw5p9d9','/opensource/2018/website-favre']
@@ -45,6 +45,11 @@ A simple website with a list of all of my open source projects and articles I wr
 * Windows `choco install hugo-extended`
 * Mac `brew install hugo`
 
+### Install Node
+
+Currently, this project uses [Node 18.12.0 (lts)](https://nodejs.org/es/blog/release/v18.12.0). It is recommended to use
+a node version manager like [nvm](https://github.com/nvm-sh/nvm).
+
 ### Cloning Project with Submodule
 
 This project uses a git submodule for including the theme. To correctly clone it you need to do
@@ -59,18 +64,25 @@ git submodule update
 
 ### Prepare Content Sync
 
-Install everything and build the js files from typescript with
+Install and link everything and build the js files from typescript with
 
 ```bash
 cd content-downloader
 npm run package
 ```
 
-optionally update the content with
+then either run it with
 
 ```bash
 hugo-content-downloader
 ```
+
+or use the shortcut that automatically rebuilds the sources
+
+```bash
+npm run exec
+```
+
 which will populate the directories `content/opensource` and `content/articles`.
 
 ### Linting

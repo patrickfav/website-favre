@@ -2,7 +2,7 @@
 title: 'Snippet: Using Android KeyStore to generate a password'
 date: 2016-09-21
 lastmod: 2016-09-21
-lastfetch: 2023-03-18T09:59:43.115Z
+lastfetch: 2023-03-18T12:41:49.279Z
 description: 'Using Android KeyStore to generate a password. The code create a public/private key pair and uses the base64 encoded form of the certificate to as the password. The code modified the KeystoreHelper class from AOSP demo projects.'
 summary: 'Using Android KeyStore to generate a password. The code create a public/private key pair and uses the base64 encoded form of the certificate to as the password. The code modified the KeystoreHelper class from AOSP demo projects.'
 aliases: [/link/fzcrqguf]

@@ -2,7 +2,7 @@
 title: 'uber-adb-tools'
 date: 2016-09-11
 lastmod: 2023-03-01
-lastfetch: 2023-03-18T10:00:12.450Z
+lastfetch: 2023-03-18T12:42:19.962Z
 description: 'A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform.'
 summary: 'A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform.'
 aliases: ['/link/rj2ijmnn','/opensource/2016/uber-adb-tools']

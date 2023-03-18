@@ -2,7 +2,7 @@
 title: 'license'
 date: 2017-10-31
 lastmod: 2023-03-16
-lastfetch: 2023-03-18T10:00:17.562Z
+lastfetch: 2023-03-18T12:42:25.105Z
 url: opensource/bytes-java/license
 showSummary: false
 showTableOfContents: false

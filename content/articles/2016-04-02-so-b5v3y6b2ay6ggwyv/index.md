@@ -2,7 +2,7 @@
 title: 'Q: Java - resize image without losing quality'
 date: 2016-04-02
 lastmod: 2018-02-03
-lastfetch: 2023-03-18T10:01:26.342Z
+lastfetch: 2023-03-18T12:43:35.254Z
 description: 'Java - resize image without losing quality'
 summary: 'This was originally posted as an answer to the question "Java - resize image without losing quality" on stackoverflow.com.'
 aliases: [/link/b5v3y6b2]

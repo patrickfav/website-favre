@@ -2,7 +2,7 @@
 title: 'license'
 date: 2017-12-31
 lastmod: 2022-11-18
-lastfetch: 2023-03-18T10:00:28.387Z
+lastfetch: 2023-03-18T12:42:35.962Z
 url: opensource/slf4j-timber/license
 showSummary: false
 showTableOfContents: false

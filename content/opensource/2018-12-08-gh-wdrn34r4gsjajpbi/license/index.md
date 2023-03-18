@@ -2,7 +2,7 @@
 title: 'license'
 date: 2018-12-08
 lastmod: 2023-03-12
-lastfetch: 2023-03-18T10:00:43.247Z
+lastfetch: 2023-03-18T12:42:51.289Z
 url: opensource/bkdf/license
 showSummary: false
 showTableOfContents: false

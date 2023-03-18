@@ -2,7 +2,7 @@
 title: 'license'
 date: 2019-04-14
 lastmod: 2023-03-02
-lastfetch: 2023-03-18T10:00:57.569Z
+lastfetch: 2023-03-18T12:43:05.893Z
 url: opensource/checkstyle-config/license
 showSummary: false
 showTableOfContents: false

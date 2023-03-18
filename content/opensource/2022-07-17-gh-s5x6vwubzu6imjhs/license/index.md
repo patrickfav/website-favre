@@ -2,7 +2,7 @@
 title: 'license'
 date: 2022-07-17
 lastmod: 2023-01-30
-lastfetch: 2023-03-18T10:00:50.413Z
+lastfetch: 2023-03-18T12:42:58.534Z
 url: opensource/docker-minipaint/license
 showSummary: false
 showTableOfContents: false
