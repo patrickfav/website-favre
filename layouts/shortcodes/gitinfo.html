@@ -1,4 +1,4 @@
-{{ with site.Params.git.last_build }}
+{{ with site.Params.git.last_commit }}
 <a href="https://github.com/patrickfav/website-favre/commit/{{ .hash }}">{{ substr .hash 0 8 }}</a>
 {{ else }}
 local build
