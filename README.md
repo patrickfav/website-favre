@@ -17,6 +17,11 @@ A simple website with a list of all of my open source projects and articles I wr
 * Windows `choco install hugo-extended`
 * Mac `brew install hugo`
 
+### Install Node
+
+Currently, this project uses [Node 18.12.0 (lts)](https://nodejs.org/es/blog/release/v18.12.0). It is recommended to use
+a node version manager like [nvm](https://github.com/nvm-sh/nvm).
+
 ### Cloning Project with Submodule
 
 This project uses a git submodule for including the theme. To correctly clone it you need to do

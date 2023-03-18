@@ -10,7 +10,7 @@ on:
 
 env:
   FIREBASE_PROJECT_ID: favre-base-project
-  NODE_VERSION: 18.14.0
+  NODE_VERSION: 18.12.0
   WORKING_DIR: './content-downloader'
 
 jobs:
