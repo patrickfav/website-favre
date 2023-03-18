@@ -2,7 +2,6 @@
 title: 'website-dr-sel'
 date: 2018-05-28
 lastmod: 2023-03-11
-lastfetch: 2023-03-18T16:05:59.324Z
 description: 'A simple static website created with jekyll'
 summary: 'A simple static website created with jekyll'
 aliases: ['/link/4m94wk3e','/opensource/2018/website-dr-sel']

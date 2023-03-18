@@ -2,7 +2,6 @@
 title: 'license'
 date: 2014-05-26
 lastmod: 2023-03-13
-lastfetch: 2023-03-18T16:04:48.240Z
 url: opensource/dali/license
 showSummary: false
 showTableOfContents: false

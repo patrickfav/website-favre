@@ -2,7 +2,6 @@
 title: 'Q: View&#39;s getWidth() and getHeight() returns 0'
 date: 2014-06-04
 lastmod: 2020-06-23
-lastfetch: 2023-03-18T16:06:22.684Z
 description: 'View&#39;s getWidth() and getHeight() returns 0'
 summary: 'This was originally posted as an answer to the question "View&#39;s getWidth() and getHeight() returns 0" on stackoverflow.com.'
 aliases: [/link/a4y7zf2h]
@@ -19,7 +18,7 @@ deeplink: /link/a4y7zf2h
 originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-and-getheight-returns-0
 originalContentType: stackoverflow
 soScore: 967
-soViews: 399943
+soViews: 399947
 soIsAccepted: false
 soQuestionId: 3591784
 soAnswerId: 24035591

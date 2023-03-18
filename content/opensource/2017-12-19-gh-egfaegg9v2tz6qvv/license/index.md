@@ -2,7 +2,6 @@
 title: 'license'
 date: 2017-12-19
 lastmod: 2023-03-12
-lastfetch: 2023-03-18T16:05:05.654Z
 url: opensource/armadillo/license
 showSummary: false
 showTableOfContents: false

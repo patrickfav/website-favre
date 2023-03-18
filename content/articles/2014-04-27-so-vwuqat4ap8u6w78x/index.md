@@ -2,7 +2,6 @@
 title: 'Q: Android: fast bitmap blur?'
 date: 2014-04-27
 lastmod: 2017-05-23
-lastfetch: 2023-03-18T16:06:22.783Z
 description: 'Android: fast bitmap blur?'
 summary: 'This was originally posted as an answer to the question "Android: fast bitmap blur?" on stackoverflow.com.'
 aliases: [/link/vwuqat4a]

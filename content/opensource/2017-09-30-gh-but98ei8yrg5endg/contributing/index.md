@@ -2,7 +2,6 @@
 title: 'contributing'
 date: 2017-09-30
 lastmod: 2023-03-08
-lastfetch: 2023-03-18T16:05:23.800Z
 url: opensource/hkdf/contributing
 showSummary: false
 showTableOfContents: false

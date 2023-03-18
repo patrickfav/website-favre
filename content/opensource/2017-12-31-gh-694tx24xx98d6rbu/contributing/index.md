@@ -2,7 +2,6 @@
 title: 'contributing'
 date: 2017-12-31
 lastmod: 2022-11-18
-lastfetch: 2023-03-18T16:05:27.185Z
 url: opensource/slf4j-timber/contributing
 showSummary: false
 showTableOfContents: false

@@ -1,15 +1,14 @@
 ---
 title: 'website-favre'
 date: 2018-05-31
-lastmod: 2023-03-17
-lastfetch: 2023-03-18T16:06:02.591Z
-description: 'The source for my private website powered by static code generators.'
-summary: 'The source for my private website powered by static code generators.'
+lastmod: 2023-03-18
+description: 'The source for my private website powered by hugo a static code generators and typescript/node based CLI to fetch my content from various sites..'
+summary: 'The source for my private website powered by hugo a static code generators and typescript/node based CLI to fetch my content from various sites..'
 aliases: ['/link/3xw5p9d9','/opensource/2018/website-favre']
 url: opensource/website-favre
-tags: ["congo", "hugo", "portfolio-website", "static-site-generator"]
-keywords: ["congo", "hugo", "portfolio-website", "static-site-generator", "tailwindcss", "website-performance"]
-alltags: ["congo", "hugo", "portfolio-website", "static-site-generator", "tailwindcss", "website-performance", "github", "TypeScript"]
+tags: ["congo", "hugo", "nodejs", "portfolio-website"]
+keywords: ["congo", "hugo", "nodejs", "portfolio-website", "static-site-generator", "tailwindcss", "typescript", "website-performance"]
+alltags: ["congo", "hugo", "nodejs", "portfolio-website", "static-site-generator", "tailwindcss", "typescript", "website-performance", "github", "TypeScript"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/website-favre
 showAuthor: true
@@ -23,7 +22,7 @@ githubWatchers: 0
 githubLanguage: TypeScript
 githubHomepage: https://favr.dev
 githubDefaultBranch: main
-githubOpenIssues: 3
+githubOpenIssues: 2
 githubIsFork: false
 ---
 # Static Site Gen Repo for my Personal Website

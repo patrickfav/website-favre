@@ -2,7 +2,6 @@
 title: 'changelog'
 date: 2017-08-14
 lastmod: 2023-03-01
-lastfetch: 2023-03-18T16:05:33.349Z
 url: opensource/dice/changelog
 showSummary: false
 showTableOfContents: false

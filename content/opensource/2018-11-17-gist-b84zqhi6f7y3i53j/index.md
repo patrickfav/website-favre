@@ -2,7 +2,6 @@
 title: 'Snippet: Encrypt .ppm file with AES-ECB to show ECB will reveal patterns'
 date: 2018-11-17
 lastmod: 2020-11-05
-lastfetch: 2023-03-18T16:04:39.081Z
 description: 'Encrypt .ppm file with AES-ECB to show ECB will reveal patterns'
 summary: 'Encrypt .ppm file with AES-ECB to show ECB will reveal patterns'
 aliases: [/link/b84zqhi6]

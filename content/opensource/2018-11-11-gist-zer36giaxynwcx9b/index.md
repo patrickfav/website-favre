@@ -2,7 +2,6 @@
 title: 'Snippet: Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 date: 2018-11-11
 lastmod: 2023-02-25
-lastfetch: 2023-03-18T16:04:35.933Z
 description: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 summary: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 aliases: [/link/zer36gia]

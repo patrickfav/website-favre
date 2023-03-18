@@ -2,7 +2,6 @@
 title: 'checkstyle-config'
 date: 2019-04-14
 lastmod: 2023-03-02
-lastfetch: 2023-03-18T16:05:53.265Z
 description: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 summary: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 aliases: ['/link/y2ys6x9i','/opensource/2019/checkstyle-config']

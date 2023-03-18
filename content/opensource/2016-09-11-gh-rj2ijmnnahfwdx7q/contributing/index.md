@@ -2,7 +2,6 @@
 title: 'contributing'
 date: 2016-09-11
 lastmod: 2023-03-01
-lastfetch: 2023-03-18T16:05:13.304Z
 url: opensource/uber-adb-tools/contributing
 showSummary: false
 showTableOfContents: false

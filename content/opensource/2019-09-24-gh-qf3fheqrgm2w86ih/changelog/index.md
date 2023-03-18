@@ -2,7 +2,6 @@
 title: 'changelog'
 date: 2019-09-24
 lastmod: 2023-03-02
-lastfetch: 2023-03-18T16:05:43.601Z
 url: opensource/rocketchat-exporter/changelog
 showSummary: false
 showTableOfContents: false
