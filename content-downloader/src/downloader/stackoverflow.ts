@@ -31,7 +31,7 @@ export class StackOverflowDownloader extends Downloader {
             console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes`)
 
             if (answer.score <= 10) {
-                console.log('\tskipping due to low score')
+                console.log('\t\t--> skipping due to low score')
                 continue
             }
 
