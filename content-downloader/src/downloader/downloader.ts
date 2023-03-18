@@ -1,4 +1,3 @@
-import {gistDownloaderEnabled} from "../confg";
 import fs from "fs";
 
 export abstract class Downloader {
