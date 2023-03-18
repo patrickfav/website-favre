@@ -158,7 +158,6 @@ export class StackOverflowDownloader extends Downloader {
             meta += `lastmod: ${new Date(soAnswers.creation_date * 1000).toISOString().split('T')[0]}\n`
         }
 
-        meta += `lastfetch: ${new Date().toISOString()}\n`
         meta += `description: '${Downloader.escapeFrontMatterText(soQuestion.title)}'\n`
         meta += `summary: '${Downloader.escapeFrontMatterText(summary)}'\n`
         meta += `aliases: [${slug.permalink}]\n`

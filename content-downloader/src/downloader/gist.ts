@@ -97,7 +97,6 @@ export class GistDownloader extends Downloader {
         meta += `title: 'Snippet: ${Downloader.escapeFrontMatterText(title)}'\n`
         meta += `date: ${new Date(gistMeta.created_at).toISOString().split('T')[0]}\n`
         meta += `lastmod: ${new Date(gistMeta.updated_at).toISOString().split('T')[0]}\n`
-        meta += `lastfetch: ${new Date().toISOString()}\n`
         meta += `description: '${Downloader.escapeFrontMatterText(gistMeta.description)}'\n`
         meta += `summary: '${Downloader.escapeFrontMatterText(gistMeta.description)}'\n`
         meta += `aliases: [${slug.permalink}]\n`

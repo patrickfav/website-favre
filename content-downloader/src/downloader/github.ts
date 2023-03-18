@@ -187,7 +187,6 @@ export class GithubDownloader extends Downloader {
         meta += `title: '${Downloader.escapeFrontMatterText(leafName)}'\n`
         meta += `date: ${new Date(githubMeta.created_at).toISOString().split('T')[0]}\n`
         meta += `lastmod: ${new Date(githubMeta.updated_at).toISOString().split('T')[0]}\n`
-        meta += 'lastfetch: ' + new Date().toISOString() + '\n'
         meta += `url: ${relOutDir}/${slug.safeName}/${leafName}\n`
         meta += 'showSummary: false\n'
         meta += 'showTableOfContents: false\n'
@@ -205,7 +204,6 @@ export class GithubDownloader extends Downloader {
         meta += `title: '${Downloader.escapeFrontMatterText(projectName)}'\n`
         meta += `date: ${new Date(githubMeta.created_at).toISOString().split('T')[0]}\n`
         meta += `lastmod: ${new Date(githubMeta.updated_at).toISOString().split('T')[0]}\n`
-        meta += `lastfetch: ${new Date().toISOString()}\n`
         meta += `description: '${Downloader.escapeFrontMatterText(githubMeta.description)}'\n`
         meta += `summary: '${Downloader.escapeFrontMatterText(githubMeta.description)}'\n`
         meta += `aliases: ['${slug.permalink}','/${relOutDir}/${slug.yearSlashSafeName}']\n`

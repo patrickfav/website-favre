@@ -131,7 +131,6 @@ export class MediumDownloader extends Downloader {
         meta += `title: '${Downloader.escapeFrontMatterText(articleInfo.title)}'\n`
         meta += `date: ${dateIso8601}\n`
         meta += `lastmod: ${new Date(articleInfo.latestPublishedAt).toISOString().split('T')[0]}\n`
-        meta += `lastfetch: ${new Date().toISOString()}\n`
         meta += `summary: '${Downloader.escapeFrontMatterText(articleInfo.previewContent.subtitle)}'\n`
         meta += `description: '${Downloader.escapeFrontMatterText(articleInfo.previewContent.subtitle)}'\n`
         meta += `aliases: [${slug.permalink}]\n`
