@@ -2,7 +2,7 @@
 title: 'changelog'
 date: 2018-07-05
 lastmod: 2023-03-07
-lastfetch: 2023-03-17T17:53:16.099Z
+lastfetch: 2023-03-18T09:59:46.552Z
 url: opensource/bcrypt/changelog
 showSummary: false
 showTableOfContents: false

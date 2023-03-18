@@ -2,7 +2,7 @@
 title: 'rocketchat-exporter'
 date: 2019-09-24
 lastmod: 2023-03-02
-lastfetch: 2023-03-17T17:54:04.039Z
+lastfetch: 2023-03-18T10:00:45.691Z
 description: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 summary: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 aliases: ['/link/qf3fheqr','/opensource/2019/rocketchat-exporter']

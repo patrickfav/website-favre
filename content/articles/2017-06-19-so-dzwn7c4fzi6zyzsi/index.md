@@ -2,7 +2,7 @@
 title: 'Q: Android Studio 3.0 Error. Migrate dependency configurations for local modules'
 date: 2017-06-19
 lastmod: 2017-11-02
-lastfetch: 2023-03-17T17:54:46.003Z
+lastfetch: 2023-03-18T10:01:26.407Z
 description: 'Android Studio 3.0 Error. Migrate dependency configurations for local modules'
 summary: 'This was originally posted as an answer to the question "Android Studio 3.0 Error. Migrate dependency configurations for local modules" on stackoverflow.com.'
 aliases: [/link/dzwn7c4f]
@@ -14,7 +14,7 @@ categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
 type: stackoverflow
-thumbnail: 'sobanner*' 
+thumbnail: 'sobanner*'
 deeplink: /link/dzwn7c4f
 originalContentLink: https://stackoverflow.com/questions/44390590/android-studio-3-0-error-migrate-dependency-configurations-for-local-modules
 originalContentType: stackoverflow

@@ -2,7 +2,7 @@
 title: 'Q: java.io.IOException : No authentication challenges found'
 date: 2014-02-03
 lastmod: 2017-05-23
-lastfetch: 2023-03-17T17:54:45.989Z
+lastfetch: 2023-03-18T10:01:26.387Z
 description: 'java.io.IOException : No authentication challenges found'
 summary: 'This was originally posted as an answer to the question "java.io.IOException : No authentication challenges found" on stackoverflow.com.'
 aliases: [/link/ji5yg94p]
@@ -14,7 +14,7 @@ categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
 type: stackoverflow
-thumbnail: 'sobanner*' 
+thumbnail: 'sobanner*'
 deeplink: /link/ji5yg94p
 originalContentLink: https://stackoverflow.com/questions/17121213/java-io-ioexception-no-authentication-challenges-found
 originalContentType: stackoverflow

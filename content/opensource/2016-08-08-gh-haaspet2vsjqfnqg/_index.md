@@ -2,7 +2,7 @@
 title: 'bankathon16-inso'
 date: 2016-08-08
 lastmod: 2023-01-30
-lastfetch: 2023-03-17T17:54:18.855Z
+lastfetch: 2023-03-18T10:00:59.752Z
 description: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 summary: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 aliases: ['/link/haaspet2','/opensource/2016/bankathon16-inso']

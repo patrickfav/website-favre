@@ -2,7 +2,7 @@
 title: 'Q: Security with SharedPreferences'
 date: 2014-09-27
 lastmod: 2020-06-20
-lastfetch: 2023-03-17T17:54:45.999Z
+lastfetch: 2023-03-18T10:01:26.398Z
 description: 'Security with SharedPreferences'
 summary: 'This was originally posted as the accepted answer to the question "Security with SharedPreferences" on stackoverflow.com.'
 aliases: [/link/cbfeh9ja]
@@ -14,12 +14,12 @@ categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
 type: stackoverflow
-thumbnail: 'sobanner*' 
+thumbnail: 'sobanner*'
 deeplink: /link/cbfeh9ja
 originalContentLink: https://stackoverflow.com/questions/26076292/security-with-sharedpreferences
 originalContentType: stackoverflow
 soScore: 33
-soViews: 10131
+soViews: 10133
 soIsAccepted: true
 soQuestionId: 26076292
 soAnswerId: 26077852

@@ -2,7 +2,7 @@
 title: 'contributing'
 date: 2018-07-05
 lastmod: 2023-03-07
-lastfetch: 2023-03-17T17:53:16.851Z
+lastfetch: 2023-03-18T09:59:47.908Z
 url: opensource/bcrypt/contributing
 showSummary: false
 showTableOfContents: false

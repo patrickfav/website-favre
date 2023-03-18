@@ -1,15 +1,15 @@
 ---
 title: 'website-favre'
 date: 2018-05-31
-lastmod: 2023-03-16
-lastfetch: 2023-03-17T17:54:25.405Z
+lastmod: 2023-03-17
+lastfetch: 2023-03-18T10:01:06.176Z
 description: 'The source for my private website powered by static code generators.'
 summary: 'The source for my private website powered by static code generators.'
 aliases: ['/link/3xw5p9d9','/opensource/2018/website-favre']
 url: opensource/website-favre
 tags: ["congo", "hugo", "portfolio-website", "static-site-generator"]
 keywords: ["congo", "hugo", "portfolio-website", "static-site-generator", "tailwindcss", "website-performance"]
-alltags: ["congo", "hugo", "portfolio-website", "static-site-generator", "tailwindcss", "website-performance", "github", "HTML"]
+alltags: ["congo", "hugo", "portfolio-website", "static-site-generator", "tailwindcss", "website-performance", "github", "TypeScript"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/website-favre
 showAuthor: true
@@ -20,10 +20,10 @@ githubCloneUrlHttp: https://github.com/patrickfav/website-favre.git
 githubStars: 0
 githubForks: 2
 githubWatchers: 0
-githubLanguage: HTML
+githubLanguage: TypeScript
 githubHomepage: https://favr.dev
 githubDefaultBranch: main
-githubOpenIssues: 4
+githubOpenIssues: 3
 githubIsFork: false
 ---
 # Static Site Gen Repo for my Personal Website
@@ -59,12 +59,11 @@ git submodule update
 
 ### Prepare Content Sync
 
-Install everything in the local script and link the cli:
+Install everything and build the js files from typescript with
 
 ```bash
 cd content-downloader
-npm install
-npm link 
+npm run package
 ```
 
 optionally update the content with

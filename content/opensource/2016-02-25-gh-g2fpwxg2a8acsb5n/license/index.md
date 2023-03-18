@@ -2,7 +2,7 @@
 title: 'license'
 date: 2016-02-25
 lastmod: 2023-03-01
-lastfetch: 2023-03-17T17:53:27.586Z
+lastfetch: 2023-03-18T09:59:58.413Z
 url: opensource/density-converter/license
 showSummary: false
 showTableOfContents: false

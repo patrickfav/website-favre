@@ -2,7 +2,7 @@
 title: 'license'
 date: 2019-03-16
 lastmod: 2023-02-11
-lastfetch: 2023-03-17T17:54:30.082Z
+lastfetch: 2023-03-18T10:01:10.559Z
 url: opensource/mvn-common-parent/license
 showSummary: false
 showTableOfContents: false

@@ -2,7 +2,7 @@
 title: 'density-converter'
 date: 2016-02-25
 lastmod: 2023-03-01
-lastfetch: 2023-03-17T17:53:25.749Z
+lastfetch: 2023-03-18T09:59:57.267Z
 description: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 summary: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 aliases: ['/link/g2fpwxg2','/opensource/2016/density-converter']

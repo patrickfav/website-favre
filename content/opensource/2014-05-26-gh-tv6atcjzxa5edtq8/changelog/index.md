@@ -2,7 +2,7 @@
 title: 'changelog'
 date: 2014-05-26
 lastmod: 2023-03-13
-lastfetch: 2023-03-17T17:53:18.822Z
+lastfetch: 2023-03-18T09:59:50.364Z
 url: opensource/dali/changelog
 showSummary: false
 showTableOfContents: false

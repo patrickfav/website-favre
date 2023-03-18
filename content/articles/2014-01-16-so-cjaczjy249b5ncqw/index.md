@@ -2,7 +2,7 @@
 title: 'Q: Using Jackson ObjectMapper with Jersey'
 date: 2014-01-16
 lastmod: 2017-09-16
-lastfetch: 2023-03-17T17:54:46.015Z
+lastfetch: 2023-03-18T10:01:26.420Z
 description: 'Using Jackson ObjectMapper with Jersey'
 summary: 'This was originally posted as an answer to the question "Using Jackson ObjectMapper with Jersey" on stackoverflow.com.'
 aliases: [/link/cjaczjy2]
@@ -14,12 +14,12 @@ categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
 type: stackoverflow
-thumbnail: 'sobanner*' 
+thumbnail: 'sobanner*'
 deeplink: /link/cjaczjy2
 originalContentLink: https://stackoverflow.com/questions/20563640/using-jackson-objectmapper-with-jersey
 originalContentType: stackoverflow
 soScore: 13
-soViews: 44213
+soViews: 44214
 soIsAccepted: false
 soQuestionId: 20563640
 soAnswerId: 21167382

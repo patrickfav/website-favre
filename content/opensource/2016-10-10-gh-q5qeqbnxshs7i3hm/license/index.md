@@ -1,8 +1,8 @@
 ---
 title: 'license'
 date: 2016-10-10
-lastmod: 2023-03-17
-lastfetch: 2023-03-17T17:53:30.418Z
+lastmod: 2023-03-18
+lastfetch: 2023-03-18T10:00:02.280Z
 url: opensource/uber-apk-signer/license
 showSummary: false
 showTableOfContents: false

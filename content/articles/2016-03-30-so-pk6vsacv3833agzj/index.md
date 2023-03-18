@@ -2,7 +2,7 @@
 title: 'Q: Quality of Image after resize very low -- Java'
 date: 2016-03-30
 lastmod: 2017-05-23
-lastfetch: 2023-03-17T17:54:46.020Z
+lastfetch: 2023-03-18T10:01:26.430Z
 description: 'Quality of Image after resize very low -- Java'
 summary: 'This was originally posted as an answer to the question "Quality of Image after resize very low -- Java" on stackoverflow.com.'
 aliases: [/link/pk6vsacv]
@@ -14,7 +14,7 @@ categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
 type: stackoverflow
-thumbnail: 'sobanner*' 
+thumbnail: 'sobanner*'
 deeplink: /link/pk6vsacv
 originalContentLink: https://stackoverflow.com/questions/14115950/quality-of-image-after-resize-very-low-java
 originalContentType: stackoverflow

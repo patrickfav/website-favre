@@ -2,7 +2,7 @@
 title: 'license'
 date: 2016-09-11
 lastmod: 2023-03-01
-lastfetch: 2023-03-17T17:53:38.340Z
+lastfetch: 2023-03-18T10:00:13.601Z
 url: opensource/uber-adb-tools/license
 showSummary: false
 showTableOfContents: false
