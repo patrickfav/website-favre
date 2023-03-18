@@ -36,7 +36,7 @@
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "clock-solid" }}</span>
     <span class="pl-2">
-        <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+        <time datetime='{{ .Params.lastmod | time.Format "2006-01-02T15:04:05Z07:00" }}'>
             updated {{ .Params.lastmod | time.Format "Jan 2006" }}
         </time>
     </span>

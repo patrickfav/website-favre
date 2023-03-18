@@ -16,6 +16,9 @@ enableGitInfo = true
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[frontmatter]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
+
 # #########################################
 
 [params.profile]
