@@ -1,5 +1,5 @@
 {{ with site.Params.git.last_commit }}
-<a href="https://github.com/patrickfav/website-favre/commit/{{ .hash }}">{{ substr .hash 0 8 }}</a>
+<a href="https://github.com/patrickfav/website-favre/commit/{{ site.Params.git.last_commit.hash }}">{{ substr site.Params.git.last_commit.hash 0 8 }}</a>
 {{ else }}
 local build
 {{ end }}
