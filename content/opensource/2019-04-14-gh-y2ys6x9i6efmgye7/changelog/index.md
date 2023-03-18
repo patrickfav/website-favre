@@ -2,7 +2,7 @@
 title: 'changelog'
 date: 2019-04-14
 lastmod: 2023-03-02
-lastfetch: 2023-03-18T12:43:05.110Z
+lastfetch: 2023-03-18T16:05:53.624Z
 url: opensource/checkstyle-config/changelog
 showSummary: false
 showTableOfContents: false

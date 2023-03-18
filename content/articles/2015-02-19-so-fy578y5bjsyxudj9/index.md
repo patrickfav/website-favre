@@ -2,7 +2,7 @@
 title: 'Q: Unable to execute dex: method ID not in [0, 0xffff]: 65536'
 date: 2015-02-19
 lastmod: 2017-05-23
-lastfetch: 2023-03-18T12:43:35.291Z
+lastfetch: 2023-03-18T16:06:22.740Z
 description: 'Unable to execute dex: method ID not in [0, 0xffff]: 65536'
 summary: 'This was originally posted as an answer to the question "Unable to execute dex: method ID not in [0, 0xffff]: 65536" on stackoverflow.com.'
 aliases: [/link/fy578y5b]

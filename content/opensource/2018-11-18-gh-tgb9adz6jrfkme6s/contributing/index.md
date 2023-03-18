@@ -2,7 +2,7 @@
 title: 'contributing'
 date: 2018-11-18
 lastmod: 2023-03-02
-lastfetch: 2023-03-18T12:42:48.035Z
+lastfetch: 2023-03-18T16:05:37.780Z
 url: opensource/singlestep-kdf/contributing
 showSummary: false
 showTableOfContents: false

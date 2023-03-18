@@ -2,7 +2,7 @@
 title: 'uber-apk-signer'
 date: 2016-10-10
 lastmod: 2023-03-18
-lastfetch: 2023-03-18T12:42:08.910Z
+lastfetch: 2023-03-18T16:05:01.112Z
 description: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 summary: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 aliases: ['/link/q5qeqbnx','/opensource/2016/uber-apk-signer']
@@ -68,7 +68,7 @@ This should run on any Windows, Mac or Linux machine where JDK8 is installed.
 
 ## Demo
 
-[![asciicast](https://asciinema.org/a/91092.png)](https://asciinema.org/a/91092)
+[![asciicast](gh_46d1a3868da234287bd20731.png)](https://asciinema.org/a/91092)
 
 ## Command Line Interface
 

@@ -2,7 +2,7 @@
 title: 'website-dr-sel'
 date: 2018-05-28
 lastmod: 2023-03-11
-lastfetch: 2023-03-18T12:43:11.588Z
+lastfetch: 2023-03-18T16:05:59.324Z
 description: 'A simple static website created with jekyll'
 summary: 'A simple static website created with jekyll'
 aliases: ['/link/4m94wk3e','/opensource/2018/website-dr-sel']
@@ -40,7 +40,7 @@ This is the source for the [Jekyll](https://jekyllrb.com) static website project
 The production version can be found [here](https://selwicka-wienerroither.com/).
 
 
-[![website screenshot](https://repository-images.githubusercontent.com/135200872/2f76b1c1-d1e5-4cd8-8b69-0948bbdecbed)](https://selwicka-wienerroither.com/)
+[![website screenshot](gh_418e4f981d9386e3824b6fb8.png)](https://selwicka-wienerroither.com/)
 
 
 ## Build

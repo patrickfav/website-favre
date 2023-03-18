@@ -2,7 +2,7 @@
 title: 'contributing'
 date: 2014-05-26
 lastmod: 2023-03-13
-lastfetch: 2023-03-18T12:41:58.331Z
+lastfetch: 2023-03-18T16:04:49.985Z
 url: opensource/dali/contributing
 showSummary: false
 showTableOfContents: false

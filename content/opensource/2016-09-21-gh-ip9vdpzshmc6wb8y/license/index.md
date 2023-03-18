@@ -2,7 +2,7 @@
 title: 'license'
 date: 2016-09-21
 lastmod: 2023-03-02
-lastfetch: 2023-03-18T12:43:02.275Z
+lastfetch: 2023-03-18T16:05:51.038Z
 url: opensource/planb-android/license
 showSummary: false
 showTableOfContents: false

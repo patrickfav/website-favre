@@ -2,7 +2,7 @@
 title: 'changelog'
 date: 2016-09-11
 lastmod: 2023-03-01
-lastfetch: 2023-03-18T12:42:20.372Z
+lastfetch: 2023-03-18T16:05:12.185Z
 url: opensource/uber-adb-tools/changelog
 showSummary: false
 showTableOfContents: false
