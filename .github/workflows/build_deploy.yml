@@ -58,9 +58,9 @@ jobs:
           extended: true
       - name: Build Site with Hugo
         env:
-          HUGOxPARAMSxGITxLAST_COMMITxHASH: ${{ vars.GITHUB_SHA }}
-          HUGOxPARAMSxGITxLAST_BUILDxID: ${{ vars.GITHUB_RUN_ID }}
-          HUGOxPARAMSxGITxLAST_BUILDxNUMBER: ${{ vars.GITHUB_RUN_NUMBER }}
+          HUGOxPARAMSxGITxLAST_COMMITxHASH: ${{ github.sha }}
+          HUGOxPARAMSxGITxLAST_BUILDxID: ${{ github.run_id }}
+          HUGOxPARAMSxGITxLAST_BUILDxNUMBER: ${{ github.run_number }}
         run: |
           hugo version && \
           hugo config && \
