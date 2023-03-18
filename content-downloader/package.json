@@ -10,6 +10,7 @@
     "access": "public"
   },
   "scripts": {
+    "exec": "npm run build && hugo-content-downloader",
     "package": "npm i && npm run build && npm link",
     "package:ci": "npm ci && npm run build && npm link",
     "build": "npx tsc",

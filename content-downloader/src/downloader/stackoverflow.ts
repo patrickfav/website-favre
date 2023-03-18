@@ -98,7 +98,7 @@ async function fetchAllQuestions(soAnswers: Answer[]): Promise<{ [key: number]: 
 
     for (let i = 0; i < questionIds.length; i += chunkSize) {
         const chunk = questionIds.slice(i, i + chunkSize)
-        const soQuestion = await got.get(`https://api.stackexchange.com/2.3/questions/${chunk.join('')}?order=desc&sort=activity&site=stackoverflow&filter=withbody`)
+        const soQuestion = await got.get(`https://api.stackexchange.com/2.3/questions/${chunk.join(';')}?order=desc&sort=activity&site=stackoverflow&filter=withbody`)
             .then((res) => JSON.parse(res.body))
             .catch(err => {
                 console.log('Error ' + err)
