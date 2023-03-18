@@ -6,7 +6,7 @@ import Parser from 'rss-parser'
 import TurndownService from 'turndown'
 import * as cheerio from 'cheerio'
 import {mediumDownloaderEnabled} from '../confg'
-import {customTurnDownPlugin, generateSlug, Slug} from '../util'
+import {customTurnDownPlugin, generateSlug, getExtension, regexQuote, Slug} from '../util'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
@@ -66,7 +66,6 @@ export class MediumDownloader extends Downloader {
             return markdown
         }
 
-
         function parseAsMarkdown(rssElement: any): string {
             const htmlContent = rssElement['content:encoded']
             const turndownService = new TurndownService()
@@ -82,7 +81,7 @@ export class MediumDownloader extends Downloader {
             )
         }
 
-        console.log('\t\tDownloading content from feed for ' + mediumUserName)
+        console.log('\tDownloading content from feed for ' + mediumUserName)
         const parser = new Parser()
         // https://medium.com/feed/@patrickfav
         const rssContent = await got('https://medium.com/feed/' + mediumUserName)
@@ -99,7 +98,6 @@ export class MediumDownloader extends Downloader {
 
         return postInfo
     }
-
 
     private async getArticleInfo(post: PostInfo): Promise<ArticleInfo> {
         const mediumArticleDom = await got(post.url)
@@ -153,13 +151,6 @@ export class MediumDownloader extends Downloader {
     }
 
     private async fetchAndReplaceImages(markdownContent: string, targetProjectDir: string) {
-        function getExtension(imageUrl: string) {
-            return imageUrl.split('.').pop()
-        }
-
-        function regExpQuote(str: string) {
-            return str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
-        }
 
         const matches = [...markdownContent.matchAll(/!\[[^\]]*]\((?<filename>.*?)(?=[")])(?<optionalpart>".*")?\)/g)]
 
@@ -167,7 +158,7 @@ export class MediumDownloader extends Downloader {
             const imageUrl = matches[i][1]
 
             if (imageUrl.startsWith('https://medium.com/_/stat')) {
-                markdownContent = markdownContent.replace(new RegExp(regExpQuote(matches[i][0]), 'g'), '\n')
+                markdownContent = markdownContent.replace(new RegExp(regexQuote(matches[i][0]), 'g'), '\n')
                 continue // only the stats tracker from medium, just remove
             }
 
@@ -177,7 +168,7 @@ export class MediumDownloader extends Downloader {
 
             got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
 
-            markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), 'g'), imageFileName)
+            markdownContent = markdownContent.replace(new RegExp(regexQuote(imageUrl), 'g'), imageFileName)
         }
 
         return markdownContent

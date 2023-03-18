@@ -4,7 +4,7 @@ import got from 'got'
 import * as cheerio from 'cheerio'
 import * as crypto from 'crypto'
 import {githubDownloaderEnabled} from '../confg'
-import {generateSlug, Slug} from '../util'
+import {generateSlug, getExtension, regexQuote, Slug} from '../util'
 import {Downloader} from "./downloader";
 
 export class GithubDownloader extends Downloader {
@@ -50,7 +50,7 @@ export class GithubDownloader extends Downloader {
         const githubToken = process.env.GITHUB_TOKEN || undefined
 
         if (githubToken) {
-            console.log('\t\tUsing Authenticated APIs, token is provided')
+            console.log('\tUsing Authenticated APIs, token is provided')
             return {
                 headers: {
                     Authentication: `Bearer ${githubToken}`,
@@ -140,14 +140,6 @@ export class GithubDownloader extends Downloader {
     }
 
     private async removeBadgesAndDownloadImages(markdownContent: string, githubUser: string, projectName: string, mainBranch: string, targetProjectDir: string) {
-        function getExtension(imageUrl: string): string {
-            return imageUrl.split('.').pop()!.replace(/\?raw=true/g, '')
-        }
-
-        function regExpQuote(str: string): string {
-            return str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
-        }
-
         const matches = [...markdownContent.matchAll(/!\[[^\]]*]\((?<filename>.*?)(?=[")])(?<optionalpart>".*")?\)/g)]
 
         for (const i in matches) {
@@ -171,22 +163,20 @@ export class GithubDownloader extends Downloader {
                 imageUrl.startsWith('doc/playstore_badge') ||
                 (imageUrl.startsWith('https://github.com') && imageUrl.endsWith('/badge.svg'))
             ) {
-                markdownContent = markdownContent.replace(new RegExp(regExpQuote(markdownImage), 'g'), '')
+                markdownContent = markdownContent.replace(new RegExp(regexQuote(markdownImage), 'g'), '')
                 continue
             }
 
-            if (
-                !imageUrl.startsWith('https://') || imageUrl.startsWith('https://github.com/patrickfav/')
-            ) {
-                const fullyQualifiedUrl = imageUrl.startsWith('https://') ? imageUrl : baseGithubUrl + imageUrl
-                const imageFileName = 'gh_' + crypto.createHash('sha256').update(fullyQualifiedUrl).digest('hex').substring(0, 24) + '.' + getExtension(imageUrl)
 
-                console.log('\t\tDownloading github image: ' + fullyQualifiedUrl + ' to ' + imageFileName)
+            const fullyQualifiedUrl = imageUrl.startsWith('https://') ? imageUrl : baseGithubUrl + imageUrl
+            const imageFileName = 'gh_' + crypto.createHash('sha256').update(fullyQualifiedUrl).digest('hex').substring(0, 24) + '.' + getExtension(imageUrl)
 
-                got.stream(fullyQualifiedUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+            console.log('\t\tDownloading github image: ' + fullyQualifiedUrl + ' to ' + imageFileName)
 
-                markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), 'g'), imageFileName)
-            }
+            got.stream(fullyQualifiedUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+
+            markdownContent = markdownContent.replace(new RegExp(regexQuote(imageUrl), 'g'), imageFileName)
+
         }
 
         return markdownContent

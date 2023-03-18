@@ -3,7 +3,7 @@ import {stackoverflowEnabled, stackoverflowUserId} from '../confg'
 import fs from 'fs'
 import {StringStream} from 'scramjet'
 import TurndownService from 'turndown'
-import {customTurnDownPlugin, generateSlug, Slug} from '../util'
+import {customTurnDownPlugin, generateSlug, getExtension, regexQuote, Slug} from '../util'
 import wordsCount from 'words-count'
 import crypto from 'crypto'
 import {sobannerSvg} from '../svg'
@@ -11,9 +11,7 @@ import {sobannerSvg} from '../svg'
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
 
-
 export class StackOverflowDownloader extends Downloader {
-
     private readonly config: StackOverflowConfig
 
     constructor(rootOutDir: string, contentOutDir: string, config: StackOverflowConfig) {
@@ -188,14 +186,6 @@ export class StackOverflowDownloader extends Downloader {
     }
 
     private async fetchAndReplaceImages(markdownContent: string, targetProjectDir: string): Promise<string> {
-        function getExtension(imageUrl: string): string {
-            return imageUrl.split('.').pop()!
-        }
-
-        function regExpQuote(str: string): string {
-            return str.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
-        }
-
         const matches = [...markdownContent.matchAll(/!\[[^\]]*]\((?<filename>.*?)(?=[")])(?<optionalpart>".*")?\)/g)]
 
         for (const i in matches) {
@@ -203,11 +193,11 @@ export class StackOverflowDownloader extends Downloader {
 
             const imageFileName = 'so_' + crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 24) + '.' + getExtension(imageUrl)
 
-            console.log('\tDownloading post image: ' + imageUrl + ' to ' + imageFileName)
+            console.log('\t\tDownloading post image: ' + imageUrl + ' to ' + imageFileName)
 
             got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
 
-            markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), 'g'), imageFileName)
+            markdownContent = markdownContent.replace(new RegExp(regexQuote(imageUrl), 'g'), imageFileName)
         }
 
         return markdownContent

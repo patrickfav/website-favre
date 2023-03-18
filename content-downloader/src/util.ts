@@ -147,3 +147,21 @@ export function shortenToTitle(description: string): string {
         return description.substring(0, maxLength) + '...'
     }
 }
+
+export function getExtension(url: string): string {
+    if (url === null || !url.includes(".")) {
+        return "png";
+    }
+
+    const stringAfterDot = url.split('.').pop()!.replace(/\?raw=true/g, '');
+
+    if(stringAfterDot.length > 5) {
+        return "png"
+    }
+
+    return stringAfterDot
+}
+
+export function regexQuote(unquoted: string): string {
+    return unquoted.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
+}
