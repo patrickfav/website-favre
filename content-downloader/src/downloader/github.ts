@@ -71,7 +71,7 @@ async function downloadProjectImage(projectName: string, githubUser: string, tar
 
     if (socialPreviewImageUrl) {
         console.log('\tDownloading github social preview image: ' + socialPreviewImageUrl)
-        await got.stream(socialPreviewImageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+        got.stream(socialPreviewImageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
     }
 }
 
@@ -118,7 +118,7 @@ async function downloadAdditionalContent(githubUser: string, projectName: string
         if (!fs.existsSync(targetFolder)) {
             fs.mkdirSync(targetFolder, {recursive: true})
         }
-        await StringStream.from(frontMatter + markdown)
+        StringStream.from(frontMatter + markdown)
             .pipe(fs.createWriteStream(targetProjectFile))
     }
 }
@@ -134,7 +134,7 @@ async function downloadParseAndSaveReadme(githubUser: string, projectName: strin
 
     const markdown = await got.get(url + 'README.md').then(response => removeBadgesAndDownloadImages(response.body, githubUser, projectName, mainBranch, targetProjectDir))
 
-    await StringStream.from(frontMatter + markdown)
+    StringStream.from(frontMatter + markdown)
         .pipe(fs.createWriteStream(targetProjectFile))
 }
 
@@ -182,7 +182,7 @@ async function removeBadgesAndDownloadImages(markdownContent: string, githubUser
 
             console.log('\tDownloading github image: ' + fullyQualifiedUrl + ' to ' + imageFileName)
 
-            await got.stream(fullyQualifiedUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+            got.stream(fullyQualifiedUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
 
             markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), 'g'), imageFileName)
         }

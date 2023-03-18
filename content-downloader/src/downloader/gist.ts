@@ -43,7 +43,7 @@ export async function downloadGists(githubUser: string, gistIds: string[], rootD
 
         copyBannerImage(gistbannerSvg, targetProjectFileBanner)
 
-        await StringStream.from(frontMatter + markdown).pipe(fs.createWriteStream(targetProjectDir + '/index.md'))
+        StringStream.from(frontMatter + markdown).pipe(fs.createWriteStream(targetProjectDir + '/index.md'))
     }
 }
 
@@ -89,7 +89,8 @@ function copyBannerImage(svg: string, targetProjectFileBanner: string) {
 
 function createGistFrontMatter(gistId: string, gistMeta: GistMeta, title: string, slug: Slug) {
     const allFiles = Object.entries(gistMeta.files).map(([, f]) => f)
-    const mainLanguage = allFiles.sort((a, b) => b.size - a.size)[0].language
+    allFiles.sort((a, b) => b.size - a.size)
+    const mainLanguage = allFiles[0].language
     const tags = [...new Set(allFiles.map(f => f.language))]
 
     let meta = '---\n'

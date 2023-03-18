@@ -44,7 +44,7 @@ export async function downloadMediumArticles(rootDirMd: string, relOutDirArticle
         const targetProjectFile = targetProjectDir + '/index.md'
         const frontMatter = createFrontMatter(articleInfo, slug)
         const markdown = await fetchAndReplaceImages(post.markdown, targetProjectDir)
-        await StringStream.from(frontMatter + markdown)
+        StringStream.from(frontMatter + markdown)
             .pipe(fs.createWriteStream(targetProjectFile))
     }
 }
@@ -55,7 +55,7 @@ async function downloadProjectImage(articleInfo: any, safeArticleTitle: string, 
 
     if (imageUrl) {
         console.log('\tDownloading social preview image: ' + imageUrl)
-        await got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+        got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
     }
 }
 
@@ -176,7 +176,7 @@ async function fetchAndReplaceImages(markdownContent: string, targetProjectDir: 
 
         console.log('\tDownloading article image: ' + imageUrl + ' to ' + imageFileName)
 
-        await got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+        got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
 
         markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), 'g'), imageFileName)
     }

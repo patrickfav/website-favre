@@ -55,7 +55,7 @@ export async function downloadStackOverflowPosts(soUser: number, rootDirMd: stri
 
         const finalMarkdown = await fetchAndReplaceImages(markdown, targetProjectDir)
 
-        await StringStream.from(frontMatter + finalMarkdown)
+        StringStream.from(frontMatter + finalMarkdown)
             .pipe(fs.createWriteStream(targetProjectFile))
     }
 }
@@ -203,7 +203,7 @@ async function fetchAndReplaceImages(markdownContent: string, targetProjectDir: 
 
         console.log('\tDownloading post image: ' + imageUrl + ' to ' + imageFileName)
 
-        await got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+        got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
 
         markdownContent = markdownContent.replace(new RegExp(regExpQuote(imageUrl), 'g'), imageFileName)
     }
