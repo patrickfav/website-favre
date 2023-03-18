@@ -31,18 +31,25 @@ git submodule update
 
 ### Prepare Content Sync
 
-Install everything and build the js files from typescript with
+Install and link everything and build the js files from typescript with
 
 ```bash
 cd content-downloader
 npm run package
 ```
 
-optionally update the content with
+then either run it with
 
 ```bash
 hugo-content-downloader
 ```
+
+or use the shortcut that automatically rebuilds the sources
+
+```bash
+npm run exec
+```
+
 which will populate the directories `content/opensource` and `content/articles`.
 
 ### Linting

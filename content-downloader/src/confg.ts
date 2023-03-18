@@ -1,8 +1,24 @@
+/**
+ * Temporary disable certain downloaders here
+ */
 export const githubDownloaderEnabled = true
 export const gistDownloaderEnabled = true
 export const mediumDownloaderEnabled = true
 export const stackoverflowEnabled = true
+
+/**
+ * Stack Overflow
+ */
 export const stackoverflowUserId = 774398
+
+/**
+ * Medium
+ */
+export const mediumUserName = '@patrickfav'
+
+/**
+ * Gituhub & Gist
+ */
 export const githubProjectsUser = 'patrickfav'
 
 export const gistIds = [

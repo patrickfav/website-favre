@@ -1,12 +1,7 @@
 import * as crypto from 'crypto';
 // @ts-ignore
 import base32 from 'base32-encoding';
-import * as fs from 'fs'
 import * as TurndownService from "turndown";
-
-export function escapeFrontMatterText(title: string): string {
-    return title.replace(/'/g, '`').replace(/\n/g, ' ').replace(/\r/g, '');
-}
 
 export interface Slug {
     id: string,
@@ -17,7 +12,7 @@ export interface Slug {
     permalink: string
 }
 
-export function escapeForFileName(name: string, type: string, date: Date, stableId: string): Slug {
+export function generateSlug(name: string, type: string, date: Date, stableId: string): Slug {
     const escaped = encodeURI(
         name
             .replace(/&#x2026;/g, '_') // Horizontal Ellipsis
@@ -151,15 +146,4 @@ export function shortenToTitle(description: string): string {
     } else {
         return description.substring(0, maxLength) + '...'
     }
-}
-
-export function prepareFolder(folderPath: string): void {
-    if (fs.existsSync(folderPath)) {
-        fs.rmSync(folderPath, {
-            recursive: true,
-            force: true
-        })
-    }
-
-    fs.mkdirSync(folderPath, { recursive: true })
 }
