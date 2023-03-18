@@ -1,8 +1,1 @@
-{{ $currentDayNonce := now | time.Format "2006-01-02" | md5 }}
-
-<meta http-equiv="Content-Security-Policy"
-      content="default-src 'self';
-      style-src 'self' 'unsafe-inline';
-      script-src 'self' 'nonce-{{ $currentDayNonce }}';
-      img-src 'self' https://sonarcloud.io https://github.com https://*.githubusercontent.com;"
-/>
+{{- partial "meta/content-security-policy.html" . -}}
