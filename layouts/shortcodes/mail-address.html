@@ -1,22 +1,40 @@
+{{/* Get the input parameter */}}
 {{ $mail := printf "%s" (.Get "mailto" )  }}
 
-{{ $seed := now.Unix  }}
-{{ $randomId := mod (add (mul 13 $seed) 97) 4000000 | md5 }}
-{{ $randomPosition := index (shuffle (seq (sub (len $mail) 1))) 0 }}
-
+{{/* Shuffle a list of letters and syllable and select 3 words from it */}}
 {{ $randomWords := slice "f" "g" "h" "i" "j" "k" "l" "m" "we" "me" "us" "up" "so" "by" "if" "it" "at" "am" "an" "be" "do" "bag" "bat" "bit" "bet" "bun" "bus" "but" "dot" "duh" "dip" "dig" "dim" "den" "did" "fit" "fan" "fun" "fin" }}
 {{ $randomWordsShuffle := shuffle $randomWords }}
 {{ $randomWord1 := index $randomWordsShuffle 0 }}
 {{ $randomWord2 := index $randomWordsShuffle 1 }}
 {{ $randomWord3 := index $randomWordsShuffle 2 }}
 
+{{/* Generate a nonce that will change every day for e.g. whitelisting in CSP header */}}
+{{ $currentDayNonce := now | time.Format "2006-01-02" | md5 }}
+
+{{ $seed := now.UnixNano  }}
+{{/* Generate a semi random hash from current time, input and the 3 random words */}}
+{{ $randomId := (print (mod (add (mul 13 $seed) 97) 4000000) "_" $mail "_" $randomWord1 "_" $randomWord2 "_" $randomWord3 ) | md5 }}
+
+{{/* Select the random position where the mail address will be cut into different pieces */}}
+{{ $randomPosition := index (shuffle (seq (sub (len $mail) 1))) 0 }}
+
+{{/* Create the label that will be rendered with some random words spilled in, since we set it to display:none they will not be shown, but visible in dom */}}
 {{ $mailLabel := print (substr $mail 0 $randomPosition ) "<span id=\"mo_" $randomId "\">" $randomWord1 "" $randomWord2 "" $randomWord3 "</span>" (substr $mail $randomPosition (sub (len $mail) 1) ) | base64Encode }}
+
+{{/* The mail payload for the data field to use in the inline script */}}
 {{ $base64Mail := $mail | base64Encode }}
 
-<style>span#mo_{{ $randomId }} { display:none; }</style>
+<style nonce="{{ $currentDayNonce }}">span#mo_{{ $randomId }} { display:none; }</style>
 <a href='#'
+   id="ma_{{ $randomId }}"
    data-contact='{{ $base64Mail }}'
-   target='_blank' rel="nofollow"
-   onfocusin='this.href = "mailto:" + atob(this.dataset.contact)'>
-    <script nonce="mmobf">document.write(atob("{{ $mailLabel }}"));</script>
+   target='_blank' rel="nofollow">
+    <script nonce="{{ $currentDayNonce }}">
+      (function () {
+        document.write(atob('{{ $mailLabel }}'))
+        const elem = document.getElementById('ma_{{ $randomId }}')
+        elem.addEventListener('focusin', () => {
+          elem.href = 'mailto:' + atob(elem.dataset.contact);
+        });
+      })()</script>
 </a>
