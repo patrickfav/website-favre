@@ -113,6 +113,7 @@ export class GistDownloader extends Downloader {
         meta += `deeplink: ${slug.permalink}\n`
         meta += `originalContentLink: ${gistMeta.html_url}\n`
         meta += 'originalContentType: gist\n'
+        meta += `originalContentId: ${gistMeta.id}\n`
         meta += `gistLanguage: ${mainLanguage}\n`
         meta += `gistFileCount: ${allFiles.length}\n`
         meta += `gistComments: ${gistMeta.comments}\n`

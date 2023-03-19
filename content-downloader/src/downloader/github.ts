@@ -217,6 +217,7 @@ export class GithubDownloader extends Downloader {
         meta += `deeplink: ${slug.permalink}\n`
         meta += `originalContentLink: ${githubMeta.html_url}\n`
         meta += 'originalContentType: github\n'
+        meta += `originalContentId: ${githubMeta.id}\n`
         meta += `githubCloneUrlHttp: ${githubMeta.clone_url}\n`
         meta += `githubStars: ${githubMeta.stargazers_count}\n`
         meta += `githubForks: ${githubMeta.forks_count}\n`

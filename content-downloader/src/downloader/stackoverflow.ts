@@ -173,11 +173,11 @@ export class StackOverflowDownloader extends Downloader {
         meta += `deeplink: ${slug.permalink}\n`
         meta += `originalContentLink: ${soQuestion.link}\n`
         meta += 'originalContentType: stackoverflow\n'
+        meta += `originalContentId: ${soAnswers.answer_id}\n`
         meta += `soScore: ${soAnswers.score}\n`
         meta += `soViews: ${soQuestion.view_count}\n`
         meta += `soIsAccepted: ${soAnswers.is_accepted}\n`
         meta += `soQuestionId: ${soAnswers.question_id}\n`
-        meta += `soAnswerId: ${soAnswers.answer_id}\n`
         meta += `soAnswerLicense: ${soAnswers.content_license}\n`
         meta += `soAnswerLink: ${answerLink}\n`
         meta += '---\n'

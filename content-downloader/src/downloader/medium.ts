@@ -142,9 +142,9 @@ export class MediumDownloader extends Downloader {
         meta += `deeplink: ${slug.permalink}\n`
         meta += `originalContentLink: ${articleInfo.mediumUrl}\n`
         meta += 'originalContentType: medium\n'
+        meta += `originalContentId: ${articleInfo.id}\n`
         meta += `mediumClaps: ${articleInfo.clapCount}\n`
         meta += `mediumVoters: ${articleInfo.voterCount}\n`
-        meta += `mediumArticleId: ${articleInfo.id}\n`
         meta += '---\n'
         return meta
     }
