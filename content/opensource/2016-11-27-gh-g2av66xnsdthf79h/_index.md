@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/g2av66xn
 originalContentLink: https://github.com/patrickfav/under-the-hood
 originalContentType: github
+originalContentId: 74857438
 githubCloneUrlHttp: https://github.com/patrickfav/under-the-hood.git
 githubStars: 218
 githubForks: 21

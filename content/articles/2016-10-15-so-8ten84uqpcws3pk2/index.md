@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/8ten84uq
 originalContentLink: https://stackoverflow.com/questions/4853011/how-to-sign-an-android-apk-file
 originalContentType: stackoverflow
+originalContentId: 40064199
 soScore: 44
-soViews: 204503
+soViews: 204516
 soIsAccepted: false
 soQuestionId: 4853011
-soAnswerId: 40064199
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/40064199/774398
 ---

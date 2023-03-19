@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/fcpy79z9
 originalContentLink: https://github.com/patrickfav/mvn-common-parent
 originalContentType: github
+originalContentId: 175984471
 githubCloneUrlHttp: https://github.com/patrickfav/mvn-common-parent.git
 githubStars: 2
 githubForks: 2

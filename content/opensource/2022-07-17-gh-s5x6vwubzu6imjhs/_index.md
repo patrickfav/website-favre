@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/s5x6vwub
 originalContentLink: https://github.com/patrickfav/docker-minipaint
 originalContentType: github
+originalContentId: 514820793
 githubCloneUrlHttp: https://github.com/patrickfav/docker-minipaint.git
 githubStars: 0
 githubForks: 0

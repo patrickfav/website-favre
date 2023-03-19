@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/ip9vdpzs
 originalContentLink: https://github.com/patrickfav/planb-android
 originalContentType: github
+originalContentId: 68845033
 githubCloneUrlHttp: https://github.com/patrickfav/planb-android.git
 githubStars: 32
 githubForks: 2

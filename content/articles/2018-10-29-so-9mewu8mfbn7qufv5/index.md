@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/9mewu8mf
 originalContentLink: https://stackoverflow.com/questions/15554296/initial-bytes-incorrect-after-java-aes-cbc-decryption
 originalContentType: stackoverflow
+originalContentId: 53051612
 soScore: 83
-soViews: 484499
+soViews: 484501
 soIsAccepted: false
 soQuestionId: 15554296
-soAnswerId: 53051612
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/53051612/774398
 ---

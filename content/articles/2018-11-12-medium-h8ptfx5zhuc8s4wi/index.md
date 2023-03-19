@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/h8ptfx5z
 originalContentLink: https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2-b3b80e99ad36
 originalContentType: medium
+originalContentId: b3b80e99ad36
 mediumClaps: 289
 mediumVoters: 50
-mediumArticleId: b3b80e99ad36
 ---
 ![](article_358901567f119524779535be.png)
 

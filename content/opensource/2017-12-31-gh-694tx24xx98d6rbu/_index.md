@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/694tx24x
 originalContentLink: https://github.com/patrickfav/slf4j-timber
 originalContentType: github
+originalContentId: 115863071
 githubCloneUrlHttp: https://github.com/patrickfav/slf4j-timber.git
 githubStars: 20
 githubForks: 2

@@ -18,6 +18,7 @@ editURL: https://gist.github.com/6284130
 deeplink: /link/i9m7x48n
 originalContentLink: https://gist.github.com/6284130
 originalContentType: gist
+originalContentId: 6284130
 gistLanguage: Java
 gistFileCount: 3
 gistComments: 4

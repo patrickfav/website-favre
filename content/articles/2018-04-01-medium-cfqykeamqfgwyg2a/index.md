@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/cfqykeam
 originalContentLink: https://proandroiddev.com/improving-proguard-name-obfuscation-83b27b34c52a
 originalContentType: medium
+originalContentId: 83b27b34c52a
 mediumClaps: 781
 mediumVoters: 153
-mediumArticleId: 83b27b34c52a
 ---
 ![](article_72242cd1f965fa2406c740e6.png)
 

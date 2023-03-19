@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/73ix6k28
 originalContentLink: https://medium.com/@patrickfav/a-better-way-to-protect-your-database-ids-a33fa9867552
 originalContentType: medium
+originalContentId: a33fa9867552
 mediumClaps: 44
 mediumVoters: 9
-mediumArticleId: a33fa9867552
 ---
 ![](article_d4b06b3696c3b89ed5660df1.png)
 

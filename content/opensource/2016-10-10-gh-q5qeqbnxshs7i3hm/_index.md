@@ -1,7 +1,7 @@
 ---
 title: 'uber-apk-signer'
 date: 2016-10-10
-lastmod: 2023-03-18
+lastmod: 2023-03-19
 description: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 summary: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 aliases: ['/link/q5qeqbnx','/opensource/2016/uber-apk-signer']
@@ -15,10 +15,11 @@ showAuthor: true
 deeplink: /link/q5qeqbnx
 originalContentLink: https://github.com/patrickfav/uber-apk-signer
 originalContentType: github
+originalContentId: 70518964
 githubCloneUrlHttp: https://github.com/patrickfav/uber-apk-signer.git
-githubStars: 1293
+githubStars: 1294
 githubForks: 151
-githubWatchers: 1293
+githubWatchers: 1294
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/uber-apk-signer
 githubDefaultBranch: main

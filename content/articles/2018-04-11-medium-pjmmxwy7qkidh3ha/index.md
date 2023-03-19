@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/pjmmxwy7
 originalContentLink: https://medium.com/@patrickfav/the-concise-interface-implementation-pattern-9b15f35a806b
 originalContentType: medium
+originalContentId: 9b15f35a806b
 mediumClaps: 0
 mediumVoters: 0
-mediumArticleId: 9b15f35a806b
 ---
 ![](article_19e386ffa7c7e9d1c5267b3a.jpeg)
 

@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/3xw5p9d9
 originalContentLink: https://github.com/patrickfav/website-favre
 originalContentType: github
+originalContentId: 135606841
 githubCloneUrlHttp: https://github.com/patrickfav/website-favre.git
 githubStars: 0
 githubForks: 2

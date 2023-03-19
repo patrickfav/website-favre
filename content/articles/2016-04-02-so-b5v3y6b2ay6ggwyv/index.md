@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/b5v3y6b2
 originalContentLink: https://stackoverflow.com/questions/24745147/java-resize-image-without-losing-quality
 originalContentType: stackoverflow
+originalContentId: 36367652
 soScore: 95
-soViews: 90053
+soViews: 90057
 soIsAccepted: false
 soQuestionId: 24745147
-soAnswerId: 36367652
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/36367652/774398
 ---

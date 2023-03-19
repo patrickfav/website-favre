@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/cjaczjy2
 originalContentLink: https://stackoverflow.com/questions/20563640/using-jackson-objectmapper-with-jersey
 originalContentType: stackoverflow
+originalContentId: 21167382
 soScore: 13
 soViews: 44214
 soIsAccepted: false
 soQuestionId: 20563640
-soAnswerId: 21167382
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/21167382/774398
 ---

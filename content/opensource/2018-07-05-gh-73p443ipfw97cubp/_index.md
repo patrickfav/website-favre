@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/73p443ip
 originalContentLink: https://github.com/patrickfav/bcrypt
 originalContentType: github
+originalContentId: 139898859
 githubCloneUrlHttp: https://github.com/patrickfav/bcrypt.git
 githubStars: 337
 githubForks: 43

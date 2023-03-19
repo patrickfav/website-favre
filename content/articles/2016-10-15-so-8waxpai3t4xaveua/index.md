@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/8waxpai3
 originalContentLink: https://stackoverflow.com/questions/10930331/how-to-sign-an-already-compiled-apk
 originalContentType: stackoverflow
+originalContentId: 40064149
 soScore: 122
-soViews: 263310
+soViews: 263354
 soIsAccepted: false
 soQuestionId: 10930331
-soAnswerId: 40064149
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/40064149/774398
 ---

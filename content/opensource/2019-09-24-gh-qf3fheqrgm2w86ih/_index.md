@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/qf3fheqr
 originalContentLink: https://github.com/patrickfav/rocketchat-exporter
 originalContentType: github
+originalContentId: 210578179
 githubCloneUrlHttp: https://github.com/patrickfav/rocketchat-exporter.git
 githubStars: 13
 githubForks: 11

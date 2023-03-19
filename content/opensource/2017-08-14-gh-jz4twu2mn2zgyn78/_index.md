@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/jz4twu2m
 originalContentLink: https://github.com/patrickfav/dice
 originalContentType: github
+originalContentId: 100255165
 githubCloneUrlHttp: https://github.com/patrickfav/dice.git
 githubStars: 9
 githubForks: 6

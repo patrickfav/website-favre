@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/gvz8gdrb
 originalContentLink: https://proandroiddev.com/managing-logging-in-a-multi-module-android-application-eb966fb7fedc
 originalContentType: medium
+originalContentId: eb966fb7fedc
 mediumClaps: 232
 mediumVoters: 53
-mediumArticleId: eb966fb7fedc
 ---
 ![](article_a175d4373ca65a0d6b72593b.jpeg)
 

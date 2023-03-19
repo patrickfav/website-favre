@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/cs76uv87
 originalContentLink: https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string
 originalContentType: stackoverflow
+originalContentId: 44227131
 soScore: 89
-soViews: 1624765
+soViews: 1624797
 soIsAccepted: false
 soQuestionId: 41107
-soAnswerId: 44227131
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/44227131/774398
 ---

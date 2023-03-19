@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/9yh74zae
 originalContentLink: https://github.com/patrickfav/bytes-java
 originalContentType: github
+originalContentId: 108965147
 githubCloneUrlHttp: https://github.com/patrickfav/bytes-java.git
 githubStars: 135
 githubForks: 28

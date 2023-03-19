@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/tjxcdi79
 originalContentLink: https://stackoverflow.com/questions/56794263/spring-webflux-differences-when-netty-vs-tomcat-is-used-under-the-hood
 originalContentType: stackoverflow
-soScore: 53
-soViews: 31726
+originalContentId: 56806022
+soScore: 54
+soViews: 31735
 soIsAccepted: false
 soQuestionId: 56794263
-soAnswerId: 56806022
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/56806022/774398
 ---

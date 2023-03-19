@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/haaspet2
 originalContentLink: https://github.com/patrickfav/bankathon16-inso
 originalContentType: github
+originalContentId: 65230148
 githubCloneUrlHttp: https://github.com/patrickfav/bankathon16-inso.git
 githubStars: 2
 githubForks: 1

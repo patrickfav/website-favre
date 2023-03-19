@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/ufby4k5k
 originalContentLink: https://codeburst.io/how-to-centralize-your-checkstyle-configuration-with-maven-7575eacd7295
 originalContentType: medium
+originalContentId: 7575eacd7295
 mediumClaps: 12
 mediumVoters: 7
-mediumArticleId: 7575eacd7295
 ---
 ![](article_6b235e313cdf3f991002e9b8.jpeg)
 

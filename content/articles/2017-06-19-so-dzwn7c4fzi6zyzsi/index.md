@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/dzwn7c4f
 originalContentLink: https://stackoverflow.com/questions/44390590/android-studio-3-0-error-migrate-dependency-configurations-for-local-modules
 originalContentType: stackoverflow
+originalContentId: 44640156
 soScore: 33
-soViews: 27703
+soViews: 27704
 soIsAccepted: false
 soQuestionId: 44390590
-soAnswerId: 44640156
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/44640156/774398
 ---

@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/dm93cank
 originalContentLink: https://medium.com/hackernoon/the-bcrypt-protocol-is-kind-of-a-mess-4aace5eb31bd
 originalContentType: medium
+originalContentId: 4aace5eb31bd
 mediumClaps: 72
 mediumVoters: 14
-mediumArticleId: 4aace5eb31bd
 ---
 ![](article_1400cdb98347fb2c4bc9dbb6.jpeg)
 

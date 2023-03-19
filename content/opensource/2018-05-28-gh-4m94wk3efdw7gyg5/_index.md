@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/4m94wk3e
 originalContentLink: https://github.com/patrickfav/website-dr-sel
 originalContentType: github
+originalContentId: 135200872
 githubCloneUrlHttp: https://github.com/patrickfav/website-dr-sel.git
 githubStars: 0
 githubForks: 0

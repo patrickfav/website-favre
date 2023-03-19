@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/fzd79n2s
 originalContentLink: https://github.com/patrickfav/indoor-positioning
 originalContentType: github
+originalContentId: 65147448
 githubCloneUrlHttp: https://github.com/patrickfav/indoor-positioning.git
 githubStars: 40
 githubForks: 24

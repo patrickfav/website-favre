@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/hhjyirv2
 originalContentLink: https://stackoverflow.com/questions/45985661/is-hkdf-implemented-in-java-cryptography-architecture
 originalContentType: stackoverflow
+originalContentId: 46619583
 soScore: 14
-soViews: 5961
+soViews: 5962
 soIsAccepted: false
 soQuestionId: 45985661
-soAnswerId: 46619583
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/46619583/774398
 ---

@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/a4y7zf2h
 originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-and-getheight-returns-0
 originalContentType: stackoverflow
-soScore: 967
-soViews: 399947
+originalContentId: 24035591
+soScore: 968
+soViews: 399971
 soIsAccepted: false
 soQuestionId: 3591784
-soAnswerId: 24035591
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/24035591/774398
 ---

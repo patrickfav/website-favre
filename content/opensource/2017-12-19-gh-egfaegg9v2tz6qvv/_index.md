@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/egfaegg9
 originalContentLink: https://github.com/patrickfav/armadillo
 originalContentType: github
+originalContentId: 114701607
 githubCloneUrlHttp: https://github.com/patrickfav/armadillo.git
 githubStars: 263
 githubForks: 51

@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/85mak4nt
 originalContentLink: https://github.com/patrickfav/id-mask
 originalContentType: github
+originalContentId: 178486098
 githubCloneUrlHttp: https://github.com/patrickfav/id-mask.git
 githubStars: 45
 githubForks: 2

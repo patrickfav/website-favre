@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/y2ys6x9i
 originalContentLink: https://github.com/patrickfav/checkstyle-config
 originalContentType: github
+originalContentId: 181350695
 githubCloneUrlHttp: https://github.com/patrickfav/checkstyle-config.git
 githubStars: 3
 githubForks: 1

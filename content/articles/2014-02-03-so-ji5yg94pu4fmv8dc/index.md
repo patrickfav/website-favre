@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/ji5yg94p
 originalContentLink: https://stackoverflow.com/questions/17121213/java-io-ioexception-no-authentication-challenges-found
 originalContentType: stackoverflow
+originalContentId: 21534175
 soScore: 51
 soViews: 33461
 soIsAccepted: false
 soQuestionId: 17121213
-soAnswerId: 21534175
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/21534175/774398
 ---

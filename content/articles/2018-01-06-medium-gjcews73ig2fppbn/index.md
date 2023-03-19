@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/gjcews73
 originalContentLink: https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9
 originalContentType: medium
+originalContentId: 7616beaaade9
 mediumClaps: 2799
 mediumVoters: 508
-mediumArticleId: 7616beaaade9
 ---
 In this article I will bring you up to speed on the Advanced Encryption Standard (AES), common block modes, why you need padding and initialization vectors and how to protect your data against modification. Finally, I will show you how to easily implement this with Java avoiding common security issues.
 

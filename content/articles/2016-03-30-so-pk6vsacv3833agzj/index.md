@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/pk6vsacv
 originalContentLink: https://stackoverflow.com/questions/14115950/quality-of-image-after-resize-very-low-java
 originalContentType: stackoverflow
+originalContentId: 36320292
 soScore: 12
 soViews: 21990
 soIsAccepted: false
 soQuestionId: 14115950
-soAnswerId: 36320292
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/36320292/774398
 ---

@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/tv6atcjz
 originalContentLink: https://github.com/patrickfav/Dali
 originalContentType: github
+originalContentId: 20195549
 githubCloneUrlHttp: https://github.com/patrickfav/Dali.git
 githubStars: 1047
 githubForks: 94

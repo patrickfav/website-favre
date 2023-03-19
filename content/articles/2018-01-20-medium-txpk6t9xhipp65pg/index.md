@@ -13,9 +13,9 @@ categories: ["article", "medium"]
 deeplink: /link/txpk6t9x
 originalContentLink: https://proandroiddev.com/handling-proguard-as-library-developer-or-in-a-multi-module-android-application-2d738c37890
 originalContentType: medium
+originalContentId: 2d738c37890
 mediumClaps: 348
 mediumVoters: 84
-mediumArticleId: 2d738c37890
 ---
 ![](article_b74101ae90a953f37b8db58e.jpeg)
 

@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/cbfeh9ja
 originalContentLink: https://stackoverflow.com/questions/26076292/security-with-sharedpreferences
 originalContentType: stackoverflow
+originalContentId: 26077852
 soScore: 33
 soViews: 10134
 soIsAccepted: true
 soQuestionId: 26076292
-soAnswerId: 26077852
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/26077852/774398
 ---

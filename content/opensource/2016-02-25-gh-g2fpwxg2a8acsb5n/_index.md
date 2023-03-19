@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/g2fpwxg2
 originalContentLink: https://github.com/patrickfav/density-converter
 originalContentType: github
+originalContentId: 52564417
 githubCloneUrlHttp: https://github.com/patrickfav/density-converter.git
 githubStars: 236
 githubForks: 32

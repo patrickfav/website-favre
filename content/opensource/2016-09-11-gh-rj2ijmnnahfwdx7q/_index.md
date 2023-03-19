@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/rj2ijmnn
 originalContentLink: https://github.com/patrickfav/uber-adb-tools
 originalContentType: github
+originalContentId: 67927627
 githubCloneUrlHttp: https://github.com/patrickfav/uber-adb-tools.git
 githubStars: 131
 githubForks: 24

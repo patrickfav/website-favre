@@ -18,6 +18,7 @@ editURL: https://gist.github.com/70a41a7ddf6e6efebf1756639fc86762
 deeplink: /link/fzcrqguf
 originalContentLink: https://gist.github.com/70a41a7ddf6e6efebf1756639fc86762
 originalContentType: gist
+originalContentId: 70a41a7ddf6e6efebf1756639fc86762
 gistLanguage: Java
 gistFileCount: 3
 gistComments: 0

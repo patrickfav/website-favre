@@ -17,11 +17,11 @@ thumbnail: 'sobanner*'
 deeplink: /link/fk797xgv
 originalContentLink: https://stackoverflow.com/questions/2067955/fast-bitmap-blur-for-android-sdk
 originalContentType: stackoverflow
+originalContentId: 23119957
 soScore: 269
-soViews: 154835
+soViews: 154837
 soIsAccepted: false
 soQuestionId: 2067955
-soAnswerId: 23119957
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/23119957/774398
 ---

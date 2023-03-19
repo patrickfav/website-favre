@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/wxmh9jxe
 originalContentLink: https://github.com/patrickfav/BlurTestAndroid
 originalContentType: github
+originalContentId: 18530316
 githubCloneUrlHttp: https://github.com/patrickfav/BlurTestAndroid.git
 githubStars: 415
 githubForks: 68

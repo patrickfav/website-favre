@@ -15,6 +15,7 @@ showAuthor: true
 deeplink: /link/tgb9adz6
 originalContentLink: https://github.com/patrickfav/singlestep-kdf
 originalContentType: github
+originalContentId: 158036786
 githubCloneUrlHttp: https://github.com/patrickfav/singlestep-kdf.git
 githubStars: 8
 githubForks: 1

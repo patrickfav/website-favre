@@ -18,6 +18,7 @@ editURL: https://gist.github.com/13b2f727eaf91e3a72d87ac427485cb1
 deeplink: /link/b84zqhi6
 originalContentLink: https://gist.github.com/13b2f727eaf91e3a72d87ac427485cb1
 originalContentType: gist
+originalContentId: 13b2f727eaf91e3a72d87ac427485cb1
 gistLanguage: Shell
 gistFileCount: 1
 gistComments: 1
