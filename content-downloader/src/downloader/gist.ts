@@ -5,6 +5,7 @@ import {gistDownloaderEnabled} from '../confg'
 import {generateSlug, shortenToTitle, Slug} from '../util'
 import {gistbannerSvg} from '../svg'
 import {Downloader} from "./downloader";
+import {ContentStat} from "./models";
 
 export class GistDownloader extends Downloader {
 
@@ -15,11 +16,12 @@ export class GistDownloader extends Downloader {
         this.config = config
     }
 
-    protected async downloadLogic(): Promise<void> {
+    protected async downloadLogic(): Promise<ContentStat[]> {
         const gotHeaders = this.createGotHttpHeaders()
+        const contentStats: ContentStat[] = []
 
         // download all repositories meta data from github api
-        const gistMetaData: GistMeta[] = await got
+        const allGistMetaData: GistMeta[] = await got
             .get(`https://api.github.com/users/${this.config.githubUser}/gists?per_page=100`, gotHeaders)
             .then((res) => JSON.parse(res.body))
             .catch((err) => {
@@ -28,7 +30,7 @@ export class GistDownloader extends Downloader {
             })
 
         for (const gistId of this.config.gistIds) {
-            const gistMeta = gistMetaData.find((p) => p.id === gistId)!
+            const gistMeta = allGistMetaData.find((p) => p.id === gistId)!
             const title = shortenToTitle(gistMeta.description)
             const slug = generateSlug(title, 'gist', new Date(gistMeta.created_at), gistId)
             console.log(`\tProcessing gist ${title} (${gistMeta.created_at}, ${gistId})`)
@@ -43,7 +45,25 @@ export class GistDownloader extends Downloader {
 
             this.copyBannerImage(gistbannerSvg, targetProjectFileBanner)
 
+            contentStats.push(this.createContentStat(gistMeta))
+
             StringStream.from(frontMatter + markdown).pipe(fs.createWriteStream(targetProjectDir + '/index.md'))
+        }
+
+        return contentStats
+    }
+
+    private createContentStat(gistMeta: GistMeta): ContentStat {
+        return {
+            type: "gist",
+            user: this.config.githubUser,
+            subjectId: gistMeta.id,
+            date: this.downloadDate,
+            values: {
+                comments: gistMeta.comments,
+                stars: 0, // currently not possible to get from api
+                forks: 0 // currently not possible to get from api
+            }
         }
     }
 

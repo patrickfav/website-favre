@@ -1,10 +1,12 @@
 import fs from "fs";
+import {ContentStat} from "./models";
 
 export abstract class Downloader {
     readonly name: string
     readonly isEnabled: boolean
     protected readonly rootOutDir: string
     protected readonly contentOutDir: string
+    protected downloadDate!:Date
 
     protected constructor(name: string, isEnabled: boolean, rootOutDir: string, contentOutDir: string) {
         this.name = name
@@ -13,17 +15,19 @@ export abstract class Downloader {
         this.contentOutDir = contentOutDir
     }
 
-    download(): Promise<void> {
+    download(): Promise<ContentStat[]> {
         if (!this.isEnabled) {
             console.log(`${this.name} Downloader disabled`)
-            return Promise.resolve()
+            return Promise.resolve([])
         }
 
         console.log(`Start Processing ${this.name}`)
 
+        this.downloadDate = new Date();
+
         return this.downloadLogic();
     }
-    protected abstract downloadLogic(): Promise<void>
+    protected abstract downloadLogic(): Promise<ContentStat[]>
 
     protected checkEnabled(): boolean {
         if (!this.isEnabled) {
@@ -51,3 +55,4 @@ export abstract class Downloader {
         return title.replace(/'/g, '`').replace(/\n/g, ' ').replace(/\r/g, '');
     }
 }
+

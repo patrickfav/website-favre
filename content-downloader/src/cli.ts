@@ -6,20 +6,50 @@ import {GistDownloader} from './downloader/gist'
 
 const defaultRootDir = '../content/'
 
-export function cli(args: string[]): void {
+export async function cli(args: string[]): Promise<void> {
     const rootDir = parseArguments(args)
 
     const relOutDirGithub = 'opensource'
     const relOutDirArticles = 'articles'
 
-    new GistDownloader(rootDir, relOutDirGithub, {githubUser: githubProjectsUser, gistIds: gistIds}).download()
-        .then(() => new GithubDownloader(rootDir, relOutDirGithub, {
-            githubUser: githubProjectsUser,
-            githubProjects: githubProjects
-        }).download())
-        .then(() => new StackOverflowDownloader(rootDir, relOutDirArticles, {stackOverflowUserId: stackoverflowUserId}).download())
-        .then(() => new MediumDownloader(rootDir, relOutDirArticles, {userName: mediumUserName}).download())
-        .then(() => console.log('Waiting to finish'))
+
+    const gistDownloader = new GistDownloader(rootDir, relOutDirGithub, {
+        githubUser: githubProjectsUser,
+        gistIds: gistIds,
+    });
+
+    const githubDownloader = new GithubDownloader(rootDir, relOutDirGithub, {
+        githubUser: githubProjectsUser,
+        githubProjects: githubProjects,
+    });
+
+    const stackOverflowDownloader = new StackOverflowDownloader(rootDir, relOutDirArticles, {
+        stackOverflowUserId: stackoverflowUserId,
+    });
+
+    const mediumDownloader = new MediumDownloader(rootDir, relOutDirArticles, {
+        userName: mediumUserName,
+    });
+
+    try {
+        const gistObjects = await gistDownloader.download();
+        const githubObjects = await githubDownloader.download();
+        const stackOverflowObjects = await stackOverflowDownloader.download();
+        const mediumObjects = await mediumDownloader.download();
+
+        const contentStats = [
+            ...gistObjects,
+            ...githubObjects,
+            ...stackOverflowObjects,
+            ...mediumObjects,
+        ];
+
+        console.log('All objects:', contentStats);
+        console.log('All done.');
+    } catch (error) {
+        console.error('An error occurred:', error);
+        throw error;
+    }
 }
 
 function parseArguments(args: string[]): string {

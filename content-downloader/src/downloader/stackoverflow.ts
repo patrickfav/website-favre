@@ -10,6 +10,7 @@ import {sobannerSvg} from '../svg'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
+import {ContentStat} from "./models";
 
 export class StackOverflowDownloader extends Downloader {
     private readonly config: StackOverflowConfig
@@ -19,9 +20,10 @@ export class StackOverflowDownloader extends Downloader {
         this.config = config
     }
 
-    protected async downloadLogic(): Promise<void> {
+    protected async downloadLogic(): Promise<ContentStat[]> {
         const soAnswers = await this.fetchAllSoAnswers(this.config.stackOverflowUserId)
         const soQuestions = await this.fetchAllQuestions(soAnswers)
+        const contentStats: ContentStat[] = []
 
         for (const answer of soAnswers) {
             const question = soQuestions[answer.question_id]
@@ -55,8 +57,25 @@ export class StackOverflowDownloader extends Downloader {
 
             const finalMarkdown = await this.fetchAndReplaceImages(markdown, targetProjectDir)
 
+            contentStats.push(this.createContentStat(question, answer))
+
             StringStream.from(frontMatter + finalMarkdown)
                 .pipe(fs.createWriteStream(targetProjectFile))
+        }
+
+        return contentStats
+    }
+
+    private createContentStat(question: Question, answer: Answer): ContentStat {
+        return {
+            type: "so",
+            user: this.config.stackOverflowUserId.toString(),
+            subjectId: answer.answer_id.toString(),
+            date: this.downloadDate,
+            values: {
+                score: answer.score,
+                views: question.view_count
+            }
         }
     }
 

@@ -3,9 +3,10 @@ import {StringStream} from 'scramjet'
 import got from 'got'
 import * as cheerio from 'cheerio'
 import * as crypto from 'crypto'
-import {githubDownloaderEnabled} from '../confg'
+import {githubDownloaderEnabled, githubProjects} from '../confg'
 import {generateSlug, getExtension, regexQuote, Slug} from '../util'
 import {Downloader} from "./downloader";
+import {ContentStat} from "./models";
 
 export class GithubDownloader extends Downloader {
 
@@ -16,12 +17,12 @@ export class GithubDownloader extends Downloader {
         this.config = config
     }
 
-    protected async downloadLogic(): Promise<void> {
-
+    protected async downloadLogic(): Promise<ContentStat[]> {
         const gotHeaders = this.createGotHttpHeaders()
+        const contentStats: ContentStat[] = []
 
         // download all repositories meta data from github api
-        const githubMetaData = await got.get(`https://api.github.com/users/${this.config.githubUser}/repos?sort=updated&direction=desc&per_page=100`, gotHeaders)
+        const allGithubMeta = await got.get(`https://api.github.com/users/${this.config.githubUser}/repos?sort=updated&direction=desc&per_page=100`, gotHeaders)
             .then((res) => JSON.parse(res.body) as GithubMetaData[])
 
         for (const projectsIndex of this.config.githubProjects) {
@@ -29,21 +30,25 @@ export class GithubDownloader extends Downloader {
 
             console.log(`\tProcessing github project ${projectName}`)
 
-            const githubMetaForProject = githubMetaData.find(p => p.name === projectName)!
-            const slug = generateSlug(projectName, 'gh', new Date(githubMetaForProject.created_at), githubMetaForProject.id)
+            const githubMeta = allGithubMeta.find(p => p.name === projectName)!
+            const slug = generateSlug(projectName, 'gh', new Date(githubMeta.created_at), githubMeta.id)
 
             const targetProjectDir = this.getTargetOutDir() + '/' + slug.stableName
             Downloader.prepareFolder(targetProjectDir)
 
             await this.downloadProjectImage(projectName, this.config.githubUser, targetProjectDir)
             const releaseMeta = await this.downloadReleases(projectName, this.config.githubUser, gotHeaders)
-            const frontMatter = this.createGithubFrontMatter(projectName, githubMetaForProject, releaseMeta, this.contentOutDir, slug)
+            const frontMatter = this.createGithubFrontMatter(projectName, githubMeta, releaseMeta, this.contentOutDir, slug)
 
-            await this.downloadParseAndSaveReadme(this.config.githubUser, projectName, githubMetaForProject.default_branch, frontMatter, targetProjectDir)
-            await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMetaForProject.default_branch, ['CHANGELOG', 'CHANGELOG.md'], 'changelog', this.createGithubSubPageFrontMatter(githubMetaForProject, this.contentOutDir, slug, 'changelog'), targetProjectDir)
-            await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMetaForProject.default_branch, ['LICENSE'], 'license', this.createGithubSubPageFrontMatter(githubMetaForProject, this.contentOutDir, slug, 'license'), targetProjectDir)
-            await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMetaForProject.default_branch, ['CONTRIBUTING.md', 'CONTRIBUTING'], 'contributing', this.createGithubSubPageFrontMatter(githubMetaForProject, this.contentOutDir, slug, 'contributing'), targetProjectDir)
+            contentStats.push(this.createContentStat(githubMeta))
+
+            await this.downloadParseAndSaveReadme(this.config.githubUser, projectName, githubMeta.default_branch, frontMatter, targetProjectDir)
+            await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMeta.default_branch, ['CHANGELOG', 'CHANGELOG.md'], 'changelog', this.createGithubSubPageFrontMatter(githubMeta, this.contentOutDir, slug, 'changelog'), targetProjectDir)
+            await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMeta.default_branch, ['LICENSE'], 'license', this.createGithubSubPageFrontMatter(githubMeta, this.contentOutDir, slug, 'license'), targetProjectDir)
+            await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMeta.default_branch, ['CONTRIBUTING.md', 'CONTRIBUTING'], 'contributing', this.createGithubSubPageFrontMatter(githubMeta, this.contentOutDir, slug, 'contributing'), targetProjectDir)
         }
+
+        return contentStats;
     }
 
     private createGotHttpHeaders(): { headers?: { Authentication: string } } {
@@ -58,6 +63,20 @@ export class GithubDownloader extends Downloader {
             }
         }
         return {}
+    }
+
+    private createContentStat(githubMeta: GithubMetaData): ContentStat {
+        return {
+            type: "gh",
+            user: this.config.githubUser,
+            subjectId: githubMeta.id,
+            date: this.downloadDate,
+            values: {
+                watchers: githubMeta.watchers_count,
+                stars: githubMeta.stargazers_count,
+                forks: githubMeta.forks_count
+            }
+        }
     }
 
     private async downloadProjectImage(projectName: string, githubUser: string, targetProjectDir: string): Promise<void> {
