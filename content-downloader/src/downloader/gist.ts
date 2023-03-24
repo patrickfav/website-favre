@@ -34,8 +34,9 @@ export class GistDownloader extends Downloader {
             const title = shortenToTitle(gistMeta.description)
             const slug = generateSlug(title, 'gist', new Date(gistMeta.created_at), gistId)
             console.log(`\tProcessing gist ${title} (${gistMeta.created_at}, ${gistId})`)
+            const additionalMeta = await this.downloadAdditionalMetaData(gistId, gotHeaders)
 
-            const frontMatter = this.createGistFrontMatter(gistMeta, title, slug)
+            const frontMatter = this.createGistFrontMatter(gistMeta, additionalMeta, title, slug)
             const markdown = await this.createAndDownloadContent(gistMeta)
 
             const targetProjectDir = this.getTargetOutDir() + '/' + slug.stableName
@@ -44,16 +45,15 @@ export class GistDownloader extends Downloader {
             Downloader.prepareFolder(targetProjectDir)
 
             this.copyBannerImage(gistbannerSvg, targetProjectFileBanner)
-
             StringStream.from(frontMatter + markdown).pipe(fs.createWriteStream(targetProjectDir + '/index.md'))
 
-            contentStats.push(this.createContentStat(gistMeta, markdown.length))
+            contentStats.push(this.createContentStat(gistMeta, additionalMeta, markdown.length))
         }
 
         return contentStats
     }
 
-    private createContentStat(gistMeta: GistMeta, contentLength: number): ContentStat {
+    private createContentStat(gistMeta: GistMeta, gistDetails: GistDetails, contentLength: number): ContentStat {
         return {
             type: "gist",
             user: this.config.githubUser,
@@ -62,24 +62,31 @@ export class GistDownloader extends Downloader {
             values: {
                 contentLength: contentLength,
                 comments: gistMeta.comments,
-                stars: 0, // currently not possible to get from api
-                forks: 0 // currently not possible to get from api
+                forks: gistDetails.forks.length,
+                revisions: gistDetails.history.length
             }
         }
     }
 
-    private createGotHttpHeaders(): { headers?: { Authentication: string } } {
-        const githubToken = process.env.GITHUB_TOKEN || undefined
+    private createGotHttpHeaders(): { headers?: { Authorization: string } } {
+        const githubToken = process.env.GITHUB_TOKEN
 
-        if (githubToken) {
+        if (githubToken && githubToken.length > 0) {
             console.log('\tUsing Authenticated APIs, token is provided')
             return {
                 headers: {
-                    Authentication: `Bearer ${githubToken}`,
+                    Authorization: `Bearer ${githubToken}`,
                 },
             }
         }
         return {}
+    }
+
+    private async downloadAdditionalMetaData(gistId: string, gotHeaders: { headers?: any }): Promise<GistDetails> {
+        const forksUrl = `https://api.github.com/gists/${gistId}`
+        console.log('\t\tDownloading gist details ' + forksUrl)
+        return await got.get(forksUrl, gotHeaders)
+            .then(result => JSON.parse(result.body) as GistDetails)
     }
 
     private async createAndDownloadContent(gistMeta: GistMeta) {
@@ -108,7 +115,7 @@ export class GistDownloader extends Downloader {
         })
     }
 
-    private createGistFrontMatter(gistMeta: GistMeta, title: string, slug: Slug) {
+    private createGistFrontMatter(gistMeta: GistMeta, gistDetails: GistDetails, title: string, slug: Slug) {
         const allFiles = Object.entries(gistMeta.files).map(([, f]) => f)
         allFiles.sort((a, b) => b.size - a.size)
         const mainLanguage = allFiles[0].language
@@ -137,12 +144,31 @@ export class GistDownloader extends Downloader {
         meta += `originalContentId: ${gistMeta.id}\n`
         meta += `gistLanguage: ${mainLanguage}\n`
         meta += `gistFileCount: ${allFiles.length}\n`
+        meta += `gistRevisions: ${gistDetails.history.length}\n`
+        meta += `gistForks: ${gistDetails.forks.length}\n`
         meta += `gistComments: ${gistMeta.comments}\n`
-        meta += `gistCommentsUrl: ${gistMeta.comments_url}\n`
         meta += '---\n'
 
         return meta
     }
+}
+
+interface GistDetails {
+    id: string
+    forks: GistFork[]
+    history: GistHistory[]
+}
+
+interface GistHistory {
+    version: string
+    committed_at: Date
+}
+
+interface GistFork {
+    id: string
+    created_at: Date
+    html_url: string
+
 }
 
 interface GistConfig {

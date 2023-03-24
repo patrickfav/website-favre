@@ -16,7 +16,7 @@
 {{ if and (.Params.gistComments | default false) (gt .Params.gistComments 0 ) }}
   <span class="px-2 text-primary-500">&middot;</span>
   <span class="custom-info">
-    <a href="{{ .Params.gistCommentsUrl }}" rel="noopener">{{ partial "icon.html" "comments-regular" }} {{ .Params.gistComments }} Comments</a>
+    {{ partial "icon.html" "comments-regular" }} {{ .Params.gistComments }} Comments
   </span>
 {{ end }}
 
