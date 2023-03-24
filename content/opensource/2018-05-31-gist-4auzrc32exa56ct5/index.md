@@ -14,9 +14,9 @@ type: gist
 showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
-editURL: https://gist.github.com/3f9127e25dd6538f0d682b89cbfaefd9
+editURL: https://gist.github.com/patrickfav/3f9127e25dd6538f0d682b89cbfaefd9
 deeplink: /link/4auzrc32
-originalContentLink: https://gist.github.com/3f9127e25dd6538f0d682b89cbfaefd9
+originalContentLink: https://gist.github.com/patrickfav/3f9127e25dd6538f0d682b89cbfaefd9
 originalContentType: gist
 originalContentId: 3f9127e25dd6538f0d682b89cbfaefd9
 gistLanguage: Markdown

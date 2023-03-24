@@ -23,7 +23,7 @@ githubWatchers: 0
 githubLanguage: TypeScript
 githubHomepage: https://favr.dev
 githubDefaultBranch: main
-githubOpenIssues: 2
+githubOpenIssues: 1
 githubIsFork: false
 ---
 # Static Site Gen Repo for my Personal Website

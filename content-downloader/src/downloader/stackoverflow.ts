@@ -57,7 +57,7 @@ export class StackOverflowDownloader extends Downloader {
 
             const finalMarkdown = await this.fetchAndReplaceImages(markdown, targetProjectDir)
 
-            contentStats.push(this.createContentStat(question, answer))
+            contentStats.push(this.createContentStat(question, answer, finalMarkdown.length))
 
             StringStream.from(frontMatter + finalMarkdown)
                 .pipe(fs.createWriteStream(targetProjectFile))
@@ -66,13 +66,14 @@ export class StackOverflowDownloader extends Downloader {
         return contentStats
     }
 
-    private createContentStat(question: Question, answer: Answer): ContentStat {
+    private createContentStat(question: Question, answer: Answer, contentLength: number): ContentStat {
         return {
             type: "so",
             user: this.config.stackOverflowUserId.toString(),
             subjectId: answer.answer_id.toString(),
             date: this.downloadDate,
             values: {
+                contentLength: contentLength,
                 score: answer.score,
                 views: question.view_count
             }

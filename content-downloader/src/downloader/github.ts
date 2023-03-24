@@ -40,12 +40,13 @@ export class GithubDownloader extends Downloader {
             const releaseMeta = await this.downloadReleases(projectName, this.config.githubUser, gotHeaders)
             const frontMatter = this.createGithubFrontMatter(projectName, githubMeta, releaseMeta, this.contentOutDir, slug)
 
-            contentStats.push(this.createContentStat(githubMeta))
+            const contentLength = await this.downloadParseAndSaveReadme(this.config.githubUser, projectName, githubMeta.default_branch, frontMatter, targetProjectDir)
 
-            await this.downloadParseAndSaveReadme(this.config.githubUser, projectName, githubMeta.default_branch, frontMatter, targetProjectDir)
             await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMeta.default_branch, ['CHANGELOG', 'CHANGELOG.md'], 'changelog', this.createGithubSubPageFrontMatter(githubMeta, this.contentOutDir, slug, 'changelog'), targetProjectDir)
             await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMeta.default_branch, ['LICENSE'], 'license', this.createGithubSubPageFrontMatter(githubMeta, this.contentOutDir, slug, 'license'), targetProjectDir)
             await this.downloadAdditionalContent(this.config.githubUser, projectName, githubMeta.default_branch, ['CONTRIBUTING.md', 'CONTRIBUTING'], 'contributing', this.createGithubSubPageFrontMatter(githubMeta, this.contentOutDir, slug, 'contributing'), targetProjectDir)
+
+            contentStats.push(this.createContentStat(githubMeta,contentLength))
         }
 
         return contentStats;
@@ -65,13 +66,15 @@ export class GithubDownloader extends Downloader {
         return {}
     }
 
-    private createContentStat(githubMeta: GithubMetaData): ContentStat {
+    private createContentStat(githubMeta: GithubMetaData, contentLength: number): ContentStat {
         return {
             type: "gh",
             user: this.config.githubUser,
             subjectId: githubMeta.id,
             date: this.downloadDate,
             values: {
+                contentLength: contentLength,
+                repoSize: githubMeta.size,
                 watchers: githubMeta.watchers_count,
                 stars: githubMeta.stargazers_count,
                 forks: githubMeta.forks_count
@@ -143,7 +146,7 @@ export class GithubDownloader extends Downloader {
         }
     }
 
-    private async downloadParseAndSaveReadme(githubUser: string, projectName: string, mainBranch: string, frontMatter: string, targetProjectDir: string) {
+    private async downloadParseAndSaveReadme(githubUser: string, projectName: string, mainBranch: string, frontMatter: string, targetProjectDir: string): Promise<number> {
         const fileNameExt = '_index.md'
 
         const url = `https://github.com/${githubUser}/${projectName}/raw/${mainBranch}/`
@@ -156,6 +159,8 @@ export class GithubDownloader extends Downloader {
 
         StringStream.from(frontMatter + markdown)
             .pipe(fs.createWriteStream(targetProjectFile))
+
+        return markdown.length
     }
 
     private async removeBadgesAndDownloadImages(markdownContent: string, githubUser: string, projectName: string, mainBranch: string, targetProjectDir: string) {
@@ -241,6 +246,7 @@ export class GithubDownloader extends Downloader {
         meta += `githubStars: ${githubMeta.stargazers_count}\n`
         meta += `githubForks: ${githubMeta.forks_count}\n`
         meta += `githubWatchers: ${githubMeta.watchers_count}\n`
+        meta += `githubRepoSize: ${githubMeta.size}\n`
         meta += `githubLanguage: ${githubMeta.language}\n`
         meta += `githubHomepage: ${githubMeta.homepage}\n`
         meta += `githubDefaultBranch: ${githubMeta.default_branch}\n`
@@ -292,4 +298,5 @@ interface GithubMetaData {
     topics: string[]
     updated_at: string
     watchers_count: number
+    size: number
 }

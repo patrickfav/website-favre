@@ -42,25 +42,27 @@ export class MediumDownloader extends Downloader {
 
             await this.downloadProjectImage(articleInfo, slug.safeName, targetProjectDir)
 
-            contentStats.push(this.createContentStat(articleInfo))
 
             const targetProjectFile = targetProjectDir + '/index.md'
             const frontMatter = this.createFrontMatter(articleInfo, slug)
             const markdown = await this.fetchAndReplaceImages(post.markdown, targetProjectDir)
             StringStream.from(frontMatter + markdown)
                 .pipe(fs.createWriteStream(targetProjectFile))
+
+            contentStats.push(this.createContentStat(articleInfo, markdown.length))
         }
 
         return contentStats
     }
 
-    private createContentStat(articleInfo: ArticleInfo): ContentStat {
+    private createContentStat(articleInfo: ArticleInfo, contentLength: number): ContentStat {
         return {
             type: "medium",
             user: this.config.userName,
             subjectId: articleInfo.id,
             date: this.downloadDate,
             values: {
+                contentLength: contentLength,
                 claps: articleInfo.clapCount,
                 voters: articleInfo.voterCount,
             }

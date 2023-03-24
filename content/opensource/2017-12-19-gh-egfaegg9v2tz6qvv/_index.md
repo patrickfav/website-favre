@@ -18,7 +18,7 @@ originalContentType: github
 originalContentId: 114701607
 githubCloneUrlHttp: https://github.com/patrickfav/armadillo.git
 githubStars: 263
-githubForks: 51
+githubForks: 52
 githubWatchers: 263
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/armadillo

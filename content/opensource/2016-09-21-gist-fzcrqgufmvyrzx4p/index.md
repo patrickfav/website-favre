@@ -14,9 +14,9 @@ type: gist
 showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
-editURL: https://gist.github.com/70a41a7ddf6e6efebf1756639fc86762
+editURL: https://gist.github.com/patrickfav/70a41a7ddf6e6efebf1756639fc86762
 deeplink: /link/fzcrqguf
-originalContentLink: https://gist.github.com/70a41a7ddf6e6efebf1756639fc86762
+originalContentLink: https://gist.github.com/patrickfav/70a41a7ddf6e6efebf1756639fc86762
 originalContentType: gist
 originalContentId: 70a41a7ddf6e6efebf1756639fc86762
 gistLanguage: Java

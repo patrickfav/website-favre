@@ -45,21 +45,22 @@ export class GistDownloader extends Downloader {
 
             this.copyBannerImage(gistbannerSvg, targetProjectFileBanner)
 
-            contentStats.push(this.createContentStat(gistMeta))
-
             StringStream.from(frontMatter + markdown).pipe(fs.createWriteStream(targetProjectDir + '/index.md'))
+
+            contentStats.push(this.createContentStat(gistMeta, markdown.length))
         }
 
         return contentStats
     }
 
-    private createContentStat(gistMeta: GistMeta): ContentStat {
+    private createContentStat(gistMeta: GistMeta, contentLength: number): ContentStat {
         return {
             type: "gist",
             user: this.config.githubUser,
             subjectId: gistMeta.id,
             date: this.downloadDate,
             values: {
+                contentLength: contentLength,
                 comments: gistMeta.comments,
                 stars: 0, // currently not possible to get from api
                 forks: 0 // currently not possible to get from api

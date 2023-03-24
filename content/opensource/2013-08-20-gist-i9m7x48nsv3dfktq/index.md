@@ -14,9 +14,9 @@ type: gist
 showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
-editURL: https://gist.github.com/6284130
+editURL: https://gist.github.com/patrickfav/6284130
 deeplink: /link/i9m7x48n
-originalContentLink: https://gist.github.com/6284130
+originalContentLink: https://gist.github.com/patrickfav/6284130
 originalContentType: gist
 originalContentId: 6284130
 gistLanguage: Java
