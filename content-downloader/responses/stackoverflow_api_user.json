@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "badge_counts": {
+        "bronze": 124,
+        "silver": 109,
+        "gold": 10
+      },
+      "account_id": 405484,
+      "is_employee": false,
+      "last_modified_date": 1674300539,
+      "last_access_date": 1679740357,
+      "reputation_change_year": 378,
+      "reputation_change_quarter": 378,
+      "reputation_change_month": 180,
+      "reputation_change_week": 30,
+      "reputation_change_day": 0,
+      "reputation": 33279,
+      "creation_date": 1306593006,
+      "user_type": "registered",
+      "user_id": 774398,
+      "accept_rate": 83,
+      "location": "Vienna, Austria",
+      "website_url": "https://favr.dev",
+      "link": "https://stackoverflow.com/users/774398/patrick",
+      "profile_image": "https://www.gravatar.com/avatar/52ff4dddcaea4c2df64711c8e3d70e23?s=256&d=identicon&r=PG",
+      "display_name": "Patrick"
+    }
+  ],
+  "has_more": false,
+  "quota_max": 300,
+  "quota_remaining": 289
+}

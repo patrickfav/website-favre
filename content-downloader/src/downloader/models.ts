@@ -1,9 +1,9 @@
 export interface ContentStat {
-    type: "gh" | "gist" | "medium" | "so"
+    type: "gh" | "gist" | "medium" | "so" | "so-user"
     user: string
     subjectId: string
     date: Date
-    values: GithubStats | GistStats | MediumStats | StackOverflowStats
+    values: GithubStats | GistStats | MediumStats | StackOverflowAnswerStats | StackOverflowUserStats
 }
 
 interface GeneralStats {
@@ -24,9 +24,18 @@ interface GistStats extends GeneralStats {
     revisions: number
 }
 
-interface StackOverflowStats extends GeneralStats {
+interface StackOverflowAnswerStats extends GeneralStats {
     score: number
     views: number
+}
+
+interface StackOverflowUserStats {
+    score: number
+    answers: number
+    acceptRate: number
+    gold: number
+    silver: number
+    bronze: number
 }
 
 interface MediumStats extends GeneralStats {
