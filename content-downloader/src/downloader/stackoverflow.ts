@@ -3,7 +3,7 @@ import {stackoverflowEnabled, stackoverflowUserId} from '../confg'
 import fs from 'fs'
 import {StringStream} from 'scramjet'
 import TurndownService from 'turndown'
-import {customTurnDownPlugin, generateSlug, getExtension, regexQuote, Slug} from '../util'
+import {generateSlug, getExtension, regexQuote, Slug, stackOverflowHighlightedCodeBlock} from '../util'
 import wordsCount from 'words-count'
 import crypto from 'crypto'
 import {sobannerSvg} from '../svg'
@@ -151,17 +151,12 @@ export class StackOverflowDownloader extends Downloader {
     }
 
     private createMarkdown(body: string): string {
-        function correctHtml(body: string) {
-            return body.replace(/<pre[^>]*>\s*<code>/g, '<pre>').replace(/<\/code>\s*<\/pre>/g, '</pre>')
-        }
-
         const turndownService = new TurndownService()
         turndownService.use(strikethrough)
         turndownService.use(tables)
         turndownService.use(taskListItems)
-        turndownService.use(customTurnDownPlugin)
+        turndownService.use(stackOverflowHighlightedCodeBlock);
 
-        body = correctHtml(body)
         return turndownService.turndown(body)
     }
 
@@ -225,7 +220,7 @@ export class StackOverflowDownloader extends Downloader {
     }
 
     private async getSoUserStats(stackOverflowUserId: number, soAnswers: Answer[]): Promise<ContentStat> {
-        console.log(`\t\tDownloading so user info: ${stackOverflowUserId}`)
+        console.log(`\tDownloading so user info: ${stackOverflowUserId}`)
 
         const userResponse = await got.get(`https://api.stackexchange.com/2.3/users/${stackOverflowUserId}?order=desc&sort=reputation&site=stackoverflow`)
             .then(response => JSON.parse(response.body) as StackOverflowUserResponse)

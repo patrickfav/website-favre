@@ -2,6 +2,7 @@ import * as crypto from 'crypto';
 // @ts-ignore
 import base32 from 'base32-encoding';
 import * as TurndownService from "turndown";
+import {Filter, Options, ReplacementFunction} from "turndown";
 
 export interface Slug {
     id: string,
@@ -62,52 +63,53 @@ export function generateSlug(name: string, type: string, date: Date, stableId: s
     }
 }
 
-export function customTurnDownPlugin(turndownService: any): void {
-    turndownService.use([
-        stackOverflowHighlightedCodeBlock,
-        codeBlockFormat
-    ]);
-}
-
-function codeBlockFormat(turndownService: TurndownService): void {
-    turndownService.addRule('codeBlockFormat', {
+export const codeBlockFormat = function (service: TurndownService): void {
+    service.addRule('codeBlockFormat', {
         filter: ['pre'],
         replacement: function (content: any, node: any, options: any): string {
             return '\n' + options.fence + '\n' + deEscape(content) + '\n' + options.fence + '\n';
         }
     }).addRule('codeFormat', {
         filter: ['code'],
-        replacement: function (content: any): string {
-            return ' `' + content + '` ';
+        replacement: function (content: string): string {
+            return '`' + content + '`';
         }
     })
-}
+} as TurndownService.Plugin
 
-function stackOverflowHighlightedCodeBlock(turndownService: TurndownService): void {
+export const stackOverflowHighlightedCodeBlock = function (service: TurndownService): void {
     const highlightRegExp = /lang-([a-z0-9]+)/
 
-    turndownService.addRule('stackOverflowHighlightedCodeBlock', {
-        filter: function (node: any) {
+    service.addRule('stackOverflowHighlightedCodeBlock', {
+        filter: function (node: HTMLElement, options: Options): boolean | null {
             const firstChild = node.firstChild
             return (
                 node.nodeName === 'PRE' &&
-                highlightRegExp.test(node.className) &&
                 firstChild &&
                 firstChild.nodeName === 'CODE'
             )
-        },
-        replacement: function (content: string, node: any, options: any) {
+        } as Filter,
+        replacement: function (content: string, node: HTMLElement, options: Options): string {
             const className = node.className || ''
-            const language = (className.match(highlightRegExp) || [null, ''])[1]
+            const matches = (className.match(highlightRegExp) || [null, ''])
 
-            return (
-                '\n\n' + options.fence + language + '\n' +
-                deEscape(node.firstChild.textContent) +
-                '\n' + options.fence + '\n\n'
-            )
-        }
+            if (matches.length > 0) {
+                const language = matches[1]
+                return (
+                    '\n\n' + options.fence + language + '\n' +
+                    deEscape(node.firstChild!.textContent!) +
+                    '\n' + options.fence + '\n\n'
+                )
+            } else {
+                return (
+                    '\n\n' + options.fence + '\n' +
+                    deEscape(node.firstChild!.textContent!) +
+                    '\n' + options.fence + '\n\n'
+                )
+            }
+        } as ReplacementFunction
     })
-}
+} as TurndownService.Plugin
 
 function deEscape(content: string): string {
     const escapes: [RegExp, string][] = [
@@ -155,7 +157,7 @@ export function getExtension(url: string): string {
 
     const stringAfterDot = url.split('.').pop()!.replace(/\?raw=true/g, '');
 
-    if(stringAfterDot.length > 5) {
+    if (stringAfterDot.length > 5) {
         return "png"
     }
 
