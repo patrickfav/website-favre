@@ -19,7 +19,9 @@ originalContentId: 105349305
 githubCloneUrlHttp: https://github.com/patrickfav/hkdf.git
 githubStars: 53
 githubForks: 11
-githubWatchers: 53
+githubWatchers: 4
+githubContributors: 3
+githubRepoSize: 2889
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/hkdf
 githubDefaultBranch: main

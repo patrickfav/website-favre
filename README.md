@@ -34,6 +34,17 @@ git submodule update
 
 ## Build & Run
 
+### Set secrets
+
+For the downloader to work with all features one must set 2 environmental variables
+
+````bash
+GITHUB_TOKEN=... # a GitHub Personal Access Token - https://docs.github.com/de/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+FIREBASE_SERVICE_ACCOUNT_JSON= {...} # a Firebase service account json file - https://firebase.google.com/support/guides/service-accounts
+````
+
+where the second, the Firebase service account json, is optional and not providing it will disable the stats persisting feature.
+
 ### Prepare Content Sync
 
 Install and link everything and build the js files from typescript with

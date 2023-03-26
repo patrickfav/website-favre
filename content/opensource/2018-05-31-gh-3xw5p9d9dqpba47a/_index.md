@@ -19,11 +19,13 @@ originalContentId: 135606841
 githubCloneUrlHttp: https://github.com/patrickfav/website-favre.git
 githubStars: 0
 githubForks: 2
-githubWatchers: 0
+githubWatchers: 2
+githubContributors: 1
+githubRepoSize: 40244
 githubLanguage: TypeScript
 githubHomepage: https://favr.dev
 githubDefaultBranch: main
-githubOpenIssues: 2
+githubOpenIssues: 1
 githubIsFork: false
 ---
 # Static Site Gen Repo for my Personal Website

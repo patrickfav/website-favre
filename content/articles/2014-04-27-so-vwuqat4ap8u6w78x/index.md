@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/14988990/android-fast-b
 originalContentType: stackoverflow
 originalContentId: 23329963
 soScore: 13
-soViews: 28412
+soViews: 28420
 soIsAccepted: false
 soQuestionId: 14988990
 soAnswerLicense: CC BY-SA 3.0

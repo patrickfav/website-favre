@@ -3,23 +3,48 @@ import {GithubDownloader} from './downloader/github'
 import {MediumDownloader} from './downloader/medium'
 import {StackOverflowDownloader} from './downloader/stackoverflow'
 import {GistDownloader} from './downloader/gist'
+import {StatsManager} from "./store/statsManager";
 
 const defaultRootDir = '../content/'
 
-export function cli(args: string[]): void {
+export async function cli(args: string[]): Promise<void> {
     const rootDir = parseArguments(args)
 
     const relOutDirGithub = 'opensource'
     const relOutDirArticles = 'articles'
 
-    new GistDownloader(rootDir, relOutDirGithub, {githubUser: githubProjectsUser, gistIds: gistIds}).download()
-        .then(() => new GithubDownloader(rootDir, relOutDirGithub, {
-            githubUser: githubProjectsUser,
-            githubProjects: githubProjects
-        }).download())
-        .then(() => new StackOverflowDownloader(rootDir, relOutDirArticles, {stackOverflowUserId: stackoverflowUserId}).download())
-        .then(() => new MediumDownloader(rootDir, relOutDirArticles, {userName: mediumUserName}).download())
-        .then(() => console.log('Waiting to finish'))
+    const gistDownloader = new GistDownloader(rootDir, relOutDirGithub, {
+        githubUser: githubProjectsUser,
+        gistIds: gistIds,
+    });
+
+    const githubDownloader = new GithubDownloader(rootDir, relOutDirGithub, {
+        githubUser: githubProjectsUser,
+        githubProjects: githubProjects,
+    });
+
+    const stackOverflowDownloader = new StackOverflowDownloader(rootDir, relOutDirArticles, {
+        stackOverflowUserId: stackoverflowUserId,
+    });
+
+    const mediumDownloader = new MediumDownloader(rootDir, relOutDirArticles, {
+        userName: mediumUserName,
+    });
+
+    const contentStats = [
+        ...await gistDownloader.download(),
+        ...await stackOverflowDownloader.download(),
+        ...await githubDownloader.download(),
+        ...await mediumDownloader.download(),
+    ];
+
+    console.log(`All done, found ${contentStats.length} stats while importing content.`);
+
+    const statManager = new StatsManager();
+    if(statManager.isEnabled()) {
+        const previousData = await statManager.getRecentContentStats()
+        await statManager.persist(contentStats, previousData)
+    }
 }
 
 function parseArguments(args: string[]): string {

@@ -10,6 +10,7 @@ import {sobannerSvg} from '../svg'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
+import {ContentStat} from "./models";
 
 export class StackOverflowDownloader extends Downloader {
     private readonly config: StackOverflowConfig
@@ -19,9 +20,12 @@ export class StackOverflowDownloader extends Downloader {
         this.config = config
     }
 
-    protected async downloadLogic(): Promise<void> {
+    protected async downloadLogic(): Promise<ContentStat[]> {
         const soAnswers = await this.fetchAllSoAnswers(this.config.stackOverflowUserId)
         const soQuestions = await this.fetchAllQuestions(soAnswers)
+        const contentStats: ContentStat[] = []
+
+        contentStats.push(await this.getSoUserStats(this.config.stackOverflowUserId, soAnswers))
 
         for (const answer of soAnswers) {
             const question = soQuestions[answer.question_id]
@@ -55,8 +59,26 @@ export class StackOverflowDownloader extends Downloader {
 
             const finalMarkdown = await this.fetchAndReplaceImages(markdown, targetProjectDir)
 
+            contentStats.push(this.createContentStat(question, answer, finalMarkdown.length))
+
             StringStream.from(frontMatter + finalMarkdown)
                 .pipe(fs.createWriteStream(targetProjectFile))
+        }
+
+        return contentStats
+    }
+
+    private createContentStat(question: Question, answer: Answer, contentLength: number): ContentStat {
+        return {
+            type: "so",
+            user: this.config.stackOverflowUserId.toString(),
+            subjectId: answer.answer_id.toString(),
+            date: this.downloadDate,
+            values: {
+                contentLength: contentLength,
+                score: answer.score,
+                views: question.view_count
+            }
         }
     }
 
@@ -192,7 +214,7 @@ export class StackOverflowDownloader extends Downloader {
 
             const imageFileName = 'so_' + crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 24) + '.' + getExtension(imageUrl)
 
-            console.log('\t\tDownloading post image: ' + imageUrl + ' to ' + imageFileName)
+            console.log(`\t\tDownloading post image: ${imageUrl} to ${imageFileName}`)
 
             got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
 
@@ -201,12 +223,34 @@ export class StackOverflowDownloader extends Downloader {
 
         return markdownContent
     }
+
+    private async getSoUserStats(stackOverflowUserId: number, soAnswers: Answer[]): Promise<ContentStat> {
+        console.log(`\t\tDownloading so user info: ${stackOverflowUserId}`)
+
+        const userResponse = await got.get(`https://api.stackexchange.com/2.3/users/${stackOverflowUserId}?order=desc&sort=reputation&site=stackoverflow`)
+            .then(response => JSON.parse(response.body) as StackOverflowUserResponse)
+            .then(r => r.items[0])
+
+        return {
+            type: "so-user",
+            user: stackOverflowUserId.toString(),
+            subjectId: stackOverflowUserId.toString(),
+            date: this.downloadDate,
+            values: {
+                score: userResponse.reputation,
+                answers: soAnswers.length,
+                acceptRate: userResponse.accept_rate,
+                gold: userResponse.badge_counts.gold,
+                silver: userResponse.badge_counts.silver,
+                bronze: userResponse.badge_counts.bronze,
+            }
+        };
+    }
 }
 
 interface StackOverflowConfig {
     stackOverflowUserId: number
 }
-
 
 interface Answer {
     question_id: number
@@ -226,4 +270,35 @@ interface Question {
     view_count: number
     tags: string[]
     body: string
+}
+
+interface StackOverflowUser {
+    badge_counts: {
+        bronze: number
+        silver: number
+        gold: number
+    }
+    account_id: number
+    is_employee: boolean
+    last_modified_date: number
+    last_access_date: number
+    reputation_change_year: number
+    reputation_change_quarter: number
+    reputation_change_month: number
+    reputation_change_week: number
+    reputation_change_day: number
+    reputation: number
+    creation_date: number
+    user_type: string
+    user_id: number
+    accept_rate: number
+    location: string
+    website_url: string
+    link: string
+    profile_image: string
+    display_name: string
+}
+
+interface StackOverflowUserResponse {
+    items: StackOverflowUser[]
 }

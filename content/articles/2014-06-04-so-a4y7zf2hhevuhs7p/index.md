@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-
 originalContentType: stackoverflow
 originalContentId: 24035591
 soScore: 968
-soViews: 399971
+soViews: 400369
 soIsAccepted: false
 soQuestionId: 3591784
 soAnswerLicense: CC BY-SA 4.0

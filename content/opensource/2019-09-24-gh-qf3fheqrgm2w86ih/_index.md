@@ -19,7 +19,9 @@ originalContentId: 210578179
 githubCloneUrlHttp: https://github.com/patrickfav/rocketchat-exporter.git
 githubStars: 13
 githubForks: 11
-githubWatchers: 13
+githubWatchers: 2
+githubContributors: 3
+githubRepoSize: 243
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/rocketchat-exporter
 githubDefaultBranch: main

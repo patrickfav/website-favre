@@ -10,6 +10,7 @@ import {customTurnDownPlugin, generateSlug, getExtension, regexQuote, Slug} from
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
+import {ContentStat} from "./models";
 
 export class MediumDownloader extends Downloader {
 
@@ -20,8 +21,9 @@ export class MediumDownloader extends Downloader {
         this.config = config
     }
 
-    protected async downloadLogic(): Promise<void> {
+    protected async downloadLogic(): Promise<ContentStat[]> {
         const postInfoArray = await this.getAllArticles(this.config.userName)
+        const contentStats: ContentStat[] = []
 
         for (const index in postInfoArray) {
             const post = postInfoArray[index]
@@ -40,11 +42,30 @@ export class MediumDownloader extends Downloader {
 
             await this.downloadProjectImage(articleInfo, slug.safeName, targetProjectDir)
 
+
             const targetProjectFile = targetProjectDir + '/index.md'
             const frontMatter = this.createFrontMatter(articleInfo, slug)
             const markdown = await this.fetchAndReplaceImages(post.markdown, targetProjectDir)
             StringStream.from(frontMatter + markdown)
                 .pipe(fs.createWriteStream(targetProjectFile))
+
+            contentStats.push(this.createContentStat(articleInfo, markdown.length))
+        }
+
+        return contentStats
+    }
+
+    private createContentStat(articleInfo: ArticleInfo, contentLength: number): ContentStat {
+        return {
+            type: "medium",
+            user: this.config.userName,
+            subjectId: articleInfo.id,
+            date: this.downloadDate,
+            values: {
+                contentLength: contentLength,
+                claps: articleInfo.clapCount,
+                voters: articleInfo.voterCount,
+            }
         }
     }
 

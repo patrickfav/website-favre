@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2017-10-31
-lastmod: 2023-03-16
+lastmod: 2023-03-22
 url: opensource/bytes-java/changelog
 showSummary: false
 showTableOfContents: false

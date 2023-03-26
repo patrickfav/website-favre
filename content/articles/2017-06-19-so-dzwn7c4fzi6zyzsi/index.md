@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/44390590/android-studio
 originalContentType: stackoverflow
 originalContentId: 44640156
 soScore: 33
-soViews: 27704
+soViews: 27714
 soIsAccepted: false
 soQuestionId: 44390590
 soAnswerLicense: CC BY-SA 3.0

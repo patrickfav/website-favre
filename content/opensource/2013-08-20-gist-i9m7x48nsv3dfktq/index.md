@@ -14,15 +14,16 @@ type: gist
 showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
-editURL: https://gist.github.com/6284130
+editURL: https://gist.github.com/patrickfav/6284130
 deeplink: /link/i9m7x48n
-originalContentLink: https://gist.github.com/6284130
+originalContentLink: https://gist.github.com/patrickfav/6284130
 originalContentType: gist
 originalContentId: 6284130
 gistLanguage: Java
 gistFileCount: 3
+gistRevisions: 1
+gistForks: 8
 gistComments: 4
-gistCommentsUrl: https://api.github.com/gists/6284130/comments
 ---
 
 ### MultipleOrientationSlidingDrawer.java

@@ -19,7 +19,9 @@ originalContentId: 135200872
 githubCloneUrlHttp: https://github.com/patrickfav/website-dr-sel.git
 githubStars: 0
 githubForks: 0
-githubWatchers: 0
+githubWatchers: 1
+githubContributors: 1
+githubRepoSize: 9199
 githubLanguage: SCSS
 githubHomepage: https://selwicka-wienerroither.com
 githubDefaultBranch: main

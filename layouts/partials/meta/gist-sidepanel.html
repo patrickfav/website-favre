@@ -1,5 +1,5 @@
 <div class="flex flex-row">
-    <span>{{ partial "icon.html" "medium" }}</span>
+    <span>{{ partial "icon.html" "github" }}</span>
     <span class="pl-2"><a href="{{ .Params.originalContentLink }}" class="text-neutral-500 dark:text-neutral-400" rel="noopener">View on Gist</a></span>
 </div>
 
@@ -19,6 +19,20 @@
 </div>
 {{ end }}
 
+{{ if and (.Params.gistRevisions | default false) (gt .Params.gistRevisions 1 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "code-commit-solid" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}/revisions" class="text-neutral-500 dark:text-neutral-400" rel="noopener">{{ .Params.gistRevisions }} revisions</a></span>
+</div>
+{{ end }}
+
+{{ if and (.Params.gistForks | default false) (gt .Params.gistForks 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "code-fork-solid" }}</span>
+    <span class="pl-2">{{ .Params.gistForks }} forks</span>
+</div>
+{{ end }}
+
 {{ if and (.Params.gistFileCount | default false) (gt .Params.gistFileCount 0 ) }}
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "file-regular" }}</span>
@@ -29,7 +43,7 @@
 {{ if and (.Params.gistComments | default false) (gt .Params.gistComments 0 ) }}
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "comments-regular" }}</span>
-    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" class="text-neutral-500 dark:text-neutral-400" rel="noopener">{{ .Params.gistComments }} comments</a></span>
+    <span class="pl-2">{{ .Params.gistComments }} comments</span>
 </div>
 {{ end }}
 

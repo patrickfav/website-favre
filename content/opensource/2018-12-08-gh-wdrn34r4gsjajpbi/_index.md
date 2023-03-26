@@ -20,6 +20,8 @@ githubCloneUrlHttp: https://github.com/patrickfav/bkdf.git
 githubStars: 2
 githubForks: 1
 githubWatchers: 2
+githubContributors: 1
+githubRepoSize: 393
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/bkdf
 githubDefaultBranch: main

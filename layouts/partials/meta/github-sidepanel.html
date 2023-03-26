@@ -26,10 +26,24 @@
 </div>
 {{ end }}
 
+{{ if and (.Params.githubWatchers | default false) (gt .Params.githubWatchers 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "eye-solid" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}/watchers" class="text-neutral-500 dark:text-neutral-400" rel="noopener"><strong>{{ .Params.githubWatchers }}</strong> watchers</a></span>
+</div>
+{{ end }}
+
 {{ if and (.Params.githubForks | default false) (gt .Params.githubForks 0 ) }}
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "code-fork-solid" }}</span>
     <span class="pl-2"><a href="{{ .Params.originalContentLink }}/forks"  class="text-neutral-500 dark:text-neutral-400" rel="noopener"><strong>{{ .Params.githubForks }}</strong> forks</a></span>
+</div>
+{{ end }}
+
+{{ if and (.Params.githubContributors | default false) (gt .Params.githubContributors 1 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "users-solid" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}/contributors"  class="text-neutral-500 dark:text-neutral-400" rel="noopener"><strong>{{ .Params.githubContributors }}</strong> contributors</a></span>
 </div>
 {{ end }}
 

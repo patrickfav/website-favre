@@ -19,7 +19,9 @@ originalContentId: 115863071
 githubCloneUrlHttp: https://github.com/patrickfav/slf4j-timber.git
 githubStars: 20
 githubForks: 2
-githubWatchers: 20
+githubWatchers: 4
+githubContributors: 1
+githubRepoSize: 201
 githubLanguage: Java
 githubHomepage: 
 githubDefaultBranch: master

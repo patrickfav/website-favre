@@ -19,7 +19,9 @@ originalContentId: 175984471
 githubCloneUrlHttp: https://github.com/patrickfav/mvn-common-parent.git
 githubStars: 2
 githubForks: 2
-githubWatchers: 2
+githubWatchers: 1
+githubContributors: 1
+githubRepoSize: 393
 githubLanguage: null
 githubHomepage: null
 githubDefaultBranch: main

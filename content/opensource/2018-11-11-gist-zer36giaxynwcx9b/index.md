@@ -14,15 +14,16 @@ type: gist
 showTableOfContents: false
 showTaxonomies: false
 thumbnail: 'gistbanner*'
-editURL: https://gist.github.com/b323f0d9cbd81d5fa9cc4c971b732c77
+editURL: https://gist.github.com/patrickfav/b323f0d9cbd81d5fa9cc4c971b732c77
 deeplink: /link/zer36gia
-originalContentLink: https://gist.github.com/b323f0d9cbd81d5fa9cc4c971b732c77
+originalContentLink: https://gist.github.com/patrickfav/b323f0d9cbd81d5fa9cc4c971b732c77
 originalContentType: gist
 originalContentId: b323f0d9cbd81d5fa9cc4c971b732c77
 gistLanguage: Java
 gistFileCount: 1
+gistRevisions: 2
+gistForks: 0
 gistComments: 1
-gistCommentsUrl: https://api.github.com/gists/b323f0d9cbd81d5fa9cc4c971b732c77/comments
 ---
 
 ### AesCbcExample.java

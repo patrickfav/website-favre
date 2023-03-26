@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/20563640/using-jackson-
 originalContentType: stackoverflow
 originalContentId: 21167382
 soScore: 13
-soViews: 44214
+soViews: 44238
 soIsAccepted: false
 soQuestionId: 20563640
 soAnswerLicense: CC BY-SA 3.0

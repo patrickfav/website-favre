@@ -19,7 +19,9 @@ originalContentId: 65230148
 githubCloneUrlHttp: https://github.com/patrickfav/bankathon16-inso.git
 githubStars: 2
 githubForks: 1
-githubWatchers: 2
+githubWatchers: 1
+githubContributors: 1
+githubRepoSize: 11132
 githubLanguage: Java
 githubHomepage: https://cashtechthon.inso.tuwien.ac.at/
 githubDefaultBranch: master
