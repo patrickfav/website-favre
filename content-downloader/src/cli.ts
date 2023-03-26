@@ -32,6 +32,8 @@ export async function cli(args: string[]): Promise<void> {
         userName: mediumUserName,
     });
 
+    const statManager = new StatsManager();
+    const previousData = await statManager.getRecentContentStats()
 
     const gistObjects = await gistDownloader.download();
     //const stackOverflowObjects = await stackOverflowDownloader.download();
@@ -46,8 +48,6 @@ export async function cli(args: string[]): Promise<void> {
     ];
 
     console.log('All done, found stats', contentStats.length);
-
-    const statManager = new StatsManager();
 
     await statManager.persist(contentStats, previousData)
 }

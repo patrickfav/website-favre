@@ -6,21 +6,8 @@ import {
     StackOverflowUserStats,
     StackOverflowAnswerStats
 } from "../downloader/models";
-import {initializeApp} from "firebase/app";
-import {
-    getFirestore,
-    Firestore,
-    collection,
-    query,
-    setDoc,
-    getDocs,
-    addDoc,
-    doc,
-    where,
-    orderBy,
-    Timestamp
-} from 'firebase/firestore/lite';
-import * as admin from 'firebase-admin';
+import {cert, initializeApp, ServiceAccount} from "firebase-admin/app";
+import {getFirestore, Firestore, Timestamp} from "firebase-admin/firestore";
 
 const firebaseCollectionName = 'content-stats'
 
@@ -31,17 +18,15 @@ export class StatsManager {
     readonly maxUpdateIntervalDate: Date
 
     constructor() {
-        admin.initializeApp({
-            credential: admin.credential.cert(serviceAccount),
-            // You can also include other configuration values, such as databaseURL or storageBucket, if necessary
+        const serviceAccount = {
+            "type": "service_account",
+            } as ServiceAccount
+
+        const app = initializeApp({
+            credential: cert(serviceAccount)
         });
 
-        /*const firebaseConfig = {
-
-        };*/
-
-        const app = initializeApp(firebaseConfig);
-        this.db = admin.firestore() as Firestore
+        this.db = getFirestore(app)
 
         this.maxDateInPast = new Date();
         this.maxDateInPast.setDate(this.maxDateInPast.getDate() - 90)
@@ -53,14 +38,13 @@ export class StatsManager {
     async getRecentContentStats(): Promise<StatResults> {
         console.log(`Fetching all stats from ${this.maxDateInPast.toISOString()}.`);
 
-        const latestStatsQuery = query(
-            collection(this.db, firebaseCollectionName),
-            orderBy("date", "desc"),
-            where("date", ">", this.maxDateInPast)
-        )
+        const latestStatsQuery = this.db
+            .collection(firebaseCollectionName)
+            .orderBy("date", "desc")
+            .where("date", ">", this.maxDateInPast);
 
         const contentStatList: ContentStat[] = []
-        const querySnapshot = await getDocs(latestStatsQuery);
+        const querySnapshot = await latestStatsQuery.get();
         querySnapshot.forEach((doc) => {
             contentStatList.push(doc.data() as ContentStat)
         });
@@ -123,7 +107,8 @@ export class StatsManager {
             return true
         })) {
             console.log(`Add element to firestore ${stat.type}|${stat.user}|${stat.subjectId}|${stat.date}`)
-            await addDoc(collection(this.db, firebaseCollectionName), stat);
+
+            await this.db.collection(firebaseCollectionName).add(stat)
         }
     }
 
@@ -160,6 +145,3 @@ interface StatValues {
     date: Date
     values: GithubStats | GistStats | MediumStats | StackOverflowAnswerStats | StackOverflowUserStats
 }
-
-
-
