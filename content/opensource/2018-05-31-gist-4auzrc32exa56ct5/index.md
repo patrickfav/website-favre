@@ -21,8 +21,9 @@ originalContentType: gist
 originalContentId: 3f9127e25dd6538f0d682b89cbfaefd9
 gistLanguage: Markdown
 gistFileCount: 2
+gistRevisions: 7
+gistForks: 1
 gistComments: 6
-gistCommentsUrl: https://api.github.com/gists/3f9127e25dd6538f0d682b89cbfaefd9/comments
 ---
 
 ### example_jekyll.md

@@ -19,7 +19,9 @@ originalContentId: 158036786
 githubCloneUrlHttp: https://github.com/patrickfav/singlestep-kdf.git
 githubStars: 8
 githubForks: 1
-githubWatchers: 8
+githubWatchers: 2
+githubContributors: 1
+githubRepoSize: 2196
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/singlestep-kdf
 githubDefaultBranch: main

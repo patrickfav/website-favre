@@ -19,7 +19,9 @@ originalContentId: 74857438
 githubCloneUrlHttp: https://github.com/patrickfav/under-the-hood.git
 githubStars: 218
 githubForks: 21
-githubWatchers: 218
+githubWatchers: 7
+githubContributors: 1
+githubRepoSize: 9902
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/under-the-hood
 githubDefaultBranch: master

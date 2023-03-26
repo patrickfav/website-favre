@@ -19,7 +19,9 @@ originalContentId: 100255165
 githubCloneUrlHttp: https://github.com/patrickfav/dice.git
 githubStars: 10
 githubForks: 6
-githubWatchers: 10
+githubWatchers: 3
+githubContributors: 1
+githubRepoSize: 40841
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/dice
 githubDefaultBranch: main

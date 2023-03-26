@@ -19,7 +19,9 @@ originalContentId: 178486098
 githubCloneUrlHttp: https://github.com/patrickfav/id-mask.git
 githubStars: 45
 githubForks: 2
-githubWatchers: 45
+githubWatchers: 2
+githubContributors: 1
+githubRepoSize: 871
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/id-mask
 githubDefaultBranch: main

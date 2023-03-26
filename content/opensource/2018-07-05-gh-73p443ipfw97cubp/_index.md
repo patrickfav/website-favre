@@ -18,8 +18,10 @@ originalContentType: github
 originalContentId: 139898859
 githubCloneUrlHttp: https://github.com/patrickfav/bcrypt.git
 githubStars: 338
-githubForks: 43
-githubWatchers: 338
+githubForks: 44
+githubWatchers: 6
+githubContributors: 7
+githubRepoSize: 2361
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/bcrypt
 githubDefaultBranch: main

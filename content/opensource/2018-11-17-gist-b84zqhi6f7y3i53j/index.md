@@ -21,8 +21,9 @@ originalContentType: gist
 originalContentId: 13b2f727eaf91e3a72d87ac427485cb1
 gistLanguage: Shell
 gistFileCount: 1
+gistRevisions: 1
+gistForks: 1
 gistComments: 1
-gistCommentsUrl: https://api.github.com/gists/13b2f727eaf91e3a72d87ac427485cb1/comments
 ---
 
 ### encrypt_img_ecb.sh

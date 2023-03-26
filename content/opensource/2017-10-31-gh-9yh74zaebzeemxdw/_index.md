@@ -19,7 +19,9 @@ originalContentId: 108965147
 githubCloneUrlHttp: https://github.com/patrickfav/bytes-java.git
 githubStars: 137
 githubForks: 28
-githubWatchers: 137
+githubWatchers: 11
+githubContributors: 8
+githubRepoSize: 2543
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/bytes-java
 githubDefaultBranch: main

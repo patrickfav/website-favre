@@ -19,7 +19,9 @@ originalContentId: 52564417
 githubCloneUrlHttp: https://github.com/patrickfav/density-converter.git
 githubStars: 237
 githubForks: 32
-githubWatchers: 237
+githubWatchers: 15
+githubContributors: 3
+githubRepoSize: 3036
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/density-converter
 githubDefaultBranch: main

@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/24745147/java-resize-im
 originalContentType: stackoverflow
 originalContentId: 36367652
 soScore: 95
-soViews: 90057
+soViews: 90153
 soIsAccepted: false
 soQuestionId: 24745147
 soAnswerLicense: CC BY-SA 3.0

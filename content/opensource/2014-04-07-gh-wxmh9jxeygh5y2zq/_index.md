@@ -19,7 +19,9 @@ originalContentId: 18530316
 githubCloneUrlHttp: https://github.com/patrickfav/BlurTestAndroid.git
 githubStars: 415
 githubForks: 68
-githubWatchers: 415
+githubWatchers: 22
+githubContributors: 3
+githubRepoSize: 31256
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/blurtestandroid/
 githubDefaultBranch: master

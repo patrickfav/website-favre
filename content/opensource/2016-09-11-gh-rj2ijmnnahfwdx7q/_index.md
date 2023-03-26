@@ -19,7 +19,9 @@ originalContentId: 67927627
 githubCloneUrlHttp: https://github.com/patrickfav/uber-adb-tools.git
 githubStars: 132
 githubForks: 24
-githubWatchers: 132
+githubWatchers: 11
+githubContributors: 1
+githubRepoSize: 1913
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/uber-adb-tools
 githubDefaultBranch: main

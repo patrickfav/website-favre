@@ -19,7 +19,9 @@ originalContentId: 181350695
 githubCloneUrlHttp: https://github.com/patrickfav/checkstyle-config.git
 githubStars: 3
 githubForks: 1
-githubWatchers: 3
+githubWatchers: 2
+githubContributors: 1
+githubRepoSize: 324
 githubLanguage: null
 githubHomepage: https://favr.dev/opensource/checkstyle-config
 githubDefaultBranch: master

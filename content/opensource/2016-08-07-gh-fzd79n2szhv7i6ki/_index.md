@@ -19,7 +19,9 @@ originalContentId: 65147448
 githubCloneUrlHttp: https://github.com/patrickfav/indoor-positioning.git
 githubStars: 41
 githubForks: 24
-githubWatchers: 41
+githubWatchers: 4
+githubContributors: 1
+githubRepoSize: 25158
 githubLanguage: Java
 githubHomepage: https://repositum.tuwien.at/handle/20.500.12708/2080
 githubDefaultBranch: main

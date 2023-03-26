@@ -21,8 +21,9 @@ originalContentType: gist
 originalContentId: 6284130
 gistLanguage: Java
 gistFileCount: 3
+gistRevisions: 1
+gistForks: 8
 gistComments: 4
-gistCommentsUrl: https://api.github.com/gists/6284130/comments
 ---
 
 ### MultipleOrientationSlidingDrawer.java
