@@ -3,7 +3,7 @@ import {StringStream} from 'scramjet'
 import got from 'got'
 import * as cheerio from 'cheerio'
 import * as crypto from 'crypto'
-import {githubDownloaderEnabled, githubProjects} from '../confg'
+import {githubDownloaderEnabled} from '../confg'
 import {generateSlug, getExtension, regexQuote, Slug} from '../util'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
@@ -52,7 +52,7 @@ export class GithubDownloader extends Downloader {
         return contentStats;
     }
 
-    private createGotHttpHeaders(): { headers?: { Authorization: string } } {
+    private createGotHttpHeaders(): gotHttpAuthHeader {
         const githubToken = process.env.GITHUB_TOKEN
 
         if (githubToken && githubToken.length > 0) {
@@ -99,7 +99,7 @@ export class GithubDownloader extends Downloader {
         }
     }
 
-    private async downloadAdditionalMetaData(projectName: string, githubUser: string, gotHeaders: { headers?: any }): Promise<AdditionalMetaData> {
+    private async downloadAdditionalMetaData(projectName: string, githubUser: string, gotHeaders: gotHttpAuthHeader): Promise<AdditionalMetaData> {
         const releaseUrl = `https://api.github.com/repos/${githubUser}/${projectName}/releases`
         console.log('\t\tDownloading releases info ' + releaseUrl)
         const releases = await got.get(releaseUrl, gotHeaders)
@@ -109,7 +109,7 @@ export class GithubDownloader extends Downloader {
 
         if (releases && releases.length > 0) {
             releaseMeta = releases
-                .filter(element => element.draft !== true && element.prerelease !== true)
+                .filter(element => !element.draft && !element.prerelease)
                 .sort((a, b) => b.published_at.localeCompare(a.published_at))
                 .reverse()
                 .pop()
@@ -327,3 +327,5 @@ interface GithubMetaData {
     watchers_count: number
     size: number
 }
+
+type gotHttpAuthHeader = { headers?: { Authorization: string } }

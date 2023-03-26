@@ -68,7 +68,7 @@ export class GistDownloader extends Downloader {
         }
     }
 
-    private createGotHttpHeaders(): { headers?: { Authorization: string } } {
+    private createGotHttpHeaders(): gotHttpAuthHeader {
         const githubToken = process.env.GITHUB_TOKEN
 
         if (githubToken && githubToken.length > 0) {
@@ -82,7 +82,7 @@ export class GistDownloader extends Downloader {
         return {}
     }
 
-    private async downloadAdditionalMetaData(gistId: string, gotHeaders: { headers?: any }): Promise<GistDetails> {
+    private async downloadAdditionalMetaData(gistId: string, gotHeaders: gotHttpAuthHeader): Promise<GistDetails> {
         const forksUrl = `https://api.github.com/gists/${gistId}`
         console.log('\t\tDownloading gist details ' + forksUrl)
         return await got.get(forksUrl, gotHeaders)
@@ -193,3 +193,5 @@ interface GistMeta {
     comments: number
     comments_url: string
 }
+
+type gotHttpAuthHeader = { headers?: { Authorization: string } }

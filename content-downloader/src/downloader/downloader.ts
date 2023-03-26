@@ -29,13 +29,6 @@ export abstract class Downloader {
     }
     protected abstract downloadLogic(): Promise<ContentStat[]>
 
-    protected checkEnabled(): boolean {
-        if (!this.isEnabled) {
-            console.log(`${this.name} Downloader disabled`)
-        }
-        return this.isEnabled
-    }
-
     protected getTargetOutDir(): string {
         return this.rootOutDir + this.contentOutDir + '/'
     }
