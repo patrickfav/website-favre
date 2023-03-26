@@ -6,27 +6,28 @@ import {
     StackOverflowUserStats,
     StackOverflowAnswerStats
 } from "../downloader/models";
-import {cert, initializeApp, ServiceAccount} from "firebase-admin/app";
-import {getFirestore, Firestore, Timestamp} from "firebase-admin/firestore";
+import * as admin from "firebase-admin";
 
 const firebaseCollectionName = 'content-stats'
 
 export class StatsManager {
-    readonly db: Firestore
+    readonly db: admin.firestore.Firestore | null
 
     readonly maxDateInPast: Date
     readonly maxUpdateIntervalDate: Date
 
     constructor() {
-        const serviceAccount = {
-            "type": "service_account",
-            } as ServiceAccount
+        const serviceAccount = this.getServiceAccount()
 
-        const app = initializeApp({
-            credential: cert(serviceAccount)
-        });
+        if(serviceAccount) {
+            const app = admin.initializeApp({
+                credential: admin.credential.cert(serviceAccount)
+            });
 
-        this.db = getFirestore(app)
+            this.db = app.firestore()
+        } else {
+            this.db = null
+        }
 
         this.maxDateInPast = new Date();
         this.maxDateInPast.setDate(this.maxDateInPast.getDate() - 90)
@@ -35,7 +36,15 @@ export class StatsManager {
         this.maxUpdateIntervalDate.setDate(this.maxUpdateIntervalDate.getDate() - 14)
     }
 
+    isEnabled(): boolean {
+        return this.db != null
+    }
+
     async getRecentContentStats(): Promise<StatResults> {
+        if(!this.db) {
+           throw new Error("cannot use this instance, since it wasn't initialized properly.")
+        }
+
         console.log(`Fetching all stats from ${this.maxDateInPast.toISOString()}.`);
 
         const latestStatsQuery = this.db
@@ -69,7 +78,10 @@ export class StatsManager {
             }
 
             // Add the current StatValues object to the corresponding values array
-            result[type][subjectId].data.push({date: ((date as unknown) as Timestamp).toDate(), values: values});
+            result[type][subjectId].data.push({
+                date: ((date as unknown) as admin.firestore.Timestamp).toDate(),
+                values: values
+            });
 
             // Sort the values array in descending order by the date property
             result[type][subjectId].data.sort((a, b) => b.date.getTime() - a.date.getTime());
@@ -78,7 +90,28 @@ export class StatsManager {
         return result;
     }
 
+    private getServiceAccount(): admin.ServiceAccount | null {
+        const jsonEnv = process.env.FIREBASE_SERVICE_ACCOUNT_JSON
+
+        if (jsonEnv && jsonEnv.length > 0) {
+            try {
+                return JSON.parse(jsonEnv) as admin.ServiceAccount
+            } catch (e) {
+                console.error("could not parse firebase service account json", e)
+                throw e
+            }
+        }
+
+        console.error("The environmental variable 'FIREBASE_SERVICE_ACCOUNT_JSON' which should contain a json of the service account, is not set.")
+        return null
+    }
+
     async persist(contentStats: ContentStat[], previousResults: StatResults) {
+        if(!this.db) {
+            throw new Error("cannot use this instance, since it wasn't initialized properly.")
+        }
+
+        console.log(`Persisting new stats (${contentStats.length}) while comparing them with previous results.`)
 
         for (const stat of contentStats.filter(contentStat => {
             if (

@@ -13,7 +13,6 @@ export async function cli(args: string[]): Promise<void> {
     const relOutDirGithub = 'opensource'
     const relOutDirArticles = 'articles'
 
-
     const gistDownloader = new GistDownloader(rootDir, relOutDirGithub, {
         githubUser: githubProjectsUser,
         gistIds: gistIds,
@@ -32,24 +31,20 @@ export async function cli(args: string[]): Promise<void> {
         userName: mediumUserName,
     });
 
-    const statManager = new StatsManager();
-    const previousData = await statManager.getRecentContentStats()
-
-    const gistObjects = await gistDownloader.download();
-    //const stackOverflowObjects = await stackOverflowDownloader.download();
-    //const githubObjects = await githubDownloader.download();
-    //const mediumObjects = await mediumDownloader.download();
-
     const contentStats = [
-        ...gistObjects,
-        //...githubObjects,
-        //...stackOverflowObjects,
-        //...mediumObjects,
+        ...await gistDownloader.download(),
+        ...await stackOverflowDownloader.download(),
+        ...await githubDownloader.download(),
+        ...await mediumDownloader.download(),
     ];
 
-    console.log('All done, found stats', contentStats.length);
+    console.log(`All done, found ${contentStats.length} stats while importing content.`);
 
-    await statManager.persist(contentStats, previousData)
+    const statManager = new StatsManager();
+    if(statManager.isEnabled()) {
+        const previousData = await statManager.getRecentContentStats()
+        await statManager.persist(contentStats, previousData)
+    }
 }
 
 function parseArguments(args: string[]): string {
