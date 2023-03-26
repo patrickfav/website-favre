@@ -1,5 +1,7 @@
+export type ContentStatType = "gh" | "gist" | "medium" | "so" | "so-user";
+
 export interface ContentStat {
-    type: "gh" | "gist" | "medium" | "so" | "so-user"
+    type: ContentStatType
     user: string
     subjectId: string
     date: Date
@@ -10,7 +12,7 @@ interface GeneralStats {
     contentLength: number
 }
 
-interface GithubStats extends GeneralStats {
+export interface GithubStats extends GeneralStats {
     watchers: number
     contributors: number
     stars: number
@@ -18,18 +20,18 @@ interface GithubStats extends GeneralStats {
     repoSize: number
 }
 
-interface GistStats extends GeneralStats {
+export interface GistStats extends GeneralStats {
     comments: number
     forks: number
     revisions: number
 }
 
-interface StackOverflowAnswerStats extends GeneralStats {
+export interface StackOverflowAnswerStats extends GeneralStats {
     score: number
     views: number
 }
 
-interface StackOverflowUserStats {
+export interface StackOverflowUserStats {
     score: number
     answers: number
     acceptRate: number
@@ -38,7 +40,7 @@ interface StackOverflowUserStats {
     bronze: number
 }
 
-interface MediumStats extends GeneralStats {
+export interface MediumStats extends GeneralStats {
     claps: number
     voters: number
 }

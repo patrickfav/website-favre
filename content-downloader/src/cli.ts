@@ -3,6 +3,7 @@ import {GithubDownloader} from './downloader/github'
 import {MediumDownloader} from './downloader/medium'
 import {StackOverflowDownloader} from './downloader/stackoverflow'
 import {GistDownloader} from './downloader/gist'
+import {StatsManager} from "./store/statsManager";
 
 const defaultRootDir = '../content/'
 
@@ -31,25 +32,24 @@ export async function cli(args: string[]): Promise<void> {
         userName: mediumUserName,
     });
 
-    try {
-        const gistObjects = await gistDownloader.download();
-        const githubObjects = await githubDownloader.download();
-        const stackOverflowObjects = await stackOverflowDownloader.download();
-        const mediumObjects = await mediumDownloader.download();
 
-        const contentStats = [
-            ...gistObjects,
-            ...githubObjects,
-            ...stackOverflowObjects,
-            ...mediumObjects,
-        ];
+    const gistObjects = await gistDownloader.download();
+    //const stackOverflowObjects = await stackOverflowDownloader.download();
+    //const githubObjects = await githubDownloader.download();
+    //const mediumObjects = await mediumDownloader.download();
 
-        console.log('All objects:', contentStats);
-        console.log('All done.');
-    } catch (error) {
-        console.error('An error occurred:', error);
-        throw error;
-    }
+    const contentStats = [
+        ...gistObjects,
+        //...githubObjects,
+        //...stackOverflowObjects,
+        //...mediumObjects,
+    ];
+
+    console.log('All done, found stats', contentStats.length);
+
+    const statManager = new StatsManager();
+
+    await statManager.persist(contentStats, previousData)
 }
 
 function parseArguments(args: string[]): string {

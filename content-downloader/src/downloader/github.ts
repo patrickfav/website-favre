@@ -104,8 +104,6 @@ export class GithubDownloader extends Downloader {
         console.log('\t\tDownloading releases info ' + releaseUrl)
         const releases = await got.get(releaseUrl, gotHeaders)
             .then(result => JSON.parse(result.body) as GithubRelease[])
-        // throttling for api
-        await new Promise(resolve => setTimeout(resolve, 500))
 
         let releaseMeta: GithubRelease | undefined = undefined
 
@@ -121,15 +119,11 @@ export class GithubDownloader extends Downloader {
         console.log('\t\tDownloading subscribers info ' + subscribersUrl)
         const subscribers = await got.get(subscribersUrl, gotHeaders)
             .then(result => JSON.parse(result.body) as GithubUser[])
-        // throttling for api
-        await new Promise(resolve => setTimeout(resolve, 500))
 
         const contributorsUrl = `https://api.github.com/repos/${githubUser}/${projectName}/contributors`
         console.log('\t\tDownloading contributors info ' + contributorsUrl)
         const contributors = await got.get(contributorsUrl, gotHeaders)
             .then(result => JSON.parse(result.body) as GithubUser[])
-        // throttling for api
-        await new Promise(resolve => setTimeout(resolve, 500))
 
         return {
             subscribers: subscribers,

@@ -1,42 +1,165 @@
-import {ContentStat} from "../downloader/models";
+import {
+    ContentStat,
+    GithubStats,
+    GistStats,
+    MediumStats,
+    StackOverflowUserStats,
+    StackOverflowAnswerStats
+} from "../downloader/models";
 import {initializeApp} from "firebase/app";
-import {getDatabase, query, ref, set} from "firebase/database";
+import {
+    getFirestore,
+    Firestore,
+    collection,
+    query,
+    setDoc,
+    getDocs,
+    addDoc,
+    doc,
+    where,
+    orderBy,
+    Timestamp
+} from 'firebase/firestore/lite';
+import * as admin from 'firebase-admin';
 
-class StatsManager {
+const firebaseCollectionName = 'content-stats'
 
-    //private db: FirebaseStorage
+export class StatsManager {
+    readonly db: Firestore
 
+    readonly maxDateInPast: Date
+    readonly maxUpdateIntervalDate: Date
 
     constructor() {
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-        /*const firebaseConfig = {
-            // ...
-            // The value of `databaseURL` depends on the location of the database
-            databaseURL: "https://DATABASE_NAME.firebaseio.com",
-        };
-
-        const app = initializeApp(firebaseConfig);
-        this.db = getDatabase(app);
-
-        ref(this.db, 'stats')
-
-        set(ref(this.db, 'users/' + userId), {
-            username: name,
-            email: email,
-            profile_picture : imageUrl
+        admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount),
+            // You can also include other configuration values, such as databaseURL or storageBucket, if necessary
         });
 
-        query()*/
+        /*const firebaseConfig = {
+
+        };*/
+
+        const app = initializeApp(firebaseConfig);
+        this.db = admin.firestore() as Firestore
+
+        this.maxDateInPast = new Date();
+        this.maxDateInPast.setDate(this.maxDateInPast.getDate() - 90)
+
+        this.maxUpdateIntervalDate = new Date();
+        this.maxUpdateIntervalDate.setDate(this.maxUpdateIntervalDate.getDate() - 14)
     }
 
-    async saveDocument(contentStat: ContentStat): Promise<void> {
-        /*try {
-            await this.db.collection('contentStats').doc(contentStat.subjectId).set(contentStat);
-            console.log('Document successfully saved!');
-        } catch (error) {
-            console.error('Error saving document: ', error);
-        }*/
+    async getRecentContentStats(): Promise<StatResults> {
+        console.log(`Fetching all stats from ${this.maxDateInPast.toISOString()}.`);
+
+        const latestStatsQuery = query(
+            collection(this.db, firebaseCollectionName),
+            orderBy("date", "desc"),
+            where("date", ">", this.maxDateInPast)
+        )
+
+        const contentStatList: ContentStat[] = []
+        const querySnapshot = await getDocs(latestStatsQuery);
+        querySnapshot.forEach((doc) => {
+            contentStatList.push(doc.data() as ContentStat)
+        });
+
+        console.log(`Found ${contentStatList.length} elements in firestore.`);
+
+        const result: StatResults = {};
+
+        contentStatList.forEach(contentStat => {
+            const {type, subjectId, date, values} = contentStat;
+
+            // If type is not present in result, create a new object
+            if (!result[type]) {
+                result[type] = {};
+            }
+
+            // If subjectId is not present in result[type], create a new object with an empty values array
+            if (!result[type][subjectId]) {
+                result[type][subjectId] = {
+                    data: [],
+                };
+            }
+
+            // Add the current StatValues object to the corresponding values array
+            result[type][subjectId].data.push({date: ((date as unknown) as Timestamp).toDate(), values: values});
+
+            // Sort the values array in descending order by the date property
+            result[type][subjectId].data.sort((a, b) => b.date.getTime() - a.date.getTime());
+        });
+
+        return result;
     }
 
+    async persist(contentStats: ContentStat[], previousResults: StatResults) {
+
+        for (const stat of contentStats.filter(contentStat => {
+            if (
+                previousResults[contentStat.type] &&
+                previousResults[contentStat.type][contentStat.subjectId] &&
+                previousResults[contentStat.type][contentStat.subjectId].data.length > 0
+            ) {
+                const mostRecentValue = previousResults[contentStat.type][contentStat.subjectId].data[0];
+
+                if (this.areDatesOnSameDay(mostRecentValue.date, new Date())) {
+                    console.log(`is on same date, filter out ${contentStat.type}|${contentStat.user}|${contentStat.subjectId}`)
+                    return false
+                }
+
+                if (this.areObjectsEqual(mostRecentValue.values, contentStat.values)) {
+                    // do not filter if most recent element is too old
+                    if (mostRecentValue.date.getTime() < this.maxDateInPast.getTime()) {
+                        return true
+                    }
+
+                    console.log(`equal data, filter out ${contentStat.type}|${contentStat.user}|${contentStat.subjectId}`)
+                    return false
+                }
+            }
+
+            return true
+        })) {
+            console.log(`Add element to firestore ${stat.type}|${stat.user}|${stat.subjectId}|${stat.date}`)
+            await addDoc(collection(this.db, firebaseCollectionName), stat);
+        }
+    }
+
+    private areDatesOnSameDay(date1: Date, date2: Date): boolean {
+        return (
+            date1.getFullYear() === date2.getFullYear() &&
+            date1.getMonth() === date2.getMonth() &&
+            date1.getDate() === date2.getDate()
+        );
+    }
+
+    private areObjectsEqual(a: object, b: object): boolean {
+        const keysA = Object.keys(a);
+        const keysB = Object.keys(b);
+
+        if (keysA.length !== keysB.length) {
+            return false;
+        }
+
+        // @ts-ignore
+        return keysA.every(key => a[key] === b[key]);
+    }
 }
+
+interface StatResults {
+    [type: string]: {
+        [subjectId: string]: {
+            data: StatValues[]
+        }
+    }
+}
+
+interface StatValues {
+    date: Date
+    values: GithubStats | GistStats | MediumStats | StackOverflowAnswerStats | StackOverflowUserStats
+}
+
+
+
