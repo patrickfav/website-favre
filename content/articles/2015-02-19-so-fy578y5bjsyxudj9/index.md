@@ -44,7 +44,7 @@ dependencies {
 
 **Update**: Since Support Library v4 v24.2.0 it was split up into the following modules:
 
->  `support-compat` ,  `support-core-utils` ,  `support-core-ui` ,  `support-media-compat`  and  `support-fragment` 
+> `support-compat`, `support-core-utils`, `support-core-ui`, `support-media-compat` and `support-fragment`
 
 ```
 dependencies {
@@ -53,7 +53,8 @@ dependencies {
 
 ```
 
-Do note however, if you use  `support-fragment` , it will have dependencies to all the other modules (ie. if you use  `android.support.v4.app.Fragment`  there is no benefit)
+Do note however, if you use `support-fragment`, it will have dependencies to all the other modules (ie. if you
+use `android.support.v4.app.Fragment` there is no benefit)
 
 [See here the official release notes for support-v4 lib](https://developer.android.com/topic/libraries/support-library/revisions.html)
 
@@ -83,7 +84,8 @@ dependencies {
 
 ```
 
-The second step is to either prepare your Application class or if you don't extend Application use the  `MultiDexApplication`  in your Android Manifest:
+The second step is to either prepare your Application class or if you don't extend Application use
+the `MultiDexApplication` in your Android Manifest:
 
 Either add this to your Application.java
 
@@ -116,7 +118,7 @@ Either add this to your Application.java
 Prevent OutOfMemory with MultiDex
 ---------------------------------
 
-As further tip, if you run into  `OutOfMemory`  exceptions during the build phase you could enlarge the heap with
+As further tip, if you run into `OutOfMemory` exceptions during the build phase you could enlarge the heap with
 
 ```
 android {
@@ -140,7 +142,7 @@ Analyze the source of the Problem
 To analyze the source of the methods the gradle plugin [https://github.com/KeepSafe/dexcount-gradle-plugin](https://github.com/KeepSafe/dexcount-gradle-plugin) can help in combination with the dependency tree provided by gradle with e.g.
 
 ```
-.\\gradlew app:dependencies
+.\gradlew app:dependencies
 
 ```
 

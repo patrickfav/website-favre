@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/15554296/initial-bytes-
 originalContentType: stackoverflow
 originalContentId: 53051612
 soScore: 83
-soViews: 484550
+soViews: 484552
 soIsAccepted: false
 soQuestionId: 15554296
 soAnswerLicense: CC BY-SA 4.0
@@ -50,8 +50,10 @@ SecretKey secretKey = SecretKeySpec(key, "AES");
 
 **Important:**
 
-*   always use a strong [pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) like [ `SecureRandom` ](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
-*   use 16 byte / 128 bit long key (or more - [but more is seldom needed](https://security.stackexchange.com/a/6149/60108))
+* always use a strong [pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+  like [`SecureRandom`](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
+* use 16 byte / 128 bit long key (or
+  more - [but more is seldom needed](https://security.stackexchange.com/a/6149/60108))
 *   if you want a key derived from a user password, look into a [password hash function (or KDF)](https://en.wikipedia.org/wiki/Cryptographic_hash_function#Password_verification) with [stretching property](https://en.wikipedia.org/wiki/Key_stretching) like [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) or [bcrypt](https://en.wikipedia.org/wiki/Bcrypt)
 *   if you want a key derived from other sources, use a proper [key derivation function (KDF)](https://en.wikipedia.org/wiki/Key_derivation_function) like [HKDF](https://en.wikipedia.org/wiki/HKDF) ([Java implementation here](https://github.com/patrickfav/hkdf)). Do _not_ use simple [cryptographic hashes](https://simple.wikipedia.org/wiki/Cryptographic_hash_function) for that (like [SHA-256](https://en.wikipedia.org/wiki/SHA-2)).
 
@@ -69,9 +71,11 @@ secureRandom.nextBytes(iv);
 
 *   never [reuse the same IV](https://crypto.stackexchange.com/questions/2991/why-must-IV-key-pairs-not-be-reused-in-ctr-mode) with the same key (**very important** in [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)/[CTR](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_(CTR)) mode)
 *   the IV must be unique (ie. use random IV or a counter)
-*   the IV is not required to be secret
-*   always use a strong [pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) like [ `SecureRandom` ](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
-*   12 byte IV is the correct [choice for AES-GCM mode](https://crypto.stackexchange.com/questions/41601/aes-gcm-recommended-IV-size-why-12-bytes)
+* the IV is not required to be secret
+* always use a strong [pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+  like [`SecureRandom`](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
+* 12 byte IV is the
+  correct [choice for AES-GCM mode](https://crypto.stackexchange.com/questions/41601/aes-gcm-recommended-IV-size-why-12-bytes)
 
 ### 3\. Encrypt with IV and Key
 
@@ -85,11 +89,15 @@ byte[] cipherText = cipher.doFinal(plainText);
 
 **Important:**
 
-*   use 16 byte / 128 bit [authentication tag](https://en.wikipedia.org/wiki/Authenticated_encryption) (used to verify integrity/authenticity)
-*   the authentication tag will be automatically appended to the cipher text (in the JCA implementation)
-*   since GCM behaves like a stream cipher, no padding is required
-*   use [ `CipherInputStream` ](https://docs.oracle.com/javase/7/docs/api/javax/crypto/CipherInputStream.html) when encrypting large chunks of data
-*   want additional (non-secret) data checked if it was changed? You may want to use [associated data](https://crypto.stackexchange.com/questions/6711/how-to-use-gcm-mode-and-associated-data-properly) with  `cipher.updateAAD(associatedData);`  [More here.](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_encryption_with_associated_data_(AEAD))
+* use 16 byte / 128 bit [authentication tag](https://en.wikipedia.org/wiki/Authenticated_encryption) (used to verify
+  integrity/authenticity)
+* the authentication tag will be automatically appended to the cipher text (in the JCA implementation)
+* since GCM behaves like a stream cipher, no padding is required
+* use [`CipherInputStream`](https://docs.oracle.com/javase/7/docs/api/javax/crypto/CipherInputStream.html) when
+  encrypting large chunks of data
+* want additional (non-secret) data checked if it was changed? You may want to
+  use [associated data](https://crypto.stackexchange.com/questions/6711/how-to-use-gcm-mode-and-associated-data-properly)
+  with `cipher.updateAAD(associatedData);` [More here.](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_encryption_with_associated_data_(AEAD))
 
 ### 3\. Serialize to Single Message
 
@@ -139,7 +147,9 @@ byte[] plainText = cipher.doFinal(cipherMessage, 12, cipherMessage.length - 12);
 
 **Important:**
 
-*   don't forget to add [associated data](https://crypto.stackexchange.com/questions/6711/how-to-use-gcm-mode-and-associated-data-properly) with  `cipher.updateAAD(associatedData);`  if you added it during encryption.
+* don't forget to
+  add [associated data](https://crypto.stackexchange.com/questions/6711/how-to-use-gcm-mode-and-associated-data-properly)
+  with `cipher.updateAAD(associatedData);` if you added it during encryption.
 
 [A working code snippet can be found in this gist.](https://gist.github.com/patrickfav/7e28d4eb4bf500f7ee8012c4a0cf7bbf)
 

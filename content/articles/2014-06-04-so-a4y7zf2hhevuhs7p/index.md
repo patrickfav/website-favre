@@ -19,18 +19,23 @@ originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-
 originalContentType: stackoverflow
 originalContentId: 24035591
 soScore: 968
-soViews: 400369
+soViews: 400385
 soIsAccepted: false
 soQuestionId: 3591784
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/24035591/774398
 ---
-The basic problem is, that you have to wait for the drawing phase for the actual measurements (especially with dynamic values like  `wrap_content`  or  `match_parent` ), but usually this phase hasn't been finished up to  `onResume()` . So you need a workaround for waiting for this phase. There a are different possible solutions to this:
+The basic problem is, that you have to wait for the drawing phase for the actual measurements (especially with dynamic
+values like `wrap_content` or `match_parent`), but usually this phase hasn't been finished up to `onResume()`. So you
+need a workaround for waiting for this phase. There a are different possible solutions to this:
 
 1\. Listen to Draw/Layout Events: ViewTreeObserver
 --------------------------------------------------
 
-A ViewTreeObserver gets fired for different drawing events. Usually the [ `OnGlobalLayoutListener` ](http://developer.android.com/reference/android/view/ViewTreeObserver.OnGlobalLayoutListener.html) is what you want for getting the measurement, so the code in the listener will be called after the layout phase, so the measurements are ready:
+A ViewTreeObserver gets fired for different drawing events. Usually
+the [`OnGlobalLayoutListener`](http://developer.android.com/reference/android/view/ViewTreeObserver.OnGlobalLayoutListener.html)
+is what you want for getting the measurement, so the code in the listener will be called after the layout phase, so the
+measurements are ready:
 
 ```
 view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -43,9 +48,10 @@ view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlob
 
 ```
 
-Note: The listener will be immediately removed because otherwise it will fire on every layout event. If you have to support apps _SDK Lvl < 16_ use this to unregister the listener:
+Note: The listener will be immediately removed because otherwise it will fire on every layout event. If you have to
+support apps _SDK Lvl < 16_ use this to unregister the listener:
 
- `public void removeGlobalOnLayoutListener (ViewTreeObserver.OnGlobalLayoutListener victim)` 
+`public void removeGlobalOnLayoutListener (ViewTreeObserver.OnGlobalLayoutListener victim)`
 
   
 
@@ -70,7 +76,7 @@ view.post(new Runnable() {
 
 ```
 
-The advantage over  `ViewTreeObserver` :
+The advantage over `ViewTreeObserver`:
 
 *   your code is only executed once and you don't have to disable the Observer after execution which can be a hassle
 *   less verbose syntax
@@ -123,8 +129,8 @@ Additional: Getting staticly defined measurements
 
 If it suffices to just get the statically defined height/width, you can just do this with:
 
-*   [ `View.getMeasuredWidth()` ](http://developer.android.com/reference/android/view/View.html#getMeasuredWidth())
-*   [ `View.getMeasuredHeigth()` ](http://developer.android.com/reference/android/view/View.html#getMeasuredHeight())
+* [`View.getMeasuredWidth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredWidth())
+* [`View.getMeasuredHeigth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredHeight())
 
 But mind you, that this might be different to the actual width/height after drawing. The javadoc describes the difference in more detail:
 

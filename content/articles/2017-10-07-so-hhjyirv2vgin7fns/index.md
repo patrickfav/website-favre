@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/45985661/is-hkdf-implem
 originalContentType: stackoverflow
 originalContentId: 46619583
 soScore: 14
-soViews: 5984
+soViews: 5987
 soIsAccepted: false
 soQuestionId: 45985661
 soAnswerLicense: CC BY-SA 4.0
@@ -36,7 +36,12 @@ There are some implementations embedded in other projects (like you already said
 *   [WhisperSystems/libsignal-protocol-java](https://github.com/WhisperSystems/libsignal-protocol-java/blob/master/java/src/main/java/org/whispersystems/libsignal/kdf/HKDF.java)
 *   [square/keywhiz](https://github.com/square/keywhiz/blob/master/hkdf/src/main/java/keywhiz/hkdf/Hkdf.java)
 
-Also there is, of course, [Bouncy Castle](https://github.com/bcgit/bc-java/blob/master/core/src/main/java/org/bouncycastle/crypto/generators/HKDFBytesGenerator.java) which use their own Hmac/Mac implementations and APIs. BC is however a massive dependency, and may be unpractical for e.g. embedded or mobile use case. For this I implemented a **standalone**, lightweight java lib (passing all of the RFC 5869 test vectors), which works with any [ `javax.crypto.Mac` ](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Mac.html) instance:
+Also there is, of
+course, [Bouncy Castle](https://github.com/bcgit/bc-java/blob/master/core/src/main/java/org/bouncycastle/crypto/generators/HKDFBytesGenerator.java)
+which use their own Hmac/Mac implementations and APIs. BC is however a massive dependency, and may be unpractical for
+e.g. embedded or mobile use case. For this I implemented a **standalone**, lightweight java lib (passing all of the RFC
+5869 test vectors), which works with
+any [`javax.crypto.Mac`](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Mac.html) instance:
 
 *   [https://github.com/patrickfav/hkdf](https://github.com/patrickfav/hkdf)
 

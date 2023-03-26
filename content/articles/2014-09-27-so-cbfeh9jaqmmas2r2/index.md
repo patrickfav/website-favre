@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/26076292/security-with-
 originalContentType: stackoverflow
 originalContentId: 26077852
 soScore: 33
-soViews: 10149
+soViews: 10150
 soIsAccepted: true
 soQuestionId: 26076292
 soAnswerLicense: CC BY-SA 4.0
@@ -85,7 +85,14 @@ Discussion 2: The Attacker is the Device Owner
 Protecting dynamic App configuration - or how to protect yourself from the device owner
 ---------------------------------------------------------------------------------------
 
-There might be an additional use case where manually encrypting data makes a lot of sense: If you want to make it harder to read and alter your app's internal configuration. A simple example would be: you have a boolean flag, when a user e.g. "likes" your FB page, will disable ads. If you just store a  `true`  or  `false`  it is trivial for the device owner to change that. For this scenario a good "obfuscation" might be enough for most attackers. Be aware that your encryption scheme must be [authenticated](https://en.wikipedia.org/wiki/Authenticated_encryption) meaning it should not only encrypt but leave a tag to check if the data has been modified. It would also be best to make it non-deterministic and device depended because otherwise an attacker could just copy the value from another device. For sample [implementation of this approach see here](https://github.com/patrickfav/armadillo).
+There might be an additional use case where manually encrypting data makes a lot of sense: If you want to make it harder
+to read and alter your app's internal configuration. A simple example would be: you have a boolean flag, when a user
+e.g. "likes" your FB page, will disable ads. If you just store a `true` or `false` it is trivial for the device owner to
+change that. For this scenario a good "obfuscation" might be enough for most attackers. Be aware that your encryption
+scheme must be [authenticated](https://en.wikipedia.org/wiki/Authenticated_encryption) meaning it should not only
+encrypt but leave a tag to check if the data has been modified. It would also be best to make it non-deterministic and
+device depended because otherwise an attacker could just copy the value from another device. For
+sample [implementation of this approach see here](https://github.com/patrickfav/armadillo).
 
 Ways of improving protection against device owner
 -------------------------------------------------

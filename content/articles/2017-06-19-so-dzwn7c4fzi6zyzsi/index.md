@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/44390590/android-studio
 originalContentType: stackoverflow
 originalContentId: 44640156
 soScore: 33
-soViews: 27714
+soViews: 27715
 soIsAccepted: false
 soQuestionId: 44390590
 soAnswerLicense: CC BY-SA 3.0
@@ -50,7 +50,7 @@ Example
 
 With your example this would look like this:
 
-In app  `build.gradle` :
+In app `build.gradle`:
 
 ```
 apply plugin: 'com.android.application'
@@ -69,7 +69,7 @@ android {
 
 ```
 
-In module/lib 'MyLib'  `build.gradle` :
+In module/lib 'MyLib' `build.gradle`:
 
 ```
 apply plugin: 'com.android.library'
@@ -107,7 +107,7 @@ android {
 
 ```
 
-You could define the following in your app  `build.gradle` :
+You could define the following in your app `build.gradle`:
 
 ```
 apply plugin: 'com.android.application'
