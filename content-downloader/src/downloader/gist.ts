@@ -71,7 +71,8 @@ export class GistDownloader extends Downloader {
     }
 
     private hasToken() {
-        return process.env.GITHUB_TOKEN && process.env.GITHUB_TOKEN.length > 0;
+        //return process.env.GITHUB_TOKEN && process.env.GITHUB_TOKEN.length > 0 --> Github Actions token does not work with Gist (403)
+        return false
     }
 
     private createGotHttpHeaders(): GotHttpAuthHeader {
