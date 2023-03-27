@@ -60,6 +60,7 @@ export class GithubDownloader extends Downloader {
             return {
                 headers: {
                     Authorization: `Bearer ${githubToken}`,
+                    'User-Agent': "favr.dev-content-downloader/1.0.0"
                 },
             }
         }
@@ -87,9 +88,7 @@ export class GithubDownloader extends Downloader {
         // parse social preview from html content
         const socialPreviewImageUrl = await got.get('https://github.com/' + githubUser + '/' + projectName)
             .then(result => result.body)
-            .then(html => {
-                return cheerio.load(html)('meta[property="og:image"]').attr('content')
-            })
+            .then(html => cheerio.load(html)('meta[property="og:image"]').attr('content'))
 
         const imageFileName = 'feature_' + projectName + '.png'
 
@@ -328,4 +327,4 @@ interface GithubMetaData {
     size: number
 }
 
-type gotHttpAuthHeader = { headers?: { Authorization: string } }
+type gotHttpAuthHeader = { headers?: { Authorization: string, 'User-Agent': string } }

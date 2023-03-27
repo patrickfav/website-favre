@@ -76,6 +76,7 @@ export class GistDownloader extends Downloader {
             return {
                 headers: {
                     Authorization: `Bearer ${githubToken}`,
+                    'User-Agent': "favr.dev-content-downloader/1.0.0"
                 },
             }
         }
@@ -194,4 +195,4 @@ interface GistMeta {
     comments_url: string
 }
 
-type gotHttpAuthHeader = { headers?: { Authorization: string } }
+type gotHttpAuthHeader = { headers?: { Authorization: string, 'User-Agent'?: string } }
