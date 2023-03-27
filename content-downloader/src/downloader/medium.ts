@@ -121,9 +121,9 @@ export class MediumDownloader extends Downloader {
     }
 
     private async getArticleInfo(post: PostInfo): Promise<ArticleInfo> {
-        const mediumArticleDom = await got.get(post.url)
+        const mediumArticleDom = await got(post.url)
             .then(response => response.body)
-            .then(body => cheerio.load(body, {xmlMode: true}) as unknown)
+            .then(body => cheerio.load(body, {xmlMode: true}))
             .catch(err => {
                 throw new Error(err)
             })
