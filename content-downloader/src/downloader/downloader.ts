@@ -24,8 +24,17 @@ export abstract class Downloader {
         console.log(`Start Processing ${this.name}`)
 
         this.downloadDate = new Date();
+        try {
+            return this.downloadLogic();
+        } catch (err: any) {
+            console.log(`An error has occurred while downloading ${this.name}.`);
 
-        return this.downloadLogic();
+            if (err.response) {
+                console.log(`Error response body: ${err.response.body}.`);
+            }
+
+            throw err
+        }
     }
     protected abstract downloadLogic(): Promise<ContentStat[]>
 

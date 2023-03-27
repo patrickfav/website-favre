@@ -24,10 +24,6 @@ export class GistDownloader extends Downloader {
         const allGistMetaData: GistMeta[] = await got
             .get(`https://api.github.com/users/${this.config.githubUser}/gists?per_page=100`, gotHeaders)
             .then((res) => JSON.parse(res.body))
-            .catch((err) => {
-                console.log(`Error ${JSON.stringify(err)}`)
-                throw err
-            })
 
         for (const gistId of this.config.gistIds) {
             const gistMeta = allGistMetaData.find((p) => p.id === gistId)!
