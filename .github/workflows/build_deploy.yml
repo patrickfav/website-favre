@@ -47,7 +47,7 @@ jobs:
           command: ${{ env.WORKING_DIR }}/dist/index.js ./content/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FAVRE_BASE_PROJECT }}
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRESTORE }}
       - uses: actions/cache@v3
         with:
           path: /tmp/hugo_cache

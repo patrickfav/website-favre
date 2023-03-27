@@ -85,24 +85,20 @@ export class StackOverflowDownloader extends Downloader {
     private async fetchAllSoAnswers(soUser: number): Promise<Answer[]> {
         let hasMore = true
         let page = 1
-        const allAnswers = []
+        const allAnswers: Answer[] = []
 
         while (hasMore) {
-            const soAnswers = await got.get(`https://api.stackexchange.com/2.3/users/${soUser}/answers?page=${page}&pagesize=100&order=desc&sort=votes&site=stackoverflow&filter=withbody`)
-                .then((res) => JSON.parse(res.body))
-                .catch(err => {
-                    console.log('Error ' + JSON.stringify(err))
-                    throw err
-                })
+            const answerResponse = await got.get(`https://api.stackexchange.com/2.3/users/${soUser}/answers?page=${page}&pagesize=100&order=desc&sort=votes&site=stackoverflow&filter=withbody`)
+                .then((res) => JSON.parse(res.body) as AnswerResponse)
 
             // throttling for api
             await new Promise(resolve => setTimeout(resolve, 1000))
 
-            for (const item of soAnswers.items) {
+            for (const item of answerResponse.items) {
                 allAnswers.push(item)
             }
 
-            hasMore = soAnswers.has_more
+            hasMore = answerResponse.has_more
             page++
         }
 
@@ -112,7 +108,7 @@ export class StackOverflowDownloader extends Downloader {
     private async fetchAllQuestions(soAnswers: Answer[]): Promise<{ [key: number]: Question }> {
         const chunkSize = 25
         const questionIds = []
-        const allQuestions = []
+        const allQuestions: Question[] = []
 
         for (const answer of soAnswers) {
             questionIds.push(answer.question_id)
@@ -121,11 +117,7 @@ export class StackOverflowDownloader extends Downloader {
         for (let i = 0; i < questionIds.length; i += chunkSize) {
             const chunk = questionIds.slice(i, i + chunkSize)
             const soQuestion = await got.get(`https://api.stackexchange.com/2.3/questions/${chunk.join(';')}?order=desc&sort=activity&site=stackoverflow&filter=withbody`)
-                .then((res) => JSON.parse(res.body))
-                .catch(err => {
-                    console.log('Error ' + err)
-                    throw err
-                })
+                .then((res) => JSON.parse(res.body) as QuestionResponse)
 
             // throttling for api
             await new Promise(resolve => setTimeout(resolve, 1000))
@@ -135,7 +127,7 @@ export class StackOverflowDownloader extends Downloader {
             }
         }
 
-        return allQuestions.reduce((acc, obj) => {
+        return allQuestions.reduce((acc: { [key: number]: Question }, obj) => {
             acc[obj.question_id] = obj
             return acc
         }, {})
@@ -247,6 +239,12 @@ interface StackOverflowConfig {
     stackOverflowUserId: number
 }
 
+interface AnswerResponse {
+    items: Answer[]
+    has_more: boolean
+}
+
+
 interface Answer {
     question_id: number
     answer_id: number
@@ -256,6 +254,11 @@ interface Answer {
     is_accepted: boolean
     body: string
     content_license: string
+}
+
+interface QuestionResponse {
+    items: Question[]
+    has_more: boolean
 }
 
 interface Question {

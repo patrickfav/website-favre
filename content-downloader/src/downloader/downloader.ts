@@ -15,7 +15,7 @@ export abstract class Downloader {
         this.contentOutDir = contentOutDir
     }
 
-    download(): Promise<ContentStat[]> {
+    async download(): Promise<ContentStat[]> {
         if (!this.isEnabled) {
             console.log(`${this.name} Downloader disabled`)
             return Promise.resolve([])
@@ -24,8 +24,17 @@ export abstract class Downloader {
         console.log(`Start Processing ${this.name}`)
 
         this.downloadDate = new Date();
+        try {
+            return await this.downloadLogic();
+        } catch (err: any) {
+            console.log(`An error has occurred while downloading ${this.name}.`);
 
-        return this.downloadLogic();
+            if (err.response) {
+                console.log(`Error response body: ${err.response.body}.`);
+            }
+
+            throw err
+        }
     }
     protected abstract downloadLogic(): Promise<ContentStat[]>
 

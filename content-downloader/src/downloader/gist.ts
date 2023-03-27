@@ -21,13 +21,7 @@ export class GistDownloader extends Downloader {
         const contentStats: ContentStat[] = []
 
         // download all repositories meta data from github api
-        const allGistMetaData: GistMeta[] = await got
-            .get(`https://api.github.com/users/${this.config.githubUser}/gists?per_page=100`, gotHeaders)
-            .then((res) => JSON.parse(res.body))
-            .catch((err) => {
-                console.log(`Error ${JSON.stringify(err)}`)
-                throw err
-            })
+        const allGistMetaData: GistMeta[] = await this.getAllGists(gotHeaders)
 
         for (const gistId of this.config.gistIds) {
             const gistMeta = allGistMetaData.find((p) => p.id === gistId)!
@@ -53,6 +47,14 @@ export class GistDownloader extends Downloader {
         return contentStats
     }
 
+    private async getAllGists(gotHeaders: GotHttpAuthHeader): Promise<GistMeta[]> {
+        const url = this.hasToken() ? `https://api.github.com/gists` : `https://api.github.com/users/${this.config.githubUser}/gists?per_page=100`
+
+        return await got
+            .get(url, gotHeaders)
+            .then((res) => JSON.parse(res.body) as GistMeta[])
+    }
+
     private createContentStat(gistMeta: GistMeta, gistDetails: GistDetails, contentLength: number): ContentStat {
         return {
             type: "gist",
@@ -68,21 +70,25 @@ export class GistDownloader extends Downloader {
         }
     }
 
-    private createGotHttpHeaders(): gotHttpAuthHeader {
-        const githubToken = process.env.GITHUB_TOKEN
+    private hasToken() {
+        //return process.env.GITHUB_TOKEN && process.env.GITHUB_TOKEN.length > 0 --> Github Actions token does not work with Gist (403)
+        return false
+    }
 
-        if (githubToken && githubToken.length > 0) {
+    private createGotHttpHeaders(): GotHttpAuthHeader {
+        if (this.hasToken()) {
             console.log('\tUsing Authenticated APIs, token is provided')
             return {
                 headers: {
-                    Authorization: `Bearer ${githubToken}`,
+                    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+                    'User-Agent': "favr.dev-content-downloader/1.0.0"
                 },
             }
         }
         return {}
     }
 
-    private async downloadAdditionalMetaData(gistId: string, gotHeaders: gotHttpAuthHeader): Promise<GistDetails> {
+    private async downloadAdditionalMetaData(gistId: string, gotHeaders: GotHttpAuthHeader): Promise<GistDetails> {
         const forksUrl = `https://api.github.com/gists/${gistId}`
         console.log('\t\tDownloading gist details ' + forksUrl)
         return await got.get(forksUrl, gotHeaders)
@@ -194,4 +200,4 @@ interface GistMeta {
     comments_url: string
 }
 
-type gotHttpAuthHeader = { headers?: { Authorization: string } }
+type GotHttpAuthHeader = { headers?: { Authorization: string, 'User-Agent'?: string } }
