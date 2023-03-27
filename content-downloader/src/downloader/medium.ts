@@ -102,10 +102,10 @@ export class MediumDownloader extends Downloader {
             )
         }
 
-        console.log('\tDownloading content from feed for ' + mediumUserName)
+        console.log(`\tDownloading content from feed for ${mediumUserName}`)
         const parser = new Parser()
         // https://medium.com/feed/@patrickfav
-        const rssContent = await got('https://medium.com/feed/' + mediumUserName)
+        const rssContent = await got.get(`https://medium.com/feed/${mediumUserName}`)
             .then(response => parser.parseString(response.body))
 
         const postInfo: PostInfo[] = []
@@ -121,9 +121,9 @@ export class MediumDownloader extends Downloader {
     }
 
     private async getArticleInfo(post: PostInfo): Promise<ArticleInfo> {
-        const mediumArticleDom = await got(post.url)
+        const mediumArticleDom = await got.get(post.url)
             .then(response => response.body)
-            .then(body => cheerio.load(body, {xmlMode: true}))
+            .then(body => cheerio.load(body, {xmlMode: true}) as unknown)
             .catch(err => {
                 throw new Error(err)
             })

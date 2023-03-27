@@ -40,10 +40,14 @@ export async function cli(args: string[]): Promise<void> {
 
     console.log(`All done, found ${contentStats.length} stats while importing content.`);
 
+
     const statManager = new StatsManager();
     if(statManager.isEnabled()) {
+        console.log(`\n\nStarting updating content stats.`);
         const previousData = await statManager.getRecentContentStats()
         await statManager.persist(contentStats, previousData)
+    } else {
+        console.log(`\n\nNo Firebase credentials provided, skipping updating content stats.`);
     }
 }
 

@@ -45,8 +45,6 @@ export class StatsManager {
            throw new Error("cannot use this instance, since it wasn't initialized properly.")
         }
 
-        console.log(`Fetching all stats from ${this.maxDateInPast.toISOString()}.`);
-
         const latestStatsQuery = this.db
             .collection(firebaseCollectionName)
             .orderBy("date", "desc")
@@ -58,7 +56,7 @@ export class StatsManager {
             contentStatList.push(doc.data() as ContentStat)
         });
 
-        console.log(`Found ${contentStatList.length} elements in firestore.`);
+        console.log(`Found ${contentStatList.length} matching elements in firestore from ${this.maxDateInPast.toISOString()} until today.`);
 
         const result: StatResults = {};
 
@@ -113,6 +111,7 @@ export class StatsManager {
 
         console.log(`Persisting new stats (${contentStats.length}) while comparing them with previous results.`)
 
+        let addCounter = 0
         for (const stat of contentStats.filter(contentStat => {
             if (
                 previousResults[contentStat.type] &&
@@ -122,7 +121,7 @@ export class StatsManager {
                 const mostRecentValue = previousResults[contentStat.type][contentStat.subjectId].data[0];
 
                 if (this.areDatesOnSameDay(mostRecentValue.date, new Date())) {
-                    console.log(`is on same date, filter out ${contentStat.type}|${contentStat.user}|${contentStat.subjectId}`)
+                    console.log(`\tSkip: there is already an entry on this date '${contentStat.type}|${contentStat.user}|${contentStat.subjectId}'`)
                     return false
                 }
 
@@ -132,17 +131,20 @@ export class StatsManager {
                         return true
                     }
 
-                    console.log(`equal data, filter out ${contentStat.type}|${contentStat.user}|${contentStat.subjectId}`)
+                    console.log(`\tSkip: data has not changed '${contentStat.type}|${contentStat.user}|${contentStat.subjectId}'`)
                     return false
                 }
             }
 
             return true
         })) {
-            console.log(`Add element to firestore ${stat.type}|${stat.user}|${stat.subjectId}|${stat.date}`)
+            addCounter++
+            console.log(`\tAdd: '${stat.type}|${stat.user}|${stat.subjectId}|${stat.date}'`)
 
             await this.db.collection(firebaseCollectionName).add(stat)
         }
+
+        console.log(`Finished adding ${addCounter} new stats to Firestore.`)
     }
 
     private areDatesOnSameDay(date1: Date, date2: Date): boolean {
