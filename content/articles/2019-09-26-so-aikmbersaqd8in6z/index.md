@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/9655181/how-to-convert-
 originalContentType: stackoverflow
 originalContentId: 58118078
 soScore: 158
-soViews: 964700
+soViews: 964744
 soIsAccepted: false
 soQuestionId: 9655181
 soAnswerLicense: CC BY-SA 4.0
@@ -35,37 +35,31 @@ Option 1: Code snippet - Simple (only using JDK/Android)
 One very simple solution is to use the `BigInteger`'s hex representation:
 
 ```java
-new BigInteger(1,someByteArray).toString(16);
+new BigInteger(1, someByteArray).toString(16);
 
 ```
 
-Note that since this handles _numbers_ not arbitrary _byte-strings_ it will omit leading zeros - this may or may not be
-what you want (e.g. `000AE3` vs `0AE3` for a 3 byte input). This is also very slow, about _100x slower_ compared to
-option 2.
+Note that since this handles _numbers_ not arbitrary _byte-strings_ it will omit leading zeros - this may or may not be what you want (e.g. `000AE3` vs `0AE3` for a 3 byte input). This is also very slow, about _100x slower_ compared to option 2.
 
 ### Option 1b: String.format()
 
-Using the `%X` placeholder, [`String.format()`](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html) is
-able to encode most primitive types (`short`, `int`, `long`) to hex:
+Using the `%X` placeholder, [`String.format()`](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html) is able to encode most primitive types (`short`, `int`, `long`) to hex:
 
 ```java
-String.format("%X",ByteBuffer.wrap(eightByteArray).getLong());
+String.format("%X", ByteBuffer.wrap(eightByteArray).getLong());
 
 ```
 
 ### Option 1c: Integer/Long (only 4/8 Byte Arrays)
 
-If you **exclusively have 4 bytes arrays** you can use
-the [`toHexString`](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#toHexString-int-) method of the
-Integer class:
+If you **exclusively have 4 bytes arrays** you can use the [`toHexString`](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#toHexString-int-) method of the Integer class:
 
 ```java
 Integer.toHexString(ByteBuffer.wrap(fourByteArray).getInt());
 
 ```
 
-The same works with **8 byte arrays**
-and [`Long`](https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html#toHexString-long-)
+The same works with **8 byte arrays** and [`Long`](https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html#toHexString-long-)
 
 ```java
 Long.toHexString(ByteBuffer.wrap(eightByteArray).getLong());
@@ -74,12 +68,11 @@ Long.toHexString(ByteBuffer.wrap(eightByteArray).getLong());
 
 ### Option 1d: JDK17+ HexFormat
 
-Finally, JDK 17 offers first-level support of straight forward hex encoding
-with [`HexFormat`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HexFormat.html):
+Finally, JDK 17 offers first-level support of straight forward hex encoding with [`HexFormat`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HexFormat.html):
 
 ```java
-HexFormat hex=HexFormat.of();
-        hex.formatHex(someByteArray)
+HexFormat hex = HexFormat.of();
+hex.formatHex(someByteArray)
 
 ```
 
@@ -89,16 +82,16 @@ Option 2: Code snippet - Advanced
 Here is a full-featured, copy & pasteable code snippet supporting **upper/lowercase** and [**endianness**](https://en.wikipedia.org/wiki/Endianness). It is optimized to minimize memory complexity and maximize performance and should be compatible with all modern Java versions (5+).
 
 ```java
-private static final char[]LOOKUP_TABLE_LOWER=new char[]{0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x61,0x62,0x63,0x64,0x65,0x66};
-private static final char[]LOOKUP_TABLE_UPPER=new char[]{0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x41,0x42,0x43,0x44,0x45,0x46};
+private static final char[] LOOKUP_TABLE_LOWER = new char[]{0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66};
+private static final char[] LOOKUP_TABLE_UPPER = new char[]{0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x41, 0x42, 0x43, 0x44, 0x45, 0x46};
+        
+public static String encode(byte[] byteArray, boolean upperCase, ByteOrder byteOrder) {
 
-public static String encode(byte[]byteArray,boolean upperCase,ByteOrder byteOrder){
+    // our output size will be exactly 2x byte-array length
+    final char[] buffer = new char[byteArray.length * 2];
 
-// our output size will be exactly 2x byte-array length
-final char[]buffer=new char[byteArray.length*2];
-
-// choose lower or uppercase lookup table
-final char[]lookup=upperCase?LOOKUP_TABLE_UPPER:LOOKUP_TABLE_LOWER;
+    // choose lower or uppercase lookup table
+    final char[] lookup = upperCase ? LOOKUP_TABLE_UPPER : LOOKUP_TABLE_LOWER;
 
     int index;
     for (int i = 0; i < byteArray.length; i++) {
@@ -129,7 +122,7 @@ While working on my previous project, I created this little toolkit for working 
 ```java
 import at.favre.lib.bytes.Bytes;
 ...
-        Bytes.wrap(someByteArray).encodeHex()
+Bytes.wrap(someByteArray).encodeHex()
 
 ```
 
@@ -143,7 +136,7 @@ Of course there is the good 'ol [commons codecs](https://commons.apache.org/prop
 ```java
 import org.apache.commons.codec.binary.Hex;
 ...
-        Hex.encodeHexString(someByteArray));
+Hex.encodeHexString(someByteArray));
 
 ```
 
@@ -155,7 +148,7 @@ More often than not you already have [Guava](https://guava.dev/releases/16.0/api
 ```java
 import com.google.common.io.BaseEncoding;
 ...
-        BaseEncoding.base16().lowerCase().encode(someByteArray);
+BaseEncoding.base16().lowerCase().encode(someByteArray);
 
 ```
 
@@ -167,7 +160,7 @@ If you use the [Spring framework](https://spring.io/) with [Spring Security](htt
 ```java
 import org.springframework.security.crypto.codec.Hex
 ...
-        new String(Hex.encode(someByteArray));
+new String(Hex.encode(someByteArray));
 
 ```
 
@@ -179,7 +172,7 @@ If you already use the security framework [Bouncy Castle](https://www.bouncycast
 ```java
 import org.bouncycastle.util.encoders.Hex;
 ...
-        Hex.toHexString(someByteArray);
+Hex.toHexString(someByteArray);
 
 ```
 
@@ -189,7 +182,7 @@ Not Really Option 8: Java 9+ Compatibility or 'Do Not Use JAXBs javax/xml/bind/D
 In previous Java (8 and below) versions the Java code for JAXB was included as runtime dependency. Since Java 9 and [Jigsaw modularisation](http://openjdk.java.net/projects/jigsaw/doc/jdk-modularization-tips) your code cannot access other code outside of its module without explicit declaration. So be aware if you get an exception like:
 
 ```java
-java.lang.NoClassDefFoundError:javax/xml/bind/JAXBException
+java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
 
 ```
 

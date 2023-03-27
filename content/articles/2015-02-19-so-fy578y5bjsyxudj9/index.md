@@ -53,8 +53,7 @@ dependencies {
 
 ```
 
-Do note however, if you use `support-fragment`, it will have dependencies to all the other modules (ie. if you
-use `android.support.v4.app.Fragment` there is no benefit)
+Do note however, if you use `support-fragment`, it will have dependencies to all the other modules (ie. if you use `android.support.v4.app.Fragment` there is no benefit)
 
 [See here the official release notes for support-v4 lib](https://developer.android.com/topic/libraries/support-library/revisions.html)
 
@@ -84,8 +83,7 @@ dependencies {
 
 ```
 
-The second step is to either prepare your Application class or if you don't extend Application use
-the `MultiDexApplication` in your Android Manifest:
+The second step is to either prepare your Application class or if you don't extend Application use the `MultiDexApplication` in your Android Manifest:
 
 Either add this to your Application.java
 

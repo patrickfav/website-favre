@@ -1,7 +1,7 @@
 ---
 title: 'Q: View&#39;s getWidth() and getHeight() returns 0'
 date: 2014-06-04
-lastmod: 2020-06-23
+lastmod: 2023-03-26
 description: 'View&#39;s getWidth() and getHeight() returns 0'
 summary: 'This was originally posted as an answer to the question "View&#39;s getWidth() and getHeight() returns 0" on stackoverflow.com.'
 aliases: [/link/a4y7zf2h]
@@ -19,41 +19,36 @@ originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-
 originalContentType: stackoverflow
 originalContentId: 24035591
 soScore: 968
-soViews: 400385
+soViews: 400399
 soIsAccepted: false
 soQuestionId: 3591784
 soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/24035591/774398
 ---
-The basic problem is, that you have to wait for the drawing phase for the actual measurements (especially with dynamic
-values like `wrap_content` or `match_parent`), but usually this phase hasn't been finished up to `onResume()`. So you
-need a workaround for waiting for this phase. There a are different possible solutions to this:
+The basic problem is, that you have to wait for the drawing phase for the actual measurements (especially with dynamic values like `wrap_content` or `match_parent`), but usually this phase hasn't been finished up to `onResume()`. So you need a workaround for waiting for this phase. There are different possible solutions to this:
 
 1\. Listen to Draw/Layout Events: ViewTreeObserver
 --------------------------------------------------
 
-A ViewTreeObserver gets fired for different drawing events. Usually
-the [`OnGlobalLayoutListener`](http://developer.android.com/reference/android/view/ViewTreeObserver.OnGlobalLayoutListener.html)
-is what you want for getting the measurement, so the code in the listener will be called after the layout phase, so the
-measurements are ready:
+A ViewTreeObserver gets fired for different drawing events. Usually the [`OnGlobalLayoutListener`](http://developer.android.com/reference/android/view/ViewTreeObserver.OnGlobalLayoutListener.html) is what you want for getting the measurement, so the code in the listener will be called after the layout phase, so the measurements are ready:
 
-```
+```java
 view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                view.getHeight(); //height is ready
-            }
-        });
+    @Override
+    public void onGlobalLayout() {
+        view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        view.getHeight(); //height is ready
+    }
+});
 
 ```
 
-Note: The listener will be immediately removed because otherwise it will fire on every layout event. If you have to
-support apps _SDK Lvl < 16_ use this to unregister the listener:
+_Note_: The listener will be immediately removed because otherwise it will fire on every layout event. If you have to support apps _SDK Level < 16_ use this to unregister the listener:
 
-`public void removeGlobalOnLayoutListener (ViewTreeObserver.OnGlobalLayoutListener victim)`
+```java
+public void removeGlobalOnLayoutListener (ViewTreeObserver.OnGlobalLayoutListener victim)
 
-  
+```
 
 2\. Add a runnable to the layout queue: View.post()
 ---------------------------------------------------
@@ -64,8 +59,8 @@ Not very well known and my favourite solution. Basically just use the View's pos
 
 Example:
 
-```
-final View view=//smth;
+```java
+final View view=...;
 ...
 view.post(new Runnable() {
             @Override
@@ -78,7 +73,7 @@ view.post(new Runnable() {
 
 The advantage over `ViewTreeObserver`:
 
-*   your code is only executed once and you don't have to disable the Observer after execution which can be a hassle
+*   your code is only executed once, and you don't have to disable the Observer after execution which can be a hassle
 *   less verbose syntax
 
 References:
@@ -93,7 +88,7 @@ References:
 
 This is only practical in certain situation when the logic can be encapsulated in the view itself, otherwise this is a quite verbose and cumbersome syntax.
 
-```
+```java
 view = new View(this) {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -106,14 +101,12 @@ view = new View(this) {
 
 Also mind, that onLayout will be called many times, so be considerate what you do in the method, or disable your code after the first time
 
-  
-
 4\. Check if has been through layout phase
 ------------------------------------------
 
-If you have code that is executing multiple times while creating the ui you could use the following support v4 lib method:
+If you have code that is executing multiple times while creating the UI you could use the following support v4 lib method:
 
-```
+```java
 View viewYouNeedHeightFrom = ...
 ...
 if(ViewCompat.isLaidOut(viewYouNeedHeightFrom)) {
@@ -124,15 +117,15 @@ if(ViewCompat.isLaidOut(viewYouNeedHeightFrom)) {
 
 > Returns true if view has been through at least one layout since it was last attached to or detached from a window.
 
-Additional: Getting staticly defined measurements
--------------------------------------------------
+Additional: Getting statically defined measurements
+---------------------------------------------------
 
 If it suffices to just get the statically defined height/width, you can just do this with:
 
-* [`View.getMeasuredWidth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredWidth())
-* [`View.getMeasuredHeigth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredHeight())
+*   [`View.getMeasuredWidth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredWidth())
+*   [`View.getMeasuredHeigth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredHeight())
 
-But mind you, that this might be different to the actual width/height after drawing. The javadoc describes the difference in more detail:
+But mind you, that this might be different to the actual width/height after drawing. The Javadoc describes the difference in more detail:
 
 > The size of a view is expressed with a width and a height. A view actually possess two pairs of width and height values.
 > 

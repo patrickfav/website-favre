@@ -1,7 +1,7 @@
 ---
 title: 'Q: Android Studio 3.0 Error. Migrate dependency configurations for local modules'
 date: 2017-06-19
-lastmod: 2017-11-02
+lastmod: 2023-03-26
 description: 'Android Studio 3.0 Error. Migrate dependency configurations for local modules'
 summary: 'This was originally posted as an answer to the question "Android Studio 3.0 Error. Migrate dependency configurations for local modules" on stackoverflow.com.'
 aliases: [/link/dzwn7c4f]
@@ -19,10 +19,10 @@ originalContentLink: https://stackoverflow.com/questions/44390590/android-studio
 originalContentType: stackoverflow
 originalContentId: 44640156
 soScore: 33
-soViews: 27715
+soViews: 27717
 soIsAccepted: false
 soQuestionId: 44390590
-soAnswerLicense: CC BY-SA 3.0
+soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/44640156/774398
 ---
 With the new plugin, the variant-aware dependency resolution
@@ -43,7 +43,7 @@ releaseCompile project(path: ':foo', configuration: 'debug')
 
 ```
 
-will not work anymore.
+will not work any more.
 
 Example
 -------
@@ -54,12 +54,12 @@ In app `build.gradle`:
 
 ```
 apply plugin: 'com.android.application'
-
+    
 android {
   buildTypes {
     debug {}
     releaseApp {}
-    releaseSdk {}
+        releaseSdk {}
   }
   ...
   dependencies {
@@ -71,9 +71,9 @@ android {
 
 In module/lib 'MyLib' `build.gradle`:
 
-```
 apply plugin: 'com.android.library'
 
+```
 android {
   buildTypes {
     debug {}
@@ -84,20 +84,20 @@ android {
 
 ```
 
-Therefore the build type must _exactly_ match, no more no less.
+Therefore, the build type must _exactly_ match, no more no less.
 
 Using Build-Type Fallbacks
 --------------------------
 
-A new feature called "matchingFallbacks" can be used to define default buildtypes if a sub-module does not define the buildtype.
+A new feature called "matchingFallbacks" can be used to define default buildtypes if a submodule does not define the buildtype.
 
 > Use matchingFallbacks to specify alternative matches for a given build type (...)
 
 For example if module/lib 'MyLib' gradle would look like this:
 
-```
 apply plugin: 'com.android.library'
 
+```
 android {
   buildTypes {
     debug {}
@@ -109,9 +109,9 @@ android {
 
 You could define the following in your app `build.gradle`:
 
-```
 apply plugin: 'com.android.application'
 
+```
 android {
   buildTypes {
     debug {}

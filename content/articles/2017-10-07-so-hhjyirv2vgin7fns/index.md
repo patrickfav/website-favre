@@ -1,7 +1,7 @@
 ---
 title: 'Q: Is HKDF implemented in Java Cryptography Architecture?'
 date: 2017-10-07
-lastmod: 2021-10-07
+lastmod: 2023-03-26
 description: 'Is HKDF implemented in Java Cryptography Architecture?'
 summary: 'This was originally posted as an answer to the question "Is HKDF implemented in Java Cryptography Architecture?" on stackoverflow.com.'
 aliases: [/link/hhjyirv2]
@@ -18,8 +18,8 @@ deeplink: /link/hhjyirv2
 originalContentLink: https://stackoverflow.com/questions/45985661/is-hkdf-implemented-in-java-cryptography-architecture
 originalContentType: stackoverflow
 originalContentId: 46619583
-soScore: 14
-soViews: 5987
+soScore: 15
+soViews: 5993
 soIsAccepted: false
 soQuestionId: 45985661
 soAnswerLicense: CC BY-SA 4.0
@@ -36,12 +36,7 @@ There are some implementations embedded in other projects (like you already said
 *   [WhisperSystems/libsignal-protocol-java](https://github.com/WhisperSystems/libsignal-protocol-java/blob/master/java/src/main/java/org/whispersystems/libsignal/kdf/HKDF.java)
 *   [square/keywhiz](https://github.com/square/keywhiz/blob/master/hkdf/src/main/java/keywhiz/hkdf/Hkdf.java)
 
-Also there is, of
-course, [Bouncy Castle](https://github.com/bcgit/bc-java/blob/master/core/src/main/java/org/bouncycastle/crypto/generators/HKDFBytesGenerator.java)
-which use their own Hmac/Mac implementations and APIs. BC is however a massive dependency, and may be unpractical for
-e.g. embedded or mobile use case. For this I implemented a **standalone**, lightweight java lib (passing all of the RFC
-5869 test vectors), which works with
-any [`javax.crypto.Mac`](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Mac.html) instance:
+Also there is, of course, [Bouncy Castle](https://github.com/bcgit/bc-java/blob/master/core/src/main/java/org/bouncycastle/crypto/generators/HKDFBytesGenerator.java) which use their own Hmac/Mac implementations and APIs. BC is however a massive dependency, and may be unpractical for e.g. embedded or mobile use case. For this I implemented a **standalone**, lightweight java lib (passing all of the RFC 5869 test vectors), which works with any [`javax.crypto.Mac`](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Mac.html) instance:
 
 *   [https://github.com/patrickfav/hkdf](https://github.com/patrickfav/hkdf)
 
@@ -59,19 +54,19 @@ From the [RFC 5869](https://www.rfc-editor.org/rfc/rfc5869#section-3.2):
 
 So for example if you want to derive an Secret Key and IV from the same source material you would use the info parameter ([using this lib](https://github.com/patrickfav/hkdf)):
 
-```
+```java
 //example input
 String userInput = "this is a user input with bad entropy";
 
 HKDF hkdf = HKDF.fromHmacSha256();
-
+    
 //extract the "raw" data to create output with concentrated entropy
 byte[] pseudoRandomKey = hkdf.extract(staticSalt32Byte, userInput.getBytes(StandardCharsets.UTF_8));
-
+    
 //create expanded bytes for e.g. AES secret key and IV
 byte[] expandedAesKey = hkdf.expand(pseudoRandomKey, "aes-key".getBytes(StandardCharsets.UTF_8), 16);
 byte[] expandedIv = hkdf.expand(pseudoRandomKey, "aes-iv".getBytes(StandardCharsets.UTF_8), 16);
-
+    
 //Example boilerplate encrypting a simple string with created key/iv
 SecretKey key = new SecretKeySpec(expandedAesKey, "AES"); //AES-128 key
 Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");

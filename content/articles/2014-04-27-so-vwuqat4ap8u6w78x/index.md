@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/14988990/android-fast-b
 originalContentType: stackoverflow
 originalContentId: 23329963
 soScore: 13
-soViews: 28421
+soViews: 28422
 soIsAccepted: false
 soQuestionId: 14988990
 soAnswerLicense: CC BY-SA 3.0
@@ -29,16 +29,11 @@ Probably the most demanding requirement is live blur, meaning you blur live as t
 
 Here is how to improve performance in descending importance:
 
-1. Use downscaled images: This decreases the pixels to blur enormously. Also it works for you when you want a real
-   blurred image. Also image loading and memory consumption is drastically lowered.
-
-2. Use Renderscript ScriptIntrinsicBlur - there is probably not a better/faster solution in Android as of 2014. One
-   mistake I often see is that the Renderscript context is not reused, but created everytime the blur algorithm is used.
-   Mind you that `RenderScript.create(this);` takes around 20ms on a Nexus 5, so you want to avoid this.
-
-3. Reuse Bitmaps: don't create unnecessary instances and always use the same instance. When you need really fast blur,
-   garbage collection plays a major role (taking a good 10-20 ms for collection some bitmaps). Also crop and blur only
-   what you need.
+1.  Use downscaled images: This decreases the pixels to blur enormously. Also it works for you when you want a real blurred image. Also image loading and memory consumption is drastically lowered.
+    
+2.  Use Renderscript ScriptIntrinsicBlur - there is probably not a better/faster solution in Android as of 2014. One mistake I often see is that the Renderscript context is not reused, but created everytime the blur algorithm is used. Mind you that `RenderScript.create(this);` takes around 20ms on a Nexus 5, so you want to avoid this.
+    
+3.  Reuse Bitmaps: don't create unnecessary instances and always use the same instance. When you need really fast blur, garbage collection plays a major role (taking a good 10-20 ms for collection some bitmaps). Also crop and blur only what you need.
     
 4.  For a live blur, probably because of context switching, it's not possible to blur in another thread (even with threadpools), only the main thread was fast enough to keep the view updated timely, with threads I saw lags of 100-300ms
     

@@ -1,13 +1,17 @@
 ---
 title: 'changelog'
 date: 2017-10-31
-lastmod: 2023-03-22
+lastmod: 2023-03-26
 url: opensource/bytes-java/changelog
 showSummary: false
 showTableOfContents: false
 type: opensource-additional
 ---
 # Releases
+
+## 1.6.2
+
+* remove hashCode caching since it could introduce very subtle bugs
 
 ## v1.6.1
 
