@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/26076292/security-with-
 originalContentType: stackoverflow
 originalContentId: 26077852
 soScore: 33
-soViews: 10151
+soViews: 11000
 soIsAccepted: true
 soQuestionId: 26076292
 soAnswerLicense: CC BY-SA 4.0

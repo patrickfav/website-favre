@@ -21,7 +21,7 @@ githubStars: 45
 githubForks: 2
 githubWatchers: 2
 githubContributors: 1
-githubRepoSize: 871
+githubRepoSize: 874
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/id-mask
 githubDefaultBranch: main

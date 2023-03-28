@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/41107/how-to-generate-a
 originalContentType: stackoverflow
 originalContentId: 44227131
 soScore: 89
-soViews: 1625881
+soViews: 1627000
 soIsAccepted: false
 soQuestionId: 41107
 soAnswerLicense: CC BY-SA 4.0

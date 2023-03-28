@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/15554296/initial-bytes-
 originalContentType: stackoverflow
 originalContentId: 53051612
 soScore: 83
-soViews: 484556
+soViews: 485000
 soIsAccepted: false
 soQuestionId: 15554296
 soAnswerLicense: CC BY-SA 4.0

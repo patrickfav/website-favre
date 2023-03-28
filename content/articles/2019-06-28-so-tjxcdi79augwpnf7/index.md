@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/56794263/spring-webflux
 originalContentType: stackoverflow
 originalContentId: 56806022
 soScore: 55
-soViews: 31913
+soViews: 32000
 soIsAccepted: false
 soQuestionId: 56794263
 soAnswerLicense: CC BY-SA 4.0

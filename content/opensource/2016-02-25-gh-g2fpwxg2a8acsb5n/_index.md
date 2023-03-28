@@ -21,11 +21,11 @@ githubStars: 237
 githubForks: 32
 githubWatchers: 15
 githubContributors: 3
-githubRepoSize: 3036
+githubRepoSize: 3029
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/density-converter
 githubDefaultBranch: main
-githubOpenIssues: 6
+githubOpenIssues: 9
 githubIsFork: false
 githubLatestVersion: v1.0.0-alpha7
 githubLatestVersionDate: 2020-04-12T11:32:13Z

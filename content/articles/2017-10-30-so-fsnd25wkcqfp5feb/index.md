@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/11029294/android-how-to
 originalContentType: stackoverflow
 originalContentId: 47022263
 soScore: 67
-soViews: 140655
+soViews: 141000
 soIsAccepted: false
 soQuestionId: 11029294
 soAnswerLicense: CC BY-SA 4.0
