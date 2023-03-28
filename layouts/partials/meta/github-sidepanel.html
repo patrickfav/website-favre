@@ -40,6 +40,13 @@
 </div>
 {{ end }}
 
+{{ if and (.Params.githubOpenIssues | default false) (gt .Params.githubOpenIssues 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "clipboard-list-solid" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}/issues"  class="text-neutral-500 dark:text-neutral-400" rel="noopener"><strong>{{ .Params.githubOpenIssues }}</strong> issues</a></span>
+</div>
+{{ end }}
+
 {{ if and (.Params.githubContributors | default false) (gt .Params.githubContributors 1 ) }}
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "users-solid" }}</span>

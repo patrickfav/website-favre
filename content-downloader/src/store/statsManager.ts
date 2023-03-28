@@ -139,7 +139,7 @@ export class StatsManager {
             return true
         })) {
             addCounter++
-            console.log(`\tAdd: '${stat.type}|${stat.user}|${stat.subjectId}|${stat.date}'`)
+            console.log(`\tAdd: '${stat.type}|${stat.user}|${stat.subjectId}|${stat.values}'`)
 
             await this.db.collection(firebaseCollectionName).add(stat)
         }

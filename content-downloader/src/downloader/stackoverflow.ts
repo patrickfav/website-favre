@@ -184,7 +184,7 @@ export class StackOverflowDownloader extends Downloader {
         meta += 'originalContentType: stackoverflow\n'
         meta += `originalContentId: ${soAnswers.answer_id}\n`
         meta += `soScore: ${soAnswers.score}\n`
-        meta += `soViews: ${soQuestion.view_count}\n`
+        meta += `soViews: ${Math.ceil(soQuestion.view_count / 1000) * 1000}\n`
         meta += `soIsAccepted: ${soAnswers.is_accepted}\n`
         meta += `soQuestionId: ${soAnswers.question_id}\n`
         meta += `soAnswerLicense: ${soAnswers.content_license}\n`
