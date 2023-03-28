@@ -15,10 +15,11 @@
   },
   "scripts": {
     "exec": "npm run build && hugo-content-downloader",
-    "package": "npm i && npm run build && npm link",
-    "package:ci": "npm ci && npm run build && npm link",
+    "package": "npm i && npm run build && npm run test && npm link",
+    "package:ci": "npm ci && npm run build && npm run test && npm link",
     "build": "npx tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "lint:ts": "eslint src/**/*.ts -f json -o eslint_report.json",
     "lint": "npm run lint:ts"
   },
@@ -49,6 +50,7 @@
     "@types/cheerio": "^0.22.31",
     "@types/esm": "^3.2.0",
     "@types/got": "^9.6.12",
+    "@types/jest": "^29.5.0",
     "@types/node": "^18.15.10",
     "@types/request": "^2.48.8",
     "@types/turndown": "^5.0.1",
@@ -59,7 +61,10 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
+    "firebase-mock": "^2.3.2",
+    "jest": "^29.5.0",
     "sonarqube-scanner": "^3.0.1",
+    "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1"
   }
 }

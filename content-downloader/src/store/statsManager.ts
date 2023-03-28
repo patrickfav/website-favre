@@ -1,10 +1,10 @@
 import {
     ContentStat,
-    GithubStats,
     GistStats,
+    GithubStats,
     MediumStats,
-    StackOverflowUserStats,
-    StackOverflowAnswerStats
+    StackOverflowAnswerStats,
+    StackOverflowUserStats
 } from "../downloader/models";
 import * as admin from "firebase-admin";
 
@@ -16,12 +16,19 @@ export class StatsManager {
     readonly maxDateInPast: Date
     readonly maxUpdateIntervalDate: Date
 
-    constructor() {
-        const serviceAccount = this.getServiceAccount()
+    constructor(serviceAccount?: admin.ServiceAccount) {
 
-        if(serviceAccount) {
+        let usedServiceAccount: admin.ServiceAccount | null
+
+        if (!serviceAccount) {
+            usedServiceAccount = this.getServiceAccounts()
+        } else {
+            usedServiceAccount = serviceAccount
+        }
+
+        if (usedServiceAccount) {
             const app = admin.initializeApp({
-                credential: admin.credential.cert(serviceAccount)
+                credential: admin.credential.cert(usedServiceAccount)
             });
 
             this.db = app.firestore()
@@ -88,7 +95,7 @@ export class StatsManager {
         return result;
     }
 
-    private getServiceAccount(): admin.ServiceAccount | null {
+    protected getServiceAccounts(): admin.ServiceAccount | null {
         const jsonEnv = process.env.FIREBASE_SERVICE_ACCOUNT_JSON
 
         if (jsonEnv && jsonEnv.length > 0) {
