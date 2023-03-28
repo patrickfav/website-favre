@@ -27,15 +27,11 @@ export class StackOverflowDownloader extends Downloader {
 
         contentStats.push(await this.getSoUserStats(this.config.stackOverflowUserId, soAnswers))
 
+        let skipDueLowScore = 0
+        let skipDueLowWordCount = 0
+
         for (const answer of soAnswers) {
             const question = soQuestions[answer.question_id]
-
-            console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes`)
-
-            if (answer.score <= 10) {
-                console.log('\t\t--> skipping due to low score')
-                continue
-            }
 
             const slug = generateSlug(question.title, 'so', new Date(answer.creation_date * 1000), answer.answer_id.toString())
             const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
@@ -44,11 +40,20 @@ export class StackOverflowDownloader extends Downloader {
             const frontMatter = this.createStackOverflowFrontMatter(answer, question, summary, slug, answerLink)
             const markdown = this.createMarkdown(answer.body)
 
-            const wordCount = wordsCount(markdown)
-            if (wordCount <= 200) {
-                console.log(`\t\t--> skipping due to low word count ${wordCount}`)
+            contentStats.push(this.createContentStat(question, answer, markdown.length))
+
+            if ((answer.score <= 10 && question.view_count < 10000) || answer.score <= 0) {
+                skipDueLowScore++
                 continue
             }
+
+            const wordCount = wordsCount(markdown)
+            if (wordCount <= 200) {
+                skipDueLowWordCount++
+                continue
+            }
+
+            console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes and ${Math.ceil(question.view_count/1000)}k views`)
 
             Downloader.prepareFolder(targetProjectDir)
 
@@ -59,11 +64,13 @@ export class StackOverflowDownloader extends Downloader {
 
             const finalMarkdown = await this.fetchAndReplaceImages(markdown, targetProjectDir)
 
-            contentStats.push(this.createContentStat(question, answer, finalMarkdown.length))
 
             StringStream.from(frontMatter + finalMarkdown)
                 .pipe(fs.createWriteStream(targetProjectFile))
         }
+
+        console.log(`\tSkipped ${skipDueLowScore} posts due to low score/view count and ${skipDueLowWordCount} due to low word count out of ${soAnswers.length}.`)
+
 
         return contentStats
     }
@@ -77,12 +84,15 @@ export class StackOverflowDownloader extends Downloader {
             values: {
                 contentLength: contentLength,
                 score: answer.score,
-                views: question.view_count
+                views: Math.ceil(question.view_count / 100) * 100
             }
         }
     }
 
     private async fetchAllSoAnswers(soUser: number): Promise<Answer[]> {
+
+        console.log(`\tFetching all answers for user ${soUser}`)
+
         let hasMore = true
         let page = 1
         const allAnswers: Answer[] = []
@@ -92,7 +102,7 @@ export class StackOverflowDownloader extends Downloader {
                 .then((res) => JSON.parse(res.body) as AnswerResponse)
 
             // throttling for api
-            await new Promise(resolve => setTimeout(resolve, 1000))
+            await new Promise(resolve => setTimeout(resolve, 750))
 
             for (const item of answerResponse.items) {
                 allAnswers.push(item)
@@ -106,7 +116,10 @@ export class StackOverflowDownloader extends Downloader {
     }
 
     private async fetchAllQuestions(soAnswers: Answer[]): Promise<{ [key: number]: Question }> {
-        const chunkSize = 25
+        const chunkSize = 30
+
+        console.log(`\tFetching all questions for ${soAnswers.length} found answers with chunkSize ${chunkSize}`)
+
         const questionIds = []
         const allQuestions: Question[] = []
 
@@ -120,7 +133,7 @@ export class StackOverflowDownloader extends Downloader {
                 .then((res) => JSON.parse(res.body) as QuestionResponse)
 
             // throttling for api
-            await new Promise(resolve => setTimeout(resolve, 1000))
+            await new Promise(resolve => setTimeout(resolve, 750))
 
             for (const item of soQuestion.items) {
                 allQuestions.push(item)
