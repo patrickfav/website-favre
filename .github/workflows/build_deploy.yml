@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: NPM Install Content Downloader
+      - name: NPM Install & Test Content-Downloader
         run: npm run package:ci
         working-directory: ${{ env.WORKING_DIR }}
       - name: Run ESLint
