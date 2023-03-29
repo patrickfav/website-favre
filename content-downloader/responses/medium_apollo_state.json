@@ -1,0 +1,4479 @@
+{
+  "Collection:c72404660798": {
+    "__typename": "Collection",
+    "avatar": {
+      "__ref": "ImageMetadata:1*XVtdl45m8YaYrPI4buJ5yQ.png"
+    },
+    "colorPalette": {
+      "__typename": "ColorPalette",
+      "defaultBackgroundSpectrum": {
+        "__typename": "ColorSpectrum",
+        "backgroundColor": "#FFFFFFFF",
+        "colorPoints": [
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF101D19",
+            "point": 1
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF192C25",
+            "point": 0.9
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF203931",
+            "point": 0.8
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF26463C",
+            "point": 0.7
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF2A5347",
+            "point": 0.6
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF2E5F50",
+            "point": 0.5
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF2E987E",
+            "point": 0
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF306B5A",
+            "point": 0.4
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF318D75",
+            "point": 0.1
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF327663",
+            "point": 0.3
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF32826C",
+            "point": 0.2
+          }
+        ]
+      },
+      "highlightSpectrum": {
+        "__typename": "ColorSpectrum",
+        "backgroundColor": "#FFFFFFFF",
+        "colorPoints": [
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFA8F2D9",
+            "point": 1
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFAFF2DB",
+            "point": 0.9
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFB5F3DE",
+            "point": 0.8
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFBCF4E0",
+            "point": 0.7
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFC2F4E2",
+            "point": 0.6
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFC8F5E4",
+            "point": 0.5
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFCEF6E7",
+            "point": 0.4
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFD3F6E9",
+            "point": 0.3
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFD9F7EB",
+            "point": 0.2
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFDEF8ED",
+            "point": 0.1
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FFE4F8EF",
+            "point": 0
+          }
+        ]
+      },
+      "tintBackgroundSpectrum": {
+        "__typename": "ColorSpectrum",
+        "backgroundColor": "#FF7DE1C3",
+        "colorPoints": [
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF002F1C",
+            "point": 1
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF004732",
+            "point": 0.9
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF005C45",
+            "point": 0.8
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF006F57",
+            "point": 0.7
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF008168",
+            "point": 0.6
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF269278",
+            "point": 0.5
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF3CA388",
+            "point": 0.4
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF4EB397",
+            "point": 0.3
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF5EC3A6",
+            "point": 0.2
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF6ED2B5",
+            "point": 0.1
+          },
+          {
+            "__typename": "ColorPoint",
+            "color": "#FF7DE1C3",
+            "point": 0
+          }
+        ]
+      }
+    },
+    "creator": {
+      "__ref": "User:c6e8e225f7d5"
+    },
+    "customDomainState": {
+      "__typename": "CustomDomainState",
+      "live": {
+        "__typename": "CustomDomain",
+        "isSubdomain": false,
+        "status": "ACTIVE"
+      }
+    },
+    "customStyleSheet": null,
+    "description": "The latest posts from Android Professionals and Google Developer Experts.",
+    "domain": "proandroiddev.com",
+    "facebookPageId": null,
+    "favicon": {
+      "__ref": "ImageMetadata:1*A8VytPZQhvUf_MG6hm_Dlw.png"
+    },
+    "googleAnalyticsId": null,
+    "id": "c72404660798",
+    "isAuroraVisible": false,
+    "legacyHeaderBackgroundImage": {
+      "__ref": "ImageMetadata:1*i5UmD6poC0MpEw0UlnWhTQ.png"
+    },
+    "logo": {
+      "__ref": "ImageMetadata:"
+    },
+    "name": "ProAndroidDev",
+    "navItems": [
+      {
+        "__typename": "NavItem",
+        "tagSlug": null,
+        "title": "About",
+        "url": "https://proandroiddev.com/about"
+      },
+      {
+        "__typename": "NavItem",
+        "tagSlug": null,
+        "title": "Archive",
+        "url": "https://proandroiddev.com/archive"
+      },
+      {
+        "__typename": "NavItem",
+        "tagSlug": null,
+        "title": "droidcon",
+        "url": "https://www.droidcon.com/?utm_source=pad&utm_medium=header"
+      },
+      {
+        "__typename": "NavItem",
+        "tagSlug": null,
+        "title": "Submit",
+        "url": "https://proandroiddev.com/submission-guidelines-b2efa7f46272"
+      }
+    ],
+    "newsletterV3": {
+      "__ref": "NewsletterV3:278dceec521d"
+    },
+    "ptsQualifiedAt": 1616092782276,
+    "slug": "proandroiddev",
+    "subscriberCount": 45616,
+    "twitterUsername": "proandroiddev",
+    "viewerEdge": {
+      "__ref": "CollectionViewerEdge:collectionId:c72404660798-viewerId:lo_e947d5c652bf"
+    }
+  },
+  "CollectionViewerEdge:collectionId:c72404660798-viewerId:lo_e947d5c652bf": {
+    "__typename": "CollectionViewerEdge",
+    "id": "collectionId:c72404660798-viewerId:lo_e947d5c652bf",
+    "isEditor": false
+  },
+  "CustomStyleSheet:79f04df7388e": {
+    "__typename": "CustomStyleSheet",
+    "blogroll": {
+      "__typename": "BlogrollConfiguration",
+      "visibility": "BLOGROLL_VISIBILITY_SIDEBAR"
+    },
+    "global": {
+      "__typename": "GlobalStyles",
+      "colorPalette": {
+        "__typename": "StyleSheetColorPalette",
+        "background": {
+          "__typename": "ColorValue",
+          "rgb": "333333"
+        }
+      }
+    },
+    "header": {
+      "__typename": "HeaderStyles",
+      "appNameColor": null,
+      "appNameTreatment": "NAME_TREATMENT_TEXT",
+      "backgroundColor": {
+        "__typename": "ColorValue",
+        "alpha": "00",
+        "rgb": "ffffff"
+      },
+      "backgroundColorDisplayMode": "COLOR_DISPLAY_MODE_SOLID",
+      "backgroundImage": {
+        "__ref": "ImageMetadata:1*e16Nn813_4ReV0s9dn_0mw.jpeg"
+      },
+      "backgroundImageDisplayMode": "IMAGE_DISPLAY_MODE_FILL",
+      "backgroundImageVerticalAlignment": "CENTER",
+      "headerScale": "HEADER_SCALE_SMALL",
+      "logoImage": null,
+      "nameTreatment": "NAME_TREATMENT_TEXT",
+      "postBackgroundColor": {
+        "__typename": "ColorValue",
+        "alpha": "ff",
+        "rgb": "222222"
+      },
+      "secondaryBackgroundColor": null
+    },
+    "id": "79f04df7388e",
+    "navigation": null
+  },
+  "ImageMetadata:": {
+    "__typename": "ImageMetadata",
+    "id": "",
+    "originalHeight": 0,
+    "originalWidth": 0
+  },
+  "ImageMetadata:1*A8VytPZQhvUf_MG6hm_Dlw.png": {
+    "__typename": "ImageMetadata",
+    "id": "1*A8VytPZQhvUf_MG6hm_Dlw.png"
+  },
+  "ImageMetadata:1*D-bhytqsx7isYbv7I9s_uQ.png": {
+    "__typename": "ImageMetadata",
+    "alt": null,
+    "focusPercentX": null,
+    "focusPercentY": null,
+    "id": "1*D-bhytqsx7isYbv7I9s_uQ.png",
+    "originalHeight": 438,
+    "originalWidth": 1743
+  },
+  "ImageMetadata:1*X3g7xKlAWuOfPwbsEhQkmQ.png": {
+    "__typename": "ImageMetadata",
+    "alt": null,
+    "focusPercentX": null,
+    "focusPercentY": null,
+    "id": "1*X3g7xKlAWuOfPwbsEhQkmQ.png",
+    "originalHeight": 945,
+    "originalWidth": 3300
+  },
+  "ImageMetadata:1*XVtdl45m8YaYrPI4buJ5yQ.png": {
+    "__typename": "ImageMetadata",
+    "id": "1*XVtdl45m8YaYrPI4buJ5yQ.png"
+  },
+  "ImageMetadata:1*e16Nn813_4ReV0s9dn_0mw.jpeg": {
+    "__typename": "ImageMetadata",
+    "id": "1*e16Nn813_4ReV0s9dn_0mw.jpeg",
+    "originalWidth": 5483
+  },
+  "ImageMetadata:1*i1dsvrKy7SH8PE4l-eJJug.png": {
+    "__typename": "ImageMetadata",
+    "alt": null,
+    "focusPercentX": null,
+    "focusPercentY": null,
+    "id": "1*i1dsvrKy7SH8PE4l-eJJug.png",
+    "originalHeight": 518,
+    "originalWidth": 2087
+  },
+  "ImageMetadata:1*i5UmD6poC0MpEw0UlnWhTQ.png": {
+    "__typename": "ImageMetadata",
+    "focusPercentX": null,
+    "focusPercentY": null,
+    "id": "1*i5UmD6poC0MpEw0UlnWhTQ.png",
+    "originalWidth": 2000
+  },
+  "NewsletterV3:278dceec521d": {
+    "__typename": "NewsletterV3",
+    "collection": {
+      "__ref": "Collection:c72404660798"
+    },
+    "description": "Get updates on latest posts on ProAndroidDev and never miss a hot story! ",
+    "id": "278dceec521d",
+    "name": "ProAndroidDev Digest",
+    "promoBody": "",
+    "promoHeadline": "",
+    "showPromo": false,
+    "slug": "proandroiddev-digest",
+    "type": "NEWSLETTER_TYPE_COLLECTION",
+    "user": {
+      "__ref": "User:6c67343165e2"
+    }
+  },
+  "NewsletterV3:29c99b5fd48e": {
+    "__typename": "NewsletterV3",
+    "collection": null,
+    "description": "",
+    "id": "29c99b5fd48e",
+    "name": "f5582e224131",
+    "promoBody": "",
+    "promoHeadline": "",
+    "showPromo": false,
+    "slug": "f5582e224131",
+    "type": "NEWSLETTER_TYPE_AUTHOR",
+    "user": {
+      "__ref": "User:f5582e224131"
+    }
+  },
+  "NewsletterV3:c0983081eb3c": {
+    "__typename": "NewsletterV3",
+    "id": "c0983081eb3c"
+  },
+  "Paragraph:b29b6e347efb_0": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_0",
+    "iframe": null,
+    "layout": "INSET_CENTER",
+    "markups": [],
+    "metadata": {
+      "__ref": "ImageMetadata:1*D-bhytqsx7isYbv7I9s_uQ.png"
+    },
+    "mixtapeMetadata": null,
+    "name": "1936",
+    "text": "",
+    "type": "IMG"
+  },
+  "Paragraph:b29b6e347efb_1": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_1",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "d6fc",
+    "text": "Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2: AES-CBC + HMAC",
+    "type": "H3"
+  },
+  "Paragraph:b29b6e347efb_10": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_10",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8043",
+    "text": "For example if two parties securely exchanged MAC keys, and every message has an authentication tag attached, they both can check if the message was created by the other party and that it wasn’t changed during transmission. An attacker would need the secret MAC key to forge the authentication tag.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_11": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_11",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 142,
+        "href": "https://en.wikipedia.org/wiki/Cryptographic_hash_function",
+        "linkMetadata": null,
+        "start": 115,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 233,
+        "href": "https://tools.ietf.org/html/rfc2104",
+        "linkMetadata": null,
+        "start": 230,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 311,
+        "href": "https://en.wikipedia.org/wiki/CBC-MAC",
+        "linkMetadata": null,
+        "start": 304,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 403,
+        "href": "https://docs.oracle.com/javase/7/docs/technotes/guides/security/crypto/CryptoSpec.html#Mac",
+        "linkMetadata": null,
+        "start": 396,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 419,
+        "href": "https://docs.oracle.com/javase/7/docs/api/javax/crypto/Mac.html",
+        "linkMetadata": null,
+        "start": 416,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 93,
+        "href": "https://en.wikipedia.org/wiki/HMAC",
+        "linkMetadata": null,
+        "start": 48,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "4a9c",
+    "text": "One of the most widely used types of MAC is the keyed-hash message authentication code (HMAC) which incorporates a cryptographic hash function, often SHA256. As I won’t get into detail of the algorithm, I’ll recommend reading the RFC. Other types are available which are based on symmetric ciphers, like CBC-MAC. Nearly all crypto frameworks include at least a HMAC implementation, including the JCA/JCE through its Mac class.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_12": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_12",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "d1d5",
+    "text": "Using a MAC with Encryption: Scheme",
+    "type": "H4"
+  },
+  "Paragraph:b29b6e347efb_13": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_13",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 124,
+        "href": "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.5488&rep=rep1&type=pdf",
+        "linkMetadata": null,
+        "start": 101,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 90,
+        "href": "https://researcher.watson.ibm.com/researcher/view.php?person=us-hugokraw",
+        "linkMetadata": null,
+        "start": 77,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "76ab",
+    "text": "So what is the right way to apply this MAC? According to security researcher Hugo Krawcyzk there are basically three options:",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_14": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_14",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 91,
+        "href": "http://tools.ietf.org/html/rfc5246#section-6.2.3",
+        "linkMetadata": null,
+        "start": 88,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 16,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "76dd",
+    "text": "MAC-then-Encrypt: MAC the plain-text and then append it before encrypting both (used in SSL)",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_15": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_15",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 105,
+        "href": "http://tools.ietf.org/html/rfc4303#section-3.3.2.1",
+        "linkMetadata": null,
+        "start": 100,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 16,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "9bcd",
+    "text": "Encrypt-then-MAC: MAC the cipher-text and initial vector then append it to the cipher-text (used in IPsec)",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_16": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_16",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 95,
+        "href": "http://tools.ietf.org/html/rfc4253#section-6.4",
+        "linkMetadata": null,
+        "start": 92,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 15,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "ebe9",
+    "text": "Encrypt-and-MAC: MAC the plain-text, encrypt and then append it to the cipher-text (used in SSH)",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_17": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_17",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 113,
+        "href": "https://crypto.stackexchange.com/a/205/44838",
+        "linkMetadata": null,
+        "start": 87,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 133,
+        "href": "https://crypto.stackexchange.com/a/224/44838",
+        "linkMetadata": null,
+        "start": 129,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 145,
+        "href": "https://moxie.org/blog/the-cryptographic-doom-principle/",
+        "linkMetadata": null,
+        "start": 134,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 155,
+        "href": "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.5488&rep=rep1&type=pdf",
+        "linkMetadata": null,
+        "start": 146,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 178,
+        "href": "https://tools.ietf.org/html/rfc7366",
+        "linkMetadata": null,
+        "start": 156,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 684,
+        "href": "https://en.wikipedia.org/wiki/Padding_oracle_attack",
+        "linkMetadata": null,
+        "start": 663,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 691,
+        "href": "https://en.wikipedia.org/wiki/Moxie_Marlinspike",
+        "linkMetadata": null,
+        "start": 686,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 721,
+        "href": "https://moxie.org/blog/the-cryptographic-doom-principle/",
+        "linkMetadata": null,
+        "start": 707,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "9a85",
+    "text": "Every option has its own properties, and I’ll encourage you to read a full argument of either option in this post. To summarize, most researchers recommend Encrypt-then-MAC (EtM). It protects against chosen cipher-text attacks, since the MAC can prevent decryption of incorrect messages. Additionally, the MAC can’t leak information about the plain-text since it operates on the cipher-text. On the downside, it is slightly harder to implement since the IV and a possible protocol /algorithm version or type must be included in the tag. The important thing is to never do any cryptographic operation before verifying the MAC, otherwise you can be vulnerable to a padding-oracle attack (Moxie calls this the Doom Principle).",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_18": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_18",
+    "iframe": null,
+    "layout": "INSET_CENTER",
+    "markups": [],
+    "metadata": {
+      "__ref": "ImageMetadata:1*X3g7xKlAWuOfPwbsEhQkmQ.png"
+    },
+    "mixtapeMetadata": null,
+    "name": "0f85",
+    "text": "Encrypt-then-Mac schema",
+    "type": "IMG"
+  },
+  "Paragraph:b29b6e347efb_19": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_19",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 34,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 34,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "d8bc",
+    "text": "Addendum: GCM vs. Encrypt-then-Mac Generally the security strength of using either is probably similar. GCM has some advantages:",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_2": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_2",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 96,
+        "href": "https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9",
+        "linkMetadata": null,
+        "start": 47,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 329,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "6172",
+    "text": "This is the follow-up to my previous article: “Symmetric Encryption with AES in Java and Android” where I summarize the most important facts about AES and show how to put it to use with AES-GCM. I highly recommend reading it before this one, because it explains the most important basics, before diving right into the next topic.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_20": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_20",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "ad4d",
+    "text": "Simple to use aka less to get wrong",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_21": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_21",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "150f",
+    "text": "Faster, as it only needs a single pass through the whole message",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_22": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_22",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 215,
+        "href": "https://crypto.stackexchange.com/questions/26790/how-bad-it-is-using-the-same-iv-twice-with-aes-gcm",
+        "linkMetadata": null,
+        "start": 203,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 255,
+        "href": "https://crypto.stackexchange.com/a/10808/44838",
+        "linkMetadata": null,
+        "start": 246,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "5edf",
+    "text": "On the downside it only allows 96 bit initial vector (vs. 128 bit) and HMAC is theoretically stronger than GCM’s internal MAC algorithm GHASH (128 bit tag size vs. 256 bit+). GCM also fails miserably on IV+Key reuse. For more detailed discussion read here.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_23": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_23",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "3fe7",
+    "text": "Using a MAC with Encryption: Authentication Key",
+    "type": "H4"
+  },
+  "Paragraph:b29b6e347efb_24": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_24",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 123,
+        "href": "https://crypto.stackexchange.com/a/8086/44838",
+        "linkMetadata": null,
+        "start": 107,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 656,
+        "href": "https://tools.ietf.org/html/rfc5869",
+        "linkMetadata": null,
+        "start": 603,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "1021",
+    "text": "The last issue we have to solve: where do we get the secret key for the MAC calculation? There seems to be no known problem when using the same key as for the encryption (when using HMAC) if the used secret key is strong (i.e. sufficiently random and securely exchanged). However, best practice is to use a key derivation function (KDF) to derive 2 sub-keys just to be on the “safe” side if any problems may be found in the future. This can be as simple as calculating a SHA256 on the main secret key and splitting it to two 16 byte blocks. However, I rather much prefer standardized protocols like the HMAC-based Extract-and-Expand Key Derivation Function (HKDF) which directly support such use cases without byte fiddling.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_25": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_25",
+    "iframe": null,
+    "layout": "INSET_CENTER",
+    "markups": [],
+    "metadata": {
+      "__ref": "ImageMetadata:1*i1dsvrKy7SH8PE4l-eJJug.png"
+    },
+    "mixtapeMetadata": null,
+    "name": "cc44",
+    "text": "Key derivation of the two sub-keys",
+    "type": "IMG"
+  },
+  "Paragraph:b29b6e347efb_26": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_26",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "c367",
+    "text": "Implementing AES-CBC with EtM in Java and Android",
+    "type": "H3"
+  },
+  "Paragraph:b29b6e347efb_27": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": true,
+    "href": null,
+    "id": "b29b6e347efb_27",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 191,
+        "href": "https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html",
+        "linkMetadata": null,
+        "start": 145,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 211,
+        "href": "https://developer.android.com/reference/javax/crypto/Cipher",
+        "linkMetadata": null,
+        "start": 196,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 325,
+        "href": "https://github.com/patrickfav/hkdf",
+        "linkMetadata": null,
+        "start": 321,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 414,
+        "href": "https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9",
+        "linkMetadata": null,
+        "start": 398,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "93cc",
+    "text": "Enough theory, let’s code! In the following examples I will use AES-CBC, a seemingly conservative decision. The reason for this is, it should be guaranteed to be available on nearly every JRE and Android version. As explained before we will be using the Encrypt-then-Mac scheme with HMAC. The only external dependency is HKDF. This code is basically a port of the example using GCM described in my previous article.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_28": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_28",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8cd4",
+    "text": "Encryption",
+    "type": "H4"
+  },
+  "Paragraph:b29b6e347efb_29": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_29",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 257,
+        "href": "http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html",
+        "linkMetadata": null,
+        "start": 215,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 407,
+        "href": "https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9",
+        "linkMetadata": null,
+        "start": 391,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "57af",
+    "text": "To keep it simple, we use a randomly generated 128-bit key. Java will automatically choose the correct mode when you pass a key with 128, 192 or 256 bit length. Note however, 256-bit encryption usually requires the JCE Unlimited Strength Jurisdiction Policy installed in your JRE (OpenJDK & Android is fine). If you are not sure what key size to use, read the passage about this topic in my previous article.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_3": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": true,
+    "href": null,
+    "id": "b29b6e347efb_3",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 107,
+        "href": "https://en.wikipedia.org/wiki/Advanced_Encryption_Standard",
+        "linkMetadata": null,
+        "start": 73,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 177,
+        "href": "https://en.wikipedia.org/wiki/Galois/Counter_Mode",
+        "linkMetadata": null,
+        "start": 152,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 314,
+        "href": "https://security.stackexchange.com/questions/184305/why-would-i-ever-use-aes-256-cbc-if-aes-256-gcm-is-more-secure",
+        "linkMetadata": null,
+        "start": 299,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "0daa",
+    "text": "This article discusses the following scenario: what if you can’t use the Advanced Encryption Standard (AES) with authenticated encryption mode like the Galois/Counter Mode (GCM)? Either it is not supported on your currently used platform or you have to incorporate a legacy or third party protocol? Whatever reason you may have ditching GCM, you should not ditch the security properties it comes with:",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_30": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_30",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 72,
+        "href": null,
+        "linkMetadata": null,
+        "start": 70,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8640",
+    "text": "SecureRandom secureRandom = new SecureRandom();\nbyte[] key = new byte[16];\nsecureRandom.nextBytes(key);",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_31": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_31",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 179,
+        "href": "https://en.wikipedia.org/wiki/Pseudorandom_number_generator",
+        "linkMetadata": null,
+        "start": 143,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "ab85",
+    "text": "Then we have to create our initialization vector. For CBC a 16 byte long initial vector (IV) should be used. Be mindful to always use a strong pseudorandom number generator (PRNG) like SecureRandom.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_32": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_32",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 23,
+        "href": null,
+        "linkMetadata": null,
+        "start": 21,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "75e8",
+    "text": "byte[] iv = new byte[16];\nsecureRandom.nextBytes(iv);",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_33": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_33",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 112,
+        "href": "https://stackoverflow.com/a/3008544/774398",
+        "linkMetadata": null,
+        "start": 92,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "ebe5",
+    "text": "Reusing an IV is not as catastrophic as with GCM, but should be avoided nevertheless. See a possible attack here.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_34": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_34",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 105,
+        "href": "https://tools.ietf.org/html/rfc5869",
+        "linkMetadata": null,
+        "start": 101,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 157,
+        "href": "https://github.com/patrickfav/hkdf",
+        "linkMetadata": null,
+        "start": 140,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 252,
+        "href": null,
+        "linkMetadata": null,
+        "start": 248,
+        "type": "CODE",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "c85c",
+    "text": "In the next step we will derive our 2 sub-keys needed for encryption and authentication. We will use HKDF in the configuration HMAC-SHA256 (with this library) since it is easy and straight forward to use. We generate two 16 byte sub keys using the info parameter in HKDF to differentiate between them.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_35": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_35",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "f4a9",
+    "text": "// import at.favre.lib.crypto.HKDF;",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_36": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_36",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 190,
+        "href": null,
+        "linkMetadata": null,
+        "start": 185,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 90,
+        "href": null,
+        "linkMetadata": null,
+        "start": 85,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8129",
+    "text": "byte[] encKey = HKDF.fromHmacSha256().expand(key, \"encKey\".getBytes(StandardCharsets.UTF_8), 16);\nbyte[] authKey = HKDF.fromHmacSha256().expand(key, \"authKey\".getBytes(StandardCharsets.UTF_8), 32); //HMAC-SHA256 key is 32 byte",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_37": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_37",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 238,
+        "href": "https://crypto.stackexchange.com/questions/1486/how-to-choose-a-padding-mode-with-aes/1488#1488",
+        "linkMetadata": null,
+        "start": 215,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 316,
+        "href": "https://en.wikipedia.org/wiki/Padding_(cryptography)#PKCS%235_and_PKCS%237",
+        "linkMetadata": null,
+        "start": 310,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "af1f",
+    "text": "Next we will initialize the cipher and encrypt our plain-text. Since CBC is and behaves like a block mode we need a padding mode for messages which do not exactly fit the 16 byte block size. Since there seems to be no security implication regarding the used padding scheme, we chose the most widely supported: PKCS#7.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_38": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_38",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 27,
+        "href": "https://crypto.stackexchange.com/questions/9043/what-is-the-difference-between-pkcs5-padding-and-pkcs7-padding",
+        "linkMetadata": null,
+        "start": 13,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 336,
+        "href": null,
+        "linkMetadata": null,
+        "start": 316,
+        "type": "CODE",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 6,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 6,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 69,
+        "href": null,
+        "linkMetadata": null,
+        "start": 64,
+        "type": "CODE",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "2165",
+    "text": "Note: due to legacy reasons, we have to set our cipher suite to PKCS5. Both are practically the same but defined for different block sizes; normally PKCS#5 would not be compatible with AES, but since the definitions date back to 3DES where 8 byte blocks were used, we are stuck with it. If your JCE provider accepts AES/CBC/PKCS7Padding it's better to use this definition, so your code is easier to understand.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_39": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_39",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 120,
+        "href": null,
+        "linkMetadata": null,
+        "start": 108,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 40,
+        "href": null,
+        "linkMetadata": null,
+        "start": 29,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 88,
+        "href": null,
+        "linkMetadata": null,
+        "start": 82,
+        "type": "CODE",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "5d99",
+    "text": "final Cipher cipher = Cipher.getInstance(\"AES/CBC/PKCS5Padding\"); //actually uses PKCS#7\ncipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(encKey, \"AES\"), new IvParameterSpec(iv));\nbyte[] cipherText = cipher.doFinal(plainText);",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_4": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_4",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 15,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "72f8",
+    "text": "Confidentiality: Nobody without the key can read the message",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_40": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_40",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "36b1",
+    "text": "Next we have to prepare the MAC and add the main data to authenticate.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_41": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_41",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 100,
+        "href": null,
+        "linkMetadata": null,
+        "start": 99,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 58,
+        "href": null,
+        "linkMetadata": null,
+        "start": 57,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 87,
+        "href": null,
+        "linkMetadata": null,
+        "start": 76,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "a45b",
+    "text": "SecretKey macKey = new SecretKeySpec(authKey, \"HmacSHA256\");\nMac hmac = Mac.getInstance(\"HmacSHA256\");\nhmac.init(macKey);\nhmac.update(iv);\nhmac.update(cipherText);",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_42": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_42",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 212,
+        "href": "https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_Encryption_with_Associated_Data",
+        "linkMetadata": null,
+        "start": 178,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "74e4",
+    "text": "If you want to authenticate additional metadata, like the protocol version, you could also add it to the mac generation. This is the same concept as adding associated data to an authenticated encryption algorithm.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_43": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_43",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "c59f",
+    "text": "if (associatedData != null) {\n    hmac.update(associatedData);\n}",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_44": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_44",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "662e",
+    "text": "Then calculate the mac.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_45": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_45",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8c53",
+    "text": "byte[] mac = hmac.doFinal();",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_46": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_46",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "cb74",
+    "text": "Finally, serialize all of it to a single message.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_47": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_47",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 43,
+        "href": null,
+        "linkMetadata": null,
+        "start": 35,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8b1b",
+    "text": "ByteBuffer byteBuffer = ByteBuffer.allocate(1 + iv.length + 1 + mac.length + cipherText.length);\nbyteBuffer.put((byte) iv.length);\nbyteBuffer.put(iv);\nbyteBuffer.put((byte) mac.length);\nbyteBuffer.put(mac);\nbyteBuffer.put(cipherText);\nbyte[] cipherMessage = byteBuffer.array();",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_48": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_48",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "bf75",
+    "text": "And that’s basically it for encryption. For constructing the message, the length of the IV, the IV, the length of the mac, the mac and the encrypted data are appended to a single byte array.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_49": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_49",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 121,
+        "href": "https://developer.android.com/reference/android/util/Base64.html",
+        "linkMetadata": null,
+        "start": 78,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 170,
+        "href": "https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html",
+        "linkMetadata": null,
+        "start": 157,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 206,
+        "href": "https://commons.apache.org/proper/commons-codec/apidocs/org/apache/commons/codec/binary/Base64.html",
+        "linkMetadata": null,
+        "start": 186,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 37,
+        "href": "https://en.wikipedia.org/wiki/Base64",
+        "linkMetadata": null,
+        "start": 31,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "658d",
+    "text": "Optionally encode it with e.g. Base64 if you require a string representation. Android does have a standard implementation of this encoding, the JDK only from version 8 on (I would avoid Apache Commons Codec if possible since it is slow and a messy implementation).",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_5": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_5",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 11,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "629d",
+    "text": "Integrity: Nobody has changed the content of the message",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_50": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_50",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 170,
+        "href": "https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)",
+        "linkMetadata": null,
+        "start": 143,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 43,
+        "href": "https://security.stackexchange.com/questions/74280/would-it-be-good-secure-programming-practice-to-overwrite-a-sensitive-variable",
+        "linkMetadata": null,
+        "start": 6,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "a8e9",
+    "text": "It is best practice to try to wipe sensible data like a cryptographic key or IV from memory as fast as possible. Since Java is a language with automatic memory management, we don’t have any guarantees that the following works as intended, but it should in most cases:",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_51": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_51",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "667f",
+    "text": "Arrays.fill(authKey, (byte) 0);\nArrays.fill(encKey, (byte) 0);",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_52": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_52",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "c447",
+    "text": "Be mindful to not overwrite data that is still used somewhere else.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_53": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_53",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "a9cf",
+    "text": "Decryption",
+    "type": "H4"
+  },
+  "Paragraph:b29b6e347efb_54": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_54",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "1fd1",
+    "text": "Decryption works similar to encryption in reverse: first deconstruct the message.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_55": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_55",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 39,
+        "href": null,
+        "linkMetadata": null,
+        "start": 35,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "bbdb",
+    "text": "ByteBuffer byteBuffer = ByteBuffer.wrap(cipherMessage);\n\nint ivLength = (byteBuffer.get());\nif (ivLength != 16) { // check input parameter\n    throw new IllegalArgumentException(\"invalid iv length\");\n}",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_56": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_56",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "ca14",
+    "text": "byte[] iv = new byte[ivLength];\nbyteBuffer.get(iv);\n\nint macLength = (byteBuffer.get());\nif (macLength != 32) { // check input parameter\n    throw new IllegalArgumentException(\"invalid mac length\");\n}",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_57": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_57",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "4a0b",
+    "text": "byte[] mac = new byte[macLength];\nbyteBuffer.get(mac);\n\nbyte[] cipherText = new byte[byteBuffer.remaining()];\nbyteBuffer.get(cipherText);",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_58": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_58",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 39,
+        "href": "https://cwe.mitre.org/data/definitions/789.html",
+        "linkMetadata": null,
+        "start": 14,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "060b",
+    "text": "Be careful to validate input parameters to prevent denial of service attacks, like the IV or mac length, as an attacker may change the value.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_59": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_59",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "ac19",
+    "text": "Then derive the keys needed for decryption and authentication.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_6": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_6",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 14,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8495",
+    "text": "Authenticity: The originator of the message can be verified",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_60": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_60",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "a6f2",
+    "text": "// import at.favre.lib.crypto.HKDF;",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_61": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_61",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 190,
+        "href": null,
+        "linkMetadata": null,
+        "start": 185,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 90,
+        "href": null,
+        "linkMetadata": null,
+        "start": 85,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "02c0",
+    "text": "byte[] encKey = HKDF.fromHmacSha256().expand(key, \"encKey\".getBytes(StandardCharsets.UTF_8), 16);\nbyte[] authKey = HKDF.fromHmacSha256().expand(key, \"authKey\".getBytes(StandardCharsets.UTF_8), 32);",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_62": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_62",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 7,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "2eab",
+    "text": "Before we decrypt anything, we will verify the MAC. First we calculate the MAC as before; don’t forget previously added associated data.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_63": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_63",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 100,
+        "href": null,
+        "linkMetadata": null,
+        "start": 99,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 58,
+        "href": null,
+        "linkMetadata": null,
+        "start": 57,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 87,
+        "href": null,
+        "linkMetadata": null,
+        "start": 76,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "d55d",
+    "text": "SecretKey macKey = new SecretKeySpec(authKey, \"HmacSHA256\");\nMac hmac = Mac.getInstance(\"HmacSHA256\");\nhmac.init(macKey);\nhmac.update(iv);\nhmac.update(cipherText);\nif (associatedData != null) {\n    hmac.update(associatedData);\n}\nbyte[] refMac = hmac.doFinal();",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_64": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_64",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 100,
+        "href": "https://en.wikipedia.org/wiki/Side-channel_attack",
+        "linkMetadata": null,
+        "start": 80,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 133,
+        "href": "https://codahale.com/a-lesson-in-timing-attacks/",
+        "linkMetadata": null,
+        "start": 102,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 178,
+        "href": "https://docs.oracle.com/javase/7/docs/api/java/security/MessageDigest.html#isEqual(byte[],%20byte[])",
+        "linkMetadata": null,
+        "start": 154,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 214,
+        "href": "https://www.oracle.com/technetwork/java/javase/6u17-141447.html",
+        "linkMetadata": null,
+        "start": 205,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 178,
+        "href": null,
+        "linkMetadata": null,
+        "start": 154,
+        "type": "CODE",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "7168",
+    "text": "Now when comparing the mac, we need a constant time comparing function to avoid side channel attacks; read here why this is important. Luckily we can use MessageDigest.isEquals() (the old bug was fixed in Java 6u17):",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_65": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_65",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 103,
+        "href": null,
+        "linkMetadata": null,
+        "start": 38,
+        "type": "CODE",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 27,
+        "href": null,
+        "linkMetadata": null,
+        "start": 5,
+        "type": "CODE",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8375",
+    "text": "if (!MessageDigest.isEqual(refMac, mac)) {\n    throw new SecurityException(\"could not authenticate\");\n}",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_66": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_66",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "8517",
+    "text": "As the last step we can finally decrypt our message.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_67": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_67",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 40,
+        "href": null,
+        "linkMetadata": null,
+        "start": 29,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 97,
+        "href": null,
+        "linkMetadata": null,
+        "start": 85,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "07f5",
+    "text": "final Cipher cipher = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");\ncipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(encKey, \"AES\"), new IvParameterSpec(iv));\nbyte[] plainText = cipher.doFinal(cipherText);",
+    "type": "PRE"
+  },
+  "Paragraph:b29b6e347efb_68": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_68",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 102,
+        "href": "https://github.com/patrickfav/armadillo/blob/master/armadillo/src/main/java/at/favre/lib/armadillo/AesCbcEncryption.java",
+        "linkMetadata": null,
+        "start": 89,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 148,
+        "href": "https://gist.github.com/patrickfav/b323f0d9cbd81d5fa9cc4c971b732c77",
+        "linkMetadata": null,
+        "start": 133,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 82,
+        "href": "https://github.com/patrickfav/armadillo?utm_source=android-arsenal.com&utm_medium=referral&utm_campaign=6636",
+        "linkMetadata": null,
+        "start": 58,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "7b7a",
+    "text": "That’s it! If you like to see a full example check out my GitHub project Armadillo where I use AES-CBC. You can also find this exact example as Gist if you have trouble following the snippets.",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_69": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_69",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "b027",
+    "text": "Summary",
+    "type": "H3"
+  },
+  "Paragraph:b29b6e347efb_7": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_7",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 171,
+        "href": "https://crypto.stackexchange.com/questions/13264/why-is-cbc-based-on-aes-malleable-in-blocks-other-than-the-first-block",
+        "linkMetadata": null,
+        "start": 162,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 335,
+        "href": "https://en.wikipedia.org/wiki/Message_authentication_code",
+        "linkMetadata": null,
+        "start": 302,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 82,
+        "href": "https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_(CBC)",
+        "linkMetadata": null,
+        "start": 61,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "7fdf",
+    "text": "Choosing a non-authenticated encryption, like the block mode cipher block chaining (CBC) by itself, will unfortunately lack the latter two properties since it is malleable. How to fix this? As stated in my previous article, a possible solution would be to combine cryptographic primitives to include a message authentication code (MAC).",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_70": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_70",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "7801",
+    "text": "We showed that the usage of AES with cipher block chaining (CBC) and Encrypt-then-MAC schema using HMAC provides all desirable security properties we would like to see from our encryption protocol:",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_71": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_71",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 43,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "21f6",
+    "text": "Confidentiality, integrity and authenticity",
+    "type": "PQ"
+  },
+  "Paragraph:b29b6e347efb_72": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_72",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "e40d",
+    "text": "As can be seen, the protocol is a bit more involved as just using GCM. However, these primitives are generally available in all Java/Android environments, so it may be the only option you have. Just consider the following:",
+    "type": "P"
+  },
+  "Paragraph:b29b6e347efb_73": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_73",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 61,
+        "href": "https://en.wikipedia.org/wiki/Pseudorandom_number_generator",
+        "linkMetadata": null,
+        "start": 57,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "befb",
+    "text": "Use a 16 byte random initialization vector (use a strong PRNG)",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_74": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_74",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "0a7b",
+    "text": "Use 128+ bit MAC length (HMAC-SHA256 outputs 256 bit)",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_75": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_75",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "95d3",
+    "text": "Use Encrypt-then-Mac",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_76": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_76",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "3429",
+    "text": "Use a KDF to derive the 2 Sub-Keys",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_77": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_77",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 40,
+        "href": "https://moxie.org/blog/the-cryptographic-doom-principle/",
+        "linkMetadata": null,
+        "start": 26,
+        "type": "A",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "4cd2",
+    "text": "Verify before decryption (Doom Principle)",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_78": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_78",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "dc35",
+    "text": "Prevent timing attacks by using constant time equals implementations",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_79": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_79",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "a31f",
+    "text": "Use 128-bit encryption key length (you will be fine!)",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_8": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_8",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "24bf",
+    "text": "Message Authentication Code (MAC)",
+    "type": "H4"
+  },
+  "Paragraph:b29b6e347efb_80": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_80",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "7ad3",
+    "text": "Pack everything together into a single message",
+    "type": "ULI"
+  },
+  "Paragraph:b29b6e347efb_81": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_81",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "dc77",
+    "text": "References",
+    "type": "H4"
+  },
+  "Paragraph:b29b6e347efb_82": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_82",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 142,
+        "href": "https://github.com/patrickfav/hkdf",
+        "linkMetadata": null,
+        "start": 0,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 132,
+        "href": null,
+        "linkMetadata": null,
+        "start": 16,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 15,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": {
+      "__typename": "MixtapeMetadata",
+      "href": "https://github.com/patrickfav/hkdf",
+      "mediaResource": {
+        "__typename": "MediaResource",
+        "mediumCatalog": null
+      },
+      "thumbnailImageId": "0*VuUuGaTq76KUUOhi"
+    },
+    "name": "d60d",
+    "text": "patrickfav/hkdf\nHashed Message Authentication Code (HMAC)-based key derivation function ( HKDF), can be used as a building block in…github.com",
+    "type": "MIXTAPE_EMBED"
+  },
+  "Paragraph:b29b6e347efb_83": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_83",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 150,
+        "href": "https://github.com/patrickfav/armadillo",
+        "linkMetadata": null,
+        "start": 0,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 140,
+        "href": null,
+        "linkMetadata": null,
+        "start": 21,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 20,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": {
+      "__typename": "MixtapeMetadata",
+      "href": "https://github.com/patrickfav/armadillo",
+      "mediaResource": {
+        "__typename": "MediaResource",
+        "mediumCatalog": null
+      },
+      "thumbnailImageId": "0*uvcJxB2LOV_Fw76A"
+    },
+    "name": "d388",
+    "text": "patrickfav/armadillo\nA shared preference implementation for secret data providing confidentiality, integrity and authenticity . Per default…github.com",
+    "type": "MIXTAPE_EMBED"
+  },
+  "Paragraph:b29b6e347efb_84": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_84",
+    "iframe": null,
+    "layout": null,
+    "markups": [],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "023e",
+    "text": "Further Reading",
+    "type": "H4"
+  },
+  "Paragraph:b29b6e347efb_85": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_85",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": "LINK",
+        "end": 182,
+        "href": "https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9",
+        "linkMetadata": null,
+        "start": 0,
+        "type": "A",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 165,
+        "href": null,
+        "linkMetadata": null,
+        "start": 75,
+        "type": "EM",
+        "userId": null
+      },
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 74,
+        "href": null,
+        "linkMetadata": null,
+        "start": 0,
+        "type": "STRONG",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": {
+      "__typename": "MixtapeMetadata",
+      "href": "https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-7616beaaade9",
+      "mediaResource": {
+        "__typename": "MediaResource",
+        "mediumCatalog": null
+      },
+      "thumbnailImageId": "1*-74iYKGPthRrgTos1OK0LQ.png"
+    },
+    "name": "9cd4",
+    "text": "Security Best Practices: Symmetric Encryption with AES in Java and Android\nWhat to consider when encrypting your data and how to correctly implement it with AES-GCM.proandroiddev.com",
+    "type": "MIXTAPE_EMBED"
+  },
+  "Paragraph:b29b6e347efb_9": {
+    "__typename": "Paragraph",
+    "codeBlockMetadata": null,
+    "dropCapImage": null,
+    "hasDropCap": null,
+    "href": null,
+    "id": "b29b6e347efb_9",
+    "iframe": null,
+    "layout": null,
+    "markups": [
+      {
+        "__typename": "Markup",
+        "anchorType": null,
+        "end": 149,
+        "href": null,
+        "linkMetadata": null,
+        "start": 146,
+        "type": "EM",
+        "userId": null
+      }
+    ],
+    "metadata": null,
+    "mixtapeMetadata": null,
+    "name": "ac09",
+    "text": "So what is a MAC, and why do we need it? A MAC is similar to a hash function, meaning it takes a message as input and generates a short so-called tag. To make sure not everybody can create a tag for any arbitrary message, the MAC function requires a secret key for its calculation. In contrast to a signature used with asymmetric encryption, a MAC has the same key for both generation and authentication.",
+    "type": "P"
+  },
+  "Post:7575eacd7295": {
+    "__typename": "Post",
+    "id": "7575eacd7295"
+  },
+  "Post:b3b80e99ad36": {
+    "__typename": "Post",
+    "allowResponses": true,
+    "awards:countToShowAwardBadge(type:STAFF_PICK,limit:1)": {
+      "__typename": "AwardConnection",
+      "awards": [],
+      "totalCount": 0
+    },
+    "canonicalUrl": "",
+    "clapCount": 289,
+    "collaborators": [],
+    "collection": {
+      "__ref": "Collection:c72404660798"
+    },
+    "content({\"postMeteringOptions\":{\"forceTruncation\":false}})": {
+      "__typename": "PostContent",
+      "bodyModel": {
+        "__typename": "RichText",
+        "paragraphs": [
+          {
+            "__ref": "Paragraph:b29b6e347efb_0"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_1"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_10"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_11"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_12"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_13"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_14"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_15"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_16"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_17"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_18"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_19"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_2"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_20"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_21"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_22"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_23"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_24"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_25"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_26"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_27"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_28"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_29"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_3"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_30"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_31"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_32"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_33"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_34"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_35"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_36"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_37"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_38"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_39"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_4"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_40"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_41"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_42"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_43"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_44"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_45"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_46"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_47"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_48"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_49"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_5"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_50"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_51"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_52"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_53"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_54"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_55"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_56"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_57"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_58"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_59"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_6"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_60"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_61"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_62"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_63"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_64"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_65"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_66"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_67"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_68"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_69"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_7"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_70"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_71"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_72"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_73"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_74"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_75"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_76"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_77"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_78"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_79"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_8"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_80"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_81"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_82"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_83"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_84"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_85"
+          },
+          {
+            "__ref": "Paragraph:b29b6e347efb_9"
+          }
+        ],
+        "sections": [
+          {
+            "__typename": "Section",
+            "backgroundImage": null,
+            "backgroundVideo": null,
+            "imageLayout": null,
+            "name": "0ec0",
+            "startIndex": 3,
+            "textLayout": null,
+            "videoLayout": null
+          },
+          {
+            "__typename": "Section",
+            "backgroundImage": null,
+            "backgroundVideo": null,
+            "imageLayout": null,
+            "name": "5530",
+            "startIndex": 69,
+            "textLayout": null,
+            "videoLayout": null
+          },
+          {
+            "__typename": "Section",
+            "backgroundImage": null,
+            "backgroundVideo": null,
+            "imageLayout": null,
+            "name": "87f1",
+            "startIndex": 0,
+            "textLayout": null,
+            "videoLayout": null
+          },
+          {
+            "__typename": "Section",
+            "backgroundImage": null,
+            "backgroundVideo": null,
+            "imageLayout": null,
+            "name": "e4a5",
+            "startIndex": 26,
+            "textLayout": null,
+            "videoLayout": null
+          }
+        ]
+      },
+      "isLockedPreviewOnly": false,
+      "validatedShareKey": ""
+    },
+    "creator": {
+      "__ref": "User:f5582e224131"
+    },
+    "curationStatus": "CURATION_STATUS_DISABLED",
+    "customStyleSheet": null,
+    "firstPublishedAt": 1542014435374,
+    "id": "b3b80e99ad36",
+    "inResponseToEntityType": null,
+    "isIndexable": true,
+    "isLimitedState": false,
+    "isLocked": false,
+    "isMarkedPaywallOnly": false,
+    "isPublished": true,
+    "isSeries": false,
+    "isShortform": false,
+    "isSuspended": false,
+    "latestPublishedAt": 1677411232079,
+    "latestPublishedVersion": "b29b6e347efb",
+    "layerCake": 4,
+    "license": "ALL_RIGHTS_RESERVED",
+    "lockedSource": "LOCKED_POST_SOURCE_NONE",
+    "mediumUrl": "https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2-b3b80e99ad36",
+    "metaDescription": "",
+    "noIndex": null,
+    "pendingCollection": null,
+    "pinnedAt": 0,
+    "postResponses": {
+      "__typename": "PostResponses",
+      "count": 3
+    },
+    "previewContent": {
+      "__typename": "PreviewContent",
+      "subtitle": "If you can’t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC."
+    },
+    "previewImage": {
+      "__ref": "ImageMetadata:1*D-bhytqsx7isYbv7I9s_uQ.png"
+    },
+    "primaryTopic": null,
+    "readingTime": 8.180188679245283,
+    "recommenders": [],
+    "seoDescription": "This article is the second part of a series of articles that focuses on Symmetric Encryption with AES in Java and Android. It discusses the message authentication code (MAC) and how to choose the right one. ",
+    "seoTitle": "",
+    "sequence": null,
+    "shortformType": "SHORTFORM_TYPE_LINK",
+    "socialDek": "",
+    "socialTitle": "",
+    "statusForCollection": "APPROVED",
+    "tags": [
+      {
+        "__ref": "Tag:android"
+      },
+      {
+        "__ref": "Tag:androiddev"
+      },
+      {
+        "__ref": "Tag:crypto"
+      },
+      {
+        "__ref": "Tag:encryption"
+      },
+      {
+        "__ref": "Tag:security"
+      }
+    ],
+    "title": "Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2",
+    "topics": [
+      {
+        "__typename": "Topic",
+        "name": "Android Dev",
+        "slug": "android-development"
+      },
+      {
+        "__typename": "Topic",
+        "name": "Cybersecurity",
+        "slug": "cybersecurity"
+      },
+      {
+        "__typename": "Topic",
+        "name": "Programming",
+        "slug": "programming"
+      }
+    ],
+    "uniqueSlug": "security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2-b3b80e99ad36",
+    "updatedAt": 1678725281155,
+    "viewerEdge": {
+      "__ref": "PostViewerEdge:postId:b3b80e99ad36-viewerId:lo_e947d5c652bf"
+    },
+    "visibility": "PUBLIC",
+    "voterCount": 50
+  },
+  "PostViewerEdge:postId:b3b80e99ad36-viewerId:lo_e947d5c652bf": {
+    "__typename": "PostViewerEdge",
+    "id": "postId:b3b80e99ad36-viewerId:lo_e947d5c652bf",
+    "paywall": {
+      "__typename": "PostPaywall",
+      "creatorSpotlights": [
+        {
+          "__typename": "CreatorSpotlight",
+          "company": "DataedX",
+          "hideOnSmallScreen": null,
+          "miroId": "1*qLWny7soUL4K4lqhX1wQVw.png",
+          "name": "Brandeis Marshall",
+          "title": "CEO"
+        },
+        {
+          "__typename": "CreatorSpotlight",
+          "company": "Google",
+          "hideOnSmallScreen": null,
+          "miroId": "1*CM27oO9pXETXjs2M9_dUFg.jpeg",
+          "name": "Carlos Arguelles",
+          "title": "Sr. Staff Engineer"
+        },
+        {
+          "__typename": "CreatorSpotlight",
+          "company": "Google",
+          "hideOnSmallScreen": true,
+          "miroId": "1*IL0mnvzNcpG2ZD0JBqo7zQ.jpeg",
+          "name": "Cassie Kozyrkov",
+          "title": "Chief Decision Scientist"
+        },
+        {
+          "__typename": "CreatorSpotlight",
+          "company": "JPMorgan Chase",
+          "hideOnSmallScreen": null,
+          "miroId": "1*J2fWNTyPbgEhIyvVIjHAXg.jpeg",
+          "name": "Camille Fournier",
+          "title": "Head of Engineering"
+        },
+        {
+          "__typename": "CreatorSpotlight",
+          "company": "Meta",
+          "hideOnSmallScreen": null,
+          "miroId": "2*gHhbmOgQGWxZrqDIfLps6A.jpeg",
+          "name": "Vitali Zaidman",
+          "title": "Software Architect"
+        },
+        {
+          "__typename": "CreatorSpotlight",
+          "company": "Nasdaq",
+          "hideOnSmallScreen": null,
+          "miroId": "2*CSDritfpmHLYxn63arD9sQ.jpeg",
+          "name": "Tony Yiu",
+          "title": "Director"
+        },
+        {
+          "__typename": "CreatorSpotlight",
+          "company": "Netflix",
+          "hideOnSmallScreen": true,
+          "miroId": "1*uSxyStPJhzmIp7PjJLcpiw.jpeg",
+          "name": "Marc-André Giroux",
+          "title": "Sr. Software Developer"
+        },
+        {
+          "__typename": "CreatorSpotlight",
+          "company": "UCSD",
+          "hideOnSmallScreen": null,
+          "miroId": "4*f7EyGRullh3Ih_2tm3k5xw.png",
+          "name": "Memo Akten",
+          "title": "Asst. Professor"
+        }
+      ],
+      "type": "PROGRAMMING"
+    }
+  },
+  "ROOT_QUERY": {
+    "__typename": "Query",
+    "collectionByDomainOrSlug({\"domainOrSlug\":\"proandroiddev.com\"})": {
+      "__ref": "Collection:c72404660798"
+    },
+    "postResult({\"id\":\"b3b80e99ad36\"})": {
+      "__ref": "Post:b3b80e99ad36"
+    },
+    "variantFlags": [
+      {
+        "__typename": "VariantFlag",
+        "name": "allow_access",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "allow_signup",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "allow_test_auth",
+        "valueType": {
+          "__typename": "VariantFlagString",
+          "value": "disallow"
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "android_enable_editor_new_publishing_flow",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "android_enable_lists_v2",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "android_enable_syntax_highlight",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "android_notifications_rewrite",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "android_responses_rewrite",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "android_two_hour_refresh",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "author_fair_distribution_non_qp3",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "available_annual_plan",
+        "valueType": {
+          "__typename": "VariantFlagString",
+          "value": "2c754bcc2995"
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "available_monthly_plan",
+        "valueType": {
+          "__typename": "VariantFlagString",
+          "value": "60e220181034"
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "bevy_rds_double_write",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "browsable_stream_config_bucket",
+        "valueType": {
+          "__typename": "VariantFlagString",
+          "value": "curated-topics"
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "can_receive_tips_v0",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "can_send_tips_v0",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "coronavirus_topic_recirc",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "covid_19_cdc_banner",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "disable_edge_cache",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "disable_partner_program_enrollment",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_android_miro_v2",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_android_offline_reading",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_android_verified_author",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_annual_renewal_reminder_email",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_app_flirty_thirty",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_apple_sign_in",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_apple_webhook",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_aspirational_paywall",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_aurora_nav",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_aurora_pub_follower_page",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_author_cards_byline",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_author_cards",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_auto_follow_on_subscribe",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_automod",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_boosted_notification",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_braintree_apple_pay",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_braintree_client",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_braintree_google_pay",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_braintree_integration",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_braintree_paypal",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_braintree_trial_membership",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_braintree_webhook",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_branch_io",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_cache_less_following_feed",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_creator_welcome_email",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_digest_generation_pipeline",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_digest_tagline",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_email_sign_in_captcha",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_entities_to_follow_v2",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_featurestore_parallel_queries",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_footer_app_buttons",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_google_one_tap",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_google_webhook",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_group_gifting",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_iceland_forced_android",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_import",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_ios_autorefresh",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_ios_dynamic_paywall_aspiriational",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_ios_dynamic_paywall_programming",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_ios_offline_reading",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_legacy_feed_in_iceland",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_lite_continue_this_thread",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_lite_homepage",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_lite_response_markup",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_lite_server_upstream_deadlines",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_marketing_emails",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_mastodon_avatar_upload",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_mastodon_for_members_username_selection",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_mastodon_for_members",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_medium2_kbfd",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_ml_rank_rex_anno",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_newsletter_lo_flow_custom_domains",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_notifications_service",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_pill_based_home_feed",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_pp_dashboard_referred_earnings",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_recirc_model",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_rex_aggregator_v2",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_rex_new_push_notification_endpoint",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_rex_reading_history",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_rito_upstream_deadlines",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_seamless_social_sharing",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_signup_friction",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_speechify_ios",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_speechify_widget",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_sprig",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_starspace",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_tag_recs",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_tick_landing_page",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_tipping_v0_android",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_tipping_v0_ios",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_tribute_landing_page",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_triton_recirc",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_twitter_auth_suggestions",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_updated_follower_email",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_updated_new_user_onboarding",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "enable_verifications_service",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "explicit_signals_android",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "explicit_signals_ios",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "glyph_font_set",
+        "valueType": {
+          "__typename": "VariantFlagString",
+          "value": "m2-unbound-source-serif-pro"
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "ios_display_paywall_after_onboarding",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "ios_enable_home_post_menu",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "ios_enable_lock_responses",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "ios_enable_verified_book_author",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "ios_iceland_nux",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "ios_in_app_free_trial",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "ios_remove_twitter_onboarding_step",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "ios_social_share_sheet",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "limit_post_referrers",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "limit_user_follows",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "onboarding_tags_from_top_views",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "reader_fair_distribution_non_qp",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "redefined_top_posts",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "signin_services",
+        "valueType": {
+          "__typename": "VariantFlagString",
+          "value": "twitter,facebook,google,email,google-fastidv,google-one-tap,apple"
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "signup_services",
+        "valueType": {
+          "__typename": "VariantFlagString",
+          "value": "twitter,facebook,google,email,google-fastidv,google-one-tap,apple"
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "skip_fs_cache_user_vals",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "skip_sign_in_recaptcha",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "textshots_userid",
+        "valueType": {
+          "__typename": "VariantFlagString",
+          "value": ""
+        }
+      },
+      {
+        "__typename": "VariantFlag",
+        "name": "web_enable_syntax_highlighting",
+        "valueType": {
+          "__typename": "VariantFlagBoolean",
+          "value": true
+        }
+      }
+    ],
+    "viewer": null
+  },
+  "Tag:android": {
+    "__typename": "Tag",
+    "displayTitle": "Android",
+    "id": "android",
+    "normalizedTagSlug": "android"
+  },
+  "Tag:androiddev": {
+    "__typename": "Tag",
+    "displayTitle": "AndroidDev",
+    "id": "androiddev",
+    "normalizedTagSlug": "androiddev"
+  },
+  "Tag:crypto": {
+    "__typename": "Tag",
+    "displayTitle": "Crypto",
+    "id": "crypto",
+    "normalizedTagSlug": "crypto"
+  },
+  "Tag:encryption": {
+    "__typename": "Tag",
+    "displayTitle": "Encryption",
+    "id": "encryption",
+    "normalizedTagSlug": "encryption"
+  },
+  "Tag:security": {
+    "__typename": "Tag",
+    "displayTitle": "Security",
+    "id": "security",
+    "normalizedTagSlug": "security"
+  },
+  "User:6c67343165e2": {
+    "__typename": "User",
+    "id": "6c67343165e2",
+    "name": "Uli Quasebarth",
+    "newsletterV3": {
+      "__ref": "NewsletterV3:c0983081eb3c"
+    },
+    "username": "quasiUli"
+  },
+  "User:c6e8e225f7d5": {
+    "__typename": "User",
+    "atsQualifiedAt": 1612205301133,
+    "id": "c6e8e225f7d5"
+  },
+  "User:f5582e224131": {
+    "__typename": "User",
+    "allowNotes": true,
+    "atsQualifiedAt": 1612205579804,
+    "authoredBooks": [],
+    "bio": "Software Engineer currently working through the stack: JS frontend, Android Mobile, Java Backend. Security is my passion.",
+    "customDomainState": null,
+    "customStyleSheet": {
+      "__ref": "CustomStyleSheet:79f04df7388e"
+    },
+    "hasSubdomain": false,
+    "homepagePostsConnection:{\"paging\":{\"limit\":1}}": {
+      "__typename": "PostConnection",
+      "posts": [
+        {
+          "__ref": "Post:7575eacd7295"
+        }
+      ]
+    },
+    "id": "f5582e224131",
+    "imageId": "1*ekOrZrHyQQ8NwHuP-K07LQ.jpeg",
+    "isAuroraVisible": true,
+    "isPartnerProgramEnrolled": false,
+    "isSuspended": false,
+    "linkedAccounts": {
+      "__typename": "LinkedAccounts",
+      "mastodon": null
+    },
+    "mediumMemberAt": 0,
+    "name": "Patrick Favre-Bulle",
+    "newsletterV3": {
+      "__ref": "NewsletterV3:29c99b5fd48e"
+    },
+    "postSubscribeMembershipUpsellShownAt": 0,
+    "socialStats": {
+      "__typename": "SocialStats",
+      "collectionFollowingCount": 7,
+      "followerCount": 376,
+      "followingCount": 27
+    },
+    "twitterScreenName": "patrickfav",
+    "username": "patrickfav",
+    "verifications": {
+      "__typename": "VerifiedInfo",
+      "isBookAuthor": false
+    },
+    "viewerEdge": {
+      "__ref": "UserViewerEdge:userId:f5582e224131-viewerId:lo_e947d5c652bf"
+    },
+    "viewerIsUser": false
+  },
+  "UserViewerEdge:userId:f5582e224131-viewerId:lo_e947d5c652bf": {
+    "__typename": "UserViewerEdge",
+    "id": "userId:f5582e224131-viewerId:lo_e947d5c652bf",
+    "isBlocking": false,
+    "isFollowing": false,
+    "isUser": false
+  }
+}

@@ -29,7 +29,7 @@ export class MediumDownloader extends Downloader {
             const post = postInfoArray[index]
             console.log('\tProcessing medium article ' + post.url)
 
-            const articleInfo = await this.getArticleInfo(post)
+            const [articleInfo, userInfo] = await this.parseMetaDataFromArticleHtml(post)
 
             const title = articleInfo.title
             const slug = generateSlug(title, 'medium', new Date(articleInfo.firstPublishedAt), articleInfo.id)
@@ -42,14 +42,13 @@ export class MediumDownloader extends Downloader {
 
             await this.downloadProjectImage(articleInfo, slug.safeName, targetProjectDir)
 
-
             const targetProjectFile = targetProjectDir + '/index.md'
             const frontMatter = this.createFrontMatter(articleInfo, slug)
             const markdown = await this.fetchAndReplaceImages(post.markdown, targetProjectDir)
             StringStream.from(frontMatter + markdown)
                 .pipe(fs.createWriteStream(targetProjectFile))
 
-            contentStats.push(this.createContentStat(articleInfo, markdown.length))
+            this.updateContentStats(contentStats, articleInfo, userInfo, markdown.length)
         }
 
         return contentStats
@@ -120,7 +119,7 @@ export class MediumDownloader extends Downloader {
         return postInfo
     }
 
-    private async getArticleInfo(post: PostInfo): Promise<ArticleInfo> {
+    private async parseMetaDataFromArticleHtml(post: PostInfo): Promise<[ArticleInfo, UserInfo]> {
         const mediumArticleDom = await got(post.url)
             .then(response => response.body)
             .then(body => cheerio.load(body, {xmlMode: true}))
@@ -128,7 +127,7 @@ export class MediumDownloader extends Downloader {
                 throw new Error(err)
             })
 
-        const json = mediumArticleDom('script')
+        const jsonString = mediumArticleDom('script')
             .map((idx, el) => mediumArticleDom(el).html())
             .toArray()
             .find((data) => data.includes('window.__APOLLO_STATE__'))!
@@ -138,7 +137,10 @@ export class MediumDownloader extends Downloader {
         // throttle
         await new Promise(resolve => setTimeout(resolve, 500))
 
-        return JSON.parse(json)[`Post:${post.articleId}`]
+        const json = JSON.parse(jsonString)
+        const articleInfo = json[`Post:${post.articleId}`]
+
+        return [articleInfo, json[`${articleInfo.creator.__ref}`]]
     }
 
     private createFrontMatter(articleInfo: ArticleInfo, slug: Slug) {
@@ -193,6 +195,33 @@ export class MediumDownloader extends Downloader {
 
         return markdownContent
     }
+
+    private updateContentStats(contentStats: ContentStat[], articleInfo: ArticleInfo, userInfo: UserInfo, contentLength: number) {
+        if(userInfo && userInfo.socialStats && !contentStats.find(c => {return c.type === 'medium-user'})) {
+            contentStats.push({
+                type: "medium-user",
+                user: this.config.userName,
+                subjectId: articleInfo.id,
+                date: this.downloadDate,
+                values: {
+                    follower: userInfo.socialStats.followerCount,
+                    following: userInfo.socialStats.followingCount
+                }
+            })
+        }
+
+        contentStats.push({
+            type: "medium",
+            user: this.config.userName,
+            subjectId: this.config.userName,
+            date: this.downloadDate,
+            values: {
+                contentLength: contentLength,
+                claps: articleInfo.clapCount,
+                voters: articleInfo.voterCount,
+            }
+        })
+    }
 }
 
 interface MediumConfig {
@@ -222,4 +251,16 @@ interface ArticleInfo {
         { name: string }
     ]
     voterCount: number
+    creator: {
+        __ref: string
+    }
+}
+
+interface UserInfo {
+    id: string
+    socialStats: {
+        collectionFollowingCount: number
+        followerCount: number
+        followingCount: number
+    }
 }

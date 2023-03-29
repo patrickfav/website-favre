@@ -1,11 +1,12 @@
-export type ContentStatType = "gh" | "gist" | "medium" | "so" | "so-user" | "so-question";
+export type ContentStatType = "gh" | "gist" | "medium" | "medium-user" | "so" | "so-user" | "so-question";
+export type ContentStatValue = GithubStats | GistStats | MediumStats | MediumUserStats | StackOverflowAnswerStats | StackOverflowUserStats;
 
 export interface ContentStat {
     type: ContentStatType
     user: string
     subjectId: string
     date: Date
-    values: GithubStats | GistStats | MediumStats | StackOverflowAnswerStats | StackOverflowUserStats
+    values: ContentStatValue
 }
 
 interface GeneralStats {
@@ -44,4 +45,9 @@ export interface StackOverflowUserStats {
 export interface MediumStats extends GeneralStats {
     claps: number
     voters: number
+}
+
+export interface MediumUserStats {
+    follower: number
+    following: number
 }

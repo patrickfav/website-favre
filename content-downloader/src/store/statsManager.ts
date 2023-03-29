@@ -1,11 +1,4 @@
-import {
-    ContentStat,
-    GistStats,
-    GithubStats,
-    MediumStats,
-    StackOverflowAnswerStats,
-    StackOverflowUserStats
-} from "../downloader/models";
+import {ContentStat, ContentStatValue} from "../downloader/models";
 import * as admin from "firebase-admin";
 
 const firebaseCollectionName = 'content-stats'
@@ -48,8 +41,8 @@ export class StatsManager {
     }
 
     async getRecentContentStats(): Promise<StatResults> {
-        if(!this.db) {
-           throw new Error("cannot use this instance, since it wasn't initialized properly.")
+        if (!this.db) {
+            throw new Error("cannot use this instance, since it wasn't initialized properly.")
         }
 
         const latestStatsQuery = this.db
@@ -95,24 +88,8 @@ export class StatsManager {
         return result;
     }
 
-    protected getServiceAccounts(): admin.ServiceAccount | null {
-        const jsonEnv = process.env.FIREBASE_SERVICE_ACCOUNT_JSON
-
-        if (jsonEnv && jsonEnv.length > 0) {
-            try {
-                return JSON.parse(jsonEnv) as admin.ServiceAccount
-            } catch (e) {
-                console.error("could not parse firebase service account json", e)
-                throw e
-            }
-        }
-
-        console.error("The environmental variable 'FIREBASE_SERVICE_ACCOUNT_JSON' which should contain a json of the service account, is not set.")
-        return null
-    }
-
     async persist(contentStats: ContentStat[], previousResults: StatResults) {
-        if(!this.db) {
+        if (!this.db) {
             throw new Error("cannot use this instance, since it wasn't initialized properly.")
         }
 
@@ -154,6 +131,22 @@ export class StatsManager {
         console.log(`Finished adding ${addCounter} new stats to Firestore.`)
     }
 
+    protected getServiceAccounts(): admin.ServiceAccount | null {
+        const jsonEnv = process.env.FIREBASE_SERVICE_ACCOUNT_JSON
+
+        if (jsonEnv && jsonEnv.length > 0) {
+            try {
+                return JSON.parse(jsonEnv) as admin.ServiceAccount
+            } catch (e) {
+                console.error("could not parse firebase service account json", e)
+                throw e
+            }
+        }
+
+        console.error("The environmental variable 'FIREBASE_SERVICE_ACCOUNT_JSON' which should contain a json of the service account, is not set.")
+        return null
+    }
+
     private areDatesOnSameDay(date1: Date, date2: Date): boolean {
         return (
             date1.getFullYear() === date2.getFullYear() &&
@@ -185,5 +178,5 @@ interface StatResults {
 
 interface StatValues {
     date: Date
-    values: GithubStats | GistStats | MediumStats | StackOverflowAnswerStats | StackOverflowUserStats
+    values: ContentStatValue
 }
