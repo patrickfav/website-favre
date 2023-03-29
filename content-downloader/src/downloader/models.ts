@@ -1,4 +1,4 @@
-export type ContentStatType = "gh" | "gist" | "medium" | "so" | "so-user";
+export type ContentStatType = "gh" | "gist" | "medium" | "so" | "so-user" | "so-question";
 
 export interface ContentStat {
     type: ContentStatType
@@ -34,6 +34,7 @@ export interface StackOverflowAnswerStats extends GeneralStats {
 export interface StackOverflowUserStats {
     score: number
     answers: number
+    questions: number
     acceptRate: number
     gold: number
     silver: number

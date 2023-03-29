@@ -12,6 +12,7 @@ import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
 
+
 export class StackOverflowDownloader extends Downloader {
     private readonly config: StackOverflowConfig
 
@@ -21,17 +22,18 @@ export class StackOverflowDownloader extends Downloader {
     }
 
     protected async downloadLogic(): Promise<ContentStat[]> {
-        const soAnswers = await this.fetchAllSoAnswers(this.config.stackOverflowUserId)
-        const soQuestions = await this.fetchAllQuestions(soAnswers)
+        const answersByUser = await this.fetchAllSoAnswersForUser(this.config.stackOverflowUserId)
+        const questionsByUser = await this.fetchAllSoQuestionsForUser(this.config.stackOverflowUserId)
+        const questionsForAnswers = await this.fetchAllQuestions(answersByUser)
         const contentStats: ContentStat[] = []
 
-        contentStats.push(await this.getSoUserStats(this.config.stackOverflowUserId, soAnswers))
+        await this.addContentStats(this.config.stackOverflowUserId, contentStats, answersByUser, questionsByUser, questionsForAnswers)
 
         let skipDueLowScore = 0
         let skipDueLowWordCount = 0
 
-        for (const answer of soAnswers) {
-            const question = soQuestions[answer.question_id]
+        for (const answer of answersByUser) {
+            const question = questionsForAnswers[answer.question_id]
 
             const slug = generateSlug(question.title, 'so', new Date(answer.creation_date * 1000), answer.answer_id.toString())
             const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
@@ -39,8 +41,6 @@ export class StackOverflowDownloader extends Downloader {
             const summary = this.createSummary(answer, question)
             const frontMatter = this.createStackOverflowFrontMatter(answer, question, summary, slug, answerLink)
             const markdown = this.createMarkdown(answer.body)
-
-            contentStats.push(this.createContentStat(question, answer, markdown.length))
 
             if ((answer.score <= 10 && question.view_count < 20000) || answer.score <= 3) {
                 skipDueLowScore++
@@ -53,7 +53,7 @@ export class StackOverflowDownloader extends Downloader {
                 continue
             }
 
-            console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes and ${Math.ceil(question.view_count/1000)}k views`)
+            console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes and ${Math.ceil(question.view_count / 1000)}k views`)
 
             Downloader.prepareFolder(targetProjectDir)
 
@@ -69,27 +69,13 @@ export class StackOverflowDownloader extends Downloader {
                 .pipe(fs.createWriteStream(targetProjectFile))
         }
 
-        console.log(`\tSkipped ${skipDueLowScore} posts due to low score/view count and ${skipDueLowWordCount} due to low word count out of ${soAnswers.length}.`)
+        console.log(`\tSkipped ${skipDueLowScore} posts due to low score/view count and ${skipDueLowWordCount} due to low word count out of ${answersByUser.length}.`)
 
 
         return contentStats
     }
 
-    private createContentStat(question: Question, answer: Answer, contentLength: number): ContentStat {
-        return {
-            type: "so",
-            user: this.config.stackOverflowUserId.toString(),
-            subjectId: answer.answer_id.toString(),
-            date: this.downloadDate,
-            values: {
-                contentLength: contentLength,
-                score: answer.score,
-                views: Math.ceil(question.view_count / 100) * 100
-            }
-        }
-    }
-
-    private async fetchAllSoAnswers(soUser: number): Promise<Answer[]> {
+    private async fetchAllSoAnswersForUser(soUser: number): Promise<Answer[]> {
 
         console.log(`\tFetching all answers for user ${soUser}`)
 
@@ -113,6 +99,32 @@ export class StackOverflowDownloader extends Downloader {
         }
 
         return allAnswers
+    }
+
+    private async fetchAllSoQuestionsForUser(soUser: number): Promise<Question[]> {
+
+        console.log(`\tFetching all questions for user ${soUser}`)
+
+        let hasMore = true
+        let page = 1
+        const allQuestions: Question[] = []
+
+        while (hasMore) {
+            const answerResponse = await got.get(`https://api.stackexchange.com/2.3/users/${soUser}/questions?page=${page}&pagesize=100&order=desc&sort=votes&site=stackoverflow&filter=withbody`)
+                .then((res) => JSON.parse(res.body) as QuestionResponse)
+
+            // throttling for api
+            await new Promise(resolve => setTimeout(resolve, 750))
+
+            for (const item of answerResponse.items) {
+                allQuestions.push(item)
+            }
+
+            hasMore = answerResponse.has_more
+            page++
+        }
+
+        return allQuestions
     }
 
     private async fetchAllQuestions(soAnswers: Answer[]): Promise<{ [key: number]: Question }> {
@@ -224,8 +236,16 @@ export class StackOverflowDownloader extends Downloader {
         return markdownContent
     }
 
-    private async getSoUserStats(stackOverflowUserId: number, soAnswers: Answer[]): Promise<ContentStat> {
-        console.log(`\tDownloading so user info: ${stackOverflowUserId}`)
+
+
+    private async addContentStats(stackOverflowUserId: number, contentStats: ContentStat[], answersByUser: Answer[], questionsByUser: Question[], questionsForAnswers: { [answerId: number]: Question }) {
+        contentStats.push(await this.getSoUserStats(stackOverflowUserId, answersByUser, questionsByUser))
+        contentStats.push(...await this.getSoQuestionStats(stackOverflowUserId, questionsByUser))
+        contentStats.push(...await this.getSoAnswerStats(stackOverflowUserId, answersByUser, questionsForAnswers))
+    }
+
+    private async getSoUserStats(stackOverflowUserId: number, soAnswers: Answer[], soQuestions: Question[]): Promise<ContentStat> {
+        console.log(`\tFetching so user info: ${stackOverflowUserId}`)
 
         const userResponse = await got.get(`https://api.stackexchange.com/2.3/users/${stackOverflowUserId}?order=desc&sort=reputation&site=stackoverflow`)
             .then(response => JSON.parse(response.body) as StackOverflowUserResponse)
@@ -239,12 +259,45 @@ export class StackOverflowDownloader extends Downloader {
             values: {
                 score: userResponse.reputation,
                 answers: soAnswers.length,
+                questions: soQuestions.length,
                 acceptRate: userResponse.accept_rate,
                 gold: userResponse.badge_counts.gold,
                 silver: userResponse.badge_counts.silver,
                 bronze: userResponse.badge_counts.bronze,
             }
         };
+    }
+
+    private async getSoQuestionStats(stackOverflowUserId: number, questionsByUser: Question[]): Promise<ContentStat[]> {
+        return (questionsByUser).map(q => {
+            return {
+                type: "so-question",
+                user: stackOverflowUserId.toString(),
+                subjectId: q.question_id.toString(),
+                date: this.downloadDate,
+                values: {
+                    contentLength: q.body.length,
+                    score: q.score,
+                    views: Math.ceil(q.view_count / 100) * 100
+                }
+            }
+        })
+    }
+
+    private async getSoAnswerStats(stackOverflowUserId: number, answersByUser: Answer[], questionsForAnswers: { [answerId: number]: Question }): Promise<ContentStat[]> {
+        return answersByUser.map(answer =>  {
+            return {
+                type: "so",
+                user: stackOverflowUserId.toString(),
+                subjectId: answer.answer_id.toString(),
+                date: this.downloadDate,
+                values: {
+                    contentLength: answer.body.length,
+                    score: answer.score,
+                    views: Math.ceil(questionsForAnswers[answer.question_id].view_count / 100) * 100
+                }
+            }
+        })
     }
 }
 
@@ -279,6 +332,7 @@ interface Question {
     title: string
     link: string
     view_count: number
+    score: number
     tags: string[]
     body: string
 }
