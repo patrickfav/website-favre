@@ -205,7 +205,6 @@ export class GithubDownloader extends Downloader {
                 continue
             }
 
-
             const fullyQualifiedUrl = imageUrl.startsWith('https://') ? imageUrl : baseGithubUrl + imageUrl
             const imageFileName = 'gh_' + crypto.createHash('sha256').update(fullyQualifiedUrl).digest('hex').substring(0, 24) + '.' + getExtension(imageUrl)
 
@@ -214,10 +213,28 @@ export class GithubDownloader extends Downloader {
             got.stream(fullyQualifiedUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
 
             markdownContent = markdownContent.replace(new RegExp(regexQuote(imageUrl), 'g'), imageFileName)
-
         }
 
         return markdownContent
+    }
+
+    protected filteredImageUrlPrefix() {
+        return [
+            'https://api.bintray.com/packages/',
+            'https://travis-ci.com/patrickfav',
+            'https://travis-ci.org/patrickfav',
+            'https://app.travis-ci.com/patrickfav/',
+            'https://www.javadoc.io/badge',
+            'https://coveralls.io/repos/github',
+            'https://img.shields.io/github/',
+            'https://img.shields.io/badge/',
+            'https://img.shields.io/maven-central/',
+            'https://api.codeclimate.com/v1/badges',
+            'https://codecov.io/gh/patrickfav/',
+            'https://sonarcloud.io/api/project_badges/',
+            'doc/playstore_badge',
+            '',
+        ]
     }
 
     private createGithubSubPageFrontMatter(githubMeta: GithubMetaData, relOutDir: string, slug: Slug, leafName: string) {

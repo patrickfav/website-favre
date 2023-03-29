@@ -1,7 +1,7 @@
 import * as crypto from 'crypto';
 // @ts-ignore
 import base32 from 'base32-encoding';
-import * as TurndownService from "turndown";
+import TurndownService from "turndown";
 import {Filter, Options, ReplacementFunction} from "turndown";
 
 export interface Slug {
@@ -93,20 +93,37 @@ export const stackOverflowHighlightedCodeBlock = function (service: TurndownServ
             const className = node.className || ''
             const matches = (className.match(highlightRegExp) || [null, ''])
 
-            if (matches.length > 0) {
-                const language = matches[1]
-                return (
-                    '\n\n' + options.fence + language + '\n' +
-                    deEscape(node.firstChild!.textContent!) +
-                    '\n' + options.fence + '\n\n'
-                )
-            } else {
-                return (
-                    '\n\n' + options.fence + '\n' +
-                    deEscape(node.firstChild!.textContent!) +
-                    '\n' + options.fence + '\n\n'
-                )
-            }
+            return (
+                `\n\n${options.fence}${matches.length > 0 ? matches[1] : ''}\n` +
+                `${deEscape(node.firstChild!.textContent!)}` +
+                `\n${options.fence}\n\n`
+            )
+        } as ReplacementFunction
+    })
+} as TurndownService.Plugin
+
+export const figureCaption = function (service: TurndownService): void {
+    service.addRule('stackOverflowHighlightedCodeBlock', {
+        filter: function (node: HTMLElement, options: Options): boolean | null {
+            const firstChild = node.firstChild
+            const lastChild = node.lastChild
+            return (
+                node.nodeName === 'FIGURE' &&
+                firstChild && firstChild.nodeName === 'IMG' &&
+                lastChild && lastChild.nodeName === 'FIGCAPTION'
+            )
+        } as Filter,
+        replacement: function (content: string, node: HTMLElement, options: Options): string {
+            const imgNode = node.firstChild as HTMLImageElement;
+            const captionNode = node.lastChild
+
+            const altText = imgNode.alt
+            const imgSrc = imgNode.src
+            const caption = captionNode!.textContent
+
+            return (
+                `![${altText}](${imgSrc + ' '} "${caption}")\n`
+            )
         } as ReplacementFunction
     })
 } as TurndownService.Plugin
@@ -155,7 +172,7 @@ export function getExtension(url: string): string {
         return "png";
     }
 
-    const stringAfterDot = url.split('.').pop()!.replace(/\?raw=true/g, '');
+    const stringAfterDot = url.split('.').pop()!.replace(/\?raw=true/g, '').trim();
 
     if (stringAfterDot.length > 5) {
         return "png"

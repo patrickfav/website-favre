@@ -1,12 +1,11 @@
 import fs from 'fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
-import crypto from 'crypto'
 import Parser from 'rss-parser'
 import TurndownService from 'turndown'
 import * as cheerio from 'cheerio'
 import {mediumDownloaderEnabled} from '../confg'
-import {codeBlockFormat, generateSlug, getExtension, regexQuote, Slug,} from '../util'
+import {codeBlockFormat, figureCaption, generateSlug, Slug} from '../util'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
@@ -54,20 +53,6 @@ export class MediumDownloader extends Downloader {
         return contentStats
     }
 
-    private createContentStat(articleInfo: ArticleInfo, contentLength: number): ContentStat {
-        return {
-            type: "medium",
-            user: this.config.userName,
-            subjectId: articleInfo.id,
-            date: this.downloadDate,
-            values: {
-                contentLength: contentLength,
-                claps: articleInfo.clapCount,
-                voters: articleInfo.voterCount,
-            }
-        }
-    }
-
     private async downloadProjectImage(articleInfo: any, safeArticleTitle: string, targetProjectDir: string): Promise<void> {
         const imageUrl = 'https://cdn-images-1.medium.com/max/1024/' + articleInfo.previewImage.__ref.replace(/ImageMetadata:/g, '')
         const imageFileName = 'feature_' + safeArticleTitle + '.png'
@@ -89,6 +74,7 @@ export class MediumDownloader extends Downloader {
         function parseAsMarkdown(rssElement: any): string {
             const htmlContent = rssElement['content:encoded']
             const turndownService = new TurndownService()
+            turndownService.use(figureCaption)
             turndownService.use(strikethrough)
             turndownService.use(tables)
             turndownService.use(taskListItems)
@@ -98,6 +84,7 @@ export class MediumDownloader extends Downloader {
                 turndownService
                     .turndown(htmlContent)
                     .replace(/```\n```/g, '')
+                    .replace(/ /g, ' ')
             )
         }
 
@@ -172,32 +159,14 @@ export class MediumDownloader extends Downloader {
         return meta
     }
 
-    private async fetchAndReplaceImages(markdownContent: string, targetProjectDir: string) {
-
-        const matches = [...markdownContent.matchAll(/!\[[^\]]*]\((?<filename>.*?)(?=[")])(?<optionalpart>".*")?\)/g)]
-
-        for (const i in matches) {
-            const imageUrl = matches[i][1]
-
-            if (imageUrl.startsWith('https://medium.com/_/stat')) {
-                markdownContent = markdownContent.replace(new RegExp(regexQuote(matches[i][0]), 'g'), '\n')
-                continue // only the stats tracker from medium, just remove
-            }
-
-            const imageFileName = 'article_' + crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 24) + '.' + getExtension(imageUrl)
-
-            console.log('\t\tDownloading article image: ' + imageUrl + ' to ' + imageFileName)
-
-            got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
-
-            markdownContent = markdownContent.replace(new RegExp(regexQuote(imageUrl), 'g'), imageFileName)
-        }
-
-        return markdownContent
+    protected filteredImageUrlPrefix() {
+        return ['https://medium.com/_/stat']
     }
 
     private updateContentStats(contentStats: ContentStat[], articleInfo: ArticleInfo, userInfo: UserInfo, contentLength: number) {
-        if(userInfo && userInfo.socialStats && !contentStats.find(c => {return c.type === 'medium-user'})) {
+        if (userInfo && userInfo.socialStats && !contentStats.find(c => {
+            return c.type === 'medium-user'
+        })) {
             contentStats.push({
                 type: "medium-user",
                 user: this.config.userName,

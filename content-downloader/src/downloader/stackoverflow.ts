@@ -3,9 +3,8 @@ import {stackoverflowEnabled, stackoverflowUserId} from '../confg'
 import fs from 'fs'
 import {StringStream} from 'scramjet'
 import TurndownService from 'turndown'
-import {generateSlug, getExtension, regexQuote, Slug, stackOverflowHighlightedCodeBlock} from '../util'
+import {figureCaption, generateSlug, Slug, stackOverflowHighlightedCodeBlock} from '../util'
 import wordsCount from 'words-count'
-import crypto from 'crypto'
 import {sobannerSvg} from '../svg'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
@@ -169,6 +168,7 @@ export class StackOverflowDownloader extends Downloader {
 
     private createMarkdown(body: string): string {
         const turndownService = new TurndownService()
+        turndownService.use(figureCaption)
         turndownService.use(strikethrough)
         turndownService.use(tables)
         turndownService.use(taskListItems)
@@ -217,26 +217,6 @@ export class StackOverflowDownloader extends Downloader {
         meta += '---\n'
         return meta
     }
-
-    private async fetchAndReplaceImages(markdownContent: string, targetProjectDir: string): Promise<string> {
-        const matches = [...markdownContent.matchAll(/!\[[^\]]*]\((?<filename>.*?)(?=[")])(?<optionalpart>".*")?\)/g)]
-
-        for (const i in matches) {
-            const imageUrl = matches[i][1]
-
-            const imageFileName = 'so_' + crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 24) + '.' + getExtension(imageUrl)
-
-            console.log(`\t\tDownloading post image: ${imageUrl} to ${imageFileName}`)
-
-            got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
-
-            markdownContent = markdownContent.replace(new RegExp(regexQuote(imageUrl), 'g'), imageFileName)
-        }
-
-        return markdownContent
-    }
-
-
 
     private async addContentStats(stackOverflowUserId: number, contentStats: ContentStat[], answersByUser: Answer[], questionsByUser: Question[], questionsForAnswers: { [answerId: number]: Question }) {
         contentStats.push(await this.getSoUserStats(stackOverflowUserId, answersByUser, questionsByUser))

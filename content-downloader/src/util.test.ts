@@ -1,4 +1,5 @@
-import {generateSlug, getExtension, regexQuote, shortenToTitle} from './util';
+import {generateSlug, getExtension, regexQuote, shortenToTitle, stackOverflowHighlightedCodeBlock} from './util';
+import TurndownService from "turndown";
 
 describe('generateSlug', () => {
     it('should generate a valid slug', () => {
@@ -56,3 +57,47 @@ describe('regexQuote', () => {
         expect(escaped).toBe(expected);
     });
 });
+
+describe('stackOverflowHighlightedCodeBlock', () => {
+    it('should correctly format a code block with a language', () => {
+        const turndownService = new TurndownService();
+        stackOverflowHighlightedCodeBlock(turndownService);
+
+        const html = `
+            <pre class="lang-javascript"><code>const a = 10;
+console.log(a);</code></pre>
+        `;
+
+        const expectedResult = `
+\`\`\`javascript
+const a = 10;
+console.log(a);
+\`\`\`
+        `;
+
+        const markdown = turndownService.turndown(html).trim();
+        expect(markdown).toBe(expectedResult.trim());
+    });
+
+    it('should correctly format a code block without a language', () => {
+        const turndownService = new TurndownService();
+        stackOverflowHighlightedCodeBlock(turndownService);
+
+        const html = `
+            <pre><code>const a = 10;
+console.log(a);</code></pre>
+        `;
+
+        const expectedResult = `
+\`\`\`
+const a = 10;
+console.log(a);
+\`\`\`
+        `;
+
+        const markdown = turndownService.turndown(html).trim();
+        expect(markdown).toBe(expectedResult.trim());
+    });
+});
+
+
