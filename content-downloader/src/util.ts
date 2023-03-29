@@ -168,7 +168,7 @@ export function shortenToTitle(description: string): string {
 }
 
 export function getExtension(url: string): string {
-    if (url === null || !url.includes(".")) {
+    if (!url || !url.includes(".")) {
         return "png";
     }
 

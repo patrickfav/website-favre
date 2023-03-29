@@ -84,6 +84,7 @@ export class MediumDownloader extends Downloader {
                 turndownService
                     .turndown(htmlContent)
                     .replace(/```\n```/g, '')
+                    // eslint-disable-next-line no-irregular-whitespace
                     .replace(/ /g, ' ')
             )
         }
