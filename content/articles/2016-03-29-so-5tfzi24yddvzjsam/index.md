@@ -37,7 +37,7 @@ Visual Quality
 
 Here is a comparison of the results of resizing/downscaling a `580x852` png to `145x213`. As reference Photoshop CS5 "save for web" resizing is used. _Note: the results are 1:1 what the libs created just copied together. The zoom does not use any filtering, just a simple nearest neighbor algorithm._ [Here you can find the original image.](https://i.stack.imgur.com/RmQLa.png)
 
-[![comparison](so_0a9b8d163dd4b96cbda79950.png)](so_0a9b8d163dd4b96cbda79950.png)
+[![comparison](img_0a9b8d163dd4b96c.png)](img_0a9b8d163dd4b96c.png)
 
 > 1.  Thumbnailator 0.4.8 with default settings, no dimension adjustments
 > 2.  Photoshop CS5 with bicubic algorithm

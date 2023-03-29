@@ -18,7 +18,7 @@ deeplink: /link/aikmbers
 originalContentLink: https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
 originalContentType: stackoverflow
 originalContentId: 58118078
-soScore: 159
+soScore: 160
 soViews: 966000
 soIsAccepted: false
 soQuestionId: 9655181

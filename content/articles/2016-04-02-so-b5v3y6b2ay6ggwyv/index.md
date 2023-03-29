@@ -1,7 +1,7 @@
 ---
 title: 'Q: Java - resize image without losing quality'
 date: 2016-04-02
-lastmod: 2018-02-03
+lastmod: 2023-03-28
 description: 'Java - resize image without losing quality'
 summary: 'This was originally posted as an answer to the question "Java - resize image without losing quality" on stackoverflow.com.'
 aliases: [/link/b5v3y6b2]
@@ -22,7 +22,7 @@ soScore: 95
 soViews: 91000
 soIsAccepted: false
 soQuestionId: 24745147
-soAnswerLicense: CC BY-SA 3.0
+soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/36367652/774398
 ---
 Unfortunately, there is no recommended out-of-the-box scaling in Java that provides visually good results. Among others, here are the methods I recommend for scaling:
@@ -38,9 +38,9 @@ Visual Comparison
 
 Here is your image scaled to `96x140` with different methods/libs. Click on the image to get the full size:
 
-[![comparison](so_88f7582f7c8daf58d03df108.png)](so_88f7582f7c8daf58d03df108.png)
+[![comparison](img_88f7582f7c8daf58.png)](img_88f7582f7c8daf58.png)
 
-[![comparison zoom](so_8421b1333f5a2a54f4893b62.png)](so_8421b1333f5a2a54f4893b62.png)
+[![comparison zoom](img_8421b1333f5a2a54.png)](img_8421b1333f5a2a54.png)
 
 1.  Morten Nobel's lib Lanczos3
 2.  Thumbnailator Bilinear Progressive Scaling
@@ -58,14 +58,14 @@ Lanczos Resampling
 
 Is said to be good for up- and especially downscaling. Unfortunately [there is no native implementation in current JDK](http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6500894) so you either implement it yourself and use a lib like [Morten Nobel's lib](https://github.com/mortennobel/java-image-scaling). A simple example using said lib:
 
-```
+```java
 ResampleOp resizeOp = new ResampleOp(dWidth, dHeight);
 resizeOp.setFilter(ResampleFilters.getLanczos3Filter());
 BufferedImage scaledImage = resizeOp.filter(imageToScale, null);
 
 ```
 
-The lib is [published on maven-central](http://mvnrepository.com/artifact/com.mortennobel/java-image-scaling) which is not mentioned unfortunately. The downside is that it usually is very slow without any highly optimized or hardware accelerated implementations known to me. Nobel's implementation is about 8 times slower than a 1/2 step progressive scaling algorithm with `Graphics2d`. [Read more about this lib on his blog](https://blog.nobel-joergensen.com/2008/12/20/downscaling-images-in-java/).
+The lib is [published on maven-central](http://mvnrepository.com/artifact/com.mortennobel/java-image-scaling) which is not mentioned, unfortunately. The downside is that it usually is very slow without any highly optimized or hardware accelerated implementations known to me. Nobel's implementation is about 8 times slower than a 1/2 step progressive scaling algorithm with `Graphics2d`. [Read more about this lib on his blog](https://blog.nobel-joergensen.com/2008/12/20/downscaling-images-in-java/).
 
 Progressive Scaling
 ===================
@@ -74,7 +74,7 @@ Mentioned in [Chris Campbell's blog about scaling](https://community.oracle.com/
 
 Here is a simple example on how it works:
 
-[![progressive scaling](so_1b4fccc08d1d51f681a8dc71.png)](so_1b4fccc08d1d51f681a8dc71.png)
+[![progressive scaling](img_1b4fccc08d1d51f6.png)](img_1b4fccc08d1d51f6.png)
 
 The following libs incorporate forms of progressive scaling based on `Graphics2d`:
 
@@ -83,7 +83,7 @@ The following libs incorporate forms of progressive scaling based on `Graphics2d
 
 Uses the progressive bilinear algorithm if the target is at least half of every dimension, otherwise it uses simple `Graphics2d` bilinear scaling and bicubic for upscaling.
 
-```
+```java
 Resizer resizer = DefaultResizerFactory.getInstance().getResizer(
   new Dimension(imageToScale.getWidth(), imageToScale.getHeight()), 
   new Dimension(dWidth, dHeight))
@@ -99,7 +99,7 @@ It is as fast or slightly faster than one-step scaling with `Graphics2d` scoring
 
 Uses progressive bicubic scaling. In the `QUALITY` setting it uses Campbell style algorithm with halving the dimensions every step while the `ULTRA_QUALITY` has finer steps, reducing the size every increment by 1/7 which generates generally softer images but minimizes the instances where only 1 iteration is used.
 
-```
+```java
 BufferedImage scaledImage = Scalr.resize(imageToScale, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.FIT_EXACT, dWidth, dHeight, bufferedImageOpArray);
 
 ```
@@ -111,7 +111,7 @@ The major downside is performance. `ULTRA_QUALITY` is considerably slower than t
 
 Has also implementations for progressive scaling for all basic `Graphics2d` (bilinear, bicubic & nearest neighbor)
 
-```
+```java
 BufferedImage scaledImage = new MultiStepRescaleOp(dWidth, dHeight, RenderingHints.VALUE_INTERPOLATION_BILINEAR).filter(imageToScale, null);
 
 ```
@@ -121,7 +121,7 @@ A word on JDK Scaling Methods
 
 Current jdk way to scale an image would be something like this
 
-```
+```java
 scaledImage = new BufferedImage(dWidth, dHeight, imageType);
 Graphics2D graphics2D = scaledImage.createGraphics();
 graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
@@ -130,4 +130,4 @@ graphics2D.dispose();
 
 ```
 
-but most are very disappointed with the result of downscaling no matter what interpolation or other `RenderHints` are used. On the other hand upscaling seems to produce acceptable images (best would be bicubic). In previous JDK version (we talking 90s v1.1) `Image.getScaledInstance()` was introduced which provided good visual results with parameter `SCALE_AREA_AVERAGING` but you are discouraged to use it - [read the full explanation here](https://community.oracle.com/docs/DOC-983611).
+but most are very disappointed with the result of downscaling no matter what interpolation or other `RenderHints` are used. On the other hand upscaling seems to produce acceptable images (best would be bicubic). In previous JDK version (we're talking 90s v1.1) `Image.getScaledInstance()` was introduced which provided good visual results with parameter `SCALE_AREA_AVERAGING` but you are discouraged to use it - [read the full explanation here](https://community.oracle.com/docs/DOC-983611).

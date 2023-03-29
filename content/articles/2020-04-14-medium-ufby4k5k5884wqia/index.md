@@ -17,23 +17,21 @@ originalContentId: 7575eacd7295
 mediumClaps: 12
 mediumVoters: 7
 ---
-![](article_6b235e313cdf3f991002e9b8.jpeg)
+![](img_6b235e313cdf3f99.jpeg)
 
-Checkstyle, loved by those who set it up, hated by those who didn’t, is Java's most popular tool to force your code style flavor onto others. Whatever your feelings about this static analyzer may be, if you have to manage it in your project(s) this article is for you.
+Checkstyle, loved by those who set it up, hated by those who didn’t, is Java's most popular tool to force your code style flavor onto others. Whatever your feelings about this static analyzer may be, if you have to manage it in your project(s) this article is for you.
 
-![Screenshot of the IntelliJ Checkstyle Plugin showing some issues](article_e59d31038ea2183912f82f43.png)
+![Screenshot of the IntelliJ Checkstyle Plugin showing some issues](img_e59d31038ea21839.png "A familiar sight for Checkstyle users")
 
-A familiar sight for Checkstyle users
+The default setup is quite easy. Create your checkstyle.xml add the rules you prefer and reference it in your Checkstyle Maven plugin. This may be fine for a single project, managing more would require copying the configuration file over and manually syncing them. Since most developers nowadays can’t escape the ubiquitous microservices style architecture, where the myriads of services are managed either in a [monorepo](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) or in multiple individual ones, the latter needs a better solution for this problem.
 
-The default setup is quite easy. Create your checkstyle.xml add the rules you prefer and reference it in your Checkstyle Maven plugin. This may be fine for a single project, managing more would require copying the configuration file over and manually syncing them. Since most developers nowadays can’t escape the ubiquitous microservices style architecture, where the myriads of services are managed either in a [monorepo](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) or in multiple individual ones, the latter needs a better solution for this problem.
+### Maven to the Rescue
 
-### Maven to the Rescue
-
-Of course there is a direct solution for this in your favorite build management system (which is, of course, Maven)! The required steps are as follows:
+Of course there is a direct solution for this in your favorite build management system (which is, of course, Maven)! The required steps are as follows:
 
 1.  Create a new Maven project only containing your checkstyle.xml
-2.  Reference it in the Checkstyle Maven plugin of your consumer project
-3.  Make your project deployable to publish it to your Maven repo
+2.  Reference it in the Checkstyle Maven plugin of your consumer project
+3.  Make your project deployable to publish it to your Maven repo
 
 Done!
 
@@ -41,9 +39,9 @@ Done!
 
 Create a new project with your [preferred method](http://maven.apache.org/archetypes/maven-archetype-simple/). We name our configuration file checkstyle.xml and put it into /src/main/resource.
 
-![](article_8f8aac1071b2eb368747d58b.png)
+![](img_8f8aac1071b2eb36.png)
 
-As test configuration I used this unbearable annoying line length restriction (which helps to see if it works later):
+As test configuration I used this unbearable annoying line length restriction (which helps to see if it works later):
 
 ```
 <?xml version="1.0" ?><!DOCTYPE module PUBLIC  
@@ -57,15 +55,15 @@ As test configuration I used this unbearable annoying line length restriction (w
 </module>
 ```
 
-Now all you have to do is to install it to your local repo with:
+Now all you have to do is to install it to your local repo with:
 
 ```
 mvn clean install
 ```
 
-#### 2\. Reference it in your Consumer Project
+#### 2\. Reference it in your Consumer Project
 
-Find the Checkstyle Plugin in your consumer POM and add your newly create config project as dependency. This may look like this:
+Find the Checkstyle Plugin in your consumer POM and add your newly create config project as dependency. This may look like this:
 
 ```
 <plugin>  
@@ -89,17 +87,17 @@ Find the Checkstyle Plugin in your consumer POM and add your newly create config
 </plugin>
 ```
 
-The filename used in configLocation must match the filename used in your _checkstyle-config_ project. Don’t forget to delete your local Checkstyle configuration file. Now if you do:
+The filename used in configLocation must match the filename used in your _checkstyle-config_ project. Don’t forget to delete your local Checkstyle configuration file. Now if you do:
 
 ```
 mvn checkstyle:check
 ```
 
-it should use the config from your config project.
+it should use the config from your config project.
 
 #### 3\. Make your Config Project Deployable
 
-Some Maven repositories, like [Maven Central](https://search.maven.org/), require a sources and javadoc -jar if you want to deploy them there. Since there is neither source code nor javadoc we have to create placeholders. In our _checkstyle-config_ project add the plugin config for the source code:
+Some Maven repositories, like [Maven Central](https://search.maven.org/), require a sources and javadoc -jar if you want to deploy them there. Since there is neither source code nor javadoc we have to create placeholders. In our _checkstyle-config_ project add the plugin config for the source code:
 
 ```
 <plugin>  
@@ -116,7 +114,7 @@ Some Maven repositories, like [Maven Central](https://search.maven.org/), requir
 </plugin>
 ```
 
-then for the javadoc
+then for the javadoc
 
 ```
 <plugin>  
@@ -138,23 +136,23 @@ then for the javadoc
 </plugin>
 ```
 
-Now after setting the correct coordinates for the distribution management, you should be able to deploy and publish your configuration project with
+Now after setting the correct coordinates for the distribution management, you should be able to deploy and publish your configuration project with
 
 ```
 mvn deploy
 ```
 
-A full example, deployed to Maven Central, can be found here
+A full example, deployed to Maven Central, can be found here
 
 [patrickfav/checkstyle-config](https://github.com/patrickfav/checkstyle-config/)
 
 ### How to use Suppressions
 
-While it is possible to also package a checkstyle-suppression.xml in the same way as described above, I do not think a global suppression file makes a lot of sense.
+While it is possible to also package a checkstyle-suppression.xml in the same way as described above, I do not think a global suppression file makes a lot of sense.
 
-![](article_b13c2fda654a51a9463348ac.png)
+![](img_b13c2fda654a51a9.png)
 
-It is, however, possible to set one locally, in basically the same way you would normally. Create your suppression config in your project and reference it in your Checkstyle plugin configuration. In this example we name the file checkstyle-suppression.xml and put it into the project’s root folder. Then we add the reference in the POM:
+It is, however, possible to set one locally, in basically the same way you would normally. Create your suppression config in your project and reference it in your Checkstyle plugin configuration. In this example we name the file checkstyle-suppression.xml and put it into the project’s root folder. Then we add the reference in the POM:
 
 ```
 <plugin>  
@@ -168,13 +166,13 @@ It is, however, possible to set one locally, in basically the same way you would
 </plugin>
 ```
 
-An example using suppressions with a global _checkstyle-config_ can be found [here](https://github.com/patrickfav/density-converter) (Checkstyle config is found in parent POM).
+An example using suppressions with a global _checkstyle-config_ can be found [here](https://github.com/patrickfav/density-converter) (Checkstyle config is found in parent POM).
 
 ### Keep using your IDE Checkstyle Plugin
 
 If you use the excellent [Checkstyle IntelliJ plugin](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea) (or a similar tool), you may wonder where the local configuration can be found. After you mvn install it will be located at /target/checkstyle-checker.xml.
 
-![](article_e79d13d20d7d296e4b503504.png)
+![](img_e79d13d20d7d296e.png)
 
 ### Summary
 

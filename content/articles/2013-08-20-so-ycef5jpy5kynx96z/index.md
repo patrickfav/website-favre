@@ -1,7 +1,7 @@
 ---
 title: 'Q: Android SlidingDrawer from top?'
 date: 2013-08-20
-lastmod: 2016-10-08
+lastmod: 2023-03-28
 description: 'Android SlidingDrawer from top?'
 summary: 'This was originally posted as an answer to the question "Android SlidingDrawer from top?" on stackoverflow.com.'
 aliases: [/link/ycef5jpy]
@@ -22,13 +22,13 @@ soScore: 7
 soViews: 34000
 soIsAccepted: false
 soQuestionId: 3695856
-soAnswerLicense: CC BY-SA 3.0
+soAnswerLicense: CC BY-SA 4.0
 soAnswerLink: https://stackoverflow.com/a/18341293/774398
 ---
 I was very unsatisfied with the solutions provided here:
 
 *   The `Panel` class from [http://code.google.com/p/android-misc-widgets/](http://code.google.com/p/android-misc-widgets/) was really unintuitive to use and also had bugs and visual glitches (unusable for productive use) and no docs at all
-*   `SlidingTray` class from [http://aniqroid.sileria.com/doc/api/](http://aniqroid.sileria.com/doc/api/) was nested in a lib needing too much dependency and for me I did not get it to work at all
+*   `SlidingTray` class from [http://aniqroid.sileria.com/doc/api/](http://aniqroid.sileria.com/doc/api/) was nested in a lib needing too much dependency and for me, I did not get it to work at all
 *   using `android:rotation="180"` requires API Level 11, and my target is 10.
 
 (no offense to the respective devs, trying to be objective here)
@@ -39,7 +39,7 @@ So my solution was to extract [SlidingTray](http://aniqroid.sileria.com/doc/api/
 
 Here is a usage example (also provided in the gist)
 
-```
+```xml
 <your.app.MultipleOrientationSlidingDrawer
         xmlns:custom="http://schemas.android.com/apk/res-auto/your.app"
         android:layout_width="match_parent"
@@ -74,4 +74,4 @@ Here is a usage example (also provided in the gist)
 
 ```
 
-Disclaimer: All the credits go to respective dev. I did not test this solution extensivly, it works great with TOP and BOTTOM set in XML. I did not try to use it programmatically.
+Disclaimer: All the credits go to respective dev. I did not test this solution extensively, it works great with TOP and BOTTOM set in XML. I did not try to use it programmatically.

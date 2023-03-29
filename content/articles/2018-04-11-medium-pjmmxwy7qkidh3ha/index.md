@@ -17,11 +17,11 @@ originalContentId: 9b15f35a806b
 mediumClaps: 0
 mediumVoters: 0
 ---
-![](article_19e386ffa7c7e9d1c5267b3a.jpeg)
+![](img_19e386ffa7c7e9d1.jpeg)
 
 #### A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small
 
-_This article recaps why using abstraction is better than concrete implementation and how to minimize the burden of overhead for using it. This is aimed at Java, but is valid in many statically typed languages which support OOP and the concept of contracts and inner classes._
+_This article recaps why using abstraction is better than concrete implementation and how to minimize the burden of overhead for using it. This is aimed at Java, but is valid in many statically typed languages which support OOP and the concept of contracts and inner classes._
 
 Interfaces are great. They expose a clear API, enhance encapsulation and make clean polymorphism possible. Interfaces encourage you to think about responsibility and therefore the required methods and their signature, as well as nearly invite you to properly document them. Interfaces create the basic blocks of abstraction for a clean architecture.
 
@@ -29,15 +29,15 @@ Now in daily life it can get annoying to use interfaces everywhere. Especially i
 
 #### The Concise Interface Implementation
 
-Use this pattern if
+Use this pattern if
 
-*   …you keep the interface module-private and do not plan the expose it as an API; i.e. it is implementation detail of the module
-*   …expect only a single implementation (apart from creating mocks during testing)
+*   …you keep the interface module-private and do not plan the expose it as an API; i.e. it is implementation detail of the module
+*   …expect only a single implementation (apart from creating mocks during testing)
 *   …it is OK that interface and implementation have the same visibility
 
-The goal is to keep the implementation concise, that means the interface and default implementation can be at the exact same location creating a kind of “mini” module. The implementation doesn’t even need its own unique name.
+The goal is to keep the implementation concise, that means the interface and default implementation can be at the exact same location creating a kind of “mini” module. The implementation doesn’t even need its own unique name.
 
-The template looks like this (Java 7+):
+The template looks like this (Java 7+):
 
 ```
 public interface MyInterface {
@@ -64,7 +64,7 @@ public interface MyInterface {
 
 You would define your interface, like any other. Then you add an inner final static (implied) class called Default representing your default implementation. Static inner classes do not have any reference to their outer class, so it behaves just like a normal class defined as top-level class.
 
-And you would use it like this:
+And you would use it like this:
 
 ```
 MyInterface m = new MyInterface.Default();
@@ -76,23 +76,23 @@ I believe seeing such a construct also conveys the exact properties described ab
 
 #### Future-proof
 
-If in any point in time you wish to have multiple implementation or expose this interface as an API you just move the Default implementation to its own class and give it a proper name ([IntelliJ can do this for you](https://www.jetbrains.com/help/idea/move-inner-to-upper-level-dialog-for-java.html)). The interface and implementation are not tied to each other, they are just defined in the same location in the source code.
+If in any point in time you wish to have multiple implementation or expose this interface as an API you just move the Default implementation to its own class and give it a proper name ([IntelliJ can do this for you](https://www.jetbrains.com/help/idea/move-inner-to-upper-level-dialog-for-java.html)). The interface and implementation are not tied to each other, they are just defined in the same location in the source code.
 
 #### Avoid unnecessary Naming
 
-[Naming is hard](https://martinfowler.com/bliki/TwoHardThings.html). With this concept we avoid having to invent a synthetic name for the default implementation of a simple interface. Often times if developers get the naming wrong, it can get very confusing and hard to read, like this example:
+[Naming is hard](https://martinfowler.com/bliki/TwoHardThings.html). With this concept we avoid having to invent a synthetic name for the default implementation of a simple interface. Often times if developers get the naming wrong, it can get very confusing and hard to read, like this example:
 
 ```
 TextTransformer t = new StringManager();
 ```
 
-#### Avoid Codebase Clutter
+#### Avoid Codebase Clutter
 
-No need to create new packages structures that do not match the intended one. No need to search for the implementation (although IDEs like [IntelliJ make it very easy](https://www.jetbrains.com/help/idea/navigating-to-super-method-or-implementation.html)).
+No need to create new packages structures that do not match the intended one. No need to search for the implementation (although IDEs like [IntelliJ make it very easy](https://www.jetbrains.com/help/idea/navigating-to-super-method-or-implementation.html)).
 
 #### Testable
 
-One of the main benefits of using interfaces is the better testability. By using well-defined contracts mocking becomes easy. You can use either a mocking library like [Mockito](http://site.mockito.org/) or you just implement the interface in your test package. Either way you are able to exactly test the behavior you are interested in and mock the rest.
+One of the main benefits of using interfaces is the better testability. By using well-defined contracts mocking becomes easy. You can use either a mocking library like [Mockito](http://site.mockito.org/) or you just implement the interface in your test package. Either way you are able to exactly test the behavior you are interested in and mock the rest.
 
 ### Conclusion
 
