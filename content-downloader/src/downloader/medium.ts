@@ -204,7 +204,7 @@ export class MediumDownloader extends Downloader {
                 subjectId: articleInfo.id,
                 date: this.downloadDate,
                 values: {
-                    follower: userInfo.socialStats.followerCount,
+                    followers: userInfo.socialStats.followerCount,
                     following: userInfo.socialStats.followingCount
                 }
             })

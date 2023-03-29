@@ -1,5 +1,5 @@
-export type ContentStatType = "gh" | "gist" | "medium" | "medium-user" | "so" | "so-user" | "so-question";
-export type ContentStatValue = GithubStats | GistStats | MediumStats | MediumUserStats | StackOverflowAnswerStats | StackOverflowUserStats;
+export type ContentStatType = "gh" | "gh-user" | "gist" | "medium" | "medium-user" | "so" | "so-user" | "so-question";
+export type ContentStatValue = GithubStats | GithubUserStats | GistStats | MediumStats | MediumUserStats | StackOverflowAnswerStats | StackOverflowUserStats;
 
 export interface ContentStat {
     type: ContentStatType
@@ -19,6 +19,13 @@ export interface GithubStats extends GeneralStats {
     stars: number
     forks: number
     repoSize: number
+}
+
+export interface GithubUserStats {
+    repos: number
+    gists: number
+    followers: number
+    following: number
 }
 
 export interface GistStats extends GeneralStats {
@@ -48,6 +55,6 @@ export interface MediumStats extends GeneralStats {
 }
 
 export interface MediumUserStats {
-    follower: number
+    followers: number
     following: number
 }

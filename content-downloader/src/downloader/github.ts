@@ -25,6 +25,8 @@ export class GithubDownloader extends Downloader {
         const allGithubMeta = await got.get(`https://api.github.com/users/${this.config.githubUser}/repos?sort=updated&direction=desc&per_page=100`, gotHeaders)
             .then((res) => JSON.parse(res.body) as GithubMetaData[])
 
+        await this.getUserInfoAndUpdateContentStats(contentStats, gotHeaders)
+
         for (const projectsIndex of this.config.githubProjects) {
             const projectName = projectsIndex.repo
 
@@ -276,6 +278,26 @@ export class GithubDownloader extends Downloader {
         meta += '---\n'
         return meta
     }
+
+    private async getUserInfoAndUpdateContentStats(contentStats: ContentStat[], gotHeaders: gotHttpAuthHeader) {
+        console.log(`\tFetch github user info for ${this.config.githubUser}`)
+
+        const githubUser = await got.get(`https://api.github.com/users/${this.config.githubUser}`, gotHeaders)
+            .then((res) => JSON.parse(res.body) as GithubFullUser)
+
+        contentStats.push({
+            type: "gh-user",
+            user: this.config.githubUser,
+            subjectId: this.config.githubUser,
+            date: this.downloadDate,
+            values: {
+                followers: githubUser.followers,
+                following: githubUser.following,
+                repos: githubUser.public_repos,
+                gists: githubUser.public_gists
+            }
+        })
+    }
 }
 
 interface AdditionalMetaData {
@@ -302,6 +324,17 @@ interface GithubUser {
     login: string
     id: number
     type: string
+}
+
+interface GithubFullUser {
+    login: string
+    id: number
+    type: string
+    public_repos: number
+    public_gists: number
+    followers: number
+    following: number
+    created_at: Date
 }
 
 interface GithubMetaData {
