@@ -42,7 +42,7 @@ export class StackOverflowDownloader extends Downloader {
 
             contentStats.push(this.createContentStat(question, answer, markdown.length))
 
-            if ((answer.score <= 10 && question.view_count < 10000) || answer.score <= 0) {
+            if ((answer.score <= 10 && question.view_count < 20000) || answer.score <= 3) {
                 skipDueLowScore++
                 continue
             }
