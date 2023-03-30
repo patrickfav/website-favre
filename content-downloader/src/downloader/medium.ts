@@ -5,7 +5,7 @@ import Parser from 'rss-parser'
 import TurndownService from 'turndown'
 import * as cheerio from 'cheerio'
 import {mediumDownloaderEnabled} from '../confg'
-import {codeBlockFormat, figureCaption, generateSlug, removeBrokenMarkdownParts, Slug} from '../util'
+import {codeBlockFormat, figureCaption, generateSlug, removeBrokenMarkdownParts, Slug, supportedHtml} from '../util'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
@@ -83,6 +83,7 @@ export class MediumDownloader extends Downloader {
             turndownService.use(tables)
             turndownService.use(taskListItems)
             turndownService.use(codeBlockFormat);
+            turndownService.use(supportedHtml)
 
             return removeMediumDisclaimer(
                     turndownService.turndown(htmlContent)

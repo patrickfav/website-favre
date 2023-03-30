@@ -5,7 +5,7 @@ import {
     getExtension, ImageMeta,
     regexQuote, removeBrokenMarkdownParts,
     shortenToTitle,
-    stackOverflowHighlightedCodeBlock
+    stackOverflowHighlightedCodeBlock, supportedHtml
 } from './util';
 import TurndownService from "turndown";
 
@@ -168,6 +168,43 @@ describe('figureCaption', () => {
         expect(result).toEqual(expectedMarkdown);
     });
 });
+
+describe('supportedHtml', () => {
+    let turndownService: TurndownService
+
+    beforeEach(() => {
+        turndownService = new TurndownService()
+        turndownService.use(supportedHtml)
+    })
+
+    it('should convert SUP tags to markdown', () => {
+        const html = '<p>Example text<sup>1</sup></p>'
+        const expectedMarkdown = 'Example text<sup>1</sup>'
+        const result = turndownService.turndown(html)
+        expect(result).toEqual(expectedMarkdown)
+    })
+
+    it('should convert SUB tags to markdown', () => {
+        const html = '<p>H<sub>2</sub>O</p>'
+        const expectedMarkdown = 'H<sub>2</sub>O'
+        const result = turndownService.turndown(html)
+        expect(result).toEqual(expectedMarkdown)
+    })
+
+    it('should convert KBD tags to markdown', () => {
+        const html = '<p>Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to copy.</p>'
+        const expectedMarkdown = 'Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to copy.'
+        const result = turndownService.turndown(html)
+        expect(result).toEqual(expectedMarkdown)
+    })
+
+    it('should convert MARK tags to markdown', () => {
+        const html = '<p><mark>Highlighted</mark> text</p>'
+        const expectedMarkdown = '<mark>Highlighted</mark> text'
+        const result = turndownService.turndown(html)
+        expect(result).toEqual(expectedMarkdown)
+    })
+})
 
 describe('generateRandomFilename', () => {
     it('should generate a random filename with correct format', () => {

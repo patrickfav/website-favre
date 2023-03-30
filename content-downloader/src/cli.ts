@@ -32,9 +32,9 @@ export async function cli(args: string[]): Promise<void> {
     });
 
     const contentStats = [
-        //...await gistDownloader.download(),
-        //...await stackOverflowDownloader.download(),
-        //...await githubDownloader.download(),
+        ...await gistDownloader.download(),
+        ...await stackOverflowDownloader.download(),
+        ...await githubDownloader.download(),
         ...await mediumDownloader.download(),
     ];
 

@@ -136,6 +136,27 @@ export const figureCaption = function (service: TurndownService): void {
     })
 } as TurndownService.Plugin
 
+export const supportedHtml = function (service: TurndownService): void {
+    service.addRule('supportedHtml', {
+        filter: function (node: HTMLElement, options: Options): boolean | null {
+            return (
+                node.nodeName === 'SUP' ||
+                node.nodeName === 'SUB' ||
+                node.nodeName === 'KBD' ||
+                node.nodeName === 'MARK'
+            )
+        } as Filter,
+        replacement: function (content: string, node: HTMLElement, options: Options): string {
+            const nodeName = node.nodeName.toLowerCase();
+            const text = node.textContent ? node.textContent : ''
+
+            return (
+                `<${nodeName}>${text}</${nodeName}>`
+            )
+        } as ReplacementFunction
+    })
+} as TurndownService.Plugin
+
 function deEscape(content: string): string {
     const escapes: [RegExp, string][] = [
         [/\\`/g, '`'],

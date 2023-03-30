@@ -3,7 +3,14 @@ import {stackoverflowEnabled, stackoverflowUserId} from '../confg'
 import fs from 'fs'
 import {StringStream} from 'scramjet'
 import TurndownService from 'turndown'
-import {figureCaption, generateSlug, removeBrokenMarkdownParts, Slug, stackOverflowHighlightedCodeBlock} from '../util'
+import {
+    figureCaption,
+    generateSlug,
+    removeBrokenMarkdownParts,
+    Slug,
+    stackOverflowHighlightedCodeBlock,
+    supportedHtml
+} from '../util'
 import wordsCount from 'words-count'
 import {sobannerSvg} from '../svg'
 // @ts-ignore
@@ -171,7 +178,8 @@ export class StackOverflowDownloader extends Downloader {
         turndownService.use(strikethrough)
         turndownService.use(tables)
         turndownService.use(taskListItems)
-        turndownService.use(stackOverflowHighlightedCodeBlock);
+        turndownService.use(stackOverflowHighlightedCodeBlock)
+        turndownService.use(supportedHtml)
 
         return turndownService.turndown(body)
     }
