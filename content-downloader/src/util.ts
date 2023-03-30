@@ -1,7 +1,7 @@
 import * as crypto from 'crypto';
 // @ts-ignore
 import base32 from 'base32-encoding';
-import TurndownService, {Filter, Options, ReplacementFunction} from "turndown";
+import TurndownService, {Filter, Node, Options, ReplacementFunction} from "turndown";
 import fs from "fs";
 
 export interface Slug {
@@ -74,7 +74,7 @@ export function removeBrokenMarkdownParts(markdown: string): string {
 export const codeBlockFormat = function (service: TurndownService): void {
     service.addRule('codeBlockFormat', {
         filter: ['pre'],
-        replacement: function (content: any, node: any, options: any): string {
+        replacement: function (content: string, node: Node, options: Options): string {
             return '\n' + options.fence + '\n' + deEscape(content) + '\n' + options.fence + '\n';
         }
     }).addRule('codeFormat', {
@@ -89,7 +89,7 @@ export const stackOverflowHighlightedCodeBlock = function (service: TurndownServ
     const highlightRegExp = /lang-([a-z0-9]+)/
 
     service.addRule('stackOverflowHighlightedCodeBlock', {
-        filter: function (node: HTMLElement, options: Options): boolean | null {
+        filter: function (node: HTMLElement): boolean | null {
             const firstChild = node.firstChild
             return (
                 node.nodeName === 'PRE' &&
@@ -112,7 +112,7 @@ export const stackOverflowHighlightedCodeBlock = function (service: TurndownServ
 
 export const figureCaption = function (service: TurndownService): void {
     service.addRule('stackOverflowHighlightedCodeBlock', {
-        filter: function (node: HTMLElement, options: Options): boolean | null {
+        filter: function (node: HTMLElement): boolean | null {
             const firstChild = node.firstChild
             const lastChild = node.lastChild
             return (
@@ -121,7 +121,7 @@ export const figureCaption = function (service: TurndownService): void {
                 lastChild && lastChild.nodeName === 'FIGCAPTION'
             )
         } as Filter,
-        replacement: function (content: string, node: HTMLElement, options: Options): string {
+        replacement: function (content: string, node: HTMLElement): string {
             const imgNode = node.firstChild as HTMLImageElement;
             const captionNode = node.lastChild
 
@@ -138,7 +138,7 @@ export const figureCaption = function (service: TurndownService): void {
 
 export const supportedHtml = function (service: TurndownService): void {
     service.addRule('supportedHtml', {
-        filter: function (node: HTMLElement, options: Options): boolean | null {
+        filter: function (node: HTMLElement): boolean | null {
             return (
                 node.nodeName === 'SUP' ||
                 node.nodeName === 'SUB' ||
@@ -146,7 +146,7 @@ export const supportedHtml = function (service: TurndownService): void {
                 node.nodeName === 'MARK'
             )
         } as Filter,
-        replacement: function (content: string, node: HTMLElement, options: Options): string {
+        replacement: function (content: string, node: HTMLElement): string {
             const nodeName = node.nodeName.toLowerCase();
             const text = node.textContent ? node.textContent : ''
 
@@ -243,7 +243,7 @@ export function findAllHtmlImages(markdown: string): ImageMeta[] {
 }
 
 export function findAllMarkdownImages(markdown: string): ImageMeta[] {
-    return [...markdown.matchAll(/!\[(?<alttext>[^\]]*)]\((?<filename>[^\s]*?)(?=\s*[")])\s*(?<optionalpart>".*")?\)/g)].map(match => {
+    return [...markdown.matchAll(/!\[(?<alttext>[^\]]*)]\((?<filename>\S*?)(?=\s*[")])\s*(?<optionalpart>".*")?\)/g)].map(match => {
         return {
             raw: match[0],
             altText: match[1] ? match[1] : '',
