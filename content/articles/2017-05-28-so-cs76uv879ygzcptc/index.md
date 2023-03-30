@@ -44,13 +44,13 @@ _**Note:**_ `SecureRandom` is the slowest, but most secure way in Java of genera
 2\. Required Space of Possible Values
 =====================================
 
-Next you have to decide "how unique" your token needs to be. The whole and only point of considering entropy is to make sure that the system can resist brute force attacks: the space of possible values must be so large that any attacker could only try a negligible proportion of the values in non-ludicrous time[1](https://security.stackexchange.com/a/102163/60108).
+Next you have to decide "how unique" your token needs to be. The whole and only point of considering entropy is to make sure that the system can resist brute force attacks: the space of possible values must be so large that any attacker could only try a negligible proportion of the values in non-ludicrous time<SUP>1</SUP>.
 
-Unique identifiers such as random [`UUID`](https://en.wikipedia.org/wiki/Universally_unique_identifier) have 122 bits of entropy (i.e., 2^122 = 5.3x10^36) - the chance of collision is "\*(...) for there to be a one in a billion chance of duplication, 103 trillion version 4 UUIDs must be generated[2](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions)". **We will choose 128 bits since it fits exactly into 16 bytes** and is seen as [highly sufficient](https://security.stackexchange.com/questions/6141/amount-of-simple-operations-that-is-safely-out-of-reach-for-all-humanity/6149#6149) for being unique for basically every, but the most extreme, use cases, and you don't have to think about duplicates. Here is a simple comparison table of entropy including simple analysis of the [birthday problem](https://en.wikipedia.org/wiki/Birthday_problem).
+Unique identifiers such as random [`UUID`](https://en.wikipedia.org/wiki/Universally_unique_identifier) have 122 bits of entropy (i.e., 2^122 = 5.3x10^36) - the chance of collision is "\*(...) for there to be a one in a billion chance of duplication, 103 trillion version 4 UUIDs must be generated<SUP>2</SUP>". **We will choose 128 bits since it fits exactly into 16 bytes** and is seen as [highly sufficient](https://security.stackexchange.com/questions/6141/amount-of-simple-operations-that-is-safely-out-of-reach-for-all-humanity/6149#6149) for being unique for basically every, but the most extreme, use cases, and you don't have to think about duplicates. Here is a simple comparison table of entropy including simple analysis of the [birthday problem](https://en.wikipedia.org/wiki/Birthday_problem).
 
 [![Comparison of token sizes](img_9660598e25b73e00.png)](img_9660598e25b73e00.png)
 
-For simple requirements, 8 or 12 byte length might suffice, but with 16 bytes you are on the "safe side".
+<SUP>For simple requirements, 8 or 12 byte length might suffice, but with 16 bytes you are on the "safe side".</SUP>
 
 And that's basically it. The last thing is to think about encoding, so it can be represented as a printable text (read, a `String`).
 

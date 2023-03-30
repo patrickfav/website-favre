@@ -139,4 +139,4 @@ byte[] result = b.array();
 
 ```
 
-\*Full Disclaimer: I am the developer.
+<SUB>*Full Disclaimer: I am the developer.</SUB>

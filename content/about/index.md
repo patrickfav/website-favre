@@ -5,7 +5,6 @@ type: nonContentSite
 showEdit: false
 showDate: false
 showReadingTime: false
-showReadingTime: false
 showTaxonomies: false
 showAuthor: false
 showPagination: false

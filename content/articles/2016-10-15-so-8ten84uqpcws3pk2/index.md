@@ -34,7 +34,7 @@ Use this tool (uses the new apksigner from Google):
 
 [https://github.com/patrickfav/uber-apk-signer](https://github.com/patrickfav/uber-apk-signer)
 
-Disclaimer: Im the developer :)
+<SUP>Disclaimer: Im the developer :)</SUP>
 
 Manual Process:
 ===============
