@@ -1,8 +1,8 @@
 import {
-    figureCaption,
+    figureCaption, findAllHtmlImages, findAllMarkdownImages,
     generateRandomFilename,
     generateSlug,
-    getExtension,
+    getExtension, ImageMeta,
     regexQuote,
     shortenToTitle,
     stackOverflowHighlightedCodeBlock
@@ -160,5 +160,91 @@ describe('generateRandomFilename', () => {
         expect(filename1).not.toEqual(filename2);
         expect(filename1).not.toEqual(filename3);
         expect(filename2).not.toEqual(filename3);
+    });
+});
+
+describe('findAllHtmlImages', () => {
+    it('should find images with src and alt attributes', () => {
+        const input = `
+            <p>
+                <img src="https://example.com/image1.png" style="align-content: center">
+                <img src="https://example.com/image2.jpg" alt="Image 2">
+            </p>
+        `;
+
+        const expected: ImageMeta[] = [
+            {
+                raw: '<img src="https://example.com/image1.png" style="align-content: center">',
+                src: 'https://example.com/image1.png',
+                altText: '',
+                caption: undefined
+            },
+            {
+                raw: '<img src="https://example.com/image2.jpg" alt="Image 2">',
+                src: 'https://example.com/image2.jpg',
+                altText: 'Image 2',
+                caption: undefined
+            }
+        ];
+
+        expect(findAllHtmlImages(input)).toEqual(expected);
+    });
+
+    it('should return an empty array if no images are found', () => {
+        const input = `
+            <p>
+                This is a paragraph without any images.
+            </p>
+        `;
+
+        expect(findAllHtmlImages(input)).toEqual([]);
+    });
+});
+
+describe('findAllMarkdownImages', () => {
+    it('should find images with alt text and optional captions', () => {
+        const input = `
+            ![Image 1](https://example.com/image1.png "Caption 1")
+            ![Image 2](https://example.com/image2.jpg "Caption 2")
+            ![](https://example.com/image3.jpg "Caption 3")
+            ![Image 4](https://example.com/image4.jpg)
+        `;
+
+        const expected: ImageMeta[] = [
+            {
+                raw: '![Image 1](https://example.com/image1.png "Caption 1")',
+                src: 'https://example.com/image1.png',
+                altText: 'Image 1',
+                caption: '"Caption 1"'
+            },
+            {
+                raw: '![Image 2](https://example.com/image2.jpg "Caption 2")',
+                src: 'https://example.com/image2.jpg',
+                altText: 'Image 2',
+                caption: '"Caption 2"'
+            },
+            {
+                raw: '![](https://example.com/image3.jpg "Caption 3")',
+                src: 'https://example.com/image3.jpg',
+                altText: '',
+                caption: '"Caption 3"'
+            },
+            {
+                raw: '![Image 4](https://example.com/image4.jpg)',
+                src: 'https://example.com/image4.jpg',
+                altText: 'Image 4',
+                caption: undefined
+            }
+        ];
+
+        expect(findAllMarkdownImages(input)).toEqual(expected);
+    });
+
+    it('should return an empty array if no images are found', () => {
+        const input = `
+            This is a paragraph without any images.
+        `;
+
+        expect(findAllMarkdownImages(input)).toEqual([]);
     });
 });

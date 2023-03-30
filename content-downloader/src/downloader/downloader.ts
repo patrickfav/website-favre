@@ -1,6 +1,14 @@
 import fs from "fs";
 import {ContentStat} from "./models";
-import {calculateFileSha256, generateRandomFilename, getExtension, regexQuote, renameFile} from "../util";
+import {
+    calculateFileSha256,
+    findAllHtmlImages,
+    findAllMarkdownImages,
+    generateRandomFilename,
+    getExtension,
+    regexQuote,
+    renameFile
+} from "../util";
 import got from "got";
 import {promisify} from "util";
 import * as stream from "stream";
@@ -66,20 +74,19 @@ export abstract class Downloader {
 
     protected async fetchAndReplaceImages(markdownContent: string, targetProjectDir: string) {
 
-        const matches = [...markdownContent.matchAll(/!\[(?<alttext>[^\]]*)]\((?<filename>[^\s]*?)(?=\s*[")])\s*(?<optionalpart>".*")?\)/g)]
+        const foundImages = [
+            ...findAllHtmlImages(markdownContent),
+            ...findAllMarkdownImages(markdownContent)
+        ]
 
-        for (const i in matches) {
-            const markdownImage = matches[i][0];
-            const altText = matches[i][1]
-            const imageUrl = matches[i][2]
-            const caption = matches[i][3]
+        for (const imageMeta of foundImages) {
 
-            if (this.testShouldFilterImage(imageUrl)) {
-                markdownContent = markdownContent.replace(new RegExp(regexQuote(markdownImage), 'g'), '\n')
+            if (this.testShouldFilterImage(imageMeta.src)) {
+                markdownContent = markdownContent.replace(new RegExp(regexQuote(imageMeta.raw), 'g'), '\n')
                 continue
             }
 
-            const fullyQualifiedUrl = imageUrl.startsWith('https://') ? imageUrl : this.baseUrlForImages() + imageUrl
+            const fullyQualifiedUrl = imageMeta.src.startsWith('https://') ? imageMeta.src : this.baseUrlForImages() + imageMeta.src
 
             const randomFileName = `${targetProjectDir}/${generateRandomFilename()}`
             console.log(`\t\tDownloading image: ${fullyQualifiedUrl}`)
@@ -90,16 +97,16 @@ export abstract class Downloader {
             );
 
             const contentHash = calculateFileSha256(randomFileName)
-            const newLocalImageName = `img_${contentHash.substring(0, 16)}.${getExtension(imageUrl)}`
+            const newLocalImageName = `img_${contentHash.substring(0, 16)}.${getExtension(imageMeta.src)}`
 
             await renameFile(randomFileName, `${targetProjectDir}/${newLocalImageName}`)
 
             markdownContent = markdownContent
                 .replace(
-                    new RegExp(regexQuote(markdownImage), 'g'),
-                    `![${altText}](${newLocalImageName}${caption ? ' ' + caption : ''})`
+                    new RegExp(regexQuote(imageMeta.raw), 'g'),
+                    `![${imageMeta.altText}](${newLocalImageName}${imageMeta.caption ? ' ' + imageMeta.caption : ''})`
                 ).replace(
-                    new RegExp(regexQuote(imageUrl), 'g'), newLocalImageName
+                    new RegExp(regexQuote(imageMeta.src), 'g'), newLocalImageName
                 )
         }
 
@@ -114,4 +121,3 @@ export abstract class Downloader {
         return '';
     }
 }
-

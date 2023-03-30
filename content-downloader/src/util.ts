@@ -1,8 +1,7 @@
 import * as crypto from 'crypto';
 // @ts-ignore
 import base32 from 'base32-encoding';
-import TurndownService from "turndown";
-import {Filter, Options, ReplacementFunction} from "turndown";
+import TurndownService, {Filter, Options, ReplacementFunction} from "turndown";
 import fs from "fs";
 
 export interface Slug {
@@ -171,7 +170,7 @@ export function shortenToTitle(description: string): string {
 export function getExtension(url: string): string {
     const match = url.match(/\.([a-zA-Z0-9]+)(?:\?|$)/)
 
-    if(!match || !match[1]) {
+    if (!match || !match[1]) {
         return "png"
     } else {
         return match[1]
@@ -182,7 +181,7 @@ export function regexQuote(unquoted: string): string {
     return unquoted.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
 }
 
-export function calculateFileSha256(filePath: string): string{
+export function calculateFileSha256(filePath: string): string {
     const buff = fs.readFileSync(filePath);
     return crypto.createHash("sha256").update(buff).digest("hex")
 }
@@ -201,4 +200,34 @@ export function renameFile(oldPath: string, newPath: string): Promise<void> {
 
 export function generateRandomFilename(): string {
     return `temp_${crypto.createHash('sha256').update(Math.random().toString()).digest('hex').substring(0, 20)}.tmp`
+}
+
+export function findAllHtmlImages(markdown: string): ImageMeta[] {
+    return [...markdown.matchAll(/<img[^>]+src\s*=\s*["']([^"']+)["'](?:[^>]*alt\s*=\s*["']([^"']+)["'])?[^>]*>/g)].map(match => {
+        return {
+            raw: match[0],
+            src: match[1],
+            altText: match[2] ? match[2] : '',
+            caption: undefined
+        }
+    })
+}
+
+export function findAllMarkdownImages(markdown: string): ImageMeta[] {
+    return [...markdown.matchAll(/!\[(?<alttext>[^\]]*)]\((?<filename>[^\s]*?)(?=\s*[")])\s*(?<optionalpart>".*")?\)/g)].map(match => {
+        return {
+            raw: match[0],
+            altText: match[1] ? match[1] : '',
+            src: match[2],
+            caption: match[3] ? match[3] : undefined
+        }
+    })
+}
+
+
+export interface ImageMeta {
+    altText: string
+    src: string
+    caption: string | undefined
+    raw: string
 }
