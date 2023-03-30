@@ -5,7 +5,7 @@ import Parser from 'rss-parser'
 import TurndownService from 'turndown'
 import * as cheerio from 'cheerio'
 import {mediumDownloaderEnabled} from '../confg'
-import {codeBlockFormat, figureCaption, generateSlug, Slug} from '../util'
+import {codeBlockFormat, figureCaption, generateSlug, removeBrokenMarkdownParts, Slug} from '../util'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
@@ -44,13 +44,17 @@ export class MediumDownloader extends Downloader {
             const targetProjectFile = targetProjectDir + '/index.md'
             const frontMatter = this.createFrontMatter(articleInfo, slug)
             const markdown = await this.fetchAndReplaceImages(post.markdown, targetProjectDir)
-            StringStream.from(frontMatter + markdown)
+            StringStream.from(frontMatter + removeBrokenMarkdownParts(markdown))
                 .pipe(fs.createWriteStream(targetProjectFile))
 
             this.updateContentStats(contentStats, articleInfo, userInfo, markdown.length)
         }
 
         return contentStats
+    }
+
+    protected testShouldFilterImage(url: string): boolean {
+        return url.startsWith('https://medium.com/_/stat');
     }
 
     private async downloadProjectImage(articleInfo: any, safeArticleTitle: string, targetProjectDir: string): Promise<void> {
@@ -81,11 +85,7 @@ export class MediumDownloader extends Downloader {
             turndownService.use(codeBlockFormat);
 
             return removeMediumDisclaimer(
-                turndownService
-                    .turndown(htmlContent)
-                    .replace(/```\n```/g, '')
-                    // eslint-disable-next-line no-irregular-whitespace
-                    .replace(/ /g, ' ')
+                    turndownService.turndown(htmlContent)
             )
         }
 
@@ -158,10 +158,6 @@ export class MediumDownloader extends Downloader {
         meta += `mediumVoters: ${articleInfo.voterCount}\n`
         meta += '---\n'
         return meta
-    }
-
-    protected testShouldFilterImage(url: string): boolean {
-        return url.startsWith('https://medium.com/_/stat');
     }
 
     private updateContentStats(contentStats: ContentStat[], articleInfo: ArticleInfo, userInfo: UserInfo, contentLength: number) {

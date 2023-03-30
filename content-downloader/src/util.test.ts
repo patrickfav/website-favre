@@ -3,7 +3,7 @@ import {
     generateRandomFilename,
     generateSlug,
     getExtension, ImageMeta,
-    regexQuote,
+    regexQuote, removeBrokenMarkdownParts,
     shortenToTitle,
     stackOverflowHighlightedCodeBlock
 } from './util';
@@ -24,6 +24,29 @@ describe('generateSlug', () => {
         expect(slug.stableName).toMatch(/2022-01-01-article-[a-z0-9]{16}/);
         expect(slug.yearSlashSafeName).toBe('2022/example-article-title');
         expect(slug.permalink).toMatch(/\/link\/[a-z0-9]{8}/);
+    });
+});
+
+describe('removeBrokenMarkdownParts', () => {
+    it('should replace non-breaking spaces with regular spaces', () => {
+        const input = 'Some text with non-breaking spaces';
+        const expected = 'Some text with non-breaking spaces';
+        const result = removeBrokenMarkdownParts(input);
+        expect(result).toBe(expected);
+    });
+
+    it('should remove empty links', () => {
+        const input = 'Some text [ ](https://example.com) with an empty link';
+        const expected = 'Some text  with an empty link';
+        const result = removeBrokenMarkdownParts(input);
+        expect(result).toBe(expected);
+    });
+
+    it('should not remove image links', () => {
+        const input = 'Some text ![](https://example.com/image.png) with an image link';
+        const expected = 'Some text ![](https://example.com/image.png) with an image link';
+        const result = removeBrokenMarkdownParts(input);
+        expect(result).toBe(expected);
     });
 });
 

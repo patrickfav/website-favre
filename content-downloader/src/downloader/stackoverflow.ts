@@ -3,7 +3,7 @@ import {stackoverflowEnabled, stackoverflowUserId} from '../confg'
 import fs from 'fs'
 import {StringStream} from 'scramjet'
 import TurndownService from 'turndown'
-import {figureCaption, generateSlug, Slug, stackOverflowHighlightedCodeBlock} from '../util'
+import {figureCaption, generateSlug, removeBrokenMarkdownParts, Slug, stackOverflowHighlightedCodeBlock} from '../util'
 import wordsCount from 'words-count'
 import {sobannerSvg} from '../svg'
 // @ts-ignore
@@ -64,7 +64,7 @@ export class StackOverflowDownloader extends Downloader {
             const finalMarkdown = await this.fetchAndReplaceImages(markdown, targetProjectDir)
 
 
-            StringStream.from(frontMatter + finalMarkdown)
+            StringStream.from(frontMatter + removeBrokenMarkdownParts(finalMarkdown))
                 .pipe(fs.createWriteStream(targetProjectFile))
         }
 

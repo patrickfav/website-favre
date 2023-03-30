@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
 import {gistDownloaderEnabled} from '../confg'
-import {generateSlug, shortenToTitle, Slug} from '../util'
+import {generateSlug, removeBrokenMarkdownParts, shortenToTitle, Slug} from '../util'
 import {gistbannerSvg} from '../svg'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
@@ -39,7 +39,7 @@ export class GistDownloader extends Downloader {
             Downloader.prepareFolder(targetProjectDir)
 
             this.copyBannerImage(gistbannerSvg, targetProjectFileBanner)
-            StringStream.from(frontMatter + markdown).pipe(fs.createWriteStream(targetProjectDir + '/index.md'))
+            StringStream.from(frontMatter + removeBrokenMarkdownParts(markdown)).pipe(fs.createWriteStream(targetProjectDir + '/index.md'))
 
             contentStats.push(this.createContentStat(gistMeta, additionalMeta, markdown.length))
         }
@@ -128,7 +128,7 @@ export class GistDownloader extends Downloader {
         const tags = [...new Set(allFiles.map(f => f.language))]
 
         const someVar = 42;
-        const name= `
+        const name = `
                ${someVar}
                My
                Name

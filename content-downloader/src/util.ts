@@ -63,6 +63,14 @@ export function generateSlug(name: string, type: string, date: Date, stableId: s
     }
 }
 
+export function removeBrokenMarkdownParts(markdown: string): string {
+    return markdown
+        .replace(/```\n```/g, '') // remove empty code blocks
+        // eslint-disable-next-line no-irregular-whitespace
+        .replace(/ /g, ' ') // remove non-breaking spaces
+        .replace(/(?<!!)\[(\s*?)]\((.*?)\)/g, '') // remove empty links
+}
+
 export const codeBlockFormat = function (service: TurndownService): void {
     service.addRule('codeBlockFormat', {
         filter: ['pre'],

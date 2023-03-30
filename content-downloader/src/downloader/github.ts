@@ -3,7 +3,7 @@ import {StringStream} from 'scramjet'
 import got from 'got'
 import * as cheerio from 'cheerio'
 import {githubDownloaderEnabled} from '../confg'
-import {generateSlug, Slug} from '../util'
+import {generateSlug, removeBrokenMarkdownParts, Slug} from '../util'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
 
@@ -192,7 +192,7 @@ export class GithubDownloader extends Downloader {
 
         const markdown = await got.get(url + 'README.md').then(response => this.fetchAndReplaceImages(response.body, targetProjectDir))
 
-        StringStream.from(frontMatter + markdown)
+        StringStream.from(frontMatter + removeBrokenMarkdownParts(markdown))
             .pipe(fs.createWriteStream(targetProjectFile))
 
         return markdown.length

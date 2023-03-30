@@ -104,7 +104,7 @@ export abstract class Downloader {
             markdownContent = markdownContent
                 .replace(
                     new RegExp(regexQuote(imageMeta.raw), 'g'),
-                    `![${imageMeta.altText}](${newLocalImageName}${imageMeta.caption ? ' ' + imageMeta.caption : ''})`
+                    `![${imageMeta.altText == '' ? 'Image' : imageMeta.altText}](${newLocalImageName}${imageMeta.caption ? ' ' + imageMeta.caption : ''})`
                 ).replace(
                     new RegExp(regexQuote(imageMeta.src), 'g'), newLocalImageName
                 )
