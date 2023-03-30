@@ -33,7 +33,7 @@ export class GistDownloader extends Downloader {
             const frontMatter = this.createGistFrontMatter(gistMeta, additionalMeta, title, slug)
             const markdown = await this.createAndDownloadContent(gistMeta)
 
-            const targetProjectDir = this.getTargetOutDir() + '/' + slug.stableName
+            const targetProjectDir = this.getTargetOutDir() + slug.stableName
             const targetProjectFileBanner = targetProjectDir + '/gistbanner.svg'
 
             Downloader.prepareFolder(targetProjectDir)
@@ -126,6 +126,13 @@ export class GistDownloader extends Downloader {
         allFiles.sort((a, b) => b.size - a.size)
         const mainLanguage = allFiles[0].language
         const tags = [...new Set(allFiles.map(f => f.language))]
+
+        const someVar = 42;
+        const name= `
+               ${someVar}
+               My
+               Name
+            `;
 
         let meta = '---\n'
         meta += `title: 'Snippet: ${Downloader.escapeFrontMatterText(title)}'\n`

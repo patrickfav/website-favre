@@ -1,8 +1,11 @@
 import fs from "fs";
 import {ContentStat} from "./models";
-import {getExtension, regexQuote} from "../util";
-import crypto from "crypto";
+import {calculateFileSha256, generateRandomFilename, getExtension, regexQuote, renameFile} from "../util";
 import got from "got";
+import {promisify} from "util";
+import * as stream from "stream";
+
+const pipeline = promisify(stream.pipeline);
 
 export abstract class Downloader {
     readonly name: string
@@ -71,24 +74,25 @@ export abstract class Downloader {
             const imageUrl = matches[i][2]
             const caption = matches[i][3]
 
-            let abort = false
-            for (const urlPrefix of this.filteredImageUrlPrefix()) {
-                if (imageUrl.startsWith(urlPrefix)) {
-                    markdownContent = markdownContent.replace(new RegExp(regexQuote(markdownImage), 'g'), '\n')
-                    abort = true
-                    break
-                }
-            }
-
-            if (abort) {
+            if (this.testShouldFilterImage(imageUrl)) {
+                markdownContent = markdownContent.replace(new RegExp(regexQuote(markdownImage), 'g'), '\n')
                 continue
             }
 
-            const newLocalImageName = `img_${crypto.createHash('sha256').update(imageUrl).digest('hex').substring(0, 16)}.${getExtension(imageUrl)}`
+            const fullyQualifiedUrl = imageUrl.startsWith('https://') ? imageUrl : this.baseUrlForImages() + imageUrl
 
-            console.log('\t\tDownloading image: ' + imageUrl + ' to ' + newLocalImageName)
+            const randomFileName = `${targetProjectDir}/${generateRandomFilename()}`
+            console.log(`\t\tDownloading image: ${fullyQualifiedUrl}`)
 
-            got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + newLocalImageName))
+            await pipeline(
+                got.stream(fullyQualifiedUrl),
+                fs.createWriteStream(randomFileName)
+            );
+
+            const contentHash = calculateFileSha256(randomFileName)
+            const newLocalImageName = `img_${contentHash.substring(0, 16)}.${getExtension(imageUrl)}`
+
+            await renameFile(randomFileName, `${targetProjectDir}/${newLocalImageName}`)
 
             markdownContent = markdownContent
                 .replace(
@@ -102,8 +106,12 @@ export abstract class Downloader {
         return markdownContent
     }
 
-    protected filteredImageUrlPrefix(): string[] {
-        return []
+    protected testShouldFilterImage(url: string): boolean {
+        return false
+    }
+
+    protected baseUrlForImages(): string {
+        return '';
     }
 }
 

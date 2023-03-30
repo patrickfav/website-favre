@@ -2,15 +2,15 @@ import * as fs from 'fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
 import * as cheerio from 'cheerio'
-import * as crypto from 'crypto'
 import {githubDownloaderEnabled} from '../confg'
-import {generateSlug, getExtension, regexQuote, Slug} from '../util'
+import {generateSlug, Slug} from '../util'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
 
 export class GithubDownloader extends Downloader {
 
     protected readonly config: GithubConfig
+    private baseRawUrl = ''
 
     constructor(rootOutDir: string, contentOutDir: string, config: GithubConfig) {
         super("Github", githubDownloaderEnabled, rootOutDir, contentOutDir);
@@ -34,8 +34,9 @@ export class GithubDownloader extends Downloader {
 
             const githubMeta = allGithubMeta.find(p => p.name === projectName)!
             const slug = generateSlug(projectName, 'gh', new Date(githubMeta.created_at), githubMeta.id)
+            this.baseRawUrl = `https://github.com/${this.config.githubUser}/${projectName}/raw/${githubMeta.default_branch}/`
 
-            const targetProjectDir = this.getTargetOutDir() + '/' + slug.stableName
+            const targetProjectDir = this.getTargetOutDir() + slug.stableName
             Downloader.prepareFolder(targetProjectDir)
 
             await this.downloadProjectImage(projectName, this.config.githubUser, targetProjectDir)
@@ -84,6 +85,26 @@ export class GithubDownloader extends Downloader {
                 forks: githubMeta.forks_count
             }
         }
+    }
+
+    private async getUserInfoAndUpdateContentStats(contentStats: ContentStat[], gotHeaders: gotHttpAuthHeader) {
+        console.log(`\tFetch github user info for ${this.config.githubUser}`)
+
+        const githubUser = await got.get(`https://api.github.com/users/${this.config.githubUser}`, gotHeaders)
+            .then((res) => JSON.parse(res.body) as GithubFullUser)
+
+        contentStats.push({
+            type: "gh-user",
+            user: this.config.githubUser,
+            subjectId: this.config.githubUser,
+            date: this.downloadDate,
+            values: {
+                followers: githubUser.followers,
+                following: githubUser.following,
+                repos: githubUser.public_repos,
+                gists: githubUser.public_gists
+            }
+        })
     }
 
     private async downloadProjectImage(projectName: string, githubUser: string, targetProjectDir: string): Promise<void> {
@@ -140,7 +161,7 @@ export class GithubDownloader extends Downloader {
         for (const fileName of fileNames) {
             const url = `https://github.com/${githubUser}/${projectName}/raw/${mainBranch}/${fileName}`
             const markdown = await got.get(url)
-                .then(response => this.removeBadgesAndDownloadImages(response.body, githubUser, projectName, mainBranch, targetFolder))
+                .then(response => this.fetchAndReplaceImages(response.body, targetProjectDir))
                 .catch(err => {
                     if (err.response && err.response.statusCode === 404) {
                         // do nothing
@@ -169,7 +190,7 @@ export class GithubDownloader extends Downloader {
 
         console.log('\t\tDownloading Readme from ' + url + 'README.md')
 
-        const markdown = await got.get(url + 'README.md').then(response => this.removeBadgesAndDownloadImages(response.body, githubUser, projectName, mainBranch, targetProjectDir))
+        const markdown = await got.get(url + 'README.md').then(response => this.fetchAndReplaceImages(response.body, targetProjectDir))
 
         StringStream.from(frontMatter + markdown)
             .pipe(fs.createWriteStream(targetProjectFile))
@@ -177,64 +198,25 @@ export class GithubDownloader extends Downloader {
         return markdown.length
     }
 
-    private async removeBadgesAndDownloadImages(markdownContent: string, githubUser: string, projectName: string, mainBranch: string, targetProjectDir: string) {
-        const matches = [...markdownContent.matchAll(/!\[[^\]]*]\((?<filename>.*?)(?=[")])(?<optionalpart>".*")?\)/g)]
-
-        for (const i in matches) {
-            const baseGithubUrl = `https://github.com/${githubUser}/${projectName}/raw/${mainBranch}/`
-            const markdownImage = matches[i][0]
-            const imageUrl = matches[i][1]
-
-            if (
-                imageUrl.startsWith('https://api.bintray.com/packages/') ||
-                imageUrl.startsWith('https://travis-ci.com/patrickfav') ||
-                imageUrl.startsWith('https://travis-ci.org/patrickfav') ||
-                imageUrl.startsWith('https://app.travis-ci.com/patrickfav/') ||
-                imageUrl.startsWith('https://www.javadoc.io/badge') ||
-                imageUrl.startsWith('https://coveralls.io/repos/github') ||
-                imageUrl.startsWith('https://img.shields.io/github/') ||
-                imageUrl.startsWith('https://img.shields.io/badge/') ||
-                imageUrl.startsWith('https://img.shields.io/maven-central/') ||
-                imageUrl.startsWith('https://api.codeclimate.com/v1/badges') ||
-                imageUrl.startsWith('https://codecov.io/gh/patrickfav/') ||
-                imageUrl.startsWith('https://sonarcloud.io/api/project_badges/') ||
-                imageUrl.startsWith('doc/playstore_badge') ||
-                (imageUrl.startsWith('https://github.com') && imageUrl.endsWith('/badge.svg'))
-            ) {
-                markdownContent = markdownContent.replace(new RegExp(regexQuote(markdownImage), 'g'), '')
-                continue
-            }
-
-            const fullyQualifiedUrl = imageUrl.startsWith('https://') ? imageUrl : baseGithubUrl + imageUrl
-            const imageFileName = 'gh_' + crypto.createHash('sha256').update(fullyQualifiedUrl).digest('hex').substring(0, 24) + '.' + getExtension(imageUrl)
-
-            console.log('\t\tDownloading github image: ' + fullyQualifiedUrl + ' to ' + imageFileName)
-
-            got.stream(fullyQualifiedUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
-
-            markdownContent = markdownContent.replace(new RegExp(regexQuote(imageUrl), 'g'), imageFileName)
-        }
-
-        return markdownContent
+    protected baseUrlForImages(): string {
+        return this.baseRawUrl
     }
 
-    protected filteredImageUrlPrefix() {
-        return [
-            'https://api.bintray.com/packages/',
-            'https://travis-ci.com/patrickfav',
-            'https://travis-ci.org/patrickfav',
-            'https://app.travis-ci.com/patrickfav/',
-            'https://www.javadoc.io/badge',
-            'https://coveralls.io/repos/github',
-            'https://img.shields.io/github/',
-            'https://img.shields.io/badge/',
-            'https://img.shields.io/maven-central/',
-            'https://api.codeclimate.com/v1/badges',
-            'https://codecov.io/gh/patrickfav/',
-            'https://sonarcloud.io/api/project_badges/',
-            'doc/playstore_badge',
-            '',
-        ]
+    protected testShouldFilterImage(url: string): boolean {
+        return url.startsWith('https://api.bintray.com/packages/') ||
+            url.startsWith('https://travis-ci.com/patrickfav') ||
+            url.startsWith('https://travis-ci.org/patrickfav') ||
+            url.startsWith('https://app.travis-ci.com/patrickfav/') ||
+            url.startsWith('https://www.javadoc.io/badge') ||
+            url.startsWith('https://coveralls.io/repos/github') ||
+            url.startsWith('https://img.shields.io/github/') ||
+            url.startsWith('https://img.shields.io/badge/') ||
+            url.startsWith('https://img.shields.io/maven-central/') ||
+            url.startsWith('https://api.codeclimate.com/v1/badges') ||
+            url.startsWith('https://codecov.io/gh/patrickfav/') ||
+            url.startsWith('https://sonarcloud.io/api/project_badges/') ||
+            url.startsWith('doc/playstore_badge') ||
+            (url.startsWith('https://github.com') && url.endsWith('/badge.svg'))
     }
 
     private createGithubSubPageFrontMatter(githubMeta: GithubMetaData, relOutDir: string, slug: Slug, leafName: string) {
@@ -294,26 +276,6 @@ export class GithubDownloader extends Downloader {
         }
         meta += '---\n'
         return meta
-    }
-
-    private async getUserInfoAndUpdateContentStats(contentStats: ContentStat[], gotHeaders: gotHttpAuthHeader) {
-        console.log(`\tFetch github user info for ${this.config.githubUser}`)
-
-        const githubUser = await got.get(`https://api.github.com/users/${this.config.githubUser}`, gotHeaders)
-            .then((res) => JSON.parse(res.body) as GithubFullUser)
-
-        contentStats.push({
-            type: "gh-user",
-            user: this.config.githubUser,
-            subjectId: this.config.githubUser,
-            date: this.downloadDate,
-            values: {
-                followers: githubUser.followers,
-                following: githubUser.following,
-                repos: githubUser.public_repos,
-                gists: githubUser.public_gists
-            }
-        })
     }
 }
 

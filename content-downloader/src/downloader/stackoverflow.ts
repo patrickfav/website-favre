@@ -36,7 +36,7 @@ export class StackOverflowDownloader extends Downloader {
 
             const slug = generateSlug(question.title, 'so', new Date(answer.creation_date * 1000), answer.answer_id.toString())
             const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
-            const targetProjectDir = this.getTargetOutDir() + '/' + slug.stableName
+            const targetProjectDir = this.getTargetOutDir() + slug.stableName
             const summary = this.createSummary(answer, question)
             const frontMatter = this.createStackOverflowFrontMatter(answer, question, summary, slug, answerLink)
             const markdown = this.createMarkdown(answer.body)
@@ -69,7 +69,6 @@ export class StackOverflowDownloader extends Downloader {
         }
 
         console.log(`\tSkipped ${skipDueLowScore} posts due to low score/view count and ${skipDueLowWordCount} due to low word count out of ${answersByUser.length}.`)
-
 
         return contentStats
     }

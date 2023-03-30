@@ -35,7 +35,7 @@ export class MediumDownloader extends Downloader {
 
             console.log('\t\tFound article ' + title + '(' + slug.safeNameWithDate + ') updated at ' + new Date(articleInfo.latestPublishedAt).toISOString())
 
-            const targetProjectDir = this.getTargetOutDir() + '/' + slug.stableName
+            const targetProjectDir = this.getTargetOutDir() + slug.stableName
 
             Downloader.prepareFolder(targetProjectDir)
 
@@ -160,8 +160,8 @@ export class MediumDownloader extends Downloader {
         return meta
     }
 
-    protected filteredImageUrlPrefix() {
-        return ['https://medium.com/_/stat']
+    protected testShouldFilterImage(url: string): boolean {
+        return url.startsWith('https://medium.com/_/stat');
     }
 
     private updateContentStats(contentStats: ContentStat[], articleInfo: ArticleInfo, userInfo: UserInfo, contentLength: number) {

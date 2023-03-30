@@ -1,4 +1,12 @@
-import {generateSlug, getExtension, regexQuote, shortenToTitle, stackOverflowHighlightedCodeBlock} from './util';
+import {
+    figureCaption,
+    generateRandomFilename,
+    generateSlug,
+    getExtension,
+    regexQuote,
+    shortenToTitle,
+    stackOverflowHighlightedCodeBlock
+} from './util';
 import TurndownService from "turndown";
 
 describe('generateSlug', () => {
@@ -30,20 +38,24 @@ describe('shortenToTitle', () => {
 });
 
 describe('getExtension', () => {
-    it('should return the correct file extension', () => {
-        const url = 'https://example.com/image.png?raw=true';
-
-        const extension = getExtension(url);
-
-        expect(extension).toBe('png');
+    test('should return png for empty or null input', () => {
+        expect(getExtension('')).toBe('png');
     });
 
-    it('should return "png" when no extension is found', () => {
-        const url = 'https://example.com/image';
+    test('should return the correct file extension', () => {
+        expect(getExtension('https://example.com/image.jpg')).toBe('jpg');
+        expect(getExtension('https://example.com/image.jpeg')).toBe('jpeg');
+        expect(getExtension('https://example.com/image.png')).toBe('png');
+    });
 
-        const extension = getExtension(url);
+    test('should return png when no extension is present', () => {
+        expect(getExtension('https://example.com/image')).toBe('png');
+    });
 
-        expect(extension).toBe('png');
+    test('should return extension without the query string', () => {
+        expect(getExtension('https://example.com/image.jpg?raw=true')).toBe('jpg');
+        expect(getExtension('https://example.com/image.jpeg?version=2')).toBe('jpeg');
+        expect(getExtension('https://example.com/image.png?param=value')).toBe('png');
     });
 });
 
@@ -100,4 +112,53 @@ console.log(a);
     });
 });
 
+describe('figureCaption', () => {
+    let turndownService: TurndownService;
 
+    beforeEach(() => {
+        turndownService = new TurndownService();
+        turndownService.use(figureCaption);
+    });
+
+    it('should convert figure with img and figcaption to markdown', () => {
+        const inputHTML = `
+      <figure>
+        <img src="example.png" alt="Example image">
+        <figcaption>Example caption</figcaption>
+      </figure>
+    `;
+        const expectedMarkdown = '![Example image](/example.png "Example caption")';
+        const result = turndownService.turndown(inputHTML);
+
+        expect(result).toEqual(expectedMarkdown);
+    });
+
+    it('should not affect other elements', () => {
+        const inputHTML = `
+      <p>Some text</p>
+      <img src="another-example.png" alt="Another example">
+    `;
+
+        const expectedMarkdown = 'Some text\n\n![Another example](another-example.png)';
+        const result = turndownService.turndown(inputHTML);
+
+        expect(result).toEqual(expectedMarkdown);
+    });
+});
+
+describe('generateRandomFilename', () => {
+    it('should generate a random filename with correct format', () => {
+        const filename = generateRandomFilename();
+        expect(filename).toMatch(/^temp_[0-9a-f]{20}\.tmp$/);
+    });
+
+    it('should generate unique filenames', () => {
+        const filename1 = generateRandomFilename();
+        const filename2 = generateRandomFilename();
+        const filename3 = generateRandomFilename();
+
+        expect(filename1).not.toEqual(filename2);
+        expect(filename1).not.toEqual(filename3);
+        expect(filename2).not.toEqual(filename3);
+    });
+});

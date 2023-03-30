@@ -3,6 +3,7 @@ import * as crypto from 'crypto';
 import base32 from 'base32-encoding';
 import TurndownService from "turndown";
 import {Filter, Options, ReplacementFunction} from "turndown";
+import fs from "fs";
 
 export interface Slug {
     id: string,
@@ -122,7 +123,7 @@ export const figureCaption = function (service: TurndownService): void {
             const caption = captionNode!.textContent
 
             return (
-                `![${altText}](${imgSrc + ' '} "${caption}")\n`
+                `![${altText}](${imgSrc + ' '}"${caption}")\n`
             )
         } as ReplacementFunction
     })
@@ -168,19 +169,36 @@ export function shortenToTitle(description: string): string {
 }
 
 export function getExtension(url: string): string {
-    if (!url || !url.includes(".")) {
-        return "png";
-    }
+    const match = url.match(/\.([a-zA-Z0-9]+)(?:\?|$)/)
 
-    const stringAfterDot = url.split('.').pop()!.replace(/\?raw=true/g, '').trim();
-
-    if (stringAfterDot.length > 5) {
+    if(!match || !match[1]) {
         return "png"
+    } else {
+        return match[1]
     }
-
-    return stringAfterDot
 }
 
 export function regexQuote(unquoted: string): string {
     return unquoted.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
+}
+
+export function calculateFileSha256(filePath: string): string{
+    const buff = fs.readFileSync(filePath);
+    return crypto.createHash("sha256").update(buff).digest("hex")
+}
+
+export function renameFile(oldPath: string, newPath: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+        fs.rename(oldPath, newPath, (error) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve();
+            }
+        });
+    });
+}
+
+export function generateRandomFilename(): string {
+    return `temp_${crypto.createHash('sha256').update(Math.random().toString()).digest('hex').substring(0, 20)}.tmp`
 }
