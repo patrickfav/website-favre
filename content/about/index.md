@@ -34,7 +34,7 @@ is hosted on [Github](https://github.com/patrickfav/website-favre) and continuou
 
 ### Syncing Content 
 
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=patrickfav_website-favre&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=patrickfav_website-favre&metric=coverage)](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
 
 The content is fetched via a simple [Node CLI](https://github.com/patrickfav/website-favre/tree/main/content-downloader) 
 that requests the content from e.g. GitHub, StackOverflow or Medium and converts it to markdown with a hugo-compatible 

@@ -4,7 +4,7 @@ A simple website with a list of all of my open source projects and articles I wr
 
 [![Build Status](https://github.com/patrickfav/website-favre/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/patrickfav/website-favre/actions)
 [![Build Status](https://github.com/patrickfav/website-favre/actions/workflows/check_site.yml/badge.svg)](https://github.com/patrickfav/website-favre/actions)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=patrickfav_website-favre&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=patrickfav_website-favre&metric=coverage)](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=patrickfav_website-favre&metric=bugs)](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=patrickfav_website-favre&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
 
