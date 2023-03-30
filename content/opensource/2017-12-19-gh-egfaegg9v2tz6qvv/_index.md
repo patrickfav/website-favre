@@ -1,7 +1,7 @@
 ---
 title: 'armadillo'
 date: 2017-12-19
-lastmod: 2023-03-12
+lastmod: 2023-03-30
 description: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
 summary: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
 aliases: ['/link/egfaegg9','/opensource/2017/armadillo']
@@ -17,7 +17,7 @@ originalContentLink: https://github.com/patrickfav/armadillo
 originalContentType: github
 originalContentId: 114701607
 githubCloneUrlHttp: https://github.com/patrickfav/armadillo.git
-githubStars: 263
+githubStars: 264
 githubForks: 52
 githubWatchers: 9
 githubContributors: 8
@@ -35,17 +35,16 @@ githubLicense: Apache License 2.0
 # Armadillo - Encrypted Shared Preference
 
 
-<img src="https://github.com/patrickfav/armadillo/blob/main/doc/logo/logo_ldpi.png?raw=true" align="right"
-     alt="Armadillo Logo" width="170" height="207">
+![Armadillo Logo](img_80ab705ca0ff93a3.png)
 
 A shared preference implementation for secret data providing confidentiality,
 integrity and authenticity. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives.
 
-[](https://mvnrepository.com/artifact/at.favre.lib/armadillo)
-[](https://travis-ci.com/patrickfav/armadillo)
-[](https://www.javadoc.io/doc/at.favre.lib/armadillo)
-[](https://coveralls.io/github/patrickfav/armadillo?branch=master)
-[](https://codeclimate.com/github/patrickfav/armadillo/maintainability)
+
+
+
+
+
 
 **Important Notice:** If you migrate to v0.6.0 and use a user password and
 default key stretching function migration is needed due to a security issue.
@@ -247,7 +246,7 @@ own data. Here are some suggestions:
 The cryptographic key used to encrypt the data is composed of the following
 parts:
 
-![screenshot key derivation](gh_24ffa5afdb9fb1b433dae55a.png)
+![screenshot key derivation](img_10697f47d6163af6.png)
 
 * User password (optional): provided by the caller and stretched with e.g. Bcrypt
 * Encryption Fingerprint (see section above)
@@ -273,7 +272,7 @@ generate different hashes for the same keys.
 The diagram below illustrates the used data format. To disguise the format
 a little bit it will be obfuscated by a simple xor cipher.
 
-![screenshot gallery](gh_9f2dbb89a2a9f58a2249b072.png)
+![screenshot gallery](img_79f24ed619523d1f.png)
 
 The resulting data will be encoded with [base64](https://en.wikipedia.org/wiki/Base64) and looks like this in the shared preferences xml:
 

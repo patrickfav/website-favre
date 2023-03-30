@@ -1,7 +1,7 @@
 ---
 title: 'contributing'
 date: 2017-12-19
-lastmod: 2023-03-12
+lastmod: 2023-03-30
 url: opensource/armadillo/contributing
 showSummary: false
 showTableOfContents: false

@@ -17,7 +17,7 @@ originalContentId: 4aace5eb31bd
 mediumClaps: 72
 mediumVoters: 14
 ---
-![](img_1400cdb98347fb2c.jpeg)
+![Image](img_8ea8a23e796feae5.jpeg)
 
 _While writing my own bcrypt library, being unsatisfied with the current Java de-facto standard implementation jBcrypt, I discovered a lot of odd things surrounding the bcrypt protocol (mind you: not the underlying cryptographic primitive ‘Eksblowfish’)._
 
@@ -33,7 +33,7 @@ bcrypt("secretPassword", 8)
 
 which may output
 
-![](img_6afe0ad4a41b7433.png "$2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma")
+![Image](img_576c578e5c9959b7.png "$2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma")
 
 This is the [modular crypt format](https://passlib.readthedocs.io/en/stable/modular_crypt_format.html) defined and used by OpenBSD. The first part $2a$ is the protocol version identifier. Historically bcrypt used to be $2$ but since nobody back then thought about Unicode handling, a new version had to be defined. The next part 08$ is the work factor as passed to the function. The next 22 ASCII characters (16 byte raw) 0SN/h83Gt1jZMR6924.Kd. represent the encoded salt. Most implementations automatically create a salt for the caller, which is nice. This measure protects against rainbow tables, i.e. using a list of pre-calculated hashes of commonly used passwords.
 
@@ -79,7 +79,7 @@ $2a$08$0SN/h83Gt1jZMR6924.Kd.HaK3MyTDt/W8FCjUOtbY3Pmres5rsma
 
 is clearly optimized to be user readable. It is also slightly inefficient to parse: first the whole string has to be read in as ASCII, then it has to be parsed character to character until the last $. After that the next 22 and 32 characters are decoded separately. Using a more compact message format and encoded only once, for example:
 
-![](img_6b2e7ac66255fae9.png)
+![Image](img_9dffc4bd85bfeb7c.png)
 
 the storage demand is reduced from 60 bytes to ~56 byte (Base64 encoded). This is irrelevant in most use cases, but in the grant scale when storing millions or billions of password hashes this can make a difference slightly reducing storage demand and parsing computational time.
 

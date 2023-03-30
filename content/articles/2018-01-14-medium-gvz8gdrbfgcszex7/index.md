@@ -17,7 +17,7 @@ originalContentId: eb966fb7fedc
 mediumClaps: 232
 mediumVoters: 53
 ---
-![](img_a175d4373ca65a0d.jpeg)
+![Image](img_f7a2ed1ace67946b.jpeg)
 
 In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go through the issues we had with the current setup and in the second part, what steps we took to improve them.
 
@@ -81,7 +81,7 @@ The advantage is that this will save you 3 allocations in the memory constraint 
 
 And two, it supports a lot of very convenient lint checks. For example, it warns you if you, like explained above, use string concatenation instead of string formatting or just that the android logger is used. Most of the rules have quick-fix options making migration a charm:
 
-![](img_12e2f9dd88057517.png "Timber custom lint warning")
+![Image](img_e89ff4e47b8d5e58.png "Timber custom lint warning")
 
 The main drawback: **Timber does not work with plain Java code** since it is published as an [AAR](https://developer.android.com/studio/projects/android-library.html). I wish it would have an interface _Java_ library and an Android implementation library which would also make handling dependencies with different versions of Timber easier.
 

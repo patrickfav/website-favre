@@ -38,9 +38,9 @@ Visual Comparison
 
 Here is your image scaled to `96x140` with different methods/libs. Click on the image to get the full size:
 
-[![comparison](img_88f7582f7c8daf58.png)](img_88f7582f7c8daf58.png)
+[![comparison](img_aea46e60041aa77f.png)](img_aea46e60041aa77f.png)
 
-[![comparison zoom](img_8421b1333f5a2a54.png)](img_8421b1333f5a2a54.png)
+[![comparison zoom](img_af6c295d75ecc767.png)](img_af6c295d75ecc767.png)
 
 1.  Morten Nobel's lib Lanczos3
 2.  Thumbnailator Bilinear Progressive Scaling
@@ -74,7 +74,7 @@ Mentioned in [Chris Campbell's blog about scaling](https://community.oracle.com/
 
 Here is a simple example on how it works:
 
-[![progressive scaling](img_1b4fccc08d1d51f6.png)](img_1b4fccc08d1d51f6.png)
+[![progressive scaling](img_155642676a28a1d3.png)](img_155642676a28a1d3.png)
 
 The following libs incorporate forms of progressive scaling based on `Graphics2d`:
 

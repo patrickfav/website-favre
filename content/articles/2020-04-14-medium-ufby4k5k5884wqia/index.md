@@ -17,11 +17,11 @@ originalContentId: 7575eacd7295
 mediumClaps: 12
 mediumVoters: 7
 ---
-![](img_6b235e313cdf3f99.jpeg)
+![Image](img_914c29fd2c1c4b4f.jpeg)
 
 Checkstyle, loved by those who set it up, hated by those who didn’t, is Java's most popular tool to force your code style flavor onto others. Whatever your feelings about this static analyzer may be, if you have to manage it in your project(s) this article is for you.
 
-![Screenshot of the IntelliJ Checkstyle Plugin showing some issues](img_e59d31038ea21839.png "A familiar sight for Checkstyle users")
+![Screenshot of the IntelliJ Checkstyle Plugin showing some issues](img_ef025fabd91e8097.png "A familiar sight for Checkstyle users")
 
 The default setup is quite easy. Create your checkstyle.xml add the rules you prefer and reference it in your Checkstyle Maven plugin. This may be fine for a single project, managing more would require copying the configuration file over and manually syncing them. Since most developers nowadays can’t escape the ubiquitous microservices style architecture, where the myriads of services are managed either in a [monorepo](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) or in multiple individual ones, the latter needs a better solution for this problem.
 
@@ -39,7 +39,7 @@ Done!
 
 Create a new project with your [preferred method](http://maven.apache.org/archetypes/maven-archetype-simple/). We name our configuration file checkstyle.xml and put it into /src/main/resource.
 
-![](img_8f8aac1071b2eb36.png)
+![Image](img_036a850af521ec4f.png)
 
 As test configuration I used this unbearable annoying line length restriction (which helps to see if it works later):
 
@@ -150,7 +150,7 @@ A full example, deployed to Maven Central, can be found here
 
 While it is possible to also package a checkstyle-suppression.xml in the same way as described above, I do not think a global suppression file makes a lot of sense.
 
-![](img_b13c2fda654a51a9.png)
+![Image](img_ad60ba148bf36d08.png)
 
 It is, however, possible to set one locally, in basically the same way you would normally. Create your suppression config in your project and reference it in your Checkstyle plugin configuration. In this example we name the file checkstyle-suppression.xml and put it into the project’s root folder. Then we add the reference in the POM:
 
@@ -172,7 +172,7 @@ An example using suppressions with a global _checkstyle-config_ can be found [he
 
 If you use the excellent [Checkstyle IntelliJ plugin](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea) (or a similar tool), you may wonder where the local configuration can be found. After you mvn install it will be located at /target/checkstyle-checker.xml.
 
-![](img_e79d13d20d7d296e.png)
+![Image](img_c3870da5326b9a01.png)
 
 ### Summary
 

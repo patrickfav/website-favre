@@ -17,7 +17,7 @@ originalContentId: a33fa9867552
 mediumClaps: 44
 mediumVoters: 9
 ---
-![](img_d4b06b3696c3b89e.png)
+![Image](img_8dd4adb077e53d96.png)
 
 ### **A Better Way to Protect Your IDs**
 
@@ -53,7 +53,7 @@ Sometimes you are required to share your user IDs with a statistics tool or othe
 
 A simple solution which tackles most of the issues is to not use _a_ sequence in a _small numeric range_ (i.e. a 64-bit integer) but to use a random value of a _big numeric range_. An implementation of such a concept is the universally unique identifier or [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). Version 4 is based on random numbers and the one you want to use. Due to having some metadata it cannot use all the 128-bit data, but is limited to 122-bit (which does not make a big difference in real world applications). There is no standardized text representation, but it is usually formatted as something like this:
 
-![](img_936093448905bd64.png "Example UUID")
+![Image](img_3be44fc7b6567171.png "Example UUID")
 
 The range of 122-bit is so huge, you can pick any such number randomly and have a nearly 100% chance of it being unique in your context. _In fact, you are probably the first person to every generate this exact number._ Note though that a UUID does not give guarantees whatsoever of it being truly random — most implementation are, however. See [this post](https://stackoverflow.com/a/44227131/774398) for more info on the issue.
 
@@ -125,11 +125,11 @@ The reference implementation supports a wide array of encodings which may be cho
 
 Example using 64-bit IDs:
 
-![](img_29976eabfae3fd5a.png)
+![Image](img_ea8d3b8c5a9cd47c.png)
 
 with optional formatting for better readability:
 
-![](img_d02278051527b42b.png "Formatted ID")
+![Image](img_554587e40eb3760c.png "Formatted ID")
 
 To avoid the problem of **randomly occurring (english) words** in the masked IDs which could create embarrassing URLs like
 
@@ -139,7 +139,7 @@ https://www.myportfolio.com/p?id=SH4RTM4N
 
 a Base32 dialect was added with a custom alphabet containing **no vowels** and **other problematic letters** and numbers. For example these could look like this:
 
-![](img_38ab40b9f9372d4f.png "Encoding optimized to not contain words")
+![Image](img_038164c1d31f9b44.png "Encoding optimized to not contain words")
 
 #### And More
 

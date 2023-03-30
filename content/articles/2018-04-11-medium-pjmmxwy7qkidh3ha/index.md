@@ -17,7 +17,7 @@ originalContentId: 9b15f35a806b
 mediumClaps: 0
 mediumVoters: 0
 ---
-![](img_19e386ffa7c7e9d1.jpeg)
+![Image](img_77cd8657d27efd8d.jpeg)
 
 #### A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small
 

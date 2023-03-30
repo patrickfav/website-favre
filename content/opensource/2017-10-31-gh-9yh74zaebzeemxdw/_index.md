@@ -61,12 +61,12 @@ to blindly paste code snippets from
 [o](https://stackoverflow.com/a/9670279/774398)
 [m](https://stackoverflow.com/questions/1519736/random-shuffling-of-an-array)
 
-[](https://mvnrepository.com/artifact/at.favre.lib/bytes)
-[](https://github.com/patrickfav/bytes-java/actions)
-[](https://www.javadoc.io/doc/at.favre.lib/bytes)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_bytes-java)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_bytes-java)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_bytes-java)
+
+
+
+
+
+
 
 Its main features include:
 

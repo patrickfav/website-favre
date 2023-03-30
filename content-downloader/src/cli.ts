@@ -32,9 +32,9 @@ export async function cli(args: string[]): Promise<void> {
     });
 
     const contentStats = [
-        ...await gistDownloader.download(),
-        ...await stackOverflowDownloader.download(),
-        ...await githubDownloader.download(),
+        //...await gistDownloader.download(),
+        //...await stackOverflowDownloader.download(),
+        //...await githubDownloader.download(),
         ...await mediumDownloader.download(),
     ];
 
@@ -42,7 +42,7 @@ export async function cli(args: string[]): Promise<void> {
 
 
     const statManager = new StatsManager();
-    if(statManager.isEnabled()) {
+    if (statManager.isEnabled()) {
         console.log(`\n\nStarting updating content stats.`);
         const previousData = await statManager.getRecentContentStats()
         await statManager.persist(contentStats, previousData)

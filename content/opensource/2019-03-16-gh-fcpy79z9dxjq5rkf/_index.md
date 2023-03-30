@@ -35,8 +35,8 @@ githubLicense: Apache License 2.0
 # Maven Common Configuration
 A maven configuration which is used as commons config parent for POM files for my maven open source projects. Defines a lot of defaults in `pluginManagement` and some in `dependencyManagement` and activates some plugins.
 
-[](https://mvnrepository.com/artifact/at.favre.lib/common-parent)
-[](https://github.com/patrickfav/mvn-common-parent/actions)
+
+
 
 ## Features
 

@@ -37,12 +37,12 @@ Planb is a crash recovery lib for Android. It helps defining proper behaviour on
 
 The lib contains of a `core` library and a full version containing default implementations for debugging crash activity and explorer.
 
-[  ](https://bintray.com/bintray/jcenter/planb/_latestVersion)
-[](https://travis-ci.org/patrickfav/planb-android)
-[](https://coveralls.io/github/patrickfav/planb-android?branch=master)
-[](https://play.google.com/store/apps/details?id=at.favre.app.planb.demo)
 
-![Screenshot Gallery](gh_d78af93ff26f344fd61b4cdc.png)
+
+
+
+
+![Screenshot Gallery](img_4cc39f0a741d8a00.png)
 
 ## Quick Start
 

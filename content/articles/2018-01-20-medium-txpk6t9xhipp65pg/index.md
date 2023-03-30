@@ -17,7 +17,7 @@ originalContentId: 2d738c37890
 mediumClaps: 348
 mediumVoters: 84
 ---
-![](img_b74101ae90a953f3.jpeg)
+![Image](img_2e7e22e7e7a937aa.jpeg)
 
 When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning or just simple apps, but gets unmaintainable when expanding to multiple modules.
 
@@ -29,7 +29,7 @@ Even with local modules, push the rules to the respective module to keep Proguar
 
 Each dependency or module may package its own proguard.txt in the top level of it’s AAR package which will be appended to the main configuration.
 
-![](img_a0c9f8f6633eaa9b.png "Example of the file layout of an .aar file containing proguard.txt")
+![Image](img_9bd88735f76f5e86.png "Example of the file layout of an .aar file containing proguard.txt")
 
 This will be supported with the following Gradle property:
 

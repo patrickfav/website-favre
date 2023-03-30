@@ -38,11 +38,11 @@ githubLicense: Apache License 2.0
 This is a simple benchmark and showcase app on what's possible with blurring in Android 2016. Noteably this app uses Android's Renderscript v8 support library for fast blurring.
 Also check out the [Android blur framework Dali](https://github.com/patrickfav/Dali) I'm currently working on, which makes many of the features shown here easy to implement in your own app.
 
-[](https://travis-ci.com/patrickfav/BlurTestAndroid)
+
 
 ## Download App
 
-[![Get it on Google Play](gh_ec083174f195dacac80ab7bb.png)](https://play.google.com/store/apps/details?id=at.favre.app.blurbenchmark)
+[![Get it on Google Play](img_99dfbafd03e32f2c.png)](https://play.google.com/store/apps/details?id=at.favre.app.blurbenchmark)
 
 The app can be found in the [Playstore](https://play.google.com/store/apps/details?id=at.favre.app.blurbenchmark).
 
@@ -50,15 +50,15 @@ The app can be found in the [Playstore](https://play.google.com/store/apps/detai
 
 In this view you chose, the image sizes, blur radii and algorithm you want to benchmark. Finally you decide the benchmark result accuracy by providing the iterations. Be warned, some Java implementations are very slow, so high iterations can take a while to finish.
 
-![benchmark view](gh_5847f37b925900eaf8245e45.png)
+![benchmark view](img_19a0627da906eb89.png)
 
 After running some benchmarks you are presented with the results view, where you can click on each element and see a diagram on the length of each round. This also reveals the benchmarks usually are polluted by heap garbage collection.
 
-![benchmark view](gh_d7aad971e3ea636fefecd9af.png)
+![benchmark view](img_5b6e94ed44bf4fea.png)
 
 Later you can examine the latest benchmarks in a table view or comparative in a diagram with different view options. 
 
-![diagrams](gh_890bb142d5549ac73c81f3a5.png)
+![diagrams](img_470a8ba25164c7c1.png)
 
 ### Details on the Benchmark
 
@@ -90,7 +90,7 @@ The implementations can be found [here](BlurBenchmark/src/main/java/at/favre/app
 
 This is a viewpager with a life blur under the toolbar and at the bottom of the window. Live blur means, that the blurring views get updated when the view changes (so viewpager, listview or scrollview gets scrolled). There are also different settings, where you can change the algorithm, blur radius and sample size (the higher, the smaller the used image).
 
-![diagrams](gh_a8ef0ae43fb5b213b660a57f.png)
+![diagrams](img_c533a3e7367fcacb.png)
 
 How is this done?
 
@@ -111,7 +111,7 @@ For more tips, check out the [stack overflow post I did on this topic](http://st
 
 This is a simple showcase to check out the different settings (blur radius, algorithm and sample size) and choose the best option for you (quality vs. performance). When pressing "Full redraw" it features a simple alpha blend from sharp to blur.
 
-![diagrams](gh_9370b24b8551cbe4e6be1197.png)
+![diagrams](img_496dd292b5854525.png)
 
 
 ## Extra Credits

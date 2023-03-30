@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/2067955/fast-bitmap-blu
 originalContentType: stackoverflow
 originalContentId: 23119957
 soScore: 269
-soViews: 155000
+soViews: 156000
 soIsAccepted: false
 soQuestionId: 2067955
 soAnswerLicense: CC BY-SA 4.0
@@ -85,13 +85,13 @@ android {
 
 Simple benchmark on a Nexus 5 - comparing RenderScript with different other java and Renderscript implementations:
 
-![The average runtime per blur on different pic sizes](img_b2e0b30479865cfe.png) The average runtime per blur on different pic sizes
+![The average runtime per blur on different pic sizes](img_0addf01d586bd0cb.png) The average runtime per blur on different pic sizes
 
-![Megapixels per sec that can be blurred](img_705a00afc6d47ab2.png) Megapixels per sec that can be blurred
+![Megapixels per sec that can be blurred](img_1b689a4cddc73f55.png) Megapixels per sec that can be blurred
 
 Each value is the avg of 250 rounds. `RS_GAUSS_FAST` is `ScriptIntrinsicBlur` (and nearly always the fastest), others that start with `RS_` are mostly convolve implementations with simple kernels. [The details of the algorithms can be found here](https://github.com/patrickfav/BlurTestAndroid). This is not purely blurring, since a good portion is garbage collection that is measured. This can be seen in this here (`ScriptIntrinsicBlur` on a 100x100 image with about 500 rounds)
 
-![enter image description here](img_51d0c52ac6f3eb3d.png)
+![enter image description here](img_71fa0dcd154928f4.png)
 
 The spikes are gc.
 
@@ -111,4 +111,4 @@ The simple and naive method is just to use 2 `ImageViews`, one blurred, and alph
 
 Basically he explains that he pre-blurs some frames with different blur extents and uses them as key frames in an animation that looks really smooth.
 
-![Diagram where Nurik explains his approach](img_9eae5ef2fbbbd2a6.png)
+![Diagram where Nurik explains his approach](img_e6eb473dbe3f9fec.png)

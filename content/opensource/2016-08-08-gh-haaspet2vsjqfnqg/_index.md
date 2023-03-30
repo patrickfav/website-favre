@@ -34,7 +34,7 @@ githubIsFork: false
 This is the prototype developed during the "Bankathon16" hackathon hosted by [INSO](https://www.inso.tuwien.ac.at/home/) (Technical University of Vienna). 
 It was a 2 day event, 3 developers worked on the project. This project achieved 2nd place in the ranking.
 
-![Banner](gh_ecc3c21df393fb8c795870f7.png)
+![Banner](img_0a5902f422654bf6.png)
 
 ## Use Cases
 
@@ -45,33 +45,33 @@ An envisioned app for the parents contains an administrative UI where a child ca
 To do this the parents mobile phone communicates through NFC with the child's app, automatically
 registering it to the parent.
 
-![Screenshot](gh_8d52587a4a8379e2e947a0ff.png)
-![Screenshot](gh_3c65e74fd18a13c8001fe19f.png)
+![Screenshot](img_ec21c2a0583f699a.png)
+![Screenshot](img_dd4dfd054a639a36.png)
 
 ### Sending money
 Parents can send money and set restrictions on how the money can be spent (e.g. max daily amount, specific
 shops, etc.)
 
-![Screenshot](gh_66991bccdcd8a5f7201f6c3a.png)
-![Screenshot](gh_94a5ae134f8cc748186bf0a1.png)
-![Screenshot](gh_f0ab6fe4e533daea044abc50.png)
+![Screenshot](img_414d5ae6774a5137.png)
+![Screenshot](img_a385edea6c78f455.png)
+![Screenshot](img_edff68a47fc2a419.png)
 
 ### Pay with children's App
 The app can be used to pay at NFC payment terminals. It is implemented to work with simple NFC tags, although HCE is a possible real world solution for this.
 
-![Screenshot](gh_ea4ac7559885dee5a67b8329.png)
-![Screenshot](gh_a90e61f53fbc593c15cdab22.png)
+![Screenshot](img_5f568cfe01174ebc.png)
+![Screenshot](img_ae29252733a9f418.png)
 
 ### Save money
 To learn financial literacy, a child can set a saving goal to set a certain amount of money aside
 whenever it feels like it. This amount won't be able to be spent through the payment function. A parent
 has to release the money.
 
-![Screenshot](gh_66292085ab2bf5067f3e4edd.png)
+![Screenshot](img_238738eb7cc464cc.png)
 
 ## Architecture
 
-![Diagram](gh_e9a761ca22dbf4e68124b08e.png)
+![Diagram](img_973580332fd6fd55.png)
 
 ### Noteable Technical Details
 

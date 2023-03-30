@@ -25,11 +25,11 @@ soQuestionId: 14115950
 soAnswerLicense: CC BY-SA 3.0
 soAnswerLink: https://stackoverflow.com/a/36320292/774398
 ---
-As already stated, Java's Graphics2D does not provide a very good algorithm for down-scaling. If you don't want to implement a sophisticated algorithm yourself you could try out the current open source libs specialized for this: [Thumbnailator](so_a2bd2e40d277da38e454ab52.png), [imgscalr](https://gist.github.com/patrickfav/a147ecd26a385ce4f6d8c373356454c4) and a Java interface for [ImageMagick](https://stackoverflow.com/a/36295066/774398).
+As already stated, Java's Graphics2D does not provide a very good algorithm for down-scaling. If you don't want to implement a sophisticated algorithm yourself you could try out the current open source libs specialized for this: [Thumbnailator](img_0f80221e8c773f90.png), [imgscalr](https://gist.github.com/patrickfav/a147ecd26a385ce4f6d8c373356454c4) and a Java interface for [ImageMagick](https://stackoverflow.com/a/36295066/774398).
 
 While researching for a private project I tried them out (except ImageMagick) and here are the visual results with Photoshop as reference:
 
-[![comparison](so_a2bd2e40d277da38e454ab52.png)](so_a2bd2e40d277da38e454ab52.png)
+[![comparison](img_0f80221e8c773f90.png)](img_0f80221e8c773f90.png)
 
 > A. **Thumbnailator** 0.4.8 with default settings (no additional internal resizing)  
 > B. **imgscalr** 4.2 with ULTRA\_QUALTY setting  

@@ -48,7 +48,7 @@ Next you have to decide "how unique" your token needs to be. The whole and only 
 
 Unique identifiers such as random [`UUID`](https://en.wikipedia.org/wiki/Universally_unique_identifier) have 122 bits of entropy (i.e., 2^122 = 5.3x10^36) - the chance of collision is "\*(...) for there to be a one in a billion chance of duplication, 103 trillion version 4 UUIDs must be generated[2](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions)". **We will choose 128 bits since it fits exactly into 16 bytes** and is seen as [highly sufficient](https://security.stackexchange.com/questions/6141/amount-of-simple-operations-that-is-safely-out-of-reach-for-all-humanity/6149#6149) for being unique for basically every, but the most extreme, use cases, and you don't have to think about duplicates. Here is a simple comparison table of entropy including simple analysis of the [birthday problem](https://en.wikipedia.org/wiki/Birthday_problem).
 
-[![Comparison of token sizes](img_46efbd1d00c67dd9.png)](img_46efbd1d00c67dd9.png)
+[![Comparison of token sizes](img_9660598e25b73e00.png)](img_9660598e25b73e00.png)
 
 For simple requirements, 8 or 12 byte length might suffice, but with 16 bytes you are on the "safe side".
 
@@ -63,7 +63,7 @@ Typical encodings include:
     
 *   [`Base32`](https://en.wikipedia.org/wiki/Base32) every character encodes 5 bits, creating a 40% overhead. This will use `A-Z` and `2-7`, making it reasonably space efficient while being case-insensitive alphanumeric. There isn't any [standard implementation in the JDK](https://stackoverflow.com/questions/21515479/encode-string-to-base32-string-in-java). Example encoding 16 bytes without padding: `WUPIL5DQTZGMF4D3NX5L7LNFOY`
     
-*   [`Base16`](https://en.wikipedia.org/wiki/Hexadecimal) (hexadecimal) every character encodes four bits, requiring two characters per byte (i.e., 16 bytes create a string of length 32). Therefore, hexadecimal is less space efficient than `Base32`, but it is safe to use in most cases (URL) since it only uses `0-9` and `A` to `F`. Example encoding 16 bytes: `4fa3dd0f57cb3bf331441ed285b27735`. [See a Stack Overflow discussion about converting to hexadecimal here](https://stackoverflow.com/a/58118078/774398).
+*   [`Base16`](https://en.wikipedia.org/wiki/Hexadecimal) (hexadecimal) every character encodes four bits, requiring two characters per byte (i.e., 16 bytes create a string of length 32). Therefore, hexadecimal is less space efficient than `Base32`, but it is safe to use in most cases (URL) since it only uses `0-9` and `A` to `F`. Example encoding 16 bytes: `4fa3dd0f57cb3bf331441ed285b27735`. [See a Stack Overflow discussion about converting to hexadecimal here](https://stackoverflow.com/a/58118078/774398).
     
 
 Additional encodings like [Base85](https://en.wikipedia.org/wiki/Ascii85#RFC_1924_version) and the exotic [Base122](http://blog.kevinalbs.com/base122) exist with better/worse space efficiency. You can create your own encoding (which basically most answers in this thread do), but I would advise against it, if you don't have very specific requirements. See [more encoding schemes in the Wikipedia article](https://en.wikipedia.org/wiki/Binary-to-text_encoding).

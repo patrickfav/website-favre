@@ -18,7 +18,7 @@ deeplink: /link/fsnd25wk
 originalContentLink: https://stackoverflow.com/questions/11029294/android-how-to-programmatically-access-the-device-serial-number-shown-in-the-av
 originalContentType: stackoverflow
 originalContentId: 47022263
-soScore: 67
+soScore: 68
 soViews: 141000
 soIsAccepted: false
 soQuestionId: 11029294

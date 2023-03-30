@@ -21,24 +21,24 @@ githubStars: 0
 githubForks: 2
 githubWatchers: 2
 githubContributors: 1
-githubRepoSize: 40817
+githubRepoSize: 40932
 githubLanguage: TypeScript
 githubHomepage: https://favr.dev
 githubDefaultBranch: main
-githubOpenIssues: 2
+githubOpenIssues: 1
 githubIsFork: false
 ---
 # Static Site Gen Repo for my Personal Website
 
 A simple website with a list of all of my open source projects and articles I wrote. Can be found on [favr.dev](https://favr.dev). Uses [Hugo](https://gohugo.io/) as static site generator.
 
-[](https://github.com/patrickfav/website-favre/actions)
-[](https://github.com/patrickfav/website-favre/actions)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-favre)
 
-![Screenshot Website](gh_c99eb45c362a1585934c8ef0.png)
+
+
+
+
+
+![Screenshot Website](img_1f0c2fb16718a806.png)
 
 ## Prepare
 
@@ -50,7 +50,13 @@ A simple website with a list of all of my open source projects and articles I wr
 ### Install Node
 
 Currently, this project uses [Node 18.12.0 (lts)](https://nodejs.org/es/blog/release/v18.12.0). It is recommended to use
-a node version manager like [nvm](https://github.com/nvm-sh/nvm).
+a node version manager like [nvm](https://github.com/nvm-sh/nvm), then you can just run
+
+```bash
+nvm install && nvm use
+```
+
+in the project root dir to install and use the correct version.
 
 ### Cloning Project with Submodule
 

@@ -34,13 +34,12 @@ githubLicense: Apache License 2.0
 ---
 # Common Checkstyle Config
 
-<img src="https://github.com/patrickfav/checkstyle-config/blob/master/misc/icon_sm.png?raw=true" align="right"
-     alt="Logo" width="128" height="128">
+![Logo](img_c2911b1c6f131b95.png)
 
 Externalized checkstyle configuration which can be used in other Maven projects.
 
-[](https://mvnrepository.com/artifact/at.favre.lib/checkstyle-config)
-[](https://travis-ci.com/patrickfav/checkstyle-config)
+
+
 
 ## Description
 

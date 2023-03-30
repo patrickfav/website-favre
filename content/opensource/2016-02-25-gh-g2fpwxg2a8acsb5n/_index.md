@@ -32,7 +32,7 @@ githubLatestVersionDate: 2020-04-12T11:32:13Z
 githubLatestVersionUrl: https://github.com/patrickfav/density-converter/releases/tag/v1.0.0-alpha7
 githubLicense: Apache License 2.0
 ---
-# ![logo](gh_9b9668ba895a89b964b7a55a.png) Density Image Converter Tool for Android, iOS, Windows and CSS
+# ![logo](img_d032986934ef5d0c.png) Density Image Converter Tool for Android, iOS, Windows and CSS
 
 This is a powerful little tool that helps **converting single or batches of images** to **Android**, **iOS**, **Windows** and **CSS** specific formats and density
 versions given the source scale factor or target width/height in [dp](http://developer.android.com/guide/practices/screens_support.html#density-independence).
@@ -40,9 +40,9 @@ It has a **graphical** and **command line** interface and supports a wide array 
 including PNG, JPEG, SVG, PSD and Android 9-patches. Using sophisticated scaling algorithms, it is designed to make conversion of images easy and
 fast while keeping the image quality high (comparable to PS). To further optimize the output post processors like **pngcrush** and **mozJpeg** can be used (see section below).
 
-[](https://github.com/patrickfav/density-converter/releases/latest)
-[](https://travis-ci.com/patrickfav/density-converter)
-[](https://coveralls.io/github/patrickfav/density-converter?branch=master) [](https://codeclimate.com/github/patrickfav/density-converter/maintainability)
+
+
+ 
 
 Usage:
 
@@ -82,7 +82,7 @@ java -jar ./dconvert.jar
 provides the same features as the command line tool so see the help page of command line or tooltips. Additionally the UI
 will save its settings persistently making it easier for power users.
 
-![gui-screenshot](gh_cdb106ed25ad42a0995dfd2a.jpg)
+![gui-screenshot](img_7990309a4c3b7d52.jpg)
 
 ## Command Line
 
@@ -251,15 +251,15 @@ The tool provides 3 quality profiles:
 
 In most cases `Lanczos3` creates best results, although in some cases progressive bilinear scaling may be superior for very sharp edges of e.g. simple icons where the former creates some softness. Here are some example to see the difference yourself. The icons are down-scaled from 96x96 to 72x72 and 48x48, the photos from different source from 500 to 2000 px.
 
-![comparison](gh_e9643f3b518d9b044add42e2.png)
-![comparison](gh_2a23038b82b7443026cceffb.png)
+![comparison](img_312905a03eb2a3c3.png)
+![comparison](img_a5d511ea5375807a.png)
 
-![comparison](gh_05943bd136a9fd61c918dad1.png)
-![comparison](gh_9eeb19f525e1f95b711a7e11.png)
+![comparison](img_d074391cc0d6b793.png)
+![comparison](img_a593aede6b95666e.png)
 
 As reference, here are the results of other methods:
 
-![comparison-ldpi](gh_73cf0f91e68541548306b06e.png)
+![comparison-ldpi](img_16ad964955699cdb.png)
 
 1. Thumbnailator with default settings (_progressive bilinear_)
 2. Photoshop CS5 with bicubic algorithm

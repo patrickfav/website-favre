@@ -19,7 +19,7 @@ mediumVoters: 509
 ---
 In this article I will bring you up to speed on the Advanced Encryption Standard (AES), common block modes, why you need padding and initialization vectors and how to protect your data against modification. Finally, I will show you how to easily implement this with Java avoiding common security issues.
 
-![](img_442fdb07567e13ed.png)
+![Image](img_85b28164d42e7ad6.png)
 
 #### What every Software Engineer should know about AES
 
@@ -33,11 +33,11 @@ Every block goes through many cycles of transformation rounds. I will omit the d
 
 So AES will only encrypt 128 bit of data, but if we want to encrypt whole messages we need to choose a block mode with which multiple blocks can be encrypted to a single cipher text. The simplest block mode is [Electronic Codebook or ECB](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_(ECB)). It uses the same unaltered key on every block like this:
 
-![](img_2bdba9407fb0582c.png "Image from Wikpedia")
+![Image](img_1a37aeaeab3ab5b5.png "Image from Wikpedia")
 
 This is particularly bad since identical plaintext blocks are encrypted to identical ciphertext blocks.
 
-![](img_c785134b6c777e80.png "Image encrypted with ECB block mode reveals patterns of the original (try yourself)")
+![Image](img_13e949d0f289a719.png "Image encrypted with ECB block mode reveals patterns of the original (try yourself)")
 
 Remember to **never choose this mode unless you only encrypt data smaller than 128 bit.** Unfortunately it is still often misused because it does not require you to provide an initial vector (more about that later) and therefore _seems_ to be easier to handle for a developer.
 
@@ -47,7 +47,7 @@ One case has to be handled with block modes though: what happens if the last blo
 
 So what alternatives to ECB are there? For one there is CBC which [XOR](https://en.wikipedia.org/wiki/Exclusive_or)s the current plaintext block with the previous ciphertext block. [This way, each ciphertext block depends on all plaintext blocks processed up to that point.](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_(CBC)) Using the same image as before the result would be noise not distinguishable from random data:
 
-![](img_d5b8703b9c616471.png "Image encrypted with CBC block mode looks random")
+![Image](img_2b606c88d0e2f691.png "Image encrypted with CBC block mode looks random")
 
 So what about the first block? The easiest way is to just use a block full of e.g. zeros, but then every encryption with the same key and plaintext would result in the same ciphertext. Also, if you reuse the same key for different plaintexts it would make it easier to recover the key. A better way is to use a random [**initialization vector**](https://en.wikipedia.org/wiki/Initialization_vector) **(IV).** This is just a fancy word for random data that is about the size of one block (128 bit). Think about it like the [**salt** of the encryption](https://security.stackexchange.com/questions/6058/is-real-salt-the-same-as-initialization-vectors), that is, an IV can be public, should be random and only used one time. Mind though, that not knowing the IV will only hinder the decryption of the first block since the CBC XORs the ciphertext not the plaintext of the previous one.
 
@@ -57,7 +57,7 @@ When transmitting or persisting the data it is common to just prepend the IV to 
 
 Another option is to use CTR mode. This block mode is interesting because it [turns a block cipher into a stream cipher](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_(CTR)) which means no padding is required. In its basic form all blocks are numbered from 0 to n. Every block will now be encrypted with the key, the IV (also called _nonce_ here) and the counter value.
 
-![](img_d4bad83526ba3af8.png "Image from Wikpedia")
+![Image](img_07f1a2bd9834104b.png "Image from Wikpedia")
 
 The advantage is, unlike CBC, encryption can be done in parallel and all blocks are depended on the IV not only the first one. A big caveat is, that an IV **must never be reused** with the same key because an attacker can [trivially calculate](https://crypto.stackexchange.com/a/2993/44838) the used key from that.
 
@@ -93,7 +93,7 @@ So basically 128-bit key is enough security for most of every use case except [q
 
 As a [very basic example](https://codahale.com/a-lesson-in-timing-attacks/): a simple algorithm that is prone to timing attacks is an equals() method that compares two secret byte arrays. If the equals() has a quick-return, meaning after the first pair of bytes that don’t match it ends the loop, an attacker can measure the time it takes for the equals() to complete and can guess byte for byte until all match.
 
-![](img_febadf906004af7b.png "Code that may be vulnerable to timing attacks by using a quick return")
+![Image](img_e6239c3658e78c70.png "Code that may be vulnerable to timing attacks by using a quick return")
 
 One fix in this instance would be to use a [constant-time equals](https://stackoverflow.com/questions/37633688/constant-time-equals). Mind that it is often not trivial to write constant time code in interpreted languages like [JVM languages](https://crypto.stackexchange.com/a/48878/44838).
 

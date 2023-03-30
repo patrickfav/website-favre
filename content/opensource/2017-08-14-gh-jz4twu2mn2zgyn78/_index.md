@@ -36,15 +36,15 @@ githubLicense: Apache License 2.0
 
 A cryptographically secure pseudo-random number generator [CLI](https://en.wikipedia.org/wiki/Command-line_interface) tool which generates byte arrays with entropy from the best random source from your machine* optionally externally seeded by multiple true random number generators and supports various [byte-to-text encodings](https://en.wikipedia.org/wiki/Binary-to-text_encoding) like [hex](https://en.wikipedia.org/wiki/Hexadecimal#Transfer_encoding) or [base64](https://en.wikipedia.org/wiki/Base64) and for many programming languages. The output may be printed to the command line or to a file. This implementation uses the HMAC Deterministic Random Bit Generator (DRBG) schema as defined in [NIST](https://www.nist.gov/)  [SP800-90Ar1](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90Ar1.pdf).
 
-[](https://github.com/patrickfav/dice/releases/latest)
-[](https://github.com/patrickfav/dice/actions)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_dice)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_dice)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_dice)
+
+
+
+
+
 
 <sup>* depending on the used [provider](https://docs.oracle.com/javase/8/docs/technotes/guides/security/SunProviders.html#SecureRandomImp)</sup>
 
- ![logo](gh_b2387444b3f266b3d21f57c7.png)
+ ![logo](img_9ceb577441259837.png)
 
 **Main features:**
 
@@ -84,7 +84,7 @@ _Using the *.exe Launcher: [Launch4J](http://launch4j.sourceforge.net/) is used 
 
 ## Demo
 
-[![asciicast](gh_c4db3cadaa2ba95fb2aeef1f.png)](https://asciinema.org/a/140170)
+[![asciicast](img_52702b9784289914.png)](https://asciinema.org/a/140170)
 
 ## Use Cases
 

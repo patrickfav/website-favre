@@ -34,7 +34,7 @@ githubLicense: Apache License 2.0
 ---
 # miniPaint Dockerized
 
-[](https://app.travis-ci.com/patrickfav/docker-minipaint)
+
 
 This is a dockerized version of the [miniPaint](https://github.com/viliusle/miniPaint) project by [viliusle](https://github.com/viliusle). To optimize for space and security this project only serves from [Alpine](https://www.alpinelinux.org/) with [nginx](https://www.nginx.com/) webserver.
 

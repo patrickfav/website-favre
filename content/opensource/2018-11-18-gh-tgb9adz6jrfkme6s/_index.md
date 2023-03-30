@@ -39,12 +39,12 @@ in [NIST SP 800-56C revision 1, chapter 4](https://nvlpubs.nist.gov/nistpubs/Spe
 It is an unopinionated approach towards the subject, allowing all 3 options (message digest, hmac and kmac) as H
 function and leaving open the exact format of the `fixedInfo` parameter.
 
-[](https://mvnrepository.com/artifact/at.favre.lib/singlestep-kdf)
-[](https://github.com/patrickfav/singlestep-kdf/actions)
-[](https://www.javadoc.io/doc/at.favre.lib/singlestep-kdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_singlestep-kdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_singlestep-kdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_singlestep-kdf)
+
+
+
+
+
+
 
 This is a standalone, lightweight, simple to use, fully tested and stable implementation in Java. The code is compiled
 with [Java 7](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7) to be compatible with most [

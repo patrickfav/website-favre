@@ -36,16 +36,15 @@ githubLicense: Apache License 2.0
 
 # IDMask - Encryption and Obfuscation of IDs
 
-<img src="https://raw.githubusercontent.com/patrickfav/id-mask/main/misc/icon_sm.png" align="right"
-     alt="IDMask Logo" width="128" height="128" style="padding: 0px 8px 0 8px;">
+![IDMask Logo](img_4708e90837486f4a.png)
 
 IDMask is a Java library for masking **internal IDs** (e.g. from your DB) when they need to be publicly published to **hide their actual value and to prevent forging**. This should make it very hard for an attacker to **understand** provided IDs (e.g. by witnessing a sequence, deducting how many orders you had, etc.) and **prevent guessing** of possible valid ones. Masking is **fully reversible** and also supports optional **randomization** for e.g. **shareable links** or **one-time tokens**. It has a wide support for various **Java types** including `long`, `UUID` and `BigInteger`. This library bases its security on **strong cryptographic primitives** ([AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), [HMAC](https://en.wikipedia.org/wiki/HMAC), [HKDF](https://en.wikipedia.org/wiki/HKDF)) to create a secure encryption schema. It was inspired by [HashIds](https://hashids.org/) but tries to tackle most of its shortcomings.
 
-[](https://mvnrepository.com/artifact/at.favre.lib/id-mask)
-[](https://github.com/patrickfav/id-mask/actions)
-[](https://www.javadoc.io/doc/at.favre.lib/id-mask)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_id-mask)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_id-mask)
+
+
+
+
+
 
 ## Feature Overview
 

@@ -208,7 +208,7 @@ Here are results from a simple [JMH](https://openjdk.java.net/projects/code-tool
 
 ```
 
-Specs: JDK 8u202, i7-7700K, Win10, 24 GB Ram. See the full benchmark [here](https://github.com/patrickfav/bytes-java/blob/master/src/test/java/at/favre/lib/bytes/EncodingHexJmhBenchmark.java).
+Specs: JDK 8u202, i7-7700K, Win10, 24 GB Ram. See the full benchmark [here](https://github.com/patrickfav/bytes-java/blob/master/src/test/java/at/favre/lib/bytes/EncodingHexJmhBenchmark.java).
 
 Benchmark Update 2022
 ---------------------
@@ -224,4 +224,4 @@ Here are results with current JMH 1.36, Java 17 and a higher end computer
 
 ```
 
-Specs: JDK temurin 17.0.6, Ryzen 5900X, Win11, 24 GB DDR4 Ram
+Specs: JDK temurin 17.0.6, Ryzen 5900X, Win11, 24 GB DDR4 Ram

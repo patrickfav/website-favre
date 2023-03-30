@@ -17,7 +17,7 @@ originalContentId: 83b27b34c52a
 mediumClaps: 781
 mediumVoters: 153
 ---
-![](img_72242cd1f965fa24.png "Inspired by www.obfuscationworkshop.io")
+![Image](img_5a93e3330dd1e253.png "Inspired by www.obfuscationworkshop.io")
 
 _In this article I will show you how to strengthen ProGuard’s name obfuscation, making it harder for an attacker the reverse engineer your code and how this will help prevent many bugs created by incorrect obfuscation_
 
@@ -29,11 +29,11 @@ ProGuard uses dictionaries to define to what to rename a package, class or metho
 
 Let’s consider the following code with this lonely class:
 
-![](img_12ef699b4705aca3.png)
+![Image](img_756c5f0ccd8bdafa.png)
 
 When optimizing with ProGuard, it will start by processing Foo.class. ProGuard will check its dictionary, the first entry being the letter a. There is no class with that name in this package, so this will result in Foo.class being renamed to a.class. Next the methods will be renamed: bar1() will turn into a() and bar2() into b() using the same strategy. A Java syntax representation of the resulting class would look like this:
 
-![](img_b0b40dbefa9343b0.png "Obfuscated version of class Foo")
+![Image](img_2593d3237a9964bb.png "Obfuscated version of class Foo")
 
 Now if you would add a new class Foobar.class it would be renamed to b.class and so on. If there are more than 26 classes in a package, the name gets longer: aa.class, ab.class, etc.
 

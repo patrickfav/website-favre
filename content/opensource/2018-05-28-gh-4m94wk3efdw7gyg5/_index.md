@@ -33,16 +33,16 @@ githubLatestVersionUrl: https://github.com/patrickfav/website-dr-sel/releases/ta
 ---
 # Jekyll Static Website Source for Doctor's Landing Page
 
-[](https://github.com/patrickfav/website-dr-sel/actions)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-dr-sel)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-dr-sel)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_website-dr-sel)
+
+
+
+
 
 This is the source for the [Jekyll](https://jekyllrb.com) static website project for a very simple doctors landing page.
 The production version can be found [here](https://selwicka-wienerroither.com/).
 
 
-[![website screenshot](gh_418e4f981d9386e3824b6fb8.png)](https://selwicka-wienerroither.com/)
+[![website screenshot](img_dded97b69732b7d6.png)](https://selwicka-wienerroither.com/)
 
 
 ## Build

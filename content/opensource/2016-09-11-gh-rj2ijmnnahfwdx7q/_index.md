@@ -38,10 +38,10 @@ on multiple devices** with one command. Additionally, uninstalling allows to use
 basically a front-end for the [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb.html)
 which is required to run.
 
-[](https://github.com/patrickfav/uber-adb-tools/releases/latest)
-[](https://github.com/patrickfav/uber-adb-tools/actions)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_uber-adb-tools)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_uber-adb-tools)
+
+
+
+
 
 Main features:
 
@@ -82,7 +82,7 @@ This should run on any Windows, Mac or Linux machine,
 
 ### Using the *.exe Launcher
 
-![logo](gh_06be7d1b153d7bd52416add7.png)
+![logo](img_3bf51221bc4eef35.png)
 
 [Launch4J](http://launch4j.sourceforge.net/) is used to wrap the `.jar` into a Windows executable. It should
 automatically download the needed JRE if required. If a single argument will be passed (i.e. a path) the tool will
@@ -91,7 +91,7 @@ use it to "Open with..." to automatically install an apk if double-clicked.
 
 ## Demo
 
-[![asciicast](gh_2fd3e1a67d37e22ce37deb7b.png)](https://asciinema.org/a/91091)
+[![asciicast](img_6d8d193dfb990cb8.png)](https://asciinema.org/a/91091)
 
 ## Command Line Interface
 

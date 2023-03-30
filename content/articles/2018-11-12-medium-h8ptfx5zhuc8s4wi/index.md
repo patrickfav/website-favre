@@ -17,7 +17,7 @@ originalContentId: b3b80e99ad36
 mediumClaps: 289
 mediumVoters: 50
 ---
-![](img_358901567f119524.png)
+![Image](img_069eb55755c56c57.png)
 
 ### Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2: AES-CBC + HMAC
 
@@ -49,7 +49,7 @@ So what is the right way to apply this MAC? According to security researcher [Hu
 
 Every option has its own properties, and I’ll encourage you to read a full argument of [either option in this post](https://crypto.stackexchange.com/a/205/44838). To summarize, [most](https://crypto.stackexchange.com/a/224/44838) [researchers](https://moxie.org/blog/the-cryptographic-doom-principle/) [recommend](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.5488&rep=rep1&type=pdf) [Encrypt-then-MAC (EtM)](https://tools.ietf.org/html/rfc7366). It protects against chosen cipher-text attacks, since the MAC can prevent decryption of incorrect messages. Additionally, the MAC can’t leak information about the plain-text since it operates on the cipher-text. On the downside, it is slightly harder to implement since the IV and a possible protocol /algorithm version or type must be included in the tag. The important thing is to never do any cryptographic operation before verifying the MAC, otherwise you can be vulnerable to a [padding-oracle attack](https://en.wikipedia.org/wiki/Padding_oracle_attack) ([Moxie](https://en.wikipedia.org/wiki/Moxie_Marlinspike) calls this the [Doom Principle](https://moxie.org/blog/the-cryptographic-doom-principle/)).
 
-![](img_ff631ace705b5c5c.png "Encrypt-then-Mac schema")
+![Image](img_d5d39070a791561d.png "Encrypt-then-Mac schema")
 
 **_Addendum: GCM vs. Encrypt-then-Mac_** Generally the security strength of using either is probably similar. GCM has some advantages:
 
@@ -62,7 +62,7 @@ On the downside it only allows 96 bit initial vector (vs. 128 bit) and HMAC is t
 
 The last issue we have to solve: where do we get the secret key for the MAC calculation? There seems to be [no known problem](https://crypto.stackexchange.com/a/8086/44838) when using the same key as for the encryption (when using HMAC) if the used secret key is strong (i.e. sufficiently random and securely exchanged). However, best practice is to use a key derivation function (KDF) to derive 2 sub-keys just to be on the “safe” side if any problems may be found in the future. This can be as simple as calculating a SHA256 on the main secret key and splitting it to two 16 byte blocks. However, I rather much prefer standardized protocols like the [HMAC-based Extract-and-Expand Key Derivation Function](https://tools.ietf.org/html/rfc5869) (HKDF) which directly support such use cases without byte fiddling.
 
-![](img_7f764e0d12674682.png "Key derivation of the two sub-keys")
+![Image](img_0ab8694202b7340a.png "Key derivation of the two sub-keys")
 
 ### Implementing AES-CBC with EtM in Java and Android
 

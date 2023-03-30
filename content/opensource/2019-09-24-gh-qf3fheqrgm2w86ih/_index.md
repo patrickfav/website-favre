@@ -38,10 +38,10 @@ A simple Java CLI tool to export the messages from a [Rocket Chat](https://rocke
 
 This tool uses the [RocketChat API](https://rocket.chat/docs/developer-guides/rest-api/groups/) and is useful for situations where the user does not have administrative access to the server.
 
-[](https://github.com/patrickfav/rocketchat-exporter/releases/latest)
-[](https://travis-ci.com/patrickfav/rocketchat-exporter)
-[](https://github.com/patrickfav/rocketchat-exporter/actions)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_rocketchat-exporter)
+
+
+
+
 
 ## Quickstart
 

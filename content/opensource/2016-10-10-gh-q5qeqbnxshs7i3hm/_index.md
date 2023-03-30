@@ -1,7 +1,7 @@
 ---
 title: 'uber-apk-signer'
 date: 2016-10-10
-lastmod: 2023-03-26
+lastmod: 2023-03-29
 description: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 summary: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 aliases: ['/link/q5qeqbnx','/opensource/2016/uber-apk-signer']
@@ -17,9 +17,9 @@ originalContentLink: https://github.com/patrickfav/uber-apk-signer
 originalContentType: github
 originalContentId: 70518964
 githubCloneUrlHttp: https://github.com/patrickfav/uber-apk-signer.git
-githubStars: 1302
-githubForks: 152
-githubWatchers: 28
+githubStars: 1305
+githubForks: 151
+githubWatchers: 29
 githubContributors: 3
 githubRepoSize: 7930
 githubLanguage: Java
@@ -39,10 +39,10 @@ supports [v1, v2](https://developer.android.com/about/versions/nougat/android-7.
 and  [v4 Android signing scheme](https://source.android.com/security/apksigning/v4). Easy and convenient debug signing
 with embedded debug keystore. Automatically verifies signature and zipalign after every signing.
 
-[](https://github.com/patrickfav/uber-apk-signer/releases/latest)
-[](https://github.com/patrickfav/uber-apk-signer/actions)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_uber-apk-signer)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_uber-apk-signer)
+
+
+
+
 
 Main features:
 
@@ -70,7 +70,7 @@ This should run on any Windows, Mac or Linux machine where JDK8 is installed.
 
 ## Demo
 
-[![asciicast](gh_46d1a3868da234287bd20731.png)](https://asciinema.org/a/91092)
+[![asciicast](img_5fa13ca5e816f38e.png)](https://asciinema.org/a/91092)
 
 ## Command Line Interface
 

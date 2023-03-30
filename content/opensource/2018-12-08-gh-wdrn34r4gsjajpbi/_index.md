@@ -34,12 +34,12 @@ githubLicense: Apache License 2.0
 ---
 # BCrypt based Key Derivation Function (BKDF)
 
-[](https://mvnrepository.com/artifact/at.favre.lib/bkdf)
-[](https://github.com/patrickfav/bkdf/actions)
-[](https://www.javadoc.io/doc/at.favre.lib/bkdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_bkdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_bkdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_bkdf)
+
+
+
+
+
+
 
 The aim of this project is to improve on the cryptographic primitive [BCrypt](https://en.wikipedia.org/wiki/Bcrypt) with
 providing well-defined modes of operation which includes:

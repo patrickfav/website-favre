@@ -45,12 +45,12 @@ HKDF specifies a version of
 the [NIST Special Publication 800-56C](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Cr1.pdf) "
 Two-Step Key Derivation" scheme.
 
-[](https://mvnrepository.com/artifact/at.favre.lib/hkdf)
-[](https://github.com/patrickfav/hkdf/actions)
-[](https://www.javadoc.io/doc/at.favre.lib/hkdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_hkdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_hkdf)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_hkdf)
+
+
+
+
+
+
 
 This is a standalone, lightweight, simple to use, fully tested and stable implementation in Java. The code is compiled
 with target [Java 7](https://en.wikipedia.org/wiki/Java_version_history#Java_SE_7) to be compatible with most [

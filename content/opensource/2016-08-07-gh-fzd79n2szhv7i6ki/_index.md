@@ -36,12 +36,12 @@ githubLatestVersionUrl: https://github.com/patrickfav/indoor-positioning/release
 This is a full-featured indoor positioning system that was developed during my master thesis.
 Its server component uses servlets and an Angular JS front end, whereas the Router/AP service is written in Lua.
 
-[](https://github.com/patrickfav/indoor-positioning/releases/latest)
-[](https://github.com/patrickfav/indoor-positioning/actions)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_indoor-positioning)
-[](https://sonarcloud.io/summary/new_code?id=patrickfav_indoor-positioning)
 
-![UI Overview](gh_daee1b187492e6925a375e13.png)
+
+
+
+
+![UI Overview](img_ed2612c6b497832d.png)
 
 # Requirements
 
@@ -61,7 +61,7 @@ Its server component uses servlets and an Angular JS front end, whereas the Rout
 
 The underlying architecture can be observed in the diagram below.
 
-![Map Generation Procedure Diagram](gh_ac9ade5f147a2261903e25aa.jpg)
+![Map Generation Procedure Diagram](img_f1d07782a4815799.jpg)
 
 Overall procedure to map the target area:
 
@@ -79,7 +79,7 @@ With the adapted model, radio wave propagation can be simulated over
 a representation of the target area. Positioning works similar to the
 scene analysis approach using a modified nearest neighbor algorithm.
 
-![Phases Diagram](gh_b3b9de40c4efe48a59244c3a.jpg)
+![Phases Diagram](img_0eeec1062b654b95.jpg)
 
 # Setup
 
@@ -118,13 +118,13 @@ positions of the Active Nodes again). Then press "Calculate" next to the "Extend
 of all APs/Routers in the vicinity. You may want to correct the positions you know of. Press "save". You now are ready
 to position.
 
-![Node Editor](gh_2003874b3086136debc3f2fc.jpg)
+![Node Editor](img_41133414ba1a6c25.jpg)
 
 # Positioning
 
 You need an AP with the custom webservices installed, same as Active Nodes. This AP must be in your network.
 
-![Positioning](gh_dabdb5c31794b2a9751267e7.png)
+![Positioning](img_d2638122e44d5436.png)
 
 Go to "Positioning". Input the IP of the client (AP) and press "Find". If multiple networks match for this position
 you have to select one, otherwise you will be shown a UI with the estimated position. You may press on a square in the grid
@@ -146,7 +146,7 @@ The results indicate that the position accuracy offers a performance comparable 
 a state-of-the-art solution. The following diagram shows the accumulated offsets
 in all test locations.
 
-![Accuracy Diagram](gh_b6651d470ef6ea90f0a3baf4.png)
+![Accuracy Diagram](img_c3b78cf33235fa59.png)
 
 ## Scalability
 
@@ -154,7 +154,7 @@ Based on extrapolated data, the proposed system delivers superior performance in
 terms of maintainability and scalability. In the diagram below the required effort
 for various target areas is depicted.
 
-![Scalability Diagram](gh_4fa556e08cfeb30363ef57b7.png)
+![Scalability Diagram](img_8caf846389b5dc66.png)
 
 # License
 
