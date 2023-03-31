@@ -1,6 +1,6 @@
 
 <span class="custom-info">
- <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "stack-overflow" }}</a>
+ <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" (print "se_" .Params.seSite) }}</a>
 </span>
 
 <span class="px-2 text-primary-500">&middot;</span>
@@ -10,12 +10,12 @@
 
 <span class="px-2 text-primary-500">&middot;</span>
 <span class="custom-info">
-  <a href="{{ .Params.soAnswerLink }}" rel="noopener"> {{ partial "icon.html" "caret-up-solid"}} {{ .Params.soScore }} Upvotes</a>
+  <a href="{{ .Params.seAnswerLink }}" rel="noopener"> {{ partial "icon.html" "caret-up-solid"}} {{ .Params.seScore }} Upvotes</a>
 </span>
 
 <span class="px-2 text-primary-500">&middot;</span>
 <span class="custom-info">
-  {{ partial "icon.html" "eye-solid" }} {{ div .Params.soViews 1000}}k Views
+  {{ partial "icon.html" "eye-solid" }} {{ div .Params.seViews 1000}}k Views
 </span>
 
 <!--{{ if and (.Params.deeplink | default false) }}-->

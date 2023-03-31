@@ -2,7 +2,6 @@ import * as fs from 'fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
 import * as cheerio from 'cheerio'
-import {githubDownloaderEnabled} from '../confg'
 import {generateSlug, removeBrokenMarkdownParts, Slug} from '../util'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
@@ -13,7 +12,7 @@ export class GithubDownloader extends Downloader {
     private baseRawUrl = ''
 
     constructor(rootOutDir: string, contentOutDir: string, config: GithubConfig) {
-        super("Github", githubDownloaderEnabled, rootOutDir, contentOutDir);
+        super("Github", rootOutDir, contentOutDir);
         this.config = config
     }
 

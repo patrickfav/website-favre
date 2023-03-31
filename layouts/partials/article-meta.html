@@ -36,28 +36,28 @@
 
     {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "github" ) }}
       {{ $meta.Add "partials" (slice (partial "meta/github-info.html" .)) }}
-    {{ end }}
+{{ end }}
 
-    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "gist" ) }}
-      {{ $meta.Add "partials" (slice (partial "meta/gist-info.html" .)) }}
-    {{ end }}
+{{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "gist" ) }}
+{{ $meta.Add "partials" (slice (partial "meta/gist-info.html" .)) }}
+{{ end }}
 
-    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "medium" ) }}
-      {{ $meta.Add "partials" (slice (partial "meta/medium-info.html" .)) }}
-    {{ end }}
+{{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "medium" ) }}
+{{ $meta.Add "partials" (slice (partial "meta/medium-info.html" .)) }}
+{{ end }}
 
-    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "stackoverflow" ) }}
-      {{ $meta.Add "partials" (slice (partial "meta/stackoverflow-info.html" .)) }}
-    {{ end }}
+{{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "stackexchange" ) }}
+{{ $meta.Add "partials" (slice (partial "meta/stackexchange-info.html" .)) }}
+{{ end }}
 
-    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "link" ) }}
-      {{ $meta.Add "partials" (slice (partial "meta/link-info.html" .)) }}
-    {{ end }}
+{{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "link" ) }}
+{{ $meta.Add "partials" (slice (partial "meta/link-info.html" .)) }}
+{{ end }}
 
-    <div class="flex flex-row flex-wrap items-center">
-      {{/* Output partials */}}
-      {{ with ($meta.Get "partials") }}
-        {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" }}
+<div class="flex flex-row flex-wrap items-center">
+  {{/* Output partials */}}
+  {{ with ($meta.Get "partials") }}
+  {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" }}
       {{ end }}
 
       {{/* Output draft label */}}

@@ -17,14 +17,12 @@ const pipeline = promisify(stream.pipeline);
 
 export abstract class Downloader {
     readonly name: string
-    readonly isEnabled: boolean
     protected readonly rootOutDir: string
     protected readonly contentOutDir: string
     protected downloadDate!: Date
 
-    protected constructor(name: string, isEnabled: boolean, rootOutDir: string, contentOutDir: string) {
+    protected constructor(name: string, rootOutDir: string, contentOutDir: string) {
         this.name = name
-        this.isEnabled = isEnabled
         this.rootOutDir = rootOutDir
         this.contentOutDir = contentOutDir
     }
@@ -45,11 +43,6 @@ export abstract class Downloader {
     }
 
     async download(): Promise<ContentStat[]> {
-        if (!this.isEnabled) {
-            console.log(`${this.name} Downloader disabled`)
-            return Promise.resolve([])
-        }
-
         console.log(`Start Processing ${this.name}`)
 
         this.downloadDate = new Date();

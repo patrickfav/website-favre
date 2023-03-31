@@ -1,5 +1,4 @@
 import got from 'got'
-import {stackoverflowEnabled, stackoverflowUserId} from '../confg'
 import fs from 'fs'
 import {StringStream} from 'scramjet'
 import TurndownService from 'turndown'
@@ -8,32 +7,32 @@ import {
     generateSlug,
     removeBrokenMarkdownParts,
     Slug,
-    stackOverflowHighlightedCodeBlock,
+    stackExchangeHighlightedCodeBlock,
     supportedHtml
 } from '../util'
 import wordsCount from 'words-count'
-import {sobannerSvg} from '../svg'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
 
+const stackExchangeUrl = 'https://api.stackexchange.com/2.3'
 
-export class StackOverflowDownloader extends Downloader {
-    private readonly config: StackOverflowConfig
+export class StackExchangeDownloader extends Downloader {
+    private readonly config: StackExchangeConfig
 
-    constructor(rootOutDir: string, contentOutDir: string, config: StackOverflowConfig) {
-        super("StackOverflow", stackoverflowEnabled, rootOutDir, contentOutDir);
+    constructor(rootOutDir: string, contentOutDir: string, config: StackExchangeConfig) {
+        super(config.url, rootOutDir, contentOutDir);
         this.config = config
     }
 
     protected async downloadLogic(): Promise<ContentStat[]> {
-        const answersByUser = await this.fetchAllSoAnswersForUser(this.config.stackOverflowUserId)
-        const questionsByUser = await this.fetchAllSoQuestionsForUser(this.config.stackOverflowUserId)
-        const questionsForAnswers = await this.fetchAllQuestions(answersByUser)
+        const answersByUser = await this.fetchAllAnswersForUser(this.config.userId, this.config.site)
+        const questionsByUser = await this.fetchAllQuestionsForUser(this.config.userId, this.config.site)
+        const questionsForAnswers = await this.fetchAllQuestions(answersByUser, this.config.site)
         const contentStats: ContentStat[] = []
 
-        await this.addContentStats(this.config.stackOverflowUserId, contentStats, answersByUser, questionsByUser, questionsForAnswers)
+        await this.addContentStats(this.config.userId, contentStats, answersByUser, questionsByUser, questionsForAnswers)
 
         let skipDueLowScore = 0
         let skipDueLowWordCount = 0
@@ -41,35 +40,34 @@ export class StackOverflowDownloader extends Downloader {
         for (const answer of answersByUser) {
             const question = questionsForAnswers[answer.question_id]
 
-            const slug = generateSlug(question.title, 'so', new Date(answer.creation_date * 1000), answer.answer_id.toString())
-            const answerLink = `https://stackoverflow.com/a/${answer.answer_id}/${stackoverflowUserId}`
+            const slug = generateSlug(question.title, this.config.acronym, new Date(answer.creation_date * 1000), answer.answer_id.toString())
+            const answerLink = `https://${this.config.url}/a/${answer.answer_id}/${this.config.userId}`
             const targetProjectDir = this.getTargetOutDir() + slug.stableName
             const summary = this.createSummary(answer, question)
-            const frontMatter = this.createStackOverflowFrontMatter(answer, question, summary, slug, answerLink)
+            const frontMatter = this.createFrontMatter(answer, question, summary, slug, answerLink)
             const markdown = this.createMarkdown(answer.body)
 
-            if ((answer.score <= 10 && question.view_count < 20000) || answer.score <= 3) {
+            if ((answer.score <= this.config.minVote && question.view_count < this.config.minViews) || answer.score <= 0) {
                 skipDueLowScore++
                 continue
             }
 
             const wordCount = wordsCount(markdown)
-            if (wordCount <= 200) {
+            if (wordCount <= this.config.minWords) {
                 skipDueLowWordCount++
                 continue
             }
 
-            console.log(`\tProcessing stack overflow post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes and ${Math.ceil(question.view_count / 1000)}k views`)
+            console.log(`\tProcessing ${this.config.site} post '${question.title}' (${answer.answer_id}) ${answer.score} upvotes and ${Math.ceil(question.view_count / 1000)}k views`)
 
             Downloader.prepareFolder(targetProjectDir)
 
             const targetProjectFile = targetProjectDir + '/index.md'
-            const targetProjectFileBanner = targetProjectDir + '/sobanner.svg'
+            const targetProjectFileBanner = targetProjectDir + `/${this.config.acronym}_banner.svg`
 
-            this.copyBannerImage(sobannerSvg, targetProjectFileBanner)
+            this.copyBannerImage(this.config.svgBanner, targetProjectFileBanner)
 
             const finalMarkdown = await this.fetchAndReplaceImages(markdown, targetProjectDir)
-
 
             StringStream.from(frontMatter + removeBrokenMarkdownParts(finalMarkdown))
                 .pipe(fs.createWriteStream(targetProjectFile))
@@ -80,16 +78,16 @@ export class StackOverflowDownloader extends Downloader {
         return contentStats
     }
 
-    private async fetchAllSoAnswersForUser(soUser: number): Promise<Answer[]> {
+    private async fetchAllAnswersForUser(user: number, site: string): Promise<Answer[]> {
 
-        console.log(`\tFetching all answers for user ${soUser}`)
+        console.log(`\tFetching all answers for user ${user}`)
 
         let hasMore = true
         let page = 1
         const allAnswers: Answer[] = []
 
         while (hasMore) {
-            const answerResponse = await got.get(`https://api.stackexchange.com/2.3/users/${soUser}/answers?page=${page}&pagesize=100&order=desc&sort=votes&site=stackoverflow&filter=withbody`)
+            const answerResponse = await got.get(`${stackExchangeUrl}/users/${user}/answers?page=${page}&pagesize=100&order=desc&sort=votes&site=${site}&filter=withbody`)
                 .then((res) => JSON.parse(res.body) as AnswerResponse)
 
             // throttling for api
@@ -106,16 +104,16 @@ export class StackOverflowDownloader extends Downloader {
         return allAnswers
     }
 
-    private async fetchAllSoQuestionsForUser(soUser: number): Promise<Question[]> {
+    private async fetchAllQuestionsForUser(user: number, site: string): Promise<Question[]> {
 
-        console.log(`\tFetching all questions for user ${soUser}`)
+        console.log(`\tFetching all questions for user ${user}`)
 
         let hasMore = true
         let page = 1
         const allQuestions: Question[] = []
 
         while (hasMore) {
-            const answerResponse = await got.get(`https://api.stackexchange.com/2.3/users/${soUser}/questions?page=${page}&pagesize=100&order=desc&sort=votes&site=stackoverflow&filter=withbody`)
+            const answerResponse = await got.get(`${stackExchangeUrl}/users/${user}/questions?page=${page}&pagesize=100&order=desc&sort=votes&site=${site}&filter=withbody`)
                 .then((res) => JSON.parse(res.body) as QuestionResponse)
 
             // throttling for api
@@ -132,27 +130,27 @@ export class StackOverflowDownloader extends Downloader {
         return allQuestions
     }
 
-    private async fetchAllQuestions(soAnswers: Answer[]): Promise<{ [key: number]: Question }> {
+    private async fetchAllQuestions(answers: Answer[], site: string): Promise<{ [key: number]: Question }> {
         const chunkSize = 30
 
-        console.log(`\tFetching all questions for ${soAnswers.length} found answers with chunkSize ${chunkSize}`)
+        console.log(`\tFetching all questions for ${answers.length} found answers with chunkSize ${chunkSize}`)
 
         const questionIds = []
         const allQuestions: Question[] = []
 
-        for (const answer of soAnswers) {
+        for (const answer of answers) {
             questionIds.push(answer.question_id)
         }
 
         for (let i = 0; i < questionIds.length; i += chunkSize) {
             const chunk = questionIds.slice(i, i + chunkSize)
-            const soQuestion = await got.get(`https://api.stackexchange.com/2.3/questions/${chunk.join(';')}?order=desc&sort=activity&site=stackoverflow&filter=withbody`)
+            const questionResponse = await got.get(`${stackExchangeUrl}/questions/${chunk.join(';')}?order=desc&sort=activity&site=${site}&filter=withbody`)
                 .then((res) => JSON.parse(res.body) as QuestionResponse)
 
             // throttling for api
             await new Promise(resolve => setTimeout(resolve, 750))
 
-            for (const item of soQuestion.items) {
+            for (const item of questionResponse.items) {
                 allQuestions.push(item)
             }
         }
@@ -178,75 +176,78 @@ export class StackOverflowDownloader extends Downloader {
         turndownService.use(strikethrough)
         turndownService.use(tables)
         turndownService.use(taskListItems)
-        turndownService.use(stackOverflowHighlightedCodeBlock)
+        turndownService.use(stackExchangeHighlightedCodeBlock)
         turndownService.use(supportedHtml)
 
         return turndownService.turndown(body)
     }
 
     private createSummary(answer: Answer, question: Question): string {
-        return `This was originally posted as ${answer.is_accepted ? 'the accepted' : 'an'} answer to the question "${question.title}" on stackoverflow.com.`
+        return `This was originally posted as ${answer.is_accepted ? 'the accepted' : 'an'} answer to the question "${question.title}" on ${this.config.url}.`
     }
 
-    private createStackOverflowFrontMatter(soAnswers: Answer, soQuestion: Question, summary: string, slug: Slug, answerLink: string): string {
+    private createFrontMatter(answer: Answer, question: Question, summary: string, slug: Slug, answerLink: string): string {
         let meta = '---\n'
-        meta += `title: 'Q: ${Downloader.escapeFrontMatterText(soQuestion.title)}'\n`
-        meta += `date: ${new Date(soAnswers.creation_date * 1000).toISOString().split('T')[0]}\n`
+        meta += `title: 'Q: ${Downloader.escapeFrontMatterText(question.title)}'\n`
+        meta += `date: ${new Date(answer.creation_date * 1000).toISOString().split('T')[0]}\n`
 
-        if (soAnswers.last_edit_date) {
-            meta += `lastmod: ${new Date(soAnswers.last_edit_date * 1000).toISOString().split('T')[0]}\n`
+        if (answer.last_edit_date) {
+            meta += `lastmod: ${new Date(answer.last_edit_date * 1000).toISOString().split('T')[0]}\n`
         } else {
-            meta += `lastmod: ${new Date(soAnswers.creation_date * 1000).toISOString().split('T')[0]}\n`
+            meta += `lastmod: ${new Date(answer.creation_date * 1000).toISOString().split('T')[0]}\n`
         }
 
-        meta += `description: '${Downloader.escapeFrontMatterText(soQuestion.title)}'\n`
+        meta += `description: '${Downloader.escapeFrontMatterText(question.title)}'\n`
         meta += `summary: '${Downloader.escapeFrontMatterText(summary)}'\n`
         meta += `aliases: [${slug.permalink}]\n`
         meta += `slug: ${slug.yearSlashSafeName}\n`
-        meta += `tags: [${soQuestion.tags.map(m => '"' + m + '"').join(', ')}]\n`
-        meta += `keywords: [${soQuestion.tags.map(m => '"' + m + '"').join(', ')}]\n`
-        meta += `alltags: [${soQuestion.tags.map(m => '"' + m + '"').join(', ')}]\n`
-        meta += 'categories: ["stackoverflow"]\n'
+        meta += `tags: [${question.tags.map(m => '"' + m + '"').join(', ')}]\n`
+        meta += `keywords: [${question.tags.map(m => '"' + m + '"').join(', ')}]\n`
+        meta += `alltags: [${question.tags.map(m => '"' + m + '"').join(', ')}]\n`
+        meta += `categories: ["${this.config.site}"]\n`
         meta += 'showEdit: false\n'
         meta += 'showSummary: true\n'
-        meta += 'type: stackoverflow\n'
-        meta += `thumbnail: 'sobanner*'\n`
+        meta += 'type: stackexchange\n'
+        meta += `thumbnail: '${this.config.acronym}_banner*'\n`
         meta += `deeplink: ${slug.permalink}\n`
-        meta += `originalContentLink: ${soQuestion.link}\n`
-        meta += 'originalContentType: stackoverflow\n'
-        meta += `originalContentId: ${soAnswers.answer_id}\n`
-        meta += `soScore: ${soAnswers.score}\n`
-        meta += `soViews: ${Math.ceil(soQuestion.view_count / 1000) * 1000}\n`
-        meta += `soIsAccepted: ${soAnswers.is_accepted}\n`
-        meta += `soQuestionId: ${soAnswers.question_id}\n`
-        meta += `soAnswerLicense: ${soAnswers.content_license}\n`
-        meta += `soAnswerLink: ${answerLink}\n`
+        meta += `originalContentLink: ${question.link}\n`
+        meta += `originalContentType: stackexchange\n`
+        meta += `originalContentId: ${answer.answer_id}\n`
+        meta += `seSite: ${this.config.site}\n`
+        meta += `seScore: ${answer.score}\n`
+        meta += `seViews: ${Math.ceil(question.view_count / 1000) * 1000}\n`
+        meta += `seIsAccepted: ${answer.is_accepted}\n`
+        meta += `seQuestionId: ${answer.question_id}\n`
+        meta += `seAnswerLicense: ${answer.content_license}\n`
+        meta += `seAnswerLink: ${answerLink}\n`
         meta += '---\n'
         return meta
     }
 
-    private async addContentStats(stackOverflowUserId: number, contentStats: ContentStat[], answersByUser: Answer[], questionsByUser: Question[], questionsForAnswers: { [answerId: number]: Question }) {
-        contentStats.push(await this.getSoUserStats(stackOverflowUserId, answersByUser, questionsByUser))
-        contentStats.push(...await this.getSoQuestionStats(stackOverflowUserId, questionsByUser))
-        contentStats.push(...await this.getSoAnswerStats(stackOverflowUserId, answersByUser, questionsForAnswers))
+    private async addContentStats(userId: number, contentStats: ContentStat[], answersByUser: Answer[], questionsByUser: Question[], questionsForAnswers: {
+        [answerId: number]: Question
+    }) {
+        contentStats.push(await this.getUserStats(userId, answersByUser, questionsByUser))
+        contentStats.push(...await this.getQuestionStats(userId, questionsByUser))
+        contentStats.push(...await this.getAnswerStats(userId, answersByUser, questionsForAnswers))
     }
 
-    private async getSoUserStats(stackOverflowUserId: number, soAnswers: Answer[], soQuestions: Question[]): Promise<ContentStat> {
-        console.log(`\tFetching so user info: ${stackOverflowUserId}`)
+    private async getUserStats(userId: number, answers: Answer[], questions: Question[]): Promise<ContentStat> {
+        console.log(`\tFetching ${this.config.site} user info: ${userId}`)
 
-        const userResponse = await got.get(`https://api.stackexchange.com/2.3/users/${stackOverflowUserId}?order=desc&sort=reputation&site=stackoverflow`)
-            .then(response => JSON.parse(response.body) as StackOverflowUserResponse)
+        const userResponse = await got.get(`${stackExchangeUrl}/users/${userId}?order=desc&sort=reputation&site=${this.config.site}`)
+            .then(response => JSON.parse(response.body) as StackExchangeUserResponse)
             .then(r => r.items[0])
 
         return {
-            type: "so-user",
-            user: stackOverflowUserId.toString(),
-            subjectId: stackOverflowUserId.toString(),
+            type: `${this.config.acronym}-user`,
+            user: userId.toString(),
+            subjectId: userId.toString(),
             date: this.downloadDate,
             values: {
                 score: userResponse.reputation,
-                answers: soAnswers.length,
-                questions: soQuestions.length,
+                answers: answers.length,
+                questions: questions.length,
                 acceptRate: userResponse.accept_rate,
                 gold: userResponse.badge_counts.gold,
                 silver: userResponse.badge_counts.silver,
@@ -255,11 +256,11 @@ export class StackOverflowDownloader extends Downloader {
         };
     }
 
-    private async getSoQuestionStats(stackOverflowUserId: number, questionsByUser: Question[]): Promise<ContentStat[]> {
+    private async getQuestionStats(userId: number, questionsByUser: Question[]): Promise<ContentStat[]> {
         return (questionsByUser).map(q => {
             return {
-                type: "so-question",
-                user: stackOverflowUserId.toString(),
+                type: `${this.config.acronym}-question`,
+                user: userId.toString(),
                 subjectId: q.question_id.toString(),
                 date: this.downloadDate,
                 values: {
@@ -271,11 +272,13 @@ export class StackOverflowDownloader extends Downloader {
         })
     }
 
-    private async getSoAnswerStats(stackOverflowUserId: number, answersByUser: Answer[], questionsForAnswers: { [answerId: number]: Question }): Promise<ContentStat[]> {
-        return answersByUser.map(answer =>  {
+    private async getAnswerStats(userId: number, answersByUser: Answer[], questionsForAnswers: {
+        [answerId: number]: Question
+    }): Promise<ContentStat[]> {
+        return answersByUser.map(answer => {
             return {
-                type: "so",
-                user: stackOverflowUserId.toString(),
+                type: `${this.config.acronym}`,
+                user: userId.toString(),
                 subjectId: answer.answer_id.toString(),
                 date: this.downloadDate,
                 values: {
@@ -288,8 +291,21 @@ export class StackOverflowDownloader extends Downloader {
     }
 }
 
-interface StackOverflowConfig {
-    stackOverflowUserId: number
+export const configDefaults: Pick<StackExchangeConfig, 'minWords' | 'minVote' | 'minViews'> = {
+    minWords: 200,
+    minViews: 20_000,
+    minVote: 10
+}
+
+interface StackExchangeConfig {
+    site: string
+    url: string
+    acronym: string
+    userId: number
+    svgBanner: string
+    minVote: number
+    minViews: number
+    minWords: number
 }
 
 interface AnswerResponse {
@@ -324,7 +340,7 @@ interface Question {
     body: string
 }
 
-interface StackOverflowUser {
+interface StackExchangeUser {
     badge_counts: {
         bronze: number
         silver: number
@@ -351,6 +367,6 @@ interface StackOverflowUser {
     display_name: string
 }
 
-interface StackOverflowUserResponse {
-    items: StackOverflowUser[]
+interface StackExchangeUserResponse {
+    items: StackExchangeUser[]
 }

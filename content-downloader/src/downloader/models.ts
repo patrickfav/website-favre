@@ -1,5 +1,21 @@
-export type ContentStatType = "gh" | "gh-user" | "gist" | "medium" | "medium-user" | "so" | "so-user" | "so-question";
-export type ContentStatValue = GithubStats | GithubUserStats | GistStats | MediumStats | MediumUserStats | StackOverflowAnswerStats | StackOverflowUserStats;
+export type ContentStatType =
+    "gh"
+    | "gh-user"
+    | "gist"
+    | "medium"
+    | "medium-user"
+    | "so"
+    | "so-user"
+    | "so-question"
+    | string;
+export type ContentStatValue =
+    GithubStats
+    | GithubUserStats
+    | GistStats
+    | MediumStats
+    | MediumUserStats
+    | StackOverflowAnswerStats
+    | StackOverflowUserStats;
 
 export interface ContentStat {
     type: ContentStatType

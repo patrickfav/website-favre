@@ -15,13 +15,14 @@
   },
   "scripts": {
     "exec": "npm run build && hugo-content-downloader",
-    "package": "npm i && npm run build && npm run test && npm link",
+    "package": "npm run clean && npm i && npm run build && npm run test && npm link",
     "package:ci": "npm ci && npm run build && npm run test && npm link",
     "build": "npx tsc",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint:ts": "eslint src/**/*.ts -f json -o eslint_report.json",
-    "lint": "npm run lint:ts"
+    "lint": "npm run lint:ts",
+    "clean": "rm -rf ./dist"
   },
   "keywords": [
     "cli",

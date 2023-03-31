@@ -4,7 +4,6 @@ import got from 'got'
 import Parser from 'rss-parser'
 import TurndownService from 'turndown'
 import * as cheerio from 'cheerio'
-import {mediumDownloaderEnabled} from '../confg'
 import {codeBlockFormat, figureCaption, generateSlug, removeBrokenMarkdownParts, Slug, supportedHtml} from '../util'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
@@ -16,7 +15,7 @@ export class MediumDownloader extends Downloader {
     private readonly config: MediumConfig
 
     constructor(rootOutDir: string, contentOutDir: string, config: MediumConfig) {
-        super("Medium", mediumDownloaderEnabled, rootOutDir, contentOutDir);
+        super("Medium", rootOutDir, contentOutDir);
         this.config = config
     }
 

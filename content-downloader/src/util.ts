@@ -85,10 +85,10 @@ export const codeBlockFormat = function (service: TurndownService): void {
     })
 } as TurndownService.Plugin
 
-export const stackOverflowHighlightedCodeBlock = function (service: TurndownService): void {
+export const stackExchangeHighlightedCodeBlock = function (service: TurndownService): void {
     const highlightRegExp = /lang-([a-z0-9]+)/
 
-    service.addRule('stackOverflowHighlightedCodeBlock', {
+    service.addRule('stackExchangeHighlightedCodeBlock', {
         filter: function (node: HTMLElement): boolean | null {
             const firstChild = node.firstChild
             return (

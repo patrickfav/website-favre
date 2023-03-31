@@ -1,6 +1,7 @@
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "stack-overflow" }}</span>
-    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" class="text-neutral-500 dark:text-neutral-400" rel="noopener">View on SO</a></span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" class="text-neutral-500 dark:text-neutral-400"
+                          rel="noopener">View on SE</a></span>
 </div>
 
 <div class="flex flex-row">
@@ -12,17 +13,17 @@
     </span>
 </div>
 
-{{ if and (.Params.soScore | default false) (gt .Params.soScore 0 ) }}
+{{ if and (.Params.seScore | default false) (gt .Params.seScore 0 ) }}
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "caret-up-solid" }}</span>
-    <span class="pl-2">{{ .Params.soScore }} upvotes</span>
+    <span class="pl-2">{{ .Params.seScore }} upvotes</span>
 </div>
 {{ end }}
 
-{{ if and (.Params.soViews | default false) (gt .Params.soViews 0 ) }}
+{{ if and (.Params.seViews | default false) (gt .Params.seViews 0 ) }}
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "eye-solid" }}</span>
-    <span class="pl-2">{{ div .Params.soViews 1000}}k views</span>
+    <span class="pl-2">{{ div .Params.seViews 1000}}k views</span>
 </div>
 {{ end }}
 
@@ -37,7 +38,8 @@
 
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "link" }}</span>
-    <span class="pl-2"><a href="{{ .Params.soAnswerLink }}" class="text-neutral-500 dark:text-neutral-400" rel="noopener">Answer Link</a></span>
+    <span class="pl-2"><a href="{{ .Params.seAnswerLink }}" class="text-neutral-500 dark:text-neutral-400"
+                          rel="noopener">Answer Link</a></span>
 </div>
 
 {{- /* Trim EOF */ -}}

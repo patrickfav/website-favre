@@ -1,9 +1,15 @@
-import {gistIds, githubProjects, githubProjectsUser, mediumUserName, stackoverflowUserId} from './confg'
+import {gistIds, githubProjects, githubProjectsUser, mediumUserName} from './confg'
 import {GithubDownloader} from './downloader/github'
 import {MediumDownloader} from './downloader/medium'
-import {StackOverflowDownloader} from './downloader/stackoverflow'
 import {GistDownloader} from './downloader/gist'
 import {StatsManager} from "./store/statsManager";
+import {configDefaults, StackExchangeDownloader} from "./downloader/stackexchange";
+import {
+    androidStackExchangeBanner,
+    cryptographyStackExchangeBanner,
+    stackOverflowBanner,
+    texStackExchangeBanner
+} from "./svg";
 
 const defaultRootDir = '../content/'
 
@@ -23,8 +29,44 @@ export async function cli(args: string[]): Promise<void> {
         githubProjects: githubProjects,
     });
 
-    const stackOverflowDownloader = new StackOverflowDownloader(rootDir, relOutDirArticles, {
-        stackOverflowUserId: stackoverflowUserId,
+    const stackOverflowDownloader = new StackExchangeDownloader(rootDir, relOutDirArticles, {
+        ...configDefaults,
+        site: 'stackoverflow',
+        url: 'stackoverflow.com',
+        acronym: 'so',
+        userId: 774398,
+        svgBanner: stackOverflowBanner,
+    });
+
+    const androidStackExchange = new StackExchangeDownloader(rootDir, relOutDirArticles, {
+        ...configDefaults,
+        site: 'android',
+        url: 'android.stackexchange.com',
+        acronym: 'se_android',
+        userId: 48335,
+        svgBanner: androidStackExchangeBanner,
+    });
+
+    const cryptoStackExchange = new StackExchangeDownloader(rootDir, relOutDirArticles, {
+        ...configDefaults,
+        site: 'cryptography',
+        url: 'crypto.stackexchange.com',
+        acronym: 'se_crypto',
+        userId: 44838,
+        svgBanner: cryptographyStackExchangeBanner,
+        minWords: 100,
+        minVote: 1,
+        minViews: 500
+    });
+
+    const texStackExchange = new StackExchangeDownloader(rootDir, relOutDirArticles, {
+        ...configDefaults,
+        site: 'tex',
+        url: 'tex.stackexchange.com',
+        acronym: 'se_tex',
+        userId: 42691,
+        svgBanner: texStackExchangeBanner,
+        minWords: 100
     });
 
     const mediumDownloader = new MediumDownloader(rootDir, relOutDirArticles, {
@@ -32,6 +74,9 @@ export async function cli(args: string[]): Promise<void> {
     });
 
     const contentStats = [
+        ...await androidStackExchange.download(),
+        ...await cryptoStackExchange.download(),
+        ...await texStackExchange.download(),
         ...await gistDownloader.download(),
         ...await stackOverflowDownloader.download(),
         ...await githubDownloader.download(),
@@ -58,3 +103,5 @@ function parseArguments(args: string[]): string {
 
     return defaultRootDir
 }
+
+

@@ -1,7 +1,6 @@
 import * as fs from 'fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
-import {gistDownloaderEnabled} from '../confg'
 import {generateSlug, removeBrokenMarkdownParts, shortenToTitle, Slug} from '../util'
 import {gistbannerSvg} from '../svg'
 import {Downloader} from "./downloader";
@@ -12,7 +11,7 @@ export class GistDownloader extends Downloader {
     private readonly config: GistConfig
 
     constructor(rootOutDir: string, contentOutDir: string, config: GistConfig) {
-        super("Gist", gistDownloaderEnabled, rootOutDir, contentOutDir);
+        super("Gist", rootOutDir, contentOutDir);
         this.config = config
     }
 

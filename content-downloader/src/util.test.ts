@@ -1,11 +1,16 @@
 import {
-    figureCaption, findAllHtmlImages, findAllMarkdownImages,
+    figureCaption,
+    findAllHtmlImages,
+    findAllMarkdownImages,
     generateRandomFilename,
     generateSlug,
-    getExtension, ImageMeta,
-    regexQuote, removeBrokenMarkdownParts,
+    getExtension,
+    ImageMeta,
+    regexQuote,
+    removeBrokenMarkdownParts,
     shortenToTitle,
-    stackOverflowHighlightedCodeBlock, supportedHtml
+    stackExchangeHighlightedCodeBlock,
+    supportedHtml
 } from './util';
 import TurndownService from "turndown";
 
@@ -96,7 +101,7 @@ describe('regexQuote', () => {
 describe('stackOverflowHighlightedCodeBlock', () => {
     it('should correctly format a code block with a language', () => {
         const turndownService = new TurndownService();
-        stackOverflowHighlightedCodeBlock(turndownService);
+        stackExchangeHighlightedCodeBlock(turndownService);
 
         const html = `
             <pre class="lang-javascript"><code>const a = 10;
@@ -116,7 +121,7 @@ console.log(a);
 
     it('should correctly format a code block without a language', () => {
         const turndownService = new TurndownService();
-        stackOverflowHighlightedCodeBlock(turndownService);
+        stackExchangeHighlightedCodeBlock(turndownService);
 
         const html = `
             <pre><code>const a = 10;
