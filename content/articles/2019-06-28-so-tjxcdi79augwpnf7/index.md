@@ -12,18 +12,19 @@ alltags: ["java", "tomcat", "netty", "spring-webflux", "nonblocking"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/tjxcdi79
 originalContentLink: https://stackoverflow.com/questions/56794263/spring-webflux-differences-when-netty-vs-tomcat-is-used-under-the-hood
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 56806022
-soScore: 55
-soViews: 33000
-soIsAccepted: false
-soQuestionId: 56794263
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/56806022/774398
+seSite: stackoverflow
+seScore: 55
+seViews: 33000
+seIsAccepted: false
+seQuestionId: 56794263
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/56806022/774398
 ---
 Currently there are 2 basic concepts to handle parallel access to a web-server with various advantages and disadvantages:
 

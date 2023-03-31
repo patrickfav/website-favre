@@ -4,26 +4,27 @@ date: 2013-08-20
 lastmod: 2023-03-28
 description: 'Android SlidingDrawer from top?'
 summary: 'This was originally posted as an answer to the question "Android SlidingDrawer from top?" on stackoverflow.com.'
-aliases: [/link/ycef5jpy]
+aliases: [ /link/ycef5jpy ]
 slug: 2013/android-slidingdrawer-from-top
-tags: ["android"]
-keywords: ["android"]
-alltags: ["android"]
-categories: ["stackoverflow"]
+tags: [ "android" ]
+keywords: [ "android" ]
+alltags: [ "android" ]
+categories: [ "stackoverflow" ]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/ycef5jpy
 originalContentLink: https://stackoverflow.com/questions/3695856/android-slidingdrawer-from-top
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 18341293
-soScore: 7
-soViews: 34000
-soIsAccepted: false
-soQuestionId: 3695856
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/18341293/774398
+seSite: stackoverflow
+seScore: 7
+seViews: 34000
+seIsAccepted: false
+seQuestionId: 3695856
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/18341293/774398
 ---
 I was very unsatisfied with the solutions provided here:
 

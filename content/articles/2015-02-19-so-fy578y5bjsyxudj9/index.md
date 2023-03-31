@@ -4,26 +4,27 @@ date: 2015-02-19
 lastmod: 2023-03-28
 description: 'Unable to execute dex: method ID not in [0, 0xffff]: 65536'
 summary: 'This was originally posted as an answer to the question "Unable to execute dex: method ID not in [0, 0xffff]: 65536" on stackoverflow.com.'
-aliases: [/link/fy578y5b]
+aliases: [ /link/fy578y5b ]
 slug: 2015/unable-to-execute-dex-method-id-not-in-0-0xffff-65536
-tags: ["android", "dex"]
-keywords: ["android", "dex"]
-alltags: ["android", "dex"]
-categories: ["stackoverflow"]
+tags: [ "android", "dex" ]
+keywords: [ "android", "dex" ]
+alltags: [ "android", "dex" ]
+categories: [ "stackoverflow" ]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/fy578y5b
 originalContentLink: https://stackoverflow.com/questions/15209831/unable-to-execute-dex-method-id-not-in-0-0xffff-65536
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 28606782
-soScore: 78
-soViews: 146000
-soIsAccepted: false
-soQuestionId: 15209831
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/28606782/774398
+seSite: stackoverflow
+seScore: 78
+seViews: 146000
+seIsAccepted: false
+seQuestionId: 15209831
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/28606782/774398
 ---
 As already stated, you have too many methods (more than 65k) in your project and libaries.
 

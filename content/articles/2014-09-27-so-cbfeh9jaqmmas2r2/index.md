@@ -12,18 +12,19 @@ alltags: ["android", "sharedpreferences"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/cbfeh9ja
 originalContentLink: https://stackoverflow.com/questions/26076292/security-with-sharedpreferences
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 26077852
-soScore: 33
-soViews: 11000
-soIsAccepted: true
-soQuestionId: 26076292
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/26077852/774398
+seSite: stackoverflow
+seScore: 33
+seViews: 11000
+seIsAccepted: true
+seQuestionId: 26076292
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/26077852/774398
 ---
 _If you are interested in state of the art implementation, check out my project here [https://github.com/patrickfav/armadillo](https://github.com/patrickfav/armadillo) which may have some interesseting design principles relevant to this discussion._
 

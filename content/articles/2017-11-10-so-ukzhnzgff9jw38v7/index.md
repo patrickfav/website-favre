@@ -12,18 +12,19 @@ alltags: ["java", "bit-manipulation"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/ukzhnzgf
 originalContentLink: https://stackoverflow.com/questions/28997781/bit-shift-operations-on-a-byte-array-in-java
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 47231300
-soScore: 4
-soViews: 21000
-soIsAccepted: false
-soQuestionId: 28997781
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/47231300/774398
+seSite: stackoverflow
+seScore: 4
+seViews: 21000
+seIsAccepted: false
+seQuestionId: 28997781
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/47231300/774398
 ---
 1\. Manually implemented
 ------------------------
@@ -139,4 +140,4 @@ byte[] result = b.array();
 
 ```
 
-<SUB>*Full Disclaimer: I am the developer.</SUB>
+<sub>*Full Disclaimer: I am the developer.</sub>

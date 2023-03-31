@@ -1,11 +1,11 @@
 ---
-title: 'Snippet: A Turndown Plugin'
+title: 'Snippet: A Turndown Plugin parsing Stack Overflow can HTML'
 date: 2023-03-29
-lastmod: 2023-03-29
-description: 'A Turndown Plugin (JS Markdown Parser) that correctly parses Stack Overflow HTML and coverts it to GitHub-Flavored-Markdown (GFM) with correct language.'
-summary: 'A Turndown Plugin (JS Markdown Parser) that correctly parses Stack Overflow HTML and coverts it to GitHub-Flavored-Markdown (GFM) with correct language.'
+lastmod: 2023-03-31
+description: 'A Turndown Plugin parsing Stack Overflow can HTML; converts it to GitHub-Flavored-Markdown (GFM) with correct language. Turndown is a JS Markdown Parser'
+summary: 'A Turndown Plugin parsing Stack Overflow can HTML; converts it to GitHub-Flavored-Markdown (GFM) with correct language. Turndown is a JS Markdown Parser'
 aliases: [/link/jw8w6svp]
-slug: 2023/a-turndown-plugin
+slug: 2023/a-turndown-plugin-parsing-stack-overflow-can-html
 tags: ["TypeScript"]
 keywords: ["TypeScript"]
 alltags: ["TypeScript"]
@@ -21,7 +21,7 @@ originalContentType: gist
 originalContentId: 0ca9cae68a3e363f87755e1d87fd6160
 gistLanguage: TypeScript
 gistFileCount: 2
-gistRevisions: 8
+gistRevisions: 10
 gistForks: 0
 gistComments: 0
 ---

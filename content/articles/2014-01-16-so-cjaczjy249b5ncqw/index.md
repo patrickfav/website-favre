@@ -4,26 +4,27 @@ date: 2014-01-16
 lastmod: 2023-03-26
 description: 'Using Jackson ObjectMapper with Jersey'
 summary: 'This was originally posted as an answer to the question "Using Jackson ObjectMapper with Jersey" on stackoverflow.com.'
-aliases: [/link/cjaczjy2]
+aliases: [ /link/cjaczjy2 ]
 slug: 2014/using-jackson-objectmapper-with-jersey
-tags: ["java", "json", "spring", "rest", "jersey-2.0"]
-keywords: ["java", "json", "spring", "rest", "jersey-2.0"]
-alltags: ["java", "json", "spring", "rest", "jersey-2.0"]
-categories: ["stackoverflow"]
+tags: [ "java", "json", "spring", "rest", "jersey-2.0" ]
+keywords: [ "java", "json", "spring", "rest", "jersey-2.0" ]
+alltags: [ "java", "json", "spring", "rest", "jersey-2.0" ]
+categories: [ "stackoverflow" ]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/cjaczjy2
 originalContentLink: https://stackoverflow.com/questions/20563640/using-jackson-objectmapper-with-jersey
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 21167382
-soScore: 13
-soViews: 45000
-soIsAccepted: false
-soQuestionId: 20563640
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/21167382/774398
+seSite: stackoverflow
+seScore: 13
+seViews: 45000
+seIsAccepted: false
+seQuestionId: 20563640
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/21167382/774398
 ---
 **EDIT**: Don't use the _old approach below_ as it produces bugs (at least with android device, see _EDIT2_ for more details). As of my tests, Jersey v2.6 seems to fix the problem with the `@Provide`, which approach did not work. I was able to get it work with this simple provider:
 

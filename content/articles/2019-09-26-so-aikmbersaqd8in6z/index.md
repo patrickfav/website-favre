@@ -12,18 +12,19 @@ alltags: ["java", "arrays", "hex"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/aikmbers
 originalContentLink: https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 58118078
-soScore: 160
-soViews: 966000
-soIsAccepted: false
-soQuestionId: 9655181
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/58118078/774398
+seSite: stackoverflow
+seScore: 160
+seViews: 966000
+seIsAccepted: false
+seQuestionId: 9655181
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/58118078/774398
 ---
 Here are some common options ordered from simple (one-liner) to complex (huge library). If you are interested in performance, see the micro benchmarks below.
 

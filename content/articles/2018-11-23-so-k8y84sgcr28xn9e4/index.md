@@ -12,18 +12,19 @@ alltags: ["java", "string", "sha1"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/k8y84sgc
 originalContentLink: https://stackoverflow.com/questions/4895523/java-string-to-sha1
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 53439267
-soScore: 5
-soViews: 305000
-soIsAccepted: false
-soQuestionId: 4895523
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/53439267/774398
+seSite: stackoverflow
+seScore: 5
+seViews: 305000
+seIsAccepted: false
+seQuestionId: 4895523
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/53439267/774398
 ---
 Message Digest (hash) is byte\[\] in byte\[\] out
 -------------------------------------------------

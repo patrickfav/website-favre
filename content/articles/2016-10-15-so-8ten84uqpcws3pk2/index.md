@@ -12,18 +12,19 @@ alltags: ["android", "apk", "signing"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/8ten84uq
 originalContentLink: https://stackoverflow.com/questions/4853011/how-to-sign-an-android-apk-file
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 40064199
-soScore: 44
-soViews: 205000
-soIsAccepted: false
-soQuestionId: 4853011
-soAnswerLicense: CC BY-SA 3.0
-soAnswerLink: https://stackoverflow.com/a/40064199/774398
+seSite: stackoverflow
+seScore: 44
+seViews: 205000
+seIsAccepted: false
+seQuestionId: 4853011
+seAnswerLicense: CC BY-SA 3.0
+seAnswerLink: https://stackoverflow.com/a/40064199/774398
 ---
 Here is a guide on how to manually sign an APK. It includes info about the new `apk-signer` introduced in `build-tools 24.0.3` _(10/2016)_
 
@@ -34,7 +35,7 @@ Use this tool (uses the new apksigner from Google):
 
 [https://github.com/patrickfav/uber-apk-signer](https://github.com/patrickfav/uber-apk-signer)
 
-<SUP>Disclaimer: Im the developer :)</SUP>
+<sup>Disclaimer: Im the developer :)</sup>
 
 Manual Process:
 ===============

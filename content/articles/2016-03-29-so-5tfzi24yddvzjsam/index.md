@@ -12,18 +12,19 @@ alltags: ["java", "image", "resize", "jpeg", "photo"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/5tfzi24y
 originalContentLink: https://stackoverflow.com/questions/1625137/image-resize-quality-java
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 36295066
-soScore: 9
-soViews: 25000
-soIsAccepted: false
-soQuestionId: 1625137
-soAnswerLicense: CC BY-SA 3.0
-soAnswerLink: https://stackoverflow.com/a/36295066/774398
+seSite: stackoverflow
+seScore: 9
+seViews: 25000
+seIsAccepted: false
+seQuestionId: 1625137
+seAnswerLicense: CC BY-SA 3.0
+seAnswerLink: https://stackoverflow.com/a/36295066/774398
 ---
 The two most popular open source libs specializing in image resizing in java currently are:
 

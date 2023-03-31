@@ -12,18 +12,19 @@ alltags: ["android", "android-install-apk", "apk"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/8waxpai3
 originalContentLink: https://stackoverflow.com/questions/10930331/how-to-sign-an-already-compiled-apk
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 40064149
-soScore: 122
-soViews: 265000
-soIsAccepted: false
-soQuestionId: 10930331
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/40064149/774398
+seSite: stackoverflow
+seScore: 122
+seViews: 265000
+seIsAccepted: false
+seQuestionId: 10930331
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/40064149/774398
 ---
 Automated Process:
 ==================
@@ -32,7 +33,7 @@ Use this tool (uses the new apksigner from Google):
 
 [https://github.com/patrickfav/uber-apk-signer](https://github.com/patrickfav/uber-apk-signer)
 
-<SUP>Disclaimer: I'm the developer :)</SUP>
+<sup>Disclaimer: I'm the developer :)</sup>
 
 Manual Process:
 ===============

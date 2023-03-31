@@ -12,18 +12,19 @@ alltags: ["java", "android", "android-layout", "getter"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/a4y7zf2h
 originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-and-getheight-returns-0
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 24035591
-soScore: 968
-soViews: 401000
-soIsAccepted: false
-soQuestionId: 3591784
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/24035591/774398
+seSite: stackoverflow
+seScore: 968
+seViews: 401000
+seIsAccepted: false
+seQuestionId: 3591784
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/24035591/774398
 ---
 The basic problem is, that you have to wait for the drawing phase for the actual measurements (especially with dynamic values like `wrap_content` or `match_parent`), but usually this phase hasn't been finished up to `onResume()`. So you need a workaround for waiting for this phase. There are different possible solutions to this:
 

@@ -12,18 +12,19 @@ alltags: ["android", "android-studio", "gradle", "android-studio-3.0"]
 categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
-type: stackoverflow
-thumbnail: 'sobanner*'
+type: stackexchange
+thumbnail: 'so_banner*'
 deeplink: /link/dzwn7c4f
 originalContentLink: https://stackoverflow.com/questions/44390590/android-studio-3-0-error-migrate-dependency-configurations-for-local-modules
-originalContentType: stackoverflow
+originalContentType: stackexchange
 originalContentId: 44640156
-soScore: 33
-soViews: 28000
-soIsAccepted: false
-soQuestionId: 44390590
-soAnswerLicense: CC BY-SA 4.0
-soAnswerLink: https://stackoverflow.com/a/44640156/774398
+seSite: stackoverflow
+seScore: 33
+seViews: 28000
+seIsAccepted: false
+seQuestionId: 44390590
+seAnswerLicense: CC BY-SA 4.0
+seAnswerLink: https://stackoverflow.com/a/44640156/774398
 ---
 With the new plugin, the variant-aware dependency resolution
 
