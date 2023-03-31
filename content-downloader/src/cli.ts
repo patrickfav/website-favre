@@ -5,8 +5,8 @@ import {GistDownloader} from './downloader/gist'
 import {StatsManager} from "./store/statsManager";
 import {configDefaults, StackExchangeDownloader} from "./downloader/stackexchange";
 import {
-    androidStackExchangeBanner,
     cryptographyStackExchangeBanner,
+    securityStackExchangeBanner,
     stackOverflowBanner,
     texStackExchangeBanner
 } from "./svg";
@@ -38,13 +38,16 @@ export async function cli(args: string[]): Promise<void> {
         svgBanner: stackOverflowBanner,
     });
 
-    const androidStackExchange = new StackExchangeDownloader(rootDir, relOutDirArticles, {
+    const securityStackExchange = new StackExchangeDownloader(rootDir, relOutDirArticles, {
         ...configDefaults,
-        site: 'android',
-        url: 'android.stackexchange.com',
-        acronym: 'se_android',
-        userId: 48335,
-        svgBanner: androidStackExchangeBanner,
+        site: 'security',
+        url: 'security.stackexchange.com',
+        acronym: 'se_security',
+        userId: 60108,
+        svgBanner: securityStackExchangeBanner,
+        minWords: 100,
+        minVote: 3,
+        minViews: 1000
     });
 
     const cryptoStackExchange = new StackExchangeDownloader(rootDir, relOutDirArticles, {
@@ -74,13 +77,13 @@ export async function cli(args: string[]): Promise<void> {
     });
 
     const contentStats = [
-        ...await androidStackExchange.download(),
+        ...await securityStackExchange.download(),
         ...await cryptoStackExchange.download(),
-        ...await texStackExchange.download(),
-        ...await gistDownloader.download(),
-        ...await stackOverflowDownloader.download(),
-        ...await githubDownloader.download(),
-        ...await mediumDownloader.download(),
+        // ...await texStackExchange.download(),
+        // ...await gistDownloader.download(),
+        // ...await stackOverflowDownloader.download(),
+        // ...await githubDownloader.download(),
+        // ...await mediumDownloader.download(),
     ];
 
     console.log(`All done, found ${contentStats.length} stats while importing content.`);
