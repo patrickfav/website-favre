@@ -85,9 +85,8 @@ export async function cli(args: string[]): Promise<void> {
         ...await githubDownloader.download(),
         ...await mediumDownloader.download(),
     ];
-console.log(contentStats)
-    console.log(`All done, found ${contentStats.length} stats while importing content.`);
 
+    console.log(`All done, found ${contentStats.length} stats while importing content.`);
 
     const statManager = new StatsManager();
     if (statManager.isEnabled()) {
