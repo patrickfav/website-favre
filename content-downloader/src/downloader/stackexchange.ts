@@ -248,7 +248,7 @@ export class StackExchangeDownloader extends Downloader {
                 score: userResponse.reputation,
                 answers: answers.length,
                 questions: questions.length,
-                acceptRate: userResponse.accept_rate,
+                acceptRate: userResponse.accept_rate ? userResponse.accept_rate : 0,
                 gold: userResponse.badge_counts.gold,
                 silver: userResponse.badge_counts.silver,
                 bronze: userResponse.badge_counts.bronze,

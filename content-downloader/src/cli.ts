@@ -42,7 +42,7 @@ export async function cli(args: string[]): Promise<void> {
         ...configDefaults,
         site: 'security',
         url: 'security.stackexchange.com',
-        acronym: 'se_security',
+        acronym: 'se-security',
         userId: 60108,
         svgBanner: securityStackExchangeBanner,
         minWords: 100,
@@ -54,7 +54,7 @@ export async function cli(args: string[]): Promise<void> {
         ...configDefaults,
         site: 'cryptography',
         url: 'crypto.stackexchange.com',
-        acronym: 'se_crypto',
+        acronym: 'se-crypto',
         userId: 44838,
         svgBanner: cryptographyStackExchangeBanner,
         minWords: 100,
@@ -66,7 +66,7 @@ export async function cli(args: string[]): Promise<void> {
         ...configDefaults,
         site: 'tex',
         url: 'tex.stackexchange.com',
-        acronym: 'se_tex',
+        acronym: 'se-tex',
         userId: 42691,
         svgBanner: texStackExchangeBanner,
         minWords: 100
@@ -79,13 +79,13 @@ export async function cli(args: string[]): Promise<void> {
     const contentStats = [
         ...await securityStackExchange.download(),
         ...await cryptoStackExchange.download(),
-        // ...await texStackExchange.download(),
-        // ...await gistDownloader.download(),
-        // ...await stackOverflowDownloader.download(),
-        // ...await githubDownloader.download(),
-        // ...await mediumDownloader.download(),
+        ...await texStackExchange.download(),
+        ...await gistDownloader.download(),
+        ...await stackOverflowDownloader.download(),
+        ...await githubDownloader.download(),
+        ...await mediumDownloader.download(),
     ];
-
+console.log(contentStats)
     console.log(`All done, found ${contentStats.length} stats while importing content.`);
 
 
