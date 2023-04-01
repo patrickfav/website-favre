@@ -13,7 +13,7 @@ categories: ["tex"]
 showEdit: false
 showSummary: true
 type: stackexchange
-thumbnail: 'se_tex_banner*'
+thumbnail: 'se-tex_banner*'
 deeplink: /link/ecm6k4d6
 originalContentLink: https://tex.stackexchange.com/questions/35977/how-to-add-a-url-to-a-latex-bibtex-file
 originalContentType: stackexchange

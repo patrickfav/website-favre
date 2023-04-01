@@ -13,7 +13,7 @@ categories: ["security"]
 showEdit: false
 showSummary: true
 type: stackexchange
-thumbnail: 'se_security_banner*'
+thumbnail: 'se-security_banner*'
 deeplink: /link/7ik2fmdc
 originalContentLink: https://security.stackexchange.com/questions/102815/is-there-any-mechanism-available-in-android-platform-for-remote-attestation
 originalContentType: stackexchange

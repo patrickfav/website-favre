@@ -13,7 +13,7 @@ categories: ["cryptography"]
 showEdit: false
 showSummary: true
 type: stackexchange
-thumbnail: 'se_crypto_banner*'
+thumbnail: 'se-crypto_banner*'
 deeplink: /link/m6t3i4eb
 originalContentLink: https://crypto.stackexchange.com/questions/64140/where-can-i-find-official-test-vectors-for-nist-sp-800-56c-r1-single-step-kdf
 originalContentType: stackexchange
