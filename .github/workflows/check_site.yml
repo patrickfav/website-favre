@@ -1,6 +1,7 @@
 name: Check Website
 
 on:
+  workflow_dispatch: {}
   schedule:
     - cron: '24 3 * * MON' # run 3:24 every monday
 
