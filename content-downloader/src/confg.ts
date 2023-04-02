@@ -4,14 +4,19 @@
 export const mediumUserName = '@patrickfav'
 
 /**
+ * dev.to
+ */
+export const devToUserName = 'favr'
+
+/**
  * Gituhub & Gist
  */
 export const githubProjectsUser = 'patrickfav'
 
 export const gistIds = [
-  'b323f0d9cbd81d5fa9cc4c971b732c77',
-  '3f9127e25dd6538f0d682b89cbfaefd9',
-  'cd20939b383b9c284511',
+    'b323f0d9cbd81d5fa9cc4c971b732c77',
+    '3f9127e25dd6538f0d682b89cbfaefd9',
+    'cd20939b383b9c284511',
   '649dcd1283c25f16b8b3aa6f3a05bd96',
   '0ca9cae68a3e363f87755e1d87fd6160', // turndown-so-plugin
   '6284130',

@@ -1,0 +1,44 @@
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "devto" }}</span>
+    <span class="pl-2"><a href="{{ .Params.originalContentLink }}" class="text-neutral-500 dark:text-neutral-400"
+                          rel="noopener">View on dev.to</a></span>
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "clock-solid" }}</span>
+    <span class="pl-2">{{ partial "meta/reading-time.html" . }} reading</span>
+</div>
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "calendar-solid" }}</span>
+    <span class="pl-2">
+        <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+            {{ .Params.date | time.Format "Jan 2006" }}
+        </time>
+    </span>
+</div>
+
+{{ if and (.Params.devtoReactions | default false) (gt .Params.devtoReactions 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "face-laugh-wink-solid" }}</span>
+    <span class="pl-2">{{ .Params.devtoReactions }} reactions</span>
+</div>
+{{ end }}
+
+{{ if and (.Params.devtoComments | default false) (gt .Params.devtoComments 0 ) }}
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "comments-regular" }}</span>
+    <span class="pl-2">{{ .Params.devtoComments }} comments</span>
+</div>
+{{ end }}
+
+<div class="flex flex-row">
+    <span>{{ partial "icon.html" "clock-solid" }}</span>
+    <span class="pl-2">
+        <time datetime='{{ .Params.lastmod | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+            updated {{ .Params.lastmod | time.Format "Jan 2006" }}
+        </time>
+    </span>
+</div>
+
+{{- /* Trim EOF */ -}}

@@ -1,0 +1,24 @@
+<span class="custom-info">
+ <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "devto" }}</a>
+</span>
+
+<span class="px-2 text-primary-500">&middot;</span>
+<time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
+    {{ .Params.date | time.Format "2006" }}
+</time>
+
+{{ if and (.Params.devtoReactions | default false) (gt .Params.devtoReactions 0 ) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+    <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "face-laugh-wink-solid" }} Reactions {{ .Params.devtoReactions }}</a>
+  </span>
+{{ end }}
+
+{{ if and (.Params.devtoComments | default false) (gt .Params.devtoComments 0 ) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+    {{ partial "icon.html" "comments-regular" }} {{ .Params.devtoComments }} Comments
+  </span>
+{{ end }}
+
+{{- /* Trim EOF */ -}}
