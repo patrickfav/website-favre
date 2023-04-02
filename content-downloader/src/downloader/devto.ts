@@ -55,8 +55,13 @@ export class DevToDownloader extends Downloader {
     private async fetchArticleBody(articleId: number): Promise<DevToArticleWithBody> {
         console.log(`\t\tDownloading markdown for article ${articleId}`)
 
-        return got.get(`https://dev.to/api/articles/${articleId}`)
+        const articleWithBody = await got.get(`https://dev.to/api/articles/${articleId}`)
             .then(response => JSON.parse(response.body) as DevToArticleWithBody)
+
+        const frontMatterRegex = /^---\s*[\s\S]*?---\s*/;
+        articleWithBody.body_markdown = articleWithBody.body_markdown.replace(frontMatterRegex, '');
+
+        return articleWithBody
     }
 
     private async downloadProjectImage(article: DevToArticleWithBody, safeArticleTitle: string, targetProjectDir: string): Promise<void> {
