@@ -95,7 +95,7 @@ export class DevToDownloader extends Downloader {
         meta += `alltags: [${tags}]\n`
         meta += 'categories: ["article", "devto"]\n'
         meta += `deeplink: ${slug.permalink}\n`
-        meta += `originalContentLink: ${article.canonical_url}\n`
+        meta += `originalContentLink: ${article.url}\n`
         meta += 'originalContentType: devto\n'
         meta += `originalContentId: ${article.id}\n`
         meta += `devtoReactions: ${article.public_reactions_count}\n`
@@ -140,6 +140,7 @@ interface DevToArticle {
     last_comment_at: Date
     cover_image: string
     social_image: string
+    url: string
     canonical_url: string
     tags: string[]
     body_markdown: string
