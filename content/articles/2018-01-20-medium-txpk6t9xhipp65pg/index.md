@@ -17,7 +17,7 @@ originalContentId: 2d738c37890
 mediumClaps: 348
 mediumVoters: 84
 ---
-![Image](img_2e7e22e7e7a937aa.jpeg)
+![Image](img_a38f3c91d6633b22.jpeg)
 
 When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning or just simple apps, but gets unmaintainable when expanding to multiple modules.
 

@@ -1,7 +1,7 @@
 ---
 title: 'Improving ProGuard Name Obfuscation'
 date: 2018-04-01
-lastmod: 2023-02-26
+lastmod: 2023-04-01
 summary: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 description: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 aliases: [/link/cfqykeam]
@@ -45,7 +45,7 @@ From a security standpoint this is not optimal. If an attacker knows that in ver
 
 #### Providing Custom Name Obfuscation Dictionary
 
-ProGuard allows you to define the following dictionaries: (see the [official manual for more info](https://www.guardsquare.com/en/proguard/manual/usage#obfuscationoptions))
+ProGuard allows you to define the following dictionaries: (see the [official manual for more info](https://www.guardsquare.com/manual/configuration/usage))
 
 ```
 **\-obfuscationdictionary** method-dictionary.txt  
@@ -149,7 +149,7 @@ By forcing a different mapping each build, bugs like these will immediately surf
 *   It is possible to create _randomized dictionary_ for the obfuscation and tell ProGuard to use them, so every build will have a _unique mapping_, making it harder for an attacker to reverse engineer your code
 *   Randomized name obfuscation also has the advantage of _acting as a fail-fast_ so common ProGuard configuration issues will
 
-[ProGuard manual | Usage](https://www.guardsquare.com/en/proguard/manual/usage#obfuscationoptions)
+[ProGuard Manual: Usage | Guardsquare](https://www.guardsquare.com/manual/configuration/usage)
 
 
 

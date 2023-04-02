@@ -30,7 +30,9 @@ githubIsFork: false
 githubLicense: Apache License 2.0
 ---
 
-# ![logo](img_6fdec9f99faca44a.png) Morseme
+# Morseme
+
+![logo](img_416f2fd355df8110.png)
 
 A very simple Android app that can morse given input through audio, vibration and light flash.
 It also has the feature to morse (with vibrate) a SMS you receive if the SMS starts with "morse:",
@@ -46,7 +48,7 @@ and use at your own risk.
 
 # License
 
-Copyright 2016 Patrick Favre-Bulle
+Copyright 2014 Patrick Favre-Bulle
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -1,7 +1,7 @@
 ---
 title: 'Managing Logging in a Multi-Module Android Application'
 date: 2018-01-14
-lastmod: 2023-02-26
+lastmod: 2023-04-01
 summary: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
 description: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
 aliases: [/link/gvz8gdrb]
@@ -61,7 +61,7 @@ After analyzing our current issues we can deduce the following requirements for 
 
 The first contender was [**SLF4J**](https://www.slf4j.org/), _the_ Java logging facade. Unfortunately this checked only one of our requirements: well-known and accepted. SLF4J allows centralized configuration, but it is not easy. If you use a [published binder library](https://mvnrepository.com/artifact/org.slf4j/slf4j-android) there’s usually no way to change any behavior — if you want full control you have to implement it yourself (I think this requires 5 classes to implement, most of the stubs for Android). The gluing of the code works like in the old Java days: the library [searches through reflection](https://stackoverflow.com/questions/347248/how-can-i-get-a-list-of-all-the-implementations-of-an-interface-programmatically) for a class that implements LoggerFactory in the classpath. The binding therefore works implicitly and seems like magic if you don’t know what it’s doing. The whole SLF4J framework offers a huge amount of features which most are irrelevant in an environment where everything runs on the same device. Finally, it has very different in handling compared to android.util.Log.
 
-Our next contender was **Jake Wharton’s** [**Timber**](https://github.com/JakeWharton/timber) logger. It has easy centralized configuration: you just implement a so-called logging Tree and plant() it in debug builds. If no Tree is planted, logging is a [no-op](https://en.wikipedia.org/wiki/NOP). It is very similar to the API provided by android.util.Log with the additional convenience that no TAG has to be provided (Timber figures this out itself, and it works quite well, even in e.g. anonymous classes; I can however not comment on any performance implications this might have). With over [5k stars on GitHub](https://github.com/JakeWharton/timber/stargazers) and just by the fact that it’s created by Android’s most popular developer Mr. Wharton ❤ himself, it is probably sure to say that most mid-level Android developers have at least heard of this library by now. Looking at the source code, this is [just a single class](https://github.com/JakeWharton/timber/blob/master/timber/src/main/java/timber/log/Timber.java) with a very simple interface to implement your own behavior. Timber seems to check all the boxes.
+Our next contender was **Jake Wharton’s** [**Timber**](https://github.com/JakeWharton/timber) logger. It has easy centralized configuration: you just implement a so-called logging Tree and plant() it in debug builds. If no Tree is planted, logging is a [no-op](https://en.wikipedia.org/wiki/NOP). It is very similar to the API provided by android.util.Log with the additional convenience that no TAG has to be provided (Timber figures this out itself, and it works quite well, even in e.g. anonymous classes; I can however not comment on any performance implications this might have). With over [5k stars on GitHub](https://github.com/JakeWharton/timber/stargazers) and just by the fact that it’s created by Android’s most popular developer Mr. Wharton ❤ himself, it is probably sure to say that most mid-level Android developers have at least heard of this library by now. Looking at the source code, this is [just a single class](https://github.com/JakeWharton/timber/blob/trunk/timber/src/main/java/timber/log/Timber.kt) with a very simple interface to implement your own behavior. Timber seems to check all the boxes.
 
 Timber additionally has also 2 very handy features: For one it supports logging without the need for string concatenation ([SLF4J has a similar feature](https://www.slf4j.org/faq.html#logging_performance)). So instead of
 
@@ -75,7 +75,7 @@ you write
 Timber._v_("this a simple Timber.v message with %s", stringValue);
 ```
 
-The advantage is that this will save you 3 allocations in the memory constraint world of Android, as explained by the android.util.Log‘s [Javadoc](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/2.0_r1/android/util/Log.java)
+The advantage is that this will save you 3 allocations in the memory constraint world of Android, as explained by the android.util.Log‘s [Javadoc](https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/util/Log.java)
 
 > Don’t forget that when you make a call like ‘Log.v(TAG, “index=” + i);’ that when you’re building the string to pass into Log.d, the compiler uses a StringBuilder and at least three allocations occur: the StringBuilder itself, the buffer, and the String object. (…) even more pressure on the gc. (…) you might be doing significant work and incurring significant overhead.
 
@@ -219,6 +219,6 @@ We centralized our logging with **Timber** for Android modules and **SLF4J** wit
 *   [SLF4J Manual](https://www.slf4j.org/manual.html)
 *   [Shrink Your Code and Resources | Android Studio](https://developer.android.com/studio/build/shrink-code.html)
 
-<a href="https://medium.com/media/87c27c6bd6c8dea21c9726d9564b27d6/href">https://medium.com/media/87c27c6bd6c8dea21c9726d9564b27d6/href</a>
+
 
 
