@@ -4,18 +4,18 @@ description: "Tech articles I wrote in recent years. Most of them were originall
 type: list
 
 cascade:
-    type: articles
-    draft: false
-    showEdit: false
-    showSummary: true
-    showDate: false
-    showReadingTime: true
-    showTaxonomies: false
-    showWordCount: false
-    editAppendPath: false
-    lang: en
-    feature: 'none'
-    thumbnail: 'feature_*'
+  type: articles
+  draft: false
+  showEdit: false
+  showSummary: true
+  showDate: false
+  showReadingTime: false
+  showTaxonomies: false
+  showWordCount: false
+  editAppendPath: false
+  lang: en
+  feature: 'none'
+  thumbnail: 'feature_*'
 ---
 
 {{< lead >}}

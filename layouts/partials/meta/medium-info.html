@@ -1,6 +1,13 @@
 <span class="custom-info">
- <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "medium" }}</a>
+ <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "medium" }} Medium</a>
 </span>
+
+{{ if and (.ReadingTime | default false) (gt .ReadingTime 2 ) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span title="{{ i18n " article.reading_time_title" }}">
+{{- i18n "article.reading_time" .ReadingTime | markdownify | emojify -}}
+</span>
+{{ end }}
 
 <span class="px-2 text-primary-500">&middot;</span>
 <time datetime='{{ .Params.date | time.Format "2006-01-02T15:04:05Z07:00" }}'>
@@ -8,8 +15,8 @@
 </time>
 
 {{ if and (.Params.mediumClaps | default false) (gt .Params.mediumClaps 0 ) }}
-  <span class="px-2 text-primary-500">&middot;</span>
-  <span class="custom-info">
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
     <a href="{{ .Params.originalContentLink }}" rel="noopener">{{ partial "icon.html" "hands-clapping-solid" }} Claps {{ .Params.mediumClaps }}</a>
   </span>
 {{ end }}
