@@ -125,14 +125,6 @@ export class GistDownloader extends Downloader {
         allFiles.sort((a, b) => b.size - a.size)
         const mainLanguage = allFiles[0].language
         const tags = [...new Set(allFiles.map(f => f.language))]
-
-        const someVar = 42;
-        const name = `
-               ${someVar}
-               My
-               Name
-            `;
-
         let meta = '---\n'
         meta += `title: 'Snippet: ${Downloader.escapeFrontMatterText(title)}'\n`
         meta += `date: ${new Date(gistMeta.created_at).toISOString().split('T')[0]}\n`
