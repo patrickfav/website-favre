@@ -80,7 +80,7 @@ jobs:
 
       - name: Deploy to Firebase Hosting
         id: firebase-deploy-prod
-        if: github.ref == 'refs/heads/main'
+        if: github.event_name == 'schedule'|| github.event_name == 'workflow_dispatch'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
