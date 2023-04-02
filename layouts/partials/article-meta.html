@@ -26,16 +26,20 @@
       {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
     {{ end }}
 
-    {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
-      {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
-    {{ end }}
+{{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
+{{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
+{{ end }}
 
-    {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
-      {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
-    {{ end }}
+{{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
+{{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+{{ end }}
 
-    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "github" ) }}
-      {{ $meta.Add "partials" (slice (partial "meta/github-info.html" .)) }}
+{{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "github" ) }}
+{{ $meta.Add "partials" (slice (partial "meta/github-info.html" .)) }}
+{{ end }}
+
+{{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "devto" ) }}
+{{ $meta.Add "partials" (slice (partial "meta/devto-info.html" .)) }}
 {{ end }}
 
 {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "gist" ) }}

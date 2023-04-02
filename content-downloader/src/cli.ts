@@ -1,4 +1,4 @@
-import {gistIds, githubProjects, githubProjectsUser, mediumUserName} from './confg'
+import {devToUserName, gistIds, githubProjects, githubProjectsUser, mediumUserName} from './confg'
 import {GithubDownloader} from './downloader/github'
 import {MediumDownloader} from './downloader/medium'
 import {GistDownloader} from './downloader/gist'
@@ -10,6 +10,7 @@ import {
     stackOverflowBanner,
     texStackExchangeBanner
 } from "./svg";
+import {DevToDownloader} from "./downloader/devto";
 
 const defaultRootDir = '../content/'
 
@@ -76,6 +77,10 @@ export async function cli(args: string[]): Promise<void> {
         userName: mediumUserName,
     });
 
+    const devToDownloader = new DevToDownloader(rootDir, relOutDirArticles, {
+        userName: devToUserName,
+    });
+
     const contentStats = [
         ...await securityStackExchange.download(),
         ...await cryptoStackExchange.download(),
@@ -84,6 +89,7 @@ export async function cli(args: string[]): Promise<void> {
         ...await stackOverflowDownloader.download(),
         ...await githubDownloader.download(),
         ...await mediumDownloader.download(),
+        ...await devToDownloader.download()
     ];
 
     console.log(`All done, found ${contentStats.length} stats while importing content.`);

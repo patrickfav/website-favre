@@ -1,0 +1,43 @@
+[
+  {
+    "type_of": "article",
+    "id": 1423051,
+    "title": "The Hitchhiker's Guide to Byte-to-Text Encoding",
+    "description": "Either for debugging, data serialization, cryptography or ID generation, bytes-to-text encoding is an...",
+    "readable_publish_date": "Apr 2",
+    "slug": "the-hitchhikers-guide-to-byte-to-text-encoding-2cm4",
+    "path": "/favr/the-hitchhikers-guide-to-byte-to-text-encoding-2cm4",
+    "url": "https://dev.to/favr/the-hitchhikers-guide-to-byte-to-text-encoding-2cm4",
+    "comments_count": 0,
+    "public_reactions_count": 0,
+    "collection_id": null,
+    "published_timestamp": "2023-04-02T02:55:04Z",
+    "positive_reactions_count": 0,
+    "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--XyFa-SQh--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rspd0ydnh2pslfbshmag.png",
+    "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--dhbPK3HD--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rspd0ydnh2pslfbshmag.png",
+    "canonical_url": "https://dev.to/favr/the-hitchhikers-guide-to-byte-to-text-encoding-2cm4",
+    "created_at": "2023-04-02T02:12:20Z",
+    "edited_at": null,
+    "crossposted_at": null,
+    "published_at": "2023-04-02T02:55:04Z",
+    "last_comment_at": "2023-04-02T02:55:04Z",
+    "reading_time_minutes": 7,
+    "tag_list": [
+      "encoding",
+      "hex",
+      "base64",
+      "binary"
+    ],
+    "tags": "encoding, hex, base64, binary",
+    "user": {
+      "name": "Patrick Favre-Bulle",
+      "username": "favr",
+      "twitter_username": null,
+      "github_username": "patrickfav",
+      "user_id": 1046960,
+      "website_url": "https://favr.dev",
+      "profile_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--K5zxWwlq--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1046960/fb256604-2e26-4284-8811-bfc170feb2ff.jpeg",
+      "profile_image_90": "https://res.cloudinary.com/practicaldev/image/fetch/s--x8FGQStF--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1046960/fb256604-2e26-4284-8811-bfc170feb2ff.jpeg"
+    }
+  }
+]

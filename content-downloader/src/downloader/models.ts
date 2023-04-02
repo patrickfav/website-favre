@@ -7,6 +7,7 @@ export type ContentStatType =
     | "so"
     | "so-user"
     | "so-question"
+    | "devto"
     | string;
 export type ContentStatValue =
     GithubStats
@@ -14,6 +15,7 @@ export type ContentStatValue =
     | GistStats
     | MediumStats
     | MediumUserStats
+    | DevToStats
     | StackOverflowAnswerStats
     | StackOverflowUserStats;
 
@@ -73,4 +75,10 @@ export interface MediumStats extends GeneralStats {
 export interface MediumUserStats {
     followers: number
     following: number
+}
+
+export interface DevToStats extends GeneralStats {
+    comments: number
+    reactions: number
+    positive_reactions: number
 }

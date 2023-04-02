@@ -29,6 +29,11 @@
     {{ partial "meta/general-sidepanel.html" . }}
     {{ partial "meta/gist-sidepanel.html" . }}
     {{ end }}
+
+    {{ if and (.Params.originalContentType | default false) (eq .Params.originalContentType "devto" ) }}
+    {{ partial "meta/general-sidepanel.html" . }}
+    {{ partial "meta/devto-sidepanel.html" . }}
+    {{ end }}
 </div>
 {{ end }}
 
