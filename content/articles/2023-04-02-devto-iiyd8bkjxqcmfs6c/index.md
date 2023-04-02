@@ -20,13 +20,6 @@ devtoPositiveReactions: 0
 devtoComments: 0
 ---
 
----
-published: true
-description: This article provides an overview of various bytes-to-text encodings, including Binary, Octal, Decimal,
-Hex, Base26, Base32, Base36, Base58, Base64, Ascii85, and Base122. I will show you their respective properties and when
-to use what.
----
-
 Either for debugging, data serialization, cryptography or ID generation, bytes-to-text encoding is an important tool for
 most developers. Either you currently want to select a specific one or just want to generally understand the basic
 properties of each, this article will provide you an overview.
