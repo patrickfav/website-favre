@@ -1,7 +1,7 @@
 ---
 title: 'Security Best Practices: Symmetric Encryption with AES in Java and Android: Part 2'
 date: 2018-11-12
-lastmod: 2023-02-26
+lastmod: 2023-04-01
 summary: 'If you can&#x2019;t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC.'
 description: 'If you can&#x2019;t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC.'
 aliases: [/link/h8ptfx5z]
@@ -47,7 +47,7 @@ So what is the right way to apply this MAC? According to security researcher [Hu
 *   **Encrypt-then-MAC**: MAC the cipher-text and initial vector then append it to the cipher-text (used in [IPsec](http://tools.ietf.org/html/rfc4303#section-3.3.2.1))
 *   **Encrypt-and-MAC**: MAC the plain-text, encrypt and then append it to the cipher-text (used in [SSH](http://tools.ietf.org/html/rfc4253#section-6.4))
 
-Every option has its own properties, and I’ll encourage you to read a full argument of [either option in this post](https://crypto.stackexchange.com/a/205/44838). To summarize, [most](https://crypto.stackexchange.com/a/224/44838) [researchers](https://moxie.org/blog/the-cryptographic-doom-principle/) [recommend](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.5488&rep=rep1&type=pdf) [Encrypt-then-MAC (EtM)](https://tools.ietf.org/html/rfc7366). It protects against chosen cipher-text attacks, since the MAC can prevent decryption of incorrect messages. Additionally, the MAC can’t leak information about the plain-text since it operates on the cipher-text. On the downside, it is slightly harder to implement since the IV and a possible protocol /algorithm version or type must be included in the tag. The important thing is to never do any cryptographic operation before verifying the MAC, otherwise you can be vulnerable to a [padding-oracle attack](https://en.wikipedia.org/wiki/Padding_oracle_attack) ([Moxie](https://en.wikipedia.org/wiki/Moxie_Marlinspike) calls this the [Doom Principle](https://moxie.org/blog/the-cryptographic-doom-principle/)).
+Every option has its own properties, and I’ll encourage you to read a full argument of [either option in this post](https://crypto.stackexchange.com/a/205/44838). To summarize, [most](https://crypto.stackexchange.com/a/224/44838) [researchers](https://moxie.org/2011/12/13/the-cryptographic-doom-principle.html) [recommend](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.5488&rep=rep1&type=pdf) [Encrypt-then-MAC (EtM)](https://tools.ietf.org/html/rfc7366). It protects against chosen cipher-text attacks, since the MAC can prevent decryption of incorrect messages. Additionally, the MAC can’t leak information about the plain-text since it operates on the cipher-text. On the downside, it is slightly harder to implement since the IV and a possible protocol /algorithm version or type must be included in the tag. The important thing is to never do any cryptographic operation before verifying the MAC, otherwise you can be vulnerable to a [padding-oracle attack](https://en.wikipedia.org/wiki/Padding_oracle_attack) ([Moxie](https://en.wikipedia.org/wiki/Moxie_Marlinspike) calls this the [Doom Principle](https://moxie.org/2011/12/13/the-cryptographic-doom-principle.html)).
 
 ![Image](img_d5d39070a791561d.png "Encrypt-then-Mac schema")
 
@@ -237,7 +237,7 @@ As can be seen, the protocol is a bit more involved as just using GCM. However, 
 *   Use 128+ bit MAC length (HMAC-SHA256 outputs 256 bit)
 *   Use Encrypt-then-Mac
 *   Use a KDF to derive the 2 Sub-Keys
-*   Verify before decryption ([Doom Principle](https://moxie.org/blog/the-cryptographic-doom-principle/))
+*   Verify before decryption ([Doom Principle](https://moxie.org/2011/12/13/the-cryptographic-doom-principle.html))
 *   Prevent timing attacks by using constant time equals implementations
 *   Use 128-bit encryption key length (you will be fine!)
 *   Pack everything together into a single message

@@ -4,12 +4,12 @@ date: 2014-02-03
 lastmod: 2023-03-26
 description: 'java.io.IOException : No authentication challenges found'
 summary: 'This was originally posted as an answer to the question "java.io.IOException : No authentication challenges found" on stackoverflow.com.'
-aliases: [ /link/ji5yg94p ]
+aliases: [/link/ji5yg94p]
 slug: 2014/javaioioexception-no-authentication-challenges-found
-tags: [ "java", "android", "authentication", "httpurlconnection", "ioexception" ]
-keywords: [ "java", "android", "authentication", "httpurlconnection", "ioexception" ]
-alltags: [ "java", "android", "authentication", "httpurlconnection", "ioexception" ]
-categories: [ "stackoverflow" ]
+tags: ["java", "android", "authentication", "httpurlconnection", "ioexception"]
+keywords: ["java", "android", "authentication", "httpurlconnection", "ioexception"]
+alltags: ["java", "android", "authentication", "httpurlconnection", "ioexception"]
+categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
 type: stackexchange

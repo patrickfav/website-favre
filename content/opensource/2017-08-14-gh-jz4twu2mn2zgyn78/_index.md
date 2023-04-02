@@ -21,7 +21,7 @@ githubStars: 10
 githubForks: 6
 githubWatchers: 3
 githubContributors: 1
-githubRepoSize: 40841
+githubRepoSize: 40852
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/dice
 githubDefaultBranch: main
@@ -293,7 +293,7 @@ The random numbers are generated in real-time by measuring the quantum fluctuati
 a TLS encrypted JSON/REST API.
 
 _References:_
-* [Statistical Analysis](http://qrng.anu.edu.au/NIST.php)
+* [Statistical Analysis](http://qrng.anu.edu.au)
 * [Random Generator Paper](http://aip.scitation.org/doi/10.1063/1.3597793)
 
 ##### Local seeding

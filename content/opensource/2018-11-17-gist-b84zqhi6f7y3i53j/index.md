@@ -1,7 +1,7 @@
 ---
 title: 'Snippet: Encrypt .ppm file with AES-ECB to show ECB will reveal patterns'
 date: 2018-11-17
-lastmod: 2020-11-05
+lastmod: 2023-04-01
 description: 'Encrypt .ppm file with AES-ECB to show ECB will reveal patterns'
 summary: 'Encrypt .ppm file with AES-ECB to show ECB will reveal patterns'
 aliases: [/link/b84zqhi6]
@@ -23,7 +23,7 @@ gistLanguage: Shell
 gistFileCount: 1
 gistRevisions: 1
 gistForks: 1
-gistComments: 1
+gistComments: 2
 ---
 
 ### encrypt_img_ecb.sh

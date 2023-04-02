@@ -1,7 +1,7 @@
 ---
 title: 'armadillo'
 date: 2017-12-19
-lastmod: 2023-03-30
+lastmod: 2023-04-01
 description: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
 summary: 'A shared preference implementation for confidential data in Android. Per default uses AES-GCM, BCrypt and HKDF as cryptographic primitives. Uses the concept of device fingerprinting combined with optional user provided passwords and strong password hashes.'
 aliases: ['/link/egfaegg9','/opensource/2017/armadillo']
@@ -21,7 +21,7 @@ githubStars: 264
 githubForks: 52
 githubWatchers: 9
 githubContributors: 8
-githubRepoSize: 2430
+githubRepoSize: 2429
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/armadillo
 githubDefaultBranch: main
@@ -313,7 +313,7 @@ The `.aar` files can then be found in `/armadillo/build/outputs/aar` folder
 * [Google's Android Jetpack EncryptedSharedPreferences using Android Keystore System](https://developer.android.com/topic/security/data)
 * [secure-preferences using AES-CBC](https://github.com/scottyab/secure-preferences) by [@scottyab](https://github.com/scottyab) (_not maintained_)
 * [secure-preferences supporting Android Keystore System](https://github.com/ophio/secure-preferences) by [@ophio](https://github.com/ophio)
-* [secure-preferences using FB Conceal framework](https://github.com/KaKaVip/secure-preferences) by [@KaKaVip](https://github.com/KaKaVip)
+* [secure-preferences using FB Conceal framework](hhttps://github.com/phamquyhai/secure-preferences) by [@phamquyhai](https://github.com/phamquyhai)
 * [secure-preferences supporting Android Keystore System](https://github.com/adorsys/secure-storage-android) by [@adorsys](https://github.com/adorsys)
 * [secure-preferences supporting Android Keystore System](https://github.com/iamMehedi/Secured-Preference-Store) by [@iamMehedi](https://github.com/iamMehedi)
 * [secure-preferences using AES-CBC](https://github.com/PDDStudio/EncryptedPreferences) by [@PDDStudio](https://github.com/PDDStudio)

@@ -21,7 +21,7 @@ githubStars: 2
 githubForks: 1
 githubWatchers: 2
 githubContributors: 1
-githubRepoSize: 393
+githubRepoSize: 399
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/bkdf
 githubDefaultBranch: main
@@ -215,7 +215,7 @@ tbd.
 
 ## Download
 
-The artifacts are deployed to [jcenter](https://bintray.com/bintray/jcenter) and [Maven Central](https://search.maven.org/).
+The artifacts are deployed to [Maven Central](https://search.maven.org/).
 
 ### Maven
 

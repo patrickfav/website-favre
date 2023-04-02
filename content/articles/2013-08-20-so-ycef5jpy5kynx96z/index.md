@@ -4,12 +4,12 @@ date: 2013-08-20
 lastmod: 2023-03-28
 description: 'Android SlidingDrawer from top?'
 summary: 'This was originally posted as an answer to the question "Android SlidingDrawer from top?" on stackoverflow.com.'
-aliases: [ /link/ycef5jpy ]
+aliases: [/link/ycef5jpy]
 slug: 2013/android-slidingdrawer-from-top
-tags: [ "android" ]
-keywords: [ "android" ]
-alltags: [ "android" ]
-categories: [ "stackoverflow" ]
+tags: ["android"]
+keywords: ["android"]
+alltags: ["android"]
+categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
 type: stackexchange

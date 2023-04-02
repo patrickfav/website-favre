@@ -1,7 +1,7 @@
 ---
 title: 'A Better Way to Protect Your Database IDs'
 date: 2019-04-26
-lastmod: 2023-02-26
+lastmod: 2023-04-01
 summary: 'A new approach on protecting your internal IDs with a strong cryptographic schema and many other useful features. Inspired by HashIds.'
 description: 'A new approach on protecting your internal IDs with a strong cryptographic schema and many other useful features. Inspired by HashIds.'
 aliases: [/link/73ix6k28]
@@ -143,7 +143,7 @@ a Base32 dialect was added with a custom alphabet containing **no vowels** and *
 
 #### And More
 
-Currently, the reference implementation is quite fast with around 2–8µs per ID encryption. There is a built-in cache to improve performance for frequently recurring IDs. Additionally, there are default implementations for Java Jackson JSON [Serializer](https://fasterxml.github.io/jackson-databind/javadoc/2.2.0/com/fasterxml/jackson/databind/JsonSerializer.html) and JAX-RS [ParamConverter](https://docs.oracle.com/javaee/7/api/javax/ws/rs/ext/ParamConverter.html).
+Currently, the reference implementation is quite fast with around 2–8µs per ID encryption. There is a built-in cache to improve performance for frequently recurring IDs. Additionally, there are default implementations for Java Jackson JSON [Serializer](https://fasterxml.github.io/jackson-databind/javadoc/2.9/com/fasterxml/jackson/databind/JsonSerializer.html) and JAX-RS [ParamConverter](https://docs.oracle.com/javaee/7/api/javax/ws/rs/ext/ParamConverter.html).
 
 #### Code Example
 

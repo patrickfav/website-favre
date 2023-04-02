@@ -4,12 +4,12 @@ date: 2015-02-19
 lastmod: 2023-03-28
 description: 'Unable to execute dex: method ID not in [0, 0xffff]: 65536'
 summary: 'This was originally posted as an answer to the question "Unable to execute dex: method ID not in [0, 0xffff]: 65536" on stackoverflow.com.'
-aliases: [ /link/fy578y5b ]
+aliases: [/link/fy578y5b]
 slug: 2015/unable-to-execute-dex-method-id-not-in-0-0xffff-65536
-tags: [ "android", "dex" ]
-keywords: [ "android", "dex" ]
-alltags: [ "android", "dex" ]
-categories: [ "stackoverflow" ]
+tags: ["android", "dex"]
+keywords: ["android", "dex"]
+alltags: ["android", "dex"]
+categories: ["stackoverflow"]
 showEdit: false
 showSummary: true
 type: stackexchange
