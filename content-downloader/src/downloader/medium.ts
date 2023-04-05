@@ -167,7 +167,7 @@ export class MediumDownloader extends Downloader {
             contentStats.push({
                 type: "medium-user",
                 user: this.config.userName,
-                subjectId: articleInfo.id,
+                subjectId: this.config.userName,
                 date: this.downloadDate,
                 values: {
                     followers: userInfo.socialStats.followerCount,
@@ -179,7 +179,7 @@ export class MediumDownloader extends Downloader {
         contentStats.push({
             type: "medium",
             user: this.config.userName,
-            subjectId: this.config.userName,
+            subjectId: articleInfo.id,
             date: this.downloadDate,
             values: {
                 contentLength: contentLength,
