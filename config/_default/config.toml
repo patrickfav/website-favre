@@ -14,10 +14,15 @@ summaryLength = 0
 enableGitInfo = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "RSS", "JSON"]
 
 [frontmatter]
-  lastmod = ["lastmod", ":git", "date", "publishDate"]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+
+[minify]
+[minify.tdewolff]
+[minify.tdewolff.html]
+keepWhitespace = true # Otherwise removes some needed whitespaces e.g. after icons.
 
 # #########################################
 
