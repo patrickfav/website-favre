@@ -15,8 +15,6 @@ env:
   HUGO_VERSION: 0.111.3
   WORKING_DIR: './content-downloader'
   DOCKER_REPO: 'favr-nginx'
-  DEPLOY_TO_PRODUCTION: ${{ (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch') }}
-  IS_DEPENDABOT: ${{ github.actor == 'dependabot[bot]' }}
 
 jobs:
   build:
@@ -44,7 +42,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIR }}
       - name: Update Content
         uses: nick-fields/retry@v2
-        if: env.DEPLOY_TO_PRODUCTION
+        if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch')
         with:
           timeout_minutes: 5
           retry_wait_seconds: 60
@@ -82,7 +80,7 @@ jobs:
           if-no-files-found: error
       - name: Upload Updated Content
         uses: actions/upload-artifact@v2
-        if: env.DEPLOY_TO_PRODUCTION
+        if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch')
         with:
           name: hugo-content
           path: content
@@ -102,7 +100,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment: production
-    if: env.DEPLOY_TO_PRODUCTION
+    if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch')
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -147,7 +145,7 @@ jobs:
     name: Build and Push Docker Image
     needs: build
     runs-on: ubuntu-latest
-    if: env.DEPLOY_TO_PRODUCTION
+    if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch')
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
