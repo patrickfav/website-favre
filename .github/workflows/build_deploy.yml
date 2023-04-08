@@ -90,7 +90,7 @@ jobs:
           if-no-files-found: error
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
-        if: !env.IS_DEPENDABOT
+        if: github.actor != 'dependabot[bot]'
         with:
           projectBaseDir: content-downloader
         env:
@@ -125,7 +125,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment: staging
-    if: github.event_name == 'pull_request' && !env.IS_DEPENDABOT
+    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
