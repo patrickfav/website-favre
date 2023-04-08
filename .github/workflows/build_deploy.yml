@@ -14,7 +14,7 @@ env:
   NODE_VERSION: 18.12.0
   HUGO_VERSION: 0.111.3
   WORKING_DIR: './content-downloader'
-  DOCKER_REPO: 'favr-nginx'
+  DOCKER_REPO: 'website-favr'
 
 jobs:
   build:
