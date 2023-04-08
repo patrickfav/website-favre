@@ -211,6 +211,7 @@ export class GithubDownloader extends Downloader {
             url.startsWith('https://img.shields.io/github/') ||
             url.startsWith('https://img.shields.io/badge/') ||
             url.startsWith('https://img.shields.io/maven-central/') ||
+            url.startsWith('https://img.shields.io/docker/') ||
             url.startsWith('https://api.codeclimate.com/v1/badges') ||
             url.startsWith('https://codecov.io/gh/patrickfav/') ||
             url.startsWith('https://sonarcloud.io/api/project_badges/') ||
