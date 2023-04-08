@@ -1,4 +1,4 @@
-FROM node:18-alpine as BUILDER
+FROM alpine:3.17.3 as BUILDER
 
 MAINTAINER Patrick Favre-Bulle <patrick@favre.at>
 
@@ -7,17 +7,7 @@ RUN apk update && \
     apk add git &&  \
     hugo version
 
-COPY content-downloader/bin /content-downloader/bin
-COPY content-downloader/src /content-downloader/src
-COPY content-downloader/package.json /content-downloader/
-COPY content-downloader/package-lock.json /content-downloader/
-
-WORKDIR /content-downloader
-
-RUN npm ci &&  \
-    npm link &&  \
-    bin/hugo-content-downloader
-
+# Copy everything needed to build site
 COPY .git /site/.git
 COPY archetypes /site/archetypes
 COPY assets /site/assets
@@ -30,18 +20,8 @@ COPY themes /site/themes
 COPY .hugo_build.lock /site
 COPY config.toml /site
 
-RUN ls
-RUN ls /content
-RUN ls /content/opensource
-RUN ls /site/content
-RUN ls /site/content/opensource
-RUN cp -R /content/ /site/content/
-RUN ls /site
-RUN ls /site/content
-RUN ls /site/content/opensource
-
-
 WORKDIR /site
+
 RUN hugo --minify
 
 FROM nginx:1.23.3-alpine

@@ -12,7 +12,11 @@ on:
 env:
   FIREBASE_PROJECT_ID: favre-base-project
   NODE_VERSION: 18.12.0
+  HUGO_VERSION: 0.111.3
   WORKING_DIR: './content-downloader'
+  DOCKER_REPO: 'favr-nginx'
+  DEPLOY_TO_PRODUCTION: ${{ (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch') }}
+  IS_DEPENDABOT: ${{ github.actor == 'dependabot[bot]' }}
 
 jobs:
   build:
@@ -40,7 +44,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIR }}
       - name: Update Content
         uses: nick-fields/retry@v2
-        if: github.event_name == 'schedule'|| github.event_name == 'workflow_dispatch'
+        if: env.DEPLOY_TO_PRODUCTION
         with:
           timeout_minutes: 5
           retry_wait_seconds: 60
@@ -58,7 +62,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.111.3'
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
       - name: Build Site with Hugo
         env:
@@ -74,9 +78,19 @@ jobs:
         with:
           name: hugo-public
           path: public
+          retention-days: 2
+          if-no-files-found: error
+      - name: Upload Updated Content
+        uses: actions/upload-artifact@v2
+        if: env.DEPLOY_TO_PRODUCTION
+        with:
+          name: hugo-content
+          path: content
+          retention-days: 2
+          if-no-files-found: error
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
-        if: ${{ github.actor != 'dependabot[bot]' }}
+        if: !env.IS_DEPENDABOT
         with:
           projectBaseDir: content-downloader
         env:
@@ -88,7 +102,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment: production
-    if: github.event_name == 'schedule'|| github.event_name == 'workflow_dispatch'
+    if: env.DEPLOY_TO_PRODUCTION
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -111,7 +125,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment: staging
-    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+    if: github.event_name == 'pull_request' && !env.IS_DEPENDABOT
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -128,3 +142,30 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FAVRE_BASE_PROJECT }}'
           projectId: ${{ env.FIREBASE_PROJECT_ID }}
           expires: 7d
+
+  build_docker:
+    name: Build and Push Docker Image
+    needs: build
+    runs-on: ubuntu-latest
+    if: env.DEPLOY_TO_PRODUCTION
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download Updated Content
+        uses: actions/download-artifact@v2
+        with:
+          name: hugo-content
+          path: content
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/${{ env.DOCKER_REPO }}:latest
