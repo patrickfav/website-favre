@@ -15,8 +15,8 @@ env:
   WORKING_DIR: './content-downloader'
 
 jobs:
-  build_and_deploy:
-    name: Build Site and Deploy
+  build:
+    name: Build CLI & Site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code und Submodules
@@ -69,28 +69,60 @@ jobs:
           hugo version && \
           hugo config && \
           hugo --verbose --printPathWarnings --minify
+      - name: Upload Hugo Site
+        uses: actions/upload-artifact@v2
+        with:
+          name: hugo-public
+          path: public
       - name: SonarCloud Scan
-        if: ${{ github.actor != 'dependabot[bot]' }}
         uses: SonarSource/sonarcloud-github-action@master
+        if: ${{ github.actor != 'dependabot[bot]' }}
         with:
           projectBaseDir: content-downloader
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+  deploy_production:
+    name: Deploy to Firebase Production
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    if: github.event_name == 'schedule'|| github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Download Hugo Site Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: hugo-public
+          path: public
       - name: Deploy to Firebase Hosting
         id: firebase-deploy-prod
-        if: github.event_name == 'schedule'|| github.event_name == 'workflow_dispatch'
-        uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: FirebaseExtended/action-hosting-deploy@main
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FAVRE_BASE_PROJECT }}'
           channelId: live
           projectId: ${{ env.FIREBASE_PROJECT_ID }}
+
+  deploy_staging:
+    name: Deploy to Firebase Staging
+    needs: build
+    runs-on: ubuntu-latest
+    environment: staging
+    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Download Hugo Site Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: hugo-public
+          path: public
       - name: Deploy to Firebase Hosting (dev preview channel)
         id: firebase-deploy-preview
-        if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
-        uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: FirebaseExtended/action-hosting-deploy@main
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FAVRE_BASE_PROJECT }}'
