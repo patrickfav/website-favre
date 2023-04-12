@@ -40,7 +40,7 @@
     "firebase-admin": "^10.3.0",
     "got": "^11.8.6",
     "request": "^2.88.2",
-    "rss-parser": "3.12.0",
+    "rss-parser": "3.13.0",
     "scramjet": "^4.29.0",
     "turndown": "v7.1.2",
     "turndown-plugin-gfm": "^1.0.2",
