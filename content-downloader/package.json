@@ -52,7 +52,7 @@
     "@types/esm": "^3.2.0",
     "@types/got": "^9.6.12",
     "@types/jest": "^29.5.0",
-    "@types/node": "^18.15.11",
+    "@types/node": "^18.16.0",
     "@types/request": "^2.48.8",
     "@types/turndown": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
