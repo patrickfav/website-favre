@@ -53,5 +53,6 @@ export const githubProjects = [
   {repo: 'bankathon16-inso'},
   {repo: 'website-dr-sel'},
   {repo: 'website-favre'},
-  { repo: 'mvn-common-parent' }
+  {repo: 'mvn-common-parent'},
+  {repo: 'pihole-unbound-docker'}
 ]
