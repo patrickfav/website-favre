@@ -171,7 +171,7 @@ export class MediumDownloader extends Downloader {
                 date: this.downloadDate,
                 values: {
                     followers: userInfo.socialStats.followerCount,
-                    following: userInfo.socialStats.followingCount
+                    following: userInfo.socialStats.followingCount ? userInfo.socialStats.followingCount : 0
                 }
             })
         }
