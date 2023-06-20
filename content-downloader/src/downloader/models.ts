@@ -69,7 +69,6 @@ export interface StackOverflowUserStats {
 
 export interface MediumStats extends GeneralStats {
     claps: number
-    voters: number
 }
 
 export interface MediumUserStats {

@@ -155,7 +155,6 @@ export class MediumDownloader extends Downloader {
         meta += 'originalContentType: medium\n'
         meta += `originalContentId: ${articleInfo.id}\n`
         meta += `mediumClaps: ${articleInfo.clapCount}\n`
-        meta += `mediumVoters: ${articleInfo.voterCount}\n`
         meta += '---\n'
         return meta
     }
@@ -183,8 +182,7 @@ export class MediumDownloader extends Downloader {
             date: this.downloadDate,
             values: {
                 contentLength: contentLength,
-                claps: articleInfo.clapCount,
-                voters: articleInfo.voterCount,
+                claps: articleInfo.clapCount
             }
         })
     }
@@ -216,7 +214,6 @@ interface ArticleInfo {
     topics: [
         { name: string }
     ]
-    voterCount: number
     creator: {
         __ref: string
     }
