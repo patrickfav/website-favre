@@ -12,7 +12,7 @@ on:
 env:
   FIREBASE_PROJECT_ID: favre-base-project
   NODE_VERSION: 18.17.0
-  HUGO_VERSION: 0.111.3
+  HUGO_VERSION: 0.116.1
   WORKING_DIR: './content-downloader'
   DOCKER_REPO: 'website-favr'
 
