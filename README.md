@@ -80,7 +80,7 @@ This project uses [eslint](https://eslint.org/) to validate the code:
 
 ```bash
 cd content-downloader
-npm runt lint
+npm run lint
 ```
 
 ### Using the build & run Docker Image
