@@ -19,7 +19,7 @@ A simple website with a list of all of my open source projects and articles I wr
 
 ### Install Node
 
-Currently, this project uses [Node 18.12.0 (lts)](https://nodejs.org/es/blog/release/v18.12.0). It is recommended to use
+Currently, this project uses [Node 18.17.0 (lts)](https://nodejs.org/es/blog/release/v18.17.0). It is recommended to use
 a node version manager like [nvm](https://github.com/nvm-sh/nvm), then you can just run
 
 ```bash
@@ -80,7 +80,7 @@ This project uses [eslint](https://eslint.org/) to validate the code:
 
 ```bash
 cd content-downloader
-npm runt lint
+npm run lint
 ```
 
 ### Using the build & run Docker Image
