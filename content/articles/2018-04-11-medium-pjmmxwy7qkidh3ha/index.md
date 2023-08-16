@@ -6,16 +6,15 @@ summary: 'A convenient pattern to always use interfaces where possible but to ke
 description: 'A convenient pattern to always use interfaces where possible but to keep the code-footprint and complexity of relations small'
 aliases: [/link/pjmmxwy7]
 slug: 2018/the-concise-interface-implementation-pattern
-tags: ["Programming"]
+tags: ["programming"]
 keywords: ["java", "interfaces", "patterns", "dependency-injection", "testing"]
-alltags: ["java", "interfaces", "patterns", "dependency-injection", "testing", "Programming", "medium"]
+alltags: ["java", "interfaces", "patterns", "dependency-injection", "testing", "programming", "medium"]
 categories: ["article", "medium"]
 deeplink: /link/pjmmxwy7
 originalContentLink: https://medium.com/@patrickfav/the-concise-interface-implementation-pattern-9b15f35a806b
 originalContentType: medium
 originalContentId: 9b15f35a806b
 mediumClaps: 0
-mediumVoters: 0
 ---
 ![Image](img_77cd8657d27efd8d.jpeg)
 

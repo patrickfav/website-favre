@@ -1,7 +1,7 @@
 ---
 title: 'license'
 date: 2019-03-29
-lastmod: 2023-03-11
+lastmod: 2023-06-22
 url: opensource/id-mask/license
 showSummary: false
 showTableOfContents: false

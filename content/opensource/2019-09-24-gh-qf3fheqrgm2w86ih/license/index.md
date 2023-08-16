@@ -1,7 +1,7 @@
 ---
 title: 'license'
 date: 2019-09-24
-lastmod: 2023-03-02
+lastmod: 2023-08-14
 url: opensource/rocketchat-exporter/license
 showSummary: false
 showTableOfContents: false

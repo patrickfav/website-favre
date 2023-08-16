@@ -6,16 +6,15 @@ summary: 'If you can&#x2019;t use authenticated encryption like AES+GCM, this ar
 description: 'If you can&#x2019;t use authenticated encryption like AES+GCM, this article will show how and why to use AES+CBC with Ecrypt-then-Mac with HMAC.'
 aliases: [/link/h8ptfx5z]
 slug: 2018/security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2
-tags: ["Android Dev", "Cybersecurity", "Programming"]
+tags: ["android-development", "cybersecurity", "programming"]
 keywords: ["security", "android", "crypto", "encryption", "androiddev"]
-alltags: ["security", "android", "crypto", "encryption", "androiddev", "Android Dev", "Cybersecurity", "Programming", "medium"]
+alltags: ["security", "android", "crypto", "encryption", "androiddev", "android-development", "cybersecurity", "programming", "medium"]
 categories: ["article", "medium"]
 deeplink: /link/h8ptfx5z
 originalContentLink: https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2-b3b80e99ad36
 originalContentType: medium
 originalContentId: b3b80e99ad36
 mediumClaps: 289
-mediumVoters: 50
 ---
 ![Image](img_069eb55755c56c57.png)
 

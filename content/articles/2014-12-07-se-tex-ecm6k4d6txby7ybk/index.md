@@ -19,8 +19,8 @@ originalContentLink: https://tex.stackexchange.com/questions/35977/how-to-add-a-
 originalContentType: stackexchange
 originalContentId: 215892
 seSite: tex
-seScore: 18
-seViews: 837000
+seScore: 19
+seViews: 867000
 seIsAccepted: false
 seQuestionId: 35977
 seAnswerLicense: CC BY-SA 3.0

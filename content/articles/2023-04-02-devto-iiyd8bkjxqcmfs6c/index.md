@@ -1,12 +1,12 @@
 ---
-title: 'The Hitchhiker`s Guide to Byte-to-Text Encoding'
+title: 'The Hitchhiker`s Guide to Binary-to-Text Encoding'
 date: 2023-04-02
-lastmod: 2023-04-02
+lastmod: 2023-04-05
 summary: 'This article provides an overview of various bytes-to-text encodings, including Binary, Octal, Decimal, Hex, Base26, Base32, Base36, Base58, Base64, Ascii85, and Base122. I will show you their respective properties and when to use what.'
 description: 'This article provides an overview of various bytes-to-text encodings, including Binary, Octal, Decimal, Hex, Base26, Base32, Base36, Base58, Base64, Ascii85, and Base122. I will show you their respective properties and when to use what.'
 feature: 'feature_*'
 aliases: [/link/iiyd8bkj]
-slug: 2023/the-hitchhikers-guide-to-byte-to-text-encoding
+slug: 2023/the-hitchhikers-guide-to-binary-to-text-encoding
 tags: [encoding,hex,base64,binary]
 keywords: [encoding,hex,base64,binary]
 alltags: [encoding,hex,base64,binary]
@@ -15,8 +15,8 @@ deeplink: /link/iiyd8bkj
 originalContentLink: https://dev.to/favr/the-hitchhikers-guide-to-byte-to-text-encoding-2cm4
 originalContentType: devto
 originalContentId: 1423051
-devtoReactions: 0
-devtoPositiveReactions: 0
+devtoReactions: 2
+devtoPositiveReactions: 2
 devtoComments: 0
 ---
 Either for debugging, data serialization, cryptography or ID generation, [binary-to-text encoding](https://en.wikipedia.org/wiki/Binary-to-text_encoding) is an important tool for most developers representing binary data in a sequence of printable characters. Either you currently want to select a specific one or just want to generally understand the basic properties of each, this article will provide you an overview.
@@ -240,6 +240,26 @@ Ascii85 encoding is often used in environments where binary data needs to be rep
 | Known Usages     | none                                                                    |
 | Popularity       | implementations: not common, usage: not common                          |
 | Example          | `��v�~�` (non-printable characters, might not render correctly)         |
+
+## Encoding while Compressed
+
+More Bits per char is always smaller, right? While sometimes the encoded character sequence is directly used, often, specifically when sending data through HTTP, it will be sent compressed rather than just encoded. Since compression algorithms might not be as intuitive as one thinks, I tested the different encodings with different data types to see how they behave:
+
+
+![Chart showing how well different encodings compress](img_b12ce27ae249f74b.jpg)
+
+For this experiment I used [gzip](https://www.gzip.org/) and the following data
+
+* a [JPEG](https://github.com/patrickfav/dice/blob/main/src/test/resources/example_image1.base64) (42.2 kB, 31.1 kB compressed)
+* Android LogCat [output](https://github.com/patrickfav/dice/blob/main/src/test/resources/example_log1.txt) (887.8 kB, 51.8 kB compressed)
+* random data (1024 bytes, 1047 bytes compressed)
+
+The data will be first encoded with the various schemes, and then compressed. The chart shows how much bigger it is compared to just the raw data compressed (lower is better).
+
+Interestingly Hex fairs the best with real world data being considerably smaller than the more high-density encodings like ascii85 and base64. This is probably to the dictionary friendly smaller alphabet.
+
+The [full test suite](https://github.com/patrickfav/dice/blob/main/src/test/java/at/favre/tools/dice/encode/CompressionTest.java) can be found here.
+
 
 ## Conclusion
 

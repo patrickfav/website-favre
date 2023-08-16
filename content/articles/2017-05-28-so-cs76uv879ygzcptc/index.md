@@ -1,7 +1,7 @@
 ---
 title: 'Q: How to generate a random alpha-numeric string'
 date: 2017-05-28
-lastmod: 2023-03-26
+lastmod: 2023-06-29
 description: 'How to generate a random alpha-numeric string'
 summary: 'This was originally posted as an answer to the question "How to generate a random alpha-numeric string" on stackoverflow.com.'
 aliases: [/link/cs76uv87]
@@ -20,7 +20,7 @@ originalContentType: stackexchange
 originalContentId: 44227131
 seSite: stackoverflow
 seScore: 89
-seViews: 1627000
+seViews: 1642000
 seIsAccepted: false
 seQuestionId: 41107
 seAnswerLicense: CC BY-SA 4.0
@@ -89,7 +89,7 @@ public static String generateRandomHexToken(int byteLength) {
     SecureRandom secureRandom = new SecureRandom();
     byte[] token = new byte[byteLength];
     secureRandom.nextBytes(token);
-    return new BigInteger(1, token).toString(16); // Hexadecimal encoding
+    return new BigInteger(1, token).toString(16); // Hexadecimal encoding (omits leading zeros)
 }
 
 //generateRandomHexToken(16) -> 2189df7475e96aa3982dbeab266497cd

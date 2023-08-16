@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2017-09-30
-lastmod: 2023-03-26
+lastmod: 2023-07-27
 url: opensource/hkdf/changelog
 showSummary: false
 showTableOfContents: false

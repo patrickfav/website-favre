@@ -1,11 +1,11 @@
 ---
-title: 'Q: How to convert a byte array to a hex string in Java?'
+title: 'Q: Java: convert a byte array to a hex string?'
 date: 2019-09-26
 lastmod: 2023-02-26
-description: 'How to convert a byte array to a hex string in Java?'
-summary: 'This was originally posted as an answer to the question "How to convert a byte array to a hex string in Java?" on stackoverflow.com.'
+description: 'Java: convert a byte array to a hex string?'
+summary: 'This was originally posted as an answer to the question "Java: convert a byte array to a hex string?" on stackoverflow.com.'
 aliases: [/link/aikmbers]
-slug: 2019/how-to-convert-a-byte-array-to-a-hex-string-in-java
+slug: 2019/java-convert-a-byte-array-to-a-hex-string
 tags: ["java", "arrays", "hex"]
 keywords: ["java", "arrays", "hex"]
 alltags: ["java", "arrays", "hex"]
@@ -15,12 +15,12 @@ showSummary: true
 type: stackexchange
 thumbnail: 'so_banner*'
 deeplink: /link/aikmbers
-originalContentLink: https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
+originalContentLink: https://stackoverflow.com/questions/9655181/java-convert-a-byte-array-to-a-hex-string
 originalContentType: stackexchange
 originalContentId: 58118078
 seSite: stackoverflow
-seScore: 160
-seViews: 967000
+seScore: 175
+seViews: 989000
 seIsAccepted: false
 seQuestionId: 9655181
 seAnswerLicense: CC BY-SA 4.0

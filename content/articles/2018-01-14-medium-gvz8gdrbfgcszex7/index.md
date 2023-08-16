@@ -6,16 +6,15 @@ summary: 'In this article I will show you how we adapted our logging strategy to
 description: 'In this article I will show you how we adapted our logging strategy to a massively grown project structure. In the first part I will go&#x2026;'
 aliases: [/link/gvz8gdrb]
 slug: 2018/managing-logging-in-a-multi-module-android-application
-tags: ["Android Dev", "Programming"]
+tags: ["android-development", "programming"]
 keywords: ["android", "android-app-development", "logging", "timber", "slf4j"]
-alltags: ["android", "android-app-development", "logging", "timber", "slf4j", "Android Dev", "Programming", "medium"]
+alltags: ["android", "android-app-development", "logging", "timber", "slf4j", "android-development", "programming", "medium"]
 categories: ["article", "medium"]
 deeplink: /link/gvz8gdrb
 originalContentLink: https://proandroiddev.com/managing-logging-in-a-multi-module-android-application-eb966fb7fedc
 originalContentType: medium
 originalContentId: eb966fb7fedc
 mediumClaps: 232
-mediumVoters: 53
 ---
 ![Image](img_f7a2ed1ace67946b.jpeg)
 

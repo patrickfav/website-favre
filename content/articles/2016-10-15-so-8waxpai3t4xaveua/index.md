@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/10930331/how-to-sign-an
 originalContentType: stackexchange
 originalContentId: 40064149
 seSite: stackoverflow
-seScore: 122
-seViews: 265000
+seScore: 126
+seViews: 276000
 seIsAccepted: false
 seQuestionId: 10930331
 seAnswerLicense: CC BY-SA 4.0

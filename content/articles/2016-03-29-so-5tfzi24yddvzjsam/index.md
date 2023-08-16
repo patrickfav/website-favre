@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/1625137/image-resize-qu
 originalContentType: stackexchange
 originalContentId: 36295066
 seSite: stackoverflow
-seScore: 9
+seScore: 11
 seViews: 25000
 seIsAccepted: false
 seQuestionId: 1625137

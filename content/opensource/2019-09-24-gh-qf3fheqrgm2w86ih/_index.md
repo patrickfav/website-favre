@@ -1,7 +1,7 @@
 ---
 title: 'rocketchat-exporter'
 date: 2019-09-24
-lastmod: 2023-03-02
+lastmod: 2023-08-14
 description: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 summary: 'A simple script exporting chats from a rocket chat instance using the public REST API. Useful if no administrative access is possible.'
 aliases: ['/link/qf3fheqr','/opensource/2019/rocketchat-exporter']
@@ -17,11 +17,11 @@ originalContentLink: https://github.com/patrickfav/rocketchat-exporter
 originalContentType: github
 originalContentId: 210578179
 githubCloneUrlHttp: https://github.com/patrickfav/rocketchat-exporter.git
-githubStars: 13
-githubForks: 11
-githubWatchers: 2
-githubContributors: 3
-githubRepoSize: 223
+githubStars: 17
+githubForks: 12
+githubWatchers: 3
+githubContributors: 4
+githubRepoSize: 252
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/rocketchat-exporter
 githubDefaultBranch: main
@@ -37,7 +37,6 @@ githubLicense: Apache License 2.0
 A simple Java CLI tool to export the messages from a [Rocket Chat](https://rocket.chat/) server. It currently supports _groups_, _channels_ and _direct message_ export. You can either choose a single conversation or export all in a batch. As export format this tool only supports the **[Slack CSV](https://slack.com/intl/en-au/help/articles/201748703#) output format** as of now, but adding new output format is quite easy (check out the `ExportFormat` interface).
 
 This tool uses the [RocketChat API](https://developer.rocket.chat/reference/api/rest-api/endpoints/core-endpoints/groups-endpoints) and is useful for situations where the user does not have administrative access to the server.
-
 
 
 

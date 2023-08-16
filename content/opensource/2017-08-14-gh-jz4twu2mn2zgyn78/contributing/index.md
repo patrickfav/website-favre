@@ -1,7 +1,7 @@
 ---
 title: 'contributing'
 date: 2017-08-14
-lastmod: 2023-03-21
+lastmod: 2023-04-02
 url: opensource/dice/contributing
 showSummary: false
 showTableOfContents: false

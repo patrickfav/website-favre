@@ -1,7 +1,7 @@
 ---
 title: 'Snippet: Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 date: 2018-11-11
-lastmod: 2023-02-25
+lastmod: 2023-06-30
 description: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 summary: 'Companion code to my article about AES+CBC with Encrypt-then-MAC.'
 aliases: [/link/zer36gia]
@@ -22,7 +22,7 @@ originalContentId: b323f0d9cbd81d5fa9cc4c971b732c77
 gistLanguage: Java
 gistFileCount: 1
 gistRevisions: 2
-gistForks: 0
+gistForks: 1
 gistComments: 1
 ---
 

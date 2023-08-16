@@ -6,16 +6,15 @@ summary: 'In this article I will show you how to strengthen ProGuard&#x2019;s na
 description: 'In this article I will show you how to strengthen ProGuard&#x2019;s name obfuscation, making it harder for an attacker the reverse engineer your&#x2026;'
 aliases: [/link/cfqykeam]
 slug: 2018/improving-proguard-name-obfuscation
-tags: ["Android Dev", "Programming"]
+tags: ["android-development", "programming"]
 keywords: ["android", "proguard", "security", "androiddev", "android-app-development"]
-alltags: ["android", "proguard", "security", "androiddev", "android-app-development", "Android Dev", "Programming", "medium"]
+alltags: ["android", "proguard", "security", "androiddev", "android-app-development", "android-development", "programming", "medium"]
 categories: ["article", "medium"]
 deeplink: /link/cfqykeam
 originalContentLink: https://proandroiddev.com/improving-proguard-name-obfuscation-83b27b34c52a
 originalContentType: medium
 originalContentId: 83b27b34c52a
 mediumClaps: 781
-mediumVoters: 153
 ---
 ![Image](img_5a93e3330dd1e253.png "Inspired by www.obfuscationworkshop.io")
 

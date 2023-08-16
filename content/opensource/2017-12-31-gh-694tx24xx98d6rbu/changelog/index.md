@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2017-12-31
-lastmod: 2022-11-18
+lastmod: 2023-06-04
 url: opensource/slf4j-timber/changelog
 showSummary: false
 showTableOfContents: false

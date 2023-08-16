@@ -1,7 +1,7 @@
 ---
 title: 'bcrypt'
 date: 2018-07-05
-lastmod: 2023-03-30
+lastmod: 2023-08-15
 description: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 summary: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 aliases: ['/link/73p443ip','/opensource/2018/bcrypt']
@@ -17,11 +17,11 @@ originalContentLink: https://github.com/patrickfav/bcrypt
 originalContentType: github
 originalContentId: 139898859
 githubCloneUrlHttp: https://github.com/patrickfav/bcrypt.git
-githubStars: 340
-githubForks: 44
-githubWatchers: 6
+githubStars: 368
+githubForks: 45
+githubWatchers: 7
 githubContributors: 7
-githubRepoSize: 2374
+githubRepoSize: 2370
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/bcrypt
 githubDefaultBranch: main

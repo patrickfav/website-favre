@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2014-05-26
-lastmod: 2023-03-24
+lastmod: 2023-08-15
 url: opensource/dali/changelog
 showSummary: false
 showTableOfContents: false

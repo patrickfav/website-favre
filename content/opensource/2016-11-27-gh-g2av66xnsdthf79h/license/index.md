@@ -1,7 +1,7 @@
 ---
 title: 'license'
 date: 2016-11-27
-lastmod: 2023-03-02
+lastmod: 2023-07-09
 url: opensource/under-the-hood/license
 showSummary: false
 showTableOfContents: false

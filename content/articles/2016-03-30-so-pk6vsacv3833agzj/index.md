@@ -19,7 +19,7 @@ originalContentLink: https://stackoverflow.com/questions/14115950/quality-of-ima
 originalContentType: stackexchange
 originalContentId: 36320292
 seSite: stackoverflow
-seScore: 12
+seScore: 13
 seViews: 23000
 seIsAccepted: false
 seQuestionId: 14115950

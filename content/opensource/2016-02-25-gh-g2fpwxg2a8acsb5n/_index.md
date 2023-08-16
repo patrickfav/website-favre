@@ -1,7 +1,7 @@
 ---
 title: 'density-converter'
 date: 2016-02-25
-lastmod: 2023-03-22
+lastmod: 2023-07-07
 description: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 summary: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 aliases: ['/link/g2fpwxg2','/opensource/2016/density-converter']
@@ -17,19 +17,19 @@ originalContentLink: https://github.com/patrickfav/density-converter
 originalContentType: github
 originalContentId: 52564417
 githubCloneUrlHttp: https://github.com/patrickfav/density-converter.git
-githubStars: 237
+githubStars: 238
 githubForks: 32
-githubWatchers: 15
+githubWatchers: 17
 githubContributors: 3
-githubRepoSize: 3037
+githubRepoSize: 3047
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/density-converter
 githubDefaultBranch: main
-githubOpenIssues: 9
+githubOpenIssues: 3
 githubIsFork: false
-githubLatestVersion: v1.0.0-alpha7
-githubLatestVersionDate: 2020-04-12T11:32:13Z
-githubLatestVersionUrl: https://github.com/patrickfav/density-converter/releases/tag/v1.0.0-alpha7
+githubLatestVersion: v1.0.0-alpha9
+githubLatestVersionDate: 2023-08-06T12:55:30Z
+githubLatestVersionUrl: https://github.com/patrickfav/density-converter/releases/tag/v1.0.0-alpha9
 githubLicense: Apache License 2.0
 ---
 # ![logo](img_d032986934ef5d0c.png) Density Image Converter Tool for Android, iOS, Windows and CSS
@@ -42,7 +42,8 @@ fast while keeping the image quality high (comparable to PS). To further optimiz
 
 
 
- 
+
+
 
 Usage:
 
@@ -67,7 +68,7 @@ _To use the post processor ([pngcrush](https://pmt.sourceforge.net/pngcrush/), [
 
 ### Requirements
 
-* JDK 11
+* JDK 11 with a [JavaFX packaged](https://stackoverflow.com/questions/58354622/javafx-is-missing-in-java-openjdk), like [Azul](https://www.azul.com/downloads/?package=jdk-fx#zulu) or [Liberica](https://bell-sw.com/pages/downloads/)
 
 # Usage
 

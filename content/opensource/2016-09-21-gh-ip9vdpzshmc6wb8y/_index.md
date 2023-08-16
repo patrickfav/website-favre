@@ -19,7 +19,7 @@ originalContentId: 68845033
 githubCloneUrlHttp: https://github.com/patrickfav/planb-android.git
 githubStars: 33
 githubForks: 2
-githubWatchers: 3
+githubWatchers: 4
 githubContributors: 1
 githubRepoSize: 4041
 githubLanguage: Java

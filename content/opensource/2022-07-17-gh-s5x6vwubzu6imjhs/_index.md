@@ -1,7 +1,7 @@
 ---
 title: 'docker-minipaint'
 date: 2022-07-17
-lastmod: 2023-01-30
+lastmod: 2023-04-08
 description: 'This is a dockerized version of the miniPaint project by viliusle, a web/node based paint tool to self host.'
 summary: 'This is a dockerized version of the miniPaint project by viliusle, a web/node based paint tool to self host.'
 aliases: ['/link/s5x6vwub','/opensource/2022/docker-minipaint']
@@ -19,20 +19,21 @@ originalContentId: 514820793
 githubCloneUrlHttp: https://github.com/patrickfav/docker-minipaint.git
 githubStars: 0
 githubForks: 0
-githubWatchers: 1
+githubWatchers: 2
 githubContributors: 2
-githubRepoSize: 49
+githubRepoSize: 58
 githubLanguage: Dockerfile
 githubHomepage: https://hub.docker.com/r/pfav/minipaint
 githubDefaultBranch: main
 githubOpenIssues: 0
 githubIsFork: true
-githubLatestVersion: v4.10.1
-githubLatestVersionDate: 2022-09-02T19:50:37Z
-githubLatestVersionUrl: https://github.com/patrickfav/docker-minipaint/releases/tag/v4.10.1
+githubLatestVersion: v4.12.0
+githubLatestVersionDate: 2023-04-08T14:46:19Z
+githubLatestVersionUrl: https://github.com/patrickfav/docker-minipaint/releases/tag/v4.12.0
 githubLicense: Apache License 2.0
 ---
 # miniPaint Dockerized
+
 
 
 
@@ -57,28 +58,19 @@ docker run -p 8080:80  local/minipaint
 
 Per default, it uses port `80` and the version is fixed to a tag that can be found in the Dockerfile.
 
-### Prepare Travis-CI
+### Prepare GitHub-Actions
 
-To set the encrypted env variables do
-
-```bash
-travis login --pro --debug --github-token=....
-```
-(Token needs `read:org, repo, user:email, write:repo_hook` [more here.](https://docs.travis-ci.com/user/github-oauth-scopes/#travis-ci-for-private-projects))
-
-
-To attach the encrypted credentials do
+Add the following parameters to [GitHub Actions secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets):
 
 ```bash
-travis encrypt --pro DOCKER_USERNAME="..."
-travis encrypt --pro DOCKER_PASSWORD="..."
+DOCKERHUB_TOKEN // -> https://docs.docker.com/docker-hub/access-tokens/
 ```
-and add the data to the travis.yml.
 
 ## Deploy
 
 By default, every commit will build and deploy `latest` tag. If you want to build and deploy a specific version, tag the
-commit with the very same tag as is [used here](https://github.com/viliusle/miniPaint/releases).
+commit with the very same tag as is [used here](https://github.com/viliusle/miniPaint/releases). CI will deploy to 
+[docker.io](https://hub.docker.com/r/pfav/minipaint) and [ghcr.io](https://github.com/patrickfav/docker-minipaint/pkgs/container/minipaint).
 
 # Credits
 

@@ -1,7 +1,7 @@
 ---
 title: 'indoor-positioning'
 date: 2016-08-07
-lastmod: 2023-03-21
+lastmod: 2023-06-08
 description: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 summary: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 aliases: ['/link/fzd79n2s','/opensource/2016/indoor-positioning']
@@ -17,11 +17,11 @@ originalContentLink: https://github.com/patrickfav/indoor-positioning
 originalContentType: github
 originalContentId: 65147448
 githubCloneUrlHttp: https://github.com/patrickfav/indoor-positioning.git
-githubStars: 41
+githubStars: 46
 githubForks: 24
-githubWatchers: 4
+githubWatchers: 5
 githubContributors: 1
-githubRepoSize: 25167
+githubRepoSize: 25188
 githubLanguage: Java
 githubHomepage: https://repositum.tuwien.at/handle/20.500.12708/2080
 githubDefaultBranch: main

@@ -19,7 +19,7 @@ originalContentId: 160938307
 githubCloneUrlHttp: https://github.com/patrickfav/bkdf.git
 githubStars: 2
 githubForks: 1
-githubWatchers: 2
+githubWatchers: 3
 githubContributors: 1
 githubRepoSize: 399
 githubLanguage: Java

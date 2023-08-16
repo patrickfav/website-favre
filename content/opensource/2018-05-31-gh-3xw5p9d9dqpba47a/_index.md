@@ -1,7 +1,7 @@
 ---
 title: 'website-favre'
 date: 2018-05-31
-lastmod: 2023-03-18
+lastmod: 2023-04-08
 description: 'The source for my private website powered by hugo a static code generators and typescript/node based CLI to fetch my content from various sites..'
 summary: 'The source for my private website powered by hugo a static code generators and typescript/node based CLI to fetch my content from various sites..'
 aliases: ['/link/3xw5p9d9','/opensource/2018/website-favre']
@@ -19,13 +19,13 @@ originalContentId: 135606841
 githubCloneUrlHttp: https://github.com/patrickfav/website-favre.git
 githubStars: 0
 githubForks: 2
-githubWatchers: 2
+githubWatchers: 3
 githubContributors: 1
-githubRepoSize: 40985
+githubRepoSize: 42135
 githubLanguage: TypeScript
 githubHomepage: https://favr.dev
 githubDefaultBranch: main
-githubOpenIssues: 1
+githubOpenIssues: 3
 githubIsFork: false
 ---
 # Static Site Gen Repo for my Personal Website
@@ -49,7 +49,7 @@ A simple website with a list of all of my open source projects and articles I wr
 
 ### Install Node
 
-Currently, this project uses [Node 18.12.0 (lts)](https://nodejs.org/es/blog/release/v18.12.0). It is recommended to use
+Currently, this project uses [Node 18.17.0 (lts)](https://nodejs.org/es/blog/release/v18.17.0). It is recommended to use
 a node version manager like [nvm](https://github.com/nvm-sh/nvm), then you can just run
 
 ```bash
@@ -110,7 +110,7 @@ This project uses [eslint](https://eslint.org/) to validate the code:
 
 ```bash
 cd content-downloader
-npm runt lint
+npm run lint
 ```
 
 ### Using the build & run Docker Image

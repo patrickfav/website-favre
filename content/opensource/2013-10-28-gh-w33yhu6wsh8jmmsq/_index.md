@@ -19,7 +19,7 @@ originalContentId: 13937528
 githubCloneUrlHttp: https://github.com/patrickfav/tuwien.git
 githubStars: 0
 githubForks: 1
-githubWatchers: 1
+githubWatchers: 2
 githubContributors: 1
 githubRepoSize: 136290
 githubLanguage: Java

@@ -6,16 +6,15 @@ summary: 'A new approach on protecting your internal IDs with a strong cryptogra
 description: 'A new approach on protecting your internal IDs with a strong cryptographic schema and many other useful features. Inspired by HashIds.'
 aliases: [/link/73ix6k28]
 slug: 2019/a-better-way-to-protect-your-database-ids
-tags: ["Cybersecurity"]
+tags: ["cybersecurity"]
 keywords: ["security", "id", "java", "hashids", "database"]
-alltags: ["security", "id", "java", "hashids", "database", "Cybersecurity", "medium"]
+alltags: ["security", "id", "java", "hashids", "database", "cybersecurity", "medium"]
 categories: ["article", "medium"]
 deeplink: /link/73ix6k28
 originalContentLink: https://medium.com/@patrickfav/a-better-way-to-protect-your-database-ids-a33fa9867552
 originalContentType: medium
 originalContentId: a33fa9867552
-mediumClaps: 44
-mediumVoters: 9
+mediumClaps: 48
 ---
 ![Image](img_8dd4adb077e53d96.png)
 

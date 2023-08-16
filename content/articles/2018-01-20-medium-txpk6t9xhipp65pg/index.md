@@ -6,18 +6,17 @@ summary: 'When starting a new project, all the Proguard configuration goes into 
 description: 'When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning&#x2026;'
 aliases: [/link/txpk6t9x]
 slug: 2018/handling-proguard-as-library-developer-or-in-a-multi-module-android-application
-tags: ["Android Dev", "Programming"]
+tags: ["android-development", "programming"]
 keywords: ["android", "proguard", "java"]
-alltags: ["android", "proguard", "java", "Android Dev", "Programming", "medium"]
+alltags: ["android", "proguard", "java", "android-development", "programming", "medium"]
 categories: ["article", "medium"]
 deeplink: /link/txpk6t9x
 originalContentLink: https://proandroiddev.com/handling-proguard-as-library-developer-or-in-a-multi-module-android-application-2d738c37890
 originalContentType: medium
 originalContentId: 2d738c37890
 mediumClaps: 348
-mediumVoters: 84
 ---
-![Image](img_a38f3c91d6633b22.jpeg)
+![Image](img_2e7e22e7e7a937aa.jpeg)
 
 When starting a new project, all the Proguard configuration goes into that single proguard-rules.pro file. This is fine for the beginning or just simple apps, but gets unmaintainable when expanding to multiple modules.
 
