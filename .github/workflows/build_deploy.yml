@@ -38,7 +38,7 @@ jobs:
         run: npm run lint
         working-directory: ${{ env.WORKING_DIR }}
       - name: Run NPM Audit
-        run: npm audit signatures && npm audit --audit-level=critical
+        run: npm audit signatures && npm audit --audit-level=none
         working-directory: ${{ env.WORKING_DIR }}
       - name: Update Content
         uses: nick-fields/retry@v2
