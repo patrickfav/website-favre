@@ -135,7 +135,7 @@ export class MediumDownloader extends Downloader {
         const dateIso8601 = new Date(articleInfo.firstPublishedAt).toISOString().split('T')[0]
 
         const articleTags = articleInfo.tags.map(m => m.__ref.replace(/Tag:/g, '')).slice()
-        const articleTopics = articleInfo.topics ? articleInfo.topics.map(m => m.name).slice() : []
+        const articleTopics = articleInfo.topics ? articleInfo.topics.map(m => m.slug).filter(t => t !== undefined).slice() : []
         const allTags = articleTags.concat(articleTopics).concat(['medium'])
 
         let meta = '---\n'
@@ -212,7 +212,7 @@ interface ArticleInfo {
     ]
     title: string
     topics: [
-        { name: string }
+        {"__typename": string, slug: string}
     ]
     creator: {
         __ref: string
