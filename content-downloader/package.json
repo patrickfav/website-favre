@@ -37,7 +37,7 @@
     "base32-encoding": "^1.0.0",
     "cheerio": "1.0.0-rc.12",
     "esm": "^3.2.25",
-    "firebase-admin": "^10.3.0",
+    "firebase-admin": "^11.11.1",
     "got": "^11.8.6",
     "request": "^2.88.2",
     "rss-parser": "3.13.0",
