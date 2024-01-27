@@ -93,7 +93,7 @@ jobs:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: ${{ env.JAVA_VERSION }}
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1.9.1
+        uses: SonarSource/sonarcloud-github-action@v2.1.1
         if: github.actor != 'dependabot[bot]'
         with:
           projectBaseDir: content-downloader
