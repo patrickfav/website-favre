@@ -12,7 +12,6 @@ on:
 env:
   FIREBASE_PROJECT_ID: favre-base-project
   NODE_VERSION: 18.17.0
-  JAVA_VERSION: 17
   HUGO_VERSION: 0.111.3
   WORKING_DIR: './content-downloader'
   DOCKER_REPO: 'website-favr'
@@ -87,11 +86,6 @@ jobs:
           path: content
           retention-days: 2
           if-no-files-found: error
-      - name: Prepare Java ${{ env.JAVA_VERSION }}
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin' # See 'Supported distributions' for available options
-          java-version: ${{ env.JAVA_VERSION }}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2.1.1
         if: github.actor != 'dependabot[bot]'
