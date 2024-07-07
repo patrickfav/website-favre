@@ -297,7 +297,3 @@ title = "username"
 icon = "fab fa-linkedin"
 url = "//linkedin.com/in/username"
 title = "username"
-[[params.social.list]]
-icon = "fab fa-twitter-square"
-url = "//twitter.com/username"
-title = "@username"
