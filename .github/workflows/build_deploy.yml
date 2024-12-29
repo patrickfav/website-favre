@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code und Submodules
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
@@ -103,7 +103,7 @@ jobs:
     if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch')
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Download Hugo Site Artifacts
         uses: actions/download-artifact@v2
         with:
@@ -126,7 +126,7 @@ jobs:
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Download Hugo Site Artifacts
         uses: actions/download-artifact@v2
         with:
@@ -148,7 +148,7 @@ jobs:
     if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch')
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
