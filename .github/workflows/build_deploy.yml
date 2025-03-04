@@ -86,6 +86,14 @@ jobs:
           path: content
           retention-days: 2
           if-no-files-found: error
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
+        if: github.actor != 'dependabot[bot]'
+        with:
+          projectBaseDir: content-downloader
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   deploy_production:
     name: Deploy to Firebase Production
