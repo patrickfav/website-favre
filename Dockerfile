@@ -1,6 +1,6 @@
 FROM alpine:3.17.3 as BUILDER
 
-MAINTAINER Patrick Favre-Bulle <patrick@favre.at>
+MAINTAINER Patrick Favre <patrick@favre.at>
 
 RUN apk update && \
     apk add hugo &&  \

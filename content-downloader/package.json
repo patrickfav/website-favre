@@ -28,7 +28,7 @@
     "cli",
     "cg-dl"
   ],
-  "author": "Patrick Favre-Bulle",
+  "author": "Patrick Favre",
   "repository": {
     "type": "git",
     "url": "https://github.com/patrickfav/website-favre.git"

@@ -96,4 +96,4 @@ and then you can access the page with `http://localhost:8080`
 
 # License
 
-Proprietary: Patrick Favre-Bulle 2023
+Proprietary: Patrick Favre 2023
