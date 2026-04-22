@@ -13,7 +13,7 @@ cascade:
   showTaxonomies: false
   showWordCount: false
   editAppendPath: false
-  lang: en
+  language: en
   feature: 'none'
   thumbnail: 'feature_*'
 ---

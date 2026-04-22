@@ -14,7 +14,7 @@ cascade:
     editAppendPath: false
     showPagination: false
     showAuthor: false
-    lang: en
+    language: en
     cover: 'feature_*'
 ---
 

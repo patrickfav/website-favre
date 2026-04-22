@@ -3,7 +3,7 @@
   <a href="{{ $url.Scheme }}://{{ $url.Host }}" rel="noopener">{{ $url.Host }}</a>
 </span>
 
-{{ if and (.Params.lang | default false) (eq .Params.lang "de" ) }}
+{{ if and (.Params.language | default false) (eq .Params.language "de" ) }}
   <span class="px-2 text-primary-500">&middot;</span>
   <span class="custom-info">
     {{ partial "icon.html" "language-solid" }} Deutsch
