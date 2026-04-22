@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="manifest" href='data:application/manifest+json,{"display": "standalone", "name": "Senacor Streamed-con-crypto-pt1"}' />
+		<title>Senacor Streamed-con-crypto-pt1</title>
+
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-news theme-color-black-orange">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="4636dedaac26336a80c6bcc1e3360507" data-background-image="senacor-streamed-con-crypto-pt1/fd215acc5a437b200213ac0feaa29b75.jpg"><div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 248px; height: auto;" data-block-id="d5e24763fbca2da8c678e17e3362be4d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><strong><span style="font-size:1.6em">Cryptography</span></strong></h1>
+
+<p><span style="font-size:1.4em">For Non-Cryptographers</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-671798" data-block-id="f284059b46f01734e466e2d84031ec53" style="height: auto; width: 114px; left: 940px; top: 301.5px;"><div class="sl-block-style" style="z-index: 11; opacity: 0;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="0">
+<h1><span style="font-size:0.7em">Pt.1</span></h1>
+</div></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-57cb61" data-block-id="6eeac8163ebf57ddddb88e48ce36b390" style="width: 28.1921px; height: 28.1921px; left: 1042.81px; top: 602.098px; min-width: 1px; min-height: 1px;"><div class="sl-block-style" style="z-index: 12; opacity: 0;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="200" data-natural-height="200" style="" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/7951e86a36d6cbff04a31b9b3f30147f.png"></div></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-e8df24" data-block-id="d46e571aad4226194ac9eccdc4448da2" style="width: 126px; height: 19.5211px; left: 1074px; top: 614.53px; min-width: 1px; min-height: 1px;"><div class="sl-block-style" style="z-index: 13; opacity: 0;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="568" data-natural-height="88" style="" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/74a4d7c3d738f3a906862081877b33c2.png"></div></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-faf67e" data-block-id="2ef2769353648895957540e75f769b57" style="height: auto; width: 160px; left: 16px; top: 603.694px;"><div class="sl-block-style" style="z-index: 14; opacity: 0;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p><span style="font-size:0.5em">Patrick Favre-Bulle</span></p>
+</div></div></div></section><section data-id="715db0577c17e6dcae646336e9b36b56"><div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 0px; height: auto;" data-block-id="1b3bda64269dbc406dbf8477bed3459d">
+    <div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 11; line-height: 0.975; border-width: 1px; padding: 80px;" data-placeholder-text="Text" data-has-line-height="">
+<h1>
+<span style="font-size:0.9em">About</span><br>
+<br>
+&nbsp;</h1>
+</div>
+</div>
+<div class="sl-block" data-block-type="image" data-name="image-444a5e" data-block-id="d0c886f37c4e8ff9a1d41fb3d8a6feca" style="width: 368.928px; height: 360px; left: 831.072px; top: 130px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 12; border-width: 1px; transition-delay: 0.6s; transition-duration: 0.4s;" data-animation-type="slide-down"><img style="left: -72px; top: 0px; width: 540px; height: 360px;" data-natural-width="1789" data-natural-height="1193" data-crop-x="0.133218" data-crop-y="0" data-crop-width="0.683391" data-crop-height="1" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/7d8b76a70392a5fc9c5ddde33ee7f40b.jpg"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-be9e56" data-block-id="1eb65924518ebafcca263604a4388d1e" style="height: auto; width: 320px; left: 80px; top: 236.5px;"><div class="sl-block-style" style="z-index: 13; opacity: 0.75;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 85%;">
+<p style="text-align:left"><span style="font-size:0.9em">Lead Dev,&nbsp; Senacor 2019, Wien</span></p>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 569px; left: 80px; top: 324px;" data-block-id="ee16882a7b73579a9ea70d97f0d16484" data-name="text-1cccc0"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; border-width: 1px;" data-animation-trigger-id="self" data-fragment-index="0">
+<h3 style="text-align:left"><strong>Professional</strong></h3>
+
+<p style="text-align:left">&nbsp; &nbsp; - NFC Payment App (EMVCo)</p>
+
+<p style="text-align:left"><span style="color:rgb(255, 255, 255); text-align:left">&nbsp; &nbsp; - E2E encrypted Health Data Provider</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-b9a45c" data-block-id="fdc28d542e5b32c58a37cd9306e1fe4e" style="width: 32.3281px; height: 32.4001px; left: 100.683px; top: 553.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="1"><img style="" data-natural-width="1347" data-natural-height="1350" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/37b26175bbe57409c3409c5987431d2a.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 573.5px; left: 80px; top: 607px;" data-block-id="daf158827106e92596c5800653c7dd89" data-name="text-7eab22"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; border-width: 1px;" data-fragment-index="2">
+<h3 style="text-align:left"><strong>Articles</strong></h3>
+
+<p style="text-align:left">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span>&nbsp;</span>Security Best Practices, ...</p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-d1d6d3" data-block-id="7e8190c8d6fd1b13e13325434e02863c" style="width: 33px; height: 33px; left: 100.683px; top: 669px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 17;" data-fragment-index="2"><img style="" data-natural-width="300" data-natural-height="300" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/079a5572cc719418ee4a5e6a7c3a269c.png"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-f91aa6" data-block-id="98f903b727126d8dd661ad3b1edb7d8d" style="height: auto; width: 368.928px; left: 831.072px; top: 578.5px;"><a class="sl-block-style" style="z-index: 18;" href="https://medium.com/@patrickfav" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18; text-align: left;" data-fragment-index="2">
+<p>medium.com/@patrickfav</p>
+</div></a></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 368.928px; left: 831.072px; top: 539.5px;" data-block-id="8cd7a6d95cefa36d5b53e91511a281ed" data-name="text-0f16e6"><a class="sl-block-style" style="z-index: 19;" href="https://github.com/patrickfav" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; text-align: left;" data-fragment-index="1">
+<p>github.com/patrickfav</p>
+</div></a></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 368.928px; left: 831.072px; top: 617.5px;" data-block-id="d38806a8c416311ca8f2aff05f1d0d83" data-name="text-6e4409"><a class="sl-block-style" style="z-index: 20;" href="https://stackoverflow.com/users/774398/patrick-favre" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; text-align: left;" data-fragment-index="3">
+<p>stackoverflow.com/774398</p>
+</div></a></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 573.5px; left: 80px; top: 490px;" data-block-id="bef426c02d84355f17c7d3a920df731d" data-name="text-223dbf"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; border-width: 1px;" data-fragment-index="1">
+<h3 style="color:rgb(255, 255, 255); text-align:left"><strong>Open Source</strong></h3>
+
+<p style="color:rgb(255, 255, 255); text-align:left">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bcrypt, armadillo, hkdf, id-mask, dice, ...</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 368.928px; left: 831.072px; top: 656.5px;" data-block-id="b29ec888d959ff02adb83ef134a844fd" data-name="text-a6e047"><a class="sl-block-style" style="z-index: 21;" href="https://twitter.com/patrickfav" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; text-align: left;" data-fragment-index="3">
+<p>twitter.com/patrickfav</p>
+</div></a></div>
+<div class="sl-block" data-block-type="text" data-name="text-b29074" data-block-id="6991309854d2762c531b7b205926afd6" style="height: auto; width: 368.928px; left: 831.072px; top: 490px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 22; transition-duration: 0.4s; transition-delay: 0.6s;" data-animation-type="fade-in">
+<p>Patrick Favre-Bulle</p>
+</div></div></section><section data-id="eda6b7ec0a8f3042d6c8006fd4f1b7db">
+<div class="sl-block" data-block-type="text" data-name="text-bac299" data-block-id="f8a7c6d6e413d2c38b49633b7d243a06" style="height: auto; width: 320px; left: 194px; top: 144px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; line-height: 0.78;" data-has-line-height="" data-fragment-index="0">
+<p style="text-align:left"><strong>Symmetric Encryption</strong></p>
+
+<p style="text-align:left"><span style="color:#D3D3D3"><span style="font-size:0.7em">From Block Cipher to Authenticated Encryption</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 194px; top: 307.5px;" data-block-id="af6d67024585d3d564a0cdaf5a72cd44" data-name="text-da9508"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; line-height: 0.78;" data-has-line-height="" data-fragment-index="1">
+<p style="text-align:left"><span style="text-align:center"><strong>Cryptoanalysis</strong></span><strong>&nbsp;</strong></p>
+
+<p style="text-align:left"><span style="color:#D3D3D3"><span style="font-size:0.7em">128 vs 256 bit security,&nbsp; How Secure is AES?</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 59px; left: 535px; top: 119px;" data-block-id="0fa6bee0a05c6bc081f571de5b2594eb" data-name="text-e231fc"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="0">
+<h1 style="text-align: right;"><strong><span style="font-size:1.0em">1</span></strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 59px; left: 535px; top: 286px;" data-block-id="f84e5221a53a6498a47400be2612a4b2" data-name="text-997a49"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-fragment-index="1">
+<h1 style="text-align:right"><strong><span style="font-size:1.0em">2</span></strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 194px; top: 458px;" data-block-id="596b203771b58b303c06fc59a1e9a597" data-name="text-6f2e2d"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; line-height: 0.78;" data-has-line-height="" data-fragment-index="2">
+<p style="text-align:left"><strong>Crypto APIs</strong></p>
+
+<p style="text-align:left"><font color="#d3d3d3"><span style="font-size:21px">The unfortunate Story</span></font></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 59px; left: 535px; top: 436px;" data-block-id="231a96e5cd24440c91d01ac8e1971645" data-name="text-7c2945"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;" data-fragment-index="2">
+<h1 style="text-align:right"><strong><span style="font-size:1.0em">3</span></strong></h1>
+</div></div>
+
+
+
+
+
+
+<div class="sl-block" data-block-type="shape" data-name="shape-f60a5b" data-block-id="d4bee3073f4dc85b9d39b59dd97a9165" style="width: 526px; height: 522px; left: 114px; top: 72px;"><div class="sl-block-style" style="z-index: 12; opacity: 0.85;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(68, 68, 68)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 526 522"><rect width="526" height="522" rx="0" ry="0" class="shape-element" fill="rgb(68, 68, 68)"></rect></svg></div></div></div>
+
+<div class="sl-block" data-block-type="text" style="width: 480px; left: 720px; top: 86px; height: auto;" data-block-id="9a053ca52f781cc42cd31b216f42e385" data-name="text-62af6c">
+    <div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: right; z-index: 25; line-height: 0.793; border-width: 1px;" data-placeholder-text="Text" data-has-line-height="">
+<h1 style="text-align:left"><span style="font-size:135px">Table of<br>
+<span style="font-size:0.9em"><strong>Contents</strong></span></span></h1>
+</div>
+</div></section><section class="stack" data-id="d35fb483ef17a255627c0db1cf18198e"><section data-id="c36e213122a00818153bec40089477d3" data-background-image="senacor-streamed-con-crypto-pt1/724595e9f643f140b33c3ac2b322cf7c.jpg" data-background-opacity="0.62" data-auto-animate=""><div class="sl-block" data-block-type="text" style="width: 1196px; left: 64px; top: 25px; height: auto;" data-block-id="b0910878fd31a815e7aac97023df4e15" data-name="Text 1">
+    <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10; line-height: 0.975; border-width: 1px;" data-has-line-height=""><h1><span style="font-size:0.9em">Symmetric<br>
+<strong>Encryption</strong></span><br>
+&nbsp;</h1></div></div>
+</div></section><section data-id="e302eff550f1e50f6b11c09408e8ddf1"><div class="sl-block" data-block-type="text" style="width: 933px; left: 80px; top: 72px; height: auto;" data-block-id="9f6e804f75a6f44b5cbfdae7984ebd1d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h1>Remember XOR?</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 122px; top: 218px; height: auto;" data-block-id="dfe75cbee157c8ab51e82f961dd20440"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">
+<span style="font-size:36px">Important Logical Operation in Cryptography</span><span style="color:rgb(36, 39, 41)">¹</span><span style="color:rgb(36, 39, 41)">¹</span><span style="color:rgb(36, 39, 41)">¹</span>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="table" data-name="table-a7c243" data-block-id="5c8a9bbbc9f965eacf3f20a64d81e0cb" style="height: auto; min-width: 120px; width: 246.929px; left: 978.432px; top: 237.138px;"><div class="sl-block-style" style="z-index: 13; transform: rotate(-10deg);"><div class="sl-block-content" style="z-index: 13;" data-table-rows="5" data-table-border-width="3px" data-table-padding="9px"><table><tbody>
+<tr>
+<th style="border-width: 3px; padding: 9px;">A</th>
+<th style="border-width: 3px; padding: 9px;">B</th>
+<th style="border-width: 3px; padding: 9px;">Out</th>
+</tr>
+<tr>
+<td style="border-width: 3px; padding: 9px;">0</td>
+<td style="border-width: 3px; padding: 9px;">0</td>
+<td style="border-width: 3px; padding: 9px;">0</td>
+</tr>
+<tr>
+<td style="border-width: 3px; padding: 9px;">0</td>
+<td style="border-width: 3px; padding: 9px;">1</td>
+<td style="border-width: 3px; padding: 9px;">1</td>
+</tr>
+<tr>
+<td style="border-width: 3px; padding: 9px;">1</td>
+<td style="border-width: 3px; padding: 9px;">0</td>
+<td style="border-width: 3px; padding: 9px;">1</td>
+</tr>
+<tr>
+<td style="border-width: 3px; padding: 9px;">1</td>
+<td style="border-width: 3px; padding: 9px;">1</td>
+<td style="border-width: 3px; padding: 9px;">0</td>
+</tr>
+</tbody></table></div></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-a2b2fc" data-block-id="c09de9634e38dd4fea60fd4786f8af19" style="height: auto; width: 338px; left: 200px; top: 288px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="1">
+<pre style="text-align:left"><span style="color:#ADD8E6">0110 </span>^ 1100 = <span style="color:#FFA07A">1010</span>
+<span style="color:#FFA07A"><span style="text-align:left">1010</span></span><span style="color:rgb(255, 255, 255); text-align:left"> ^ 1100 = </span><span style="color:#ADD8E6"><span style="text-align:left">0110</span></span></pre>
+</div></div></section><section data-id="3ea95c989fc9316c9c7a4c4c238025aa"><div class="sl-block" data-block-type="text" style="width: 933px; left: 80px; top: 72px; height: auto;" data-block-id="5959214fac6b2fa5f255d9f607c90b2b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h1>Bits, Bytes and Numbers</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 1067px; left: 122px; top: 218px; height: auto;" data-block-id="ad9bf729899934d125fbb530962a1ee2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0" style="font-size:36px">
+	<pre>128 bit = 16 byte = 3.4x10^38</pre>
+	</li>
+	<li class="fragment" data-fragment-index="1" style="font-size:36px">
+	<pre>256 bit = 32 byte = 1.15x10^77</pre>
+	</li>
+	<li class="fragment" data-fragment-index="2" style="font-size:36px">
+	<pre>16 byte = UUID = IPv6 Address</pre>
+	</li>
+</ul>
+</div></div>
+</section><section data-id="6a282b2145d2ce75a622e1c5f5aee996"><div class="sl-block" data-block-type="text" style="width: 933px; left: 80px; top: 72px; height: auto;" data-block-id="4a72d7ab08a616fd9b37daf058821516"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h1>Advanced Encryption Standard</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 122px; top: 218px; height: auto;" data-block-id="2f71485eca759c78dbfbac6598b7df2b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li><span style="font-size:1.2em">AES (Advanced Encryption Standard) aka <em>Rijndael</em></span></li>
+	<li class="fragment" data-fragment-index="0"><span style="font-size:1.2em">Winner AES Selection Process (2001)</span></li>
+	<li class="fragment" data-fragment-index="1"><span style="font-size:1.2em">Block Cipher with 128 bit Block Length</span></li>
+	<li class="fragment" data-fragment-index="1"><span style="font-size:1.2em">Key Sizes of 128, 192 und 256 bit</span></li>
+</ul>
+</div></div>
+</section><section data-id="7cae09b9e61bc615c6f0811777b3ace3"><div class="sl-block" data-block-type="text" style="width: 933px; left: 80px; top: 72px; height: auto;" data-block-id="15e11ded87ced1132af61eff1782ba50"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h1>Block Cipher</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 122px; top: 216px; height: auto;" data-block-id="122a376e4ce22b1d69f60e6ae8d3b624" data-name="text-53240a"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;" data-fragment-index="0">
+<h3>Plain Text</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-609aab" data-block-id="de43f39e7cda8a2591f9f4a6361b8b22" style="height: auto; width: 720px; left: 160px; top: 430.5px;"><div class="sl-block-content fragment current-visible" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="2">
+<pre style="color:rgb(255, 255, 255)">0x41 0x20 0x53 0x65 0x63 0x72 0x65 0x74 0x20 0x4d 0x65 0x73 0x73 0x61 0x67 0x65</pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 160px; top: 282px; height: auto;" data-block-id="39ff44b5a28c40a9ed9e6471a85619a7" data-name="text-52fac9"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 13;" data-fragment-index="0">
+<blockquote>
+<p>A Secret Message</p>
+</blockquote>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 122px; top: 363.5px; height: auto;" data-block-id="a3c18f8a9cbeea76873bfdbcfbc0add9" data-name="text-235bf1"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 14;" data-fragment-index="2">
+<h3>Plain Text: Ascii</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-db6f1f" data-block-id="8865993b6e46ea765f3dc87ddbaa8af2" style="width: 290.5px; height: 220.78px; left: 875.808px; top: 302.719px; min-width: 1px; min-height: 1px;"><div class="sl-block-style" style="z-index: 15; transform: rotate(-26deg);"><div class="sl-block-content fragment fade-down" style="z-index: 15;" data-fragment-index="1"><img data-natural-width="1500" data-natural-height="1140" style="" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/884046de11ff3b371b39e9afd7d67de1.png"></div></div></div>
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 122px; top: 545px; height: auto;" data-block-id="52ce451bc109530c8f02c13a5fccde46" data-name="text-4a6ee4"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 16;" data-fragment-index="4">
+<h3>Key</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 720px; left: 160px; top: 612.391px;" data-block-id="83089c05f913d28c71038f06b7c7f098" data-name="text-351254"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;" data-fragment-index="4">
+<pre style="color:rgb(255, 255, 255)">16 random bytes</pre>
+</div></div>
+<div class="sl-block" data-block-type="table" data-name="table-835a92" style="height: auto; min-width: 160px; width: 221px; left: 160px; top: 425px;" data-block-id="6c6242b092d08cbd0149e12c0d0e7a14"><div class="sl-block-content fragment" style="z-index: 18; text-align: center; font-size: 60%;" data-table-cols="4" data-table-rows="4" data-table-padding="2px" data-table-border-width="3px" data-fragment-index="3" data-table-has-header="false"><table><tbody>
+<tr>
+<td style="border-width: 3px; padding: 2px;">0x41</td>
+<td style="border-width: 3px; padding: 2px;">0x20</td>
+<td style="border-width: 3px; padding: 2px;">0x53</td>
+<td style="border-width: 3px; padding: 2px;">0x65</td>
+</tr>
+<tr>
+<td style="border-width: 3px; padding: 2px;">0x63</td>
+<td style="border-width: 3px; padding: 2px;">0x72</td>
+<td style="border-width: 3px; padding: 2px;">0x65</td>
+<td style="border-width: 3px; padding: 2px;">0x74</td>
+</tr>
+<tr>
+<td style="border-width: 3px; padding: 2px;">0x20</td>
+<td style="border-width: 3px; padding: 2px;">0x4d</td>
+<td style="border-width: 3px; padding: 2px;">0x65</td>
+<td style="border-width: 3px; padding: 2px;">0x73</td>
+</tr>
+<tr>
+<td style="border-width: 3px; padding: 2px;">0x73</td>
+<td style="border-width: 3px; padding: 2px;">0x61</td>
+<td style="border-width: 3px; padding: 2px;">0x67</td>
+<td style="border-width: 3px; padding: 2px;">0x65</td>
+</tr>
+</tbody></table></div></div></section><section data-id="fbbf3ba3969932f1791edeede38f2cfc"><div class="sl-block" data-block-type="text" style="width: 933px; left: 80px; top: 72px; height: auto;" data-block-id="da18eb51971218293dfd4f94a500b677"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h1>Block Cipher</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 433px; left: 423.5px; top: 266.5px; height: auto;" data-block-id="2069fc49dd691788c700f5e5ac6a04b7" data-name="text-c13aee"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11; background-color: rgba(0, 0, 0, 0); border-style: solid; border-width: 4px; border-radius: 11px; border-color: rgb(238, 238, 238); padding: 30px;">
+<ul>
+	<li style="font-size:36px" class="fragment" data-fragment-index="0"><span style="font-size:1.2em">SubByte Step</span></li>
+	<li style="font-size:36px" class="fragment" data-fragment-index="0"><span style="font-size:1.2em">ShiftRow Step</span></li>
+	<li style="font-size:36px" class="fragment" data-fragment-index="0"><span style="font-size:1.2em">MixColumn Step</span></li>
+	<li style="font-size:36px" class="fragment" data-fragment-index="0"><span style="font-size:1.2em">AddKey Step</span></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-81a50a" data-block-id="84c7998867304899e4af9a64d03f46a9" style="width: 91px; height: 91px; left: 843.5px; top: 526px; min-width: 1px; min-height: 1px;"><div class="sl-block-style" style="z-index: 12; transform: rotate(0deg);"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="1"><img style="" data-natural-width="512" data-natural-height="512" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/0157a89e408f4853c618cd2e532cc833.png"></div></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-dba6de" data-block-id="12cb1d544b433805714948a71b808f04" style="height: auto; width: 335px; left: 750.5px; top: 623px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="1">
+<p>9, 11 or 13 Rounds</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-4c4e74" data-block-id="9791ada25d41bfc912529f97eb048da9" style="height: auto; width: 433px; left: 423.5px; top: 216px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>AES Round</p>
+</div></div></section><section data-id="152e166bf29616d8fb1b1fca92144d1b"><div class="sl-block" data-block-type="text" style="width: 933px; left: 80px; top: 72px; height: auto;" data-block-id="819aff2cbabb2f4e74f1e10718a56b44"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h1>Encrypt More Than 1 Block?</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-4e0d80" data-block-id="8f203bfe4a46f180e1b301f425ceaf05" style="height: auto; width: 629px; left: 325.5px; top: 263px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="0">
+<p><span style="font-size:2.5em">Block cipher mode of operation!</span></p>
+</div></div></section><section data-id="605267fd112a0ccba925aad9efec1d75"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="dd4ed4e4892f4db15e01effdcec7d0f3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.78;" data-has-line-height="">
+<h1><span style="color:rgb(255, 255, 255); text-align:center">Block cipher mode of operation: </span></h1>
+
+<h1><span style="font-size:0.7em"><span style="color:rgb(255, 255, 255); text-align:center"><strong>Electronic Codebook (ECB)</strong></span></span></h1>
+</div></div>
+<div class="sl-block" data-block-type="table" data-name="table-57dc8a" data-block-id="0f51160ba064c912f17a3616da2371b7" style="height: auto; min-width: 120px; width: 320px; left: 240px; top: 360px;"><div class="sl-block-content fragment" style="z-index: 11;" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; min-width: 120px; width: 320px; left: 240px; top: 605px;" data-block-id="ebe984e0a156bd909face366a580f17a" data-name="table-03b8da"><div class="sl-block-content fragment" style="z-index: 12; color: rgb(170, 170, 170);" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-65e81b" data-block-id="b21b53b88abbdaed78df4f2e56676bda" style="height: auto; width: 320px; left: 240px; top: 454px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; border-style: solid; border-width: 2px; padding: 5px;" data-fragment-index="0">
+<p>Block Cipher</p>
+
+<p>Encryption</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-3656c1" data-block-id="1a63b7a75d96d8650b38591eb47671e7" style="height: auto; width: 320px; left: 240px; top: 648px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(170, 170, 170);" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Ciphertext 1</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 240px; top: 320px;" data-block-id="3fb5bc395a0b73b1ce2e27bc0cc4c2af" data-name="text-9059f6"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Plaintext 1</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 80px; left: 104px; top: 483.5px;" data-block-id="7ca3705f3af5fe9e92b4b8f21076c52b" data-name="text-6b4da7"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Key</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-6d23e7" data-block-id="bfc1225d333a8def3ec8cea968cf9eee" style="width: 41px; height: 41px; left: 184px; top: 483.5px;"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 17;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 379.5px; top: 408.5px;" data-block-id="145745861e2e8fb0b69421cc46210345" data-name="shape-e3f2cb"><div class="sl-block-style" style="z-index: 18; transform: rotate(90deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 18;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 379.5px; top: 558.5px;" data-block-id="312600c56fee7b9f8951306c081bc23e" data-name="shape-7bd052"><div class="sl-block-style" style="z-index: 19; transform: rotate(90deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 19;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-235677" data-block-id="0bd80f50215ca7e6af55e98923632e9a" style="height: auto; width: 456px; left: 104px; top: 299px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; text-align: left;" data-fragment-index="0">
+<p>Block 1</p>
+</div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; min-width: 120px; width: 320px; left: 766px; top: 360px;" data-block-id="9efc46512217845008efc9ce25218141" data-name="table-91ee13"><div class="sl-block-content fragment" style="z-index: 21;" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="1"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; min-width: 120px; width: 320px; left: 766px; top: 605px;" data-block-id="4fbbad19e3042da3a0ff6a2117dcaefd" data-name="table-d68056"><div class="sl-block-content fragment" style="z-index: 22; color: rgb(170, 170, 170);" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="1"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 766px; top: 454px;" data-block-id="9920f8d832ee76eff78b8264638043d1" data-name="text-d39ca5"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 23; border-style: solid; border-width: 2px; padding: 5px;" data-fragment-index="1">
+<p>Block Cipher</p>
+
+<p>Encryption</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 766px; top: 648px;" data-block-id="f29a62f2b1de792f09374a0aec4c3992" data-name="text-f90740"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 24; color: rgb(170, 170, 170);" data-fragment-index="1">
+<pre style="text-align:center"><span style="font-size:0.7em">Ciphertext 2</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 766px; top: 320px;" data-block-id="5af0f8758dcb3ed472a0822ae50c7d17" data-name="text-c97572"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 25;" data-fragment-index="1">
+<pre style="text-align:center"><span style="font-size:0.7em">Plaintext 2</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 80px; left: 630px; top: 483.5px;" data-block-id="b5ee48211c43d230084a712772da3a6b" data-name="text-b95fe0"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 26;" data-fragment-index="1">
+<pre style="text-align:center"><span style="font-size:0.7em">Key</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 710px; top: 483.5px;" data-block-id="a15e7ceb2e8673df207b5c250c43ad28" data-name="shape-04496f"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 27;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 905.5px; top: 408.5px;" data-block-id="83b534c00ab68390b624a572757a89c3" data-name="shape-647dad"><div class="sl-block-style" style="z-index: 28; transform: rotate(90deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 28;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 905.5px; top: 558.5px;" data-block-id="15e76c6f77520093e65c7dbd64762811" data-name="shape-875ebf"><div class="sl-block-style" style="z-index: 29; transform: rotate(90deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 29;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 456px; left: 630px; top: 299px;" data-block-id="492c5643f762ba280ead429fa5ab562d" data-name="text-3a39ae"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 30; text-align: left;" data-fragment-index="1">
+<p>Block 2</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-5ff844" style="height: auto; width: 60px; left: 1150px; top: 445.5px;" data-block-id="729a9511430e3dc19809f012150bb04d"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 31;" data-fragment-index="1">
+<p><span style="font-size:3.0em">...</span></p>
+</div></div></section><section data-id="5402ce0bb274904dccc36fc4f58420e1"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="56016c5e2380f7c5205e0e4a6dc30eaa"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.884;" data-has-line-height="">
+<h1><strong style="text-align:center">Electronic Codebook (ECB)</strong></h1>
+
+<h1>Why is it bad?</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-a43978" data-block-id="b0f44e1e882ae2f014c75d110916c941" style="width: 658.691px; height: 314.498px; left: 310.654px; top: 303.407px; min-width: 1px; min-height: 1px;"><div class="sl-block-style" style="z-index: 11; transform: rotate(0deg);"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="0"><img style="" data-natural-width="976" data-natural-height="466" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/3feb53773db83b4838d4dd17ca0e07cb.png"></div></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-f28a25" style="height: auto; width: 600px; left: 122px; top: 653px;" data-block-id="ea3a814e1c9006caa1405a6538fe97f8"><a class="sl-block-style" style="z-index: 12;" href="https://gist.github.com/patrickfav/13b2f727eaf91e3a72d87ac427485cb1" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="1">
+<p style="text-align:left"><span style="font-size:0.5em">* <strong>Try Yourself:</strong> gist.github.com/patrickfav/13b2f727eaf91e3a72d87ac427485cb1</span></p>
+</div></a></div></section><section data-id="8f49dec5efd9d0ed8baf7f9a31579cc8"><div class="sl-block" data-block-type="text" style="width: 812px; left: 80px; top: 72px; height: auto;" data-block-id="95879bff8f6cc03de905e2ad62ccb7ba"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h1>What if Plaintext does not exactly fit a Block?</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-4e0d80" style="height: auto; width: 629px; left: 331px; top: 353px;" data-block-id="73722213927292ae9b6620a1cbefac99"><div class="sl-block-content fragment current-visible" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="0">
+<p><span style="font-size:2.5em">Padding!</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 239px; left: 128px; top: 339.5px; height: auto;" data-block-id="ee854c00bd0f225baaa50a9a56ffe6f7" data-name="text-0d8741"><div class="sl-block-content fragment fade-down" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 12;" data-fragment-index="1">
+<ul>
+	<li>PKCS#7</li>
+</ul>
+</div></div>
+
+<div class="sl-block" data-block-type="text" data-name="text-bae4b8" data-block-id="00954b08100bd87bbab83bb8808e8b3b" style="height: auto; width: 600px; left: 667px; top: 425.131px;"><div class="sl-block-style" style="z-index: 14; transform: rotate(-25deg);"><div class="sl-block-content fragment fade-down" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="4">
+<p>Practically <strong>no security</strong> implication in the choice of padding in AES*</p>
+</div></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-f28a25" style="height: auto; width: 708px; left: 122px; top: 656px;" data-block-id="5ec13a1febf9e14a9ea1083f51701706"><a class="sl-block-style" style="z-index: 15;" href="https://crypto.stackexchange.com/questions/1486/how-to-choose-a-padding-mode-with-aes/1488#1488" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="4">
+<p style="text-align:left"><span style="font-size:0.5em">* crypto.stackexchange.com/questions/1486/how-to-choose-a-padding-mode-with-aes/1488</span></p>
+</div></a></div>
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 467px; left: 187px; top: 408.5px;" data-block-id="f42875fa3ff1361b8623623369860564" data-name="text-5e178a"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;" data-fragment-index="2">
+<pre><span style="color:rgb(255, 255, 255); text-align:left"> ... 6F 1A 02 __ __ __ __</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 377px; left: 277px; top: 408.5px;" data-block-id="c8b02040cbe908f5e59101343179b567" data-name="text-a1f803"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;" data-fragment-index="3">
+<pre><span style="color:rgb(255, 255, 255); text-align:left">         </span><strong>04 04 04 04</strong></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 467px; left: 187px; top: 455.5px;" data-block-id="42a150961e9c53cae71cd43e60562488" data-name="text-788f51"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19;" data-fragment-index="2">
+<pre><span style="color:rgb(255, 255, 255); text-align:left"> ... 6F 1A 02 E5 __ __ __</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 377px; left: 277px; top: 455.5px;" data-block-id="05ea63fc220fb2b942de6f2319ff6615" data-name="text-723a5b"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20;" data-fragment-index="3">
+<pre><span style="color:rgb(255, 255, 255); text-align:left">           </span><strong> 03 03 03</strong></pre>
+</div></div></section><section data-id="18550ddcae6e890ac53c7134294a0a37"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="29e3c719b0191ee69c4315bfe7ef8ec6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 12; line-height: 0.78;" data-has-line-height="">
+<h1><span style="color:rgb(255, 255, 255); text-align:center">What else?</span></h1>
+
+<h1><span style="font-size:0.7em"><span style="color:rgb(255, 255, 255); text-align:center"><strong>Cipher Block Chaining (CBC)</strong></span></span></h1>
+</div></div>
+<div class="sl-block" data-block-type="table" data-name="table-57dc8a" style="height: auto; width: 320px; left: 329px; top: 310px;" data-block-id="8beafb24772c784c011a27a869079dd7"><div class="sl-block-content fragment" style="z-index: 13;" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 320px; left: 329px; top: 605px;" data-name="table-03b8da" data-block-id="ffb37b343f2ad922560430fb02488c6f"><div class="sl-block-content fragment" style="z-index: 14; color: rgb(170, 170, 170);" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-65e81b" style="height: auto; width: 320px; left: 329px; top: 454px;" data-block-id="a4f917b02cb41ffe3a02f60c32a72e20"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; border-style: solid; border-width: 2px; padding: 5px;" data-fragment-index="0">
+<p>Block Cipher</p>
+
+<p>Encryption</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-3656c1" style="height: auto; width: 320px; left: 329px; top: 648px;" data-block-id="8a6975826c768a8f236c4f198c500e8d"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(170, 170, 170);" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Ciphertext 1</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 329px; top: 270px;" data-name="text-9059f6" data-block-id="49fcd14c5ea9a854a038111396fa1c37"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Plaintext 1</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 80px; left: 193px; top: 483.5px;" data-name="text-6b4da7" data-block-id="611c216977a8fc65f820fea714201724"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Key</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-6d23e7" style="width: 41px; height: 41px; left: 273px; top: 483.5px;" data-block-id="e380d69dbf3271b7339157253dd6c36e"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 19;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 468.5px; top: 558.5px;" data-name="shape-7bd052" data-block-id="68825155ec2b81f5819a89cd444d2256"><div class="sl-block-style" style="z-index: 20; transform: rotate(90deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 20;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-235677" style="height: auto; width: 456px; left: 193px; top: 244px;" data-block-id="ca22d21e09d2aba34977892a18432ead"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; text-align: left;" data-fragment-index="0">
+<p>Block 1</p>
+</div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 160px; left: 77px; top: 373px;" data-block-id="45adff87309cd3aea65a5c9b992fabf3" data-name="table-5211f1"><div class="sl-block-content fragment" style="z-index: 22;" data-table-has-header="false" data-table-cols="4" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="2"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 243.5px; left: 42px; top: 337px;" data-block-id="7c8ff5ab18d930ac2ba6ac1ffb0ccd1d" data-name="text-032990"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 23;" data-fragment-index="2">
+<pre><span style="font-size:0.5em">Initialization Vector (IV)</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-09f599" data-block-id="69bd459b310cea89a27adaa864e98c6b" style="width: 17.5px; height: 52px; left: 480.75px; top: 368px;"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 24;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 18 52"><rect width="17.5" height="52" rx="0" ry="0" class="shape-element" fill="rgb(255, 255, 255)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-744175" data-block-id="bdaa31c5d3b47dd40dc720ea512faf0e" style="width: 41px; height: 26px; left: 468.5px; top: 420px;"><div class="sl-block-content fragment" data-shape-type="triangle-down" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 25;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 26"><polygon points="0,0 41,0 20.5,26" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 320px; left: 859px; top: 310px;" data-block-id="25370780ff81d5961167e43765ee6ca3" data-name="table-36d0b2"><div class="sl-block-content fragment" style="z-index: 26;" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 320px; left: 859px; top: 605px;" data-block-id="af0069e16ddf88802d0d7e6caaa99a9f" data-name="table-b1a395"><div class="sl-block-content fragment" style="z-index: 27; color: rgb(170, 170, 170);" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 859px; top: 454px;" data-block-id="a26024673c6efe024ec215d380bd6469" data-name="text-01eeb6"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 28; border-style: solid; border-width: 2px; padding: 5px;" data-fragment-index="0">
+<p>Block Cipher</p>
+
+<p>Encryption</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 859px; top: 648px;" data-block-id="5855411dd0037b3e5b87707b3a6f0951" data-name="text-06b9a5"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 29; color: rgb(170, 170, 170);" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Ciphertext 2</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 859px; top: 270px;" data-block-id="86b01382a5f43dfd1ea23d3261d9e08c" data-name="text-38ee52"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 30;" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Plaintext 2</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 80px; left: 723px; top: 483.5px;" data-block-id="6aa1e46a52f76e3436848e95a379253f" data-name="text-c77d32"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 31;" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Key</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 803px; top: 483.5px;" data-block-id="ac36ba938216ed25fa4ebab65f92fcd4" data-name="shape-557af8"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 32;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 998.5px; top: 558.5px;" data-block-id="869ec39467b77b12aed89b42e0dc578b" data-name="shape-7210c3"><div class="sl-block-style" style="z-index: 33; transform: rotate(90deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 33;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 456px; left: 723px; top: 244px;" data-block-id="fec493463680ca5a6a48fc39bfa6889d" data-name="text-138d1f"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 34; text-align: left;" data-fragment-index="0">
+<p>Block 2</p>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="width: 17.5px; height: 52px; left: 1010.75px; top: 368px;" data-block-id="cd9fd833a4d1d6965a33603fbf8adcf8" data-name="shape-c3af89"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 35;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 18 52"><rect width="17.5" height="52" rx="0" ry="0" class="shape-element" fill="rgb(255, 255, 255)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 26px; left: 998.5px; top: 420px;" data-block-id="0ca32344126a4b2971031f339b4065e1" data-name="shape-251b74"><div class="sl-block-content fragment" data-shape-type="triangle-down" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 36;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 26"><polygon points="0,0 41,0 20.5,26" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="line" data-name="line-a4d682" data-block-id="3f502e63a409ab38b113ff54885e28f1" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 509.5px; top: 569px;"><div class="sl-block-content fragment" data-line-x1="0" data-line-y1="0" data-line-x2="213.5" data-line-y2="0" data-line-color="#a2c4c9" data-line-start-type="none" data-line-end-type="none" style="z-index: 37;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="213.5" height="1" viewBox="0 0 213.5 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="213.5" y2="0"></line><line class="line-element" stroke="#a2c4c9" stroke-width="2" x1="0" y1="0" x2="213.5" y2="0"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 720px; top: 394px;" data-block-id="6ebd65a177fbb8f22cb1c76d9a0946e6" data-name="line-ffcef4"><div class="sl-block-content fragment" data-line-x1="0" data-line-y1="0" data-line-x2="3" data-line-y2="175" data-line-color="#a2c4c9" data-line-start-type="none" data-line-end-type="none" style="z-index: 38;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="3" height="175" viewBox="0 0 3 175"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="3" y2="175"></line><line class="line-element" stroke="#a2c4c9" stroke-width="2" x1="0" y1="0" x2="3" y2="175"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 720px; top: 393.5px;" data-block-id="8980763893dcfdb8cddf1546c6fa92cc" data-name="line-5fd3c2"><div class="sl-block-content fragment" data-line-x1="0" data-line-y1="0.5" data-line-x2="214" data-line-y2="0" data-line-color="#a2c4c9" data-line-start-type="none" data-line-end-type="none" style="z-index: 39;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="214" height="1" viewBox="0 0 214 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0.5" x2="214" y2="0"></line><line class="line-element" stroke="#a2c4c9" stroke-width="2" x1="0" y1="0.5" x2="214" y2="0"></line></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 13px; left: 920px; top: 387px;" data-block-id="7cdd9f082aa253490da729e140140879" data-name="shape-fb62fc"><div class="sl-block-style" style="z-index: 40; transform: rotate(-90deg);"><div class="sl-block-content fragment" data-shape-type="triangle-down" data-shape-fill-color="rgb(162, 196, 201)" data-shape-stretch="true" style="z-index: 40;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 13"><polygon points="0,0 41,0 20.5,13" class="shape-element" fill="rgb(162, 196, 201)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-a9a385" data-block-id="95fb4901536649625b84136116824d1c" style="width: 35px; height: 35px; left: 960.5px; top: 377px;"><div class="sl-block-content fragment" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 41;" data-shape-stroke-color="#ffffff" data-shape-stroke-width="2px" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 35 35"><defs><clipPath id="shape-mask-1-1590404024695"><ellipse rx="17.5" ry="17.5" cx="17.5" cy="17.5" fill="rgba(0, 0, 0, 0)" stroke="#ffffff" stroke-width="4"></ellipse></clipPath></defs><ellipse rx="17.5" ry="17.5" cx="17.5" cy="17.5" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ffffff" stroke-width="4" clip-path="url(#shape-mask-1-1590404024695)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-f4b912" data-block-id="c1de338c7dc5c6b3f2a994a795bd0042" style="height: auto; width: 36px; left: 960.5px; top: 374px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="1">
+<p>+</p>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="width: 35px; height: 35px; left: 425px; top: 377px;" data-block-id="d6ac15a25512d3d10bab0187facc1fe6" data-name="shape-f15394"><div class="sl-block-content fragment" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 42;" data-shape-stroke-color="#ffffff" data-shape-stroke-width="2px" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 35 35"><defs><clipPath id="shape-mask-2-1590404094170"><ellipse rx="17.5" ry="17.5" cx="17.5" cy="17.5" fill="rgba(0, 0, 0, 0)" stroke="#ffffff" stroke-width="4"></ellipse></clipPath></defs><ellipse rx="17.5" ry="17.5" cx="17.5" cy="17.5" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ffffff" stroke-width="4" clip-path="url(#shape-mask-2-1590404094170)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 36px; left: 425px; top: 374px;" data-block-id="96a48627c718d36e70760af6d331082d" data-name="text-64f9e8"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" data-fragment-index="2">
+<p>+</p>
+</div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 240px; top: 393.5px;" data-block-id="ea8606cf8bd174590c4a1492205efe99" data-name="line-d2f53a"><div class="sl-block-content fragment" data-line-x1="0" data-line-y1="1" data-line-x2="153.5" data-line-y2="0" data-line-color="#ffffff" data-line-start-type="none" data-line-end-type="none" style="z-index: 43;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="153.5" height="1" viewBox="0 0 153.5 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="1" x2="153.5" y2="0"></line><line class="line-element" stroke="#ffffff" stroke-width="2" x1="0" y1="1" x2="153.5" y2="0"></line></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 13px; left: 379.5px; top: 388px;" data-block-id="6cd36faef08e16d08a4f341218b5f0fc" data-name="shape-6daf68"><div class="sl-block-style" style="z-index: 44; transform: rotate(-90deg);"><div class="sl-block-content fragment" data-shape-type="triangle-down" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 44;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 13"><polygon points="0,0 41,0 20.5,13" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div></section><section data-id="68e17312576553c7effd50eaff54818e"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="3b45510421fa169ab527984c163d417f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.884;" data-has-line-height="">
+<h1><strong>Initialization Vector?</strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 122px; top: 218px; height: auto;" data-block-id="6120bfb4d07d233bb982adbe2c5c00ac" data-name="text-80bbbf"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Fancy for: "Random Data the size of a Block"</li>
+	<li class="fragment" data-fragment-index="1">Like a <strong>Salt</strong>, it <em>should</em> be
+	<ul>
+		<li>random</li>
+		<li>can be public</li>
+		<li>should be used only once*</li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-1bc1e0" data-block-id="39eb1241a283691c8dddb2bc743fdd4d" style="height: auto; width: 1000px; left: 120px; top: 661.5px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="2">
+<p style="text-align: left;"><span style="font-size:0.7em">* This property is depending on the block mode a recommentation or integral for security</span></p>
+</div></div></section><section data-id="395bfff876d8d74b50443d476a89dc85"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="6252d38b0c1f695b47bbcb5fe99ec597"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.78;" data-has-line-height="">
+<h1><strong>Cipher Block Chaining (CBC)</strong></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="image" data-name="image-1e4edf" data-block-id="69855e07442efa7a9b60357bf725b080" style="width: 727.957px; height: 349px; left: 276.021px; top: 257.5px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="972" data-natural-height="466" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/97bc84e83a8cae676cdc6f4980f1127a.png"></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-7e2d4a" data-block-id="cb119483d3f813534c7502b55c68e7ac" style="height: auto; width: 727.957px; left: 276.021px; top: 638.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<pre style="text-align: center;"><span style="font-size:0.9em">CBC: data looks random</span></pre>
+</div></div></section><section data-id="0ed7763dc49124539a9083059b5b12a1"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="99e51fdbbc5bc7e1bfbc287acb18ebbb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11; line-height: 0.78;" data-has-line-height="">
+<h1><span style="color:rgb(255, 255, 255); text-align:center">What else?</span></h1>
+
+<h1><span style="font-size:0.7em"><span style="color:rgb(255, 255, 255); text-align:center"><strong>Counter Mode (CTR)</strong></span></span></h1>
+</div></div>
+
+<div class="sl-block" data-block-type="table" style="height: auto; width: 320px; left: 329px; top: 611px;" data-name="table-03b8da" data-block-id="f65a68922bb20ce51ab816f32a526559"><div class="sl-block-content fragment" style="z-index: 12; color: rgb(170, 170, 170);" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-65e81b" style="height: auto; width: 320px; left: 329px; top: 409.5px;" data-block-id="447dfdfd91269df4e4e1a7c6d94f1204"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; border-style: solid; border-width: 2px; padding: 5px;" data-fragment-index="0">
+<p>Block Cipher</p>
+
+<p>Encryption</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-3656c1" style="height: auto; width: 320px; left: 329px; top: 654px;" data-block-id="cea010984ff01291d0dff387b4e019c4"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(170, 170, 170);" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Ciphertext 1</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 241.75px; left: 329px; top: 270px;" data-name="text-9059f6" data-block-id="5f5df4993cf4b5a11c0021f80f772310"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="0">
+<pre><span style="font-size:0.7em">Nonce</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 80px; left: 193px; top: 438.5px;" data-name="text-6b4da7" data-block-id="f8331249bccee2c44151643f1f448ce1"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Key</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-6d23e7" style="width: 41px; height: 41px; left: 273px; top: 438.5px;" data-block-id="29a80c73d0b5eb66af1e54058d219ae9"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 17;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 461px; top: 360px;" data-name="shape-7bd052" data-block-id="c2a4349eab5820e47fac21185daa6b81"><div class="sl-block-style" style="z-index: 18; transform: rotate(90deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 18;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-235677" style="height: auto; width: 456px; left: 193px; top: 244px;" data-block-id="14fcac558ef02c4dc11c3ad247416ced"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; text-align: left;" data-fragment-index="0">
+<p>Block 1</p>
+</div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 160px; left: 100px; top: 528px;" data-name="table-5211f1" data-block-id="004773d0dfc49cf8882828f1ec274dd0"><div class="sl-block-content fragment" style="z-index: 20;" data-table-has-header="false" data-table-cols="4" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 160px; left: 100px; top: 492px;" data-name="text-032990" data-block-id="5de53cb3e8de7d1454a7a9fa3d2712c7"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21;" data-fragment-index="0">
+<pre style="text-align:center"><span style="font-size:0.7em">Plaintext 1</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-09f599" style="width: 17.5px; height: 52px; left: 473.25px; top: 521.5px;" data-block-id="439312f8956d96fc42ba4a2785df792a"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 22;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 18 52"><rect width="17.5" height="52" rx="0" ry="0" class="shape-element" fill="rgb(255, 255, 255)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-744175" style="width: 41px; height: 26px; left: 461px; top: 573.5px;" data-block-id="1064957533037b807a84e4164c41145f"><div class="sl-block-content fragment" data-shape-type="triangle-down" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 23;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 26"><polygon points="0,0 41,0 20.5,26" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 35px; height: 35px; left: 423px; top: 532px;" data-name="shape-f15394" data-block-id="c470759802729e3261f9eb9c2ea2d202"><div class="sl-block-content fragment" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 24;" data-shape-stroke-color="#ffffff" data-shape-stroke-width="2px" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 35 35"><defs><clipPath id="shape-mask-3-1590414492741"><ellipse rx="17.5" ry="17.5" cx="17.5" cy="17.5" fill="rgba(0, 0, 0, 0)" stroke="#ffffff" stroke-width="4"></ellipse></clipPath></defs><ellipse rx="17.5" ry="17.5" cx="17.5" cy="17.5" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ffffff" stroke-width="4" clip-path="url(#shape-mask-3-1590414492741)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 36px; left: 423px; top: 529px;" data-name="text-64f9e8" data-block-id="b23dccbddfd99d6ef8e555a03acf6a5b"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" data-fragment-index="0">
+<p>+</p>
+</div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; left: 273px; top: 548px;" data-name="line-d2f53a" data-block-id="37076104b68d8342e2d225859be48bc3"><div class="sl-block-content fragment" data-line-x1="0" data-line-y1="0" data-line-x2="120.5" data-line-y2="0.5" data-line-color="#ffffff" data-line-start-type="none" data-line-end-type="none" style="z-index: 25;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="120.5" height="1" viewBox="0 0 120.5 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="120.5" y2="0.5"></line><line class="line-element" stroke="#ffffff" stroke-width="2" x1="0" y1="0" x2="120.5" y2="0.5"></line></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 13px; left: 379.5px; top: 543px;" data-name="shape-6daf68" data-block-id="1fca2f3e2315e4e9276c9e73d3eb7812"><div class="sl-block-style" style="z-index: 26; transform: rotate(-90deg);"><div class="sl-block-content fragment" data-shape-type="triangle-down" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 26;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 13"><polygon points="0,0 41,0 20.5,13" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 240px; left: 330.75px; top: 310px;" data-block-id="75472322ef680221f27cb95eb44b64f5" data-name="table-d4c84a"><div class="sl-block-content fragment" style="z-index: 27;" data-table-has-header="false" data-table-cols="6" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="0"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 81px; left: 568px; top: 310px;" data-block-id="c1509e036cc580d92242d79aaa6c3ac0" data-name="table-43810b"><div class="sl-block-content fragment" style="z-index: 28;" data-table-has-header="false" data-table-cols="2" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="1" data-table-border-color="rgb(111, 168, 220)"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px; border-color: rgb(111, 168, 220);"></td>
+<td style="padding: 0px; border-width: 2px; border-color: rgb(111, 168, 220);"></td>
+
+
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 160px; left: 489px; top: 251px;" data-block-id="fb00d0e08dea3ee991dbed6598d9ad4c" data-name="text-0e66ea"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 29; line-height: 0.741; color: rgb(111, 168, 220);" data-fragment-index="1" data-has-line-height="">
+<pre style="text-align:right"><span style="font-size:0.7em">Counter</span></pre>
+
+<p style="text-align:right"><span style="font-size:0.7em">0000</span></p>
+</div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 320px; left: 897.5px; top: 611px;" data-block-id="ea82f2b7719424fb5016111bb7447147" data-name="table-94fffa"><div class="sl-block-content fragment" style="z-index: 31; color: rgb(170, 170, 170);" data-table-has-header="false" data-table-cols="8" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="2"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px; width: 41px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 897.5px; top: 409.5px;" data-block-id="21637f8293006b956cd54f5bea9769bf" data-name="text-50315c"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 32; border-style: solid; border-width: 2px; padding: 5px;" data-fragment-index="2">
+<p>Block Cipher</p>
+
+<p>Encryption</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 320px; left: 897.5px; top: 654px;" data-block-id="7c372d6900a02cfe75e239701d90c72c" data-name="text-f7b352"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 33; color: rgb(170, 170, 170);" data-fragment-index="2">
+<pre style="text-align:center"><span style="font-size:0.7em">Ciphertext 2</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 241.75px; left: 897.5px; top: 270px;" data-block-id="a291f9065df2e94248137ffd36458520" data-name="text-18119a"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 34;" data-fragment-index="2">
+<pre><span style="font-size:0.7em">Nonce</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 80px; left: 761.5px; top: 438.5px;" data-block-id="806465689e36ac8d07078d698eb9478c" data-name="text-0c2125"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 35;" data-fragment-index="2">
+<pre style="text-align:center"><span style="font-size:0.7em">Key</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 841.5px; top: 438.5px;" data-block-id="d2789dd5a32185777f147d16256addbc" data-name="shape-f0d1f1"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 36;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 41px; left: 1029.5px; top: 360px;" data-block-id="46addf4f9b766ba3fb2e20d37245c369" data-name="shape-a2dc6b"><div class="sl-block-style" style="z-index: 37; transform: rotate(90deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 37;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 41"><polygon points="0,12.299999999999999 20.5,12.299999999999999 20.5,0 41,20.5 20.5,41 20.5,28.7 0,28.7" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 456px; left: 761.5px; top: 244px;" data-block-id="7960abc599f2ad707466c130df73d20b" data-name="text-03c328"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 38; text-align: left;" data-fragment-index="2">
+<p>Block 2</p>
+</div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 160px; left: 669.5px; top: 526px;" data-block-id="5744437ce40e4e8dd7f127ca9661ff0f" data-name="table-6b2672"><div class="sl-block-content fragment" style="z-index: 39;" data-table-has-header="false" data-table-cols="4" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="2"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 160px; left: 669.5px; top: 492px;" data-block-id="8e7155e179d7ad0f77b506ac4a46fcd9" data-name="text-8de172"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 40;" data-fragment-index="2">
+<pre style="text-align:center"><span style="font-size:0.7em">Plaintext 2</span></pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="width: 17.5px; height: 52px; left: 1041.75px; top: 521.5px;" data-block-id="555e929fc1a0a0e7501c46f153264248" data-name="shape-3ff734"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 41;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 18 52"><rect width="17.5" height="52" rx="0" ry="0" class="shape-element" fill="rgb(255, 255, 255)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 26px; left: 1029.5px; top: 573.5px;" data-block-id="7f7175e708f66f48549ceb7abd5f4233" data-name="shape-0558d6"><div class="sl-block-content fragment" data-shape-type="triangle-down" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 42;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 26"><polygon points="0,0 41,0 20.5,26" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 35px; height: 35px; left: 991.5px; top: 532px;" data-block-id="335c8b77b9bcd8d48bfcd8ee17486408" data-name="shape-7c16b8"><div class="sl-block-content fragment" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 43;" data-shape-stroke-color="#ffffff" data-shape-stroke-width="2px" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 35 35"><defs><clipPath id="shape-mask-1-1590486076338"><ellipse rx="17.5" ry="17.5" cx="17.5" cy="17.5" fill="rgba(0, 0, 0, 0)" stroke="#ffffff" stroke-width="4"></ellipse></clipPath></defs><ellipse rx="17.5" ry="17.5" cx="17.5" cy="17.5" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ffffff" stroke-width="4" clip-path="url(#shape-mask-1-1590486076338)"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 36px; left: 991.5px; top: 529px;" data-block-id="70c50d3ed7a324d119a32375a89982c6" data-name="text-e1b045"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 30;" data-fragment-index="2">
+<p>+</p>
+</div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; left: 844px; top: 547.5px;" data-block-id="fc6ac84c1964003ef6aae1c633eb3618" data-name="line-7e9ebf"><div class="sl-block-content fragment" data-line-x1="0" data-line-y1="0" data-line-x2="118" data-line-y2="1" data-line-color="#ffffff" data-line-start-type="none" data-line-end-type="none" style="z-index: 44;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="118" height="1" viewBox="0 0 118 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="0" y1="0" x2="118" y2="1"></line><line class="line-element" stroke="#ffffff" stroke-width="2" x1="0" y1="0" x2="118" y2="1"></line></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 41px; height: 13px; left: 948px; top: 543px;" data-block-id="274f1d3b4521190c1d15ec0ec91dca19" data-name="shape-1dc9cd"><div class="sl-block-style" style="z-index: 45; transform: rotate(-90deg);"><div class="sl-block-content fragment" data-shape-type="triangle-down" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 45;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 41 13"><polygon points="0,0 41,0 20.5,13" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 240px; left: 899.25px; top: 310px;" data-block-id="ea5ef20065d53e9e00ef8f5774129616" data-name="table-9bc7d2"><div class="sl-block-content fragment" style="z-index: 46;" data-table-has-header="false" data-table-cols="6" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="2"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+<td style="padding: 0px; border-width: 2px;"></td>
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="table" style="height: auto; width: 81px; left: 1136.5px; top: 310px;" data-block-id="c760007be87a51654db39795c34e26ad" data-name="table-413cb6"><div class="sl-block-content fragment" style="z-index: 47;" data-table-has-header="false" data-table-cols="2" data-table-rows="1" data-table-padding="0px" data-table-border-width="2px" data-fragment-index="2" data-table-border-color="rgb(111, 168, 220)"><table><tbody><tr>
+<td style="padding: 0px; border-width: 2px; border-color: rgb(111, 168, 220);"></td>
+<td style="padding: 0px; border-width: 2px; border-color: rgb(111, 168, 220);"></td>
+
+
+</tr></tbody></table></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 160px; left: 1057.5px; top: 251px;" data-block-id="a92f744777cd24d918e124203d093b44" data-name="text-e3bd1c"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 48; line-height: 0.741; color: rgb(111, 168, 220);" data-fragment-index="2" data-has-line-height="">
+<pre style="text-align:right"><span style="font-size:0.7em">Counter</span></pre>
+
+<p style="text-align:right"><span style="font-size:0.7em">0001</span></p>
+</div></div></section><section data-id="cd36d1dff47423e98cbd9e740a99ecf5"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="6228230b63a626f9a0435ff6577ad71f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.78;" data-has-line-height="">
+<h1><strong style="text-align:center">Counter Mode (CTR)</strong></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 122px; top: 218px; height: auto;" data-name="text-80bbbf" data-block-id="5309c2ae97606eceed319d239bcca57b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Makes a Block Ciper a Stream Cipher (No padding required)</li>
+	<li class="fragment" data-fragment-index="1">
+<strong>Performance</strong>: encryption &amp; decryption in parallel as well as random read access</li>
+	<li class="fragment" data-fragment-index="2">
+<strong>VERY IMPORTANT</strong>: IV/Nonce MUST NEVER be reused with same <em>key</em>
+</li>
+</ul>
+</div></div></section><section data-id="d91438791d31f6c7636eaf32c14db568">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="d5ee7c88d326ffc94ae940a6d030f17e" data-name="text-fc5f82"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.78;" data-has-line-height="">
+<h1><span style="color:rgb(255, 255, 255); text-align:center">Just One Problem:</span></h1>
+
+<h1><span style="font-size:0.7em"><span style="color:rgb(255, 255, 255); text-align:center"><strong>Did anybody modify my message?</strong></span></span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-970915" data-block-id="b20f52853cfb9c36d7a34bf2f80768be" style="height: auto; width: 931px; left: 160px; top: 321px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="0">
+<p>Unfortunately: Encryption <strong>does not protect against modification</strong>!</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-78336a" data-block-id="ba66953b3864f4b06c8aefad4e71d748" style="height: auto; width: 600px; left: 103px; top: 429px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="1">
+<p style="text-align:left">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Known Attacks</p>
+
+<ul>
+	<li>Padding oracle attack</li>
+	<li>BEAST attack</li>
+	<li>Lucky Thirteen attack</li>
+</ul>
+</div></div></section><section data-id="b9a4466a7c9bf318450cbd4f711eafc6">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-name="text-fc5f82" data-block-id="c31d2c71a8a9499b10cf99cd9d14a443"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.78;" data-has-line-height="">
+<h1><span style="color:rgb(255, 255, 255); text-align:center">Solution</span></h1>
+
+<h1><span style="font-size:0.7em"><span style="color:rgb(255, 255, 255); text-align:center"><strong>Message Authentication Code (MAC)</strong></span></span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 1140px; left: 122px; top: 268px; height: auto;" data-block-id="da7ea0169b742c060727bd9a4064c43c" data-name="text-ca22ae"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;" data-fragment-index="0">
+<ul>
+	<li><span style="font-size:36px">Symmetric version of digital signature</span></li>
+	<li>
+<span style="font-size:36px">Most common HMAC (Hash-based Message Authentication Code)</span><span style="color:rgb(36, 39, 41)">¹¹</span><span style="color:rgb(36, 39, 41)">¹</span><span style="color:rgb(36, 39, 41)">¹</span>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 1140px; left: 80px; top: 412px; height: auto;" data-block-id="8cce63d9a706c606552193ea66da1c4e" data-name="text-ed40a4"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 12;" data-fragment-index="1">
+<h2>But how?</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 1140px; left: 122px; top: 504px; height: auto;" data-block-id="d444b9cfcbeee874ded3d55b3bc97527" data-name="text-7062c0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 13;">
+<ul>
+	<li class="fragment" data-fragment-index="2"><span style="font-size:1.0em">Encrypt first, then mac? Mac first then encrypt??</span></li>
+	<li class="fragment" data-fragment-index="3">Use the same key? Use a different one?</li>
+	<li class="fragment" data-fragment-index="4"><span style="font-size:1.0em">Slow: Needs 2 Passes</span></li>
+</ul>
+</div></div></section><section data-id="be062e60baeb8b911b272e52f519fa2a"><div class="sl-block" data-block-type="text" style="width: 853px; left: 66.5px; top: 24.5px; height: auto;" data-block-id="f3580091c8aa84364192c8a7f392bcb3">
+    <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10; line-height: 0.611; border-width: 1px; padding: 17px;" data-placeholder-text="Text" data-has-line-height="">
+<h1><span style="font-size:0.7em">Authenticated</span></h1>
+
+<h1><span style="font-size:0.7em"><strong>Encryption</strong></span></h1>
+</div></div>
+</div>
+<div class="sl-block" data-block-type="text" style="width: 887px; left: 160px; top: 351px; height: auto;" data-name="text-7062c0" data-block-id="40622367b7d102cfcacbb69fb622894c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0"><span style="font-size:1.4em">Confidentiality</span></li>
+	<li class="fragment" data-fragment-index="1"><span style="font-size:1.4em">Integrity</span></li>
+	<li class="fragment" data-fragment-index="2"><span style="font-size:1.4em">Authenticity</span></li>
+</ul>
+</div></div></section><section data-id="c6b06c192d76d9fab48693bfe23e9845"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="6b0eb193b4413d079b5ae0ab30dde421"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1>Block Mode of Operation:<br>
+<strong>Galois/Counter Mode (GCM)</strong>
+</h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 114px; top: 309px; height: auto;" data-name="text-80bbbf" data-block-id="588421b6e8a268225d00096ec895aa2a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Similar to CTR + Authentication Tag</li>
+	<li class="fragment" data-fragment-index="0">
+<strong>Like CTR</strong>: IV/Nonce MUST NEVER be reused with same <em>key</em>
+</li>
+	<li class="fragment" data-fragment-index="1">Free to use and widely implemented and used</li>
+	<li class="fragment" data-fragment-index="2">Can be used to authenticate additional data</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-16a208" data-block-id="1c95f16a66cd0d853dd972a4ea8c370f" style="height: auto; width: 135px; left: 725px; top: 317.5px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; background-color: rgba(0, 0, 0, 0); padding: 4px; border-style: solid; border-width: 2px; font-size: 40%;" data-fragment-index="0">
+<p>Ciphertext</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 70px; left: 856px; top: 317.5px;" data-block-id="0c463655018e37d46ab3482554be9dce" data-name="text-826a54"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; background-color: rgba(0, 0, 0, 0); padding: 4px; border-style: solid; border-width: 2px; color: rgb(204, 204, 204); font-size: 40%;" data-fragment-index="0">
+<p>Auth Tag</p>
+</div></div></section><section data-id="1d253f2d8561e693fab148d8838a2fd0"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="ed11db79e6073feff426103ef8f82e13"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1>Block Mode of Operation for<br>
+<strong>Full Disk Encryption</strong>
+</h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 832px; left: 114px; top: 309px; height: auto;" data-name="text-80bbbf" data-block-id="951bb026d4d683b608b31e2d60319cd3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">Simple bit switch must not change whole disk</li>
+	<li class="fragment" data-fragment-index="1">Special Modes: e.g. Bitlocker or Mac FileVault uses XTS</li>
+</ul>
+</div></div>
+
+</section></section><section class="stack" data-id="f34d9454f63838e371478a324c0e21e4"><section data-id="ad4ca9d511aa69ab400e686046d355a8" data-background-image="senacor-streamed-con-crypto-pt1/a1c2f09ba601a55f22c874a8da16209d.jpg" data-background-opacity="0.42">
+<div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 0px; height: auto;" data-block-id="46159a4882840f4718b73bb34638a279" data-name="text-9b3c2c">
+    <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10; line-height: 0.845; border-width: 1px; padding: 80px;" data-placeholder-text="Text" data-has-line-height="">
+<h1>
+<span style="font-size:0.9em"><span style="font-size:0.7em">Kind of a</span> </span><br>
+<span style="font-size:0.9em"><strong>Cryptoanalysis</strong></span>
+</h1>
+</div></div>
+</div></section><section data-id="5d9f4388382a537253559cbcc017d265"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="dc9a36cd63df47ec537ec32809368638"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">128 vs 256 Bit Key</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-f83fcc" data-block-id="f5761453ec6bc33fc52dbac1a67bd5ee" style="height: auto; width: 629px; left: 80px; top: 332.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="1">Switch of Gate = C×V2 = 10^-15 J</li>
+	<li class="fragment" data-fragment-index="1">Energy world consumption: 567 EJ (2013)*</li>
+	<li class="fragment" data-fragment-index="2">1 World Computer, 10 Y = 2^122**</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-f28a25" style="height: auto; width: 600px; left: 80px; top: 633px;" data-block-id="08114b20f823d89938aabdd9c51b981f"><a class="sl-block-style" style="z-index: 12;" href="https://en.wikipedia.org/wiki/World_energy_consumption" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="1">
+<p style="text-align:left"><span style="font-size:0.5em">* https://en.wikipedia.org/wiki/World_energy_consumption</span></p>
+</div></a></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 80px; top: 659px;" data-block-id="0ac9b4e43f5f767ecf1dbc6ce35a6692" data-name="text-96e5e4"><a class="sl-block-style" style="z-index: 13;" href="https://security.stackexchange.com/a/6149/60108" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="2">
+<p style="text-align:left"><span style="font-size:0.5em">** https://security.stackexchange.com/a/6149/60108</span></p>
+</div></a></div>
+<div class="sl-block" data-block-type="text" data-name="text-e942cf" data-block-id="79bd9203c85f7cd50bd80820ebf5c7a0" style="height: auto; width: 929px; left: 80px; top: 251.5px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="0">
+<h3 style="text-align:left">Brute Force 128 bit: "How many football fields does it take?"</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-5206e5" data-block-id="5fbc6998106cb24b674d92d9c5c0ec85" style="height: auto; width: 600px; left: 577.281px; top: 447px;"><div class="sl-block-style" style="z-index: 15; transform: rotate(-15deg);"><div class="sl-block-content fragment fade-down" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="3">
+<h3>128 Bit Keys probably not broken through brute force anytime soon!</h3>
+</div></div></div></section><section data-id="7ad932896b4cd317170ec61781a0427a"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="491b50421286f95496267e889584e448"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">128 vs 256 Bit Key</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-14c08e" style="height: auto; width: 942px; left: 80px; top: 432px;" data-block-id="5e67d30a89143ebe72e5f291a3917309"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="1">
+<h3 style="text-align:left">Reasons for 256 bit</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-6feb9e" style="height: auto; width: 550px; left: 80px; top: 501px;" data-block-id="2c21b9ef66585c4f0b5dd7ced7813ae7"><div class="sl-block-style" style="z-index: 12; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li style="text-align:left" class="fragment" data-fragment-index="1">Marketing</li>
+	<li style="text-align:left" class="fragment" data-fragment-index="1">Compliance</li>
+	<li style="text-align:left" class="fragment" data-fragment-index="2"><em>Quantum Computer Protection*</em></li>
+</ul>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 942px; left: 80px; top: 232px;" data-block-id="04116481b1cae232bfff6150bfdcd705" data-name="text-f9cc1f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<h3 style="text-align:left">Reasons for 128 bit</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 720px; left: 80px; top: 303.5px;" data-block-id="c31e03459d929c49c4d190c142d674c7" data-name="text-dc7810"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<ul>
+	<li class="fragment" data-fragment-index="0" style="text-align:left">Faster</li>
+	<li class="fragment" data-fragment-index="0" style="text-align:left">Resistant to 256 bit key related key attacks</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-f28a25" style="height: auto; width: 600px; left: 80px; top: 648px;" data-block-id="5242d9f37003ce6c9062d97780a1615f"><a class="sl-block-style" style="z-index: 15;" href="https://en.wikipedia.org/wiki/Grover%27s_algorithm" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="2">
+<p style="text-align:left"><span style="font-size:0.5em">* en.wikipedia.org/wiki/Grover%27s_algorithm</span></p>
+</div></a></div>
+<div class="sl-block" data-block-type="text" data-name="text-72442b" data-block-id="26adef49531e329633e217c2fe1331bd" style="height: auto; width: 412px; left: 785.198px; top: 436px;"><div class="sl-block-style" style="z-index: 16; transform: rotate(-21deg);"><div class="sl-block-content fragment fade-down" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-fragment-index="3">
+<p><span style="font-size:1.2em">Why then 128 bit, 192 bit and 256 bit Key Option?</span></p>
+</div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 80px; top: 671px;" data-block-id="e11979e8e26620cdf8ed5857bc990a2c" data-name="text-607f8a"><a class="sl-block-style" style="z-index: 17;" href="https://crypto.stackexchange.com/a/76746/44838" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17;" data-fragment-index="2">
+<p style="text-align:left"><span style="font-size:0.5em">* crypto.stackexchange.com/a/76746/44838</span></p>
+</div></a></div></section><section data-id="b9901fbd6e8d81556c1476e3c1fe2711"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="90f6496668d15ad9d4febb9c441e4e3c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.832;" data-has-line-height="">
+<h1><span style="font-size:1.0em">Why AES and not </span></h1>
+
+<h1><em><span style="font-size:0.7em">[insert fancy new cipher]</span></em></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-defeee" data-block-id="ff3c400c17bd8af0574265d7c9a6cd10" style="height: auto; width: 1135px; left: 80px; top: 281px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 1.599;" data-has-line-height="">
+<ul>
+	<li class="fragment" data-fragment-index="0">In Cryptography old is good (introduced 2001)</li>
+	<li class="fragment" data-fragment-index="1">Under lot of scrutiny (used in e.g. TLS, WPA, OpenVPN, ...)</li>
+	<li class="fragment" data-fragment-index="2">Highly stanzdardized (NIST)</li>
+	<li class="fragment" data-fragment-index="3">Implementation available in practically every language</li>
+	<li class="fragment" data-fragment-index="4">Very Fast (in Hardware) &gt; GB/s</li>
+	<li class="fragment" data-fragment-index="5">Hardware Implementations widely available (e.g. &nbsp;x86 AES-NI,&nbsp; ARM cryptographic extensions)</li>
+</ul>
+</div></div></section><section data-id="f2977e386eceeeef10a86ba735fcd7a2"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="ba5033132d21d77c8a6e0a4c6c52321f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.832;" data-has-line-height="">
+<h1><span style="font-size:1.0em">Why not AES?</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-defeee" style="height: auto; width: 1135px; left: 122px; top: 216px;" data-block-id="36c1b6c3aacc34b03aef951e1ac7d18e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.599;" data-has-line-height="">
+<ul>
+	<li class="fragment" data-fragment-index="0">Specific Use Cases may make other algorithms more feasible<br>
+	<br>
+	e.g. Bernstein's ChaCha20 is popular with Google because it is faster on non-hardware accelerated clients (like TLS in browser on some mobile devices)<br>
+	&nbsp;</li>
+	<li class="fragment" data-fragment-index="1">DES Legacy<br>
+	<br>
+	e.g. 3DES still used in NFC Payment (EMVCo)</li>
+</ul>
+</div></div></section><section data-id="35555a0207aaaf59afdbe82cd0966a20"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="6049860f3dec10a23fdf3fdc5d8c0255"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 0.832;" data-has-line-height="">
+<h1>Is AES Secure?</h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-defeee" style="height: auto; width: 1280px; left: 0px; top: 192.026px;" data-block-id="70cb60cb497d4a8cf71c550692b67512"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.599;" data-has-line-height="" data-fragment-index="0">
+<p class="fragment" data-fragment-index="0"><strong><span style="font-size:2.0em">AES is Broken!</span></strong></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 1280px; left: 0px; top: 274.973px;" data-block-id="4941abf9fdf0c5615020bc187783af00" data-name="text-b5fc4d"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 1.599;" data-has-line-height="" data-fragment-index="1">
+<p class="fragment" data-fragment-index="1"><span style="font-size:1.0em">In Cryptography broken does not necessarily means insecure.</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-30b381" data-block-id="2edcc3a6defc13ff9a9e62524a3127ba" style="height: auto; width: 600px; left: 340px; top: 348.968px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="2">
+<blockquote>
+<p><span style="font-size:0.9em">Attacks have been published that are computationally faster than a full brute-force attack, though none as of 2013 are computationally feasible. For AES-128, the key can be recovered with a computational complexity of 2^126.1 using the biclique attack. (...) Related-key attacks can break (...) AES-256 with complexities 2^176 in both time and data, respectively.</span></p>
+</blockquote>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-f28a25" style="height: auto; width: 600px; left: 20px; top: 671.468px;" data-block-id="72ef24912c49536dc7f89f407d094f86"><a class="sl-block-style" style="z-index: 14;" href="https://crypto.stackexchange.com/a/10484/44838" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="2">
+<p style="text-align:left"><span style="font-size:0.5em">* crypto.stackexchange.com/a/10484/44838</span></p>
+</div></a></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 20px; top: 650.468px;" data-block-id="ee63e5ff40bd378d4cbf8b30dc1f569f" data-name="text-4f954b"><a class="sl-block-style" style="z-index: 15;" href="https://crypto.stackexchange.com/a/10484/44838" target="_blank"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="2">
+<p style="text-align:left"><span style="font-size:0.5em">* wikipedia.org/wiki/Advanced_Encryption_Standard</span></p>
+</div></a></div></section></section><section class="stack" data-id="d11d8de7b22fe2b600ab47746bfcf492"><section data-id="35023073c2fa4e81e1e9475cfaddc5ec" data-background-image="senacor-streamed-con-crypto-pt1/6e28d5f62621ff4fdfb3f50c5982a1df.jpg" data-background-opacity="0.58">
+<div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 0px; height: auto;" data-name="text-9b3c2c" data-block-id="dab06455c5b03541cd726e35d05c34ac">
+    <div class="sl-block-style" style="z-index: 12; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 12; line-height: 0.845; padding: 80px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" data-placeholder-text="Text" data-has-line-height="">
+<h1>
+<span style="font-size:0.5em">An unfortunate Story </span><br>
+<span style="font-size:0.9em"><strong>Crypto APIs</strong></span>
+</h1>
+</div></div>
+</div></section><section data-id="494bb514a5b678779e0e43de07281236"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="bafe9671c3cb19f761d608055d685245"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">Levels Crypto Code</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-47f6a1" data-block-id="8f8d97412afee7e0e91402b22cd35d8d" style="height: auto; width: 600px; left: 560px; top: 244px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(204, 65, 37); border-style: solid; border-width: 6px; padding: 15px;" data-fragment-index="0">
+<p><span style="font-size:1.2em"><strong>Primitives</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 560px; top: 388px;" data-block-id="f60e81df2a15bb1c95427a9ff658541f" data-name="text-73dc25"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(246, 178, 107); border-style: solid; border-width: 6px; padding: 15px;" data-fragment-index="1">
+<p><span style="font-size:1.2em"><strong>Protocol Developer</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 560px; top: 532px;" data-block-id="9f9b1ec1475301e914e1e088533c1376" data-name="text-55f89e"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(147, 196, 125); border-style: solid; border-width: 6px; padding: 15px;" data-fragment-index="2">
+<p><span style="font-size:1.2em"><strong>Opinionated Protocol User</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-e517db" data-block-id="d327a303d29eeadbe214e23307e93b31" style="height: auto; width: 463px; left: 80px; top: 268.5px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="0">
+<p><span style="font-size:0.9em">e.g. Implementation of Block Cipher</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 463px; left: 80px; top: 412.5px;" data-block-id="f3d108a748729939633822d09e0624bd" data-name="text-3084a4"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="1">
+<p><span style="font-size:0.9em">e.g. Secure Channel implementation</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 463px; left: 80px; top: 556.5px;" data-block-id="36183bb93aae0e29744d7356946906c7" data-name="text-ab2ef9"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;" data-fragment-index="2">
+<p><span style="font-size:0.9em">e.g. changing TLS Certificate</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-5189ce" data-block-id="5e3a9f22cfb318be8f1f7d855fb2edc1" style="height: auto; width: 235.444px; left: 292.278px; top: 340.5px;"><div class="sl-block-content fragment fade-down" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(230, 145, 56);" data-fragment-index="3">
+<p><span style="font-size:0.9em"><strong>most Crypto APIs</strong></span></p>
+</div></div>
+<div class="sl-block" data-block-type="line" data-name="line-9a808a" data-block-id="5a088170749ebffafabc9218cd8bc0fb" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 543px; top: 360px;"><div class="sl-block-content fragment fade-down" data-line-x1="0" data-line-y1="0" data-line-x2="637" data-line-y2="0.0000124797999205839" data-line-color="#e69138" data-line-start-type="none" data-line-end-type="none" style="z-index: 18;" data-line-width="6px" data-fragment-index="3"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="637" height="1" viewBox="0 0 637 1"><path class="line-element" fill="rgba(0,0,0,0)" stroke="#e69138" stroke-width="6" d="M0 0 L637 0"></path><path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 0 L637 0"></path><path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M0 0 L637 0"></path></svg></div></div>
+<div class="sl-block" data-block-type="line" data-name="line-bb52bc" data-block-id="723df08f4ea13ef6b891ecb9a0a18ca3" style="width: auto; height: auto; min-width: 0px; min-height: 0px; left: 1226px; top: 275px;"><div class="sl-block-content" data-line-x1="0" data-line-y1="288" data-line-x2="0" data-line-y2="0" data-line-color="#ffffff" data-line-start-type="none" data-line-end-type="none" style="z-index: 19;" data-line-width="6px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="1" height="288" viewBox="0 0 1 288"><path class="line-element" fill="rgba(0,0,0,0)" stroke="#ffffff" stroke-width="6" d="M0 288 L0 0"></path><path class="line-skeleton" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" d="M0 288 L0 0"></path><path class="line-hitarea" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,0)" stroke-width="15" d="M0 288 L0 0"></path></svg></div></div>
+<div class="sl-block" data-block-type="shape" data-name="shape-9b0d44" data-block-id="cbd791a81319d956b104fa5a7739ff23" style="width: 32px; height: 31px; left: 1210px; top: 563px;"><div class="sl-block-content" data-shape-type="triangle-down" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 20;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 32 31"><polygon points="0,0 32,0 16,31" class="shape-element" fill="rgb(255, 255, 255)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-4d3707" data-block-id="e095e81657cdc4e78f66a630a2bdf52f" style="height: auto; width: 206px; left: 1148.5px; top: 396.5px;"><div class="sl-block-style" style="z-index: 21; transform: rotate(90deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21;">
+<p><span style="font-size:0.7em">Higher Level</span></p>
+</div></div></div></section><section data-id="35873cbb68aa2285481784afa23033a9"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="10b92b4b755341992cb9f29848049565"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">Lets implement AES Encryption in Java!</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 1034px; left: 121px; top: 288px; height: auto;" data-name="text-80bbbf" data-block-id="fa7cc944b4e1c5f5f97ccd9bbe0b0b68"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin urna odio, aliquam vulputate faucibus id, elementum lobortis felis. Mauris urna dolor, placerat ac sagittis quis." style="text-align: left; z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0"><span style="font-size:1.2em">Java Cryptography Architecture (JCA) &amp; Java Cryptography Extension (JCE)</span></li>
+	<li class="fragment" data-fragment-index="0"><span style="font-size:1.2em">Implementation of Primitives JDK dependant (or Android)</span></li>
+</ul>
+</div></div></section><section data-id="a1406581cf005f2ec010fb7e6ef725ba"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="32cf50e4e670734a3d60bfc0efe6e733"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">Step 1: Create Key</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="code" data-name="code-c2b0aa" data-block-id="6232ca0e4c4dfb5a04bd0f90d2e14043" style="width: 1005px; height: auto; left: 160px; top: 337px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11; font-size: 184%; border-width: 1px;" data-code-autoheight="true"><pre class="java"><code data-line-numbers="1-3|5" style="padding: 10px;">SecureRandom secureRandom = new SecureRandom();
+byte[] key = new byte[16];
+secureRandom.nextBytes(key);
+
+SecretKey secretKey = new SecretKeySpec(key, "AES");</code></pre></div></div></section><section data-id="cc4693396770b703d5b51e461d980635"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="d7053938c327eb7fa7827055bdddffa4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1>
+<span style="font-size:0.9em">Step 2: </span><span style="font-size:67.5px">Initialise</span><span style="font-size:0.9em">&nbsp;Cipher</span>
+</h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="code" data-name="code-c2b0aa" style="width: 1100px; height: auto; left: 160px; top: 217px;" data-block-id="1ea6d7443bc813f98d77344efa6f5339"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11; font-size: 163%;" data-code-autoheight="true"><pre class="java"><code data-line-numbers="1-2|4-5|6-7|9|11-13" style="padding: 10px;">byte[] iv = new byte[12]; //NEVER REUSE THIS IV WITH SAME KEY
+secureRandom.nextBytes(iv);
+
+final Cipher cipher = 
+	Cipher.getInstance("AES/GCM/NoPadding");
+GCMParameterSpec parameterSpec = 
+	new GCMParameterSpec(128, iv); //128 bit auth tag length
+    
+cipher.init(Cipher.ENCRYPT_MODE, secretKey, parameterSpec);
+
+if (associatedData != null) {
+    cipher.updateAAD(associatedData);
+}</code></pre></div></div></section><section data-id="f4dc388e606ea63d833b67268599c5db"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="0f065fd6e35430e4e595e1eb471c3104"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">Step 3: Encrypt &amp; Package</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="code" data-name="code-c2b0aa" style="width: 1090px; height: auto; left: 160px; top: 216px;" data-block-id="b8afd2a5cf062162c5ee719ad05c8bd4"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11; font-size: 163%;" data-code-autoheight="true"><pre class="java"><code data-line-numbers="1-2|3-7|9-10" style="padding: 10px;">byte[] cipherText = cipher.doFinal(plainText);
+
+ByteBuffer byteBuffer = 
+	ByteBuffer.allocate(iv.length + cipherText.length);
+byteBuffer.put(iv);
+byteBuffer.put(cipherText);
+byte[] cipherMessage = byteBuffer.array();
+
+//overwrite the content of key with zeros
+Arrays.fill(key, (byte) 0); </code></pre></div></div></section><section data-id="bbee70d0fc3a8460ba00a93521ddee49"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="5883369b90a88961390a626f411379b4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">Step 4: Decrypt</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="code" data-name="code-c2b0aa" style="width: 1090px; height: auto; left: 160px; top: 216px;" data-block-id="4e348e02f865602ee332c62617f13f13"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11; font-size: 132%;" data-code-autoheight="true"><pre class="java"><code data-line-numbers="1-2|4-6|8-10|12-14" style="padding: 10px;">final Cipher cipher = 
+	Cipher.getInstance("AES/GCM/NoPadding");
+    
+//use first 12 bytes for iv
+AlgorithmParameterSpec gcmIv = new GCMParameterSpec(128, cipherMessage, 0, 12);
+cipher.init(Cipher.DECRYPT_MODE, secretKey, gcmIv);
+
+if (associatedData != null) {
+    cipher.updateAAD(associatedData);
+}
+
+//use everything from 12 bytes on as ciphertext
+byte[] plainText 
+	= cipher.doFinal(cipherMessage, 12, cipherMessage.length - 12);</code></pre></div></div></section><section data-id="526877c8bab6e35faaba5f8fd350be39"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="6cc521560a09e9d4d3b285bc25dc13bc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">There is a lot to get wrong!</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-57713f" data-block-id="9117e00e01eafb0cdb8ee78c10b572ae" style="height: auto; width: 434px; left: 80px; top: 216px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">way too low level</li>
+	<li class="fragment" data-fragment-index="1">unintuitive APIs<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	&nbsp;</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-d10180" data-block-id="cc4998effa0cd5128d35ac6db92bc972" style="width: 677.2px; height: 338.984px; left: 175.4px; top: 309.016px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="2"><img style="" data-natural-width="1762" data-natural-height="882" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/f8ae834a650a384caae05b2b68ed24a0.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-cdfc9d" data-block-id="8f09a8cc254c938d4331e7a3b313e212" style="width: 410.267px; height: 78.966px; left: 862.346px; top: 387.016px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="4"><img data-natural-width="1382" data-natural-height="266" style="" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/e0678e72fd96de97a08dbc2a31fdbfdb.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-5ca661" data-block-id="032f12da709bb02ad6570c2b20333989" style="width: 410.267px; height: 205.463px; left: 862.346px; top: 478.508px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="5"><img data-natural-width="1246" data-natural-height="624" style="" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/401dbf3e32da6fc6ed18d0bb2beff15a.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-354225" data-block-id="277bced3dabf095559b34104bea6501d" style="width: 405.088px; height: 258.567px; left: 862.346px; top: 118.433px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="3"><img data-natural-width="1222" data-natural-height="780" style="" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/7e683b084f402e464001c39faede6812.png"></div></div></section><section data-id="c5f865ed4fb9d437cf60d9605cd4c8e2"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="86a55bd69cc14ecec8a412a6b399295e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">There is a lot to get wrong!</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-57713f" style="height: auto; width: 434px; left: 80px; top: 216px;" data-block-id="eb0b9a235f3d905217a0b644fe9d8823"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="visible">easy to get wrong</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-c2b0aa" style="width: 1100px; height: auto; left: 160px; top: 264px;" data-block-id="a3ef074c3844f8e5493834abd78a5ec3"><div class="sl-block-content notranslate fragment" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12; font-size: 163%;" data-code-autoheight="true" data-fragment-index="0"><pre class="java"><code data-line-numbers="1-11|1-11|9" style="padding: 10px;" data-fragment-index="0">//THIS EXAMPLE IS UNSECURE - DO NOT USE
+
+byte[] iv = new byte[12]; 
+secureRandom.nextBytes(iv);
+
+final Cipher cipher = 
+	Cipher.getInstance("AES/GCM/NoPadding");
+GCMParameterSpec parameterSpec = 
+	new GCMParameterSpec(16, iv); //16 byte auth tag length
+    
+cipher.init(Cipher.ENCRYPT_MODE, secretKey, parameterSpec);
+</code></pre></div></div></section><section data-id="21b76b4ffb5d6846bb9e8d8aeb55877b"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="e8ddc88f6b0e2922a826682ac9277d9f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">There is a lot to get wrong!</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-57713f" style="height: auto; width: 711px; left: 80px; top: 216px;" data-block-id="2be8d6653b417a7b914f235e888b07c0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="visible">Cryptography requires different style of coding</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-name="code-c2b0aa" style="width: 1100px; height: auto; left: 160px; top: 271px;" data-block-id="3d8232006bd12a08f392b32973e41d79"><div class="sl-block-content notranslate fragment" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12; font-size: 163%;" data-code-autoheight="true" data-fragment-index="0"><pre class="java"><code data-line-numbers="" style="padding: 10px;" data-fragment-index="1">byte[] calculatedMac = ... 
+byte[] providedMac = ...
+
+for(int i=0; i &lt; calculatedMac.length; i++) {
+    if(calculatedMac[i] != providedMac[i]) {
+        return false;
+    }
+}
+
+return true;</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="width: 1100px; height: auto; left: 160px; top: 660px;" data-block-id="69d0e5960dc41b71efc746851e6dd84b" data-name="code-fa4cda"><div class="sl-block-content notranslate fragment" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 13; font-size: 163%;" data-code-autoheight="true" data-fragment-index="2"><pre class="java"><code data-line-numbers="1-11|1-11|9" style="padding: 10px;" data-fragment-index="0">MessageDigest.isEqual(calculatedMac, providedMac); //JDK 6u10</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-8acf50" data-block-id="d7522b08797340557af839776ea26f61" style="height: auto; width: 430px; left: 838px; top: 356.789px;"><div class="sl-block-style" style="z-index: 14; transform: rotate(29deg);"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="1">
+<p><strong>Hello Side Channel Attack!</strong></p>
+</div></div></div></section><section data-id="42b9b65dd4be539e2fba395aee0f7b85"><div class="sl-block" data-block-type="text" style="width: 1100px; left: 80px; top: 72px; height: auto;" data-block-id="bad9fd9152a219814963cc3cbb370122"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10; line-height: 1.001;" data-has-line-height="">
+<h1><span style="font-size:0.9em">There are better options</span></h1>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sl-block" data-block-type="text" data-name="text-3df90c" data-block-id="150063a2ae3fa04f5dc510ecbf26d7b2" style="height: auto; width: 886px; left: 80px; top: 196.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0" style="text-align:left">Just do not implement crypto code!</li>
+	<li class="fragment" data-fragment-index="1" style="text-align:left">Use higher level crypto frameworks like <em>libsodium</em>&nbsp;or <em>Google Tink</em>
+</li>
+	<li class="fragment" data-fragment-index="2" style="text-align:left">Have a dedicated crypto engineer</li>
+	<li class="fragment" data-fragment-index="3" style="text-align:left">Have formal audits or reviews</li>
+</ul>
+</div></div></section></section><section data-id="812d4e5afd2140d620bb1721eacabc49">
+<div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 0px; height: auto;" data-name="text-9b3c2c" data-block-id="2e573c33f8c790aefe3417a3a4236db2">
+    <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10; line-height: 0.845; border-width: 1px; padding: 80px;" data-placeholder-text="Text" data-has-line-height="">
+<h1><span style="font-size:0.9em"><strong>Summary</strong></span></h1>
+</div></div>
+</div>
+<div class="sl-block" data-block-type="text" data-name="text-9a3903" data-block-id="829dd7458ce52d63efff231000ab02a0" style="height: auto; width: 815px; left: 100px; top: 282px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li class="fragment" data-fragment-index="0">writing secure crypto code is hard, so avoid if possible</li>
+	<li class="fragment" data-fragment-index="1">if that's not an option use high level frameworks</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 967px; left: 137px; top: 498px;" data-block-id="d2f45c4d7254b66e7ca0760f51e7d3db" data-name="text-a6e7aa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li class="fragment" data-fragment-index="3">always strive for authenticated encryption (AES/GCM is a good choice)</li>
+	<li class="fragment" data-fragment-index="4">128 bit security is good enough for most use cases</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" data-name="text-a4ba64" data-block-id="93ef3a8835b0f1c78237a0497a3ee135" style="height: auto; width: 600px; left: 80px; top: 419.5px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="2">
+<h3 style="text-align: left;">Symmetric Encryption</h3>
+</div></div></section><section data-id="fe5af440fb4ad053a132601f4ff62dd4" data-background-image="senacor-streamed-con-crypto-pt1/b75c887c6c793fd07acd698608d18461.jpg" data-background-opacity="0.5">
+<div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 0px; height: auto;" data-name="text-9b3c2c" data-block-id="c678678466a53290ca17650e65eca49a">
+    <div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10; line-height: 0.845; border-width: 1px; padding: 80px;" data-placeholder-text="Text" data-has-line-height="">
+<h1><span style="font-size:0.9em"><strong>Thanks!</strong></span></h1>
+</div></div>
+</div>
+<div class="sl-block" data-block-type="text" data-name="text-8ee1e2" data-block-id="0903b205c84dd9c5c60b53c1184ae5eb" style="height: auto; width: 600px; left: 87px; top: 222px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p style="text-align:left"><span style="font-size:1.2em">Post your Qs in Slack</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 28.1921px; height: 28.1921px; left: 1042.81px; top: 616.047px; min-width: 1px; min-height: 1px;" data-block-id="545a707b150f71536916019b67571c46" data-name="image-f26acf"><div class="sl-block-style" style="z-index: 14; opacity: 0.6;"><div class="sl-block-content" style="z-index: 14;"><img data-natural-width="200" data-natural-height="200" style="" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/7951e86a36d6cbff04a31b9b3f30147f.png"></div></div></div>
+<div class="sl-block" data-block-type="image" style="width: 126px; height: 19.5211px; left: 1074px; top: 628.479px; min-width: 1px; min-height: 1px;" data-block-id="e0cee7f2faab83da8832a5e6fadd9b55" data-name="image-bc4e5c"><div class="sl-block-style" style="z-index: 15; opacity: 0.66;"><div class="sl-block-content" style="z-index: 15;"><img data-natural-width="568" data-natural-height="88" style="" data-lazy-loaded="" data-src="senacor-streamed-con-crypto-pt1/74a4d7c3d738f3a906862081877b33c2.png"></div></div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":1792470,"slug":"senacor-streamed-con-crypto-pt1","title":"Senacor Streamed-con-crypto-pt1","description":"","width":1280,"height":720,"margin":0.1,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/c2006c369a1e83877a136492ae818f31/thumb.jpg?1594408958","view_count":10,"user":{"id":1325936,"username":"favr","name":"","description":"","thumbnail_url":"https://www.gravatar.com/avatar/52ff4dddcaea4c2df64711c8e3d70e23?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"pro","team_id":null,"settings":{"id":5368660,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"concave","transition":"slide","theme_id":null,"theme_font":"news","theme_color":"black-orange","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":42,"rtl":false,"version":2,"collaborative":true,"deck_user_editor_limit":3,"data_updated_at":1775923068648,"font_typekit":null,"font_google":null,"time_limit":50,"navigation_mode":"default","upsizing_enabled":true,"language":"en","source_deck_id":null,"notes":{"eda6b7ec0a8f3042d6c8006fd4f1b7db":"Base Knowledge Pt1\nSymmetric Encryption\nPassword Hash Functions\nCreating Random Stuff\nCryptography in your Day-to-Day\nProblem with Crypto Frameworks\nI can write Crypto code, right? Right???\nHow to research\nDon't us the shiny new things\nKnowing 80% is knowing nothing at all","7ad932896b4cd317170ec61781a0427a":"AES actually has three distinct key sizes because it has been chosen as a US Federal Algorithm Apt at being used in various areas under the control of the US federal government [including the military]. (…) So the fine military brains came up with the idea that there should be three ”security levels”, so that the most important secrets were encrypted with the heavy methods that they deserved, but the data of lower tactical value could be encrypted with more practical, if weaker, algorithms. (…) So the NIST decided to formally follow the regulations (ask for three key sizes) but to also do the smart thing (the lowest level had to be unbreakable with foreseeable technology)(Source)","35555a0207aaaf59afdbe82cd0966a20":"Threat Model","42b9b65dd4be539e2fba395aee0f7b85":"private projects are fine!","21b76b4ffb5d6846bb9e8d8aeb55877b":"Hardware impl often better because always constant time","6a282b2145d2ce75a622e1c5f5aee996":"Belgian cryptographers, Vincent Rijmen and Joan Daemen","4636dedaac26336a80c6bcc1e3360507":"","715db0577c17e6dcae646336e9b36b56":"","c36e213122a00818153bec40089477d3":"","ad4ca9d511aa69ab400e686046d355a8":"","35023073c2fa4e81e1e9475cfaddc5ec":"","812d4e5afd2140d620bb1721eacabc49":"","fe5af440fb4ad053a132601f4ff62dd4":"","e302eff550f1e50f6b11c09408e8ddf1":"","3ea95c989fc9316c9c7a4c4c238025aa":"","7cae09b9e61bc615c6f0811777b3ace3":"","fbbf3ba3969932f1791edeede38f2cfc":"","152e166bf29616d8fb1b1fca92144d1b":"","605267fd112a0ccba925aad9efec1d75":"","5402ce0bb274904dccc36fc4f58420e1":"","8f49dec5efd9d0ed8baf7f9a31579cc8":"","18550ddcae6e890ac53c7134294a0a37":"","68e17312576553c7effd50eaff54818e":"","395bfff876d8d74b50443d476a89dc85":"","0ed7763dc49124539a9083059b5b12a1":"","cd36d1dff47423e98cbd9e740a99ecf5":"","d91438791d31f6c7636eaf32c14db568":"","b9a4466a7c9bf318450cbd4f711eafc6":"","be062e60baeb8b911b272e52f519fa2a":"","c6b06c192d76d9fab48693bfe23e9845":"","1d253f2d8561e693fab148d8838a2fd0":"","5d9f4388382a537253559cbcc017d265":"","b9901fbd6e8d81556c1476e3c1fe2711":"","f2977e386eceeeef10a86ba735fcd7a2":"","494bb514a5b678779e0e43de07281236":"","35873cbb68aa2285481784afa23033a9":"","a1406581cf005f2ec010fb7e6ef725ba":"","cc4693396770b703d5b51e461d980635":"","f4dc388e606ea63d833b67268599c5db":""}}};
+
+
+			// Use local fonts
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/reveal.js"></script>
+		<script src="lib/reveal-plugins.js"></script>
+		<script src="lib/offline.js"></script>
+
+		<!-- Initialize the presentation -->
+		<script>
+			Reveal.initialize({
+				width: 1280,
+				height: 720,
+				margin: 0.1,
+				
+
+				hash: true,
+				controls: true,
+				progress: true,
+				mouseWheel: false,
+				showNotes: false,
+				slideNumber: true,
+				fragmentInURL: true,
+
+				autoSlide: 0,
+				autoSlideStoppable: true,
+
+				autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+				scrollActivationWidth: null,
+
+				center: false,
+				shuffle: false,
+				loop: false,
+				rtl: false,
+				navigationMode: "default",
+
+				transition: "slide",
+				backgroundTransition: "concave",
+
+				highlight: {
+					escapeHTML: false
+				},
+
+				plugins: [ RevealZoom, RevealNotes, RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+
+		
+
+
+	</body>
+</html>
