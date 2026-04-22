@@ -26,11 +26,15 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
+      - name: Prepare pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 10
       - name: Prepare Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
       - name: Install & Test Content-Downloader
         run: pnpm package:ci
         working-directory: ${{ env.WORKING_DIR }}
