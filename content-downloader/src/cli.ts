@@ -88,7 +88,7 @@ export async function cli(args: string[]): Promise<void> {
         ...await gistDownloader.download(),
         ...await stackOverflowDownloader.download(),
         ...await githubDownloader.download(),
-        ...await mediumDownloader.download(),
+        //...await mediumDownloader.download(),
         ...await devToDownloader.download()
     ];
 

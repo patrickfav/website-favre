@@ -56,6 +56,7 @@ export class MediumDownloader extends Downloader {
         return url.startsWith('https://medium.com/_/stat');
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private async downloadProjectImage(articleInfo: any, safeArticleTitle: string, targetProjectDir: string): Promise<void> {
         const imageUrl = 'https://cdn-images-1.medium.com/max/1024/' + articleInfo.previewImage.__ref.replace(/ImageMetadata:/g, '')
         const imageFileName = 'feature_' + safeArticleTitle + '.png'
@@ -74,6 +75,7 @@ export class MediumDownloader extends Downloader {
             return markdown
         }
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         function parseAsMarkdown(rssElement: any): string {
             const htmlContent = rssElement['content:encoded']
             const turndownService = new TurndownService()

@@ -48,6 +48,7 @@ export abstract class Downloader {
         this.downloadDate = new Date();
         try {
             return await this.downloadLogic();
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
             console.log(`An error has occurred while downloading ${this.name}.`);
 
@@ -106,6 +107,7 @@ export abstract class Downloader {
         return markdownContent
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     protected testShouldFilterImage(url: string): boolean {
         return false
     }

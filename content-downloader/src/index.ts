@@ -12,5 +12,5 @@ Starting at ${new Date().toISOString()}
 `)
 
 require = esm(module /*, options*/);
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 require('../dist/cli').cli(process.argv);

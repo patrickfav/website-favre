@@ -78,7 +78,7 @@ describe('StatsManager', () => {
             },
         ];
 
-        const previousResults: any = {};
+        const previousResults = {};
 
         await statsManager.persist(contentStats, previousResults);
 

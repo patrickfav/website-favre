@@ -1,8 +1,8 @@
-import * as crypto from 'crypto';
 // @ts-ignore
 import base32 from 'base32-encoding';
 import TurndownService, {Filter, Node, Options, ReplacementFunction} from "turndown";
 import fs from "fs";
+import * as crypto from 'node:crypto';
 
 export interface Slug {
     id: string,
@@ -212,7 +212,10 @@ export function regexQuote(unquoted: string): string {
 
 export function calculateFileSha256(filePath: string): string {
     const buff = fs.readFileSync(filePath);
-    return crypto.createHash("sha256").update(buff).digest("hex")
+    return crypto
+        .createHash("sha256")
+        .update(new Uint8Array(buff))
+        .digest("hex");
 }
 
 export function renameFile(oldPath: string, newPath: string): Promise<void> {

@@ -7,21 +7,22 @@
     "hugo-content-downloader": "./dist/index.js"
   },
   "engines": {
-    "npm": ">=9.6.0 <10.0.0",
-    "node": ">=18.17.0 <19.0.0"
+    "node": ">=24.15.0 <25.0.0"
   },
+  "packageManager": "pnpm@10.33.1",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "exec": "npm run build && hugo-content-downloader",
-    "package": "npm run clean && npm i && npm run build && npm run test && npm link",
-    "package:ci": "npm ci && npm run build && npm run test && npm link",
-    "build": "npx tsc",
+    "preinstall": "npx only-allow pnpm",
+    "exec": "pnpm build && hugo-content-downloader",
+    "package": "pnpm clean && pnpm install --frozen-lockfile && pnpm build && pnpm test",
+    "package:ci": "pnpm install --frozen-lockfile && pnpm build && pnpm test",
+    "build": "pnpm exec tsc",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "lint:ts": "eslint src/**/*.ts -f json -o eslint_report.json",
-    "lint": "npm run lint:ts",
+    "lint:ci": "eslint src/**/*.ts -f json -o eslint_report.json",
+    "lint": "eslint src/**/*.ts",
     "clean": "rm -rf ./dist"
   },
   "keywords": [
@@ -43,23 +44,20 @@
     "scramjet": "^4.29.0",
     "turndown": "v7.1.2",
     "turndown-plugin-gfm": "^1.0.2",
-    "typescript": "^5.0.4",
+    "typescript": "^5.9.3",
     "words-count": "^2.0.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
     "@types/cheerio": "^0.22.31",
     "@types/esm": "^3.2.0",
     "@types/got": "^9.6.12",
     "@types/jest": "^29.5.4",
     "@types/node": "^18.17.15",
     "@types/turndown": "^5.0.4",
-    "@typescript-eslint/eslint-plugin": "^5.59.7",
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.47.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.28.0",
-    "eslint-plugin-n": "^16.0.1",
-    "eslint-plugin-promise": "^6.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.59.0",
+    "@typescript-eslint/parser": "^8.59.0",
+    "eslint": "^9.39.4",
     "firebase-mock": "^2.3.2",
     "jest": "^29.7.0",
     "sonarqube-scanner": "^3.0.1",

@@ -12,6 +12,7 @@ import {
     stackExchangeHighlightedCodeBlock,
     supportedHtml
 } from './util';
+import {describe} from "node:test";
 import TurndownService from "turndown";
 
 describe('generateSlug', () => {
