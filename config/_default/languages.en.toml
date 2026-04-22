@@ -3,22 +3,22 @@ languageName = "English (Austria)"
 displayName = ":flag-au:"
 isoCode = "en-AT"
 weight = 1
-rtl = false
+languageDirection = "ltr"
 
 title = "favr.dev | Portfolio"
 description = "Patrick Favre's Portfolio Website"
-copyright = "&copy; 2023"
+copyright = "&copy; 2026"
 
 dateFormat = "02.01.2006"
 
 [params]
   mainSections = ["articles", "stackexchange", "opensource", "gist"]
 
-[author]
+[params.author]
   name = "Patrick Favre"
   image = "img/author.jpg"
-  headline = "Software Engineer currently working as architect, backend dev, cloud engineer, IT ops rookie. Cryptography and security are my passions."
-  bio = "Software Engineer currently working as architect, backend dev, cloud engineer, IT ops rookie. Cryptography and security are my passions."
+  headline = "Software Engineer currently working as architect, backend dev and cloud engineer. Cryptography and security are my passions."
+  bio = "Software Engineer currently working as architect, backend dev and cloud engineer. Cryptography and security are my passions."
   links = [
     { github = "https://github.com/patrickfav" },
     { stack-overflow = "https://stackoverflow.com/users/774398" },
