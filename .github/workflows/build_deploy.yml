@@ -53,7 +53,7 @@ jobs:
           timeout_minutes: 5
           retry_wait_seconds: 60
           max_attempts: 3
-          command: ${{ env.WORKING_DIR }}/dist/index.js ./content/
+          command: chmod +x ${{ env.WORKING_DIR }}/dist/index.js && ${{ env.WORKING_DIR }}/dist/index.js ./content/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRESTORE }}
