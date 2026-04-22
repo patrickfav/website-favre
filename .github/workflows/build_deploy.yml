@@ -76,7 +76,7 @@ jobs:
         run: |
           hugo version && \
           hugo config && \
-          hugo --verbose --printPathWarnings --minify
+          hugo --printPathWarnings --minify
       - name: Upload Hugo Site
         uses: actions/upload-artifact@v7
         with:

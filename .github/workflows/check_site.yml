@@ -46,7 +46,7 @@ jobs:
         run: |
           hugo version && \
           hugo config && \
-          hugo --verbose --printPathWarnings --minify
+          hugo --printPathWarnings --minify
       - name: Validate generated HTML (validator.nu backend)
         uses: Cyb3r-Jak3/html5validator-action@v7.2.0
         with:
