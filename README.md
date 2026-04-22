@@ -19,7 +19,7 @@ A simple website with a list of all of my open source projects and articles I wr
 
 ### Install Node
 
-Currently, this project uses [Node 18.17.0 (lts)](https://nodejs.org/es/blog/release/v18.17.0). It is recommended to use
+Currently, this project uses [Node 24.15.0 (lts)](https://nodejs.org/es/blog/release/v18.17.0). It is recommended to use
 a node version manager like [nvm](https://github.com/nvm-sh/nvm), then you can just run
 
 ```bash
@@ -27,6 +27,14 @@ nvm install && nvm use
 ```
 
 in the project root dir to install and use the correct version.
+
+### Install pnpm
+
+This project uses [pnpm](https://pnpm.io/) as package manager. You can install it with
+
+```bash
+corepack enable pnpm
+```
 
 ### Cloning Project with Submodule
 
@@ -57,19 +65,13 @@ Install and link everything and build the js files from typescript with
 
 ```bash
 cd content-downloader
-npm run package
+pnpm package
 ```
 
 then either run it with
 
 ```bash
-hugo-content-downloader
-```
-
-or use the shortcut that automatically rebuilds the sources
-
-```bash
-npm run exec
+node ./dist/index.js ./content/
 ```
 
 which will populate the directories `content/opensource` and `content/articles`.
@@ -80,7 +82,7 @@ This project uses [eslint](https://eslint.org/) to validate the code:
 
 ```bash
 cd content-downloader
-npm run lint
+pnpm lint
 ```
 
 ### Using the build & run Docker Image
@@ -96,4 +98,4 @@ and then you can access the page with `http://localhost:8080`
 
 # License
 
-Proprietary: Patrick Favre 2023
+Proprietary: Patrick Favre 2026

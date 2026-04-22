@@ -1,4 +1,4 @@
-FROM alpine:3.17.3 as BUILDER
+FROM alpine:3.23.3 AS BUILDER
 
 MAINTAINER Patrick Favre <patrick@favre.at>
 
@@ -24,7 +24,7 @@ WORKDIR /site
 
 RUN hugo --minify
 
-FROM nginx:1.23.3-alpine
+FROM nginx:1.29.8-alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
 

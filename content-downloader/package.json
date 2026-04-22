@@ -15,7 +15,6 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "exec": "pnpm build && hugo-content-downloader",
     "package": "pnpm clean && pnpm install --frozen-lockfile && pnpm build && pnpm test",
     "package:ci": "pnpm install --frozen-lockfile && pnpm build && pnpm test",
     "build": "pnpm exec tsc",
