@@ -44,7 +44,7 @@ jobs:
         run: pnpm lint
         working-directory: ${{ env.WORKING_DIR }}
       - name: Run Audit
-        run: pnpm audit --audit-level=none
+        run: pnpm audit --audit-level=critical --ignore-unfixable
         working-directory: ${{ env.WORKING_DIR }}
       - name: Update Content
         uses: nick-fields/retry@v3
