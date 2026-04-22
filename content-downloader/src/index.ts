@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import esm from "esm";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { cli } = require('./cli');
 
 console.log(`
    ____                _____    ___ 
@@ -11,6 +12,4 @@ console.log(`
 Starting at ${new Date().toISOString()}
 `)
 
-require = esm(module /*, options*/);
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-require('../dist/cli').cli(process.argv);
+cli(process.argv);
