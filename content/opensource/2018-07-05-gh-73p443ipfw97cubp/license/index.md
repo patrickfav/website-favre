@@ -1,7 +1,7 @@
 ---
 title: 'license'
 date: 2018-07-05
-lastmod: 2023-08-15
+lastmod: 2026-04-22
 url: opensource/bcrypt/license
 showSummary: false
 showTableOfContents: false

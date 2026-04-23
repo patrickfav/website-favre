@@ -1,7 +1,7 @@
 ---
 title: 'license'
 date: 2014-04-25
-lastmod: 2023-04-07
+lastmod: 2025-07-20
 url: opensource/morseme/license
 showSummary: false
 showTableOfContents: false

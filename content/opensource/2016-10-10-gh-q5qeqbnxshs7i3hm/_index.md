@@ -1,7 +1,7 @@
 ---
 title: 'uber-apk-signer'
 date: 2016-10-10
-lastmod: 2023-08-15
+lastmod: 2026-04-22
 description: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 summary: 'A cli tool that helps signing and zip aligning single or multiple Android application packages (APKs) with either debug or provided release certificates. It supports v1, v2 and v3 Android signing scheme has an embedded debug keystore and auto verifies after signing.'
 aliases: ['/link/q5qeqbnx','/opensource/2016/uber-apk-signer']
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/uber-apk-signer
 originalContentType: github
 originalContentId: 70518964
 githubCloneUrlHttp: https://github.com/patrickfav/uber-apk-signer.git
-githubStars: 1464
-githubForks: 163
+githubStars: 2576
+githubForks: 252
 githubWatchers: 30
 githubContributors: 3
-githubRepoSize: 7933
+githubRepoSize: 7943
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/uber-apk-signer
 githubDefaultBranch: main
-githubOpenIssues: 6
+githubOpenIssues: 10
 githubIsFork: false
 githubLatestVersion: v1.3.0
 githubLatestVersionDate: 2023-02-16T20:45:12Z
@@ -70,7 +70,7 @@ This should run on any Windows, Mac or Linux machine where JDK8 is installed.
 
 ## Demo
 
-[![asciicast](img_5fa13ca5e816f38e.png)](https://asciinema.org/a/91092)
+[![asciicast](img_c31620c0b353f573.png)](https://asciinema.org/a/91092)
 
 ## Command Line Interface
 

@@ -19,7 +19,7 @@ originalContentId: 514820793
 githubCloneUrlHttp: https://github.com/patrickfav/docker-minipaint.git
 githubStars: 0
 githubForks: 0
-githubWatchers: 2
+githubWatchers: 0
 githubContributors: 2
 githubRepoSize: 58
 githubLanguage: Dockerfile

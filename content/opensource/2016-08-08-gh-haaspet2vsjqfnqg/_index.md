@@ -1,7 +1,7 @@
 ---
 title: 'bankathon16-inso'
 date: 2016-08-08
-lastmod: 2023-01-30
+lastmod: 2025-03-10
 description: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 summary: 'This is the prototype developed during the "Bankathon16" hackathon hosted by INSO.  It was a 2 day event, 3 developer worked on the project. This project achieved 2nd place in the ranking.'
 aliases: ['/link/haaspet2','/opensource/2016/bankathon16-inso']
@@ -19,7 +19,7 @@ originalContentId: 65230148
 githubCloneUrlHttp: https://github.com/patrickfav/bankathon16-inso.git
 githubStars: 2
 githubForks: 1
-githubWatchers: 2
+githubWatchers: 0
 githubContributors: 1
 githubRepoSize: 11132
 githubLanguage: Java

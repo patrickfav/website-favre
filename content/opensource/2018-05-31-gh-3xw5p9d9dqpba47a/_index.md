@@ -1,14 +1,14 @@
 ---
 title: 'website-favre'
 date: 2018-05-31
-lastmod: 2023-04-08
+lastmod: 2026-04-23
 description: 'The source for my private website powered by hugo a static code generators and typescript/node based CLI to fetch my content from various sites..'
 summary: 'The source for my private website powered by hugo a static code generators and typescript/node based CLI to fetch my content from various sites..'
 aliases: ['/link/3xw5p9d9','/opensource/2018/website-favre']
 url: opensource/website-favre
 tags: ["congo", "hugo", "nodejs", "portfolio-website"]
 keywords: ["congo", "hugo", "nodejs", "portfolio-website", "static-site-generator", "tailwindcss", "typescript", "website-performance"]
-alltags: ["congo", "hugo", "nodejs", "portfolio-website", "static-site-generator", "tailwindcss", "typescript", "website-performance", "github", "TypeScript"]
+alltags: ["congo", "hugo", "nodejs", "portfolio-website", "static-site-generator", "tailwindcss", "typescript", "website-performance", "github", "HTML"]
 categories: ["opensource"]
 editURL: https://github.com/patrickfav/website-favre
 showAuthor: true
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/website-favre
 originalContentType: github
 originalContentId: 135606841
 githubCloneUrlHttp: https://github.com/patrickfav/website-favre.git
-githubStars: 0
+githubStars: 1
 githubForks: 2
-githubWatchers: 3
+githubWatchers: 1
 githubContributors: 1
-githubRepoSize: 42135
-githubLanguage: TypeScript
+githubRepoSize: 84659
+githubLanguage: HTML
 githubHomepage: https://favr.dev
 githubDefaultBranch: main
-githubOpenIssues: 3
+githubOpenIssues: 6
 githubIsFork: false
 ---
 # Static Site Gen Repo for my Personal Website
@@ -49,7 +49,7 @@ A simple website with a list of all of my open source projects and articles I wr
 
 ### Install Node
 
-Currently, this project uses [Node 18.17.0 (lts)](https://nodejs.org/es/blog/release/v18.17.0). It is recommended to use
+Currently, this project uses [Node 24.15.0 (lts)](https://nodejs.org/es/blog/release/v18.17.0). It is recommended to use
 a node version manager like [nvm](https://github.com/nvm-sh/nvm), then you can just run
 
 ```bash
@@ -57,6 +57,14 @@ nvm install && nvm use
 ```
 
 in the project root dir to install and use the correct version.
+
+### Install pnpm
+
+This project uses [pnpm](https://pnpm.io/) as package manager. You can install it with
+
+```bash
+corepack enable pnpm
+```
 
 ### Cloning Project with Submodule
 
@@ -87,19 +95,13 @@ Install and link everything and build the js files from typescript with
 
 ```bash
 cd content-downloader
-npm run package
+pnpm package
 ```
 
 then either run it with
 
 ```bash
-hugo-content-downloader
-```
-
-or use the shortcut that automatically rebuilds the sources
-
-```bash
-npm run exec
+node ./dist/index.js ./content/
 ```
 
 which will populate the directories `content/opensource` and `content/articles`.
@@ -110,7 +112,7 @@ This project uses [eslint](https://eslint.org/) to validate the code:
 
 ```bash
 cd content-downloader
-npm run lint
+pnpm lint
 ```
 
 ### Using the build & run Docker Image
@@ -126,4 +128,4 @@ and then you can access the page with `http://localhost:8080`
 
 # License
 
-Proprietary: Patrick Favre-Bulle 2023
+Proprietary: Patrick Favre 2026

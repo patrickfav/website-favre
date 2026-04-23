@@ -1,7 +1,7 @@
 ---
 title: 'bcrypt'
 date: 2018-07-05
-lastmod: 2023-08-15
+lastmod: 2026-04-22
 description: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 summary: 'A Java standalone implementation of the bcrypt password hash function. Based on the Blowfish cipher it is the default password hash algorithm for OpenBSD and other systems including some Linux distributions. Includes a CLI Tool.'
 aliases: ['/link/73p443ip','/opensource/2018/bcrypt']
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/bcrypt
 originalContentType: github
 originalContentId: 139898859
 githubCloneUrlHttp: https://github.com/patrickfav/bcrypt.git
-githubStars: 368
-githubForks: 45
-githubWatchers: 7
-githubContributors: 7
-githubRepoSize: 2370
+githubStars: 555
+githubForks: 49
+githubWatchers: 6
+githubContributors: 9
+githubRepoSize: 2405
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/bcrypt
 githubDefaultBranch: main
-githubOpenIssues: 4
+githubOpenIssues: 8
 githubIsFork: false
 githubLatestVersion: v0.10.2
 githubLatestVersionDate: 2023-02-12T20:32:15Z
@@ -38,6 +38,7 @@ This is an implementation of the OpenBSD Blowfish password hashing algorithm, as
 
 
 
+[![libs.tech recommends](img_cd3d6bed5bcdb932.svg)](https://libs.tech/project/139898859/bcrypt)
 
 
 
@@ -47,6 +48,8 @@ The code is compiled with target [Java 7](https://en.wikipedia.org/wiki/Java_ver
 
 ## Quickstart
 
+This library is published to Maven Central
+
 Add the dependency of the [latest version](https://github.com/patrickfav/bcrypt/releases/latest) to your `pom.xml`:
 
 ```xml
@@ -55,6 +58,12 @@ Add the dependency of the [latest version](https://github.com/patrickfav/bcrypt/
     <artifactId>bcrypt</artifactId>
     <version>{latest-version}</version>
 </dependency>
+```
+
+Or if you are using Gradle:
+
+```groovy
+implementation("at.favre.lib:bcrypt:{latest-version}")
 ```
 
 A simple example:

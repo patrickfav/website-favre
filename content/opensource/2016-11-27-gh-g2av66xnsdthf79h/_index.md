@@ -1,7 +1,7 @@
 ---
 title: 'under-the-hood'
 date: 2016-11-27
-lastmod: 2023-07-09
+lastmod: 2025-12-12
 description: 'Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in.'
 summary: 'Under the Hood is a flexible and powerful Android debug view library. It uses a modular template system that can be easily extended to your needs, although coming with many useful elements built-in.'
 aliases: ['/link/g2av66xn','/opensource/2016/under-the-hood']
@@ -17,9 +17,9 @@ originalContentLink: https://github.com/patrickfav/under-the-hood
 originalContentType: github
 originalContentId: 74857438
 githubCloneUrlHttp: https://github.com/patrickfav/under-the-hood.git
-githubStars: 219
-githubForks: 21
-githubWatchers: 8
+githubStars: 220
+githubForks: 18
+githubWatchers: 7
 githubContributors: 1
 githubRepoSize: 9902
 githubLanguage: Java

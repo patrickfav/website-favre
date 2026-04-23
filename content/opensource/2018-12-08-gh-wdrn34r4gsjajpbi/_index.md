@@ -1,7 +1,7 @@
 ---
 title: 'bkdf'
 date: 2018-12-08
-lastmod: 2023-03-12
+lastmod: 2024-12-09
 description: 'BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation'
 summary: 'BCrypt based key derivation function to improve BCrypt as a cryptographic primitive for password hashing and key derivation'
 aliases: ['/link/wdrn34r4','/opensource/2018/bkdf']
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/bkdf
 originalContentType: github
 originalContentId: 160938307
 githubCloneUrlHttp: https://github.com/patrickfav/bkdf.git
-githubStars: 2
-githubForks: 1
+githubStars: 5
+githubForks: 2
 githubWatchers: 3
 githubContributors: 1
 githubRepoSize: 399
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/bkdf
 githubDefaultBranch: main
-githubOpenIssues: 0
+githubOpenIssues: 1
 githubIsFork: false
 githubLatestVersion: v0.6.0
 githubLatestVersionDate: 2023-03-12T18:16:08Z

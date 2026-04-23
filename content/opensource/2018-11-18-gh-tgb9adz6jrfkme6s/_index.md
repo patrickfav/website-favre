@@ -1,7 +1,7 @@
 ---
 title: 'singlestep-kdf'
 date: 2018-11-18
-lastmod: 2023-03-02
+lastmod: 2024-12-09
 description: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 summary: 'Implementation of the single-step key derivation function (KDF) as described in NIST Special Publication 800-56C Rev1 supporting messages digest and HMAC.'
 aliases: ['/link/tgb9adz6','/opensource/2018/singlestep-kdf']
@@ -17,7 +17,7 @@ originalContentLink: https://github.com/patrickfav/singlestep-kdf
 originalContentType: github
 originalContentId: 158036786
 githubCloneUrlHttp: https://github.com/patrickfav/singlestep-kdf.git
-githubStars: 8
+githubStars: 10
 githubForks: 1
 githubWatchers: 3
 githubContributors: 1

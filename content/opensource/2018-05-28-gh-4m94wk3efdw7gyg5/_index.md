@@ -1,7 +1,7 @@
 ---
 title: 'website-dr-sel'
 date: 2018-05-28
-lastmod: 2023-03-11
+lastmod: 2025-11-28
 description: 'A simple static website created with jekyll'
 summary: 'A simple static website created with jekyll'
 aliases: ['/link/4m94wk3e','/opensource/2018/website-dr-sel']
@@ -17,11 +17,11 @@ originalContentLink: https://github.com/patrickfav/website-dr-sel
 originalContentType: github
 originalContentId: 135200872
 githubCloneUrlHttp: https://github.com/patrickfav/website-dr-sel.git
-githubStars: 0
+githubStars: 1
 githubForks: 0
-githubWatchers: 2
+githubWatchers: 0
 githubContributors: 1
-githubRepoSize: 9209
+githubRepoSize: 9225
 githubLanguage: SCSS
 githubHomepage: https://selwicka-wienerroither.com
 githubDefaultBranch: main
@@ -42,7 +42,7 @@ This is the source for the [Jekyll](https://jekyllrb.com) static website project
 The production version can be found [here](https://selwicka-wienerroither.com/).
 
 
-[![website screenshot](img_dded97b69732b7d6.png)](https://selwicka-wienerroither.com/)
+[![website screenshot](img_dded97b69732b7d6.jpeg)](https://selwicka-wienerroither.com/)
 
 
 ## Build
@@ -78,8 +78,8 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor | 
 
 then install the desired ruby version
 ```bash
-rbenv install 3.2.1
-rbenv global 3.2.1
+# will read .ruby-version file and install the required version if in the root of the repo
+rbenv install
 ruby -v
 ```
 

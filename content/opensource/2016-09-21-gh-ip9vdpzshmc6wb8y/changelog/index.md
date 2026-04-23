@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2016-09-21
-lastmod: 2023-03-28
+lastmod: 2025-04-04
 url: opensource/planb-android/changelog
 showSummary: false
 showTableOfContents: false

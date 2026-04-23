@@ -1,7 +1,7 @@
 ---
 title: 'pihole-unbound-docker'
 date: 2023-04-29
-lastmod: 2023-08-06
+lastmod: 2026-04-08
 description: 'A docker-compose setup that maintaines a Pi-hole DNS with an with an upstream Unbound recursive DNS all hosted locally.'
 summary: 'A docker-compose setup that maintaines a Pi-hole DNS with an with an upstream Unbound recursive DNS all hosted locally.'
 aliases: ['/link/dvc6awck','/opensource/2023/pihole-unbound-docker']
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/pihole-unbound-docker
 originalContentType: github
 originalContentId: 634140445
 githubCloneUrlHttp: https://github.com/patrickfav/pihole-unbound-docker.git
-githubStars: 53
-githubForks: 1
-githubWatchers: 3
+githubStars: 122
+githubForks: 20
+githubWatchers: 2
 githubContributors: 1
-githubRepoSize: 36
+githubRepoSize: 38
 githubLanguage: Dockerfile
 githubHomepage: https://favr.dev/opensource/pihole-unbound-docker
 githubDefaultBranch: main
-githubOpenIssues: 0
+githubOpenIssues: 1
 githubIsFork: false
 githubLicense: Apache License 2.0
 ---
@@ -61,7 +61,7 @@ TIMEZONE= # set your timezone (used to schedule cron jobs e.g.)
 
 ## Deploy Containers
 
-[![asciicast](img_e4328a445431197c.svg)](https://asciinema.org/a/581383)
+[![asciicast](img_4888dcf38b5cce60.png)](https://asciinema.org/a/581383)
 
 Start the stack with going to the root of the repo and do:
 

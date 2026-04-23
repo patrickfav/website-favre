@@ -1,7 +1,7 @@
 ---
 title: 'Snippet: A Liquid Filter for obfuscating an Email Address'
 date: 2018-05-31
-lastmod: 2023-02-25
+lastmod: 2025-02-24
 description: 'A Liquid Filter for obfuscating an Email Address (can be used with Jekyll aswell).'
 summary: 'A Liquid Filter for obfuscating an Email Address (can be used with Jekyll aswell).'
 aliases: [/link/4auzrc32]
@@ -21,7 +21,7 @@ originalContentType: gist
 originalContentId: 3f9127e25dd6538f0d682b89cbfaefd9
 gistLanguage: Markdown
 gistFileCount: 2
-gistRevisions: 7
+gistRevisions: 8
 gistForks: 1
 gistComments: 6
 ---
@@ -57,7 +57,7 @@ require "uri"
 
 module ObfuscateMailAddress
   def mailObfuscate(input)
-    base64Mail = Base64.strict_encode64(URI::encode(input))
+    base64Mail = Base64.strict_encode64(Addressable::URI.encode(input))
 
     # See http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/
     output = "<a href=\"#\" "

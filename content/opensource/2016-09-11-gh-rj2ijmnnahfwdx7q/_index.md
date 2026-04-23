@@ -1,7 +1,7 @@
 ---
 title: 'uber-adb-tools'
 date: 2016-09-11
-lastmod: 2023-07-29
+lastmod: 2026-03-26
 description: 'A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform.'
 summary: 'A tool that enables advanced features through adb installing and uninstalling apps like wildcards and multi device support. Useful if you want to clean your test device from all company apks or install a lot of apks in one go.  Written in Java so it should run on your platform.'
 aliases: ['/link/rj2ijmnn','/opensource/2016/uber-adb-tools']
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/uber-adb-tools
 originalContentType: github
 originalContentId: 67927627
 githubCloneUrlHttp: https://github.com/patrickfav/uber-adb-tools.git
-githubStars: 139
+githubStars: 173
 githubForks: 24
-githubWatchers: 12
+githubWatchers: 10
 githubContributors: 1
-githubRepoSize: 1921
+githubRepoSize: 1931
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/uber-adb-tools
 githubDefaultBranch: main
-githubOpenIssues: 1
+githubOpenIssues: 4
 githubIsFork: false
 githubLatestVersion: v1.0.4
 githubLatestVersionDate: 2023-03-12T19:16:05Z
@@ -91,7 +91,7 @@ use it to "Open with..." to automatically install an apk if double-clicked.
 
 ## Demo
 
-[![asciicast](img_6d8d193dfb990cb8.png)](https://asciinema.org/a/91091)
+[![asciicast](img_c0839c57dad5dc1a.png)](https://asciinema.org/a/91091)
 
 ## Command Line Interface
 

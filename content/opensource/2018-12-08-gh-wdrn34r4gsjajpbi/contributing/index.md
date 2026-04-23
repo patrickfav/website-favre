@@ -1,7 +1,7 @@
 ---
 title: 'contributing'
 date: 2018-12-08
-lastmod: 2023-03-12
+lastmod: 2024-12-09
 url: opensource/bkdf/contributing
 showSummary: false
 showTableOfContents: false

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1187.68999953" height="690.6664940000001" font-family="'Cascadia Code','Source Code Pro',Menlo,Consolas,'DejaVu Sans Mono',monospace,'Symbols Nerd Font'" font-size="14px">
+  <style>
+    .br { font-weight: bold }
+    .fa { fill-opacity: 0.5 }
+    .it { font-style: italic }
+    .un { text-decoration: underline }
+    .term-text tspan tspan { white-space: pre }
+
+    @font-face {
+      font-family: "Symbols Nerd Font";
+      src: url("https://asciinema.org/fonts/SymbolsNerdFont-Regular-337b40fc23735cb78fbe3379fae18138.woff2?vsn=d") format("woff2");
+    }
+
+  </style>
+
+  <rect width="100%" height="100%" style="fill: #272822" rx="4" ry="4"></rect>
+
+  <svg x="8.42333333" y="9.333331000000001" class="default-text-fill">
+    <image x="0" y="0" width="1170.84333287" height="671.9998320000001" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFgAAANgCAIAAACX70u8AAASU0lEQVR4Xu3XoRGAMAAEQdJKTHDQf1koJA2kAeZ25buXN9Y5DwAAgJIhhAAAgBohBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByxvs+29PXfW93AACAvxNCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADljnTN3GgAAaBNCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADlCCAAAyBFCAABAjhACAAByhBAAAJAjhAAAgBwhBAAA5AghAAAgRwgBAAA5QggAAMgRQgAAQI4QAgAAcoQQAACQI4QAAIAcIQQAAOQIIQAAIEcIAQAAOUIIAADIEUIAAECOEAIAAHKEEAAAkCOEAACAHCEEAADkCCEAACBHCAEAADkfvbbI0PbNAyYAAAAASUVORK5CYII=" preserveAspectRatio="none" style="image-rendering: pixelated; image-rendering: crisp-edges;"></image>
+
+    <g style="shape-rendering: optimizeSpeed">
+
+    </g>
+
+    <text xml:space="preserve" class="term-text" style="fill: #f8f8f2">
+      <tspan y="0.0">
+        <tspan dy="1em" x="0.0">Restored session: Sat Apr 29 13:18:52 CEST 2023                                                                                            </tspan>
+      </tspan><tspan y="18.666662000000002">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #a6e22e">➜  </tspan><tspan x="25.269999990000002" class="br" style="fill: #a1efe4">pihole-unbound-docker</tspan><tspan x="202.15999992000002"> </tspan><tspan x="210.58333325" class="br" style="fill: #66d9ef">git:(</tspan><tspan x="252.6999999" class="br" style="fill: #f92672">main</tspan><tspan x="286.39333322" class="br" style="fill: #66d9ef">)</tspan><tspan x="294.81666655"> docker compose up -d --build                                                                           </tspan>
+      </tspan><tspan y="37.333324000000005">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef">[+] Running 10/10</tspan><tspan x="143.19666661">                                                                                                                          </tspan>
+      </tspan><tspan y="55.99998600000001">
+        <tspan dy="1em" x="0.0"> </tspan><tspan x="8.42333333" style="fill: #a6e22e">✔</tspan><tspan x="16.84666666"> pihole </tspan><tspan x="84.2333333" style="fill: #f4bf75">9 layers</tspan><tspan x="151.61999994"> [</tspan><tspan x="168.4666666" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="176.88999993000002" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="185.31333326" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="193.73666659" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="202.15999992000002" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="210.58333325" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="219.00666658" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="227.42999991" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="235.85333324" class="br" style="fill: #a6e22e">⣿</tspan><tspan x="244.27666657">]      0B/0B      Pulled                                                                                </tspan><tspan x="1120.30333289" style="fill: #66d9ef">22.6s </tspan>
+      </tspan><tspan y="74.66664800000001">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> 66dbba0fb1b5 Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">13.9s </tspan>
+      </tspan><tspan y="93.33331000000001">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> 32548dd85a8d Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">19.6s </tspan>
+      </tspan><tspan y="111.99997200000001">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> 4f4fb700ef54 Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">19.6s </tspan>
+      </tspan><tspan y="130.66663400000002">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> 4bbf57fe3b5e Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">19.6s </tspan>
+      </tspan><tspan y="149.33329600000002">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> 3f5241b0d47e Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">19.7s </tspan>
+      </tspan><tspan y="167.99995800000002">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> 6ac131281a2e Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">19.7s </tspan>
+      </tspan><tspan y="186.66662000000002">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> 678e6664417a Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">20.2s </tspan>
+      </tspan><tspan y="205.33328200000003">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> 7e762480a988 Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">20.2s </tspan>
+      </tspan><tspan y="223.99994400000003">
+        <tspan dy="1em" x="0.0">   </tspan><tspan x="25.269999990000002" style="fill: #a6e22e">✔</tspan><tspan x="33.69333332"> d079f21274cb Pull complete                                                                                                      </tspan><tspan x="1120.30333289" style="fill: #66d9ef">20.3s </tspan>
+      </tspan><tspan y="242.66660600000003">
+        <tspan dy="1em" x="0.0">[+] Building 3.8s (5/7)                                                                                                                    </tspan>
+      </tspan><tspan y="261.33326800000003">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; [internal] load build definition from Dockerfile                                                                                  0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="279.99993">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; =&gt; transferring dockerfile: 101B                                                                                                  0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="298.66659200000004">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; [internal] load .dockerignore                                                                                                     0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="317.333254">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; =&gt; transferring context: 2B                                                                                                       0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="335.99991600000004">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; [internal] load metadata for docker.io/mvance/unbound:1.17.1                                                                      2.1s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="354.666578">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; [auth] mvance/unbound:pull token for registry-1.docker.io                                                                         0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="373.33324000000005">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; [internal] load build context                                                                                                     0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="391.999902">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; =&gt; transferring context: 3.00kB                                                                                                   0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="410.66656400000005">
+        <tspan dy="1em" x="0.0"> =&gt; [1/2] FROM docker.io/mvance/unbound:1.17.1@sha256:958d1cd571dfa958f8da0ea090e62561b4ab8149fc66dcf1a14017d4464b71fd                1.6s </tspan>
+      </tspan><tspan y="429.333226">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; =&gt; resolve docker.io/mvance/unbound:1.17.1@sha256:958d1cd571dfa958f8da0ea090e62561b4ab8149fc66dcf1a14017d4464b71fd                0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="447.99988800000006">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; =&gt; sha256:958d1cd571dfa958f8da0ea090e62561b4ab8149fc66dcf1a14017d4464b71fd 1.78kB / 1.78kB                                        0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="466.66655000000003">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; =&gt; sha256:7d3dca69526112801e2c27bfbbd98d78726c00dcc6709dccf5107a594e27760a 113B / 113B                                            0.2s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="485.33321200000006">
+        <tspan dy="1em" x="0.0" style="fill: #66d9ef"> =&gt; =&gt; sha256:e97ac29a0dc99aa19f2ad55821a180984d54801439915dea2aba9671d341484c 5.48kB / 5.48kB                                        0.0s</tspan><tspan x="1162.41999954"> </tspan>
+      </tspan><tspan y="503.99987400000003">
+        <tspan dy="1em" x="0.0"> =&gt; =&gt; sha256:3e440a7045683e27f8e2fa04000e0e078d8dfac0c971358ae0f8c65c13321c8e 0B / 55.05MB                                           1.5s </tspan>
+      </tspan><tspan y="522.6665360000001">
+        <tspan dy="1em" x="0.0"> =&gt; =&gt; sha256:4151c4534985eee73d1a1b27c399d0c27d260ea6b967dc3b0a373234d2ee7246 5.24MB / 37.37MB                                       1.5s </tspan>
+      </tspan><tspan y="541.333198">
+        <tspan dy="1em" x="0.0"> =&gt; =&gt; sha256:2b770de9d0ace43dc82c64057595c9a4ff251550172abfe0c65f998a9ef2db93 1.05MB / 3.32MB                                        1.5s </tspan>
+      </tspan><tspan y="559.99986">
+        <tspan dy="1em" x="0.0" style="fill: #272822"> </tspan><tspan x="8.42333333">                                                                                                                                          </tspan>
+      </tspan><tspan y="578.6665220000001">
+        <tspan dy="1em" x="0.0">                                                                                                                                           </tspan>
+      </tspan><tspan y="597.3331840000001">
+        <tspan dy="1em" x="0.0">                                                                                                                                           </tspan>
+      </tspan><tspan y="615.999846">
+        <tspan dy="1em" x="0.0">                                                                                                                                           </tspan>
+      </tspan><tspan y="634.666508">
+        <tspan dy="1em" x="0.0">                                                                                                                                           </tspan>
+      </tspan><tspan y="653.33317">
+        <tspan dy="1em" x="0.0">                                                                                                                                           </tspan>
+      </tspan>
+    </text>
+  </svg>
+
+  <svg x="524.778" y="276.267" width="138.133" height="138.133">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000.0 1000.0" style="filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.4))">
+  <defs>
+    <mask id="small-triangle-mask">
+      <rect width="100%" height="100%" fill="white"></rect>
+      <polygon points="700.0 500.0, 400.00000000000006 326.7949192431122, 399.9999999999999 673.2050807568877" fill="black">
+      </polygon>
+    </mask>
+  </defs>
+  <polygon points="1000.0 500.0, 250.0000000000001 66.98729810778059, 249.99999999999977 933.0127018922192" mask="url(#small-triangle-mask)" fill="white">
+  </polygon>
+  <polyline points="673.2050807568878 400.0, 326.7949192431123 600.0" stroke="white" stroke-width="90">
+  </polyline>
+</svg>
+  </svg>
+</svg>

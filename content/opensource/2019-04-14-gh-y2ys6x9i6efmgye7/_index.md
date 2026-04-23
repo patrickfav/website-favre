@@ -1,7 +1,7 @@
 ---
 title: 'checkstyle-config'
 date: 2019-04-14
-lastmod: 2023-03-02
+lastmod: 2024-12-09
 description: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 summary: 'Global checkstyle config to be reused in different projects. These include my own personal rules so your milage may vary.'
 aliases: ['/link/y2ys6x9i','/opensource/2019/checkstyle-config']
@@ -17,9 +17,9 @@ originalContentLink: https://github.com/patrickfav/checkstyle-config
 originalContentType: github
 originalContentId: 181350695
 githubCloneUrlHttp: https://github.com/patrickfav/checkstyle-config.git
-githubStars: 3
+githubStars: 5
 githubForks: 1
-githubWatchers: 3
+githubWatchers: 2
 githubContributors: 1
 githubRepoSize: 324
 githubLanguage: null

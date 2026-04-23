@@ -1,7 +1,7 @@
 ---
 title: 'license'
 date: 2013-10-28
-lastmod: 2023-04-02
+lastmod: 2025-03-10
 url: opensource/tuwien/license
 showSummary: false
 showTableOfContents: false

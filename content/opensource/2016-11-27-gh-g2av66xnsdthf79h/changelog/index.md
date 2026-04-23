@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2016-11-27
-lastmod: 2023-07-09
+lastmod: 2025-12-12
 url: opensource/under-the-hood/changelog
 showSummary: false
 showTableOfContents: false

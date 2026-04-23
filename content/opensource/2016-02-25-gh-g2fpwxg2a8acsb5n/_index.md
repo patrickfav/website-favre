@@ -1,7 +1,7 @@
 ---
 title: 'density-converter'
 date: 2016-02-25
-lastmod: 2023-07-07
+lastmod: 2026-04-09
 description: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 summary: 'A multi platform image density converting tool converting single or batches of images to Android, iOS, Windows or CSS specific formats and density versions given the source scale factor or width/height in dp. It has a graphical and command line interface and supports many image types (svg, psd, 9-patch, etc.) aswell as some lossless compressors like pngcrush.'
 aliases: ['/link/g2fpwxg2','/opensource/2016/density-converter']
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/density-converter
 originalContentType: github
 originalContentId: 52564417
 githubCloneUrlHttp: https://github.com/patrickfav/density-converter.git
-githubStars: 238
-githubForks: 32
-githubWatchers: 17
+githubStars: 251
+githubForks: 31
+githubWatchers: 15
 githubContributors: 3
-githubRepoSize: 3047
+githubRepoSize: 3061
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/density-converter
 githubDefaultBranch: main
-githubOpenIssues: 3
+githubOpenIssues: 6
 githubIsFork: false
 githubLatestVersion: v1.0.0-alpha9
 githubLatestVersionDate: 2023-08-06T12:55:30Z
@@ -83,7 +83,7 @@ java -jar ./dconvert.jar
 provides the same features as the command line tool so see the help page of command line or tooltips. Additionally the UI
 will save its settings persistently making it easier for power users.
 
-![gui-screenshot](img_7990309a4c3b7d52.jpg)
+![gui-screenshot](img_7990309a4c3b7d52.jpeg)
 
 ## Command Line
 
@@ -142,14 +142,7 @@ Full list of arguments:
     -roundingMode <round|ceil|floor>      Defines the rounding mode when scaling the dimensions. Possible
                                           options are 'round' (rounds up of >= 0.5), 'floor' (rounds down) and
                                           'ceil' (rounds up). Default is ROUND_HALF_UP
-    -scale <[float]|[int]dp>              The source. Can be an image file or a folder containing image files
-                                          to be converted. This argument is mandatory.
-    -scaleIsHeightDp                      If set and scale is in dp it will be interpreted as fixed height not
-                                          width
-    -skipExisting                         If set will not overwrite a already existing file
-    -skipUpscaling                        If set will only scale down, but not up to prevent image quality
-                                          loss
-    -src <path to file or folder>         The source scale. This can either be a factor (1,1.5,2,3,4,etc.)
+    -scale <[float]|[int]dp>              The source scale. This can either be a factor (1,1.5,2,3,4,etc.)
                                           used if the images already have the correct resolution for one scale
                                           factor and up- and downscaling for all other densities are needed.
                                           Ie. if you have the src file in density xxxhdpi you pass '4'. You
@@ -157,6 +150,13 @@ Full list of arguments:
                                           denotes the output pixel width (or height if the flag is set) in
                                           mdpi/x1. In this mode all output images will have the same width
                                           (height). This argument is mandatory.
+    -scaleIsHeightDp                      If set and scale is in dp it will be interpreted as fixed height not
+                                          width
+    -skipExisting                         If set will not overwrite a already existing file
+    -skipUpscaling                        If set will only scale down, but not up to prevent image quality
+                                          loss
+    -src <path to file or folder>         The source. Can be an image file or a folder containing image files
+                                          to be converted. This argument is mandatory.
     -threads <1-8>                        Sets the count of max parallel threads (more is faster but uses more
                                           memory). Possible values are 1-8. Default is 4
     -v,--version                          Gets current version

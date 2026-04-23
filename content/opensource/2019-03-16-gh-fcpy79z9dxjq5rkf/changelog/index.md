@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2019-03-16
-lastmod: 2023-02-11
+lastmod: 2024-12-09
 url: opensource/mvn-common-parent/changelog
 showSummary: false
 showTableOfContents: false

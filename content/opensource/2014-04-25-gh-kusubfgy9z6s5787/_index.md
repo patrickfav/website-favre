@@ -1,7 +1,7 @@
 ---
 title: 'morseme'
 date: 2014-04-25
-lastmod: 2023-04-07
+lastmod: 2025-07-20
 description: 'A very simple Android app that can morse given input through audio, vibration and light flash. Also can morse your SMS.'
 summary: 'A very simple Android app that can morse given input through audio, vibration and light flash. Also can morse your SMS.'
 aliases: ['/link/kusubfgy','/opensource/2014/morseme']
@@ -17,9 +17,9 @@ originalContentLink: https://github.com/patrickfav/morseme
 originalContentType: github
 originalContentId: 19160468
 githubCloneUrlHttp: https://github.com/patrickfav/morseme.git
-githubStars: 4
+githubStars: 6
 githubForks: 2
-githubWatchers: 2
+githubWatchers: 1
 githubContributors: 1
 githubRepoSize: 453
 githubLanguage: Java

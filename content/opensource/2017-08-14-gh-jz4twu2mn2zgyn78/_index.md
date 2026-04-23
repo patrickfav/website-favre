@@ -1,7 +1,7 @@
 ---
 title: 'dice'
 date: 2017-08-14
-lastmod: 2023-04-02
+lastmod: 2025-01-06
 description: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 summary: 'A cryptographically secure pseudorandom number generator cli tool printing in a wide variety of byte encodings (hex, base64,..) and for many programming languages (c, java, c#, php, etc.)  using NIST SP800-90Ar1 HMAC-DRBG. Supports external seeding from various true random services.'
 aliases: ['/link/jz4twu2m','/opensource/2017/dice']
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/dice
 originalContentType: github
 originalContentId: 100255165
 githubCloneUrlHttp: https://github.com/patrickfav/dice.git
-githubStars: 11
+githubStars: 14
 githubForks: 6
-githubWatchers: 4
+githubWatchers: 3
 githubContributors: 1
-githubRepoSize: 40845
+githubRepoSize: 40857
 githubLanguage: Java
 githubHomepage: https://favr.dev/opensource/dice
 githubDefaultBranch: main
-githubOpenIssues: 1
+githubOpenIssues: 4
 githubIsFork: false
 githubLatestVersion: v1.7.0
 githubLatestVersionDate: 2023-03-11T12:09:26Z
@@ -84,7 +84,7 @@ _Using the *.exe Launcher: [Launch4J](http://launch4j.sourceforge.net/) is used 
 
 ## Demo
 
-[![asciicast](img_52702b9784289914.png)](https://asciinema.org/a/140170)
+[![asciicast](img_81332b0ca4d148f7.png)](https://asciinema.org/a/140170)
 
 ## Use Cases
 

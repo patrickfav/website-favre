@@ -1,7 +1,7 @@
 ---
 title: 'license'
 date: 2023-04-29
-lastmod: 2023-08-06
+lastmod: 2026-04-08
 url: opensource/pihole-unbound-docker/license
 showSummary: false
 showTableOfContents: false

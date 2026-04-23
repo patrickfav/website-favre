@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2014-04-07
-lastmod: 2023-06-01
+lastmod: 2025-07-24
 url: opensource/blurtestandroid/changelog
 showSummary: false
 showTableOfContents: false

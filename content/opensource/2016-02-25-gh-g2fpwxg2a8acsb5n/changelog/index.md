@@ -1,7 +1,7 @@
 ---
 title: 'changelog'
 date: 2016-02-25
-lastmod: 2023-07-07
+lastmod: 2026-04-09
 url: opensource/density-converter/changelog
 showSummary: false
 showTableOfContents: false

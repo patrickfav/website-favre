@@ -1,7 +1,7 @@
 ---
 title: 'indoor-positioning'
 date: 2016-08-07
-lastmod: 2023-06-08
+lastmod: 2025-02-02
 description: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 summary: 'A full-featured indoor positioning system that was developed during my master thesis. It has a javascript based rich UI and has a server-client architecture.'
 aliases: ['/link/fzd79n2s','/opensource/2016/indoor-positioning']
@@ -17,15 +17,15 @@ originalContentLink: https://github.com/patrickfav/indoor-positioning
 originalContentType: github
 originalContentId: 65147448
 githubCloneUrlHttp: https://github.com/patrickfav/indoor-positioning.git
-githubStars: 46
-githubForks: 24
-githubWatchers: 5
+githubStars: 57
+githubForks: 22
+githubWatchers: 3
 githubContributors: 1
-githubRepoSize: 25188
+githubRepoSize: 25083
 githubLanguage: Java
 githubHomepage: https://repositum.tuwien.at/handle/20.500.12708/2080
 githubDefaultBranch: main
-githubOpenIssues: 1
+githubOpenIssues: 3
 githubIsFork: false
 githubLatestVersion: v1.2.0
 githubLatestVersionDate: 2023-03-11T13:11:24Z
@@ -61,7 +61,7 @@ Its server component uses servlets and an Angular JS front end, whereas the Rout
 
 The underlying architecture can be observed in the diagram below.
 
-![Map Generation Procedure Diagram](img_f1d07782a4815799.jpg)
+![Map Generation Procedure Diagram](img_f1d07782a4815799.jpeg)
 
 Overall procedure to map the target area:
 
@@ -79,7 +79,7 @@ With the adapted model, radio wave propagation can be simulated over
 a representation of the target area. Positioning works similar to the
 scene analysis approach using a modified nearest neighbor algorithm.
 
-![Phases Diagram](img_0eeec1062b654b95.jpg)
+![Phases Diagram](img_0eeec1062b654b95.jpeg)
 
 # Setup
 
@@ -118,7 +118,7 @@ positions of the Active Nodes again). Then press "Calculate" next to the "Extend
 of all APs/Routers in the vicinity. You may want to correct the positions you know of. Press "save". You now are ready
 to position.
 
-![Node Editor](img_41133414ba1a6c25.jpg)
+![Node Editor](img_41133414ba1a6c25.jpeg)
 
 # Positioning
 

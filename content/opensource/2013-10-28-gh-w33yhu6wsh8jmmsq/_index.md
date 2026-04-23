@@ -1,7 +1,7 @@
 ---
 title: 'tuwien'
 date: 2013-10-28
-lastmod: 2023-04-02
+lastmod: 2025-03-10
 description: 'Miscellaneous projects done during my studies in computer science at the Vienna University of Technology from about 2009 to 2011.'
 summary: 'Miscellaneous projects done during my studies in computer science at the Vienna University of Technology from about 2009 to 2011.'
 aliases: ['/link/w33yhu6w','/opensource/2013/tuwien']
@@ -17,9 +17,9 @@ originalContentLink: https://github.com/patrickfav/tuwien
 originalContentType: github
 originalContentId: 13937528
 githubCloneUrlHttp: https://github.com/patrickfav/tuwien.git
-githubStars: 0
+githubStars: 1
 githubForks: 1
-githubWatchers: 2
+githubWatchers: 0
 githubContributors: 1
 githubRepoSize: 136290
 githubLanguage: Java
