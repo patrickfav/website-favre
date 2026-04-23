@@ -61,7 +61,7 @@ Its server component uses servlets and an Angular JS front end, whereas the Rout
 
 The underlying architecture can be observed in the diagram below.
 
-![Map Generation Procedure Diagram](img_f1d07782a4815799.jpeg)
+![Map Generation Procedure Diagram](img_f1d07782a4815799.jpg)
 
 Overall procedure to map the target area:
 
@@ -79,7 +79,7 @@ With the adapted model, radio wave propagation can be simulated over
 a representation of the target area. Positioning works similar to the
 scene analysis approach using a modified nearest neighbor algorithm.
 
-![Phases Diagram](img_0eeec1062b654b95.jpeg)
+![Phases Diagram](img_0eeec1062b654b95.jpg)
 
 # Setup
 
@@ -118,7 +118,7 @@ positions of the Active Nodes again). Then press "Calculate" next to the "Extend
 of all APs/Routers in the vicinity. You may want to correct the positions you know of. Press "save". You now are ready
 to position.
 
-![Node Editor](img_41133414ba1a6c25.jpeg)
+![Node Editor](img_41133414ba1a6c25.jpg)
 
 # Positioning
 

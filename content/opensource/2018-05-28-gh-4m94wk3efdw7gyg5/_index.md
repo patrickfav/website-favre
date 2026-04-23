@@ -42,7 +42,7 @@ This is the source for the [Jekyll](https://jekyllrb.com) static website project
 The production version can be found [here](https://selwicka-wienerroither.com/).
 
 
-[![website screenshot](img_dded97b69732b7d6.jpeg)](https://selwicka-wienerroither.com/)
+[![website screenshot](img_dded97b69732b7d6.jpg)](https://selwicka-wienerroither.com/)
 
 
 ## Build
