@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/1625137/image-resize-qu
 originalContentType: stackexchange
 originalContentId: 36295066
 seSite: stackoverflow
-seScore: 11
-seViews: 25000
+seScore: 13
+seViews: 26000
 seIsAccepted: false
 seQuestionId: 1625137
 seAnswerLicense: CC BY-SA 3.0
@@ -36,7 +36,7 @@ Additonal there is the JDK way with Java's [`Graphics2D`](https://docs.oracle.co
 Visual Quality
 ==============
 
-Here is a comparison of the results of resizing/downscaling a `580x852` png to `145x213`. As reference Photoshop CS5 "save for web" resizing is used. _Note: the results are 1:1 what the libs created just copied together. The zoom does not use any filtering, just a simple nearest neighbor algorithm._ [Here you can find the original image.](https://i.stack.imgur.com/RmQLa.png)
+Here is a comparison of the results of resizing/downscaling a `580x852` png to `145x213`. As reference Photoshop CS5 "save for web" resizing is used. _Note: the results are 1:1 what the libs created just copied together. The zoom does not use any filtering, just a simple nearest neighbor algorithm._ [Here you can find the original image.](https://i.sstatic.net/RmQLa.png)
 
 [![comparison](img_16ad964955699cdb.png)](img_16ad964955699cdb.png)
 

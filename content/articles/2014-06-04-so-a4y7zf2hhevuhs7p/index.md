@@ -1,7 +1,7 @@
 ---
 title: 'Q: View&#39;s getWidth() and getHeight() returns 0'
 date: 2014-06-04
-lastmod: 2023-03-26
+lastmod: 2024-07-13
 description: 'View&#39;s getWidth() and getHeight() returns 0'
 summary: 'This was originally posted as an answer to the question "View&#39;s getWidth() and getHeight() returns 0" on stackoverflow.com.'
 aliases: [/link/a4y7zf2h]
@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/3591784/views-getwidth-
 originalContentType: stackexchange
 originalContentId: 24035591
 seSite: stackoverflow
-seScore: 980
-seViews: 408000
+seScore: 1000
+seViews: 426000
 seIsAccepted: false
 seQuestionId: 3591784
 seAnswerLicense: CC BY-SA 4.0
@@ -71,6 +71,8 @@ view.post(new Runnable() {
         });
 
 ```
+
+Make sure that this runnable [runs on the UI thread](https://stackoverflow.com/questions/12850143/android-basics-running-code-in-the-ui-thread), otherwise this might not work.
 
 The advantage over `ViewTreeObserver`:
 

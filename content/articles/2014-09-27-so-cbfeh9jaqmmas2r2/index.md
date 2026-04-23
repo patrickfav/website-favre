@@ -20,7 +20,7 @@ originalContentType: stackexchange
 originalContentId: 26077852
 seSite: stackoverflow
 seScore: 33
-seViews: 11000
+seViews: 12000
 seIsAccepted: true
 seQuestionId: 26076292
 seAnswerLicense: CC BY-SA 4.0

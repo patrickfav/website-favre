@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/45985661/is-hkdf-implem
 originalContentType: stackexchange
 originalContentId: 46619583
 seSite: stackoverflow
-seScore: 15
-seViews: 7000
+seScore: 18
+seViews: 9000
 seIsAccepted: false
 seQuestionId: 45985661
 seAnswerLicense: CC BY-SA 4.0

@@ -1,7 +1,7 @@
 ---
 title: 'Q: Java - resize image without losing quality'
 date: 2016-04-02
-lastmod: 2023-03-28
+lastmod: 2025-03-07
 description: 'Java - resize image without losing quality'
 summary: 'This was originally posted as an answer to the question "Java - resize image without losing quality" on stackoverflow.com.'
 aliases: [/link/b5v3y6b2]
@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/24745147/java-resize-im
 originalContentType: stackexchange
 originalContentId: 36367652
 seSite: stackoverflow
-seScore: 97
-seViews: 93000
+seScore: 100
+seViews: 99000
 seIsAccepted: false
 seQuestionId: 24745147
 seAnswerLicense: CC BY-SA 4.0
@@ -131,4 +131,4 @@ graphics2D.dispose();
 
 ```
 
-but most are very disappointed with the result of downscaling no matter what interpolation or other `RenderHints` are used. On the other hand upscaling seems to produce acceptable images (best would be bicubic). In previous JDK version (we're talking 90s v1.1) `Image.getScaledInstance()` was introduced which provided good visual results with parameter `SCALE_AREA_AVERAGING` but you are discouraged to use it - [read the full explanation here](https://community.oracle.com/docs/DOC-983611).
+but most are very disappointed with the result of downscaling no matter what interpolation or other `RenderHints` are used. On the other hand upscaling seems to produce acceptable images (best would be bicubic). In previous JDK version (we're talking 90s v1.1) `Image.getScaledInstance()` was introduced which provided good visual results with parameter `SCALE_AREA_AVERAGING` but you are discouraged to use it - [read the full explanation here](https://web.archive.org/web/20170218111428/https://community.oracle.com/docs/DOC-983611).

@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/56794263/spring-webflux
 originalContentType: stackexchange
 originalContentId: 56806022
 seSite: stackoverflow
-seScore: 58
-seViews: 36000
+seScore: 66
+seViews: 51000
 seIsAccepted: false
 seQuestionId: 56794263
 seAnswerLicense: CC BY-SA 4.0

@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/41107/how-to-generate-a
 originalContentType: stackexchange
 originalContentId: 44227131
 seSite: stackoverflow
-seScore: 89
-seViews: 1642000
+seScore: 94
+seViews: 1703000
 seIsAccepted: false
 seQuestionId: 41107
 seAnswerLicense: CC BY-SA 4.0

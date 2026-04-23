@@ -1,7 +1,7 @@
 ---
 title: 'The Hitchhiker`s Guide to Binary-to-Text Encoding'
 date: 2023-04-02
-lastmod: 2023-04-05
+lastmod: 2025-01-04
 summary: 'This article provides an overview of various bytes-to-text encodings, including Binary, Octal, Decimal, Hex, Base26, Base32, Base36, Base58, Base64, Ascii85, and Base122. I will show you their respective properties and when to use what.'
 description: 'This article provides an overview of various bytes-to-text encodings, including Binary, Octal, Decimal, Hex, Base26, Base32, Base36, Base58, Base64, Ascii85, and Base122. I will show you their respective properties and when to use what.'
 feature: 'feature_*'
@@ -15,8 +15,8 @@ deeplink: /link/iiyd8bkj
 originalContentLink: https://dev.to/favr/the-hitchhikers-guide-to-byte-to-text-encoding-2cm4
 originalContentType: devto
 originalContentId: 1423051
-devtoReactions: 2
-devtoPositiveReactions: 2
+devtoReactions: 7
+devtoPositiveReactions: 7
 devtoComments: 0
 ---
 Either for debugging, data serialization, cryptography or ID generation, [binary-to-text encoding](https://en.wikipedia.org/wiki/Binary-to-text_encoding) is an important tool for most developers representing binary data in a sequence of printable characters. Either you currently want to select a specific one or just want to generally understand the basic properties of each, this article will provide you an overview.
@@ -160,7 +160,7 @@ Base36 encoding is particularly suited for applications that involve encoding la
 | Suited for       | big integer encoding                       |
 | Alphabet         | `0123456789abcdefghijklmnopqrstuvwxyz`     |
 | Known Usages     | [Reddit Url Slugs](https://github.com/reddit-archive/reddit/blob/753b17407e9a9dca09558526805922de24133d53/r2/r2/templates/refundpage.html#L26)                           |
-| Popularity       | implementations: common, usage: not common |
+| Popularity       | implementations: common, usage: somewhat common |
 | Standardization  | none                                       |
 | Example          | `4cl2cf404wj`                              |
 
@@ -200,7 +200,7 @@ Base64 encoding is particularly suited for applications that involve encoding by
 | Alphabet         | `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/` |
 | (url-safe)       | `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_` |
 | Known Usages     | practically everywhere                                             |
-| Popularity       | implementations: not common, usage: not common                     |
+| Popularity       | implementations: very common, usage: very common                     |
 | Standardization  | [RFC 4648](https://www.rfc-editor.org/rfc/rfc4648) (previously RFC 3548)                                     |
 | Variations       | [RFC 4880](https://www.rfc-editor.org/rfc/rfc4880) (ASCII Armor), [RFC 1421](https://www.rfc-editor.org/rfc/rfc1421), [RFC 2152](https://www.rfc-editor.org/rfc/rfc2152), [RFC 3501](https://www.rfc-editor.org/rfc/rfc3501), bcrypt radix64             |
 | Example          | `OH9-k2x40w`                                                       |
@@ -221,7 +221,7 @@ Ascii85 encoding is often used in environments where binary data needs to be rep
 | Suited for       | byte-string encoding                                         |
 | Alphabet         | `123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz` |
 | Known Usages     | Git, IPv6, Adobe PDF and PostScript                                |
-| Popularity       | implementations: not common, usage: not common               |
+| Popularity       | implementations: not common, usage: somewhat common               |
 | Variations       | [32/Z85 ZeroMQ](https://rfc.zeromq.org/spec/32/), [ZMODEM Pack-7 encoding](https://gallium.inria.fr/~doligez/zmodem/zmodem.txt), btoa, [Adobe](https://web.archive.org/web/20161222092741/https://www.adobe.com/products/postscript/pdfs/PLRM.pdf), [RFC 1924](https://datatracker.ietf.org/doc/html/rfc1924)                        |
 | Example          | `3.HC@Cj=D`                                                  |
 

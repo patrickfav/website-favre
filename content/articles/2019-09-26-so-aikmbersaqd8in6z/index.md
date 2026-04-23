@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/9655181/java-convert-a-
 originalContentType: stackexchange
 originalContentId: 58118078
 seSite: stackoverflow
-seScore: 175
-seViews: 989000
+seScore: 221
+seViews: 1073000
 seIsAccepted: false
 seQuestionId: 9655181
 seAnswerLicense: CC BY-SA 4.0

@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/2067955/fast-bitmap-blu
 originalContentType: stackexchange
 originalContentId: 23119957
 seSite: stackoverflow
-seScore: 272
-seViews: 157000
+seScore: 271
+seViews: 164000
 seIsAccepted: false
 seQuestionId: 2067955
 seAnswerLicense: CC BY-SA 4.0

@@ -1,7 +1,7 @@
 ---
 title: 'Q: How to Sign an Already Compiled Apk'
 date: 2016-10-15
-lastmod: 2023-03-26
+lastmod: 2023-08-25
 description: 'How to Sign an Already Compiled Apk'
 summary: 'This was originally posted as an answer to the question "How to Sign an Already Compiled Apk" on stackoverflow.com.'
 aliases: [/link/8waxpai3]
@@ -19,8 +19,8 @@ originalContentLink: https://stackoverflow.com/questions/10930331/how-to-sign-an
 originalContentType: stackexchange
 originalContentId: 40064149
 seSite: stackoverflow
-seScore: 126
-seViews: 276000
+seScore: 151
+seViews: 332000
 seIsAccepted: false
 seQuestionId: 10930331
 seAnswerLicense: CC BY-SA 4.0
@@ -70,22 +70,6 @@ zipalign -c 4 my-aligned.apk
 Step 3: Sign & Verify
 ---------------------
 
-### Using build-tools 24.0.2 and older
-
-Use [`jarsigner`](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/jarsigner.html) which, like the keytool, [comes with the JDK distribution](https://stackoverflow.com/questions/12135699/where-is-jarsigner) found in `%JAVA_HOME%/bin/` and use it like so:
-
-```bash
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my.keystore my-app.apk my_alias_name
-
-```
-
-and can be verified with
-
-```bash
-jarsigner -verify -verbose my_application.apk
-
-```
-
 ### Using build-tools 24.0.3 and newer
 
 Android 7.0 introduces APK Signature Scheme v2, a new app-signing scheme that offers faster app install times and more protection against unauthorized alterations to APK files (See [here](https://developer.android.com/about/versions/nougat/android-7.0.html#apk_signature_v2) and [here](https://source.android.com/security/apksigning/v2.html) for more details). Therefore, Google implemented their [own apk signer called `apksigner`](https://developer.android.com/studio/command-line/apksigner.html) (duh!) The script file can be found in `%ANDROID_HOME%/sdk/build-tools/24.0.3/` (the .jar is in the `/lib` subfolder). Use it like this
@@ -103,3 +87,19 @@ apksigner verify my-app.apk
 ```
 
 [The official documentation can be found here.](https://developer.android.com/studio/publish/app-signing.html#signing-manually)
+
+### Using build-tools 24.0.2 and older
+
+Use [`jarsigner`](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/jarsigner.html) which, like the keytool, [comes with the JDK distribution](https://stackoverflow.com/questions/12135699/where-is-jarsigner) found in `%JAVA_HOME%/bin/` and use it like so:
+
+```bash
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my.keystore my-app.apk my_alias_name
+
+```
+
+and can be verified with
+
+```bash
+jarsigner -verify -verbose my_application.apk
+
+```
