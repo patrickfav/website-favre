@@ -57,7 +57,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRESTORE }}
-      - uses: actions/cache@v5
+      - name: Upload Raw Content for Debugging
+        uses: actions/upload-artifact@v7
+        if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch')
+        with:
+          name: downloaded-raw-content
+          path: content
+          retention-days: 1
+          if-no-files-found: error
+      - name: Cache Hugo Files
+        uses: actions/cache@v5
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
