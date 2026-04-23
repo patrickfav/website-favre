@@ -16,7 +16,6 @@
   pageRef = "articles"
   weight = 30
 
-
 [[main]]
   name = "Open Source"
   pageRef = "opensource"
