@@ -52,7 +52,7 @@ Since Android Q using `Build.getSerial()` gets a bit more complicated by requiri
 
 `android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE` (which can only be acquired by system apps), **or** for the calling package to be the _device or profile owner_ and have the [`READ_PHONE_STATE`](https://developer.android.com/reference/android/Manifest.permission.html#READ_PHONE_STATE) permission. This means most apps won't be able to uses this feature. See the [Android Q announcement](https://developer.android.com/preview/privacy/data-identifiers#device-ids) from Google.
 
-See [Android SDK reference](https://developer.android.com/reference/android/os/Build.html#getSerial())
+See [Android SDK reference](https://developer.android.com/reference/android/os/Build.html#getSerial\(\))
 
 * * *
 

@@ -68,7 +68,7 @@ secureRandom.nextBytes(iv);
 
 **Important:**
 
-*   never [reuse the same IV](https://crypto.stackexchange.com/questions/2991/why-must-IV-key-pairs-not-be-reused-in-ctr-mode) with the same key (**very important** in [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)/[CTR](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_(CTR)) mode)
+*   never [reuse the same IV](https://crypto.stackexchange.com/questions/2991/why-must-IV-key-pairs-not-be-reused-in-ctr-mode) with the same key (**very important** in [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)/[CTR](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_\(CTR\)) mode)
 *   the IV must be unique (ie. use random IV or a counter)
 *   the IV is not required to be secret
 *   always use a strong [pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) like [`SecureRandom`](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
@@ -90,7 +90,7 @@ byte[] cipherText = cipher.doFinal(plainText);
 *   the authentication tag will be automatically appended to the cipher text (in the JCA implementation)
 *   since GCM behaves like a stream cipher, no padding is required
 *   use [`CipherInputStream`](https://docs.oracle.com/javase/7/docs/api/javax/crypto/CipherInputStream.html) when encrypting large chunks of data
-*   want additional (non-secret) data checked if it was changed? You may want to use [associated data](https://crypto.stackexchange.com/questions/6711/how-to-use-gcm-mode-and-associated-data-properly) with `cipher.updateAAD(associatedData);` [More here.](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_encryption_with_associated_data_(AEAD))
+*   want additional (non-secret) data checked if it was changed? You may want to use [associated data](https://crypto.stackexchange.com/questions/6711/how-to-use-gcm-mode-and-associated-data-properly) with `cipher.updateAAD(associatedData);` [More here.](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_encryption_with_associated_data_\(AEAD\))
 
 ### 3\. Serialize to Single Message
 
@@ -146,4 +146,4 @@ byte[] plainText = cipher.doFinal(cipherMessage, 12, cipherMessage.length - 12);
 
 * * *
 
-Note that most recent Android (SDK 21+) and Java (7+) implementations should have AES-GCM. Older versions may lack it. I still choose this mode, since it is easier to implement in addition to being more efficient compared to similar mode of [Encrypt-then-Mac](https://en.wikipedia.org/wiki/Authenticated_encryption#MAC-then-Encrypt_(MtE)) (with e.g. [AES-CBC](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_(CBC)) + [HMAC](https://en.wikipedia.org/wiki/HMAC)). [See this article on how to implement AES-CBC with HMAC](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2-b3b80e99ad36).
+Note that most recent Android (SDK 21+) and Java (7+) implementations should have AES-GCM. Older versions may lack it. I still choose this mode, since it is easier to implement in addition to being more efficient compared to similar mode of [Encrypt-then-Mac](https://en.wikipedia.org/wiki/Authenticated_encryption#MAC-then-Encrypt_\(MtE\)) (with e.g. [AES-CBC](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_\(CBC\)) + [HMAC](https://en.wikipedia.org/wiki/HMAC)). [See this article on how to implement AES-CBC with HMAC](https://proandroiddev.com/security-best-practices-symmetric-encryption-with-aes-in-java-and-android-part-2-b3b80e99ad36).

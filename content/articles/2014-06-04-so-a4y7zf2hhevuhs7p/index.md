@@ -125,8 +125,8 @@ Additional: Getting statically defined measurements
 
 If it suffices to just get the statically defined height/width, you can just do this with:
 
-*   [`View.getMeasuredWidth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredWidth())
-*   [`View.getMeasuredHeigth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredHeight())
+*   [`View.getMeasuredWidth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredWidth\(\))
+*   [`View.getMeasuredHeigth()`](http://developer.android.com/reference/android/view/View.html#getMeasuredHeight\(\))
 
 But mind you, that this might be different to the actual width/height after drawing. The Javadoc describes the difference in more detail:
 
