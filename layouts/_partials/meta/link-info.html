@@ -1,12 +1,33 @@
 {{ $url := urls.Parse (print .Params.externalUrl) }}
+
+{{ if (not (eq $url.Host "")) }}
 <span class="custom-info">
   <a href="{{ $url.Scheme }}://{{ $url.Host }}" rel="noopener">{{ $url.Host }}</a>
 </span>
+{{ else }}
+  Archive Link
+{{ end }}
+
+{{ if .Params.slidesUrl | default false }}
+{{ $slidesUrl := urls.Parse (print .Params.slidesUrl) }}
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+        <a href="{{ $slidesUrl.String }}" rel="noopener">{{ partial "icon.html" "presentation" }} Slides</a>
+    </span>
+{{ end }}
+
+{{ if .Params.backupExternalUrl | default false }}
+  {{ $backupUrl := urls.Parse (print .Params.backupExternalUrl) }}
+    <span class="px-2 text-primary-500">&middot;</span>
+    <span class="custom-info">
+        <a href="{{ $backupUrl.String }}" rel="noopener">{{ partial "icon.html" "archive" }} Backup Link</a>
+    </span>
+{{ end }}
 
 {{ if and (.Params.language | default false) (eq .Params.language "de" ) }}
-  <span class="px-2 text-primary-500">&middot;</span>
-  <span class="custom-info">
-    {{ partial "icon.html" "language-solid" }} Deutsch
+<span class="px-2 text-primary-500">&middot;</span>
+<span class="custom-info">
+    <em>{{ partial "icon.html" "language-solid" }} Deutsch</em>
   </span>
 {{ end }}
 

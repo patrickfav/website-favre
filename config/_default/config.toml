@@ -24,6 +24,9 @@ lastmod = ["lastmod", ":git", "date", "publishDate"]
 [minify.tdewolff.html]
 keepWhitespace = true # Otherwise removes some needed whitespaces e.g. after icons.
 
+[pagination]
+    pagerSize = 15
+
 # #########################################
 
 [params.profile]
