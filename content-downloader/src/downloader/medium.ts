@@ -1,10 +1,18 @@
-import fs from 'fs'
+import fs from 'node:fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
 import Parser from 'rss-parser'
 import TurndownService from 'turndown'
 import * as cheerio from 'cheerio'
-import {codeBlockFormat, figureCaption, generateSlug, removeBrokenMarkdownParts, Slug, supportedHtml} from '../util'
+import {
+    codeBlockFormat,
+    downloadAndSaveImage,
+    figureCaption,
+    generateSlug,
+    removeBrokenMarkdownParts,
+    Slug,
+    supportedHtml
+} from '../util'
 // @ts-ignore
 import {strikethrough, tables, taskListItems} from 'turndown-plugin-gfm'
 import {Downloader} from "./downloader";
@@ -58,12 +66,11 @@ export class MediumDownloader extends Downloader {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private async downloadProjectImage(articleInfo: any, safeArticleTitle: string, targetProjectDir: string): Promise<void> {
-        const imageUrl = 'https://cdn-images-1.medium.com/max/1024/' + articleInfo.previewImage.__ref.replace(/ImageMetadata:/g, '')
-        const imageFileName = 'feature_' + safeArticleTitle + '.png'
+        const imageUrl = 'https://cdn-images-1.medium.com/max/1024/' + articleInfo.previewImage.__ref.replaceAll('ImageMetadata:', '')
 
         if (imageUrl) {
-            console.log('\t\tDownloading social preview image: ' + imageUrl)
-            got.stream(imageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+            console.log('\t\tDownloading social preview image: ' + imageUrl);
+            await downloadAndSaveImage(imageUrl, `feature_${safeArticleTitle}`, targetProjectDir, false);
         }
     }
 

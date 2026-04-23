@@ -1,8 +1,8 @@
-import * as fs from 'fs'
+import * as fs from 'node:fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
 import * as cheerio from 'cheerio'
-import {generateSlug, removeBrokenMarkdownParts, Slug} from '../util'
+import {generateSlug, removeBrokenMarkdownParts, Slug, downloadAndSaveImage} from '../util'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
 
@@ -112,11 +112,9 @@ export class GithubDownloader extends Downloader {
             .then(result => result.body)
             .then(html => cheerio.load(html)('meta[property="og:image"]').attr('content'))
 
-        const imageFileName = 'feature_' + projectName + '.png'
-
         if (socialPreviewImageUrl) {
-            console.log('\t\tDownloading github social preview image: ' + socialPreviewImageUrl)
-            got.stream(socialPreviewImageUrl).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+            console.log('\t\tDownloading github social preview image: ' + socialPreviewImageUrl);
+            await downloadAndSaveImage(socialPreviewImageUrl, `feature_${projectName}`, targetProjectDir, false);
         }
     }
 

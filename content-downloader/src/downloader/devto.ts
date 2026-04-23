@@ -1,7 +1,7 @@
-import fs from 'fs'
+import fs from 'node:fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
-import {generateSlug, getExtension, removeBrokenMarkdownParts, Slug} from '../util'
+import {generateSlug, removeBrokenMarkdownParts, Slug, downloadAndSaveImage} from '../util'
 import {Downloader} from "./downloader";
 import {ContentStat} from "./models";
 
@@ -66,11 +66,8 @@ export class DevToDownloader extends Downloader {
 
     private async downloadProjectImage(article: DevToArticleWithBody, safeArticleTitle: string, targetProjectDir: string): Promise<void> {
         if (article.social_image) {
-            const extension = getExtension(article.social_image)
-            const imageFileName = `feature_${safeArticleTitle}.${extension}`
-
-            console.log(`\t\tDownloading social preview image: ${article.social_image}`)
-            got.stream(article.social_image).pipe(fs.createWriteStream(targetProjectDir + '/' + imageFileName))
+            console.log(`\t\tDownloading social preview image: ${article.social_image}`);
+            await downloadAndSaveImage(article.social_image, `feature_${safeArticleTitle}`, targetProjectDir, false);
         }
     }
 

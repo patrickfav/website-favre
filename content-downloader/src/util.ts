@@ -1,8 +1,13 @@
 // @ts-ignore
 import base32 from 'base32-encoding';
 import TurndownService, {Filter, Node, Options, ReplacementFunction} from "turndown";
-import fs from "fs";
+import fs from "node:fs";
 import * as crypto from 'node:crypto';
+import got from 'got';
+import { promisify } from 'node:util';
+import * as stream from 'node:stream';
+
+const pipeline = promisify(stream.pipeline);
 
 export interface Slug {
     id: string,
@@ -206,6 +211,41 @@ export function getExtension(url: string): string {
     }
 }
 
+export function getExtensionFromMimeType(mimeType: string | undefined): string | undefined {
+    if (!mimeType) {
+        return undefined
+    }
+
+    const cleanMimeType = mimeType.toLowerCase().split(';')[0].trim()
+
+    const mimeTypeMap: { [key: string]: string } = {
+        "image/jpeg": "jpg",
+        "image/jpg": "jpg",
+        "image/png": "png",
+        "image/webp": "webp",
+        "image/gif": "gif",
+        "image/avif": "avif",
+        "image/heif": "heif",
+        "image/heic": "heic",
+        "image/svg+xml": "svg"
+    }
+
+    return mimeTypeMap[cleanMimeType] ?? undefined;
+}
+
+export async function getExtensionFromFileContent(filePath: string): Promise<string | undefined> {
+    try {
+        const { fileTypeFromFile } = await import('file-type');
+        const fileType = await fileTypeFromFile(filePath);
+        if (fileType?.mime.startsWith('image/')) {
+            return getExtensionFromMimeType(fileType.mime);
+        }
+    } catch (error) {
+        console.warn(`Could not detect file type from ${filePath}:`, error);
+    }
+    return undefined
+}
+
 export function regexQuote(unquoted: string): string {
     return unquoted.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
 }
@@ -262,4 +302,51 @@ export interface ImageMeta {
     src: string
     caption: string | undefined
     raw: string
+}
+
+
+export async function downloadAndSaveImage(
+    url: string,
+    prefix: string,
+    folder: string,
+    appendSha256: boolean
+): Promise<string> {
+    const tempFileName = `${folder}/${generateRandomFilename()}`;
+
+    let mimeType: string | undefined;
+
+    // Download the image and capture MIME type
+    const downloadStream = got.stream(url);
+    downloadStream.on('response', (response) => {
+        mimeType = response.headers['content-type'];
+    });
+
+    await pipeline(
+        downloadStream,
+        fs.createWriteStream(tempFileName)
+    );
+
+    // Determine file extension
+    let extension = getExtensionFromMimeType(mimeType);
+
+    if (!extension) {
+        // No extension inferred, try to detect from file content
+        extension = await getExtensionFromFileContent(tempFileName) ?? "png";
+    }
+
+    // Calculate hash if needed
+    let finalFileName: string;
+    if (appendSha256) {
+        const contentHash = calculateFileSha256(tempFileName);
+        finalFileName = `${prefix}${contentHash.substring(0, 16)}.${extension}`;
+    } else {
+        finalFileName = `${prefix}.${extension}`;
+    }
+
+    const finalPath = `${folder}/${finalFileName}`;
+
+    // Move from temp to final location
+    await renameFile(tempFileName, finalPath);
+
+    return finalFileName;
 }

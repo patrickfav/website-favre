@@ -1,19 +1,11 @@
-import fs from "fs";
+import fs from "node:fs";
 import {ContentStat} from "./models";
 import {
-    calculateFileSha256,
+    downloadAndSaveImage,
     findAllHtmlImages,
     findAllMarkdownImages,
-    generateRandomFilename,
-    getExtension,
-    regexQuote,
-    renameFile
+    regexQuote
 } from "../util";
-import got from "got";
-import {promisify} from "util";
-import * as stream from "stream";
-
-const pipeline = promisify(stream.pipeline);
 
 export abstract class Downloader {
     readonly name: string
@@ -82,18 +74,9 @@ export abstract class Downloader {
 
             const fullyQualifiedUrl = imageMeta.src.startsWith('https://') ? imageMeta.src : this.baseUrlForImages() + imageMeta.src
 
-            const randomFileName = `${targetProjectDir}/${generateRandomFilename()}`
             console.log(`\t\tDownloading image: ${fullyQualifiedUrl}`)
 
-            await pipeline(
-                got.stream(fullyQualifiedUrl),
-                fs.createWriteStream(randomFileName)
-            );
-
-            const contentHash = calculateFileSha256(randomFileName)
-            const newLocalImageName = `img_${contentHash.substring(0, 16)}.${getExtension(imageMeta.src)}`
-
-            await renameFile(randomFileName, `${targetProjectDir}/${newLocalImageName}`)
+            const newLocalImageName = await downloadAndSaveImage(fullyQualifiedUrl, "img_", targetProjectDir, true);
 
             markdownContent = markdownContent
                 .replace(

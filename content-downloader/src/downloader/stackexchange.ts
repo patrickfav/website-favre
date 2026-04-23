@@ -1,5 +1,5 @@
 import got from 'got'
-import fs from 'fs'
+import fs from 'node:fs'
 import {StringStream} from 'scramjet'
 import TurndownService from 'turndown'
 import {

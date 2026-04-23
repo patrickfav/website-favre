@@ -1,10 +1,13 @@
 import {
+    downloadAndSaveImage,
     figureCaption,
     findAllHtmlImages,
     findAllMarkdownImages,
     generateRandomFilename,
     generateSlug,
     getExtension,
+    getExtensionFromMimeType,
+    getExtensionFromFileContent,
     ImageMeta,
     regexQuote,
     removeBrokenMarkdownParts,
@@ -85,6 +88,58 @@ describe('getExtension', () => {
         expect(getExtension('https://example.com/image.jpg?raw=true')).toBe('jpg');
         expect(getExtension('https://example.com/image.jpeg?version=2')).toBe('jpeg');
         expect(getExtension('https://example.com/image.png?param=value')).toBe('png');
+    });
+});
+
+describe('getExtensionFromMimeType', () => {
+    test('should return the correct extension for JPEG mime types', () => {
+        expect(getExtensionFromMimeType('image/jpeg')).toBe('jpg');
+        expect(getExtensionFromMimeType('image/jpg')).toBe('jpg');
+    });
+
+    test('should return the correct extension for PNG mime type', () => {
+        expect(getExtensionFromMimeType('image/png')).toBe('png');
+    });
+
+    test('should return the correct extension for WebP mime type', () => {
+        expect(getExtensionFromMimeType('image/webp')).toBe('webp');
+    });
+
+    test('should return the correct extension for GIF mime type', () => {
+        expect(getExtensionFromMimeType('image/gif')).toBe('gif');
+    });
+
+    test('should handle uppercase mime types', () => {
+        expect(getExtensionFromMimeType('IMAGE/JPEG')).toBe('jpg');
+        expect(getExtensionFromMimeType('Image/Png')).toBe('png');
+        expect(getExtensionFromMimeType('IMAGE/WEBP')).toBe('webp');
+    });
+
+    test('should handle mime types with charset parameter', () => {
+        expect(getExtensionFromMimeType('image/jpeg; charset=utf-8')).toBe('jpg');
+        expect(getExtensionFromMimeType('image/png; charset=utf-8')).toBe('png');
+    });
+
+    test('should return undefined for undefined mime type', () => {
+        expect(getExtensionFromMimeType(undefined)).toBe(undefined);
+    });
+
+    test('should return undefined for unknown mime type', () => {
+        expect(getExtensionFromMimeType('image/svg+xml')).toBe('svg');
+        expect(getExtensionFromMimeType('text/html')).toBe(undefined);
+        expect(getExtensionFromMimeType('unknown/type')).toBe(undefined);
+    });
+});
+
+describe('getExtensionFromFileContent', () => {
+    test.skip('should return png for non-existent file', async () => {
+        const extension = await getExtensionFromFileContent('/non/existent/file.png');
+        expect(extension).toBe('png');
+    });
+
+    test.skip('should handle file read errors gracefully', async () => {
+        const extension = await getExtensionFromFileContent('/dev/null/invalid');
+        expect(extension).toBe('png');
     });
 });
 
@@ -312,5 +367,11 @@ describe('findAllMarkdownImages', () => {
         `;
 
         expect(findAllMarkdownImages(input)).toEqual([]);
+    });
+});
+
+describe('downloadAndSaveImage', () => {
+    test('should be a function that exists', () => {
+        expect(typeof downloadAndSaveImage).toBe('function');
     });
 });

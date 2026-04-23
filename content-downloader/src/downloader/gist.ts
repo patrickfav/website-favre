@@ -1,4 +1,4 @@
-import * as fs from 'fs'
+import * as fs from 'node:fs'
 import {StringStream} from 'scramjet'
 import got from 'got'
 import {generateSlug, removeBrokenMarkdownParts, shortenToTitle, Slug} from '../util'

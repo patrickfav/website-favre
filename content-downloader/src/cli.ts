@@ -82,14 +82,14 @@ export async function cli(args: string[]): Promise<void> {
     });
 
     const contentStats = [
+        ...await devToDownloader.download(),
         ...await securityStackExchange.download(),
         ...await cryptoStackExchange.download(),
         ...await texStackExchange.download(),
-        ...await gistDownloader.download(),
         ...await stackOverflowDownloader.download(),
         ...await githubDownloader.download(),
+        ...await gistDownloader.download(),
         //...await mediumDownloader.download(),
-        ...await devToDownloader.download()
     ];
 
     console.log(`All done, found ${contentStats.length} stats while importing content.`);
