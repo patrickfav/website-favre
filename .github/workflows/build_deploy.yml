@@ -7,7 +7,7 @@ on:
   pull_request: {}
   workflow_dispatch: {}
   schedule:
-    - cron: '42 2 * * *' # run 2:42 am every day
+    - cron: '43 3 * * SUN' # run 3:42 am every Sunday
 
 env:
   FIREBASE_PROJECT_ID: favre-base-project
