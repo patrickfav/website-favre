@@ -117,19 +117,23 @@ export class MediumDownloader extends Downloader {
     }
 
     private async parseMetaDataFromArticleHtml(post: PostInfo): Promise<[ArticleInfo, UserInfo]> {
-        const mediumArticleDom = await got(post.url)
-            .then(response => response.body)
-            .then(body => cheerio.load(body, {xmlMode: true}))
-            .catch(err => {
-                throw new Error(err)
-            })
+        const response = await got(post.url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36'
+            },
+            https: {
+                rejectUnauthorized: false
+            }
+        })
+        const body = response.body
+        const mediumArticleDom = cheerio.load(body, {xmlMode: true})
 
         const jsonString = mediumArticleDom('script')
             .map((idx, el) => mediumArticleDom(el).html())
             .toArray()
             .find((data) => data.includes('window.__APOLLO_STATE__'))!
             .replace('window.__APOLLO_STATE__ = ', '')
-            .replace(/&quot;/g, '"')
+            .replaceAll('&quot;', '"')
 
         // throttle
         await new Promise(resolve => setTimeout(resolve, 500))
@@ -169,7 +173,7 @@ export class MediumDownloader extends Downloader {
     }
 
     private updateContentStats(contentStats: ContentStat[], articleInfo: ArticleInfo, userInfo: UserInfo, contentLength: number) {
-        if (userInfo && userInfo.socialStats && !contentStats.find(c => {
+        if (userInfo?.socialStats && !contentStats.some(c => {
             return c.type === 'medium-user'
         })) {
             contentStats.push({

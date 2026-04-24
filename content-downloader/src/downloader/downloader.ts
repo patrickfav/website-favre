@@ -31,7 +31,7 @@ export abstract class Downloader {
     }
 
     protected static escapeFrontMatterText(title: string): string {
-        return title.replace(/'/g, '`').replace(/\n/g, ' ').replace(/\r/g, '');
+        return title.replaceAll('\'', '`').replaceAll('\n', ' ').replaceAll('\r', '');
     }
 
     async download(): Promise<ContentStat[]> {
@@ -42,7 +42,7 @@ export abstract class Downloader {
             return await this.downloadLogic();
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: any) {
-            console.log(`An error has occurred while downloading ${this.name}.`);
+            console.error(`An error has occurred while downloading ${this.name}.`);
 
             if (err.response) {
                 console.log(`Error response body: ${err.response.body}.`);
@@ -68,7 +68,7 @@ export abstract class Downloader {
         for (const imageMeta of foundImages) {
 
             if (this.testShouldFilterImage(imageMeta.src)) {
-                markdownContent = markdownContent.replace(new RegExp(regexQuote(imageMeta.raw), 'g'), '\n')
+                markdownContent = markdownContent.replaceAll(new RegExp(regexQuote(imageMeta.raw), 'g'), '\n')
                 continue
             }
 
@@ -79,10 +79,10 @@ export abstract class Downloader {
             const newLocalImageName = await downloadAndSaveImage(fullyQualifiedUrl, "img_", targetProjectDir, true);
 
             markdownContent = markdownContent
-                .replace(
+                .replaceAll(
                     new RegExp(regexQuote(imageMeta.raw), 'g'),
                     `![${imageMeta.altText == '' ? 'Image' : imageMeta.altText}](${newLocalImageName}${imageMeta.caption ? ' ' + imageMeta.caption : ''})`
-                ).replace(
+                ).replaceAll(
                     new RegExp(regexQuote(imageMeta.src), 'g'), newLocalImageName
                 )
         }

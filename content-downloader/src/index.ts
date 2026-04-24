@@ -1,7 +1,5 @@
 #!/usr/bin/env node
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { cli } = require('./cli');
+import {cli} from "./cli";
 
 console.log(`
    ____                _____    ___ 
@@ -12,4 +10,4 @@ console.log(`
 Starting at ${new Date().toISOString()}
 `)
 
-cli(process.argv);
+void cli(process.argv);

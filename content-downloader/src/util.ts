@@ -21,30 +21,30 @@ export interface Slug {
 export function generateSlug(name: string, type: string, date: Date, stableId: string): Slug {
     const escaped = encodeURI(
         name
-            .replace(/&#x2026;/g, '_') // Horizontal Ellipsis
-            .replace(/&#39;/g, '') // Apostroph
-            .replace(/!/g, '')
-            .replace(/\$/g, '')
-            .replace(/,/g, '')
-            .replace(/;/g, '')
-            .replace(/\*/g, '')
-            .replace(/'/g, '')
-            .replace(/\./g, '')
-            .replace(/\?/g, '')
-            .replace(/\//g, '_')
-            .replace(/:/g, '_')
-            .replace(/…/g, '_')
-            .replace(/\[/g, '_')
-            .replace(/]/g, '_')
-            .replace(/#/g, '_')
-            .replace(/%/g, '_')
-            .replace(/&/g, '_')
-            .replace(/_+/g, '_')
-            .replace(/\s+/g, '-')
-            .replace(/\+/g, '-')
-            .replace(/_-/g, '-')
-            .replace(/-_/g, '-')
-            .replace(/-+/g, '-')
+            .replaceAll('&#x2026;', '_') // Horizontal Ellipsis
+            .replaceAll('&#39;', '') // Apostroph
+            .replaceAll('!', '')
+            .replaceAll('$', '')
+            .replaceAll(',', '')
+            .replaceAll(';', '')
+            .replaceAll('*', '')
+            .replaceAll('\'', '')
+            .replaceAll('.', '')
+            .replaceAll('?', '')
+            .replaceAll('/', '_')
+            .replaceAll(':', '_')
+            .replaceAll('…', '_')
+            .replaceAll('[', '_')
+            .replaceAll(']', '_')
+            .replaceAll('#', '_')
+            .replaceAll('%', '_')
+            .replaceAll('&', '_')
+            .replaceAll(/_+/g, '_')
+            .replaceAll(/\s+/g, '-')
+            .replaceAll('+', '-')
+            .replaceAll('_-', '-')
+            .replaceAll('-_', '-')
+            .replaceAll(/-+/g, '-')
     ).toLowerCase()
 
     const shortLinkPath = 'link'
@@ -70,10 +70,9 @@ export function generateSlug(name: string, type: string, date: Date, stableId: s
 
 export function removeBrokenMarkdownParts(markdown: string): string {
     return markdown
-        .replace(/```\n```/g, '') // remove empty code blocks
-        // eslint-disable-next-line no-irregular-whitespace
-        .replace(/ /g, ' ') // remove non-breaking spaces
-        .replace(/(?<!!)\[(\s*?)]\((.*?)\)/g, '') // remove empty links
+        .replaceAll('```\n```', '') // remove empty code blocks
+        .replaceAll(' ', ' ') // remove non-breaking spaces
+        .replaceAll(/(?<!!)\[(\s*?)]\((.*?)\)/g, '') // remove empty links
 }
 
 export const codeBlockFormat = function (service: TurndownService): void {
@@ -98,8 +97,7 @@ export const stackExchangeHighlightedCodeBlock = function (service: TurndownServ
             const firstChild = node.firstChild
             return (
                 node.nodeName === 'PRE' &&
-                firstChild &&
-                firstChild.nodeName === 'CODE'
+                firstChild?.nodeName === 'CODE'
             )
         } as Filter,
         replacement: function (content: string, node: HTMLElement, options: Options): string {
@@ -122,8 +120,8 @@ export const figureCaption = function (service: TurndownService): void {
             const lastChild = node.lastChild
             return (
                 node.nodeName === 'FIGURE' &&
-                firstChild && firstChild.nodeName === 'IMG' &&
-                lastChild && lastChild.nodeName === 'FIGCAPTION'
+                firstChild?.nodeName === 'IMG' &&
+                lastChild?.nodeName === 'FIGCAPTION'
             )
         } as Filter,
         replacement: function (content: string, node: HTMLElement): string {
@@ -204,7 +202,7 @@ export function shortenToTitle(description: string): string {
 export function getExtension(url: string): string {
     const match = url.match(/\.([a-zA-Z0-9]+)(?:\?|$)/)
 
-    if (!match || !match[1]) {
+    if (!match?.[1]) {
         return "png"
     } else {
         return match[1]
@@ -247,7 +245,7 @@ export async function getExtensionFromFileContent(filePath: string): Promise<str
 }
 
 export function regexQuote(unquoted: string): string {
-    return unquoted.replace(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
+    return unquoted.replaceAll(/([.?*+^$[\]\\(){}|-])/g, '\\$1')
 }
 
 export function calculateFileSha256(filePath: string): string {

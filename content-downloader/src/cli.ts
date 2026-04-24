@@ -82,6 +82,7 @@ export async function cli(args: string[]): Promise<void> {
     });
 
     const contentStats = [
+        ...await mediumDownloader.download(),
         ...await devToDownloader.download(),
         ...await securityStackExchange.download(),
         ...await cryptoStackExchange.download(),
@@ -89,7 +90,6 @@ export async function cli(args: string[]): Promise<void> {
         ...await stackOverflowDownloader.download(),
         ...await githubDownloader.download(),
         ...await gistDownloader.download(),
-        //...await mediumDownloader.download(),
     ];
 
     console.log(`All done, found ${contentStats.length} stats while importing content.`);
@@ -105,7 +105,7 @@ export async function cli(args: string[]): Promise<void> {
 }
 
 function parseArguments(args: string[]): string {
-    if (args && args.length && args.length >= 3) {
+    if (args?.length && args.length >= 3) {
         return args[2]
     }
 
