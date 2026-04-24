@@ -4,7 +4,7 @@ description: "Links to various other contributions I made."
 type: list
 
 cascade:
-    type: link
+    type: links
     draft: false
     showEdit: false
     showSummary: true
