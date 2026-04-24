@@ -173,11 +173,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Download Updated Content
+      - name: Download Hugo Site Artifacts
         uses: actions/download-artifact@v8
         with:
-          name: hugo-content
-          path: content
+          name: hugo-public
+          path: public
       - name: Build and push Docker image
         uses: docker/build-push-action@v7
         with:
