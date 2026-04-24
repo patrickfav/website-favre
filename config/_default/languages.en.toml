@@ -17,8 +17,8 @@ dateFormat = "02.01.2006"
 [params.author]
   name = "Patrick Favre"
   image = "img/author.jpg"
-  headline = "Software Engineer currently working as architect, backend dev and cloud engineer. Cryptography and security are my passions."
-  bio = "Software Engineer currently working as architect, backend dev and cloud engineer. Cryptography and security are my passions."
+  headline = "Lead Developer specializing in scalable system architecture and enterprise-grade solutions."
+  bio = "Experienced Lead Developer focused on designing robust architectures and delivering scalable solutions in complex enterprise environments. Strong background in software engineering, mobile systems, and cloud-native development, with a proven track record of building reliable, production-grade systems."
   links = [
     { github = "https://github.com/patrickfav" },
     { stack-overflow = "https://stackoverflow.com/users/774398" },

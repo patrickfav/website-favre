@@ -1,6 +1,6 @@
 ---
 title: "Open Source"
-description: "Various open source software projects and snippets I created in recent years. As one can see there was, in the past, a strong focus on Android and Java cryptography/security themed libraries. Most of them can be found on GitHub and are published on Maven Central."
+description: "Various open-source software projects I’ve created over the years. As you can see, my earlier work had a strong focus on Android, as well as Java libraries centered around cryptography and security. Most of these projects are available on GitHub and published on Maven Central"
 type: list
 
 cascade:
@@ -19,6 +19,5 @@ cascade:
 ---
 
 {{< lead >}}
-Various open source software projects I created in recent years. As one can see there is a strong focus on Android (in the past)
-and Java cryptography/security themed libraries. Most of them can be found on GitHub and are published on Maven Central.
+Various open-source software projects I’ve created over the years. As you can see, my earlier work had a strong focus on Android, as well as Java libraries centered around cryptography and security. Most of these projects are available on GitHub and published on Maven Central
 {{< /lead >}}

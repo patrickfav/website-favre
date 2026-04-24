@@ -1,6 +1,6 @@
 ---
 title: "Articles"
-description: "Tech articles I wrote in recent years. Most of them were originally published on different platforms, like Medium or StackOverflow."
+description: "Tech articles I’ve written over the years. Most were originally published on platforms such as Medium, dev.to, or Stack Overflow."
 type: list
 
 cascade:
@@ -19,6 +19,5 @@ cascade:
 ---
 
 {{< lead >}}
-Tech articles I wrote in recent years. Most of them were originally published on different platforms, like Medium,
-dev.to or StackOverflow.
+Tech articles I’ve written over the years. Most were originally published on platforms such as Medium, dev.to, or Stack Overflow.
 {{< /lead >}}

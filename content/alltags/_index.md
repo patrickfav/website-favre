@@ -1,9 +1,9 @@
 ---
 title: Tags
-description: "Find here an overview of all used tags and keywords in all articles or projects."
+description: "Here you’ll find an overview of all tags and keywords used across articles and projects."
 type: nonContentSite
 ---
 {{< lead >}}
-Find here an overview of all used tags and keywords in all articles or projects.
+Here you’ll find an overview of all tags and keywords used across articles and projects.
 {{< /lead >}}
 

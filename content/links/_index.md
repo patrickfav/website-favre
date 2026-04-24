@@ -1,6 +1,6 @@
 ---
 title: "Links"
-description: "Links to various other contributions I made."
+description: "Links to talks, blog posts, and various other contributions I’ve made across different platforms."
 type: list
 
 cascade:
@@ -15,5 +15,5 @@ cascade:
 ---
 
 {{< lead >}}
-Links to various other contributions I made.
+Links to talks, blog posts, and various other contributions I’ve made across different platforms.
 {{< /lead >}}
