@@ -82,7 +82,7 @@ export async function cli(args: string[]): Promise<void> {
     });
 
     const contentStats = [
-        ...await mediumDownloader.download(),
+        //...await mediumDownloader.download(),
         ...await devToDownloader.download(),
         ...await securityStackExchange.download(),
         ...await cryptoStackExchange.download(),
