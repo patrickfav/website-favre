@@ -4,7 +4,7 @@
 
 {{ if and (.ReadingTime | default false) (gt .ReadingTime 2 ) }}
 <span class="px-2 text-primary-500">&middot;</span>
-<span title="{{ i18n " article.reading_time_title" }}">
+<span title="{{ .WordCount }} words">
 {{- i18n "article.reading_time" .ReadingTime | markdownify | emojify -}}
 </span>
 {{ end }}

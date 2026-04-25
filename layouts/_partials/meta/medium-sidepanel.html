@@ -5,7 +5,9 @@
 
 <div class="flex flex-row">
     <span>{{ partial "icon.html" "clock-solid" }}</span>
-    <span class="pl-2">{{ partial "meta/reading-time.html" . }} reading</span>
+    <span class="pl-2" title="{{ .WordCount }} words">
+    {{- i18n "article.reading_time" .ReadingTime | markdownify | emojify -}} {{- " reading" -}}
+    </span>
 </div>
 
 <div class="flex flex-row">
