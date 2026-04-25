@@ -5,5 +5,6 @@ summary: 'Ein Konferenz-Report über die Craft Conference in Budapest, die sich 
 externalUrl: 'https://senacor.blog/craft-conference-budapest-2023-konferenz-report/'
 backupExternalUrl: '/website-snapshots/senacorblog_craft_conference_report_aug_23_2023.html'
 language: de
+alltags: [ conference ]
 originalContentType: link
 ---

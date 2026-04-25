@@ -7,5 +7,6 @@ externalUrl2: 'https://news.ycombinator.com/item?id=42955176'
 backupExternalUrl: '/website-snapshots/n0rdy_bcrypt_mention_blog_jan_22_2025.html'
 backupExternalUrl2: '/website-snapshots/ycombinator_n0rdy_bcrypt_mention_feb_05_2025.html'
 language: en
+alltags: [ java, bcrypt ]
 originalContentType: link
 ---

@@ -4,5 +4,6 @@ date: 2017-01-11
 summary: 'My bog post "Security Best Practices: Symmetric Encryption with AES in Java and Android" was mentioned in the AndroidDev Digest newsletter.'
 externalUrl: '/website-snapshots/androiddev_digest_jan_11_2017.html'
 language: en
+alltags: [ android, newsletter ]
 originalContentType: link
 ---

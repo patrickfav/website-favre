@@ -5,5 +5,6 @@ summary: 'Wenn es um Checkstyle geht, scheiden sich die Geister. Wie immer man a
 externalUrl: 'https://senacor.blog/how-to-wie-man-in-maven-seine-checkstyle-konfiguration-zentral-verwaltet/'
 backupExternalUrl: '/website-snapshots/senacorblog_maven_checkstyle_may_23_2020.html'
 language: de
+alltags: [ java, maven ]
 originalContentType: link
 ---

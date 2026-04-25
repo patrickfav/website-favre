@@ -6,5 +6,6 @@ externalUrl: 'https://www.meetup.com/java-and-friends/events/313907732/'
 backupExternalUrl: '/website-snapshots/meetup_java_and_friends_apr_21_2026.html'
 slidesUrl: '/slides/2026-04-21-breaking-up-with-my-default-stack/index.html'
 language: en
+alltags: [ java, node, nestjs, typescript, talk ]
 originalContentType: link
 ---

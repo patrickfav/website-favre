@@ -5,5 +5,6 @@ summary: 'My master thesis obtaining the academic degree of Master of Science wi
 externalUrl: 'https://repositum.tuwien.at/handle/20.500.12708/2080'
 backupExternalUrl: '/website-snapshots/repositum_thesis_indoor_2015.html'
 language: en
+alltags: [ thesis, university ]
 originalContentType: link
 ---
