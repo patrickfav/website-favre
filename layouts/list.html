@@ -44,30 +44,51 @@
     {{ .Content | emojify }}
   </div>
 </section>
+
 {{ if .Data.Pages }}
-  <section>
-    {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
-    {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
-    <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
-      {{ .Key }}
-    </h2>
-    <hr class="w-36 border-dotted border-neutral-400" />
-      {{ range .Pages }}
-        {{ partial "article-link.html" . }}
-      {{ end }}
-    {{ end }}
-    {{ else }}
-      {{ range (.Paginate .Pages).Pages }}
-        {{ partial "article-link.html" . }}
-      {{ end }}
-    {{ end }}
-  </section>
-  {{ partial "pagination.html" . }}
-{{ else }}
-  <section class="prose mt-10 dark:prose-invert">
-    <p class="border-t py-8">
-      <em>{{ i18n "list.no_articles" | emojify }}</em>
-    </p>
-  </section>
+<section>
+  {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
+  {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
+  <h2 class="mt-12 text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300">
+    {{ .Key }}
+  </h2>
+  <hr class="w-36 border-dotted border-neutral-400"/>
+  {{ range .Pages }}
+  {{ partial "article-link.html" . }}
   {{ end }}
+  {{ end }}
+  {{ else }}
+  {{ range (.Paginate .Pages).Pages }}
+  {{ partial "article-link.html" . }}
+  {{ end }}
+  {{ end }}
+</section>
+{{ partial "pagination.html" . }}
+{{ else }}
+<section class="prose mt-10 dark:prose-invert">
+  <p class="border-t py-8">
+    <em>{{ i18n "list.no_articles" | emojify }}</em>
+  </p>
+</section>
+  {{ end }}
+
+<footer class="max-w-prose pt-8 print:hidden">
+  {{ partial "author.html" . }}
+  {{ partial "sharing-links.html" . }}
+  {{ partial "article-pagination.html" . }}
+  {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
+  {{ if templates.Exists "_partials/comments.html" }}
+  <div class="pt-3">
+    <hr class="border-dotted border-neutral-300 dark:border-neutral-600"/>
+    <div class="pt-3">
+      {{ partial "comments.html" . }}
+    </div>
+  </div>
+  {{ else }}
+  {{ warnf "[CONGO] Comments are enabled for %s but no comments partial exists." .File.Path }}
+  {{ end }}
+  {{ end }}
+</footer>
 {{ end }}
+
+
